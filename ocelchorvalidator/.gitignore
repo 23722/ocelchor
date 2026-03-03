@@ -1,0 +1,25 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# macOS
+.DS_Store
+
+# Project: generated CLI outputs
+data/output/*
+!data/output/.gitkeep
+
+# Project: planning document (working file, not for version control)
+PLAN.md
+
+# Publications (PDFs, drafts — managed separately)
+publications/

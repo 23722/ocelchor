@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+
+# Build
+dist/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+
+# Project
+publications/
+*.bpmn
+data/output/
+!data/output/.gitkeep
+PLAN.md

@@ -1,0 +1,601 @@
+{
+  "objectTypes": [
+    {
+      "name": "CA",
+      "attributes": []
+    },
+    {
+      "name": "ChoreographyInstance",
+      "attributes": []
+    },
+    {
+      "name": "EOA",
+      "attributes": []
+    },
+    {
+      "name": "KittyCore",
+      "attributes": []
+    },
+    {
+      "name": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "bid call",
+      "attributes": [
+        {
+          "name": "_tokenId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "cancelAuction call",
+      "attributes": [
+        {
+          "name": "_tokenId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "deposit call",
+      "attributes": [
+        {
+          "name": "uint256",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "deposit call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "transfer call",
+      "attributes": [
+        {
+          "name": "_to",
+          "type": "string"
+        },
+        {
+          "name": "_tokenId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Request bid",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request cancelAuction",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "deposit",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "0x672ec49f7f7eac25c3a2e651f67f579bb5da8936",
+      "type": "EOA"
+    },
+    {
+      "id": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+      "type": "CA"
+    },
+    {
+      "id": "call:req:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
+      "type": "bid call",
+      "attributes": [
+        {
+          "name": "_tokenId",
+          "value": "1001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x672ec49f7f7eac25c3a2e651f67f579bb5da8936",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography bid",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+      "type": "CA"
+    },
+    {
+      "id": "call:req:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_1",
+      "type": "deposit call",
+      "attributes": [
+        {
+          "name": "uint256",
+          "value": "0x",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_1",
+      "type": "deposit call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "None",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_2",
+      "type": "deposit call",
+      "attributes": [
+        {
+          "name": "uint256",
+          "value": "0x",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x672ec49f7f7eac25c3a2e651f67f579bb5da8936",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_2",
+      "type": "deposit call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "None",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x672ec49f7f7eac25c3a2e651f67f579bb5da8936",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+      "type": "KittyCore"
+    },
+    {
+      "id": "call:req:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_3",
+      "type": "transfer call",
+      "attributes": [
+        {
+          "name": "_to",
+          "value": "672eC49F7f7EaC25C3A2E651F67F579BB5Da8936",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_tokenId",
+          "value": "1001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_3",
+      "type": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "None",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "call:req:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:root",
+      "type": "cancelAuction call",
+      "attributes": [
+        {
+          "name": "_tokenId",
+          "value": "1150",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:root",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography cancelAuction",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:0_1",
+      "type": "transfer call",
+      "attributes": [
+        {
+          "name": "_to",
+          "value": "ba52c75764d6F594735dc735Be7F1830CDf58dDf",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_tokenId",
+          "value": "1150",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:0_1",
+      "type": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "None",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0x03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2",
+      "type": "ChoreographyInstance"
+    }
+  ],
+  "events": [
+    {
+      "id": "e:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root:request",
+      "type": "Request bid",
+      "time": "2017-11-23T18:46:13.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x672ec49f7f7eac25c3a2e651f67f579bb5da8936",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_1",
+      "type": "deposit",
+      "time": "2017-11-23T18:46:13.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_2",
+      "type": "deposit",
+      "time": "2017-11-23T18:46:13.002Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "2"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x672ec49f7f7eac25c3a2e651f67f579bb5da8936",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_3",
+      "type": "transfer",
+      "time": "2017-11-23T18:46:13.003Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "3"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_3",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_3",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:root:request",
+      "type": "Request cancelAuction",
+      "time": "2017-11-23T20:28:58.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0x03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:0_1",
+      "type": "transfer",
+      "time": "2017-11-23T20:28:58.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    }
+  ]
+}

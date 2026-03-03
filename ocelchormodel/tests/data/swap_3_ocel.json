@@ -1,0 +1,811 @@
+{
+  "objectTypes": [
+    {
+      "name": "BalanceOracle",
+      "attributes": []
+    },
+    {
+      "name": "CA",
+      "attributes": []
+    },
+    {
+      "name": "ChoreographyInstance",
+      "attributes": []
+    },
+    {
+      "name": "EOA",
+      "attributes": []
+    },
+    {
+      "name": "LiquidityPool",
+      "attributes": []
+    },
+    {
+      "name": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "SwapLogger",
+      "attributes": []
+    },
+    {
+      "name": "SwapRouter",
+      "attributes": []
+    },
+    {
+      "name": "TokenContract",
+      "attributes": []
+    },
+    {
+      "name": "balanceOf call",
+      "attributes": [
+        {
+          "name": "account",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "logSwap call",
+      "attributes": [
+        {
+          "name": "amount",
+          "type": "string"
+        },
+        {
+          "name": "user",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "logSwap call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "swap call",
+      "attributes": [
+        {
+          "name": "amountIn",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "swap call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "transfer call",
+      "attributes": [
+        {
+          "name": "amount",
+          "type": "string"
+        },
+        {
+          "name": "to",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "updateReserves call",
+      "attributes": [
+        {
+          "name": "amountOut",
+          "type": "string"
+        },
+        {
+          "name": "token",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "updateReserves call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Request swap",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request transfer",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Respond to swap",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Respond to transfer",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "logSwap",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "updateReserves",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "0x1111111111111111111111111111111111111111",
+      "type": "EOA"
+    },
+    {
+      "id": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "type": "CA"
+    },
+    {
+      "id": "call:req:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
+      "type": "swap call",
+      "attributes": [
+        {
+          "name": "amountIn",
+          "value": "1000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x1111111111111111111111111111111111111111",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography swap",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+          "qualifier": "choreo:contains"
+        }
+      ]
+    },
+    {
+      "id": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "type": "SwapRouter"
+    },
+    {
+      "id": "call:req:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+      "type": "swap call",
+      "attributes": [
+        {
+          "name": "amountIn",
+          "value": "1000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+      "type": "swap call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00000000000000000000000000000000000000000000000000000000000003e3",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography swap",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
+          "qualifier": "choreo:contains"
+        }
+      ]
+    },
+    {
+      "id": "0xcccccccccccccccccccccccccccccccccccccccc",
+      "type": "TokenContract"
+    },
+    {
+      "id": "call:req:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
+      "type": "transfer call",
+      "attributes": [
+        {
+          "name": "to",
+          "value": "0x1111111111111111111111111111111111111111",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "amount",
+          "value": "995",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xcccccccccccccccccccccccccccccccccccccccc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
+      "type": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xcccccccccccccccccccccccccccccccccccccccc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography transfer",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "0xdddddddddddddddddddddddddddddddddddddd",
+      "type": "BalanceOracle"
+    },
+    {
+      "id": "call:req:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1_1",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "account",
+          "value": "0x1111111111111111111111111111111111111111",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xcccccccccccccccccccccccccccccccccccccccc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xdddddddddddddddddddddddddddddddddddddd",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1_1",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xdddddddddddddddddddddddddddddddddddddd",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xcccccccccccccccccccccccccccccccccccccccc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "type": "LiquidityPool"
+    },
+    {
+      "id": "call:req:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_2",
+      "type": "updateReserves call",
+      "attributes": [
+        {
+          "name": "token",
+          "value": "0xcccccccccccccccccccccccccccccccccccccccc",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "amountOut",
+          "value": "995",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_2",
+      "type": "updateReserves call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "0xffffffffffffffffffffffffffffffffffffffff",
+      "type": "SwapLogger"
+    },
+    {
+      "id": "call:req:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_2",
+      "type": "logSwap call",
+      "attributes": [
+        {
+          "name": "user",
+          "value": "0x1111111111111111111111111111111111111111",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "amount",
+          "value": "995",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xffffffffffffffffffffffffffffffffffffffff",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_2",
+      "type": "logSwap call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xffffffffffffffffffffffffffffffffffffffff",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+      "type": "ChoreographyInstance"
+    }
+  ],
+  "events": [
+    {
+      "id": "e:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root:request",
+      "type": "Request swap",
+      "time": "2024-01-01T00:10:00.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x1111111111111111111111111111111111111111",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1:request",
+      "type": "Request swap",
+      "time": "2024-01-01T00:10:00.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1:request",
+      "type": "Request transfer",
+      "time": "2024-01-01T00:10:00.002Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "2"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xcccccccccccccccccccccccccccccccccccccccc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1_1",
+      "type": "balanceOf",
+      "time": "2024-01-01T00:10:00.003Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "3"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xcccccccccccccccccccccccccccccccccccccccc",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xdddddddddddddddddddddddddddddddddddddd",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1:response",
+      "type": "Respond to transfer",
+      "time": "2024-01-01T00:10:00.004Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "4"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xcccccccccccccccccccccccccccccccccccccccc",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_2",
+      "type": "updateReserves",
+      "time": "2024-01-01T00:10:00.005Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "5"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1:response",
+      "type": "Respond to swap",
+      "time": "2024-01-01T00:10:00.006Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "6"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_2",
+      "type": "logSwap",
+      "time": "2024-01-01T00:10:00.007Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "7"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xffffffffffffffffffffffffffffffffffffffff",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    }
+  ]
+}

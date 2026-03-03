@@ -1,0 +1,138 @@
+[
+  {
+    "_id": { "$oid": "000000000000000000000003" },
+    "functionName": "swap",
+    "transactionHash": "0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+    "contractAddress": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "sender": "0x1111111111111111111111111111111111111111",
+    "gasUsed": 150000,
+    "blockNumber": 12345800,
+    "timestamp": { "$date": "2024-01-01T00:10:00Z" },
+    "value": 0,
+    "inputs": [
+      { "inputName": "amountIn", "type": "uint256", "inputValue": 1000 }
+    ],
+    "storageState": [],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "inputsCall": [],
+        "inputs": [
+          { "name": "amountIn", "type": "uint256", "value": 1000 }
+        ],
+        "from": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gas": 140000,
+        "gasUsed": 110000,
+        "output": "0x00000000000000000000000000000000000000000000000000000000000003e3",
+        "value": 0,
+        "type": "CALL",
+        "depth": 0,
+        "activity": "swap",
+        "contractCalledName": "SwapRouter",
+        "calls": [
+          {
+            "callId": "0_1_1",
+            "to": "0xcccccccccccccccccccccccccccccccccccccccc",
+            "inputsCall": [],
+            "inputs": [
+              { "name": "to", "type": "address", "value": "0x1111111111111111111111111111111111111111" },
+              { "name": "amount", "type": "uint256", "value": 995 }
+            ],
+            "from": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "gas": 90000,
+            "gasUsed": 50000,
+            "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "value": 0,
+            "type": "CALL",
+            "depth": 1,
+            "activity": "transfer",
+            "contractCalledName": "TokenContract",
+            "calls": [
+              {
+                "callId": "0_1_1_1",
+                "to": "0xdddddddddddddddddddddddddddddddddddddd",
+                "inputsCall": [],
+                "inputs": [
+                  { "name": "account", "type": "address", "value": "0x1111111111111111111111111111111111111111" }
+                ],
+                "from": "0xcccccccccccccccccccccccccccccccccccccccc",
+                "gas": 40000,
+                "gasUsed": 5000,
+                "output": "0x00000000000000000000000000000000000000000000000000000000000f4240",
+                "value": 0,
+                "type": "STATICCALL",
+                "depth": 2,
+                "activity": "balanceOf",
+                "contractCalledName": "BalanceOracle",
+                "calls": [],
+                "events": []
+              }
+            ],
+            "events": []
+          },
+          {
+            "callId": "0_1_2",
+            "to": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+            "inputsCall": [],
+            "inputs": [
+              { "name": "token", "type": "address", "value": "0xcccccccccccccccccccccccccccccccccccccccc" },
+              { "name": "amountOut", "type": "uint256", "value": 995 }
+            ],
+            "from": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "gas": 30000,
+            "gasUsed": 10000,
+            "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "value": 0,
+            "type": "CALL",
+            "depth": 1,
+            "activity": "updateReserves",
+            "contractCalledName": "LiquidityPool",
+            "calls": [],
+            "events": []
+          }
+        ],
+        "events": []
+      },
+      {
+        "callId": "0_2",
+        "to": "0xffffffffffffffffffffffffffffffffffffffff",
+        "inputsCall": [],
+        "inputs": [
+          { "name": "user", "type": "address", "value": "0x1111111111111111111111111111111111111111" },
+          { "name": "amount", "type": "uint256", "value": 995 }
+        ],
+        "from": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gas": 20000,
+        "gasUsed": 8000,
+        "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value": 0,
+        "type": "CALL",
+        "depth": 0,
+        "activity": "logSwap",
+        "contractCalledName": "SwapLogger",
+        "calls": [],
+        "events": []
+      }
+    ],
+    "events": [
+      {
+        "eventName": "Swap",
+        "eventValues": {
+          "amountIn": 1000,
+          "amountOut": 995
+        },
+        "eventFrom": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "eventName": "Transfer",
+        "eventValues": {
+          "from": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "to": "0x1111111111111111111111111111111111111111",
+          "value": 995
+        },
+        "eventFrom": "0xcccccccccccccccccccccccccccccccccccccccc"
+      }
+    ]
+  }
+]

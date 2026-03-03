@@ -1,0 +1,111 @@
+{
+  "objectTypes": [
+    {
+      "name": "CA",
+      "attributes": []
+    },
+    {
+      "name": "ChoreographyInstance",
+      "attributes": []
+    },
+    {
+      "name": "EOA",
+      "attributes": []
+    },
+    {
+      "name": "approve call",
+      "attributes": [
+        {
+          "name": "amount",
+          "type": "string"
+        },
+        {
+          "name": "spender",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "approve",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "0x1111111111111111111111111111111111111111",
+      "type": "EOA"
+    },
+    {
+      "id": "0xcccccccccccccccccccccccccccccccccccccccc",
+      "type": "CA"
+    },
+    {
+      "id": "call:req:aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111:root",
+      "type": "approve call",
+      "attributes": [
+        {
+          "name": "spender",
+          "value": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "amount",
+          "value": "99999",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x1111111111111111111111111111111111111111",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xcccccccccccccccccccccccccccccccccccccccc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111",
+      "type": "ChoreographyInstance"
+    }
+  ],
+  "events": [
+    {
+      "id": "e:aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111:root",
+      "type": "approve",
+      "time": "2024-01-01T00:00:00.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x1111111111111111111111111111111111111111",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xcccccccccccccccccccccccccccccccccccccccc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    }
+  ]
+}

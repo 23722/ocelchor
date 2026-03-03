@@ -1,0 +1,753 @@
+[
+  {
+    "_id": {
+      "$oid": "68dbb7383fe3bea0db052db4"
+    },
+    "functionName": "propose",
+    "transactionHash": "0x41d1495f2c642821e6ead76c689ba9c6e8bfba91e6149a3c2eaa7d60e379b357",
+    "contractAddress": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+    "sender": "0xb8c2c29ee19d8307cb7255e1cd9cbde883a267d5",
+    "gasUsed": 139447,
+    "blockNumber": 13942537,
+    "timestamp": {
+      "$date": "2022-01-05T01:32:05Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "targets",
+        "type": "address[]",
+        "inputValue": "C18360217D8F7Ab5e7c516566761Ea12Ce7F9D72"
+      },
+      {
+        "inputName": "values",
+        "type": "uint256[]",
+        "inputValue": "0"
+      },
+      {
+        "inputName": "calldatas",
+        "type": "bytes[]",
+        "inputValue": "0x095ea7b30000000000000000000000004a1241c2cf2fd4a39918bcd738f90bd7094ec2dc000000000000000000000000000000000000000000002e700a82ee7da5733d9f"
+      },
+      {
+        "inputName": "description",
+        "type": "string",
+        "inputValue": "[EP2] Retrospective Airdrop \nEnacts EP2 as approved by Snapshot vote, and described in full here: https://github.com/ensdomains/governance-docs/blob/main/governance-proposals/ep2-executable-retrospective-airdrop-for-accounts-that-owned-another-accounts-primary-ens-1.md"
+      }
+    ],
+    "storageState": [],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "name": "account",
+            "type": "address",
+            "value": "b8c2C29ee19D8307cb7255e1Cd9CbDE883A267d5"
+          },
+          {
+            "name": "blockNumber",
+            "type": "uint256",
+            "value": 13942536
+          }
+        ],
+        "from": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+        "gas": 101986,
+        "gasUsed": 40309,
+        "output": "0x00000000000000000000000000000000000000000000440e4087ec6fdf7e9398",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": "getPastVotes",
+        "contractCalledName": "ENSToken",
+        "calls": []
+      }
+    ],
+    "events": [
+      {
+        "eventName": "ProposalCreated",
+        "eventValues": {
+          "0": 9.047652966536416e+76,
+          "1": "0xb8c2C29ee19D8307cb7255e1Cd9CbDE883A267d5",
+          "2": [
+            "0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72"
+          ],
+          "3": [
+            0
+          ],
+          "4": [
+            ""
+          ],
+          "5": [
+            "0x095ea7b30000000000000000000000004a1241c2cf2fd4a39918bcd738f90bd7094ec2dc000000000000000000000000000000000000000000002e700a82ee7da5733d9f"
+          ],
+          "6": 13942538,
+          "7": 13988356,
+          "8": "[EP2] Retrospective Airdrop \nEnacts EP2 as approved by Snapshot vote, and described in full here: https://github.com/ensdomains/governance-docs/blob/main/governance-proposals/ep2-executable-retrospective-airdrop-for-accounts-that-owned-another-accounts-primary-ens-1.md",
+          "__length__": 9,
+          "proposalId": 9.047652966536416e+76,
+          "proposer": "0xb8c2C29ee19D8307cb7255e1Cd9CbDE883A267d5",
+          "targets": [
+            "0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72"
+          ],
+          "values": [
+            0
+          ],
+          "signatures": [
+            ""
+          ],
+          "calldatas": [
+            "0x095ea7b30000000000000000000000004a1241c2cf2fd4a39918bcd738f90bd7094ec2dc000000000000000000000000000000000000000000002e700a82ee7da5733d9f"
+          ],
+          "startBlock": 13942538,
+          "endBlock": 13988356,
+          "description": "[EP2] Retrospective Airdrop \nEnacts EP2 as approved by Snapshot vote, and described in full here: https://github.com/ensdomains/governance-docs/blob/main/governance-proposals/ep2-executable-retrospective-airdrop-for-accounts-that-owned-another-accounts-primary-ens-1.md"
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68dbb742ed12cccb7ad8b324"
+    },
+    "functionName": "castVoteWithReason",
+    "transactionHash": "0xaf5fd531ad3596b996ed21503ca9e0db4e694e00ee7ac6c82d02e93ca8b8ddd3",
+    "contractAddress": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+    "sender": "0xb8c2c29ee19d8307cb7255e1cd9cbde883a267d5",
+    "gasUsed": 123336,
+    "blockNumber": 13942574,
+    "timestamp": {
+      "$date": "2022-01-05T01:40:25Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "proposalId",
+        "type": "uint256",
+        "inputValue": 9.047652966536416e+76
+      },
+      {
+        "inputName": "support",
+        "type": "uint8",
+        "inputValue": 1
+      },
+      {
+        "inputName": "reason",
+        "type": "string",
+        "inputValue": ""
+      }
+    ],
+    "storageState": [],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "name": "account",
+            "type": "address",
+            "value": "b8c2C29ee19D8307cb7255e1Cd9CbDE883A267d5"
+          },
+          {
+            "name": "blockNumber",
+            "type": "uint256",
+            "value": 13942538
+          }
+        ],
+        "from": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+        "gas": 87828,
+        "gasUsed": 40309,
+        "output": "0x00000000000000000000000000000000000000000000440e4087ec6fdf7e9398",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": "getPastVotes",
+        "contractCalledName": "ENSToken",
+        "calls": []
+      }
+    ],
+    "events": [
+      {
+        "eventName": "VoteCast",
+        "eventValues": {
+          "0": "0xb8c2C29ee19D8307cb7255e1Cd9CbDE883A267d5",
+          "1": 9.047652966536416e+76,
+          "2": 1,
+          "3": 3.2138382519727334e+23,
+          "4": "",
+          "__length__": 5,
+          "voter": "0xb8c2C29ee19D8307cb7255e1Cd9CbDE883A267d5",
+          "proposalId": 9.047652966536416e+76,
+          "support": 1,
+          "weight": 3.2138382519727334e+23,
+          "reason": ""
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68dbb7572c1ac11756fcaea3"
+    },
+    "functionName": "castVote",
+    "transactionHash": "0xb5b4ff8119a8ce6773ca49d185fcf442bc61b56873175cfdfd936719ab82c657",
+    "contractAddress": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+    "sender": "0x29a82e07b96c405ac99a8023f767d2971546de70",
+    "gasUsed": 87399,
+    "blockNumber": 13942596,
+    "timestamp": {
+      "$date": "2022-01-05T01:44:44Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "proposalId",
+        "type": "uint256",
+        "inputValue": 9.047652966536416e+76
+      },
+      {
+        "inputName": "support",
+        "type": "uint8",
+        "inputValue": 1
+      }
+    ],
+    "storageState": [],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "name": "account",
+            "type": "address",
+            "value": "29a82E07B96c405aC99a8023F767D2971546DE70"
+          },
+          {
+            "name": "blockNumber",
+            "type": "uint256",
+            "value": 13942538
+          }
+        ],
+        "from": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+        "gas": 54994,
+        "gasUsed": 22057,
+        "output": "0x0000000000000000000000000000000000000000000000a09733fa22c87e106e",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": "getPastVotes",
+        "contractCalledName": "ENSToken",
+        "calls": []
+      }
+    ],
+    "events": [
+      {
+        "eventName": "VoteCast",
+        "eventValues": {
+          "0": "0x29a82E07B96c405aC99a8023F767D2971546DE70",
+          "1": 9.047652966536416e+76,
+          "2": 1,
+          "3": 2.9623743787443673e+21,
+          "4": "",
+          "__length__": 5,
+          "voter": "0x29a82E07B96c405aC99a8023F767D2971546DE70",
+          "proposalId": 9.047652966536416e+76,
+          "support": 1,
+          "weight": 2.9623743787443673e+21,
+          "reason": ""
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68dbba576b329633c240febb"
+    },
+    "functionName": "queue",
+    "transactionHash": "0xc4b91a1f892e4bd4d4f8833aed2dd8ba7808d5602f65d540664234991ce6a24c",
+    "contractAddress": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+    "sender": "0xb6e040c9ecaae172a89bd561c5f73e1c48d28cd9",
+    "gasUsed": 135755,
+    "blockNumber": 13992807,
+    "timestamp": {
+      "$date": "2022-01-12T20:11:25Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "targets",
+        "type": "address[]",
+        "inputValue": "C18360217D8F7Ab5e7c516566761Ea12Ce7F9D72"
+      },
+      {
+        "inputName": "values",
+        "type": "uint256[]",
+        "inputValue": "0"
+      },
+      {
+        "inputName": "calldatas",
+        "type": "bytes[]",
+        "inputValue": "0x095ea7b30000000000000000000000004a1241c2cf2fd4a39918bcd738f90bd7094ec2dc000000000000000000000000000000000000000000002e700a82ee7da5733d9f"
+      },
+      {
+        "inputName": "descriptionHash",
+        "type": "bytes32",
+        "inputValue": "0xe0206fdbc2f792088b9b02d59c4ebe1978d846407263a453ef6cf4c914139aff"
+      }
+    ],
+    "storageState": [],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "name": "blockNumber",
+            "type": "uint256",
+            "value": 13942538
+          }
+        ],
+        "from": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+        "gas": 153222,
+        "gasUsed": 6556,
+        "output": "0x00000000000000000000000000000000000000000052b7d2dcc80cd2e4000000",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": "getPastTotalSupply",
+        "contractCalledName": "ENSToken",
+        "calls": []
+      },
+      {
+        "callId": "0_2",
+        "to": "0xfe89cc7abb2c4183683ab71653c4cdc9b02d44b7",
+        "inputsCall": [
+          "0xf27a0c92"
+        ],
+        "inputs": [],
+        "from": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+        "gas": 136377,
+        "gasUsed": 2569,
+        "output": "0x000000000000000000000000000000000000000000000000000000000002a300",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": "getMinDelay",
+        "contractCalledName": "TimelockController",
+        "calls": []
+      },
+      {
+        "callId": "0_3",
+        "to": "0xfe89cc7abb2c4183683ab71653c4cdc9b02d44b7",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "name": "targets",
+            "type": "address[]",
+            "value": [
+              "C18360217D8F7Ab5e7c516566761Ea12Ce7F9D72"
+            ]
+          },
+          {
+            "name": "values",
+            "type": "uint256[]",
+            "value": [
+              {
+                "_hex": "0x00",
+                "_isBigNumber": true
+              }
+            ]
+          },
+          {
+            "name": "datas",
+            "type": "bytes[]",
+            "value": [
+              "0x095ea7b30000000000000000000000004a1241c2cf2fd4a39918bcd738f90bd7094ec2dc000000000000000000000000000000000000000000002e700a82ee7da5733d9f"
+            ]
+          },
+          {
+            "name": "predecessor",
+            "type": "bytes32",
+            "value": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          {
+            "name": "salt",
+            "type": "bytes32",
+            "value": "0xe0206fdbc2f792088b9b02d59c4ebe1978d846407263a453ef6cf4c914139aff"
+          }
+        ],
+        "from": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+        "gas": 130439,
+        "gasUsed": 4051,
+        "output": "0xc252601bd3ffa2eb35ad74230cf0de8e7ffb5f44aa5b99cb58e522a926513d14",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": "hashOperationBatch",
+        "contractCalledName": "TimelockController",
+        "calls": []
+      },
+      {
+        "callId": "0_4",
+        "to": "0xfe89cc7abb2c4183683ab71653c4cdc9b02d44b7",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "name": "targets",
+            "type": "address[]",
+            "value": [
+              "C18360217D8F7Ab5e7c516566761Ea12Ce7F9D72"
+            ]
+          },
+          {
+            "name": "values",
+            "type": "uint256[]",
+            "value": [
+              {
+                "_hex": "0x00",
+                "_isBigNumber": true
+              }
+            ]
+          },
+          {
+            "name": "datas",
+            "type": "bytes[]",
+            "value": [
+              "0x095ea7b30000000000000000000000004a1241c2cf2fd4a39918bcd738f90bd7094ec2dc000000000000000000000000000000000000000000002e700a82ee7da5733d9f"
+            ]
+          },
+          {
+            "name": "predecessor",
+            "type": "bytes32",
+            "value": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          {
+            "name": "salt",
+            "type": "bytes32",
+            "value": "0xe0206fdbc2f792088b9b02d59c4ebe1978d846407263a453ef6cf4c914139aff"
+          },
+          {
+            "name": "delay",
+            "type": "uint256",
+            "value": 172800
+          }
+        ],
+        "from": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+        "gas": 103214,
+        "gasUsed": 35002,
+        "value": 0,
+        "type": "CALL",
+        "depth": 0,
+        "activity": "scheduleBatch",
+        "contractCalledName": "TimelockController",
+        "calls": []
+      }
+    ],
+    "events": [
+      {
+        "eventName": "ProposalQueued",
+        "eventValues": {
+          "0": 9.047652966536416e+76,
+          "1": 1642191085,
+          "__length__": 2,
+          "proposalId": 9.047652966536416e+76,
+          "eta": 1642191085
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68dbba601908b16c07720331"
+    },
+    "functionName": "execute",
+    "transactionHash": "0xe0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e",
+    "contractAddress": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+    "sender": "0xb6e040c9ecaae172a89bd561c5f73e1c48d28cd9",
+    "gasUsed": 134453,
+    "blockNumber": 14005716,
+    "timestamp": {
+      "$date": "2022-01-14T20:14:52Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "targets",
+        "type": "address[]",
+        "inputValue": "C18360217D8F7Ab5e7c516566761Ea12Ce7F9D72"
+      },
+      {
+        "inputName": "values",
+        "type": "uint256[]",
+        "inputValue": "0"
+      },
+      {
+        "inputName": "calldatas",
+        "type": "bytes[]",
+        "inputValue": "0x095ea7b30000000000000000000000004a1241c2cf2fd4a39918bcd738f90bd7094ec2dc000000000000000000000000000000000000000000002e700a82ee7da5733d9f"
+      },
+      {
+        "inputName": "descriptionHash",
+        "type": "bytes32",
+        "inputValue": "0xe0206fdbc2f792088b9b02d59c4ebe1978d846407263a453ef6cf4c914139aff"
+      }
+    ],
+    "storageState": [],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "name": "blockNumber",
+            "type": "uint256",
+            "value": 13942538
+          }
+        ],
+        "from": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+        "gas": 151876,
+        "gasUsed": 6556,
+        "output": "0x00000000000000000000000000000000000000000052b7d2dcc80cd2e4000000",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": "getPastTotalSupply",
+        "contractCalledName": "ENSToken",
+        "calls": []
+      },
+      {
+        "callId": "0_2",
+        "to": "0xfe89cc7abb2c4183683ab71653c4cdc9b02d44b7",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "name": "id",
+            "type": "bytes32",
+            "value": "0xc252601bd3ffa2eb35ad74230cf0de8e7ffb5f44aa5b99cb58e522a926513d14"
+          }
+        ],
+        "from": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+        "gas": 134984,
+        "gasUsed": 2880,
+        "output": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": "isOperationDone",
+        "contractCalledName": "TimelockController",
+        "calls": []
+      },
+      {
+        "callId": "0_3",
+        "to": "0xfe89cc7abb2c4183683ab71653c4cdc9b02d44b7",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "name": "targets",
+            "type": "address[]",
+            "value": [
+              "C18360217D8F7Ab5e7c516566761Ea12Ce7F9D72"
+            ]
+          },
+          {
+            "name": "values",
+            "type": "uint256[]",
+            "value": [
+              {
+                "_hex": "0x00",
+                "_isBigNumber": true
+              }
+            ]
+          },
+          {
+            "name": "datas",
+            "type": "bytes[]",
+            "value": [
+              "0x095ea7b30000000000000000000000004a1241c2cf2fd4a39918bcd738f90bd7094ec2dc000000000000000000000000000000000000000000002e700a82ee7da5733d9f"
+            ]
+          },
+          {
+            "name": "predecessor",
+            "type": "bytes32",
+            "value": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          {
+            "name": "salt",
+            "type": "bytes32",
+            "value": "0xe0206fdbc2f792088b9b02d59c4ebe1978d846407263a453ef6cf4c914139aff"
+          }
+        ],
+        "from": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+        "gas": 107352,
+        "gasUsed": 40993,
+        "value": 0,
+        "type": "CALL",
+        "depth": 0,
+        "activity": "executeBatch",
+        "contractCalledName": "TimelockController",
+        "calls": [
+          {
+            "from": "0xfe89cc7abb2c4183683ab71653c4cdc9b02d44b7",
+            "gas": 97809,
+            "gasUsed": 25317,
+            "to": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
+            "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "value": 0,
+            "type": "CALL",
+            "callId": "0_3_1",
+            "depth": 1,
+            "activity": "approve",
+            "contractCalledName": "ENSToken",
+            "inputs": [
+              {
+                "name": "spender",
+                "type": "address",
+                "value": "4A1241C2Cf2fD4a39918BCd738f90Bd7094eC2DC"
+              },
+              {
+                "name": "amount",
+                "type": "uint256",
+                "value": 2.1929565097816992e+23
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "eventName": "ProposalExecuted",
+        "eventValues": {
+          "0": 9.047652966536416e+76,
+          "__length__": 1,
+          "proposalId": 9.047652966536416e+76
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68dbbc3f2658a0409ece3ed5"
+    },
+    "functionName": "COUNTING_MODE",
+    "transactionHash": "0x90bcb52c9c9542cc9016d69b299977cf590d0a8ee3788d2b5f72e9671fe77208",
+    "contractAddress": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+    "sender": "0x1e9f72c28b227cbb56577dc6f693b95237ac0bfe",
+    "gasUsed": 21920,
+    "blockNumber": 14192536,
+    "timestamp": {
+      "$date": "2022-02-12T17:10:47Z"
+    },
+    "value": 0,
+    "inputs": [],
+    "storageState": [],
+    "internalTxs": [],
+    "events": []
+  },
+  {
+    "_id": {
+      "$oid": "68dbbc44939c70cf3d8bcb15"
+    },
+    "functionName": "votingDelay",
+    "transactionHash": "0xbd8c4f861ad2201f3e57d53ca13a600d14bd0c462f769a90519194d4e2d23a3d",
+    "contractAddress": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+    "sender": "0x1e9f72c28b227cbb56577dc6f693b95237ac0bfe",
+    "gasUsed": 21447,
+    "blockNumber": 14192563,
+    "timestamp": {
+      "$date": "2022-02-12T17:15:40Z"
+    },
+    "value": 0,
+    "inputs": [],
+    "storageState": [],
+    "internalTxs": [],
+    "events": []
+  },
+  {
+    "_id": {
+      "$oid": "68dbbc4a77a74e292c31a9d4"
+    },
+    "functionName": "votingPeriod",
+    "transactionHash": "0x01bd9ae905d5739b1f4cb2f861aed73472de38821d57e474fb250c77a0cd39f6",
+    "contractAddress": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+    "sender": "0x1e9f72c28b227cbb56577dc6f693b95237ac0bfe",
+    "gasUsed": 21470,
+    "blockNumber": 14192575,
+    "timestamp": {
+      "$date": "2022-02-12T17:17:51Z"
+    },
+    "value": 0,
+    "inputs": [],
+    "storageState": [],
+    "internalTxs": [],
+    "events": []
+  },
+  {
+    "_id": {
+      "$oid": "68de361610a7ad747377130f"
+    },
+    "functionName": "castVoteBySig",
+    "transactionHash": "0xf020f22c411810c95b92b8abb774779c4e6f7fe69465a23594b876ac84c2b50d",
+    "contractAddress": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+    "sender": "0xccdba906bab28603b2f53f07d8ae87affd063b07",
+    "gasUsed": 112635,
+    "blockNumber": 19585881,
+    "timestamp": {
+      "$date": "2024-04-05T00:10:35Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "proposalId",
+        "type": "uint256",
+        "inputValue": 4.883915168900195e+76
+      },
+      {
+        "inputName": "support",
+        "type": "uint8",
+        "inputValue": 1
+      },
+      {
+        "inputName": "v",
+        "type": "uint8",
+        "inputValue": 28
+      },
+      {
+        "inputName": "r",
+        "type": "bytes32",
+        "inputValue": "0x76eef65231147c2bcdacd6a463dfb99a4b96056578e50d1a8545eb8247dc73c9"
+      },
+      {
+        "inputName": "s",
+        "type": "bytes32",
+        "inputValue": "0x2a733e4fee5693acdd4cad5914e18ed32a313cf0d429279b91cce7627e31967f"
+      }
+    ],
+    "storageState": [],
+    "internalTxs": [],
+    "events": [
+      {
+        "eventName": "VoteCast",
+        "eventValues": {
+          "0": "0x809FA673fe2ab515FaA168259cB14E2BeDeBF68e",
+          "1": 4.883915168900195e+76,
+          "2": 1,
+          "3": 1.1090068734296582e+23,
+          "4": "",
+          "__length__": 5,
+          "voter": "0x809FA673fe2ab515FaA168259cB14E2BeDeBF68e",
+          "proposalId": 4.883915168900195e+76,
+          "support": 1,
+          "weight": 1.1090068734296582e+23,
+          "reason": ""
+        }
+      }
+    ]
+  }
+]

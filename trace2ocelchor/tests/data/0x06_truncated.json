@@ -1,0 +1,1701 @@
+[{
+  "_id": {
+    "$oid": "699b1fcdbc38a10b242dc4b7"
+  },
+  "functionName": "giveBirth",
+  "transactionHash": "0x50b516def1c2aab90da9c64250cf0a1302815aeb96e6be27341cfc0eae028bf5",
+  "contractAddress": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+  "sender": "0xab5622d7da96c571c6abe08e4b85e462eb666e4f",
+  "gasUsed": 350000,
+  "blockNumber": 18400074,
+  "timestamp": {
+    "$date": "2023-10-21T17:08:23.000Z"
+  },
+  "value": 0,
+  "inputs": [
+    {
+      "inputName": "_matronId",
+      "type": "uint256",
+      "inputValue": 2023370
+    }
+  ],
+  "storageState": [],
+  "internalTxs": [
+    {
+      "callId": "0_1",
+      "to": "0xb77feddb7e627a78140a2a32cac65a49ed1dba8e",
+      "inputsCall": [],
+      "inputs": [
+        {
+          "name": "_genes1",
+          "type": "uint256",
+          "value": 6.77989119269452e+71
+        },
+        {
+          "name": "_genes2",
+          "type": "uint256",
+          "value": 6.779891189609199e+71
+        },
+        {
+          "name": "_targetBlock",
+          "type": "uint256",
+          "value": 18400072
+        }
+      ],
+      "from": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+      "gas": 303110,
+      "gasUsed": 103870,
+      "output": "0x0000623c039ce7bdef739f9c77bde39ce78c631ce7393b4ed18ce38bd510016b",
+      "value": 0,
+      "type": "CALL",
+      "depth": 0,
+      "activity": "mixGenes",
+      "contractCalledName": "GeneScience",
+      "calls": [],
+      "events": [
+        {
+          "eventName": "Birth",
+          "eventValues": {
+            "0": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+            "1": 2023381,
+            "2": 2023370,
+            "3": 2021977,
+            "4": 6.77989119269452e+71,
+            "__length__": 5,
+            "owner": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+            "kittyId": 2023381,
+            "matronId": 2023370,
+            "sireId": 2021977,
+            "genes": 6.77989119269452e+71
+          },
+          "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+        },
+        {
+          "eventName": "Transfer",
+          "eventValues": {
+            "0": "0x0000000000000000000000000000000000000000",
+            "1": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+            "2": 2023381,
+            "__length__": 3,
+            "from": "0x0000000000000000000000000000000000000000",
+            "to": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+            "tokenId": 2023381
+          },
+          "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+        }
+      ]
+    },
+    {
+      "callId": "0_2",
+      "to": "0xab5622d7da96c571c6abe08e4b85e462eb666e4f",
+      "inputsCall": [],
+      "inputs": [],
+      "from": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+      "gas": 2300,
+      "gasUsed": 0,
+      "value": 8000000000000000,
+      "type": "CALL",
+      "depth": 0,
+      "activity": "transfer",
+      "calls": [],
+      "events": []
+    }
+  ],
+  "events": [
+    {
+      "eventName": "Birth",
+      "eventValues": {
+        "0": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+        "1": 2023381,
+        "2": 2023370,
+        "3": 2021977,
+        "4": 6.77989119269452e+71,
+        "__length__": 5,
+        "owner": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+        "kittyId": 2023381,
+        "matronId": 2023370,
+        "sireId": 2021977,
+        "genes": 6.77989119269452e+71
+      },
+      "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+    },
+    {
+      "eventName": "Transfer",
+      "eventValues": {
+        "0": "0x0000000000000000000000000000000000000000",
+        "1": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+        "2": 2023381,
+        "__length__": 3,
+        "from": "0x0000000000000000000000000000000000000000",
+        "to": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+        "tokenId": 2023381
+      },
+      "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699b1fdc468041be47dbd816"
+  },
+  "functionName": "giveBirth",
+  "transactionHash": "0x0f27ca5da306ad45fff6f90a0ce86f20770ee3600bd540d19dc24f9e4c4ceb33",
+  "contractAddress": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+  "sender": "0xab5622d7da96c571c6abe08e4b85e462eb666e4f",
+  "gasUsed": 350000,
+  "blockNumber": 18400151,
+  "timestamp": {
+    "$date": "2023-10-21T17:23:47.000Z"
+  },
+  "value": 0,
+  "inputs": [
+    {
+      "inputName": "_matronId",
+      "type": "uint256",
+      "inputValue": 2023276
+    }
+  ],
+  "storageState": [],
+  "internalTxs": [
+    {
+      "callId": "0_1",
+      "to": "0xb77feddb7e627a78140a2a32cac65a49ed1dba8e",
+      "inputsCall": [],
+      "inputs": [
+        {
+          "name": "_genes1",
+          "type": "uint256",
+          "value": 4.773126096649892e+71
+        },
+        {
+          "name": "_genes2",
+          "type": "uint256",
+          "value": 6.291577552205541e+71
+        },
+        {
+          "name": "_targetBlock",
+          "type": "uint256",
+          "value": 18400149
+        }
+      ],
+      "from": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+      "gas": 303110,
+      "gasUsed": 102759,
+      "output": "0x00004528c211c41b8f7582ee48eec5088913154528b9104c21810764b5a380e0",
+      "value": 0,
+      "type": "CALL",
+      "depth": 0,
+      "activity": "mixGenes",
+      "contractCalledName": "GeneScience",
+      "calls": [],
+      "events": [
+        {
+          "eventName": "Birth",
+          "eventValues": {
+            "0": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+            "1": 2023382,
+            "2": 2023276,
+            "3": 1039037,
+            "4": 4.773193336883459e+71,
+            "__length__": 5,
+            "owner": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+            "kittyId": 2023382,
+            "matronId": 2023276,
+            "sireId": 1039037,
+            "genes": 4.773193336883459e+71
+          },
+          "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+        },
+        {
+          "eventName": "Transfer",
+          "eventValues": {
+            "0": "0x0000000000000000000000000000000000000000",
+            "1": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+            "2": 2023382,
+            "__length__": 3,
+            "from": "0x0000000000000000000000000000000000000000",
+            "to": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+            "tokenId": 2023382
+          },
+          "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+        }
+      ]
+    },
+    {
+      "callId": "0_2",
+      "to": "0xab5622d7da96c571c6abe08e4b85e462eb666e4f",
+      "inputsCall": [],
+      "inputs": [],
+      "from": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+      "gas": 2300,
+      "gasUsed": 0,
+      "value": 8000000000000000,
+      "type": "CALL",
+      "depth": 0,
+      "activity": "transfer",
+      "calls": [],
+      "events": []
+    }
+  ],
+  "events": [
+    {
+      "eventName": "Birth",
+      "eventValues": {
+        "0": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+        "1": 2023382,
+        "2": 2023276,
+        "3": 1039037,
+        "4": 4.773193336883459e+71,
+        "__length__": 5,
+        "owner": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+        "kittyId": 2023382,
+        "matronId": 2023276,
+        "sireId": 1039037,
+        "genes": 4.773193336883459e+71
+      },
+      "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+    },
+    {
+      "eventName": "Transfer",
+      "eventValues": {
+        "0": "0x0000000000000000000000000000000000000000",
+        "1": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+        "2": 2023382,
+        "__length__": 3,
+        "from": "0x0000000000000000000000000000000000000000",
+        "to": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+        "tokenId": 2023382
+      },
+      "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699b1fe66a5a3d75329bd6d8"
+  },
+  "functionName": "breedWithAuto",
+  "transactionHash": "0x33b3fc21327143dd067f5e0b7bdc730c1cff6109fede1987af311e4933dbdb0a",
+  "contractAddress": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+  "sender": "0xc79fd9befd02ec67cab3ee2bae66976c182e4d31",
+  "gasUsed": 107494,
+  "blockNumber": 18400972,
+  "timestamp": {
+    "$date": "2023-10-21T20:08:59.000Z"
+  },
+  "value": 8000000000000000,
+  "inputs": [
+    {
+      "inputName": "_matronId",
+      "type": "uint256",
+      "inputValue": 2023381
+    },
+    {
+      "inputName": "_sireId",
+      "type": "uint256",
+      "inputValue": 2023120
+    }
+  ],
+  "storageState": [],
+  "internalTxs": [],
+  "events": [
+    {
+      "eventName": "Pregnant",
+      "eventValues": {
+        "0": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+        "1": 2023381,
+        "2": 2023120,
+        "3": 18441292,
+        "__length__": 4,
+        "owner": "0xC79Fd9BeFd02Ec67CaB3eE2Bae66976c182E4D31",
+        "matronId": 2023381,
+        "sireId": 2023120,
+        "cooldownEndBlock": 18441292
+      },
+      "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699b1fef0da849e213dd174e"
+  },
+  "functionName": "approve",
+  "transactionHash": "0xd32a746f520b4f82920a45b7108fce77e584f6a4eba60422d8e63b864d2f33d8",
+  "contractAddress": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+  "sender": "0xf0d65a2c1cfa6816570f82f729b8343046cf2081",
+  "gasUsed": 65642,
+  "blockNumber": 18401849,
+  "timestamp": {
+    "$date": "2023-10-21T23:05:35.000Z"
+  },
+  "value": 0,
+  "inputs": [
+    {
+      "inputName": "_to",
+      "type": "address",
+      "inputValue": "1E0049783F008A0085193E00003D00cd54003c71"
+    },
+    {
+      "inputName": "_tokenId",
+      "type": "uint256",
+      "inputValue": 1189540
+    }
+  ],
+  "storageState": [],
+  "internalTxs": [],
+  "events": [
+    {
+      "eventName": "Approval",
+      "eventValues": {
+        "0": "0xf0d65A2C1CFa6816570f82f729b8343046cf2081",
+        "1": "0x1E0049783F008A0085193E00003D00cd54003c71",
+        "2": 1189540,
+        "__length__": 3,
+        "owner": "0xf0d65A2C1CFa6816570f82f729b8343046cf2081",
+        "approved": "0x1E0049783F008A0085193E00003D00cd54003c71",
+        "tokenId": 1189540
+      },
+      "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699b1ff9fe358bb46e9eaaf1"
+  },
+  "functionName": "approve",
+  "transactionHash": "0xd14c828d3e7525c002b2f46ac5ffbedbedc708bf3df011afecdc3e9f6f33bf1f",
+  "contractAddress": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+  "sender": "0xf0d65a2c1cfa6816570f82f729b8343046cf2081",
+  "gasUsed": 65642,
+  "blockNumber": 18401856,
+  "timestamp": {
+    "$date": "2023-10-21T23:06:59.000Z"
+  },
+  "value": 0,
+  "inputs": [
+    {
+      "inputName": "_to",
+      "type": "address",
+      "inputValue": "1E0049783F008A0085193E00003D00cd54003c71"
+    },
+    {
+      "inputName": "_tokenId",
+      "type": "uint256",
+      "inputValue": 1544884
+    }
+  ],
+  "storageState": [],
+  "internalTxs": [],
+  "events": [
+    {
+      "eventName": "Approval",
+      "eventValues": {
+        "0": "0xf0d65A2C1CFa6816570f82f729b8343046cf2081",
+        "1": "0x1E0049783F008A0085193E00003D00cd54003c71",
+        "2": 1544884,
+        "__length__": 3,
+        "owner": "0xf0d65A2C1CFa6816570f82f729b8343046cf2081",
+        "approved": "0x1E0049783F008A0085193E00003D00cd54003c71",
+        "tokenId": 1544884
+      },
+      "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699b20033fa2259e6564a126"
+  },
+  "functionName": "breedWithAuto",
+  "transactionHash": "0x436191a005a505702e3be2020c7c7f58af856c6f7b71f4289d6d610df375558d",
+  "contractAddress": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+  "sender": "0x711c5bcca67bbe50b57bdfcf0f8e8f834ac05516",
+  "gasUsed": 111547,
+  "blockNumber": 18403493,
+  "timestamp": {
+    "$date": "2023-10-22T04:35:59.000Z"
+  },
+  "value": 8000000000000000,
+  "inputs": [
+    {
+      "inputName": "_matronId",
+      "type": "uint256",
+      "inputValue": 2016492
+    },
+    {
+      "inputName": "_sireId",
+      "type": "uint256",
+      "inputValue": 1888653
+    }
+  ],
+  "storageState": [],
+  "internalTxs": [],
+  "events": [
+    {
+      "eventName": "Pregnant",
+      "eventValues": {
+        "0": "0x711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516",
+        "1": 2016492,
+        "2": 1888653,
+        "3": 18415013,
+        "__length__": 4,
+        "owner": "0x711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516",
+        "matronId": 2016492,
+        "sireId": 1888653,
+        "cooldownEndBlock": 18415013
+      },
+      "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699b200dd6fc5b0fd3d2e1c7"
+  },
+  "functionName": "createSaleAuction",
+  "transactionHash": "0x0435b744aa5ca8967e1a69649a2cf27244232dbcc07ba7bd0e1b05ab2aecd224",
+  "contractAddress": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+  "sender": "0x711c5bcca67bbe50b57bdfcf0f8e8f834ac05516",
+  "gasUsed": 230628,
+  "blockNumber": 18403509,
+  "timestamp": {
+    "$date": "2023-10-22T04:39:11.000Z"
+  },
+  "value": 0,
+  "inputs": [
+    {
+      "inputName": "_kittyId",
+      "type": "uint256",
+      "inputValue": 2023380
+    },
+    {
+      "inputName": "_startingPrice",
+      "type": "uint256",
+      "inputValue": 10000000000000000
+    },
+    {
+      "inputName": "_endingPrice",
+      "type": "uint256",
+      "inputValue": 5000000000000000
+    },
+    {
+      "inputName": "_duration",
+      "type": "uint256",
+      "inputValue": 172800
+    }
+  ],
+  "storageState": [],
+  "internalTxs": [
+    {
+      "callId": "0_1",
+      "to": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+      "inputsCall": [],
+      "inputs": [
+        {
+          "name": "_tokenId",
+          "type": "uint256",
+          "value": 2023380
+        },
+        {
+          "name": "_startingPrice",
+          "type": "uint256",
+          "value": 10000000000000000
+        },
+        {
+          "name": "_endingPrice",
+          "type": "uint256",
+          "value": 5000000000000000
+        },
+        {
+          "name": "_duration",
+          "type": "uint256",
+          "value": 172800
+        },
+        {
+          "name": "_seller",
+          "type": "address",
+          "value": "711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516"
+        }
+      ],
+      "from": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+      "gas": 168802,
+      "gasUsed": 93046,
+      "value": 0,
+      "type": "CALL",
+      "depth": 0,
+      "activity": "createAuction",
+      "contractCalledName": "SaleClockAuction",
+      "calls": [
+        {
+          "from": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "gas": 162637,
+          "gasUsed": 19607,
+          "to": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "value": 0,
+          "type": "CALL",
+          "events": [
+            {
+              "eventName": "Transfer",
+              "eventValues": {
+                "0": "0x711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516",
+                "1": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+                "2": 2023380,
+                "__length__": 3,
+                "from": "0x711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516",
+                "to": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+                "tokenId": 2023380
+              },
+              "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+              "eventSignature": "75"
+            }
+          ],
+          "callId": "0_1_1",
+          "depth": 1,
+          "activity": "transferFrom",
+          "contractCalledName": "KittyCore",
+          "inputs": [
+            {
+              "name": "_from",
+              "type": "address",
+              "value": "711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516"
+            },
+            {
+              "name": "_to",
+              "type": "address",
+              "value": "b1690C08E213a35Ed9bAb7B318DE14420FB57d8C"
+            },
+            {
+              "name": "_tokenId",
+              "type": "uint256",
+              "value": 2023380
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "eventName": "AuctionCreated",
+          "eventValues": {
+            "0": 2023380,
+            "1": 10000000000000000,
+            "2": 5000000000000000,
+            "3": 172800,
+            "__length__": 4,
+            "tokenId": 2023380,
+            "startingPrice": 10000000000000000,
+            "endingPrice": 5000000000000000,
+            "duration": 172800
+          },
+          "eventFrom": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "eventName": "Transfer",
+      "eventValues": {
+        "0": "0x711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516",
+        "1": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+        "2": 2023380,
+        "__length__": 3,
+        "from": "0x711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516",
+        "to": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+        "tokenId": 2023380
+      },
+      "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+    },
+    {
+      "eventName": "AuctionCreated",
+      "eventValues": {
+        "0": 2023380,
+        "1": 10000000000000000,
+        "2": 5000000000000000,
+        "3": 172800,
+        "__length__": 4,
+        "tokenId": 2023380,
+        "startingPrice": 10000000000000000,
+        "endingPrice": 5000000000000000,
+        "duration": 172800
+      },
+      "eventFrom": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699b2017ba05997c7ef37969"
+  },
+  "functionName": "createSaleAuction",
+  "transactionHash": "0x3525920d7cceab1488ece0be83f8dbbf8984dbdb95887ac8231bd2d7a769b8c2",
+  "contractAddress": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+  "sender": "0x711c5bcca67bbe50b57bdfcf0f8e8f834ac05516",
+  "gasUsed": 230628,
+  "blockNumber": 18403521,
+  "timestamp": {
+    "$date": "2023-10-22T04:41:35.000Z"
+  },
+  "value": 0,
+  "inputs": [
+    {
+      "inputName": "_kittyId",
+      "type": "uint256",
+      "inputValue": 2023375
+    },
+    {
+      "inputName": "_startingPrice",
+      "type": "uint256",
+      "inputValue": 10000000000000000
+    },
+    {
+      "inputName": "_endingPrice",
+      "type": "uint256",
+      "inputValue": 5000000000000000
+    },
+    {
+      "inputName": "_duration",
+      "type": "uint256",
+      "inputValue": 172800
+    }
+  ],
+  "storageState": [],
+  "internalTxs": [
+    {
+      "callId": "0_1",
+      "to": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+      "inputsCall": [],
+      "inputs": [
+        {
+          "name": "_tokenId",
+          "type": "uint256",
+          "value": 2023375
+        },
+        {
+          "name": "_startingPrice",
+          "type": "uint256",
+          "value": 10000000000000000
+        },
+        {
+          "name": "_endingPrice",
+          "type": "uint256",
+          "value": 5000000000000000
+        },
+        {
+          "name": "_duration",
+          "type": "uint256",
+          "value": 172800
+        },
+        {
+          "name": "_seller",
+          "type": "address",
+          "value": "711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516"
+        }
+      ],
+      "from": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+      "gas": 168802,
+      "gasUsed": 93046,
+      "value": 0,
+      "type": "CALL",
+      "depth": 0,
+      "activity": "createAuction",
+      "contractCalledName": "SaleClockAuction",
+      "calls": [
+        {
+          "from": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "gas": 162637,
+          "gasUsed": 19607,
+          "to": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "value": 0,
+          "type": "CALL",
+          "events": [
+            {
+              "eventName": "Transfer",
+              "eventValues": {
+                "0": "0x711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516",
+                "1": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+                "2": 2023375,
+                "__length__": 3,
+                "from": "0x711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516",
+                "to": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+                "tokenId": 2023375
+              },
+              "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+              "eventSignature": "43"
+            }
+          ],
+          "callId": "0_1_1",
+          "depth": 1,
+          "activity": "transferFrom",
+          "contractCalledName": "KittyCore",
+          "inputs": [
+            {
+              "name": "_from",
+              "type": "address",
+              "value": "711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516"
+            },
+            {
+              "name": "_to",
+              "type": "address",
+              "value": "b1690C08E213a35Ed9bAb7B318DE14420FB57d8C"
+            },
+            {
+              "name": "_tokenId",
+              "type": "uint256",
+              "value": 2023375
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "eventName": "AuctionCreated",
+          "eventValues": {
+            "0": 2023375,
+            "1": 10000000000000000,
+            "2": 5000000000000000,
+            "3": 172800,
+            "__length__": 4,
+            "tokenId": 2023375,
+            "startingPrice": 10000000000000000,
+            "endingPrice": 5000000000000000,
+            "duration": 172800
+          },
+          "eventFrom": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "eventName": "Transfer",
+      "eventValues": {
+        "0": "0x711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516",
+        "1": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+        "2": 2023375,
+        "__length__": 3,
+        "from": "0x711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516",
+        "to": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+        "tokenId": 2023375
+      },
+      "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+    },
+    {
+      "eventName": "AuctionCreated",
+      "eventValues": {
+        "0": 2023375,
+        "1": 10000000000000000,
+        "2": 5000000000000000,
+        "3": 172800,
+        "__length__": 4,
+        "tokenId": 2023375,
+        "startingPrice": 10000000000000000,
+        "endingPrice": 5000000000000000,
+        "duration": 172800
+      },
+      "eventFrom": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699b2022eeb92a94385ae3e3"
+  },
+  "functionName": "createSaleAuction",
+  "transactionHash": "0x80be20313bdaf65c46e903c2ca48cfe196374f280388ae965c95dc7744f52a79",
+  "contractAddress": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+  "sender": "0x711c5bcca67bbe50b57bdfcf0f8e8f834ac05516",
+  "gasUsed": 230628,
+  "blockNumber": 18403528,
+  "timestamp": {
+    "$date": "2023-10-22T04:42:59.000Z"
+  },
+  "value": 0,
+  "inputs": [
+    {
+      "inputName": "_kittyId",
+      "type": "uint256",
+      "inputValue": 2023374
+    },
+    {
+      "inputName": "_startingPrice",
+      "type": "uint256",
+      "inputValue": 10000000000000000
+    },
+    {
+      "inputName": "_endingPrice",
+      "type": "uint256",
+      "inputValue": 5000000000000000
+    },
+    {
+      "inputName": "_duration",
+      "type": "uint256",
+      "inputValue": 172800
+    }
+  ],
+  "storageState": [],
+  "internalTxs": [
+    {
+      "callId": "0_1",
+      "to": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+      "inputsCall": [],
+      "inputs": [
+        {
+          "name": "_tokenId",
+          "type": "uint256",
+          "value": 2023374
+        },
+        {
+          "name": "_startingPrice",
+          "type": "uint256",
+          "value": 10000000000000000
+        },
+        {
+          "name": "_endingPrice",
+          "type": "uint256",
+          "value": 5000000000000000
+        },
+        {
+          "name": "_duration",
+          "type": "uint256",
+          "value": 172800
+        },
+        {
+          "name": "_seller",
+          "type": "address",
+          "value": "711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516"
+        }
+      ],
+      "from": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+      "gas": 168802,
+      "gasUsed": 93046,
+      "value": 0,
+      "type": "CALL",
+      "depth": 0,
+      "activity": "createAuction",
+      "contractCalledName": "SaleClockAuction",
+      "calls": [
+        {
+          "from": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "gas": 162637,
+          "gasUsed": 19607,
+          "to": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "value": 0,
+          "type": "CALL",
+          "events": [
+            {
+              "eventName": "Transfer",
+              "eventValues": {
+                "0": "0x711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516",
+                "1": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+                "2": 2023374,
+                "__length__": 3,
+                "from": "0x711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516",
+                "to": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+                "tokenId": 2023374
+              },
+              "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+              "eventSignature": "1442"
+            }
+          ],
+          "callId": "0_1_1",
+          "depth": 1,
+          "activity": "transferFrom",
+          "contractCalledName": "KittyCore",
+          "inputs": [
+            {
+              "name": "_from",
+              "type": "address",
+              "value": "711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516"
+            },
+            {
+              "name": "_to",
+              "type": "address",
+              "value": "b1690C08E213a35Ed9bAb7B318DE14420FB57d8C"
+            },
+            {
+              "name": "_tokenId",
+              "type": "uint256",
+              "value": 2023374
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "eventName": "AuctionCreated",
+          "eventValues": {
+            "0": 2023374,
+            "1": 10000000000000000,
+            "2": 5000000000000000,
+            "3": 172800,
+            "__length__": 4,
+            "tokenId": 2023374,
+            "startingPrice": 10000000000000000,
+            "endingPrice": 5000000000000000,
+            "duration": 172800
+          },
+          "eventFrom": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "eventName": "Transfer",
+      "eventValues": {
+        "0": "0x711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516",
+        "1": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+        "2": 2023374,
+        "__length__": 3,
+        "from": "0x711c5bCCa67BBe50B57BdfCF0f8E8f834AC05516",
+        "to": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+        "tokenId": 2023374
+      },
+      "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+    },
+    {
+      "eventName": "AuctionCreated",
+      "eventValues": {
+        "0": 2023374,
+        "1": 10000000000000000,
+        "2": 5000000000000000,
+        "3": 172800,
+        "__length__": 4,
+        "tokenId": 2023374,
+        "startingPrice": 10000000000000000,
+        "endingPrice": 5000000000000000,
+        "duration": 172800
+      },
+      "eventFrom": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699b202dcca846b8726ecea0"
+  },
+  "functionName": "createSaleAuction",
+  "transactionHash": "0x6d7885ee48a1c328070ebe1ca684c4a8d0fa5015764a002c71d92fa2d5ae8e37",
+  "contractAddress": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+  "sender": "0xfbcc2901c48c7cc8fda4511ee0c528cad22df8ca",
+  "gasUsed": 230664,
+  "blockNumber": 18404605,
+  "timestamp": {
+    "$date": "2023-10-22T08:19:47.000Z"
+  },
+  "value": 0,
+  "inputs": [
+    {
+      "inputName": "_kittyId",
+      "type": "uint256",
+      "inputValue": 511159
+    },
+    {
+      "inputName": "_startingPrice",
+      "type": "uint256",
+      "inputValue": 110000000000000000
+    },
+    {
+      "inputName": "_endingPrice",
+      "type": "uint256",
+      "inputValue": 99000000000000000
+    },
+    {
+      "inputName": "_duration",
+      "type": "uint256",
+      "inputValue": 7776000
+    }
+  ],
+  "storageState": [],
+  "internalTxs": [
+    {
+      "callId": "0_1",
+      "to": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+      "inputsCall": [],
+      "inputs": [
+        {
+          "name": "_tokenId",
+          "type": "uint256",
+          "value": 511159
+        },
+        {
+          "name": "_startingPrice",
+          "type": "uint256",
+          "value": 110000000000000000
+        },
+        {
+          "name": "_endingPrice",
+          "type": "uint256",
+          "value": 99000000000000000
+        },
+        {
+          "name": "_duration",
+          "type": "uint256",
+          "value": 7776000
+        },
+        {
+          "name": "_seller",
+          "type": "address",
+          "value": "FbCc2901C48c7CC8Fda4511Ee0c528Cad22dF8cA"
+        }
+      ],
+      "from": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+      "gas": 168814,
+      "gasUsed": 93046,
+      "value": 0,
+      "type": "CALL",
+      "depth": 0,
+      "activity": "createAuction",
+      "contractCalledName": "SaleClockAuction",
+      "calls": [
+        {
+          "from": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+          "gas": 162649,
+          "gasUsed": 19607,
+          "to": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "value": 0,
+          "type": "CALL",
+          "events": [
+            {
+              "eventName": "Transfer",
+              "eventValues": {
+                "0": "0xFbCc2901C48c7CC8Fda4511Ee0c528Cad22dF8cA",
+                "1": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+                "2": 511159,
+                "__length__": 3,
+                "from": "0xFbCc2901C48c7CC8Fda4511Ee0c528Cad22dF8cA",
+                "to": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+                "tokenId": 511159
+              },
+              "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+              "eventSignature": "43"
+            }
+          ],
+          "callId": "0_1_1",
+          "depth": 1,
+          "activity": "transferFrom",
+          "contractCalledName": "KittyCore",
+          "inputs": [
+            {
+              "name": "_from",
+              "type": "address",
+              "value": "FbCc2901C48c7CC8Fda4511Ee0c528Cad22dF8cA"
+            },
+            {
+              "name": "_to",
+              "type": "address",
+              "value": "b1690C08E213a35Ed9bAb7B318DE14420FB57d8C"
+            },
+            {
+              "name": "_tokenId",
+              "type": "uint256",
+              "value": 511159
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "eventName": "AuctionCreated",
+          "eventValues": {
+            "0": 511159,
+            "1": 110000000000000000,
+            "2": 99000000000000000,
+            "3": 7776000,
+            "__length__": 4,
+            "tokenId": 511159,
+            "startingPrice": 110000000000000000,
+            "endingPrice": 99000000000000000,
+            "duration": 7776000
+          },
+          "eventFrom": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "eventName": "Transfer",
+      "eventValues": {
+        "0": "0xFbCc2901C48c7CC8Fda4511Ee0c528Cad22dF8cA",
+        "1": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+        "2": 511159,
+        "__length__": 3,
+        "from": "0xFbCc2901C48c7CC8Fda4511Ee0c528Cad22dF8cA",
+        "to": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+        "tokenId": 511159
+      },
+      "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+    },
+    {
+      "eventName": "AuctionCreated",
+      "eventValues": {
+        "0": 511159,
+        "1": 110000000000000000,
+        "2": 99000000000000000,
+        "3": 7776000,
+        "__length__": 4,
+        "tokenId": 511159,
+        "startingPrice": 110000000000000000,
+        "endingPrice": 99000000000000000,
+        "duration": 7776000
+      },
+      "eventFrom": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699b20395c83fe973d820d40"
+  },
+  "functionName": "transfer",
+  "transactionHash": "0x771268bad7fd3a1e13684028b077f1e3980d876e9d5bd72873eb2441f57b613e",
+  "contractAddress": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+  "sender": "0x6e70355c1b1405e69dc3535d8f0808ede3397aac",
+  "gasUsed": 22000,
+  "blockNumber": 18404888,
+  "timestamp": {
+    "$date": "2023-10-22T09:16:47.000Z"
+  },
+  "value": 0,
+  "inputs": [
+    {
+      "inputName": "_to",
+      "type": "address",
+      "inputValue": "389b51880574cdda37e14CD95472b307dD0C2047"
+    },
+    {
+      "inputName": "_tokenId",
+      "type": "uint256",
+      "inputValue": 26567316
+    }
+  ],
+  "storageState": [],
+  "internalTxs": [],
+  "events": []
+},
+{
+  "_id": {
+    "$oid": "699b204b69c553aff5bc050e"
+  },
+  "functionName": "fulfillBasicOrder_efficient_6GL6yc",
+  "transactionHash": "0xe9d7bf7178a13cfd815eef37d6bc25064c3d4fc10c0a730edb2e07996fd42044",
+  "contractAddress": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
+  "sender": "0x348eda2adb19c4130b405ecc782c7bd4ed97ac6c",
+  "gasUsed": 167547,
+  "blockNumber": 18404891,
+  "timestamp": {
+    "$date": "2023-10-22T09:17:23.000Z"
+  },
+  "value": 15500000000000000,
+  "inputs": [
+    {
+      "inputName": "parameters,considerationToken,considerationIdentifier,considerationAmount,offerer,zone,offerToken,offerIdentifier,offerAmount,basicOrderType,startTime,endTime,zoneHash,salt,offererConduitKey,fulfillerConduitKey,totalOriginalAdditionalRecipients,additionalRecipients,signature",
+      "type": "(address,uint256,uint256,address,address,address,uint256,uint256,uint8,uint256,uint256,bytes32,uint256,bytes32,bytes32,uint256,tuple[],bytes)",
+      "inputValue": "0x0000000000000000000000000000000000000000,0,15112500000000000,0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4,0x004C00500000aD104D7DBd00e3ae0A5C00560C00,0x06012c8cf97BEaD5deAe237070F9587f8E7A266d,1687296,1,0,1697964457,1713309498,0x0000000000000000000000000000000000000000000000000000000000000000,2.444686030276174e+76,0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000,0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000,1,387500000000000,0x0000a26b00c1F0DF003000390027140000fAa719,0x613a24b50c21e8f4b9a9ab0c21148fe42e9b061b627c8b480b913a6864a4da2120174322eec9ba3a821bc9687ae9d6e25793b0851c6020f7a59502784b3453e6"
+    }
+  ],
+  "storageState": [],
+  "internalTxs": [
+    {
+      "callId": "0_1",
+      "to": "0x0000000000000000000000000000000000000001",
+      "inputsCall": [],
+      "inputs": [],
+      "from": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
+      "gas": 119312,
+      "gasUsed": 3000,
+      "output": "0x00000000000000000000000091e04c5fe50a02440d822092f87ae6b8b957f4d4",
+      "value": 0,
+      "type": "STATICCALL",
+      "depth": 0,
+      "activity": "0xf2c92568",
+      "calls": [],
+      "events": [
+        {
+          "eventName": "OrderFulfilled",
+          "eventValues": {
+            "0": "0xe47b885d87e0fb8e3f28972ce960ae2b7acdd0597ffd553249c958c66cf24259",
+            "1": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4",
+            "2": "0x004C00500000aD104D7DBd00e3ae0A5C00560C00",
+            "3": "0x348EDA2AdB19C4130B405eCc782c7bD4Ed97ac6C",
+            "4": [
+              {
+                "0": {
+                  "$numberLong": "2"
+                },
+                "1": "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d",
+                "2": {
+                  "$numberLong": "1687296"
+                },
+                "3": {
+                  "$numberLong": "1"
+                },
+                "__length__": 4,
+                "itemType": {
+                  "$numberLong": "2"
+                },
+                "token": "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d",
+                "identifier": {
+                  "$numberLong": "1687296"
+                },
+                "amount": {
+                  "$numberLong": "1"
+                }
+              }
+            ],
+            "5": [
+              {
+                "0": {
+                  "$numberLong": "0"
+                },
+                "1": "0x0000000000000000000000000000000000000000",
+                "2": {
+                  "$numberLong": "0"
+                },
+                "3": {
+                  "$numberLong": "15112500000000000"
+                },
+                "4": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4",
+                "__length__": 5,
+                "itemType": {
+                  "$numberLong": "0"
+                },
+                "token": "0x0000000000000000000000000000000000000000",
+                "identifier": {
+                  "$numberLong": "0"
+                },
+                "amount": {
+                  "$numberLong": "15112500000000000"
+                },
+                "recipient": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4"
+              },
+              {
+                "0": {
+                  "$numberLong": "0"
+                },
+                "1": "0x0000000000000000000000000000000000000000",
+                "2": {
+                  "$numberLong": "0"
+                },
+                "3": {
+                  "$numberLong": "387500000000000"
+                },
+                "4": "0x0000a26b00c1F0DF003000390027140000fAa719",
+                "__length__": 5,
+                "itemType": {
+                  "$numberLong": "0"
+                },
+                "token": "0x0000000000000000000000000000000000000000",
+                "identifier": {
+                  "$numberLong": "0"
+                },
+                "amount": {
+                  "$numberLong": "387500000000000"
+                },
+                "recipient": "0x0000a26b00c1F0DF003000390027140000fAa719"
+              }
+            ],
+            "__length__": 6,
+            "orderHash": "0xe47b885d87e0fb8e3f28972ce960ae2b7acdd0597ffd553249c958c66cf24259",
+            "offerer": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4",
+            "zone": "0x004C00500000aD104D7DBd00e3ae0A5C00560C00",
+            "recipient": "0x348EDA2AdB19C4130B405eCc782c7bD4Ed97ac6C",
+            "offer": [
+              {
+                "0": {
+                  "$numberLong": "2"
+                },
+                "1": "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d",
+                "2": {
+                  "$numberLong": "1687296"
+                },
+                "3": {
+                  "$numberLong": "1"
+                },
+                "__length__": 4,
+                "itemType": {
+                  "$numberLong": "2"
+                },
+                "token": "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d",
+                "identifier": {
+                  "$numberLong": "1687296"
+                },
+                "amount": {
+                  "$numberLong": "1"
+                }
+              }
+            ],
+            "consideration": [
+              {
+                "0": {
+                  "$numberLong": "0"
+                },
+                "1": "0x0000000000000000000000000000000000000000",
+                "2": {
+                  "$numberLong": "0"
+                },
+                "3": {
+                  "$numberLong": "15112500000000000"
+                },
+                "4": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4",
+                "__length__": 5,
+                "itemType": {
+                  "$numberLong": "0"
+                },
+                "token": "0x0000000000000000000000000000000000000000",
+                "identifier": {
+                  "$numberLong": "0"
+                },
+                "amount": {
+                  "$numberLong": "15112500000000000"
+                },
+                "recipient": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4"
+              },
+              {
+                "0": {
+                  "$numberLong": "0"
+                },
+                "1": "0x0000000000000000000000000000000000000000",
+                "2": {
+                  "$numberLong": "0"
+                },
+                "3": {
+                  "$numberLong": "387500000000000"
+                },
+                "4": "0x0000a26b00c1F0DF003000390027140000fAa719",
+                "__length__": 5,
+                "itemType": {
+                  "$numberLong": "0"
+                },
+                "token": "0x0000000000000000000000000000000000000000",
+                "identifier": {
+                  "$numberLong": "0"
+                },
+                "amount": {
+                  "$numberLong": "387500000000000"
+                },
+                "recipient": "0x0000a26b00c1F0DF003000390027140000fAa719"
+              }
+            ]
+          },
+          "eventFrom": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc"
+        }
+      ]
+    },
+    {
+      "callId": "0_2",
+      "to": "0x1e0049783f008a0085193e00003d00cd54003c71",
+      "inputsCall": [],
+      "inputs": [
+        {
+          "name": [
+            "transfers",
+            [
+              "itemType",
+              "token",
+              "from",
+              "to",
+              "identifier",
+              "amount"
+            ]
+          ],
+          "type": "(uint8,address,address,address,uint256,uint256)[]",
+          "value": [
+            [
+              2,
+              "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d",
+              "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4",
+              "0x348EDA2AdB19C4130B405eCc782c7bD4Ed97ac6C",
+              {
+                "_hex": "0x19bf00",
+                "_isBigNumber": true
+              },
+              {
+                "_hex": "0x01",
+                "_isBigNumber": true
+              }
+            ]
+          ]
+        }
+      ],
+      "from": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
+      "gas": 93387,
+      "gasUsed": 34523,
+      "output": "0x4ce34aa200000000000000000000000000000000000000000000000000000000",
+      "value": 0,
+      "type": "CALL",
+      "depth": 0,
+      "activity": "execute",
+      "contractCalledName": "Conduit",
+      "calls": [
+        {
+          "from": "0x1e0049783f008a0085193e00003d00cd54003c71",
+          "gas": 86021,
+          "gasUsed": 28407,
+          "to": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "value": 0,
+          "type": "CALL",
+          "events": [
+            {
+              "eventName": "Transfer",
+              "eventValues": {
+                "0": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4",
+                "1": "0x348EDA2AdB19C4130B405eCc782c7bD4Ed97ac6C",
+                "2": 1687296,
+                "__length__": 3,
+                "from": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4",
+                "to": "0x348EDA2AdB19C4130B405eCc782c7bD4Ed97ac6C",
+                "tokenId": 1687296
+              },
+              "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+              "eventSignature": "324"
+            }
+          ],
+          "callId": "0_2_1",
+          "depth": 1,
+          "activity": "transferFrom",
+          "contractCalledName": "KittyCore",
+          "inputs": [
+            {
+              "name": "_from",
+              "type": "address",
+              "value": "91e04C5fe50A02440D822092F87Ae6B8B957f4D4"
+            },
+            {
+              "name": "_to",
+              "type": "address",
+              "value": "348EDA2AdB19C4130B405eCc782c7bD4Ed97ac6C"
+            },
+            {
+              "name": "_tokenId",
+              "type": "uint256",
+              "value": 1687296
+            }
+          ]
+        }
+      ],
+      "events": []
+    },
+    {
+      "callId": "0_3",
+      "to": "0x0000a26b00c1f0df003000390027140000faa719",
+      "inputsCall": [],
+      "inputs": [],
+      "from": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
+      "gas": 49999,
+      "gasUsed": 85,
+      "value": 387500000000000,
+      "type": "CALL",
+      "depth": 0,
+      "activity": "transfer",
+      "contractCalledName": "PayableProxy",
+      "calls": [],
+      "events": []
+    },
+    {
+      "callId": "0_4",
+      "to": "0x91e04c5fe50a02440d822092f87ae6b8b957f4d4",
+      "inputsCall": [],
+      "inputs": [],
+      "from": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
+      "gas": 40582,
+      "gasUsed": 0,
+      "value": {
+        "$numberLong": "15112500000000000"
+      },
+      "type": "CALL",
+      "depth": 0,
+      "activity": "transfer",
+      "calls": [],
+      "events": []
+    }
+  ],
+  "events": [
+    {
+      "eventName": "OrderFulfilled",
+      "eventValues": {
+        "0": "0xe47b885d87e0fb8e3f28972ce960ae2b7acdd0597ffd553249c958c66cf24259",
+        "1": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4",
+        "2": "0x004C00500000aD104D7DBd00e3ae0A5C00560C00",
+        "3": "0x348EDA2AdB19C4130B405eCc782c7bD4Ed97ac6C",
+        "4": [
+          {
+            "0": {
+              "$numberLong": "2"
+            },
+            "1": "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d",
+            "2": {
+              "$numberLong": "1687296"
+            },
+            "3": {
+              "$numberLong": "1"
+            },
+            "__length__": 4,
+            "itemType": {
+              "$numberLong": "2"
+            },
+            "token": "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d",
+            "identifier": {
+              "$numberLong": "1687296"
+            },
+            "amount": {
+              "$numberLong": "1"
+            }
+          }
+        ],
+        "5": [
+          {
+            "0": {
+              "$numberLong": "0"
+            },
+            "1": "0x0000000000000000000000000000000000000000",
+            "2": {
+              "$numberLong": "0"
+            },
+            "3": {
+              "$numberLong": "15112500000000000"
+            },
+            "4": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4",
+            "__length__": 5,
+            "itemType": {
+              "$numberLong": "0"
+            },
+            "token": "0x0000000000000000000000000000000000000000",
+            "identifier": {
+              "$numberLong": "0"
+            },
+            "amount": {
+              "$numberLong": "15112500000000000"
+            },
+            "recipient": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4"
+          },
+          {
+            "0": {
+              "$numberLong": "0"
+            },
+            "1": "0x0000000000000000000000000000000000000000",
+            "2": {
+              "$numberLong": "0"
+            },
+            "3": {
+              "$numberLong": "387500000000000"
+            },
+            "4": "0x0000a26b00c1F0DF003000390027140000fAa719",
+            "__length__": 5,
+            "itemType": {
+              "$numberLong": "0"
+            },
+            "token": "0x0000000000000000000000000000000000000000",
+            "identifier": {
+              "$numberLong": "0"
+            },
+            "amount": {
+              "$numberLong": "387500000000000"
+            },
+            "recipient": "0x0000a26b00c1F0DF003000390027140000fAa719"
+          }
+        ],
+        "__length__": 6,
+        "orderHash": "0xe47b885d87e0fb8e3f28972ce960ae2b7acdd0597ffd553249c958c66cf24259",
+        "offerer": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4",
+        "zone": "0x004C00500000aD104D7DBd00e3ae0A5C00560C00",
+        "recipient": "0x348EDA2AdB19C4130B405eCc782c7bD4Ed97ac6C",
+        "offer": [
+          {
+            "0": {
+              "$numberLong": "2"
+            },
+            "1": "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d",
+            "2": {
+              "$numberLong": "1687296"
+            },
+            "3": {
+              "$numberLong": "1"
+            },
+            "__length__": 4,
+            "itemType": {
+              "$numberLong": "2"
+            },
+            "token": "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d",
+            "identifier": {
+              "$numberLong": "1687296"
+            },
+            "amount": {
+              "$numberLong": "1"
+            }
+          }
+        ],
+        "consideration": [
+          {
+            "0": {
+              "$numberLong": "0"
+            },
+            "1": "0x0000000000000000000000000000000000000000",
+            "2": {
+              "$numberLong": "0"
+            },
+            "3": {
+              "$numberLong": "15112500000000000"
+            },
+            "4": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4",
+            "__length__": 5,
+            "itemType": {
+              "$numberLong": "0"
+            },
+            "token": "0x0000000000000000000000000000000000000000",
+            "identifier": {
+              "$numberLong": "0"
+            },
+            "amount": {
+              "$numberLong": "15112500000000000"
+            },
+            "recipient": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4"
+          },
+          {
+            "0": {
+              "$numberLong": "0"
+            },
+            "1": "0x0000000000000000000000000000000000000000",
+            "2": {
+              "$numberLong": "0"
+            },
+            "3": {
+              "$numberLong": "387500000000000"
+            },
+            "4": "0x0000a26b00c1F0DF003000390027140000fAa719",
+            "__length__": 5,
+            "itemType": {
+              "$numberLong": "0"
+            },
+            "token": "0x0000000000000000000000000000000000000000",
+            "identifier": {
+              "$numberLong": "0"
+            },
+            "amount": {
+              "$numberLong": "387500000000000"
+            },
+            "recipient": "0x0000a26b00c1F0DF003000390027140000fAa719"
+          }
+        ]
+      },
+      "eventFrom": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc"
+    },
+    {
+      "eventName": "Transfer",
+      "eventValues": {
+        "0": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4",
+        "1": "0x348EDA2AdB19C4130B405eCc782c7bD4Ed97ac6C",
+        "2": 1687296,
+        "__length__": 3,
+        "from": "0x91e04C5fe50A02440D822092F87Ae6B8B957f4D4",
+        "to": "0x348EDA2AdB19C4130B405eCc782c7bD4Ed97ac6C",
+        "tokenId": 1687296
+      },
+      "eventFrom": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+    }
+  ]
+}
+]

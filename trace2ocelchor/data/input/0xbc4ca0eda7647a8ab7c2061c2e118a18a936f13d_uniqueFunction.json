@@ -1,0 +1,644 @@
+[
+  {
+    "_id": {
+      "$oid": "69a5ce8b84a054d3b71929fb"
+    },
+    "functionName": "setApprovalForAll",
+    "transactionHash": "0x26988083aad88f5837ff785266414d26e1386e70958fba7849ea7ffd661d148b",
+    "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "sender": "0x5c48b927f2488e5b0b15bbac6721b1e6dc007d68",
+    "gasUsed": 46280,
+    "blockNumber": 12345393,
+    "timestamp": {
+      "$date": "2021-05-01T01:37:04.000Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "operator",
+        "type": "address",
+        "inputValue": "32a82b784d92dFDDeeb8240a4D35F2b82Ba80d3A"
+      },
+      {
+        "inputName": "approved",
+        "type": "bool",
+        "inputValue": true
+      }
+    ],
+    "storageState": [
+      {
+        "variableName": "_operatorApprovals",
+        "type": "t_bool",
+        "variableValue": "true",
+        "variableRawValue": "0000000000000000000000000000000000000000000000000000000000000001"
+      }
+    ],
+    "internalTxs": [],
+    "events": [
+      {
+        "eventName": "ApprovalForAll",
+        "eventValues": {
+          "0": "0x5c48B927F2488e5B0b15bbAc6721b1e6dc007d68",
+          "1": "0x32a82b784d92dFDDeeb8240a4D35F2b82Ba80d3A",
+          "2": true,
+          "__length__": 3,
+          "owner": "0x5c48B927F2488e5B0b15bbAc6721b1e6dc007d68",
+          "operator": "0x32a82b784d92dFDDeeb8240a4D35F2b82Ba80d3A",
+          "approved": true
+        },
+        "eventFrom": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "69a5ce904890353a4f9856c3"
+    },
+    "functionName": "mintApe",
+    "transactionHash": "0x49a405c0a520b39996458fa4c74cfc63e7299d01d1c52d3bbe11452796a0de2c",
+    "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "sender": "0x6d938cbe86b4763691f702577d4046f656acb3c8",
+    "gasUsed": 385662,
+    "blockNumber": 12345405,
+    "timestamp": {
+      "$date": "2021-05-01T01:39:47.000Z"
+    },
+    "value": 240000000000000000,
+    "inputs": [
+      {
+        "inputName": "numberOfTokens",
+        "type": "uint256",
+        "inputValue": 3
+      }
+    ],
+    "storageState": [
+      {
+        "variableName": "saleIsActive",
+        "type": "t_bool",
+        "variableValue": "true",
+        "variableRawValue": "0000000000000000000000000000000000000000000000000000000000000001"
+      },
+      {
+        "variableName": "MAX_APES",
+        "type": "t_uint256",
+        "variableValue": "10000",
+        "variableRawValue": "0000000000000000000000000000000000000000000000000000000000002710"
+      },
+      {
+        "variableName": "startingIndexBlock",
+        "type": "t_uint256",
+        "variableValue": "12344391",
+        "variableRawValue": "0000000000000000000000000000000000000000000000000000000000bc5c47"
+      }
+    ],
+    "internalTxs": [],
+    "events": [
+      {
+        "eventName": "Transfer",
+        "eventValues": {
+          "0": "0x0000000000000000000000000000000000000000",
+          "1": "0x6D938CbE86b4763691f702577d4046F656aCb3c8",
+          "2": 762,
+          "__length__": 3,
+          "from": "0x0000000000000000000000000000000000000000",
+          "to": "0x6D938CbE86b4763691f702577d4046F656aCb3c8",
+          "tokenId": 762
+        },
+        "eventFrom": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+      },
+      {
+        "eventName": "Transfer",
+        "eventValues": {
+          "0": "0x0000000000000000000000000000000000000000",
+          "1": "0x6D938CbE86b4763691f702577d4046F656aCb3c8",
+          "2": 763,
+          "__length__": 3,
+          "from": "0x0000000000000000000000000000000000000000",
+          "to": "0x6D938CbE86b4763691f702577d4046F656aCb3c8",
+          "tokenId": 763
+        },
+        "eventFrom": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+      },
+      {
+        "eventName": "Transfer",
+        "eventValues": {
+          "0": "0x0000000000000000000000000000000000000000",
+          "1": "0x6D938CbE86b4763691f702577d4046F656aCb3c8",
+          "2": 764,
+          "__length__": 3,
+          "from": "0x0000000000000000000000000000000000000000",
+          "to": "0x6D938CbE86b4763691f702577d4046F656aCb3c8",
+          "tokenId": 764
+        },
+        "eventFrom": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "69a5ced30cec0359a13c29c6"
+    },
+    "functionName": "transferFrom",
+    "transactionHash": "0x58ef5000df3fc85dd4e9479c6072903bffe5b03df937ae3bee71a7657e447fed",
+    "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "sender": "0x6c8917547a0dd8d3a9658de9176837cfa9dd8933",
+    "gasUsed": 104399,
+    "blockNumber": 12345528,
+    "timestamp": {
+      "$date": "2021-05-01T02:10:58.000Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "from",
+        "type": "address",
+        "inputValue": "6C8917547A0Dd8d3A9658DE9176837cFa9dd8933"
+      },
+      {
+        "inputName": "to",
+        "type": "address",
+        "inputValue": "d5A771Da32A392036a98f7DA6b11D46D6D1c61f9"
+      },
+      {
+        "inputName": "tokenId",
+        "type": "uint256",
+        "inputValue": 783
+      }
+    ],
+    "storageState": [
+      {
+        "variableName": "_tokenApprovals",
+        "type": "t_address",
+        "variableValue": "0x0000000000000000000000000000000000000000",
+        "variableRawValue": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ],
+    "internalTxs": [],
+    "events": [
+      {
+        "eventName": "Approval",
+        "eventValues": {
+          "0": "0x6C8917547A0Dd8d3A9658DE9176837cFa9dd8933",
+          "1": "0x0000000000000000000000000000000000000000",
+          "2": 783,
+          "__length__": 3,
+          "owner": "0x6C8917547A0Dd8d3A9658DE9176837cFa9dd8933",
+          "approved": "0x0000000000000000000000000000000000000000",
+          "tokenId": 783
+        },
+        "eventFrom": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+      },
+      {
+        "eventName": "Transfer",
+        "eventValues": {
+          "0": "0x6C8917547A0Dd8d3A9658DE9176837cFa9dd8933",
+          "1": "0xd5A771Da32A392036a98f7DA6b11D46D6D1c61f9",
+          "2": 783,
+          "__length__": 3,
+          "from": "0x6C8917547A0Dd8d3A9658DE9176837cFa9dd8933",
+          "to": "0xd5A771Da32A392036a98f7DA6b11D46D6D1c61f9",
+          "tokenId": 783
+        },
+        "eventFrom": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "69a5dd308ca2206c575d2775"
+    },
+    "functionName": "withdraw",
+    "transactionHash": "0x522998f05ffb2c891201c6975193aa30b40c44e95bfa45bda54095ad68b79f7a",
+    "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "sender": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+    "gasUsed": 30456,
+    "blockNumber": 12347079,
+    "timestamp": {
+      "$date": "2021-05-01T07:56:32.000Z"
+    },
+    "value": 0,
+    "inputs": [],
+    "storageState": [
+      {
+        "variableName": "_owner",
+        "type": "t_address",
+        "variableValue": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "variableRawValue": "000000000000000000000000aba7161a7fb69c88e16ed9f455ce62b791ee4d03"
+      }
+    ],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "inputsCall": [],
+        "inputs": [],
+        "from": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "gas": 2300,
+        "gasUsed": 0,
+        "value": {
+          "$numberLong": "-755113695319687168"
+        },
+        "type": "CALL",
+        "depth": 0,
+        "activity": "transfer",
+        "calls": [],
+        "events": []
+      }
+    ],
+    "events": []
+  },
+  {
+    "_id": {
+      "$oid": "69a61e8e6ca972c7f801a048"
+    },
+    "functionName": "approve",
+    "transactionHash": "0xb074c849aa617527af660f7a34f0d65d3018f4773c3c8d97098635138b23f63e",
+    "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "sender": "0x3df03ae2b4e5a2b82192031e13bca98a7e3fcc18",
+    "gasUsed": 53811,
+    "blockNumber": 12347802,
+    "timestamp": {
+      "$date": "2021-05-01T10:44:40.000Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "to",
+        "type": "address",
+        "inputValue": "552EDC011F67715CeA72B6798Fd865F0705B8795"
+      },
+      {
+        "inputName": "tokenId",
+        "type": "uint256",
+        "inputValue": 1097
+      }
+    ],
+    "storageState": [
+      {
+        "variableName": "_tokenApprovals",
+        "type": "t_address",
+        "variableValue": "0x552edc011f67715cea72b6798fd865f0705b8795",
+        "variableRawValue": "000000000000000000000000552edc011f67715cea72b6798fd865f0705b8795"
+      }
+    ],
+    "internalTxs": [],
+    "events": [
+      {
+        "eventName": "Approval",
+        "eventValues": {
+          "0": "0x3dF03aE2b4e5A2B82192031E13Bca98a7e3fcC18",
+          "1": "0x552EDC011F67715CeA72B6798Fd865F0705B8795",
+          "2": 1097,
+          "__length__": 3,
+          "owner": "0x3dF03aE2b4e5A2B82192031E13Bca98a7e3fcC18",
+          "approved": "0x552EDC011F67715CeA72B6798Fd865F0705B8795",
+          "tokenId": 1097
+        },
+        "eventFrom": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "69a61f25c5514ba332a0255e"
+    },
+    "functionName": "safeTransferFrom",
+    "transactionHash": "0xe0d03075e2762324c035f21e81c51e320e81be1886f2a3130887cfc7da666985",
+    "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "sender": "0x887b86b6b6957f7bbea88b8cefd392f39236a88c",
+    "gasUsed": 199925,
+    "blockNumber": 12348142,
+    "timestamp": {
+      "$date": "2021-05-01T11:54:17.000Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "from",
+        "type": "address",
+        "inputValue": "887b86B6B6957F7bbeA88B8CEfD392f39236A88C"
+      },
+      {
+        "inputName": "to",
+        "type": "address",
+        "inputValue": "7C15561590FC9eB063B3803b55165633eEf207ec"
+      },
+      {
+        "inputName": "tokenId",
+        "type": "uint256",
+        "inputValue": 6272
+      },
+      {
+        "inputName": "_data",
+        "type": "bytes",
+        "inputValue": "0x887b86b6b6957f7bbea88b8cefd392f39236a88c"
+      }
+    ],
+    "storageState": [
+      {
+        "variableName": "_tokenApprovals",
+        "type": "t_address",
+        "variableValue": "0x0000000000000000000000000000000000000000",
+        "variableRawValue": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0x7c15561590fc9eb063b3803b55165633eef207ec",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "value": "0x887b86B6B6957F7bbeA88B8CEfD392f39236A88C",
+            "name": "address",
+            "type": "address"
+          },
+          {
+            "value": "0x887b86B6B6957F7bbeA88B8CEfD392f39236A88C",
+            "name": "address",
+            "type": "address"
+          },
+          {
+            "value": {
+              "$numberLong": "6272"
+            },
+            "name": "uint256",
+            "type": "uint256"
+          },
+          {
+            "value": "0x887b86b6b6957f7bbea88b8cefd392f39236a88c",
+            "name": "bytes",
+            "type": "bytes"
+          }
+        ],
+        "from": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "gas": 205360,
+        "gasUsed": 89500,
+        "output": "0x150b7a0200000000000000000000000000000000000000000000000000000000",
+        "value": 0,
+        "type": "CALL",
+        "depth": 0,
+        "activity": "onERC721Received",
+        "calls": [
+          {
+            "from": "0x7c15561590fc9eb063b3803b55165633eef207ec",
+            "gas": 197203,
+            "gasUsed": 2361,
+            "to": "0x5b8df3131d65beb140a2700f06b78f99d0918697",
+            "output": "0x000000000000000000000000c53d0a52358ff0f0e4dfe93a1f0c84d2b17e68df",
+            "type": "STATICCALL",
+            "events": [],
+            "callId": "0_1_1",
+            "depth": 1,
+            "value": 0,
+            "activity": "implementation",
+            "contractCalledName": "UpgradeableBeacon",
+            "inputs": [],
+            "inputsCall": "0x5c60da1b"
+          },
+          {
+            "from": "0x7c15561590fc9eb063b3803b55165633eef207ec",
+            "gas": 192169,
+            "gasUsed": 79318,
+            "to": "0xc53d0a52358ff0f0e4dfe93a1f0c84d2b17e68df",
+            "output": "0x150b7a0200000000000000000000000000000000000000000000000000000000",
+            "calls": [
+              {
+                "from": "0x7c15561590fc9eb063b3803b55165633eef207ec",
+                "gas": 181564,
+                "gasUsed": 9615,
+                "to": "0x0f4676178b5c53ae0a655f1b19a96387e4b8b5f2",
+                "output": "0x0000000000000000000000000000000000000000000000000000000000000005",
+                "calls": [
+                  {
+                    "from": "0x0f4676178b5c53ae0a655f1b19a96387e4b8b5f2",
+                    "gas": 171612,
+                    "gasUsed": 2342,
+                    "to": "0x1813c4485a36642347c244a00617377bafdbe401",
+                    "output": "0x0000000000000000000000000000000000000000000000000000000000000005",
+                    "value": 0,
+                    "type": "DELEGATECALL",
+                    "events": [],
+                    "callId": "0_1_2_1_1",
+                    "depth": 3,
+                    "activity": "fee",
+                    "contractCalledName": "NFT20FactoryV4",
+                    "inputs": [],
+                    "inputsCall": "0xddca3f43"
+                  }
+                ],
+                "type": "STATICCALL",
+                "events": [],
+                "callId": "0_1_2_1",
+                "depth": 2,
+                "value": 0,
+                "activity": "fee",
+                "contractCalledName": "NFT20FactoryV4",
+                "inputs": [],
+                "inputsCall": "0xddca3f43"
+              }
+            ],
+            "value": 0,
+            "type": "DELEGATECALL",
+            "events": [],
+            "callId": "0_1_2",
+            "depth": 1,
+            "activity": "onERC721Received",
+            "contractCalledName": "NFT20Pair",
+            "inputs": [
+              {
+                "name": "operator",
+                "type": "address",
+                "value": "887b86B6B6957F7bbeA88B8CEfD392f39236A88C"
+              },
+              {
+                "name": "",
+                "type": "address",
+                "value": "887b86B6B6957F7bbeA88B8CEfD392f39236A88C"
+              },
+              {
+                "name": "",
+                "type": "uint256",
+                "value": 6272
+              },
+              {
+                "name": "data",
+                "type": "bytes",
+                "value": "0x887b86b6b6957f7bbea88b8cefd392f39236a88c"
+              }
+            ]
+          }
+        ],
+        "events": [
+          {
+            "eventName": "Approval",
+            "eventValues": {
+              "0": "0x887b86B6B6957F7bbeA88B8CEfD392f39236A88C",
+              "1": "0x0000000000000000000000000000000000000000",
+              "2": 6272,
+              "__length__": 3,
+              "owner": "0x887b86B6B6957F7bbeA88B8CEfD392f39236A88C",
+              "approved": "0x0000000000000000000000000000000000000000",
+              "tokenId": 6272
+            },
+            "eventFrom": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+          },
+          {
+            "eventName": "Transfer",
+            "eventValues": {
+              "0": "0x887b86B6B6957F7bbeA88B8CEfD392f39236A88C",
+              "1": "0x7C15561590FC9eB063B3803b55165633eEf207ec",
+              "2": 6272,
+              "__length__": 3,
+              "from": "0x887b86B6B6957F7bbeA88B8CEfD392f39236A88C",
+              "to": "0x7C15561590FC9eB063B3803b55165633eEf207ec",
+              "tokenId": 6272
+            },
+            "eventFrom": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "eventName": "Approval",
+        "eventValues": {
+          "0": "0x887b86B6B6957F7bbeA88B8CEfD392f39236A88C",
+          "1": "0x0000000000000000000000000000000000000000",
+          "2": 6272,
+          "__length__": 3,
+          "owner": "0x887b86B6B6957F7bbeA88B8CEfD392f39236A88C",
+          "approved": "0x0000000000000000000000000000000000000000",
+          "tokenId": 6272
+        },
+        "eventFrom": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+      },
+      {
+        "eventName": "Transfer",
+        "eventValues": {
+          "0": "0x887b86B6B6957F7bbeA88B8CEfD392f39236A88C",
+          "1": "0x7C15561590FC9eB063B3803b55165633eEf207ec",
+          "2": 6272,
+          "__length__": 3,
+          "from": "0x887b86B6B6957F7bbeA88B8CEfD392f39236A88C",
+          "to": "0x7C15561590FC9eB063B3803b55165633eEf207ec",
+          "tokenId": 6272
+        },
+        "eventFrom": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+      },
+      {
+        "eventName": "undefined",
+        "eventValues": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x000000000000000000000000887b86b6b6957f7bbea88b8cefd392f39236a88c"
+        ],
+        "eventFrom": "0x7c15561590fc9eb063b3803b55165633eef207ec"
+      },
+      {
+        "eventName": "undefined",
+        "eventValues": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x000000000000000000000000887b86b6b6957f7bbea88b8cefd392f39236a88c"
+        ],
+        "eventFrom": "0x7c15561590fc9eb063b3803b55165633eef207ec"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "69a622909c7b4c9a2b7e1af0"
+    },
+    "functionName": "Tranfer",
+    "transactionHash": "0x04f6b359087955ee9f870a3b49a90209430862a81f831294aea8cf5481584db1",
+    "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "sender": "0xed8c75b67206ee03e039374fb00051d86cd50605",
+    "gasUsed": 21000,
+    "blockNumber": 12350399,
+    "timestamp": {
+      "$date": "2021-05-01T20:12:38.000Z"
+    },
+    "value": 100000000000000,
+    "inputs": [],
+    "storageState": [],
+    "internalTxs": [],
+    "events": []
+  },
+  {
+    "_id": {
+      "$oid": "69a62d9c3fab1f33dc8241f6"
+    },
+    "functionName": "setProvenanceHash",
+    "transactionHash": "0xf321a2bd4b64e14f2624c2f2a6c916920ff0ffcfbbb6d4e3d459f09cf7b77248",
+    "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "sender": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+    "gasUsed": 114368,
+    "blockNumber": 12363981,
+    "timestamp": {
+      "$date": "2021-05-03T22:37:30.000Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "provenanceHash",
+        "type": "string",
+        "inputValue": "\"cc354b3fcacee8844dcc9861004da081f71df9567775b3f3a43412752752c0bf\""
+      }
+    ],
+    "storageState": [
+      {
+        "variableName": "_owner",
+        "type": "t_address",
+        "variableValue": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "variableRawValue": "000000000000000000000000aba7161a7fb69c88e16ed9f455ce62b791ee4d03"
+      },
+      {
+        "variableName": "BAYC_PROVENANCE",
+        "type": "t_string_storage",
+        "variableValue": "",
+        "variableRawValue": "0000000000000000000000000000000000000000000000000000000000000085"
+      }
+    ],
+    "internalTxs": [],
+    "events": []
+  },
+  {
+    "_id": {
+      "$oid": "69a64dd147f0bf93151d0e4d"
+    },
+    "functionName": "setBaseURI",
+    "transactionHash": "0x791bfb9b6a9e649d173874559be92af7b296f6d3458af9b44617792fb662ad3f",
+    "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "sender": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+    "gasUsed": 30705,
+    "blockNumber": 12599970,
+    "timestamp": {
+      "$date": "2021-06-09T11:03:35.000Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "baseURI",
+        "type": "string",
+        "inputValue": "ipfs://QmeSjSinHpPnmXmspMjwiXyN6zS4E9zccariGR3jxcaWtq/"
+      }
+    ],
+    "storageState": [
+      {
+        "variableName": "_owner",
+        "type": "t_address",
+        "variableValue": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "variableRawValue": "000000000000000000000000aba7161a7fb69c88e16ed9f455ce62b791ee4d03"
+      },
+      {
+        "variableName": "_baseURI",
+        "type": "t_string_storage",
+        "variableValue": "m",
+        "variableRawValue": "000000000000000000000000000000000000000000000000000000000000006d"
+      }
+    ],
+    "internalTxs": [],
+    "events": []
+  }
+]

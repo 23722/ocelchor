@@ -1,0 +1,38 @@
+[project]
+name = "trace2choreo"
+version = "0.1.0"
+description = "Convert Ethereum transaction traces to OCEL 2.0 choreography event logs"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "jsonschema>=4.0",
+]
+pm4py = [
+    "pm4py>=2.7",
+]
+
+[project.scripts]
+trace2ocelchor = "trace2choreo.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/trace2choreo"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["src/trace2choreo"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true

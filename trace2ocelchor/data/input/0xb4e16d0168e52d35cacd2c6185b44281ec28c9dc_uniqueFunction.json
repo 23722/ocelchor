@@ -1,0 +1,1186 @@
+[
+  {
+    "_id": {
+      "$oid": "68e554887a22cc1a52b8c095"
+    },
+    "functionName": "approve",
+    "transactionHash": "0x71d6574a2d743cafc42e12bd1996f18c28d6231e7bfc8268b8133f71eb82d2a4",
+    "contractAddress": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+    "sender": "0x66666600e43c6d9e1a249d29d58639dedfcd9ade",
+    "gasUsed": 44286,
+    "blockNumber": 10019997,
+    "timestamp": {
+      "$date": "2020-05-07T15:46:30Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "spender",
+        "type": "address",
+        "inputValue": "3f6CDd93e4A1c2Df9934Cb90D09040CcFc155F93"
+      },
+      {
+        "inputName": "value",
+        "type": "uint256",
+        "inputValue": 1.157920892373162e+77
+      }
+    ],
+    "storageState": [],
+    "internalTxs": [],
+    "events": [
+      {
+        "eventName": "Approval",
+        "eventValues": {
+          "0": "0x66666600E43c6d9e1a249D29d58639DEdFcD9adE",
+          "1": "0x3f6CDd93e4A1c2Df9934Cb90D09040CcFc155F93",
+          "2": 1.157920892373162e+77,
+          "__length__": 3,
+          "owner": "0x66666600E43c6d9e1a249D29d58639DEdFcD9adE",
+          "spender": "0x3f6CDd93e4A1c2Df9934Cb90D09040CcFc155F93",
+          "value": 1.157920892373162e+77
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68e5549fbe9aac65574f4d48"
+    },
+    "functionName": "transfer",
+    "transactionHash": "0x1ded088e1d822e39e875de455f7c15a685c83cddb0f8d64fa14de4af5a77eb3f",
+    "contractAddress": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+    "sender": "0xf94e5cdf41247e268d4847c30a0dc2893b33e85d",
+    "gasUsed": 35972,
+    "blockNumber": 10091749,
+    "timestamp": {
+      "$date": "2020-05-18T19:06:24Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "to",
+        "type": "address",
+        "inputValue": "e79057088a15ac8c9c8beC3b90Bd9891a1b3af51"
+      },
+      {
+        "inputName": "value",
+        "type": "uint256",
+        "inputValue": 12725895835997
+      }
+    ],
+    "storageState": [],
+    "internalTxs": [],
+    "events": [
+      {
+        "eventName": "Transfer",
+        "eventValues": {
+          "0": "0xf94e5Cdf41247E268d4847C30A0DC2893B33e85d",
+          "1": "0xe79057088a15ac8c9c8beC3b90Bd9891a1b3af51",
+          "2": 12725895835997,
+          "__length__": 3,
+          "from": "0xf94e5Cdf41247E268d4847C30A0DC2893B33e85d",
+          "to": "0xe79057088a15ac8c9c8beC3b90Bd9891a1b3af51",
+          "value": 12725895835997
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68e55a656522e6bbe1aa133b"
+    },
+    "functionName": "swap",
+    "transactionHash": "0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+    "contractAddress": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+    "sender": "0xea8e147bdb3ee3dde2085acb88de826e1a6de37a",
+    "gasUsed": 296682,
+    "blockNumber": 10510166,
+    "timestamp": {
+      "$date": "2020-07-22T16:09:00Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "amount0Out",
+        "type": "uint256",
+        "inputValue": 242498517
+      },
+      {
+        "inputName": "amount1Out",
+        "type": "uint256",
+        "inputValue": 0
+      },
+      {
+        "inputName": "to",
+        "type": "address",
+        "inputValue": "eCC2E61D14265F7146559Ed9a2D11c8921ED1EB7"
+      },
+      {
+        "inputName": "data",
+        "type": "bytes",
+        "inputValue": "0x000000000000000000000000990741117fa76a8cfa3d934bdd7af69b0df8e29800000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000de0b6b3a7640000"
+      }
+    ],
+    "storageState": [
+      {
+        "variableName": "price0CumulativeLast",
+        "type": "t_uint256",
+        "variableValue": "1.5658789581887157e+50",
+        "variableRawValue": "00000000000000000000006b244c181b94c0896f48cfcd882e9254c7d11b9422"
+      },
+      {
+        "variableName": "price1CumulativeLast",
+        "type": "t_uint256",
+        "variableValue": "7.884613428359714e+30",
+        "variableRawValue": "0000000000000000000000000000000000000063848f5d8bcc92e45af661d100"
+      },
+      {
+        "variableName": "totalSupply",
+        "type": "t_uint256",
+        "variableValue": "8.926006597702227e+47",
+        "variableRawValue": "0000000000000000000000009c59990ec0177d87ed7d60a56f584e6b06c639a2"
+      },
+      {
+        "variableName": "unlocked",
+        "type": "t_uint256",
+        "variableValue": "1",
+        "variableRawValue": "0000000000000000000000000000000000000000000000000000000000000001"
+      },
+      {
+        "variableName": "token0",
+        "type": "t_address",
+        "variableValue": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "variableRawValue": "000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+      },
+      {
+        "variableName": "reserve0",
+        "type": "t_uint112",
+        "variableValue": "4.301281932535135e+76",
+        "variableRawValue": "5f18649c0000000003d8c7a7705bcd284d8600000000000000000404cb52d5f7"
+      },
+      {
+        "variableName": "reserve1",
+        "type": "t_uint112",
+        "variableValue": "4.301281932535135e+76",
+        "variableRawValue": "5f18649c0000000003d8c7a7705bcd284d8600000000000000000404cb52d5f7"
+      },
+      {
+        "variableName": "blockTimestampLast",
+        "type": "t_uint32",
+        "variableValue": "4.301281932535135e+76",
+        "variableRawValue": "5f18649c0000000003d8c7a7705bcd284d8600000000000000000404cb52d5f7"
+      },
+      {
+        "variableName": "token1",
+        "type": "t_address",
+        "variableValue": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "variableRawValue": "000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+      }
+    ],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "inputsCall": [
+          "0xa9059cbb000000000000000000000000ecc2e61d14265f7146559ed9a2d11c8921ed1eb7000000000000000000000000000000000000000000000000000000000e743bd5"
+        ],
+        "inputs": [],
+        "from": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "gas": 459606,
+        "gasUsed": 36405,
+        "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value": 0,
+        "type": "CALL",
+        "depth": 0,
+        "activity": null,
+        "contractCalledName": "SignatureChecker",
+        "calls": [
+          {
+            "from": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+            "gas": 449723,
+            "gasUsed": 33616,
+            "to": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+            "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "value": 0,
+            "type": "DELEGATECALL",
+            "callId": "0_1_1",
+            "depth": 1,
+            "activity": "transfer",
+            "contractCalledName": "FiatTokenV1",
+            "inputs": [
+              {
+                "name": "_to",
+                "type": "address",
+                "value": "eCC2E61D14265F7146559Ed9a2D11c8921ED1EB7"
+              },
+              {
+                "name": "_value",
+                "type": "uint256",
+                "value": 242498517
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "callId": "0_2",
+        "to": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "name": "",
+            "type": "address",
+            "value": "eA8e147BDB3ee3dDE2085ACB88de826E1A6De37a"
+          },
+          {
+            "name": "amount0",
+            "type": "uint256",
+            "value": 242498517
+          },
+          {
+            "name": "",
+            "type": "uint256",
+            "value": 0
+          },
+          {
+            "name": "data",
+            "type": "bytes",
+            "value": "0x000000000000000000000000990741117fa76a8cfa3d934bdd7af69b0df8e29800000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000de0b6b3a7640000"
+          }
+        ],
+        "from": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "gas": 421756,
+        "gasUsed": 238052,
+        "value": 0,
+        "type": "CALL",
+        "depth": 0,
+        "activity": "uniswapV2Call",
+        "contractCalledName": "UniswapArbitrageur",
+        "calls": [
+          {
+            "from": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+            "gas": 413149,
+            "gasUsed": 1081,
+            "to": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+            "output": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+            "type": "STATICCALL",
+            "callId": "0_2_1",
+            "depth": 1,
+            "value": 0,
+            "activity": "token0",
+            "contractCalledName": "UniswapV2Pair",
+            "inputs": [],
+            "inputsCall": "0x0dfe1681"
+          },
+          {
+            "from": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+            "gas": 410355,
+            "gasUsed": 1057,
+            "to": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+            "output": "0x000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+            "type": "STATICCALL",
+            "callId": "0_2_2",
+            "depth": 1,
+            "value": 0,
+            "activity": "token1",
+            "contractCalledName": "UniswapV2Pair",
+            "inputs": [],
+            "inputsCall": "0xd21220a7"
+          },
+          {
+            "from": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+            "gas": 407122,
+            "gasUsed": 188069,
+            "to": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+            "output": "0x000000000000000000000000000000000000000000000000000000000e089b8a",
+            "calls": [
+              {
+                "from": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+                "gas": 384770,
+                "gasUsed": 4684,
+                "to": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+                "output": "0x000000000000000000000000000000000000000000000000000000000e97cf30",
+                "calls": [
+                  {
+                    "from": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+                    "gas": 376334,
+                    "gasUsed": 1946,
+                    "to": "0xf79d6afbb6da890132f9d7c355e3015f15f3406f",
+                    "output": "0x00000000000000000000000000000000000000000000000000000005b34ceec0",
+                    "type": "STATICCALL",
+                    "callId": "0_2_3_1_1",
+                    "depth": 3,
+                    "value": 0,
+                    "activity": "latestAnswer",
+                    "contractCalledName": "Aggregator",
+                    "inputs": [],
+                    "inputsCall": "0x50d25bcd"
+                  }
+                ],
+                "type": "STATICCALL",
+                "callId": "0_2_3_1",
+                "depth": 2,
+                "value": 0,
+                "activity": "getPrice",
+                "contractCalledName": "ChainlinkETHPriceOracleProxy",
+                "inputs": [],
+                "inputsCall": "0x98d5fdca"
+              },
+              {
+                "from": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+                "gas": 357870,
+                "gasUsed": 4684,
+                "to": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+                "output": "0x000000000000000000000000000000000000000000000000000000000e97cf30",
+                "calls": [
+                  {
+                    "from": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+                    "gas": 349854,
+                    "gasUsed": 1946,
+                    "to": "0xf79d6afbb6da890132f9d7c355e3015f15f3406f",
+                    "output": "0x00000000000000000000000000000000000000000000000000000005b34ceec0",
+                    "type": "STATICCALL",
+                    "callId": "0_2_3_2_1",
+                    "depth": 3,
+                    "value": 0,
+                    "activity": "latestAnswer",
+                    "contractCalledName": "Aggregator",
+                    "inputs": [],
+                    "inputsCall": "0x50d25bcd"
+                  }
+                ],
+                "type": "STATICCALL",
+                "callId": "0_2_3_2",
+                "depth": 2,
+                "value": 0,
+                "activity": "getPrice",
+                "contractCalledName": "ChainlinkETHPriceOracleProxy",
+                "inputs": [],
+                "inputsCall": "0x98d5fdca"
+              },
+              {
+                "from": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+                "gas": 342974,
+                "gasUsed": 4275,
+                "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "output": "0x00000000000000000000000000000000000000000000000000000000b497fae0",
+                "calls": [
+                  {
+                    "from": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                    "gas": 334916,
+                    "gasUsed": 1489,
+                    "to": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+                    "output": "0x00000000000000000000000000000000000000000000000000000000b497fae0",
+                    "value": 0,
+                    "type": "DELEGATECALL",
+                    "callId": "0_2_3_3_1",
+                    "depth": 3,
+                    "activity": "balanceOf",
+                    "contractCalledName": "FiatTokenV1",
+                    "inputs": [
+                      {
+                        "name": "account",
+                        "type": "address",
+                        "value": "990741117FA76A8CFA3d934BDd7af69B0DF8E298"
+                      }
+                    ]
+                  }
+                ],
+                "type": "STATICCALL",
+                "callId": "0_2_3_3",
+                "depth": 2,
+                "value": 0,
+                "activity": null,
+                "contractCalledName": "SignatureChecker",
+                "inputs": [],
+                "inputsCall": "0x70a08231000000000000000000000000990741117fa76a8cfa3d934bdd7af69b0df8e298"
+              },
+              {
+                "from": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+                "gas": 336278,
+                "gasUsed": 25132,
+                "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                "calls": [
+                  {
+                    "from": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                    "gas": 328316,
+                    "gasUsed": 22337,
+                    "to": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+                    "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                    "value": 0,
+                    "type": "DELEGATECALL",
+                    "callId": "0_2_3_4_1",
+                    "depth": 3,
+                    "activity": "transferFrom",
+                    "contractCalledName": "FiatTokenV1",
+                    "inputs": [
+                      {
+                        "name": "_from",
+                        "type": "address",
+                        "value": "eCC2E61D14265F7146559Ed9a2D11c8921ED1EB7"
+                      },
+                      {
+                        "name": "_to",
+                        "type": "address",
+                        "value": "990741117FA76A8CFA3d934BDd7af69B0DF8E298"
+                      },
+                      {
+                        "name": "_value",
+                        "type": "uint256",
+                        "value": 235445130
+                      }
+                    ]
+                  }
+                ],
+                "value": 0,
+                "type": "CALL",
+                "callId": "0_2_3_4",
+                "depth": 2,
+                "activity": null,
+                "contractCalledName": "SignatureChecker",
+                "inputs": [],
+                "inputsCall": "0x23b872dd000000000000000000000000ecc2e61d14265f7146559ed9a2d11c8921ed1eb7000000000000000000000000990741117fa76a8cfa3d934bdd7af69b0df8e298000000000000000000000000000000000000000000000000000000000e089b8a"
+              },
+              {
+                "from": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+                "gas": 308838,
+                "gasUsed": 4275,
+                "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "output": "0x00000000000000000000000000000000000000000000000000000000c2a0966a",
+                "calls": [
+                  {
+                    "from": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                    "gas": 301314,
+                    "gasUsed": 1489,
+                    "to": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+                    "output": "0x00000000000000000000000000000000000000000000000000000000c2a0966a",
+                    "value": 0,
+                    "type": "DELEGATECALL",
+                    "callId": "0_2_3_5_1",
+                    "depth": 3,
+                    "activity": "balanceOf",
+                    "contractCalledName": "FiatTokenV1",
+                    "inputs": [
+                      {
+                        "name": "account",
+                        "type": "address",
+                        "value": "990741117FA76A8CFA3d934BDd7af69B0DF8E298"
+                      }
+                    ]
+                  }
+                ],
+                "type": "STATICCALL",
+                "callId": "0_2_3_5",
+                "depth": 2,
+                "value": 0,
+                "activity": null,
+                "contractCalledName": "SignatureChecker",
+                "inputs": [],
+                "inputsCall": "0x70a08231000000000000000000000000990741117fa76a8cfa3d934bdd7af69b0df8e298"
+              },
+              {
+                "from": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+                "gas": 296205,
+                "gasUsed": 1234,
+                "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "output": "0x000000000000000000000000000000000000000000000001d0e7e88267960000",
+                "type": "STATICCALL",
+                "callId": "0_2_3_6",
+                "depth": 2,
+                "value": 0,
+                "activity": "balanceOf",
+                "contractCalledName": "WETH9",
+                "inputs": [
+                  {
+                    "name": "",
+                    "type": "address",
+                    "value": "990741117FA76A8CFA3d934BDd7af69B0DF8E298"
+                  }
+                ]
+              },
+              {
+                "from": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+                "gas": 292617,
+                "gasUsed": 30162,
+                "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                "value": 0,
+                "type": "CALL",
+                "callId": "0_2_3_7",
+                "depth": 2,
+                "activity": "transfer",
+                "contractCalledName": "WETH9",
+                "inputs": [
+                  {
+                    "name": "dst",
+                    "type": "address",
+                    "value": "eCC2E61D14265F7146559Ed9a2D11c8921ED1EB7"
+                  },
+                  {
+                    "name": "wad",
+                    "type": "uint256",
+                    "value": 1000000000000000000
+                  }
+                ]
+              },
+              {
+                "from": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+                "gas": 260228,
+                "gasUsed": 1234,
+                "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "output": "0x000000000000000000000000000000000000000000000001c30731cec0320000",
+                "type": "STATICCALL",
+                "callId": "0_2_3_8",
+                "depth": 2,
+                "value": 0,
+                "activity": "balanceOf",
+                "contractCalledName": "WETH9",
+                "inputs": [
+                  {
+                    "name": "",
+                    "type": "address",
+                    "value": "990741117FA76A8CFA3d934BDd7af69B0DF8E298"
+                  }
+                ]
+              },
+              {
+                "from": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+                "gas": 249785,
+                "gasUsed": 1234,
+                "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "output": "0x000000000000000000000000000000000000000000000001c30731cec0320000",
+                "type": "STATICCALL",
+                "callId": "0_2_3_9",
+                "depth": 2,
+                "value": 0,
+                "activity": "balanceOf",
+                "contractCalledName": "WETH9",
+                "inputs": [
+                  {
+                    "name": "",
+                    "type": "address",
+                    "value": "990741117FA76A8CFA3d934BDd7af69B0DF8E298"
+                  }
+                ]
+              },
+              {
+                "from": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+                "gas": 246197,
+                "gasUsed": 6762,
+                "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                "value": 0,
+                "type": "CALL",
+                "callId": "0_2_3_10",
+                "depth": 2,
+                "activity": "transfer",
+                "contractCalledName": "WETH9",
+                "inputs": [
+                  {
+                    "name": "dst",
+                    "type": "address",
+                    "value": "9c59990ec0177d87ED7D60A56F584E6b06C639a2"
+                  },
+                  {
+                    "name": "wad",
+                    "type": "uint256",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "from": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+                "gas": 236842,
+                "gasUsed": 1234,
+                "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "output": "0x000000000000000000000000000000000000000000000001c30731cec0320000",
+                "type": "STATICCALL",
+                "callId": "0_2_3_11",
+                "depth": 2,
+                "value": 0,
+                "activity": "balanceOf",
+                "contractCalledName": "WETH9",
+                "inputs": [
+                  {
+                    "name": "",
+                    "type": "address",
+                    "value": "990741117FA76A8CFA3d934BDd7af69B0DF8E298"
+                  }
+                ]
+              }
+            ],
+            "value": 0,
+            "type": "CALL",
+            "callId": "0_2_3",
+            "depth": 1,
+            "activity": "buyBaseToken",
+            "contractCalledName": "DODO",
+            "inputs": [
+              {
+                "name": "amount",
+                "type": "uint256",
+                "value": 1000000000000000000
+              },
+              {
+                "name": "maxPayQuote",
+                "type": "uint256",
+                "value": 1.157920892373162e+77
+              }
+            ]
+          },
+          {
+            "from": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+            "gas": 220266,
+            "gasUsed": 1234,
+            "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+            "output": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+            "type": "STATICCALL",
+            "callId": "0_2_4",
+            "depth": 1,
+            "value": 0,
+            "activity": "balanceOf",
+            "contractCalledName": "WETH9",
+            "inputs": [
+              {
+                "name": "",
+                "type": "address",
+                "value": "eCC2E61D14265F7146559Ed9a2D11c8921ED1EB7"
+              }
+            ]
+          },
+          {
+            "from": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+            "gas": 217491,
+            "gasUsed": 10962,
+            "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+            "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "value": 0,
+            "type": "CALL",
+            "callId": "0_2_5",
+            "depth": 1,
+            "activity": "transfer",
+            "contractCalledName": "WETH9",
+            "inputs": [
+              {
+                "name": "dst",
+                "type": "address",
+                "value": "B4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc"
+              },
+              {
+                "name": "wad",
+                "type": "uint256",
+                "value": 1000000000000000000
+              }
+            ]
+          },
+          {
+            "from": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+            "gas": 203944,
+            "gasUsed": 4275,
+            "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+            "output": "0x00000000000000000000000000000000000000000000000000000000006ba04b",
+            "calls": [
+              {
+                "from": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "gas": 198059,
+                "gasUsed": 1489,
+                "to": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+                "output": "0x00000000000000000000000000000000000000000000000000000000006ba04b",
+                "value": 0,
+                "type": "DELEGATECALL",
+                "callId": "0_2_6_1",
+                "depth": 2,
+                "activity": "balanceOf",
+                "contractCalledName": "FiatTokenV1",
+                "inputs": [
+                  {
+                    "name": "account",
+                    "type": "address",
+                    "value": "eCC2E61D14265F7146559Ed9a2D11c8921ED1EB7"
+                  }
+                ]
+              }
+            ],
+            "type": "STATICCALL",
+            "callId": "0_2_6",
+            "depth": 1,
+            "value": 0,
+            "activity": null,
+            "contractCalledName": "SignatureChecker",
+            "inputs": [],
+            "inputsCall": "0x70a08231000000000000000000000000ecc2e61d14265f7146559ed9a2d11c8921ed1eb7"
+          },
+          {
+            "from": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+            "gas": 198176,
+            "gasUsed": 17205,
+            "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+            "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "calls": [
+              {
+                "from": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "gas": 192378,
+                "gasUsed": 14416,
+                "to": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+                "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                "value": 0,
+                "type": "DELEGATECALL",
+                "callId": "0_2_7_1",
+                "depth": 2,
+                "activity": "transfer",
+                "contractCalledName": "FiatTokenV1",
+                "inputs": [
+                  {
+                    "name": "_to",
+                    "type": "address",
+                    "value": "9c59990ec0177d87ED7D60A56F584E6b06C639a2"
+                  },
+                  {
+                    "name": "_value",
+                    "type": "uint256",
+                    "value": 7053387
+                  }
+                ]
+              }
+            ],
+            "value": 0,
+            "type": "CALL",
+            "callId": "0_2_7",
+            "depth": 1,
+            "activity": null,
+            "contractCalledName": "SignatureChecker",
+            "inputs": [],
+            "inputsCall": "0xa9059cbb0000000000000000000000009c59990ec0177d87ed7d60a56f584e6b06c639a200000000000000000000000000000000000000000000000000000000006ba04b"
+          }
+        ]
+      },
+      {
+        "callId": "0_3",
+        "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "inputsCall": [
+          "0x70a08231000000000000000000000000b4e16d0168e52d35cacd2c6185b44281ec28c9dc"
+        ],
+        "inputs": [],
+        "from": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "gas": 185885,
+        "gasUsed": 4275,
+        "output": "0x00000000000000000000000000000000000000000000000000000404cb52d5f7",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": null,
+        "contractCalledName": "SignatureChecker",
+        "calls": [
+          {
+            "from": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+            "gas": 180282,
+            "gasUsed": 1489,
+            "to": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+            "output": "0x00000000000000000000000000000000000000000000000000000404cb52d5f7",
+            "value": 0,
+            "type": "DELEGATECALL",
+            "callId": "0_3_1",
+            "depth": 1,
+            "activity": "balanceOf",
+            "contractCalledName": "FiatTokenV1",
+            "inputs": [
+              {
+                "name": "account",
+                "type": "address",
+                "value": "B4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "callId": "0_4",
+        "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "name": "",
+            "type": "address",
+            "value": "B4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc"
+          }
+        ],
+        "from": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "gas": 180090,
+        "gasUsed": 1234,
+        "output": "0x0000000000000000000000000000000000000000000003d8c7a7705bcd284d86",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": "balanceOf",
+        "contractCalledName": "WETH9",
+        "calls": []
+      }
+    ],
+    "events": [
+      {
+        "eventName": "Sync",
+        "eventValues": {
+          "0": 4418637583863,
+          "1": 1.8165982759604443e+22,
+          "__length__": 2,
+          "reserve0": 4418637583863,
+          "reserve1": 1.8165982759604443e+22
+        }
+      },
+      {
+        "eventName": "Swap",
+        "eventValues": {
+          "0": "0xeA8e147BDB3ee3dDE2085ACB88de826E1A6De37a",
+          "1": 0,
+          "2": 1000000000000000000,
+          "3": 242498517,
+          "4": 0,
+          "5": "0xeCC2E61D14265F7146559Ed9a2D11c8921ED1EB7",
+          "__length__": 6,
+          "sender": "0xeA8e147BDB3ee3dDE2085ACB88de826E1A6De37a",
+          "amount0In": 0,
+          "amount1In": 1000000000000000000,
+          "amount0Out": 242498517,
+          "amount1Out": 0,
+          "to": "0xeCC2E61D14265F7146559Ed9a2D11c8921ED1EB7"
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68e56a249a4aded3d07b5fac"
+    },
+    "functionName": "skim",
+    "transactionHash": "0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e",
+    "contractAddress": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+    "sender": "0x3238b53a910b69f5dbdb31786613ce944536ba19",
+    "gasUsed": 59267,
+    "blockNumber": 10543560,
+    "timestamp": {
+      "$date": "2020-07-27T20:07:27Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "to",
+        "type": "address",
+        "inputValue": "3238B53A910B69f5dBDb31786613cE944536BA19"
+      }
+    ],
+    "storageState": [
+      {
+        "variableName": "token1",
+        "type": "t_address",
+        "variableValue": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "variableRawValue": "000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+      },
+      {
+        "variableName": "unlocked",
+        "type": "t_uint256",
+        "variableValue": "1",
+        "variableRawValue": "0000000000000000000000000000000000000000000000000000000000000001"
+      },
+      {
+        "variableName": "token0",
+        "type": "t_address",
+        "variableValue": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "variableRawValue": "000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+      },
+      {
+        "variableName": "reserve0",
+        "type": "t_uint112",
+        "variableValue": "4.3024850686830603e+76",
+        "variableRawValue": "5f1f33d80000000002bf2b2c0d9a68f1dead000000000000000003d0ee0a1224"
+      },
+      {
+        "variableName": "reserve1",
+        "type": "t_uint112",
+        "variableValue": "4.3024850686830603e+76",
+        "variableRawValue": "5f1f33d80000000002bf2b2c0d9a68f1dead000000000000000003d0ee0a1224"
+      },
+      {
+        "variableName": "blockTimestampLast",
+        "type": "t_uint32",
+        "variableValue": "4.3024850686830603e+76",
+        "variableRawValue": "5f1f33d80000000002bf2b2c0d9a68f1dead000000000000000003d0ee0a1224"
+      }
+    ],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "inputsCall": [
+          "0x70a08231000000000000000000000000b4e16d0168e52d35cacd2c6185b44281ec28c9dc"
+        ],
+        "inputs": [],
+        "from": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "gas": 64889,
+        "gasUsed": 4275,
+        "output": "0x000000000000000000000000000000000000000000000000000003d0ee0a1224",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": null,
+        "contractCalledName": "SignatureChecker",
+        "calls": [
+          {
+            "from": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+            "gas": 61176,
+            "gasUsed": 1489,
+            "to": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+            "output": "0x000000000000000000000000000000000000000000000000000003d0ee0a1224",
+            "value": 0,
+            "type": "DELEGATECALL",
+            "callId": "0_1_1",
+            "depth": 1,
+            "activity": "balanceOf",
+            "contractCalledName": "FiatTokenV1",
+            "inputs": [
+              {
+                "name": "account",
+                "type": "address",
+                "value": "B4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "callId": "0_2",
+        "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "inputsCall": [
+          "0xa9059cbb0000000000000000000000003238b53a910b69f5dbdb31786613ce944536ba190000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "inputs": [],
+        "from": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "gas": 59227,
+        "gasUsed": 13005,
+        "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value": 0,
+        "type": "CALL",
+        "depth": 0,
+        "activity": null,
+        "contractCalledName": "SignatureChecker",
+        "calls": [
+          {
+            "from": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+            "gas": 55600,
+            "gasUsed": 10216,
+            "to": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+            "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "value": 0,
+            "type": "DELEGATECALL",
+            "callId": "0_2_1",
+            "depth": 1,
+            "activity": "transfer",
+            "contractCalledName": "FiatTokenV1",
+            "inputs": [
+              {
+                "name": "_to",
+                "type": "address",
+                "value": "3238B53A910B69f5dBDb31786613cE944536BA19"
+              },
+              {
+                "name": "_value",
+                "type": "uint256",
+                "value": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "callId": "0_3",
+        "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "name": "",
+            "type": "address",
+            "value": "B4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc"
+          }
+        ],
+        "from": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "gas": 43826,
+        "gasUsed": 1234,
+        "output": "0x0000000000000000000000000000000000000000000002bf2b2c0d9a68f1dead",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": "balanceOf",
+        "contractCalledName": "WETH9",
+        "calls": []
+      },
+      {
+        "callId": "0_4",
+        "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "name": "dst",
+            "type": "address",
+            "value": "3238B53A910B69f5dBDb31786613cE944536BA19"
+          },
+          {
+            "name": "wad",
+            "type": "uint256",
+            "value": 0
+          }
+        ],
+        "from": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "gas": 41158,
+        "gasUsed": 6762,
+        "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "value": 0,
+        "type": "CALL",
+        "depth": 0,
+        "activity": "transfer",
+        "contractCalledName": "WETH9",
+        "calls": []
+      }
+    ],
+    "events": []
+  },
+  {
+    "_id": {
+      "$oid": "68e571b70a6abfdabdc4ec0b"
+    },
+    "functionName": "transferFrom",
+    "transactionHash": "0xa2d9d65c4417304176c6e2fad50d2b3da1a16a3c1dd907487df5e1a57637c969",
+    "contractAddress": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+    "sender": "0xbd0d1b30abe79d02eeb1a238bd8e003fa8d986e7",
+    "gasUsed": 24354,
+    "blockNumber": 10679407,
+    "timestamp": {
+      "$date": "2020-08-17T19:24:57Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "from",
+        "type": "address",
+        "inputValue": "bb4425F09548a140270220f78E6fd68f4E2c756D"
+      },
+      {
+        "inputName": "to",
+        "type": "address",
+        "inputValue": "bd0d1b30Abe79d02eEB1a238bd8E003FA8D986e7"
+      },
+      {
+        "inputName": "value",
+        "type": "uint256",
+        "inputValue": 66414356174366360
+      }
+    ],
+    "storageState": [],
+    "internalTxs": [],
+    "events": []
+  },
+  {
+    "_id": {
+      "$oid": "68e5a54169775041bfc4bc50"
+    },
+    "functionName": "burn",
+    "transactionHash": "0xd9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1",
+    "contractAddress": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+    "sender": "0xc6dd8b66ae70cfabe33365eccf08cd06c5171ad7",
+    "gasUsed": 45037,
+    "blockNumber": 10785422,
+    "timestamp": {
+      "$date": "2020-09-03T01:43:28Z"
+    },
+    "value": 0,
+    "inputs": [
+      {
+        "inputName": "to",
+        "type": "address",
+        "inputValue": "C6dd8B66Ae70cFABE33365ECcf08CD06C5171AD7"
+      }
+    ],
+    "storageState": [],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "inputsCall": [
+          "0x70a08231000000000000000000000000b4e16d0168e52d35cacd2c6185b44281ec28c9dc"
+        ],
+        "inputs": [],
+        "from": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "gas": 129723,
+        "gasUsed": 3993,
+        "output": "0x0000000000000000000000000000000000000000000000000000626a94ef4ef2",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": null,
+        "contractCalledName": "SignatureChecker",
+        "calls": [
+          {
+            "from": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+            "gas": 124997,
+            "gasUsed": 1207,
+            "to": "0xb7277a6e95992041568d9391d09d0122023778a2",
+            "output": "0x0000000000000000000000000000000000000000000000000000626a94ef4ef2",
+            "value": 0,
+            "type": "DELEGATECALL",
+            "callId": "0_1_1",
+            "depth": 1,
+            "activity": "balanceOf",
+            "contractCalledName": "FiatTokenV2",
+            "inputs": [
+              {
+                "name": "account",
+                "type": "address",
+                "value": "B4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "callId": "0_2",
+        "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "inputsCall": [],
+        "inputs": [
+          {
+            "name": "",
+            "type": "address",
+            "value": "B4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc"
+          }
+        ],
+        "from": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "gas": 124203,
+        "gasUsed": 1234,
+        "output": "0x000000000000000000000000000000000000000000003355648be2c173ed1035",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": "balanceOf",
+        "contractCalledName": "WETH9",
+        "calls": []
+      },
+      {
+        "callId": "0_3",
+        "to": "0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "inputsCall": [
+          "0x017e7e58"
+        ],
+        "inputs": [],
+        "from": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "gas": 119729,
+        "gasUsed": 1014,
+        "output": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "value": 0,
+        "type": "STATICCALL",
+        "depth": 0,
+        "activity": "feeTo",
+        "contractCalledName": "UniswapV2Factory",
+        "calls": []
+      }
+    ],
+    "events": []
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "_id": { "$oid": "000000000000000000000001" },
+    "functionName": "swapAssets",
+    "transactionHash": "0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca",
+    "contractAddress": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "sender": "0x1111111111111111111111111111111111111111",
+    "gasUsed": 50000,
+    "blockNumber": 12345678,
+    "timestamp": { "$date": "2024-01-01T00:00:00Z" },
+    "value": 0,
+    "inputs": [
+      { "inputName": "amountIn", "type": "uint256", "inputValue": 1000 }
+    ],
+    "storageState": [],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "inputsCall": [],
+        "inputs": [
+          { "name": "amountIn", "type": "uint256", "value": 1000 }
+        ],
+        "from": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gas": 45000,
+        "gasUsed": 30000,
+        "output": "0x00000000000000000000000000000000000000000000000000000000000003e3",
+        "value": 0,
+        "type": "CALL",
+        "depth": 0,
+        "activity": "swap",
+        "contractCalledName": "SwapPool",
+        "calls": [],
+        "events": []
+      }
+    ],
+    "events": [
+      {
+        "eventName": "SwapLog",
+        "eventValues": {
+          "amountIn": 1000,
+          "amountOut": 995
+        },
+        "eventFrom": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      }
+    ]
+  }
+]

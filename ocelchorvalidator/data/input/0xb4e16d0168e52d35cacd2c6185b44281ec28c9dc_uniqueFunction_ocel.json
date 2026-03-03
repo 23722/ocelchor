@@ -1,0 +1,4925 @@
+{
+  "objectTypes": [
+    {
+      "name": "Aggregator",
+      "attributes": []
+    },
+    {
+      "name": "CA",
+      "attributes": []
+    },
+    {
+      "name": "ChainlinkETHPriceOracleProxy",
+      "attributes": []
+    },
+    {
+      "name": "ChoreographyInstance",
+      "attributes": []
+    },
+    {
+      "name": "DODO",
+      "attributes": []
+    },
+    {
+      "name": "EOA",
+      "attributes": []
+    },
+    {
+      "name": "FiatTokenV1",
+      "attributes": []
+    },
+    {
+      "name": "FiatTokenV2",
+      "attributes": []
+    },
+    {
+      "name": "SignatureChecker",
+      "attributes": []
+    },
+    {
+      "name": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "UniswapArbitrageur",
+      "attributes": []
+    },
+    {
+      "name": "UniswapV2Factory",
+      "attributes": []
+    },
+    {
+      "name": "WETH9",
+      "attributes": []
+    },
+    {
+      "name": "approve call",
+      "attributes": [
+        {
+          "name": "spender",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf call",
+      "attributes": [
+        {
+          "name": "",
+          "type": "string"
+        },
+        {
+          "name": "account",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "burn call",
+      "attributes": [
+        {
+          "name": "to",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "buyBaseToken call",
+      "attributes": [
+        {
+          "name": "amount",
+          "type": "string"
+        },
+        {
+          "name": "maxPayQuote",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "buyBaseToken call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "feeTo call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "feeTo call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "getPrice call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "getPrice call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "latestAnswer call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "latestAnswer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "skim call",
+      "attributes": [
+        {
+          "name": "to",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "swap call",
+      "attributes": [
+        {
+          "name": "amount0Out",
+          "type": "string"
+        },
+        {
+          "name": "amount1Out",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "string"
+        },
+        {
+          "name": "to",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "token0 call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "token0 call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "token1 call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "token1 call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "transfer call",
+      "attributes": [
+        {
+          "name": "_to",
+          "type": "string"
+        },
+        {
+          "name": "_value",
+          "type": "string"
+        },
+        {
+          "name": "dst",
+          "type": "string"
+        },
+        {
+          "name": "to",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "string"
+        },
+        {
+          "name": "wad",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "transferFrom call",
+      "attributes": [
+        {
+          "name": "_from",
+          "type": "string"
+        },
+        {
+          "name": "_to",
+          "type": "string"
+        },
+        {
+          "name": "_value",
+          "type": "string"
+        },
+        {
+          "name": "from",
+          "type": "string"
+        },
+        {
+          "name": "to",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "transferFrom call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "undefined call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "undefined call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "uniswapV2Call call",
+      "attributes": [
+        {
+          "name": "",
+          "type": "string"
+        },
+        {
+          "name": "amount0",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "uniswapV2Call call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Request burn",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request buyBaseToken",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request getPrice",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request skim",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request swap",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request undefined",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request uniswapV2Call",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Respond to buyBaseToken",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Respond to getPrice",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Respond to undefined",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Respond to uniswapV2Call",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "approve",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "feeTo",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "latestAnswer",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "token0",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "token1",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transferFrom",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "0x66666600e43c6d9e1a249d29d58639dedfcd9ade",
+      "type": "EOA"
+    },
+    {
+      "id": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+      "type": "CA"
+    },
+    {
+      "id": "call:req:71d6574a2d743cafc42e12bd1996f18c28d6231e7bfc8268b8133f71eb82d2a4:root",
+      "type": "approve call",
+      "attributes": [
+        {
+          "name": "spender",
+          "value": "3f6CDd93e4A1c2Df9934Cb90D09040CcFc155F93",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "value",
+          "value": "1.157920892373162e+77",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x66666600e43c6d9e1a249d29d58639dedfcd9ade",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0x71d6574a2d743cafc42e12bd1996f18c28d6231e7bfc8268b8133f71eb82d2a4",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "0xf94e5cdf41247e268d4847c30a0dc2893b33e85d",
+      "type": "EOA"
+    },
+    {
+      "id": "call:req:1ded088e1d822e39e875de455f7c15a685c83cddb0f8d64fa14de4af5a77eb3f:root",
+      "type": "transfer call",
+      "attributes": [
+        {
+          "name": "to",
+          "value": "e79057088a15ac8c9c8beC3b90Bd9891a1b3af51",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "value",
+          "value": "12725895835997",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xf94e5cdf41247e268d4847c30a0dc2893b33e85d",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0x1ded088e1d822e39e875de455f7c15a685c83cddb0f8d64fa14de4af5a77eb3f",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "0xea8e147bdb3ee3dde2085acb88de826e1a6de37a",
+      "type": "EOA"
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+      "type": "swap call",
+      "attributes": [
+        {
+          "name": "amount0Out",
+          "value": "242498517",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "amount1Out",
+          "value": "0",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "to",
+          "value": "eCC2E61D14265F7146559Ed9a2D11c8921ED1EB7",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "data",
+          "value": "0x000000000000000000000000990741117fa76a8cfa3d934bdd7af69b0df8e29800000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000de0b6b3a7640000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xea8e147bdb3ee3dde2085acb88de826e1a6de37a",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography swap",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1",
+          "qualifier": "choreo:contains"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "qualifier": "choreo:contains"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3",
+          "qualifier": "choreo:contains"
+        }
+      ]
+    },
+    {
+      "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "type": "SignatureChecker"
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1",
+      "type": "undefined call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "['0xa9059cbb000000000000000000000000ecc2e61d14265f7146559ed9a2d11c8921ed1eb7000000000000000000000000000000000000000000000000000000000e743bd5']",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1",
+      "type": "undefined call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography undefined",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+      "type": "FiatTokenV1"
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1_1",
+      "type": "transfer call",
+      "attributes": [
+        {
+          "name": "_to",
+          "value": "eCC2E61D14265F7146559Ed9a2D11c8921ED1EB7",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_value",
+          "value": "242498517",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1_1",
+      "type": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+      "type": "UniswapArbitrageur"
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+      "type": "uniswapV2Call call",
+      "attributes": [
+        {
+          "name": "",
+          "value": "0",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "amount0",
+          "value": "242498517",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "data",
+          "value": "0x000000000000000000000000990741117fa76a8cfa3d934bdd7af69b0df8e29800000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000de0b6b3a7640000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+      "type": "uniswapV2Call call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "None",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography uniswapV2Call",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contains"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6",
+          "qualifier": "choreo:contains"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7",
+          "qualifier": "choreo:contains"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_1",
+      "type": "token0 call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "0x0dfe1681",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_1",
+      "type": "token0 call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_2",
+      "type": "token1 call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "0xd21220a7",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_2",
+      "type": "token1 call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+      "type": "DODO"
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+      "type": "buyBaseToken call",
+      "attributes": [
+        {
+          "name": "amount",
+          "value": "1000000000000000000",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "maxPayQuote",
+          "value": "1.157920892373162e+77",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+      "type": "buyBaseToken call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x000000000000000000000000000000000000000000000000000000000e089b8a",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography buyBaseToken",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1",
+          "qualifier": "choreo:contains"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2",
+          "qualifier": "choreo:contains"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3",
+          "qualifier": "choreo:contains"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4",
+          "qualifier": "choreo:contains"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5",
+          "qualifier": "choreo:contains"
+        }
+      ]
+    },
+    {
+      "id": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+      "type": "ChainlinkETHPriceOracleProxy"
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1",
+      "type": "getPrice call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "0x98d5fdca",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1",
+      "type": "getPrice call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x000000000000000000000000000000000000000000000000000000000e97cf30",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography getPrice",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "0xf79d6afbb6da890132f9d7c355e3015f15f3406f",
+      "type": "Aggregator"
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1_1",
+      "type": "latestAnswer call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "0x50d25bcd",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xf79d6afbb6da890132f9d7c355e3015f15f3406f",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1_1",
+      "type": "latestAnswer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00000000000000000000000000000000000000000000000000000005b34ceec0",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xf79d6afbb6da890132f9d7c355e3015f15f3406f",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2",
+      "type": "getPrice call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "0x98d5fdca",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2",
+      "type": "getPrice call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x000000000000000000000000000000000000000000000000000000000e97cf30",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography getPrice",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2_1",
+      "type": "latestAnswer call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "0x50d25bcd",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xf79d6afbb6da890132f9d7c355e3015f15f3406f",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2_1",
+      "type": "latestAnswer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00000000000000000000000000000000000000000000000000000005b34ceec0",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xf79d6afbb6da890132f9d7c355e3015f15f3406f",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3",
+      "type": "undefined call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "0x70a08231000000000000000000000000990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3",
+      "type": "undefined call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00000000000000000000000000000000000000000000000000000000b497fae0",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography undefined",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3_1",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "account",
+          "value": "990741117FA76A8CFA3d934BDd7af69B0DF8E298",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3_1",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00000000000000000000000000000000000000000000000000000000b497fae0",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4",
+      "type": "undefined call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "0x23b872dd000000000000000000000000ecc2e61d14265f7146559ed9a2d11c8921ed1eb7000000000000000000000000990741117fa76a8cfa3d934bdd7af69b0df8e298000000000000000000000000000000000000000000000000000000000e089b8a",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4",
+      "type": "undefined call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography undefined",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4_1",
+      "type": "transferFrom call",
+      "attributes": [
+        {
+          "name": "_from",
+          "value": "eCC2E61D14265F7146559Ed9a2D11c8921ED1EB7",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_to",
+          "value": "990741117FA76A8CFA3d934BDd7af69B0DF8E298",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_value",
+          "value": "235445130",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4_1",
+      "type": "transferFrom call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5",
+      "type": "undefined call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "0x70a08231000000000000000000000000990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5",
+      "type": "undefined call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00000000000000000000000000000000000000000000000000000000c2a0966a",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography undefined",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5_1",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "account",
+          "value": "990741117FA76A8CFA3d934BDd7af69B0DF8E298",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5_1",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00000000000000000000000000000000000000000000000000000000c2a0966a",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "type": "WETH9"
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_6",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "",
+          "value": "990741117FA76A8CFA3d934BDd7af69B0DF8E298",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_6",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x000000000000000000000000000000000000000000000001d0e7e88267960000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_7",
+      "type": "transfer call",
+      "attributes": [
+        {
+          "name": "dst",
+          "value": "eCC2E61D14265F7146559Ed9a2D11c8921ED1EB7",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "wad",
+          "value": "1000000000000000000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_7",
+      "type": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_8",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "",
+          "value": "990741117FA76A8CFA3d934BDd7af69B0DF8E298",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_8",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x000000000000000000000000000000000000000000000001c30731cec0320000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_9",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "",
+          "value": "990741117FA76A8CFA3d934BDd7af69B0DF8E298",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_9",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x000000000000000000000000000000000000000000000001c30731cec0320000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_10",
+      "type": "transfer call",
+      "attributes": [
+        {
+          "name": "dst",
+          "value": "9c59990ec0177d87ED7D60A56F584E6b06C639a2",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "wad",
+          "value": "0",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_10",
+      "type": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_11",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "",
+          "value": "990741117FA76A8CFA3d934BDd7af69B0DF8E298",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_11",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x000000000000000000000000000000000000000000000001c30731cec0320000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_4",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "",
+          "value": "eCC2E61D14265F7146559Ed9a2D11c8921ED1EB7",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_4",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_5",
+      "type": "transfer call",
+      "attributes": [
+        {
+          "name": "dst",
+          "value": "B4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "wad",
+          "value": "1000000000000000000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_5",
+      "type": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6",
+      "type": "undefined call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "0x70a08231000000000000000000000000ecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6",
+      "type": "undefined call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00000000000000000000000000000000000000000000000000000000006ba04b",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography undefined",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6_1",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "account",
+          "value": "eCC2E61D14265F7146559Ed9a2D11c8921ED1EB7",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6_1",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00000000000000000000000000000000000000000000000000000000006ba04b",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7",
+      "type": "undefined call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "0xa9059cbb0000000000000000000000009c59990ec0177d87ed7d60a56f584e6b06c639a200000000000000000000000000000000000000000000000000000000006ba04b",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7",
+      "type": "undefined call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography undefined",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7_1",
+      "type": "transfer call",
+      "attributes": [
+        {
+          "name": "_to",
+          "value": "9c59990ec0177d87ED7D60A56F584E6b06C639a2",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_value",
+          "value": "7053387",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7_1",
+      "type": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3",
+      "type": "undefined call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "['0x70a08231000000000000000000000000b4e16d0168e52d35cacd2c6185b44281ec28c9dc']",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3",
+      "type": "undefined call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00000000000000000000000000000000000000000000000000000404cb52d5f7",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography undefined",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3_1",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "account",
+          "value": "B4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3_1",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00000000000000000000000000000000000000000000000000000404cb52d5f7",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_4",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "",
+          "value": "B4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_4",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000003d8c7a7705bcd284d86",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "0x3238b53a910b69f5dbdb31786613ce944536ba19",
+      "type": "EOA"
+    },
+    {
+      "id": "call:req:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root",
+      "type": "skim call",
+      "attributes": [
+        {
+          "name": "to",
+          "value": "3238B53A910B69f5dBDb31786613cE944536BA19",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x3238b53a910b69f5dbdb31786613ce944536ba19",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography skim",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "sub:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1",
+          "qualifier": "choreo:contains"
+        },
+        {
+          "objectId": "sub:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2",
+          "qualifier": "choreo:contains"
+        }
+      ]
+    },
+    {
+      "id": "call:req:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1",
+      "type": "undefined call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "['0x70a08231000000000000000000000000b4e16d0168e52d35cacd2c6185b44281ec28c9dc']",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1",
+      "type": "undefined call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x000000000000000000000000000000000000000000000000000003d0ee0a1224",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography undefined",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1_1",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "account",
+          "value": "B4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1_1",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x000000000000000000000000000000000000000000000000000003d0ee0a1224",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2",
+      "type": "undefined call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "['0xa9059cbb0000000000000000000000003238b53a910b69f5dbdb31786613ce944536ba190000000000000000000000000000000000000000000000000000000000000000']",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2",
+      "type": "undefined call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography undefined",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2_1",
+      "type": "transfer call",
+      "attributes": [
+        {
+          "name": "_to",
+          "value": "3238B53A910B69f5dBDb31786613cE944536BA19",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_value",
+          "value": "0",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2_1",
+      "type": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_3",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "",
+          "value": "B4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_3",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000002bf2b2c0d9a68f1dead",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_4",
+      "type": "transfer call",
+      "attributes": [
+        {
+          "name": "dst",
+          "value": "3238B53A910B69f5dBDb31786613cE944536BA19",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "wad",
+          "value": "0",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_4",
+      "type": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "0xbd0d1b30abe79d02eeb1a238bd8e003fa8d986e7",
+      "type": "EOA"
+    },
+    {
+      "id": "call:req:a2d9d65c4417304176c6e2fad50d2b3da1a16a3c1dd907487df5e1a57637c969:root",
+      "type": "transferFrom call",
+      "attributes": [
+        {
+          "name": "from",
+          "value": "bb4425F09548a140270220f78E6fd68f4E2c756D",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "to",
+          "value": "bd0d1b30Abe79d02eEB1a238bd8E003FA8D986e7",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "value",
+          "value": "66414356174366360",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xbd0d1b30abe79d02eeb1a238bd8e003fa8d986e7",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0xa2d9d65c4417304176c6e2fad50d2b3da1a16a3c1dd907487df5e1a57637c969",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "0xc6dd8b66ae70cfabe33365eccf08cd06c5171ad7",
+      "type": "EOA"
+    },
+    {
+      "id": "call:req:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:root",
+      "type": "burn call",
+      "attributes": [
+        {
+          "name": "to",
+          "value": "C6dd8B66Ae70cFABE33365ECcf08CD06C5171AD7",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xc6dd8b66ae70cfabe33365eccf08cd06c5171ad7",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:root",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography burn",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "sub:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1",
+          "qualifier": "choreo:contains"
+        }
+      ]
+    },
+    {
+      "id": "call:req:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1",
+      "type": "undefined call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "['0x70a08231000000000000000000000000b4e16d0168e52d35cacd2c6185b44281ec28c9dc']",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1",
+      "type": "undefined call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000626a94ef4ef2",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography undefined",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "0xb7277a6e95992041568d9391d09d0122023778a2",
+      "type": "FiatTokenV2"
+    },
+    {
+      "id": "call:req:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1_1",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "account",
+          "value": "B4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb7277a6e95992041568d9391d09d0122023778a2",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1_1",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000626a94ef4ef2",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb7277a6e95992041568d9391d09d0122023778a2",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_2",
+      "type": "balanceOf call",
+      "attributes": [
+        {
+          "name": "",
+          "value": "B4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_2",
+      "type": "balanceOf call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x000000000000000000000000000000000000000000003355648be2c173ed1035",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+      "type": "UniswapV2Factory"
+    },
+    {
+      "id": "call:req:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_3",
+      "type": "feeTo call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "['0x017e7e58']",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_3",
+      "type": "feeTo call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0xd9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1",
+      "type": "ChoreographyInstance"
+    }
+  ],
+  "events": [
+    {
+      "id": "e:71d6574a2d743cafc42e12bd1996f18c28d6231e7bfc8268b8133f71eb82d2a4:root",
+      "type": "approve",
+      "time": "2020-05-07T15:46:30.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x66666600e43c6d9e1a249d29d58639dedfcd9ade",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:71d6574a2d743cafc42e12bd1996f18c28d6231e7bfc8268b8133f71eb82d2a4:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0x71d6574a2d743cafc42e12bd1996f18c28d6231e7bfc8268b8133f71eb82d2a4",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:1ded088e1d822e39e875de455f7c15a685c83cddb0f8d64fa14de4af5a77eb3f:root",
+      "type": "transfer",
+      "time": "2020-05-18T19:06:24.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xf94e5cdf41247e268d4847c30a0dc2893b33e85d",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:1ded088e1d822e39e875de455f7c15a685c83cddb0f8d64fa14de4af5a77eb3f:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0x1ded088e1d822e39e875de455f7c15a685c83cddb0f8d64fa14de4af5a77eb3f",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root:request",
+      "type": "Request swap",
+      "time": "2020-07-22T16:09:00.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xea8e147bdb3ee3dde2085acb88de826e1a6de37a",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1:request",
+      "type": "Request undefined",
+      "time": "2020-07-22T16:09:00.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1_1",
+      "type": "transfer",
+      "time": "2020-07-22T16:09:00.002Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "2"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1:response",
+      "type": "Respond to undefined",
+      "time": "2020-07-22T16:09:00.003Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "3"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2:request",
+      "type": "Request uniswapV2Call",
+      "time": "2020-07-22T16:09:00.004Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "4"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_1",
+      "type": "token0",
+      "time": "2020-07-22T16:09:00.005Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "5"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_2",
+      "type": "token1",
+      "time": "2020-07-22T16:09:00.006Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "6"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3:request",
+      "type": "Request buyBaseToken",
+      "time": "2020-07-22T16:09:00.007Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "7"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1:request",
+      "type": "Request getPrice",
+      "time": "2020-07-22T16:09:00.008Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "8"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1_1",
+      "type": "latestAnswer",
+      "time": "2020-07-22T16:09:00.009Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "9"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xf79d6afbb6da890132f9d7c355e3015f15f3406f",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1:response",
+      "type": "Respond to getPrice",
+      "time": "2020-07-22T16:09:00.010Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "10"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2:request",
+      "type": "Request getPrice",
+      "time": "2020-07-22T16:09:00.011Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "11"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2_1",
+      "type": "latestAnswer",
+      "time": "2020-07-22T16:09:00.012Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "12"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xf79d6afbb6da890132f9d7c355e3015f15f3406f",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2:response",
+      "type": "Respond to getPrice",
+      "time": "2020-07-22T16:09:00.013Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "13"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xdb5fe0d4ea64e3264fc1cd963462a246f079b55c",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3:request",
+      "type": "Request undefined",
+      "time": "2020-07-22T16:09:00.014Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "14"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3_1",
+      "type": "balanceOf",
+      "time": "2020-07-22T16:09:00.015Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "15"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3:response",
+      "type": "Respond to undefined",
+      "time": "2020-07-22T16:09:00.016Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "16"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4:request",
+      "type": "Request undefined",
+      "time": "2020-07-22T16:09:00.017Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "17"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4_1",
+      "type": "transferFrom",
+      "time": "2020-07-22T16:09:00.018Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "18"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4:response",
+      "type": "Respond to undefined",
+      "time": "2020-07-22T16:09:00.019Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "19"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5:request",
+      "type": "Request undefined",
+      "time": "2020-07-22T16:09:00.020Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "20"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5_1",
+      "type": "balanceOf",
+      "time": "2020-07-22T16:09:00.021Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "21"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5:response",
+      "type": "Respond to undefined",
+      "time": "2020-07-22T16:09:00.022Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "22"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_6",
+      "type": "balanceOf",
+      "time": "2020-07-22T16:09:00.023Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "23"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_6",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_6",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_7",
+      "type": "transfer",
+      "time": "2020-07-22T16:09:00.024Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "24"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_7",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_7",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_8",
+      "type": "balanceOf",
+      "time": "2020-07-22T16:09:00.025Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "25"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_8",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_8",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_9",
+      "type": "balanceOf",
+      "time": "2020-07-22T16:09:00.026Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "26"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_9",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_9",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_10",
+      "type": "transfer",
+      "time": "2020-07-22T16:09:00.027Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "27"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_10",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_10",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_11",
+      "type": "balanceOf",
+      "time": "2020-07-22T16:09:00.028Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "28"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_11",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_11",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3:response",
+      "type": "Respond to buyBaseToken",
+      "time": "2020-07-22T16:09:00.029Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "29"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x990741117fa76a8cfa3d934bdd7af69b0df8e298",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_4",
+      "type": "balanceOf",
+      "time": "2020-07-22T16:09:00.030Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "30"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_4",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_4",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_5",
+      "type": "transfer",
+      "time": "2020-07-22T16:09:00.031Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "31"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_5",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_5",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6:request",
+      "type": "Request undefined",
+      "time": "2020-07-22T16:09:00.032Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "32"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6_1",
+      "type": "balanceOf",
+      "time": "2020-07-22T16:09:00.033Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "33"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6:response",
+      "type": "Respond to undefined",
+      "time": "2020-07-22T16:09:00.034Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "34"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7:request",
+      "type": "Request undefined",
+      "time": "2020-07-22T16:09:00.035Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "35"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7_1",
+      "type": "transfer",
+      "time": "2020-07-22T16:09:00.036Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "36"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7:response",
+      "type": "Respond to undefined",
+      "time": "2020-07-22T16:09:00.037Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "37"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2:response",
+      "type": "Respond to uniswapV2Call",
+      "time": "2020-07-22T16:09:00.038Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "38"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xecc2e61d14265f7146559ed9a2d11c8921ed1eb7",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3:request",
+      "type": "Request undefined",
+      "time": "2020-07-22T16:09:00.039Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "39"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3_1",
+      "type": "balanceOf",
+      "time": "2020-07-22T16:09:00.040Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "40"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3:response",
+      "type": "Respond to undefined",
+      "time": "2020-07-22T16:09:00.041Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "41"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_4",
+      "type": "balanceOf",
+      "time": "2020-07-22T16:09:00.042Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "42"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_4",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_4",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root:request",
+      "type": "Request skim",
+      "time": "2020-07-27T20:07:27.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x3238b53a910b69f5dbdb31786613ce944536ba19",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1:request",
+      "type": "Request undefined",
+      "time": "2020-07-27T20:07:27.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1_1",
+      "type": "balanceOf",
+      "time": "2020-07-27T20:07:27.002Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "2"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1:response",
+      "type": "Respond to undefined",
+      "time": "2020-07-27T20:07:27.003Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "3"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2:request",
+      "type": "Request undefined",
+      "time": "2020-07-27T20:07:27.004Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "4"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2_1",
+      "type": "transfer",
+      "time": "2020-07-27T20:07:27.005Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "5"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x0882477e7895bdc5cea7cb1552ed914ab157fe56",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2:response",
+      "type": "Respond to undefined",
+      "time": "2020-07-27T20:07:27.006Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "6"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_3",
+      "type": "balanceOf",
+      "time": "2020-07-27T20:07:27.007Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "7"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_3",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_3",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_4",
+      "type": "transfer",
+      "time": "2020-07-27T20:07:27.008Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "8"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_4",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_4",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:a2d9d65c4417304176c6e2fad50d2b3da1a16a3c1dd907487df5e1a57637c969:root",
+      "type": "transferFrom",
+      "time": "2020-08-17T19:24:57.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xbd0d1b30abe79d02eeb1a238bd8e003fa8d986e7",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:a2d9d65c4417304176c6e2fad50d2b3da1a16a3c1dd907487df5e1a57637c969:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0xa2d9d65c4417304176c6e2fad50d2b3da1a16a3c1dd907487df5e1a57637c969",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:root:request",
+      "type": "Request burn",
+      "time": "2020-09-03T01:43:28.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xc6dd8b66ae70cfabe33365eccf08cd06c5171ad7",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0xd9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1:request",
+      "type": "Request undefined",
+      "time": "2020-09-03T01:43:28.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xd9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1_1",
+      "type": "balanceOf",
+      "time": "2020-09-03T01:43:28.002Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "2"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb7277a6e95992041568d9391d09d0122023778a2",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xd9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1:response",
+      "type": "Respond to undefined",
+      "time": "2020-09-03T01:43:28.003Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "3"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xd9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_2",
+      "type": "balanceOf",
+      "time": "2020-09-03T01:43:28.004Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "4"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xd9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_3",
+      "type": "feeTo",
+      "time": "2020-09-03T01:43:28.005Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "5"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_3",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_3",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xd9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    }
+  ]
+}

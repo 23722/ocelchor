@@ -1,0 +1,62 @@
+[
+  {
+    "_id": { "$oid": "000000000000000000000030" },
+    "functionName": "swap",
+    "transactionHash": "0xdddd4444dddd4444dddd4444dddd4444dddd4444dddd4444dddd4444dddd4444",
+    "contractAddress": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "sender": "0x1111111111111111111111111111111111111111",
+    "gasUsed": 90000,
+    "blockNumber": 12346000,
+    "timestamp": { "$date": "2024-01-01T00:20:00Z" },
+    "value": 0,
+    "inputs": [
+      { "inputName": "amountIn", "type": "uint256", "inputValue": 2000 }
+    ],
+    "storageState": [],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "inputsCall": [],
+        "inputs": [
+          { "name": "amountIn", "type": "uint256", "value": 2000 }
+        ],
+        "from": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gas": 85000,
+        "gasUsed": 65000,
+        "output": "0x00000000000000000000000000000000000000000000000000000000000007ca",
+        "value": 0,
+        "type": "CALL",
+        "depth": 0,
+        "activity": "swap",
+        "contractCalledName": "SwapRouter",
+        "calls": [
+          {
+            "callId": "0_1_1",
+            "to": "0xcccccccccccccccccccccccccccccccccccccccc",
+            "inputsCall": "0xa9059cbb",
+            "from": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "gas": 50000,
+            "gasUsed": 25000,
+            "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "value": 0,
+            "type": "CALL",
+            "depth": 1,
+            "activity": "undefined"
+          }
+        ],
+        "events": []
+      }
+    ],
+    "events": [
+      {
+        "eventName": "Swap",
+        "eventValues": {
+          "amountIn": 2000,
+          "amountOut": 1994
+        },
+        "eventFrom": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      }
+    ]
+  }
+]

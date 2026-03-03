@@ -1,0 +1,94 @@
+[
+  {
+    "_id": { "$oid": "000000000000000000000040" },
+    "functionName": "deployAndSwap",
+    "transactionHash": "0xeeee5555eeee5555eeee5555eeee5555eeee5555eeee5555eeee5555eeee5555",
+    "contractAddress": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "sender": "0x1111111111111111111111111111111111111111",
+    "gasUsed": 200000,
+    "blockNumber": 12346100,
+    "timestamp": { "$date": "2024-01-01T00:25:00Z" },
+    "value": 0,
+    "inputs": [
+      { "inputName": "tokenName", "type": "string", "inputValue": "TestToken" },
+      { "inputName": "amountIn", "type": "uint256", "inputValue": 500 }
+    ],
+    "storageState": [],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0x2222222222222222222222222222222222222222",
+        "inputsCall": [],
+        "inputs": [
+          { "name": "name", "type": "string", "value": "TestToken" }
+        ],
+        "from": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gas": 180000,
+        "gasUsed": 120000,
+        "output": "0x608060405234801561001057600080fd5b506040516102",
+        "value": 0,
+        "type": "CREATE",
+        "depth": 0,
+        "activity": "undefined",
+        "calls": [],
+        "events": []
+      },
+      {
+        "callId": "0_2",
+        "to": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "inputsCall": [],
+        "inputs": [
+          { "name": "amountIn", "type": "uint256", "value": 500 }
+        ],
+        "from": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gas": 50000,
+        "gasUsed": 35000,
+        "output": "0x00000000000000000000000000000000000000000000000000000000000001f1",
+        "value": 0,
+        "type": "CALL",
+        "depth": 0,
+        "activity": "swap",
+        "contractCalledName": "SwapRouter",
+        "calls": [
+          {
+            "callId": "0_2_1",
+            "to": "0xcccccccccccccccccccccccccccccccccccccccc",
+            "inputsCall": [],
+            "inputs": [
+              { "name": "amount", "type": "uint256", "value": 497 }
+            ],
+            "from": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "gas": 30000,
+            "gasUsed": 8000,
+            "output": "0x00000000000000000000000000000000000000000000000000000000000001f1",
+            "value": 0,
+            "type": "DELEGATECALL",
+            "depth": 1,
+            "activity": "swapExact",
+            "contractCalledName": "SwapImplementation",
+            "calls": [],
+            "events": []
+          }
+        ],
+        "events": []
+      }
+    ],
+    "events": [
+      {
+        "eventName": "Deployed",
+        "eventValues": {
+          "token": "0x2222222222222222222222222222222222222222"
+        },
+        "eventFrom": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "eventName": "Swap",
+        "eventValues": {
+          "amountIn": 500,
+          "amountOut": 497
+        },
+        "eventFrom": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      }
+    ]
+  }
+]

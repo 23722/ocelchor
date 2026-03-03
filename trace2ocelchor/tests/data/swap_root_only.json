@@ -1,0 +1,30 @@
+[
+  {
+    "_id": { "$oid": "000000000000000000000010" },
+    "functionName": "approve",
+    "transactionHash": "0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111",
+    "contractAddress": "0xcccccccccccccccccccccccccccccccccccccccc",
+    "sender": "0x1111111111111111111111111111111111111111",
+    "gasUsed": 46000,
+    "blockNumber": 12345600,
+    "timestamp": { "$date": "2024-01-01T00:00:00Z" },
+    "value": 0,
+    "inputs": [
+      { "inputName": "spender", "type": "address", "inputValue": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
+      { "inputName": "amount", "type": "uint256", "inputValue": 99999 }
+    ],
+    "storageState": [],
+    "internalTxs": [],
+    "events": [
+      {
+        "eventName": "Approval",
+        "eventValues": {
+          "owner": "0x1111111111111111111111111111111111111111",
+          "spender": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "value": 99999
+        },
+        "eventFrom": "0xcccccccccccccccccccccccccccccccccccccccc"
+      }
+    ]
+  }
+]

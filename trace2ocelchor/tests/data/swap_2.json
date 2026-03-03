@@ -1,0 +1,78 @@
+[
+  {
+    "_id": { "$oid": "000000000000000000000002" },
+    "functionName": "swap",
+    "transactionHash": "0xdef1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1",
+    "contractAddress": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "sender": "0x1111111111111111111111111111111111111111",
+    "gasUsed": 85000,
+    "blockNumber": 12345700,
+    "timestamp": { "$date": "2024-01-01T00:05:00Z" },
+    "value": 0,
+    "inputs": [
+      { "inputName": "amountIn", "type": "uint256", "inputValue": 1000 }
+    ],
+    "storageState": [],
+    "internalTxs": [
+      {
+        "callId": "0_1",
+        "to": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "inputsCall": [],
+        "inputs": [
+          { "name": "amountIn", "type": "uint256", "value": 1000 }
+        ],
+        "from": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gas": 80000,
+        "gasUsed": 60000,
+        "output": "0x00000000000000000000000000000000000000000000000000000000000003e3",
+        "value": 0,
+        "type": "CALL",
+        "depth": 0,
+        "activity": "swap",
+        "contractCalledName": "SwapRouter",
+        "calls": [
+          {
+            "callId": "0_1_1",
+            "to": "0xcccccccccccccccccccccccccccccccccccccccc",
+            "inputsCall": [],
+            "inputs": [
+              { "name": "to", "type": "address", "value": "0x1111111111111111111111111111111111111111" },
+              { "name": "amount", "type": "uint256", "value": 995 }
+            ],
+            "from": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "gas": 50000,
+            "gasUsed": 25000,
+            "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "value": 0,
+            "type": "CALL",
+            "depth": 1,
+            "activity": "transfer",
+            "contractCalledName": "TokenContract",
+            "calls": [],
+            "events": []
+          }
+        ],
+        "events": []
+      }
+    ],
+    "events": [
+      {
+        "eventName": "Swap",
+        "eventValues": {
+          "amountIn": 1000,
+          "amountOut": 995
+        },
+        "eventFrom": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "eventName": "Transfer",
+        "eventValues": {
+          "from": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "to": "0x1111111111111111111111111111111111111111",
+          "value": 995
+        },
+        "eventFrom": "0xcccccccccccccccccccccccccccccccccccccccc"
+      }
+    ]
+  }
+]

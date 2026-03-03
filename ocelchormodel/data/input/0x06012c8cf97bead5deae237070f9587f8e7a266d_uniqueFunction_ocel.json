@@ -1,0 +1,2870 @@
+{
+  "objectTypes": [
+    {
+      "name": "CA",
+      "attributes": []
+    },
+    {
+      "name": "ChoreographyInstance",
+      "attributes": []
+    },
+    {
+      "name": "EOA",
+      "attributes": []
+    },
+    {
+      "name": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "bid call",
+      "attributes": [
+        {
+          "name": "_tokenId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "bid call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "bidOnSiringAuction call",
+      "attributes": [
+        {
+          "name": "_matronId",
+          "type": "string"
+        },
+        {
+          "name": "_sireId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "breedWithAuto call",
+      "attributes": [
+        {
+          "name": "_matronId",
+          "type": "string"
+        },
+        {
+          "name": "_sireId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "createAuction call",
+      "attributes": [
+        {
+          "name": "_duration",
+          "type": "string"
+        },
+        {
+          "name": "_endingPrice",
+          "type": "string"
+        },
+        {
+          "name": "_seller",
+          "type": "string"
+        },
+        {
+          "name": "_startingPrice",
+          "type": "string"
+        },
+        {
+          "name": "_tokenId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "createAuction call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "createPromoKitty call",
+      "attributes": [
+        {
+          "name": "_genes",
+          "type": "string"
+        },
+        {
+          "name": "_owner",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "createSaleAuction call",
+      "attributes": [
+        {
+          "name": "_duration",
+          "type": "string"
+        },
+        {
+          "name": "_endingPrice",
+          "type": "string"
+        },
+        {
+          "name": "_kittyId",
+          "type": "string"
+        },
+        {
+          "name": "_startingPrice",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "createSiringAuction call",
+      "attributes": [
+        {
+          "name": "_duration",
+          "type": "string"
+        },
+        {
+          "name": "_endingPrice",
+          "type": "string"
+        },
+        {
+          "name": "_kittyId",
+          "type": "string"
+        },
+        {
+          "name": "_startingPrice",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "getCurrentPrice call",
+      "attributes": [
+        {
+          "name": "_tokenId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "getCurrentPrice call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "giveBirth call",
+      "attributes": [
+        {
+          "name": "_matronId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "isGeneScience call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "isGeneScience call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "isSaleClockAuction call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "isSaleClockAuction call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "isSiringClockAuction call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "isSiringClockAuction call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mixGenes call",
+      "attributes": [
+        {
+          "name": "_genes1",
+          "type": "string"
+        },
+        {
+          "name": "_genes2",
+          "type": "string"
+        },
+        {
+          "name": "_targetBlock",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mixGenes call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "setAutoBirthFee call",
+      "attributes": [
+        {
+          "name": "val",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "setCEO call",
+      "attributes": [
+        {
+          "name": "_newCEO",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "setCFO call",
+      "attributes": [
+        {
+          "name": "_newCFO",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "setGeneScienceAddress call",
+      "attributes": [
+        {
+          "name": "_address",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "setMarketAdminPermissionChecker call",
+      "attributes": [
+        {
+          "name": "address",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "setMarketAdminPermissionChecker call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "setSaleAuctionAddress call",
+      "attributes": [
+        {
+          "name": "_address",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "setSiringAuctionAddress call",
+      "attributes": [
+        {
+          "name": "_address",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "transfer call",
+      "attributes": [
+        {
+          "name": "_to",
+          "type": "string"
+        },
+        {
+          "name": "_tokenId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "transferFrom call",
+      "attributes": [
+        {
+          "name": "_from",
+          "type": "string"
+        },
+        {
+          "name": "_to",
+          "type": "string"
+        },
+        {
+          "name": "_tokenId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "transferFrom call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "undefined call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "undefined call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "unpause call",
+      "attributes": []
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Request bid",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request bidOnSiringAuction",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request createAuction",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request createSaleAuction",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request createSiringAuction",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request giveBirth",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request setGeneScienceAddress",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request setSaleAuctionAddress",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Request setSiringAuctionAddress",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Respond to bid",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "Respond to createAuction",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "breedWithAuto",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "createPromoKitty",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "getCurrentPrice",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "isGeneScience",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "isSaleClockAuction",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "isSiringClockAuction",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "mixGenes",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "setAutoBirthFee",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "setCEO",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "setCFO",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "setMarketAdminPermissionChecker",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transferFrom",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "undefined",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "unpause",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+      "type": "EOA"
+    },
+    {
+      "id": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+      "type": "CA"
+    },
+    {
+      "id": "call:req:dbbd99dce58ca96756fd0768fd3a7dac4dd3d329ad9c0ae4e9d25f1cdf82b0b7:root",
+      "type": "setGeneScienceAddress call",
+      "attributes": [
+        {
+          "name": "_address",
+          "value": "f97e0A5b616dfFC913e72455Fde9eA8bBe946a2B",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:dbbd99dce58ca96756fd0768fd3a7dac4dd3d329ad9c0ae4e9d25f1cdf82b0b7:root",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography setGeneScienceAddress",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "type": "CA"
+    },
+    {
+      "id": "call:req:dbbd99dce58ca96756fd0768fd3a7dac4dd3d329ad9c0ae4e9d25f1cdf82b0b7:0_1",
+      "type": "isGeneScience call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "['0x54c15b82']",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:dbbd99dce58ca96756fd0768fd3a7dac4dd3d329ad9c0ae4e9d25f1cdf82b0b7:0_1",
+      "type": "isGeneScience call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0xdbbd99dce58ca96756fd0768fd3a7dac4dd3d329ad9c0ae4e9d25f1cdf82b0b7",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "call:req:64ad29d259847899cc9a4b993efebf9e442b42a001b7bc6746b17a81b965d709:root",
+      "type": "setSiringAuctionAddress call",
+      "attributes": [
+        {
+          "name": "_address",
+          "value": "C7af99Fe5513eB6710e6D5f44F9989dA40F27F26",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:64ad29d259847899cc9a4b993efebf9e442b42a001b7bc6746b17a81b965d709:root",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography setSiringAuctionAddress",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:64ad29d259847899cc9a4b993efebf9e442b42a001b7bc6746b17a81b965d709:0_1",
+      "type": "isSiringClockAuction call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "['0x76190f8f']",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:64ad29d259847899cc9a4b993efebf9e442b42a001b7bc6746b17a81b965d709:0_1",
+      "type": "isSiringClockAuction call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0x64ad29d259847899cc9a4b993efebf9e442b42a001b7bc6746b17a81b965d709",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "call:req:77d2f2dc32324ba1ad024736421cadafb35dc914a25dcf41c67921aefa6b3179:root",
+      "type": "setSaleAuctionAddress call",
+      "attributes": [
+        {
+          "name": "_address",
+          "value": "b1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:77d2f2dc32324ba1ad024736421cadafb35dc914a25dcf41c67921aefa6b3179:root",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography setSaleAuctionAddress",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:77d2f2dc32324ba1ad024736421cadafb35dc914a25dcf41c67921aefa6b3179:0_1",
+      "type": "isSaleClockAuction call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "['0x85b86188']",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:77d2f2dc32324ba1ad024736421cadafb35dc914a25dcf41c67921aefa6b3179:0_1",
+      "type": "isSaleClockAuction call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0x77d2f2dc32324ba1ad024736421cadafb35dc914a25dcf41c67921aefa6b3179",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "call:req:f95ffb13ed6e26a4235db0953f6ee3f64c7776e21215f7d6d6bbfc246fbd351c:root",
+      "type": "setCEO call",
+      "attributes": [
+        {
+          "name": "_newCEO",
+          "value": "af1E54B359B0897133F437Fc961DD16F20c045E1",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0xf95ffb13ed6e26a4235db0953f6ee3f64c7776e21215f7d6d6bbfc246fbd351c",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "0xaf1e54b359b0897133f437fc961dd16f20c045e1",
+      "type": "EOA"
+    },
+    {
+      "id": "call:req:d5a057395759eacb0836da196c41044b7bbc153418a8d2e681300c1e5ecf1172:root",
+      "type": "setCFO call",
+      "attributes": [
+        {
+          "name": "_newCFO",
+          "value": "2041BB7D8b49F0bDE3aa1Fa7Fb506ac6C539394C",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xaf1e54b359b0897133f437fc961dd16f20c045e1",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0xd5a057395759eacb0836da196c41044b7bbc153418a8d2e681300c1e5ecf1172",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "call:req:9e8f42799dffe9f5700e1f871a20a9483e1c84db73c382c31a4412b9a2f83b2b:root",
+      "type": "createPromoKitty call",
+      "attributes": [
+        {
+          "name": "_genes",
+          "value": "6.268376211548016e+71",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_owner",
+          "value": "0000000000000000000000000000000000000000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0x9e8f42799dffe9f5700e1f871a20a9483e1c84db73c382c31a4412b9a2f83b2b",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "call:req:822fe4265cb23c99657fd2ed49887b57e913c98cf78ddc7f5dd14984cc0df2a9:root",
+      "type": "unpause call",
+      "relationships": [
+        {
+          "objectId": "0xaf1e54b359b0897133f437fc961dd16f20c045e1",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0x822fe4265cb23c99657fd2ed49887b57e913c98cf78ddc7f5dd14984cc0df2a9",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "call:req:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:root",
+      "type": "createSaleAuction call",
+      "attributes": [
+        {
+          "name": "_kittyId",
+          "value": "1001",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_startingPrice",
+          "value": "10000000000000000",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_endingPrice",
+          "value": "0",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_duration",
+          "value": "14400",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:root",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography createSaleAuction",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "sub:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:0_1",
+          "qualifier": "choreo:contains"
+        }
+      ]
+    },
+    {
+      "id": "call:req:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:0_1",
+      "type": "createAuction call",
+      "attributes": [
+        {
+          "name": "_tokenId",
+          "value": "1001",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_startingPrice",
+          "value": "10000000000000000",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_endingPrice",
+          "value": "0",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_duration",
+          "value": "14400",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_seller",
+          "value": "ba52c75764d6F594735dc735Be7F1830CDf58dDf",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:0_1",
+      "type": "createAuction call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "None",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:0_1",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography createAuction",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:0_1_1",
+      "type": "transferFrom call",
+      "attributes": [
+        {
+          "name": "_from",
+          "value": "ba52c75764d6F594735dc735Be7F1830CDf58dDf",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_to",
+          "value": "b1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_tokenId",
+          "value": "1001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:0_1_1",
+      "type": "transferFrom call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "None",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0x14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "0x0b2bdfcfa98567b7fc1d86a64a4a19bd91a6b9d9",
+      "type": "EOA"
+    },
+    {
+      "id": "call:req:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:root",
+      "type": "createSiringAuction call",
+      "attributes": [
+        {
+          "name": "_kittyId",
+          "value": "1012",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_startingPrice",
+          "value": "21000000000000000",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_endingPrice",
+          "value": "10000000000000000",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_duration",
+          "value": "604800",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x0b2bdfcfa98567b7fc1d86a64a4a19bd91a6b9d9",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:root",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography createSiringAuction",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "sub:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:0_1",
+          "qualifier": "choreo:contains"
+        }
+      ]
+    },
+    {
+      "id": "call:req:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:0_1",
+      "type": "createAuction call",
+      "attributes": [
+        {
+          "name": "_tokenId",
+          "value": "1012",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_startingPrice",
+          "value": "21000000000000000",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_endingPrice",
+          "value": "10000000000000000",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_duration",
+          "value": "604800",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_seller",
+          "value": "0B2BDFCFA98567b7fC1d86A64A4a19bd91a6B9d9",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:0_1",
+      "type": "createAuction call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "None",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:0_1",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography createAuction",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:0_1_1",
+      "type": "transferFrom call",
+      "attributes": [
+        {
+          "name": "_from",
+          "value": "0B2BDFCFA98567b7fC1d86A64A4a19bd91a6B9d9",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_to",
+          "value": "C7af99Fe5513eB6710e6D5f44F9989dA40F27F26",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_tokenId",
+          "value": "1012",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:0_1_1",
+      "type": "transferFrom call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "None",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0x1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "0x77efe0036a742b8c3f31fa87dc28e277f3c21d4b",
+      "type": "EOA"
+    },
+    {
+      "id": "call:req:fb30b2cd97def739d8c81275a14d3eaadaae9b136cfa5cd0e29fae7a9e0441bb:root",
+      "type": "breedWithAuto call",
+      "attributes": [
+        {
+          "name": "_matronId",
+          "value": "1044",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_sireId",
+          "value": "1006",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x77efe0036a742b8c3f31fa87dc28e277f3c21d4b",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0xfb30b2cd97def739d8c81275a14d3eaadaae9b136cfa5cd0e29fae7a9e0441bb",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "call:req:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:root",
+      "type": "giveBirth call",
+      "attributes": [
+        {
+          "name": "_matronId",
+          "value": "1044",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:root",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography giveBirth",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:0_1",
+      "type": "mixGenes call",
+      "attributes": [
+        {
+          "name": "_genes1",
+          "value": "6.21764041734816e+71",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_genes2",
+          "value": "4.560160307248603e+71",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_targetBlock",
+          "value": "4608575",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:0_1",
+      "type": "mixGenes call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00004250831c937052343d2f0006031086619860a8c639ca6288a37252e735ab",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:0_2",
+      "type": "setMarketAdminPermissionChecker call",
+      "attributes": [
+        {
+          "name": "address",
+          "value": "0x",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:0_2",
+      "type": "setMarketAdminPermissionChecker call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "None",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0xd94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "0x68767833f3e4a9547c9bdf737b67ef48ab626f65",
+      "type": "EOA"
+    },
+    {
+      "id": "call:req:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:root",
+      "type": "bidOnSiringAuction call",
+      "attributes": [
+        {
+          "name": "_sireId",
+          "value": "1084",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_matronId",
+          "value": "1092",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x68767833f3e4a9547c9bdf737b67ef48ab626f65",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:root",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography bidOnSiringAuction",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "sub:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2",
+          "qualifier": "choreo:contains"
+        }
+      ]
+    },
+    {
+      "id": "call:req:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_1",
+      "type": "getCurrentPrice call",
+      "attributes": [
+        {
+          "name": "_tokenId",
+          "value": "1084",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_1",
+      "type": "getCurrentPrice call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00000000000000000000000000000000000000000000000000039399a08c5612",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2",
+      "type": "bid call",
+      "attributes": [
+        {
+          "name": "_tokenId",
+          "value": "1084",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2",
+      "type": "bid call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "None",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography bid",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "call:req:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_1",
+      "type": "setMarketAdminPermissionChecker call",
+      "attributes": [
+        {
+          "name": "address",
+          "value": "0x",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_1",
+      "type": "setMarketAdminPermissionChecker call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "None",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_2",
+      "type": "undefined call",
+      "attributes": [
+        {
+          "name": "inputsCall",
+          "value": "0x",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_2",
+      "type": "undefined call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "None",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:req:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_3",
+      "type": "transfer call",
+      "attributes": [
+        {
+          "name": "_to",
+          "value": "44cd75d0eccaC283c62184ef87626d639E047441",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_tokenId",
+          "value": "1084",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_3",
+      "type": "transfer call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "None",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0x19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "call:req:affaf21acec54e1847ff841074cc41d833f4b9af68e16da750ee09ad7398a92f:root",
+      "type": "setAutoBirthFee call",
+      "attributes": [
+        {
+          "name": "val",
+          "value": "1000000000000000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0xaffaf21acec54e1847ff841074cc41d833f4b9af68e16da750ee09ad7398a92f",
+      "type": "ChoreographyInstance"
+    },
+    {
+      "id": "call:req:5075582d4f09bea5765033878a33742187e2c1a98df74ee8ad9da0614eee8088:root",
+      "type": "transfer call",
+      "attributes": [
+        {
+          "name": "_to",
+          "value": "672eC49F7f7EaC25C3A2E651F67F579BB5Da8936",
+          "time": "1970-01-01T00:00:00Z"
+        },
+        {
+          "name": "_tokenId",
+          "value": "2001",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0x5075582d4f09bea5765033878a33742187e2c1a98df74ee8ad9da0614eee8088",
+      "type": "ChoreographyInstance"
+    }
+  ],
+  "events": [
+    {
+      "id": "e:dbbd99dce58ca96756fd0768fd3a7dac4dd3d329ad9c0ae4e9d25f1cdf82b0b7:root:request",
+      "type": "Request setGeneScienceAddress",
+      "time": "2017-11-23T05:44:17.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:dbbd99dce58ca96756fd0768fd3a7dac4dd3d329ad9c0ae4e9d25f1cdf82b0b7:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0xdbbd99dce58ca96756fd0768fd3a7dac4dd3d329ad9c0ae4e9d25f1cdf82b0b7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:dbbd99dce58ca96756fd0768fd3a7dac4dd3d329ad9c0ae4e9d25f1cdf82b0b7:0_1",
+      "type": "isGeneScience",
+      "time": "2017-11-23T05:44:17.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:dbbd99dce58ca96756fd0768fd3a7dac4dd3d329ad9c0ae4e9d25f1cdf82b0b7:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:dbbd99dce58ca96756fd0768fd3a7dac4dd3d329ad9c0ae4e9d25f1cdf82b0b7:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:dbbd99dce58ca96756fd0768fd3a7dac4dd3d329ad9c0ae4e9d25f1cdf82b0b7:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xdbbd99dce58ca96756fd0768fd3a7dac4dd3d329ad9c0ae4e9d25f1cdf82b0b7",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:64ad29d259847899cc9a4b993efebf9e442b42a001b7bc6746b17a81b965d709:root:request",
+      "type": "Request setSiringAuctionAddress",
+      "time": "2017-11-23T05:45:44.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:64ad29d259847899cc9a4b993efebf9e442b42a001b7bc6746b17a81b965d709:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0x64ad29d259847899cc9a4b993efebf9e442b42a001b7bc6746b17a81b965d709",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:64ad29d259847899cc9a4b993efebf9e442b42a001b7bc6746b17a81b965d709:0_1",
+      "type": "isSiringClockAuction",
+      "time": "2017-11-23T05:45:44.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:64ad29d259847899cc9a4b993efebf9e442b42a001b7bc6746b17a81b965d709:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:64ad29d259847899cc9a4b993efebf9e442b42a001b7bc6746b17a81b965d709:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:64ad29d259847899cc9a4b993efebf9e442b42a001b7bc6746b17a81b965d709:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x64ad29d259847899cc9a4b993efebf9e442b42a001b7bc6746b17a81b965d709",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:77d2f2dc32324ba1ad024736421cadafb35dc914a25dcf41c67921aefa6b3179:root:request",
+      "type": "Request setSaleAuctionAddress",
+      "time": "2017-11-23T05:45:53.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:77d2f2dc32324ba1ad024736421cadafb35dc914a25dcf41c67921aefa6b3179:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0x77d2f2dc32324ba1ad024736421cadafb35dc914a25dcf41c67921aefa6b3179",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:77d2f2dc32324ba1ad024736421cadafb35dc914a25dcf41c67921aefa6b3179:0_1",
+      "type": "isSaleClockAuction",
+      "time": "2017-11-23T05:45:53.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:77d2f2dc32324ba1ad024736421cadafb35dc914a25dcf41c67921aefa6b3179:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:77d2f2dc32324ba1ad024736421cadafb35dc914a25dcf41c67921aefa6b3179:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:77d2f2dc32324ba1ad024736421cadafb35dc914a25dcf41c67921aefa6b3179:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x77d2f2dc32324ba1ad024736421cadafb35dc914a25dcf41c67921aefa6b3179",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:f95ffb13ed6e26a4235db0953f6ee3f64c7776e21215f7d6d6bbfc246fbd351c:root",
+      "type": "setCEO",
+      "time": "2017-11-23T06:08:02.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:f95ffb13ed6e26a4235db0953f6ee3f64c7776e21215f7d6d6bbfc246fbd351c:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0xf95ffb13ed6e26a4235db0953f6ee3f64c7776e21215f7d6d6bbfc246fbd351c",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:d5a057395759eacb0836da196c41044b7bbc153418a8d2e681300c1e5ecf1172:root",
+      "type": "setCFO",
+      "time": "2017-11-23T06:09:39.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xaf1e54b359b0897133f437fc961dd16f20c045e1",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:d5a057395759eacb0836da196c41044b7bbc153418a8d2e681300c1e5ecf1172:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0xd5a057395759eacb0836da196c41044b7bbc153418a8d2e681300c1e5ecf1172",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:9e8f42799dffe9f5700e1f871a20a9483e1c84db73c382c31a4412b9a2f83b2b:root",
+      "type": "createPromoKitty",
+      "time": "2017-11-23T06:19:59.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:9e8f42799dffe9f5700e1f871a20a9483e1c84db73c382c31a4412b9a2f83b2b:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0x9e8f42799dffe9f5700e1f871a20a9483e1c84db73c382c31a4412b9a2f83b2b",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:822fe4265cb23c99657fd2ed49887b57e913c98cf78ddc7f5dd14984cc0df2a9:root",
+      "type": "unpause",
+      "time": "2017-11-23T18:12:28.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xaf1e54b359b0897133f437fc961dd16f20c045e1",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:822fe4265cb23c99657fd2ed49887b57e913c98cf78ddc7f5dd14984cc0df2a9:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0x822fe4265cb23c99657fd2ed49887b57e913c98cf78ddc7f5dd14984cc0df2a9",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:root:request",
+      "type": "Request createSaleAuction",
+      "time": "2017-11-23T18:44:21.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0x14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:0_1:request",
+      "type": "Request createAuction",
+      "time": "2017-11-23T18:44:21.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:0_1_1",
+      "type": "transferFrom",
+      "time": "2017-11-23T18:44:21.002Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "2"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:0_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:0_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:0_1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:0_1:response",
+      "type": "Respond to createAuction",
+      "time": "2017-11-23T18:44:21.003Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "3"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x14952600083dbec76c08fb7b4473704642aa3ff626b53f83cd261259eb2c4a82",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:root:request",
+      "type": "Request createSiringAuction",
+      "time": "2017-11-23T18:55:46.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x0b2bdfcfa98567b7fc1d86a64a4a19bd91a6b9d9",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0x1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:0_1:request",
+      "type": "Request createAuction",
+      "time": "2017-11-23T18:55:46.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:0_1_1",
+      "type": "transferFrom",
+      "time": "2017-11-23T18:55:46.002Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "2"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:0_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:0_1_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:0_1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:0_1:response",
+      "type": "Respond to createAuction",
+      "time": "2017-11-23T18:55:46.003Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "3"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x1c91e1ffcb8b0043ae99b1d4bab0afc0ad8444c38559403de58bffa24157b4b0",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:fb30b2cd97def739d8c81275a14d3eaadaae9b136cfa5cd0e29fae7a9e0441bb:root",
+      "type": "breedWithAuto",
+      "time": "2017-11-23T18:57:15.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x77efe0036a742b8c3f31fa87dc28e277f3c21d4b",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:fb30b2cd97def739d8c81275a14d3eaadaae9b136cfa5cd0e29fae7a9e0441bb:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0xfb30b2cd97def739d8c81275a14d3eaadaae9b136cfa5cd0e29fae7a9e0441bb",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:root:request",
+      "type": "Request giveBirth",
+      "time": "2017-11-23T18:59:03.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0xd94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:0_1",
+      "type": "mixGenes",
+      "time": "2017-11-23T18:59:03.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xd94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:0_2",
+      "type": "setMarketAdminPermissionChecker",
+      "time": "2017-11-23T18:59:03.002Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "2"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:0_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:0_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:d94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xd94fbabac230196d3a750d63cf73516ba6959a76361fcaa1ae2e96ecf0606a22",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:root:request",
+      "type": "Request bidOnSiringAuction",
+      "time": "2017-11-23T20:01:54.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x68767833f3e4a9547c9bdf737b67ef48ab626f65",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0x19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_1",
+      "type": "getCurrentPrice",
+      "time": "2017-11-23T20:01:54.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2:request",
+      "type": "Request bid",
+      "time": "2017-11-23T20:01:54.002Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "2"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_1",
+      "type": "setMarketAdminPermissionChecker",
+      "time": "2017-11-23T20:01:54.003Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "3"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_2",
+      "type": "undefined",
+      "time": "2017-11-23T20:01:54.004Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "4"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_3",
+      "type": "transfer",
+      "time": "2017-11-23T20:01:54.005Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "5"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_3",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2_3",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2:response",
+      "type": "Respond to bid",
+      "time": "2017-11-23T20:01:54.006Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "6"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:res:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:0_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0x19ca212ecb96ec8f1c215002058c5fc739629624bf41fd84c06e324ac8a41bdb",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:affaf21acec54e1847ff841074cc41d833f4b9af68e16da750ee09ad7398a92f:root",
+      "type": "setAutoBirthFee",
+      "time": "2017-11-24T00:56:02.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:affaf21acec54e1847ff841074cc41d833f4b9af68e16da750ee09ad7398a92f:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0xaffaf21acec54e1847ff841074cc41d833f4b9af68e16da750ee09ad7398a92f",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:5075582d4f09bea5765033878a33742187e2c1a98df74ee8ad9da0614eee8088:root",
+      "type": "transfer",
+      "time": "2017-11-24T01:51:37.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:5075582d4f09bea5765033878a33742187e2c1a98df74ee8ad9da0614eee8088:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0x5075582d4f09bea5765033878a33742187e2c1a98df74ee8ad9da0614eee8088",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    }
+  ]
+}

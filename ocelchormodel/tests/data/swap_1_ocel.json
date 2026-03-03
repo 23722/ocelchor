@@ -1,0 +1,236 @@
+{
+  "objectTypes": [
+    {
+      "name": "CA",
+      "attributes": []
+    },
+    {
+      "name": "ChoreographyInstance",
+      "attributes": []
+    },
+    {
+      "name": "EOA",
+      "attributes": []
+    },
+    {
+      "name": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "SwapPool",
+      "attributes": []
+    },
+    {
+      "name": "swap call",
+      "attributes": [
+        {
+          "name": "amountIn",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "swap call response",
+      "attributes": [
+        {
+          "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "swapAssets call",
+      "attributes": [
+        {
+          "name": "amountIn",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Request swapAssets",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "swap",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "0x1111111111111111111111111111111111111111",
+      "type": "EOA"
+    },
+    {
+      "id": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "type": "CA"
+    },
+    {
+      "id": "call:req:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root",
+      "type": "swapAssets call",
+      "attributes": [
+        {
+          "name": "amountIn",
+          "value": "1000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x1111111111111111111111111111111111111111",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root",
+      "type": "Subchoreography",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography swapAssets",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "type": "SwapPool"
+    },
+    {
+      "id": "call:req:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:0_1",
+      "type": "swap call",
+      "attributes": [
+        {
+          "name": "amountIn",
+          "value": "1000",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "call:res:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:0_1",
+      "type": "swap call response",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "0x00000000000000000000000000000000000000000000000000000000000003e3",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreoInst:0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca",
+      "type": "ChoreographyInstance"
+    }
+  ],
+  "events": [
+    {
+      "id": "e:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root:request",
+      "type": "Request swapAssets",
+      "time": "2024-01-01T00:00:00.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0x1111111111111111111111111111111111111111",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "choreoInst:0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    },
+    {
+      "id": "e:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:0_1",
+      "type": "swap",
+      "time": "2024-01-01T00:00:00.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": "1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "call:req:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "call:res:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:0_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "sub:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreoInst:0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca",
+          "qualifier": "choreo:instance"
+        }
+      ]
+    }
+  ]
+}

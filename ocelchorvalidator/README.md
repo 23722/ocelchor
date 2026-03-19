@@ -1,6 +1,6 @@
 # ocelchorvalidator
 
-Validates OCEL 2.0 choreography logs against the 16 formal constraints (C0–C15) defined in:
+Validates OCEL 2.0 choreography logs against the 17 formal constraints (C0–C16) defined in:
 
 > "Representing BPMN Choreographies in OCEL 2.0" (Section 4.3)
 
@@ -62,7 +62,7 @@ uv run ocelchorvalidator data/input/mylog.ocel.json --constraints C0,C1,C4
 | `#E2O[m]` | E2O relations with qualifier `choreo:message` (1–2 per event) |
 | `#E2O[cb]` | E2O relations with qualifier `choreo:contained-by` |
 | `#O2O[c]` | O2O relations with qualifier `choreo:contains` (nesting) |
-| `C0`–`C15` | Per-constraint result: `violations/checked` |
+| `C0`–`C16` | Per-constraint result: `violations/checked` |
 
 ## Constraints
 
@@ -82,20 +82,16 @@ uv run ocelchorvalidator data/input/mylog.ocel.json --constraints C0,C1,C4
 | C9 | Initiating message target | The initiating message is received by the participant |
 | C10 | Return message target | The return message is received by the initiator |
 
-### Subchoreography constraints (C11–C14)
+### Subchoreography constraints (C11–C16)
 
 | ID | Name | Checks |
 |----|------|--------|
 | C11 | Containment uniqueness | Each event is contained in at most one scoping object |
 | C12 | Non-empty scope | Each scoping object contains at least one event |
-| C13 | Instance consistency | All events in a scope link to the same choreography instance |
-| C14 | Nesting structure | Scoping hierarchy is a DAG with consistent instance links |
-
-### Syntactical constraint (C15)
-
-| ID | Name | Checks |
-|----|------|--------|
+| C13 | Instance consistency | All events transitively enclosed by a scope (`allevents`) link to the same choreography instance |
+| C14 | Nesting structure | Scoping hierarchy has unique parents and is acyclic (DAG) |
 | C15 | Initiator continuity | The initiator of each choreography task was involved (as initiator or participant) in the previous task within the same instance |
+| C16 | Scope re-entry | Once an instance's sequence flow has left a sub-choreography scope, it cannot re-enter that scope |
 
 ## Package structure
 
@@ -103,7 +99,7 @@ uv run ocelchorvalidator data/input/mylog.ocel.json --constraints C0,C1,C4
 src/ocelchorvalidator/
 ├── reader.py       # OCEL 2.0 JSON loader with validation
 ├── index.py        # Pre-computed lookup indexes (events, objects, E2O, O2O)
-├── constraints.py  # C0–C15 constraint checks
+├── constraints.py  # C0–C16 constraint checks
 ├── stats.py        # Dataset characterization + constraint result aggregation
 ├── report.py       # Output formatting (table, CSV, LaTeX)
 └── cli.py          # argparse CLI entry point
@@ -120,10 +116,4 @@ uv run python -m pytest
 ## GenAI assistance disclosure
 
 The implementation of this repository was developed in collaboration with
-[Claude Code](https://claude.ai/code) (Anthropic). This comprises
-requirements/design support (5.1), code drafting (5.2), refactoring/code
-improvement (5.5), debugging support (5.6), test scaffolding and testing
-approach suggestions (5.7), and documentation drafting (5.8) as described in
-[Witte, Bayer, Weber 2026](https://hal.science/hal-05463006/). All AI-suggested
-changes were reviewed by the authors and accepted only when consistent with the
-formal requirements specification and when validated by the test suite.
+[Claude Code](https://claude.ai/code) (Anthropic).

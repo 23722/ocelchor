@@ -322,8 +322,8 @@ class TestC15EdgeCases:
 
 class TestValidateAllIncludesC15:
 
-    def test_all_16_constraints(self, swap1_ocel: dict) -> None:
+    def test_all_17_constraints(self, swap1_ocel: dict) -> None:
         results = validate_all(build_index(swap1_ocel))
-        expected = {f"C{i}" for i in range(16)}
+        expected = {f"C{i}" for i in range(17)}
         assert set(results.keys()) == expected
         assert all(r.passed for r in results.values())

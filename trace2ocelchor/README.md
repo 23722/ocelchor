@@ -143,5 +143,5 @@ MIT — see [LICENSE](LICENSE).
 
 ## GenAI assistance disclosure
 The implementation of this repository was developed in collaboration with
-[Claude Code](https://claude.ai/code) (Anthropic). This comprises requirements/design support (5.1), code drafting (5.2), refactoring/code improvement (5.5), debugging support (5.6), test scaffolding and testing approach suggestions (5.7), and documentation drafting (5.8) as described in [Witte, Bayer, Weber 2026](https://hal.science/hal-05463006/). All AI-suggested changes were reviewed by the authors and accepted only when consistent with the formal requirements specification and when validated by test suite.
+[Claude Code](https://claude.ai/code) (Anthropic).
 

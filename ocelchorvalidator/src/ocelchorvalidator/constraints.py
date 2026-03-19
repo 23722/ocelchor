@@ -1,4 +1,4 @@
-"""Constraint checks C0–C15 for OCEL 2.0 choreography logs."""
+"""Constraint checks C0–C16 for OCEL 2.0 choreography logs."""
 
 from __future__ import annotations
 
@@ -365,17 +365,10 @@ def check_c12(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c13(idx: OcelIndex) -> ConstraintResult:
-    """All events contained by the same scoping object link to the same instance."""
-    # Group events by their scoping object
-    scope_events: dict[str, list[str]] = {}
-    for eid in idx.events:
-        for sub_id in _e2o_by_qualifier(idx, eid, "choreo:contained-by"):
-            scope_events.setdefault(sub_id, []).append(eid)
-
+    """All events in allevents(o_sub) (transitively enclosed) link to the same instance."""
     violations: list[Violation] = []
-    checked = 0
-    for sub_id, eids in scope_events.items():
-        checked += 1
+    for sub_id in idx.scoping_objects:
+        eids = _allevents(sub_id, idx)
         instances: set[str] = set()
         for eid in eids:
             for inst_id in _e2o_by_qualifier(idx, eid, "choreo:instance"):
@@ -386,7 +379,7 @@ def check_c13(idx: OcelIndex) -> ConstraintResult:
                 message=f"Scoping object contains events linking to {len(instances)} different instances",
                 object_id=sub_id,
             ))
-    return ConstraintResult("C13", checked, violations)
+    return ConstraintResult("C13", len(idx.scoping_objects), violations)
 
 
 # ---------------------------------------------------------------------------
@@ -394,20 +387,17 @@ def check_c13(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c14(idx: OcelIndex) -> ConstraintResult:
-    """Validate nesting: unique parent, instance consistency across nesting, acyclicity."""
+    """Validate nesting structure: unique parent and acyclicity (DAG)."""
     violations: list[Violation] = []
-    checked = 0
 
-    # Build contains graph and reverse map (child → parents)
+    # Build reverse map (child → parents) from choreo:contains
     child_to_parents: dict[str, list[str]] = {}
     for sub_id in idx.scoping_objects:
-        children = _o2o_by_qualifier(idx, sub_id, "choreo:contains")
-        for child_id in children:
+        for child_id in _o2o_by_qualifier(idx, sub_id, "choreo:contains"):
             child_to_parents.setdefault(child_id, []).append(sub_id)
 
     # Check 1: each scoping object has at most one incoming choreo:contains
     for child_id in idx.scoping_objects:
-        checked += 1
         parents = child_to_parents.get(child_id, [])
         if len(parents) > 1:
             violations.append(Violation(
@@ -416,29 +406,7 @@ def check_c14(idx: OcelIndex) -> ConstraintResult:
                 object_id=child_id,
             ))
 
-    # Helper: get instance IDs for events contained by a scoping object
-    def _instances_in_scope(sub_id: str) -> set[str]:
-        result: set[str] = set()
-        for eid in idx.events:
-            if sub_id in _e2o_by_qualifier(idx, eid, "choreo:contained-by"):
-                for inst in _e2o_by_qualifier(idx, eid, "choreo:instance"):
-                    result.add(inst)
-        return result
-
-    # Check 2: instance consistency across parent-child nesting
-    for child_id, parents in child_to_parents.items():
-        for parent_id in parents:
-            parent_instances = _instances_in_scope(parent_id)
-            child_instances = _instances_in_scope(child_id)
-            all_instances = parent_instances | child_instances
-            if len(all_instances) > 1:
-                violations.append(Violation(
-                    constraint="C14",
-                    message="Events in parent and child scopes link to different instances",
-                    object_id=child_id,
-                ))
-
-    # Check 3: acyclicity — DFS cycle detection on choreo:contains graph
+    # Check 2: acyclicity — DFS cycle detection on choreo:contains graph
     visited: set[str] = set()
     in_stack: set[str] = set()
 
@@ -465,7 +433,7 @@ def check_c14(idx: OcelIndex) -> ConstraintResult:
                 ))
                 break  # one cycle violation is enough
 
-    return ConstraintResult("C14", checked, violations)
+    return ConstraintResult("C14", len(idx.scoping_objects), violations)
 
 
 # ---------------------------------------------------------------------------
@@ -518,16 +486,19 @@ def _descendants(scope: str, idx: OcelIndex) -> set[str]:
     return result
 
 
+def _allevents(scope_id: str, idx: OcelIndex) -> set[str]:
+    """Return all event IDs transitively enclosed by scope_id (direct + descendant scopes)."""
+    scopes = {scope_id} | _descendants(scope_id, idx)
+    return {eid for eid in idx.events if _get_scope(idx, eid) in scopes}
+
+
 def _involved_in_scope_tree(scope: str, idx: OcelIndex) -> set[str]:
     """Return all objects appearing as initiator or participant in events
     enclosed by scope or any of its descendant scopes."""
-    scopes = {scope} | _descendants(scope, idx)
     involved: set[str] = set()
-    for eid in idx.events:
-        event_scope = _get_scope(idx, eid)
-        if event_scope in scopes:
-            involved.update(_e2o_by_qualifier(idx, eid, "choreo:initiator"))
-            involved.update(_e2o_by_qualifier(idx, eid, "choreo:participant"))
+    for eid in _allevents(scope, idx):
+        involved.update(_e2o_by_qualifier(idx, eid, "choreo:initiator"))
+        involved.update(_e2o_by_qualifier(idx, eid, "choreo:participant"))
     return involved
 
 
@@ -607,6 +578,61 @@ def check_c15(idx: OcelIndex) -> ConstraintResult:
 
 
 # ---------------------------------------------------------------------------
+# C16 — Scope re-entry
+# ---------------------------------------------------------------------------
+
+def check_c16(idx: OcelIndex) -> ConstraintResult:
+    """Sequence flow cannot re-enter a sub-choreography scope once it has left.
+
+    For each (o_sub, instance) pair: once an event of that instance is observed
+    outside allevents(o_sub) after being inside, no later event may be inside.
+    """
+    # Pre-compute allevents for each scoping object
+    scope_allevents: dict[str, set[str]] = {
+        sub_id: _allevents(sub_id, idx)
+        for sub_id in idx.scoping_objects
+    }
+
+    # Group events by instance, sorted by time
+    instance_events: dict[str, list[dict]] = {}
+    for e in idx.choreo_events:
+        inst_ids = _e2o_by_qualifier(idx, e["id"], "choreo:instance")
+        if inst_ids:
+            instance_events.setdefault(inst_ids[0], []).append(e)
+    for events in instance_events.values():
+        events.sort(key=lambda e: e["time"])
+
+    violations: list[Violation] = []
+    checked = 0
+
+    for sub_id, ae in scope_allevents.items():
+        for inst_id, events in instance_events.items():
+            # Determine if this instance ever touches this scope
+            if not any(e["id"] in ae for e in events):
+                continue
+            checked += 1
+            exited = False
+            was_inside = False
+            for e in events:
+                inside = e["id"] in ae
+                if inside:
+                    if exited:
+                        violations.append(Violation(
+                            constraint="C16",
+                            message=f"Instance re-entered scope {sub_id} after leaving it",
+                            event_id=e["id"],
+                            object_id=sub_id,
+                        ))
+                    else:
+                        was_inside = True
+                else:
+                    if was_inside:
+                        exited = True
+
+    return ConstraintResult("C16", checked, violations)
+
+
+# ---------------------------------------------------------------------------
 # Registry + public API
 # ---------------------------------------------------------------------------
 
@@ -627,6 +653,7 @@ _CHECKS = {
     "C13": check_c13,
     "C14": check_c14,
     "C15": check_c15,
+    "C16": check_c16,
 }
 
 

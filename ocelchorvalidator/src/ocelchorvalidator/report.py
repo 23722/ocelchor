@@ -8,7 +8,7 @@ import io
 from ocelchorvalidator.constraints import Violation
 from ocelchorvalidator.stats import LogStats
 
-_CONSTRAINT_IDS = [f"C{i}" for i in range(16)]
+_CONSTRAINT_IDS = [f"C{i}" for i in range(17)]
 
 
 def format_table(stats_list: list[LogStats]) -> str:

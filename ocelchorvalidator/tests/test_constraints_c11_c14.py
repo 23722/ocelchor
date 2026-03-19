@@ -162,6 +162,32 @@ class TestC13:
         assert not r.passed
         assert r.violations[0].object_id == "sub_a"
 
+    def test_transitive_instance_consistency(self) -> None:
+        """sub_parent contains sub_child; e_parent in sub_parent links to inst1,
+        e_child in sub_child links to inst2 — fixed C13 catches this via allevents."""
+        ocel = _minimal_ocel(
+            events=[
+                _event("e_parent", [
+                    _rel("sub_parent", "choreo:contained-by"),
+                    _rel("inst1", "choreo:instance"),
+                ]),
+                _event("e_child", [
+                    _rel("sub_child", "choreo:contained-by"),
+                    _rel("inst2", "choreo:instance"),
+                ]),
+            ],
+            objects=[
+                _obj("sub_parent", "Subchoreography", [
+                    _rel("sub_child", "choreo:contains"),
+                ]),
+                _obj("sub_child", "Subchoreography"),
+            ],
+        )
+        r = check_c13(build_index(ocel))
+        assert not r.passed
+        violated_ids = {v.object_id for v in r.violations}
+        assert "sub_parent" in violated_ids  # transitive: allevents includes e_child
+
     def test_empty_log(self) -> None:
         r = check_c13(build_index(_minimal_ocel([])))
         assert r.passed
@@ -212,31 +238,6 @@ class TestC14:
         assert not r.passed
         has_parent_violation = any("parent" in v.message.lower() for v in r.violations)
         assert has_parent_violation
-
-    def test_instance_mismatch_across_nesting(self) -> None:
-        """Parent scope events link to inst1, child scope events link to inst2."""
-        ocel = _minimal_ocel(
-            events=[
-                _event("e_parent", [
-                    _rel("sub_parent", "choreo:contained-by"),
-                    _rel("inst1", "choreo:instance"),
-                ]),
-                _event("e_child", [
-                    _rel("sub_child", "choreo:contained-by"),
-                    _rel("inst2", "choreo:instance"),
-                ]),
-            ],
-            objects=[
-                _obj("sub_parent", "Subchoreography", [
-                    _rel("sub_child", "choreo:contains"),
-                ]),
-                _obj("sub_child", "Subchoreography"),
-            ],
-        )
-        r = check_c14(build_index(ocel))
-        assert not r.passed
-        has_instance_violation = any("instance" in v.message.lower() for v in r.violations)
-        assert has_instance_violation
 
     def test_cycle(self) -> None:
         """sub_a contains sub_b, sub_b contains sub_a → cycle."""

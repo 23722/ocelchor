@@ -37,6 +37,7 @@ class TestFormatTable:
         assert "#O2O[c]" in out
         assert "C0" in out
         assert "C15" in out
+        assert "C16" in out
 
     def test_contains_data_row(self, swap1_ocel: dict) -> None:
         out = format_table([_make_stats(swap1_ocel)])
@@ -71,6 +72,7 @@ class TestFormatCSV:
         assert "num_o2o_c" in header
         assert "C0" in header
         assert "C15" in header
+        assert "C16" in header
 
     def test_data_row(self, swap1_ocel: dict) -> None:
         out = format_csv([_make_stats(swap1_ocel)])
@@ -109,7 +111,7 @@ class TestFormatLatex:
         assert "\\checkmark" not in out
 
     def test_times_for_fail(self) -> None:
-        results = {f"C{i}": ConstraintResult(f"C{i}", 1) for i in range(16)}
+        results = {f"C{i}": ConstraintResult(f"C{i}", 1) for i in range(17)}
         results["C0"] = ConstraintResult("C0", 1, [Violation("C0", "bad", "e1")])
         stats = LogStats("test", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, results)
         out = format_latex([stats])

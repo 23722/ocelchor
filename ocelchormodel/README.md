@@ -9,10 +9,7 @@ It is the reference implementation of the mining step accompanying the paper
 For each choreography instance in the log, ocelchormodel reconstructs the
 hierarchical choreography model encoded in the OCEL 2.0 relations and emits a
 BPMN 2.0 XML file importable into [chor-js](https://bpt-lab.org/chor-js-demo/).
-Because each instance corresponds to one blockchain transaction trace — a
-deterministic, gateway-free execution sequence — no gateway discovery is
-required; the output is a purely sequential choreography model with nested
-subchoreographies.
+Because each instance corresponds to one individual blockchain transaction trace no gateway discovery is required; the output is a purely sequential choreography model with nested subchoreographies. Start and end events were added to the models for visual guidance, but have no explicit entries in the event log data.
 
 ---
 

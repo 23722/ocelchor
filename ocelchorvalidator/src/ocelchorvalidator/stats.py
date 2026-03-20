@@ -19,7 +19,7 @@ class LogStats:
     num_vars: int  # distinct choreo:instance values
     num_events: int  # all events (= e_choreos)
     num_messages: int  # distinct objects appearing as choreo:message
-    num_scoping_objects: int  # distinct Subchoreography objects
+    num_scoping_objects: int  # distinct subchoreographyInstance objects
     num_participants: int  # distinct objects as choreo:initiator or choreo:participant
     num_e2o: int   # total E2O relations across all events
     num_o2o: int   # total O2O relations across all objects

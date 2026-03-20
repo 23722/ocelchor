@@ -22,8 +22,8 @@ class OcelIndex:
     # Derived indexes
     choreo_events: list[dict]  # events with E2O qualifier choreo:instance
     contained_events: list[dict]  # events with E2O qualifier choreo:contained-by
-    scoping_objects: list[str]  # object IDs of type "Subchoreography"
-    instance_objects: list[str]  # object IDs of type "ChoreographyInstance"
+    scoping_objects: list[str]  # object IDs of type "subchoreographyInstance"
+    instance_objects: list[str]  # object IDs of type "choreographyInstance"
 
 
 def build_index(ocel: dict) -> OcelIndex:
@@ -61,16 +61,16 @@ def build_index(ocel: dict) -> OcelIndex:
         if any(r["qualifier"] == "choreo:contained-by" for r in e.get("relationships", []))
     ]
 
-    # Derived: scoping_objects (Subchoreography type)
+    # Derived: scoping_objects (subchoreographyInstance type)
     scoping_objects = [
         o["id"] for o in ocel["objects"]
-        if o.get("type") == "Subchoreography"
+        if o.get("type") == "subchoreographyInstance"
     ]
 
-    # Derived: instance_objects (ChoreographyInstance type)
+    # Derived: instance_objects (choreographyInstance type)
     instance_objects = [
         o["id"] for o in ocel["objects"]
-        if o.get("type") == "ChoreographyInstance"
+        if o.get("type") == "choreographyInstance"
     ]
 
     return OcelIndex(

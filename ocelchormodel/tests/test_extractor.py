@@ -24,8 +24,8 @@ import pytest
 from ocelchormodel.extractor import extract_instance, list_instances
 from ocelchormodel.model import ChoreoTask, SubChoreo
 
-SWAP1_INSTANCE = "choreoInst:0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca"
-SWAP3_INSTANCE = "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2"
+SWAP1_INSTANCE = "choreographyInstance:0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca"
+SWAP3_INSTANCE = "choreographyInstance:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2"
 
 
 # ---------------------------------------------------------------------------
@@ -34,7 +34,7 @@ SWAP3_INSTANCE = "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2f
 
 class TestListInstances:
     """list_instances returns (full_id, short_id) pairs for each
-    ChoreographyInstance object found in the OCEL data."""
+    choreographyInstance object found in the OCEL data."""
 
     def test_swap1_has_one_instance(self, swap1_ocel):
         assert len(list_instances(swap1_ocel)) == 1
@@ -89,7 +89,7 @@ class TestExtractSwap1:
 
     def test_unknown_instance_raises(self, swap1_ocel):
         with pytest.raises(ValueError, match="not found"):
-            extract_instance(swap1_ocel, "choreoInst:0xdeadbeef")
+            extract_instance(swap1_ocel, "choreographyInstance:0xdeadbeef")
 
 
 # ---------------------------------------------------------------------------
@@ -135,7 +135,7 @@ class TestExtractRootOnly:
 
     @pytest.fixture(autouse=True)
     def _extract(self, swap_root_only_ocel):
-        ROOT_ONLY = "choreoInst:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111"
+        ROOT_ONLY = "choreographyInstance:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111"
         self.instance = extract_instance(swap_root_only_ocel, ROOT_ONLY)
 
     def test_single_task(self):
@@ -148,8 +148,8 @@ class TestExtractRootOnly:
 # ---------------------------------------------------------------------------
 
 MULTI_TX_IDS = [
-    "choreoInst:0xbbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222",
-    "choreoInst:0xcccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333",
+    "choreographyInstance:0xbbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222",
+    "choreographyInstance:0xcccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333",
 ]
 
 

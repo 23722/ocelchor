@@ -43,59 +43,59 @@ choreo:contained-by links connect each event to its **immediate** parent subchor
 - choreo:initiator → `0x111...` (EOA)
 - choreo:participant → `0xAAA...` (CA)
 - choreo:message → `call:req:fed2...:root`
-- choreo:instance → `choreoInst:0xfed2...`
+- choreo:instance → `choreographyInstance:0xfed2...`
 
 **e:fed2...:0_1:request** (Request swap):
 - choreo:initiator → `0xAAA...`
 - choreo:participant → `0xBBB...` (SwapRouter)
 - choreo:message → `call:req:fed2...:0_1`
-- choreo:contained-by → `sub:fed2...:root`
-- choreo:instance → `choreoInst:0xfed2...`
+- choreo:contained-by → `subchoreographyInstance:fed2...:root`
+- choreo:instance → `choreographyInstance:0xfed2...`
 
 **e:fed2...:0_1_1:request** (Request transfer):
 - choreo:initiator → `0xBBB...`
 - choreo:participant → `0xCCC...` (TokenContract)
 - choreo:message → `call:req:fed2...:0_1_1`
-- choreo:contained-by → `sub:fed2...:0_1`
-- choreo:instance → `choreoInst:0xfed2...`
+- choreo:contained-by → `subchoreographyInstance:fed2...:0_1`
+- choreo:instance → `choreographyInstance:0xfed2...`
 
 **e:fed2...:0_1_1_1** (balanceOf):
 - choreo:initiator → `0xCCC...`
 - choreo:participant → `0xDDD...` (BalanceOracle)
 - choreo:message → `call:req:fed2...:0_1_1_1`
 - choreo:message → `call:res:fed2...:0_1_1_1`
-- choreo:contained-by → `sub:fed2...:0_1_1`
-- choreo:instance → `choreoInst:0xfed2...`
+- choreo:contained-by → `subchoreographyInstance:fed2...:0_1_1`
+- choreo:instance → `choreographyInstance:0xfed2...`
 
 **e:fed2...:0_1_1:response** (Respond to transfer):
 - choreo:initiator → `0xCCC...` (reversed)
 - choreo:participant → `0xBBB...` (reversed)
 - choreo:message → `call:res:fed2...:0_1_1`
-- choreo:contained-by → `sub:fed2...:0_1`
-- choreo:instance → `choreoInst:0xfed2...`
+- choreo:contained-by → `subchoreographyInstance:fed2...:0_1`
+- choreo:instance → `choreographyInstance:0xfed2...`
 
 **e:fed2...:0_1_2** (updateReserves):
 - choreo:initiator → `0xBBB...`
 - choreo:participant → `0xEEE...` (LiquidityPool)
 - choreo:message → `call:req:fed2...:0_1_2`
 - choreo:message → `call:res:fed2...:0_1_2`
-- choreo:contained-by → `sub:fed2...:0_1`
-- choreo:instance → `choreoInst:0xfed2...`
+- choreo:contained-by → `subchoreographyInstance:fed2...:0_1`
+- choreo:instance → `choreographyInstance:0xfed2...`
 
 **e:fed2...:0_1:response** (Respond to swap):
 - choreo:initiator → `0xBBB...` (reversed)
 - choreo:participant → `0xAAA...` (reversed)
 - choreo:message → `call:res:fed2...:0_1`
-- choreo:contained-by → `sub:fed2...:root`
-- choreo:instance → `choreoInst:0xfed2...`
+- choreo:contained-by → `subchoreographyInstance:fed2...:root`
+- choreo:instance → `choreographyInstance:0xfed2...`
 
 **e:fed2...:0_2** (logSwap):
 - choreo:initiator → `0xAAA...`
 - choreo:participant → `0xFFF...` (SwapLogger)
 - choreo:message → `call:req:fed2...:0_2`
 - choreo:message → `call:res:fed2...:0_2`
-- choreo:contained-by → `sub:fed2...:root`
-- choreo:instance → `choreoInst:0xfed2...`
+- choreo:contained-by → `subchoreographyInstance:fed2...:root`
+- choreo:instance → `choreographyInstance:0xfed2...`
 
 ## Objects (22)
 
@@ -133,15 +133,15 @@ Messages breakdown: 1 root request (no response, EOA) + 5 x request/response pai
 
 | Object ID | Object Type | O2O relations |
 |-----------|-------------|---------------|
-| `sub:fed2...:root` | `Subchoreography` | (none — outermost) |
-| `sub:fed2...:0_1` | `Subchoreography` | choreo:contains from `sub:fed2...:root` |
-| `sub:fed2...:0_1_1` | `Subchoreography` | choreo:contains from `sub:fed2...:0_1` |
+| `subchoreographyInstance:fed2...:root` | `subchoreographyInstance` | (none — outermost) |
+| `subchoreographyInstance:fed2...:0_1` | `subchoreographyInstance` | choreo:contains from `subchoreographyInstance:fed2...:root` |
+| `subchoreographyInstance:fed2...:0_1_1` | `subchoreographyInstance` | choreo:contains from `subchoreographyInstance:fed2...:0_1` |
 
 ### Choreography Instance (1)
 
 | Object ID | Object Type |
 |-----------|-------------|
-| `choreoInst:0xfed2...` | `ChoreographyInstance` |
+| `choreographyInstance:0xfed2...` | `choreographyInstance` |
 
 ## Summary Counts
 

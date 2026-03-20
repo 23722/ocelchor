@@ -128,8 +128,8 @@ class TestRootOnly:
 # ---------------------------------------------------------------------------
 
 MULTI_TX_IDS = [
-    "choreoInst:0xbbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222",
-    "choreoInst:0xcccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333",
+    "choreographyInstance:0xbbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222",
+    "choreographyInstance:0xcccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333",
 ]
 
 

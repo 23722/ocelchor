@@ -32,8 +32,8 @@ _TARGET = "choreo:target"
 _CONTAINED_BY = "choreo:contained-by"
 _CONTAINS = "choreo:contains"
 
-_TYPE_CHOREO_INSTANCE = "ChoreographyInstance"
-_TYPE_SUBCHOREOGRAPHY = "Subchoreography"
+_TYPE_CHOREO_INSTANCE = "choreographyInstance"
+_TYPE_SUBCHOREOGRAPHY = "subchoreographyInstance"
 _GENERIC_TYPES = {"EOA", "CA"}
 
 
@@ -106,7 +106,7 @@ def _timestamp(event: dict) -> str:
 # ---------------------------------------------------------------------------
 
 def list_instances(ocel: dict) -> list[tuple[str, str]]:
-    """Return [(ocel_id, short_id), …] for all ChoreographyInstance objects."""
+    """Return [(ocel_id, short_id), …] for all choreographyInstance objects."""
     results = []
     for obj in ocel["objects"]:
         if obj.get("type") == _TYPE_CHOREO_INSTANCE:
@@ -156,7 +156,7 @@ def extract_instance(ocel: dict, instance_id: str, *, order_by: str = "timestamp
         if instance_id in _rels(e, _INSTANCE)
     ]
 
-    # --- Collect all Subchoreography scope objects ---
+    # --- Collect all subchoreographyInstance scope objects ---
     scope_objects: dict[str, dict] = {
         obj["id"]: obj
         for obj in ocel["objects"]
@@ -256,7 +256,7 @@ def extract_instance(ocel: dict, instance_id: str, *, order_by: str = "timestamp
     # --- Build a SubChoreo from a scoping object ---
     def _build_scope(scope_id: str) -> SubChoreo:
         scope_obj = scope_objects[scope_id]
-        name = _obj_attr(scope_obj, "name") or scope_obj.get("type", "Subchoreography")
+        name = _obj_attr(scope_obj, "name") or scope_obj.get("type", "subchoreographyInstance")
 
         # Collect direct child elements: task events + nested scopes
         direct_events = scope_events.get(scope_id, [])

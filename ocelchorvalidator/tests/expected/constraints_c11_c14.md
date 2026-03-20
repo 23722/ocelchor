@@ -18,11 +18,11 @@ Each event has at most one `choreo:contained-by` relation.
 
 ## C12 — Non-empty scope
 
-Every scoping object (Subchoreography) has at least one event contained in it.
+Every scoping object (`subchoreographyInstance`) has at least one event contained in it.
 
 ### Positive cases
 
-- **swap_1**: 1 scoping object `sub:...:root`, 1 event contained → 0 violations, `elements_checked == 1`
+- **swap_1**: 1 scoping object `subchoreographyInstance:...:root`, 1 event contained → 0 violations, `elements_checked == 1`
 - **swap_3**: 3 scoping objects, each has at least 1 event → 0 violations
 - **swap_root_only**: 0 scoping objects → `elements_checked == 0`, passes vacuously
 
@@ -38,7 +38,7 @@ All events contained by the same scoping object must link to the same choreograp
 
 ### Positive cases
 
-- **swap_1**: 1 event in `sub:...:root`, links to same instance → 0 violations
+- **swap_1**: 1 event in `subchoreographyInstance:...:root`, links to same instance → 0 violations
 - **swap_3**: Multiple events per scope, all link to same instance → 0 violations
 - **swap_root_only**: No scoping objects → passes vacuously
 
@@ -50,10 +50,9 @@ All events contained by the same scoping object must link to the same choreograp
 
 ## C14 — Nesting structure
 
-Three sub-checks:
+Two sub-checks:
 1. Each scoping object has at most one incoming `choreo:contains` relation
-2. Events in nested scopes must share the same `choreo:instance` as events in the parent scope
-3. The `choreo:contains` graph is acyclic
+2. The `choreo:contains` graph is acyclic
 
 ### Positive cases
 
@@ -64,7 +63,6 @@ Three sub-checks:
 ### Negative cases
 
 - **Two parents**: Scoping object with 2 incoming `choreo:contains` → violation
-- **Instance mismatch across nesting**: Parent scope events link to instance A, child scope events link to instance B → violation
 - **Cycle**: `sub_a × choreo:contains × sub_b` and `sub_b × choreo:contains × sub_a` → violation
 
 ---

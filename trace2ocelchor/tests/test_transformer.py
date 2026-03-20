@@ -112,7 +112,7 @@ class TestSwapRootOnly:
 
     def test_event_choreo_instance(self):
         inst = _e2o_target(self.events[0], CHOREO_INSTANCE)
-        assert inst == "choreoInst:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111"
+        assert inst == "choreographyInstance:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111"
 
     # -- objects --
 
@@ -147,13 +147,13 @@ class TestSwapRootOnly:
     def test_choreography_instance(self):
         ci = _obj_by_id(
             self.objects,
-            "choreoInst:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111",
+            "choreographyInstance:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111",
         )
         assert ci is not None
-        assert ci.type == "ChoreographyInstance"
+        assert ci.type == "choreographyInstance"
 
     def test_no_scoping_object(self):
-        scoping = _objs_of_type(self.objects, "Subchoreography")
+        scoping = _objs_of_type(self.objects, "subchoreographyInstance")
         assert len(scoping) == 0
 
 
@@ -248,13 +248,13 @@ class TestSwap1:
 
     def test_leaf_contained_by(self):
         e = self.events[1]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "sub:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root"
 
     def test_leaf_e2o_count(self):
         assert len(self.events[1].e2o) == 6
 
     def test_scoping_root_has_no_contains(self):
-        sub = _obj_by_id(self.objects, "sub:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root")
+        sub = _obj_by_id(self.objects, "subchoreographyInstance:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root")
         assert _o2o_targets(sub, CHOREO_CONTAINS) == []
 
     # -- objects --
@@ -305,9 +305,9 @@ class TestSwap1:
             ["0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]
 
     def test_scoping_object(self):
-        sub = _obj_by_id(self.objects, "sub:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root")
+        sub = _obj_by_id(self.objects, "subchoreographyInstance:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root")
         assert sub is not None
-        assert sub.type == "Subchoreography"
+        assert sub.type == "subchoreographyInstance"
 
     def test_no_root_response_event(self):
         ids = [e.id for e in self.events]
@@ -392,25 +392,25 @@ class TestSwap3:
         assert len(messages) == 11
 
     def test_scoping_count(self):
-        scoping = _objs_of_type(self.objects, "Subchoreography")
+        scoping = _objs_of_type(self.objects, "subchoreographyInstance")
         assert len(scoping) == 3
 
     def test_scoping_ids(self):
-        scoping = _objs_of_type(self.objects, "Subchoreography")
+        scoping = _objs_of_type(self.objects, "subchoreographyInstance")
         scoping_ids = sorted(o.id for o in scoping)
         assert scoping_ids == sorted([
-            "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
-            "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
-            "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
+            "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
+            "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+            "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
         ])
 
     def test_choreography_instance(self):
         ci = _obj_by_id(
             self.objects,
-            "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+            "choreographyInstance:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
         )
         assert ci is not None
-        assert ci.type == "ChoreographyInstance"
+        assert ci.type == "choreographyInstance"
 
     # -- aggregate relation counts --
 
@@ -431,52 +431,52 @@ class TestSwap3:
     def test_contained_by_0_1_request(self):
         """0_1:request is contained by root subchoreography."""
         e = self.events[1]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root"
 
     def test_contained_by_0_1_1_request(self):
         """0_1_1:request is contained by 0_1 subchoreography."""
         e = self.events[2]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
 
     def test_contained_by_0_1_1_1(self):
         """Leaf 0_1_1_1 is contained by 0_1_1 subchoreography."""
         e = self.events[3]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1"
 
     def test_contained_by_0_1_1_response(self):
         """0_1_1:response is contained by 0_1 subchoreography."""
         e = self.events[4]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
 
     def test_contained_by_0_1_2(self):
         """Leaf 0_1_2 is contained by 0_1 subchoreography."""
         e = self.events[5]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
 
     def test_contained_by_0_1_response(self):
         """0_1:response is contained by root subchoreography."""
         e = self.events[6]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root"
 
     def test_contained_by_0_2(self):
         """Leaf 0_2 is contained by root subchoreography."""
         e = self.events[7]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root"
 
     # -- choreo:contains O2O on scoping objects --
 
     def test_scoping_root_contains_0_1(self):
-        sub = _obj_by_id(self.objects, "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root")
+        sub = _obj_by_id(self.objects, "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root")
         targets = _o2o_targets(sub, CHOREO_CONTAINS)
-        assert "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1" in targets
+        assert "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1" in targets
 
     def test_scoping_0_1_contains_0_1_1(self):
-        sub = _obj_by_id(self.objects, "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1")
+        sub = _obj_by_id(self.objects, "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1")
         targets = _o2o_targets(sub, CHOREO_CONTAINS)
-        assert "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1" in targets
+        assert "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1" in targets
 
     def test_scoping_leaf_has_no_contains(self):
-        sub = _obj_by_id(self.objects, "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1")
+        sub = _obj_by_id(self.objects, "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1")
         assert _o2o_targets(sub, CHOREO_CONTAINS) == []
 
     # -- leaf events have both request and response messages --
@@ -618,11 +618,11 @@ class TestSwapMultiTx:
 
     def test_two_choreography_instances(self):
         """Each trace produces its own ChoreographyInstance."""
-        instances = [o for o in self.objects if o.type == "ChoreographyInstance"]
+        instances = [o for o in self.objects if o.type == "choreographyInstance"]
         assert len(instances) == 2
         ids = {o.id for o in instances}
-        assert f"choreoInst:0x{_BBBB}" in ids
-        assert f"choreoInst:0x{_CCCC}" in ids
+        assert f"choreographyInstance:0x{_BBBB}" in ids
+        assert f"choreographyInstance:0x{_CCCC}" in ids
 
     # -- per-trace event structure --
 

@@ -17,13 +17,13 @@ txHash (without 0x): `abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca
 | 0 | `e:abcabc...:root:request` | `Request swapAssets` | 2024-01-01T00:00:00.000Z | 0 | choreo:initiator → `0x1111111111111111111111111111111111111111` |
 | | | | | | choreo:participant → `0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa` |
 | | | | | | choreo:message → `call:req:abcabc...:root` |
-| | | | | | choreo:instance → `choreoInst:0xabcabc...` |
+| | | | | | choreo:instance → `choreographyInstance:0xabcabc...` |
 | 1 | `e:abcabc...:0_1` | `swap` | 2024-01-01T00:00:00.001Z | 1 | choreo:initiator → `0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa` |
 | | | | | | choreo:participant → `0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb` |
 | | | | | | choreo:message → `call:req:abcabc...:0_1` |
 | | | | | | choreo:message → `call:res:abcabc...:0_1` |
-| | | | | | choreo:contained-by → `sub:abcabc...:root` |
-| | | | | | choreo:instance → `choreoInst:0xabcabc...` |
+| | | | | | choreo:contained-by → `subchoreographyInstance:abcabc...:root` |
+| | | | | | choreo:instance → `choreographyInstance:0xabcabc...` |
 
 Event ordering: Request → [child: swap] (no Response since root is EOA-initiated).
 
@@ -52,13 +52,13 @@ Event ordering: Request → [child: swap] (no Response since root is EOA-initiat
 
 | Object ID | Object Type |
 |-----------|-------------|
-| `sub:abcabc...:root` | `Subchoreography` |
+| `subchoreographyInstance:abcabc...:root` | `subchoreographyInstance` |
 
 ### Choreography Instance (1)
 
 | Object ID | Object Type |
 |-----------|-------------|
-| `choreoInst:0xabcabc...` | `ChoreographyInstance` |
+| `choreographyInstance:0xabcabc...` | `choreographyInstance` |
 
 ## Summary Counts
 

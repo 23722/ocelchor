@@ -5,10 +5,6 @@
       "attributes": []
     },
     {
-      "name": "ChoreographyInstance",
-      "attributes": []
-    },
-    {
       "name": "Contract source code not verified call",
       "attributes": []
     },
@@ -26,13 +22,8 @@
       "attributes": []
     },
     {
-      "name": "Subchoreography",
-      "attributes": [
-        {
-          "name": "name",
-          "type": "string"
-        }
-      ]
+      "name": "choreographyInstance",
+      "attributes": []
     },
     {
       "name": "deposit call",
@@ -51,6 +42,15 @@
         },
         {
           "name": "withdrawal_credentials",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "subchoreographyInstance",
+      "attributes": [
+        {
+          "name": "name",
           "type": "string"
         }
       ]
@@ -122,8 +122,8 @@
       ]
     },
     {
-      "id": "sub:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
-      "type": "Subchoreography",
+      "id": "subchoreographyInstance:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
+      "type": "subchoreographyInstance",
       "attributes": [
         {
           "name": "name",
@@ -417,8 +417,8 @@
       ]
     },
     {
-      "id": "choreoInst:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
-      "type": "ChoreographyInstance"
+      "id": "choreographyInstance:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
+      "type": "choreographyInstance"
     }
   ],
   "events": [
@@ -446,7 +446,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "choreoInst:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
+          "objectId": "choreographyInstance:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
           "qualifier": "choreo:instance"
         }
       ]
@@ -479,11 +479,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
+          "objectId": "subchoreographyInstance:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
+          "objectId": "choreographyInstance:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
           "qualifier": "choreo:instance"
         }
       ]
@@ -516,11 +516,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
+          "objectId": "subchoreographyInstance:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
+          "objectId": "choreographyInstance:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
           "qualifier": "choreo:instance"
         }
       ]
@@ -553,11 +553,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
+          "objectId": "subchoreographyInstance:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
+          "objectId": "choreographyInstance:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
           "qualifier": "choreo:instance"
         }
       ]
@@ -590,11 +590,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
+          "objectId": "subchoreographyInstance:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
+          "objectId": "choreographyInstance:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
           "qualifier": "choreo:instance"
         }
       ]
@@ -627,11 +627,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
+          "objectId": "subchoreographyInstance:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
+          "objectId": "choreographyInstance:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
           "qualifier": "choreo:instance"
         }
       ]
@@ -664,11 +664,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
+          "objectId": "subchoreographyInstance:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
+          "objectId": "choreographyInstance:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
           "qualifier": "choreo:instance"
         }
       ]
@@ -701,11 +701,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
+          "objectId": "subchoreographyInstance:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
+          "objectId": "choreographyInstance:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
           "qualifier": "choreo:instance"
         }
       ]
@@ -738,11 +738,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
+          "objectId": "subchoreographyInstance:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
+          "objectId": "choreographyInstance:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
           "qualifier": "choreo:instance"
         }
       ]

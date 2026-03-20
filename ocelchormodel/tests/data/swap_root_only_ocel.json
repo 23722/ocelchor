@@ -5,7 +5,7 @@
       "attributes": []
     },
     {
-      "name": "ChoreographyInstance",
+      "name": "choreographyInstance",
       "attributes": []
     },
     {
@@ -73,8 +73,8 @@
       ]
     },
     {
-      "id": "choreoInst:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111",
-      "type": "ChoreographyInstance"
+      "id": "choreographyInstance:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111",
+      "type": "choreographyInstance"
     }
   ],
   "events": [
@@ -102,7 +102,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "choreoInst:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111",
+          "objectId": "choreographyInstance:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111",
           "qualifier": "choreo:instance"
         }
       ]

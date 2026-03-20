@@ -29,9 +29,9 @@ def _stem(path: Path) -> str:
 def _tx_hash(instance_id: str) -> str:
     """Extract the transaction hash from a choreography instance ID.
 
-    ``choreoInst:0xabcd...`` → ``0xabcd...``
+    ``choreographyInstance:0xabcd...`` → ``0xabcd...``
     """
-    prefix = "choreoInst:"
+    prefix = "choreographyInstance:"
     if instance_id.startswith(prefix):
         return instance_id[len(prefix):]
     return instance_id

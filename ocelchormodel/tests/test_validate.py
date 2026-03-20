@@ -22,8 +22,8 @@ def _generate(ocel: dict, instance_id: str) -> str:
     return generate_bpmn(inst, layout)
 
 
-SWAP1_ID = "choreoInst:0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca"
-SWAP3_ID = "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2"
+SWAP1_ID = "choreographyInstance:0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca"
+SWAP3_ID = "choreographyInstance:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2"
 
 
 # ---------------------------------------------------------------------------

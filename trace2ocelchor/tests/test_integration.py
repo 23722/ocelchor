@@ -46,7 +46,7 @@ def assert_structural_invariants(traces, events, objects):
     """Structural assertions that must hold for any valid choreography output.
 
     - All event and object IDs are unique.
-    - Exactly one ChoreographyInstance object per trace (C0 — instance scope).
+    - Exactly one choreographyInstance object per trace (C0 — instance scope).
     - Every event has exactly one choreo:instance link (C0 — event side).
     - Every event has exactly one choreo:initiator (C2)
       and one choreo:participant (C3), and they differ (C4).
@@ -58,8 +58,8 @@ def assert_structural_invariants(traces, events, objects):
     assert len({e.id for e in events}) == len(events), "Duplicate event IDs"
     assert len({o.id for o in objects}) == len(objects), "Duplicate object IDs"
 
-    # One ChoreographyInstance per trace (C0)
-    choreo_instances = [o for o in objects if o.type == "ChoreographyInstance"]
+    # One choreographyInstance per trace (C0)
+    choreo_instances = [o for o in objects if o.type == "choreographyInstance"]
     assert len(choreo_instances) == len(traces)
 
     for event in events:

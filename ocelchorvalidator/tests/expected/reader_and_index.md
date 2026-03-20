@@ -38,13 +38,13 @@
 | `call:req:abc...:root` | swapAssets call |
 | `call:req:abc...:0_1` | swap call |
 | `call:res:abc...:0_1` | swap call response |
-| `sub:abc...:root` | Subchoreography |
-| `choreoInst:0xabc...` | ChoreographyInstance |
+| `subchoreographyInstance:abc...:root` | subchoreographyInstance |
+| `choreographyInstance:0xabc...` | choreographyInstance |
 
 #### `e2o` — event-to-object relations
 
-- `e:...:root:request` → 4 relations: `choreo:initiator` (0x111), `choreo:participant` (0xaaa), `choreo:message` (call:req:...:root), `choreo:instance` (choreoInst:...)
-- `e:...:0_1` → 6 relations: `choreo:initiator` (0xaaa), `choreo:participant` (0xbbb), `choreo:message` (call:req:...:0_1), `choreo:message` (call:res:...:0_1), `choreo:contained-by` (sub:...:root), `choreo:instance` (choreoInst:...)
+- `e:...:root:request` → 4 relations: `choreo:initiator` (0x111), `choreo:participant` (0xaaa), `choreo:message` (call:req:...:root), `choreo:instance` (choreographyInstance:...)
+- `e:...:0_1` → 6 relations: `choreo:initiator` (0xaaa), `choreo:participant` (0xbbb), `choreo:message` (call:req:...:0_1), `choreo:message` (call:res:...:0_1), `choreo:contained-by` (subchoreographyInstance:...:root), `choreo:instance` (choreographyInstance:...)
 
 #### `o2o` — object-to-object relations
 
@@ -56,16 +56,16 @@
 
 - `choreo_events`: 2 events (both have `choreo:instance`)
 - `contained_events`: 1 event (`e:...:0_1` has `choreo:contained-by`)
-- `scoping_objects`: `["sub:abc...:root"]`
-- `instance_objects`: `["choreoInst:0xabc..."]`
+- `scoping_objects`: `["subchoreographyInstance:abc...:root"]`
+- `instance_objects`: `["choreographyInstance:0xabc..."]`
 
 ### swap_3 fixture (8 events, 22 objects, 1 instance, 3 scoping objects)
 
 - `choreo_events`: 8 events
 - `contained_events`: 7 events (all except `root:request`)
-- `scoping_objects`: 3 (`sub:...:root`, `sub:...:0_1`, `sub:...:0_1_1`)
+- `scoping_objects`: 3 (`subchoreographyInstance:...:root`, `subchoreographyInstance:...:0_1`, `subchoreographyInstance:...:0_1_1`)
 - `instance_objects`: 1
-- `o2o` includes `choreo:contains`: `sub:...:root` → `sub:...:0_1`, `sub:...:0_1` → `sub:...:0_1_1`
+- `o2o` includes `choreo:contains`: `subchoreographyInstance:...:root` → `subchoreographyInstance:...:0_1`, `subchoreographyInstance:...:0_1` → `subchoreographyInstance:...:0_1_1`
 
 ### swap_root_only fixture (1 event, 4 objects, 1 instance, 0 scoping objects)
 

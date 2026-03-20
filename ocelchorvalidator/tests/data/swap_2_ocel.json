@@ -5,7 +5,7 @@
       "attributes": []
     },
     {
-      "name": "ChoreographyInstance",
+      "name": "choreographyInstance",
       "attributes": []
     },
     {
@@ -13,7 +13,7 @@
       "attributes": []
     },
     {
-      "name": "Subchoreography",
+      "name": "subchoreographyInstance",
       "attributes": [
         {
           "name": "name",
@@ -130,8 +130,8 @@
       ]
     },
     {
-      "id": "sub:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:root",
-      "type": "Subchoreography",
+      "id": "subchoreographyInstance:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:root",
+      "type": "subchoreographyInstance",
       "attributes": [
         {
           "name": "name",
@@ -141,7 +141,7 @@
       ],
       "relationships": [
         {
-          "objectId": "sub:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:0_1",
+          "objectId": "subchoreographyInstance:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:0_1",
           "qualifier": "choreo:contains"
         }
       ]
@@ -193,8 +193,8 @@
       ]
     },
     {
-      "id": "sub:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:0_1",
-      "type": "Subchoreography",
+      "id": "subchoreographyInstance:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:0_1",
+      "type": "subchoreographyInstance",
       "attributes": [
         {
           "name": "name",
@@ -255,8 +255,8 @@
       ]
     },
     {
-      "id": "choreoInst:0xdef1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1",
-      "type": "ChoreographyInstance"
+      "id": "choreographyInstance:0xdef1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1",
+      "type": "choreographyInstance"
     }
   ],
   "events": [
@@ -284,7 +284,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "choreoInst:0xdef1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1",
+          "objectId": "choreographyInstance:0xdef1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1",
           "qualifier": "choreo:instance"
         }
       ]
@@ -313,11 +313,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:root",
+          "objectId": "subchoreographyInstance:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0xdef1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1",
+          "objectId": "choreographyInstance:0xdef1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1",
           "qualifier": "choreo:instance"
         }
       ]
@@ -350,11 +350,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:0_1",
+          "objectId": "subchoreographyInstance:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0xdef1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1",
+          "objectId": "choreographyInstance:0xdef1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1",
           "qualifier": "choreo:instance"
         }
       ]
@@ -383,11 +383,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:root",
+          "objectId": "subchoreographyInstance:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0xdef1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1",
+          "objectId": "choreographyInstance:0xdef1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1",
           "qualifier": "choreo:instance"
         }
       ]

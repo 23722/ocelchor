@@ -147,7 +147,7 @@ class TestComputeLayout:
     def test_single_task_has_start_task_end(self):
         """A single-task instance produces bounds for start, task, and end."""
         inst = ChoreoInstance(
-            ocel_id="choreoInst:0xabc",
+            ocel_id="choreographyInstance:0xabc",
             short_id="abcdef12",
             elements=[_task("t1")],
         )
@@ -159,7 +159,7 @@ class TestComputeLayout:
     def test_single_task_has_two_sequence_flows(self):
         """start -> task -> end = 2 sequence flows."""
         inst = ChoreoInstance(
-            ocel_id="choreoInst:0xabc", short_id="abcdef12",
+            ocel_id="choreographyInstance:0xabc", short_id="abcdef12",
             elements=[_task("t1")],
         )
         layout = compute_layout(inst)
@@ -170,7 +170,7 @@ class TestComputeLayout:
         inner = _task("inner")
         sub = SubChoreo(bpmn_id="Sub_x", name="s", scope_ocel_id="sub:test:x", children=[inner])
         inst = ChoreoInstance(
-            ocel_id="choreoInst:0xabc", short_id="abcdef12",
+            ocel_id="choreographyInstance:0xabc", short_id="abcdef12",
             elements=[sub],
         )
         layout = compute_layout(inst)
@@ -180,7 +180,7 @@ class TestComputeLayout:
     def test_deterministic_ids(self):
         """Two calls produce identical sequence flow IDs (no global state leak)."""
         inst = ChoreoInstance(
-            ocel_id="choreoInst:0xabc", short_id="abcdef12",
+            ocel_id="choreographyInstance:0xabc", short_id="abcdef12",
             elements=[_task("t1"), _task("t2", order=1)],
         )
         layout1 = compute_layout(inst)

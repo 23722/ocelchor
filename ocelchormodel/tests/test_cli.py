@@ -39,10 +39,10 @@ class TestStem:
 
 
 class TestTxHash:
-    """_tx_hash extracts the hash from a choreoInst: ID."""
+    """_tx_hash extracts the hash from a choreographyInstance: ID."""
 
     def test_strips_prefix(self):
-        assert _tx_hash("choreoInst:0xabc") == "0xabc"
+        assert _tx_hash("choreographyInstance:0xabc") == "0xabc"
 
     def test_no_prefix(self):
         assert _tx_hash("0xabc") == "0xabc"
@@ -59,7 +59,7 @@ class TestListFlag:
         with pytest.raises(SystemExit) as exc:
             main([SWAP1, "--list"])
         assert exc.value.code == 0
-        assert "choreoInst:" in capsys.readouterr().out
+        assert "choreographyInstance:" in capsys.readouterr().out
 
     def test_shows_count_for_multi_instance(self, capsys):
         with pytest.raises(SystemExit):

@@ -27,8 +27,8 @@ from ocelchormodel.bpmn import generate_bpmn
 from ocelchormodel.extractor import extract_instance, list_instances
 from ocelchormodel.layout import compute_layout
 
-SWAP1_INSTANCE = "choreoInst:0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca"
-SWAP3_INSTANCE = "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2"
+SWAP1_INSTANCE = "choreographyInstance:0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca"
+SWAP3_INSTANCE = "choreographyInstance:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2"
 
 BPMN2 = "http://www.omg.org/spec/BPMN/20100524/MODEL"
 BPMNDI = "http://www.omg.org/spec/BPMN/20100524/DI"
@@ -130,7 +130,7 @@ class TestBpmnSwap3:
 # Root-only: 1 task, 0 subchoreographies (simplest case)
 # ---------------------------------------------------------------------------
 
-ROOT_ONLY_INSTANCE = "choreoInst:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111"
+ROOT_ONLY_INSTANCE = "choreographyInstance:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111"
 
 
 class TestBpmnRootOnly:
@@ -159,8 +159,8 @@ class TestBpmnRootOnly:
 # ---------------------------------------------------------------------------
 
 MULTI_TX_IDS = [
-    "choreoInst:0xbbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222",
-    "choreoInst:0xcccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333",
+    "choreographyInstance:0xbbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222bbbb2222",
+    "choreographyInstance:0xcccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333",
 ]
 
 
@@ -177,7 +177,7 @@ class TestBpmnMultiTx:
 # Real-world: largest 0x55 PancakeSwap instance (up to 20 participants)
 # ---------------------------------------------------------------------------
 
-REAL_WORLD_LARGEST = "choreoInst:0x493292e3d18dd7db7dffc4fd7d6badef2b89c956f310ba555b7977aae0ae233b"
+REAL_WORLD_LARGEST = "choreographyInstance:0x493292e3d18dd7db7dffc4fd7d6badef2b89c956f310ba555b7977aae0ae233b"
 
 
 class TestBpmnRealWorld:

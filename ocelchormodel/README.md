@@ -118,7 +118,7 @@ The tool reads the following OCEL 2.0 constructs:
 | `choreo:initiator` | The participant that initiates the message exchange |
 | `choreo:participant` | The non-initiating participant |
 | `choreo:message` | A request or response message object |
-| `choreo:contained-by` | Links an event to the `Subchoreography` scope object it belongs to |
+| `choreo:contained-by` | Links an event to the `subchoreographyInstance` scope object it belongs to |
 
 ### Object-to-object (O2O) qualifiers used
 
@@ -126,7 +126,7 @@ The tool reads the following OCEL 2.0 constructs:
 |-----------|------|
 | `choreo:source` | The sending participant of a message |
 | `choreo:target` | The receiving participant of a message |
-| `choreo:contains` | Links a parent `Subchoreography` scope to a child scope (hierarchy) |
+| `choreo:contains` | Links a parent `subchoreographyInstance` scope to a child scope (hierarchy) |
 
 ### Event ordering
 

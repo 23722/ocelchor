@@ -129,7 +129,7 @@ class TestC15Case3:
                     _rel("inst1", "choreo:instance"),
                 ]),
             ],
-            objects=[_obj("sub1", "Subchoreography")],
+            objects=[_obj("sub1", "subchoreographyInstance")],
         )
         r = check_c15(build_index(ocel))
         assert not r.passed
@@ -179,10 +179,10 @@ class TestC15Case1:
                 ]),
             ],
             objects=[
-                _obj("sub_parent", "Subchoreography", [
+                _obj("sub_parent", "subchoreographyInstance", [
                     _rel("sub_child", "choreo:contains"),
                 ]),
-                _obj("sub_child", "Subchoreography"),
+                _obj("sub_child", "subchoreographyInstance"),
             ],
         )
         r = check_c15(build_index(ocel))
@@ -207,10 +207,10 @@ class TestC15Case1:
                 ]),
             ],
             objects=[
-                _obj("sub_parent", "Subchoreography", [
+                _obj("sub_parent", "subchoreographyInstance", [
                     _rel("sub_child", "choreo:contains"),
                 ]),
-                _obj("sub_child", "Subchoreography"),
+                _obj("sub_child", "subchoreographyInstance"),
             ],
         )
         r = check_c15(build_index(ocel))
@@ -242,7 +242,7 @@ class TestC15Case2:
                     # no choreo:contained-by → top-level
                 ]),
             ],
-            objects=[_obj("sub1", "Subchoreography")],
+            objects=[_obj("sub1", "subchoreographyInstance")],
         )
         r = check_c15(build_index(ocel))
         assert r.passed
@@ -263,7 +263,7 @@ class TestC15Case2:
                     _rel("inst1", "choreo:instance"),
                 ]),
             ],
-            objects=[_obj("sub1", "Subchoreography")],
+            objects=[_obj("sub1", "subchoreographyInstance")],
         )
         r = check_c15(build_index(ocel))
         assert not r.passed
@@ -317,9 +317,6 @@ class TestC15EdgeCases:
 
 # ---------------------------------------------------------------------------
 # validate_all includes C15
-# ---------------------------------------------------------------------------
-
-
 class TestValidateAllIncludesC15:
 
     def test_all_17_constraints(self, swap1_ocel: dict) -> None:

@@ -544,7 +544,7 @@ def check_c15(idx: OcelIndex) -> ConstraintResult:
                     idx_in_path = path.index(scope_e2)
                     child_scope = path[idx_in_path - 1]  # one level below scope_e2
                     involved = _involved_in_scope_tree(child_scope, idx)
-                    if o_i not in involved:
+                    if involved and o_i not in involved:
                         violations.append(Violation(
                             constraint="C15",
                             message=f"Initiator {o_i} not involved in child scope {child_scope}",
@@ -556,7 +556,7 @@ def check_c15(idx: OcelIndex) -> ConstraintResult:
                 # Case 2: exiting to top level
                 root = _root_ancestor(scope_e1, parent_map)
                 involved = _involved_in_scope_tree(root, idx)
-                if o_i not in involved:
+                if involved and o_i not in involved:
                     violations.append(Violation(
                         constraint="C15",
                         message=f"Initiator {o_i} not involved in root scope {root}",

@@ -130,7 +130,7 @@ def _transform_single(
 ) -> tuple[list[OcelEvent], list[OcelObject]]:
     """Transform a single transaction trace."""
     txid = _tx_hash_id(trace.transaction_hash)
-    choreo_inst_id = f"choreoInst:{trace.transaction_hash}"
+    choreo_inst_id = f"choreographyInstance:{trace.transaction_hash}"
 
     events: list[OcelEvent] = []
     objects: list[OcelObject] = []
@@ -149,7 +149,7 @@ def _transform_single(
         objects.extend(objs)
 
     # Add choreography instance object
-    objects.append(OcelObject(id=choreo_inst_id, type="ChoreographyInstance"))
+    objects.append(OcelObject(id=choreo_inst_id, type="choreographyInstance"))
 
     return events, objects
 
@@ -208,7 +208,7 @@ def _create_root_split(
     """Root with internal calls → request event + scoping object, then recurse children."""
     req_event_id = f"e:{txid}:root:request"
     req_msg_id = f"call:req:{txid}:root"
-    sub_obj_id = f"sub:{txid}:root"
+    sub_obj_id = f"subchoreographyInstance:{txid}:root"
 
     trace_order = 0
     events: list[OcelEvent] = []
@@ -231,7 +231,7 @@ def _create_root_split(
 
     # Scoping object
     sub_obj = OcelObject(
-        id=sub_obj_id, type="Subchoreography",
+        id=sub_obj_id, type="subchoreographyInstance",
         attributes={"name": f"subchoreography {trace.function_name}"},
     )
     objects.append(sub_obj)
@@ -357,7 +357,7 @@ def _create_subchoreography(
     res_event_id = f"e:{txid}:{frame.call_id}:response"
     req_msg_id = f"call:req:{txid}:{frame.call_id}"
     res_msg_id = f"call:res:{txid}:{frame.call_id}"
-    sub_obj_id = f"sub:{txid}:{frame.call_id}"
+    sub_obj_id = f"subchoreographyInstance:{txid}:{frame.call_id}"
 
     events: list[OcelEvent] = []
     objects: list[OcelObject] = []
@@ -386,7 +386,7 @@ def _create_subchoreography(
 
     # Scoping object (C14: parent contains child)
     sub_obj = OcelObject(
-        id=sub_obj_id, type="Subchoreography",
+        id=sub_obj_id, type="subchoreographyInstance",
         attributes={"name": f"subchoreography {frame.activity}"},
     )
     objects.append(sub_obj)

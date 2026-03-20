@@ -5,25 +5,12 @@
       "attributes": []
     },
     {
-      "name": "ChoreographyInstance",
-      "attributes": []
-    },
-    {
       "name": "EOA",
       "attributes": []
     },
     {
       "name": "KittyCore",
       "attributes": []
-    },
-    {
-      "name": "Subchoreography",
-      "attributes": [
-        {
-          "name": "name",
-          "type": "string"
-        }
-      ]
     },
     {
       "name": "bid call",
@@ -44,6 +31,10 @@
       ]
     },
     {
+      "name": "choreographyInstance",
+      "attributes": []
+    },
+    {
       "name": "deposit call",
       "attributes": [
         {
@@ -57,6 +48,15 @@
       "attributes": [
         {
           "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "subchoreographyInstance",
+      "attributes": [
+        {
+          "name": "name",
           "type": "string"
         }
       ]
@@ -153,8 +153,8 @@
       ]
     },
     {
-      "id": "sub:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
-      "type": "Subchoreography",
+      "id": "subchoreographyInstance:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
+      "type": "subchoreographyInstance",
       "attributes": [
         {
           "name": "name",
@@ -303,8 +303,8 @@
       ]
     },
     {
-      "id": "choreoInst:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
-      "type": "ChoreographyInstance"
+      "id": "choreographyInstance:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
+      "type": "choreographyInstance"
     },
     {
       "id": "call:req:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:root",
@@ -328,8 +328,8 @@
       ]
     },
     {
-      "id": "sub:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:root",
-      "type": "Subchoreography",
+      "id": "subchoreographyInstance:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:root",
+      "type": "subchoreographyInstance",
       "attributes": [
         {
           "name": "name",
@@ -386,8 +386,8 @@
       ]
     },
     {
-      "id": "choreoInst:0x03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2",
-      "type": "ChoreographyInstance"
+      "id": "choreographyInstance:0x03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2",
+      "type": "choreographyInstance"
     }
   ],
   "events": [
@@ -415,7 +415,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "choreoInst:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
+          "objectId": "choreographyInstance:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
           "qualifier": "choreo:instance"
         }
       ]
@@ -448,11 +448,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
+          "objectId": "subchoreographyInstance:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
+          "objectId": "choreographyInstance:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
           "qualifier": "choreo:instance"
         }
       ]
@@ -485,11 +485,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
+          "objectId": "subchoreographyInstance:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
+          "objectId": "choreographyInstance:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
           "qualifier": "choreo:instance"
         }
       ]
@@ -522,11 +522,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
+          "objectId": "subchoreographyInstance:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
+          "objectId": "choreographyInstance:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
           "qualifier": "choreo:instance"
         }
       ]
@@ -555,7 +555,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "choreoInst:0x03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2",
+          "objectId": "choreographyInstance:0x03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2",
           "qualifier": "choreo:instance"
         }
       ]
@@ -588,11 +588,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:root",
+          "objectId": "subchoreographyInstance:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0x03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2",
+          "objectId": "choreographyInstance:0x03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2",
           "qualifier": "choreo:instance"
         }
       ]

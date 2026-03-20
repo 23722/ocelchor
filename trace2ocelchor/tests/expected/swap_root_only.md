@@ -14,7 +14,7 @@ txHash (without 0x): `aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aa
 | 0 | `e:aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111:root` | `approve` | 2024-01-01T00:00:00.000Z | 0 | choreo:initiator → `0x1111111111111111111111111111111111111111` |
 | | | | | | choreo:participant → `0xcccccccccccccccccccccccccccccccccccccccc` |
 | | | | | | choreo:message → `call:req:aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111:root` |
-| | | | | | choreo:instance → `choreoInst:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111` |
+| | | | | | choreo:instance → `choreographyInstance:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111` |
 
 ## Objects (4)
 
@@ -36,7 +36,7 @@ txHash (without 0x): `aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aa
 
 | Object ID | Object Type |
 |-----------|-------------|
-| `choreoInst:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111` | `ChoreographyInstance` |
+| `choreographyInstance:0xaaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111` | `choreographyInstance` |
 
 ## Summary Counts
 

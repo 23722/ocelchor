@@ -14,19 +14,19 @@ Events are grouped by `choreo:instance` and ordered by time within each group. F
 
 ### swap_1 (2 events, 1 pair)
 
-- root:request (top-level) → 0_1 (sub:root): Case 3 (descending). Init of e_2 = 0xaaa, roles of e_1 = {0x111, 0xaaa}. ✓
+- root:request (top-level) → 0_1 (subchoreographyInstance:...:root): Case 3 (descending). Init of e_2 = 0xaaa, roles of e_1 = {0x111, 0xaaa}. ✓
 - `elements_checked == 1`, 0 violations
 
 ### swap_3 (8 events, 7 pairs)
 
 All 7 pairs pass C15:
-1. root:request → 0_1:request: Case 3 (descending into sub:root)
-2. 0_1:request → 0_1_1:request: Case 3 (descending into sub:0_1)
-3. 0_1_1:request → 0_1_1_1: Case 3 (descending into sub:0_1_1)
-4. 0_1_1_1 → 0_1_1:response: Case 1 (ascending from sub:0_1_1 to sub:0_1)
-5. 0_1_1:response → 0_1_2: Case 3 (same scope sub:0_1)
-6. 0_1_2 → 0_1:response: Case 1 (ascending from sub:0_1 to sub:root)
-7. 0_1:response → 0_2: Case 3 (same scope sub:root)
+1. root:request → 0_1:request: Case 3 (descending into subchoreographyInstance:...:root)
+2. 0_1:request → 0_1_1:request: Case 3 (descending into subchoreographyInstance:...:0_1)
+3. 0_1_1:request → 0_1_1_1: Case 3 (descending into subchoreographyInstance:...:0_1_1)
+4. 0_1_1_1 → 0_1_1:response: Case 1 (ascending from subchoreographyInstance:...:0_1_1 to subchoreographyInstance:...:0_1)
+5. 0_1_1:response → 0_1_2: Case 3 (same scope subchoreographyInstance:...:0_1)
+6. 0_1_2 → 0_1:response: Case 1 (ascending from subchoreographyInstance:...:0_1 to subchoreographyInstance:...:root)
+7. 0_1:response → 0_2: Case 3 (same scope subchoreographyInstance:...:root)
 
 - `elements_checked == 7`, 0 violations
 

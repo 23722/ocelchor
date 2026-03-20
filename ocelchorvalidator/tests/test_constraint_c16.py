@@ -79,7 +79,7 @@ class TestC16NoReentry:
                     _rel("inst1", "choreo:instance"),
                 ]),
             ],
-            objects=[_obj("sub_a", "Subchoreography")],
+            objects=[_obj("sub_a", "subchoreographyInstance")],
         )
         r = check_c16(build_index(ocel))
         assert r.passed
@@ -95,7 +95,7 @@ class TestC16NoReentry:
                     _rel("inst1", "choreo:instance"),
                 ]),
             ],
-            objects=[_obj("sub_a", "Subchoreography")],
+            objects=[_obj("sub_a", "subchoreographyInstance")],
         )
         r = check_c16(build_index(ocel))
         assert r.passed
@@ -112,7 +112,7 @@ class TestC16NoReentry:
                     _rel("inst1", "choreo:instance"),  # outside scope
                 ]),
             ],
-            objects=[_obj("sub_a", "Subchoreography")],
+            objects=[_obj("sub_a", "subchoreographyInstance")],
         )
         r = check_c16(build_index(ocel))
         assert r.passed
@@ -141,7 +141,7 @@ class TestC16Violation:
                     _rel("inst1", "choreo:instance"),
                 ]),
             ],
-            objects=[_obj("sub_a", "Subchoreography")],
+            objects=[_obj("sub_a", "subchoreographyInstance")],
         )
         r = check_c16(build_index(ocel))
         assert not r.passed
@@ -172,7 +172,7 @@ class TestC16Violation:
                     _rel("inst1", "choreo:instance"),
                 ]),
             ],
-            objects=[_obj("sub_a", "Subchoreography")],
+            objects=[_obj("sub_a", "subchoreographyInstance")],
         )
         r = check_c16(build_index(ocel))
         assert not r.passed
@@ -207,7 +207,7 @@ class TestC16Violation:
                     _rel("inst2", "choreo:instance"),
                 ]),
             ],
-            objects=[_obj("sub_a", "Subchoreography")],
+            objects=[_obj("sub_a", "subchoreographyInstance")],
         )
         r = check_c16(build_index(ocel))
         assert not r.passed

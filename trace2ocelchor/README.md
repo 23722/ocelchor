@@ -85,8 +85,8 @@ The output is a valid OCEL 2.0 JSON file. Object types produced:
 | *contract name* | Named contract (from `contractCalledName` field) |
 | `<function> call` | Request message object |
 | `<function> call response` | Response message object |
-| `Subchoreography` | Scoping object grouping nested calls; carries a `name` attribute (e.g. `"subchoreography swap"`) |
-| `ChoreographyInstance` | One instance per transaction |
+| `subchoreographyInstance` | Scoping object grouping nested calls; carries a `name` attribute (e.g. `"subchoreography swap"`) |
+| `choreographyInstance` | One instance per transaction |
 
 ---
 

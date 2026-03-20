@@ -32,8 +32,8 @@ class TestSwap1Index:
         assert "call:req:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root" in idx.objects
         assert "call:req:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:0_1" in idx.objects
         assert "call:res:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:0_1" in idx.objects
-        assert "sub:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root" in idx.objects
-        assert "choreoInst:0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca" in idx.objects
+        assert "subchoreographyInstance:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root" in idx.objects
+        assert "choreographyInstance:0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca" in idx.objects
 
     def test_e2o_root_request(self, swap1_ocel: dict) -> None:
         idx = build_index(swap1_ocel)
@@ -87,11 +87,11 @@ class TestSwap1Index:
 
     def test_scoping_objects(self, swap1_ocel: dict) -> None:
         idx = build_index(swap1_ocel)
-        assert idx.scoping_objects == ["sub:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root"]
+        assert idx.scoping_objects == ["subchoreographyInstance:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root"]
 
     def test_instance_objects(self, swap1_ocel: dict) -> None:
         idx = build_index(swap1_ocel)
-        assert idx.instance_objects == ["choreoInst:0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca"]
+        assert idx.instance_objects == ["choreographyInstance:0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca"]
 
 
 # --- swap_3 fixture (8 events, 22 objects, 3 scoping objects) ---
@@ -112,9 +112,9 @@ class TestSwap3Index:
         assert len(idx.scoping_objects) == 3
         ids = set(idx.scoping_objects)
         tx = "fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2"
-        assert f"sub:{tx}:root" in ids
-        assert f"sub:{tx}:0_1" in ids
-        assert f"sub:{tx}:0_1_1" in ids
+        assert f"subchoreographyInstance:{tx}:root" in ids
+        assert f"subchoreographyInstance:{tx}:0_1" in ids
+        assert f"subchoreographyInstance:{tx}:0_1_1" in ids
 
     def test_instance_objects(self, swap3_ocel: dict) -> None:
         idx = build_index(swap3_ocel)
@@ -123,12 +123,12 @@ class TestSwap3Index:
     def test_o2o_contains_nesting(self, swap3_ocel: dict) -> None:
         idx = build_index(swap3_ocel)
         tx = "fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2"
-        root_sub = f"sub:{tx}:root"
-        sub_0_1 = f"sub:{tx}:0_1"
+        root_sub = f"subchoreographyInstance:{tx}:root"
+        sub_0_1 = f"subchoreographyInstance:{tx}:0_1"
         # root contains 0_1
         assert (sub_0_1, "choreo:contains") in idx.o2o[root_sub]
         # 0_1 contains 0_1_1
-        sub_0_1_1 = f"sub:{tx}:0_1_1"
+        sub_0_1_1 = f"subchoreographyInstance:{tx}:0_1_1"
         assert (sub_0_1_1, "choreo:contains") in idx.o2o[sub_0_1]
 
 

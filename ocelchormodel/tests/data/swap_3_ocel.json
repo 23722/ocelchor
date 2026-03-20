@@ -9,7 +9,7 @@
       "attributes": []
     },
     {
-      "name": "ChoreographyInstance",
+      "name": "choreographyInstance",
       "attributes": []
     },
     {
@@ -21,7 +21,7 @@
       "attributes": []
     },
     {
-      "name": "Subchoreography",
+      "name": "subchoreographyInstance",
       "attributes": [
         {
           "name": "name",
@@ -240,8 +240,8 @@
       ]
     },
     {
-      "id": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
-      "type": "Subchoreography",
+      "id": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
+      "type": "subchoreographyInstance",
       "attributes": [
         {
           "name": "name",
@@ -251,7 +251,7 @@
       ],
       "relationships": [
         {
-          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
           "qualifier": "choreo:contains"
         }
       ]
@@ -303,8 +303,8 @@
       ]
     },
     {
-      "id": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
-      "type": "Subchoreography",
+      "id": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+      "type": "subchoreographyInstance",
       "attributes": [
         {
           "name": "name",
@@ -314,7 +314,7 @@
       ],
       "relationships": [
         {
-          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
+          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
           "qualifier": "choreo:contains"
         }
       ]
@@ -371,8 +371,8 @@
       ]
     },
     {
-      "id": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
-      "type": "Subchoreography",
+      "id": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
+      "type": "subchoreographyInstance",
       "attributes": [
         {
           "name": "name",
@@ -530,8 +530,8 @@
       ]
     },
     {
-      "id": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
-      "type": "ChoreographyInstance"
+      "id": "choreographyInstance:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+      "type": "choreographyInstance"
     }
   ],
   "events": [
@@ -559,7 +559,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "objectId": "choreographyInstance:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
           "qualifier": "choreo:instance"
         }
       ]
@@ -588,11 +588,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
+          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "objectId": "choreographyInstance:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
           "qualifier": "choreo:instance"
         }
       ]
@@ -621,11 +621,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "objectId": "choreographyInstance:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
           "qualifier": "choreo:instance"
         }
       ]
@@ -658,11 +658,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
+          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "objectId": "choreographyInstance:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
           "qualifier": "choreo:instance"
         }
       ]
@@ -691,11 +691,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "objectId": "choreographyInstance:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
           "qualifier": "choreo:instance"
         }
       ]
@@ -728,11 +728,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "objectId": "choreographyInstance:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
           "qualifier": "choreo:instance"
         }
       ]
@@ -761,11 +761,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
+          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "objectId": "choreographyInstance:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
           "qualifier": "choreo:instance"
         }
       ]
@@ -798,11 +798,11 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "sub:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
+          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
           "qualifier": "choreo:contained-by"
         },
         {
-          "objectId": "choreoInst:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
+          "objectId": "choreographyInstance:0xfed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2",
           "qualifier": "choreo:instance"
         }
       ]

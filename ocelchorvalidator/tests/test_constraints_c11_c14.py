@@ -69,8 +69,8 @@ class TestC11:
                 _rel("inst1", "choreo:instance"),
             ])],
             objects=[
-                _obj("sub_a", "Subchoreography"),
-                _obj("sub_b", "Subchoreography"),
+                _obj("sub_a", "subchoreographyInstance"),
+                _obj("sub_b", "subchoreographyInstance"),
             ],
         )
         r = check_c11(build_index(ocel))
@@ -110,7 +110,7 @@ class TestC12:
             events=[_event("e1", [
                 _rel("inst1", "choreo:instance"),
             ])],
-            objects=[_obj("sub_orphan", "Subchoreography")],
+            objects=[_obj("sub_orphan", "subchoreographyInstance")],
         )
         r = check_c12(build_index(ocel))
         assert not r.passed
@@ -156,7 +156,7 @@ class TestC13:
                     _rel("inst2", "choreo:instance"),  # different instance
                 ]),
             ],
-            objects=[_obj("sub_a", "Subchoreography")],
+            objects=[_obj("sub_a", "subchoreographyInstance")],
         )
         r = check_c13(build_index(ocel))
         assert not r.passed
@@ -177,10 +177,10 @@ class TestC13:
                 ]),
             ],
             objects=[
-                _obj("sub_parent", "Subchoreography", [
+                _obj("sub_parent", "subchoreographyInstance", [
                     _rel("sub_child", "choreo:contains"),
                 ]),
-                _obj("sub_child", "Subchoreography"),
+                _obj("sub_child", "subchoreographyInstance"),
             ],
         )
         r = check_c13(build_index(ocel))
@@ -225,13 +225,13 @@ class TestC14:
                 ]),
             ],
             objects=[
-                _obj("sub_parent1", "Subchoreography", [
+                _obj("sub_parent1", "subchoreographyInstance", [
                     _rel("sub_child", "choreo:contains"),
                 ]),
-                _obj("sub_parent2", "Subchoreography", [
+                _obj("sub_parent2", "subchoreographyInstance", [
                     _rel("sub_child", "choreo:contains"),
                 ]),
-                _obj("sub_child", "Subchoreography"),
+                _obj("sub_child", "subchoreographyInstance"),
             ],
         )
         r = check_c14(build_index(ocel))
@@ -253,10 +253,10 @@ class TestC14:
                 ]),
             ],
             objects=[
-                _obj("sub_a", "Subchoreography", [
+                _obj("sub_a", "subchoreographyInstance", [
                     _rel("sub_b", "choreo:contains"),
                 ]),
-                _obj("sub_b", "Subchoreography", [
+                _obj("sub_b", "subchoreographyInstance", [
                     _rel("sub_a", "choreo:contains"),
                 ]),
             ],

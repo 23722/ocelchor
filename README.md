@@ -149,10 +149,16 @@ Column names follow the paper's notation.
 | **Nouns DAO: NounsToken**<br>`0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03` | 0/12 | 0/13 | 0/12 | 0/12 |   0/12 | 0/13 | 0/13 | 0/12 | 0/12 | 0/12 | 0/1  | 0/12 | 0/3  | 0/3  | 0/3  |  0/5   |  0/3  |
 | **Beanstalk Farms: Attack data**<br>`beanstalk_attack_ocel.json` | 0/489| 0/703| 0/489| 0/489|  0/489 | 0/703| 0/703| 0/489| 0/489| 0/489| 0/214| 0/489| 0/139| 0/139| 0/139|  1/486 | 0/139 |
 
-Non-zero violation counts: C4 has 2 violations in CryptoKitties: Core and 10 in PancakeSwap: MasterChefV3;
-C15 has 1 violation in Beanstalk Farms: Attack data. 
-The violations can be traced back to blockchain implementation particularities, as described in detail in the paper accompanying this implementation.
-All other constraints pass on all datasets.
+Non-zero violation counts:  and 10 in PancakeSwap: MasterChefV3;
+
+
+The violations can be traced back to blockchain implementation particularities.
+
+**C4 has 2 violations in CryptoKitties: Core**
+The violations of C4 occurred due to the respective calls using a *multicall* pattern, which self-executes functions through explicit CALLs and DELEGATECALLs. Thus the self-execute functions were treted as internal transactions. This results in the caller being equal to the callee. This pattern is typically used to optimize execution costs and enable modular execution. 
+
+**C15 has 1 violation in Beanstalk Farms: Attack data.** 
+The violation of C15 occurred when a contract was created and immediately after started to issue calls on its part. Since the address of the created contract was not known before its creation, it did not appear in the data.
 
 ---
 

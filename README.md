@@ -4,8 +4,10 @@ Reference implementation accompanying the paper:
 
 > *[Title]*. [Authors]. [Venue, Year].
 
-This repository provides a pipeline for discovering BPMN 2.0 process choreographies
-from Ethereum transaction traces via OCEL 2.0 event logs.
+This repository provides a pipeline for:
+- Representing BPMN 2.0 process choreographies from Ethereum transaction traces via OCEL 2.0 event logs
+- Checking well-formedness of the representations based on 17 constraints
+- Converting the event log representation of individual choreographies encoded in OCEL 2.0 as BPMN files
 
 ---
 
@@ -14,7 +16,7 @@ from Ethereum transaction traces via OCEL 2.0 event logs.
 ```
 ocelchor/
 ├── trace2ocelchor/    Convert Ethereum transaction traces → OCEL 2.0 event logs
-├── ocelchormodel/     Mine BPMN choreography models from OCEL 2.0 event logs
+├── ocelchormodel/     Create BPMN choreography models from OCEL 2.0 event logs
 ├── ocelchorvalidator/ Validate OCEL 2.0 logs against formal constraints C0–C15
 ├── generate_fig4.py   Standalone script for reproducing Figure 4 (requires pm4py)
 └── src/ocelchor/      Unified CLI dispatcher
@@ -148,7 +150,9 @@ Column names follow the paper's notation.
 | **Beanstalk Farms: Attack data**<br>`beanstalk_attack_ocel.json` | 0/489| 0/703| 0/489| 0/489|  0/489 | 0/703| 0/703| 0/489| 0/489| 0/489| 0/214| 0/489| 0/139| 0/139| 0/139|  1/486 | 0/139 |
 
 Non-zero violation counts: C4 has 2 violations in CryptoKitties: Core and 10 in PancakeSwap: MasterChefV3;
-C15 has 1 violation in Beanstalk Farms: Attack data. All other constraints pass on all datasets.
+C15 has 1 violation in Beanstalk Farms: Attack data. 
+The violations can be traced back to blockchain implementation particularities, as described in detail in the paper accompanying this implementation.
+All other constraints pass on all datasets.
 
 ---
 

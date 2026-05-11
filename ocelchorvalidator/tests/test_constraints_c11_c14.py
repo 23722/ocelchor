@@ -116,6 +116,24 @@ class TestC12:
         assert not r.passed
         assert r.violations[0].object_id == "sub_orphan"
 
+    def test_scope_with_only_child_scopes(self) -> None:
+        """Parent scope has no directly-contained events but contains a child scope."""
+        ocel = _minimal_ocel(
+            events=[_event("e1", [
+                _rel("sub_child", "choreo:contained-by"),
+                _rel("inst1", "choreo:instance"),
+            ])],
+            objects=[
+                _obj("sub_parent", "subchoreographyInstance", [
+                    _rel("sub_child", "choreo:contains"),
+                ]),
+                _obj("sub_child", "subchoreographyInstance"),
+            ],
+        )
+        r = check_c12(build_index(ocel))
+        assert r.passed
+        assert r.elements_checked == 2
+
     def test_empty_log(self) -> None:
         r = check_c12(build_index(_minimal_ocel([])))
         assert r.passed

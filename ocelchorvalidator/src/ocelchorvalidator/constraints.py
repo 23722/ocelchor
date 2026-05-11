@@ -342,7 +342,7 @@ def check_c11(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c12(idx: OcelIndex) -> ConstraintResult:
-    """Every scoping object has at least one contained event."""
+    """Every scoping object contains at least one event or child sub-choreography."""
     # Build reverse map: scoping_object_id → set of contained event IDs
     contained_by: dict[str, list[str]] = {}
     for eid in idx.events:
@@ -351,10 +351,12 @@ def check_c12(idx: OcelIndex) -> ConstraintResult:
 
     violations: list[Violation] = []
     for sub_id in idx.scoping_objects:
-        if sub_id not in contained_by:
+        has_events = sub_id in contained_by
+        has_child_scopes = bool(_o2o_by_qualifier(idx, sub_id, "choreo:contains"))
+        if not has_events and not has_child_scopes:
             violations.append(Violation(
                 constraint="C12",
-                message="Scoping object has no contained events",
+                message="Scoping object has no contained events or child sub-choreographies",
                 object_id=sub_id,
             ))
     return ConstraintResult("C12", len(idx.scoping_objects), violations)

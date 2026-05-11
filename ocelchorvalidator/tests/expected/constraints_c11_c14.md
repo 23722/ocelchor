@@ -18,17 +18,19 @@ Each event has at most one `choreo:contained-by` relation.
 
 ## C12 — Non-empty scope
 
-Every scoping object (`subchoreographyInstance`) has at least one event contained in it.
+Every scoping object (`subchoreographyInstance`) contains at least one choreography task,
+event, or child sub-choreography.
 
 ### Positive cases
 
 - **swap_1**: 1 scoping object `subchoreographyInstance:...:root`, 1 event contained → 0 violations, `elements_checked == 1`
 - **swap_3**: 3 scoping objects, each has at least 1 event → 0 violations
 - **swap_root_only**: 0 scoping objects → `elements_checked == 0`, passes vacuously
+- **Scope with only child scopes**: Parent scope has no directly-contained events but has a `choreo:contains` O2O to a child scope (which itself has a contained event) → passes, `elements_checked == 2`
 
 ### Negative cases
 
-- **Empty scope**: Scoping object with no events having `choreo:contained-by` pointing to it → violation with object ID
+- **Empty scope**: Scoping object with no contained events AND no child sub-choreographies → violation with object ID
 
 ---
 

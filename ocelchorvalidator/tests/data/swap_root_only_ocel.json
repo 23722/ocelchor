@@ -5,10 +5,6 @@
       "attributes": []
     },
     {
-      "name": "choreographyInstance",
-      "attributes": []
-    },
-    {
       "name": "EOA",
       "attributes": []
     },
@@ -24,6 +20,10 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "choreographyInstance",
+      "attributes": []
     }
   ],
   "eventTypes": [

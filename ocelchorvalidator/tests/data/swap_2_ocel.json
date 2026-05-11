@@ -5,11 +5,19 @@
       "attributes": []
     },
     {
-      "name": "choreographyInstance",
+      "name": "EOA",
       "attributes": []
     },
     {
-      "name": "EOA",
+      "name": "SwapRouter",
+      "attributes": []
+    },
+    {
+      "name": "TokenContract",
+      "attributes": []
+    },
+    {
+      "name": "choreographyInstance",
       "attributes": []
     },
     {
@@ -20,14 +28,6 @@
           "type": "string"
         }
       ]
-    },
-    {
-      "name": "SwapRouter",
-      "attributes": []
-    },
-    {
-      "name": "TokenContract",
-      "attributes": []
     },
     {
       "name": "swap call",
@@ -313,7 +313,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:root",
+          "objectId": "subchoreographyInstance:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -383,7 +383,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:root",
+          "objectId": "subchoreographyInstance:def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1def1:0_1",
           "qualifier": "choreo:contained-by"
         },
         {

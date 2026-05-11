@@ -407,7 +407,7 @@ def _create_subchoreography(
             E2O(req_event_id, frame.from_addr, CHOREO_INITIATOR),
             E2O(req_event_id, frame.to_addr, CHOREO_PARTICIPANT),
             E2O(req_event_id, req_msg_id, CHOREO_MESSAGE),
-            E2O(req_event_id, parent_sub_id, CHOREO_CONTAINED_BY),
+            E2O(req_event_id, sub_obj_id, CHOREO_CONTAINED_BY),
             E2O(req_event_id, choreo_inst_id, CHOREO_INSTANCE),
         ],
     ))
@@ -431,7 +431,7 @@ def _create_subchoreography(
             E2O(res_event_id, frame.to_addr, CHOREO_INITIATOR),
             E2O(res_event_id, frame.from_addr, CHOREO_PARTICIPANT),
             E2O(res_event_id, res_msg_id, CHOREO_MESSAGE),
-            E2O(res_event_id, parent_sub_id, CHOREO_CONTAINED_BY),
+            E2O(res_event_id, sub_obj_id, CHOREO_CONTAINED_BY),
             E2O(res_event_id, choreo_inst_id, CHOREO_INSTANCE),
         ],
     ))

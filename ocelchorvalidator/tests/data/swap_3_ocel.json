@@ -9,25 +9,12 @@
       "attributes": []
     },
     {
-      "name": "choreographyInstance",
-      "attributes": []
-    },
-    {
       "name": "EOA",
       "attributes": []
     },
     {
       "name": "LiquidityPool",
       "attributes": []
-    },
-    {
-      "name": "subchoreographyInstance",
-      "attributes": [
-        {
-          "name": "name",
-          "type": "string"
-        }
-      ]
     },
     {
       "name": "SwapLogger",
@@ -60,6 +47,10 @@
       ]
     },
     {
+      "name": "choreographyInstance",
+      "attributes": []
+    },
+    {
       "name": "logSwap call",
       "attributes": [
         {
@@ -77,6 +68,15 @@
       "attributes": [
         {
           "name": "output",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "subchoreographyInstance",
+      "attributes": [
+        {
+          "name": "name",
           "type": "string"
         }
       ]
@@ -588,7 +588,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
+          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -621,7 +621,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -691,7 +691,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
+          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -761,7 +761,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root",
+          "objectId": "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1",
           "qualifier": "choreo:contained-by"
         },
         {

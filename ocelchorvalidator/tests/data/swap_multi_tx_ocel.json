@@ -5,21 +5,8 @@
       "attributes": []
     },
     {
-      "name": "choreographyInstance",
-      "attributes": []
-    },
-    {
       "name": "EOA",
       "attributes": []
-    },
-    {
-      "name": "subchoreographyInstance",
-      "attributes": [
-        {
-          "name": "name",
-          "type": "string"
-        }
-      ]
     },
     {
       "name": "SwapRouter",
@@ -34,6 +21,19 @@
         },
         {
           "name": "spender",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "choreographyInstance",
+      "attributes": []
+    },
+    {
+      "name": "subchoreographyInstance",
+      "attributes": [
+        {
+          "name": "name",
           "type": "string"
         }
       ]
@@ -390,7 +390,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333:root",
+          "objectId": "subchoreographyInstance:cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -460,7 +460,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333:root",
+          "objectId": "subchoreographyInstance:cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333cccc3333:0_1",
           "qualifier": "choreo:contained-by"
         },
         {

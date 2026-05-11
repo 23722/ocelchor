@@ -429,14 +429,14 @@ class TestSwap3:
     # -- choreo:contained-by links to immediate parent --
 
     def test_contained_by_0_1_request(self):
-        """0_1:request is contained by root subchoreography."""
+        """0_1:request is contained by its own 0_1 subchoreography."""
         e = self.events[1]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
 
     def test_contained_by_0_1_1_request(self):
-        """0_1_1:request is contained by 0_1 subchoreography."""
+        """0_1_1:request is contained by its own 0_1_1 subchoreography."""
         e = self.events[2]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1"
 
     def test_contained_by_0_1_1_1(self):
         """Leaf 0_1_1_1 is contained by 0_1_1 subchoreography."""
@@ -444,9 +444,9 @@ class TestSwap3:
         assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1"
 
     def test_contained_by_0_1_1_response(self):
-        """0_1_1:response is contained by 0_1 subchoreography."""
+        """0_1_1:response is contained by its own 0_1_1 subchoreography."""
         e = self.events[4]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1"
 
     def test_contained_by_0_1_2(self):
         """Leaf 0_1_2 is contained by 0_1 subchoreography."""
@@ -454,9 +454,9 @@ class TestSwap3:
         assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
 
     def test_contained_by_0_1_response(self):
-        """0_1:response is contained by root subchoreography."""
+        """0_1:response is contained by its own 0_1 subchoreography."""
         e = self.events[6]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
 
     def test_contained_by_0_2(self):
         """Leaf 0_2 is contained by root subchoreography."""

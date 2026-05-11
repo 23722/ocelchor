@@ -49,14 +49,14 @@ choreo:contained-by links connect each event to its **immediate** parent subchor
 - choreo:initiator → `0xAAA...`
 - choreo:participant → `0xBBB...` (SwapRouter)
 - choreo:message → `call:req:fed2...:0_1`
-- choreo:contained-by → `subchoreographyInstance:fed2...:root`
+- choreo:contained-by → `subchoreographyInstance:fed2...:0_1`
 - choreo:instance → `choreographyInstance:0xfed2...`
 
 **e:fed2...:0_1_1:request** (Request transfer):
 - choreo:initiator → `0xBBB...`
 - choreo:participant → `0xCCC...` (TokenContract)
 - choreo:message → `call:req:fed2...:0_1_1`
-- choreo:contained-by → `subchoreographyInstance:fed2...:0_1`
+- choreo:contained-by → `subchoreographyInstance:fed2...:0_1_1`
 - choreo:instance → `choreographyInstance:0xfed2...`
 
 **e:fed2...:0_1_1_1** (balanceOf):
@@ -71,7 +71,7 @@ choreo:contained-by links connect each event to its **immediate** parent subchor
 - choreo:initiator → `0xCCC...` (reversed)
 - choreo:participant → `0xBBB...` (reversed)
 - choreo:message → `call:res:fed2...:0_1_1`
-- choreo:contained-by → `subchoreographyInstance:fed2...:0_1`
+- choreo:contained-by → `subchoreographyInstance:fed2...:0_1_1`
 - choreo:instance → `choreographyInstance:0xfed2...`
 
 **e:fed2...:0_1_2** (updateReserves):
@@ -86,7 +86,7 @@ choreo:contained-by links connect each event to its **immediate** parent subchor
 - choreo:initiator → `0xBBB...` (reversed)
 - choreo:participant → `0xAAA...` (reversed)
 - choreo:message → `call:res:fed2...:0_1`
-- choreo:contained-by → `subchoreographyInstance:fed2...:root`
+- choreo:contained-by → `subchoreographyInstance:fed2...:0_1`
 - choreo:instance → `choreographyInstance:0xfed2...`
 
 **e:fed2...:0_2** (logSwap):

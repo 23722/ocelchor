@@ -5,11 +5,15 @@
       "attributes": []
     },
     {
-      "name": "choreographyInstance",
+      "name": "EOA",
       "attributes": []
     },
     {
-      "name": "EOA",
+      "name": "SwapPool",
+      "attributes": []
+    },
+    {
+      "name": "choreographyInstance",
       "attributes": []
     },
     {
@@ -20,10 +24,6 @@
           "type": "string"
         }
       ]
-    },
-    {
-      "name": "SwapPool",
-      "attributes": []
     },
     {
       "name": "swap call",

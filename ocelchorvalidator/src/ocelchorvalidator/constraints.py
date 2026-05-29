@@ -75,7 +75,8 @@ def check_c1(idx: OcelIndex) -> ConstraintResult:
     """Message source/target must be initiator or participant of the same event."""
     violations: list[Violation] = []
     checked = 0
-    for eid in idx.events:
+    for e in idx.e_t_events:
+        eid = e["id"]
         messages = _e2o_by_qualifier(idx, eid, "choreo:message")
         initiators = set(_e2o_by_qualifier(idx, eid, "choreo:initiator"))
         participants = set(_e2o_by_qualifier(idx, eid, "choreo:participant"))
@@ -146,9 +147,10 @@ def check_c3(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c4(idx: OcelIndex) -> ConstraintResult:
-    """Initiator and participant of same event must be different objects."""
+    """Initiator and participant of same E_T event must be different objects."""
     violations: list[Violation] = []
-    for eid in idx.events:
+    for e in idx.e_t_events:
+        eid = e["id"]
         initiators = set(_e2o_by_qualifier(idx, eid, "choreo:initiator"))
         participants = set(_e2o_by_qualifier(idx, eid, "choreo:participant"))
         overlap = initiators & participants
@@ -159,7 +161,7 @@ def check_c4(idx: OcelIndex) -> ConstraintResult:
                 event_id=eid,
                 object_id=oid,
             ))
-    return ConstraintResult("C4", len(idx.events), violations)
+    return ConstraintResult("C4", len(idx.e_t_events), violations)
 
 
 # ---------------------------------------------------------------------------
@@ -167,10 +169,11 @@ def check_c4(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c5(idx: OcelIndex) -> ConstraintResult:
-    """Each message linked to an event has exactly one choreo:source."""
+    """Each message linked to an E_T event has exactly one choreo:source."""
     violations: list[Violation] = []
     checked = 0
-    for eid in idx.events:
+    for e in idx.e_t_events:
+        eid = e["id"]
         messages = _e2o_by_qualifier(idx, eid, "choreo:message")
         for mid in messages:
             checked += 1
@@ -190,10 +193,11 @@ def check_c5(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c6(idx: OcelIndex) -> ConstraintResult:
-    """Each message linked to an event has exactly one choreo:target."""
+    """Each message linked to an E_T event has exactly one choreo:target."""
     violations: list[Violation] = []
     checked = 0
-    for eid in idx.events:
+    for e in idx.e_t_events:
+        eid = e["id"]
         messages = _e2o_by_qualifier(idx, eid, "choreo:message")
         for mid in messages:
             checked += 1
@@ -213,9 +217,10 @@ def check_c6(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c7(idx: OcelIndex) -> ConstraintResult:
-    """Each event has exactly one message whose source is the initiator."""
+    """Each E_T event has exactly one message whose source is the initiator."""
     violations: list[Violation] = []
-    for eid in idx.events:
+    for e in idx.e_t_events:
+        eid = e["id"]
         initiators = _e2o_by_qualifier(idx, eid, "choreo:initiator")
         if not initiators:
             continue  # C2 handles missing initiator
@@ -231,7 +236,7 @@ def check_c7(idx: OcelIndex) -> ConstraintResult:
                 message=f"Event has {len(init_msgs)} initiating messages (expected 1)",
                 event_id=eid,
             ))
-    return ConstraintResult("C7", len(idx.events), violations)
+    return ConstraintResult("C7", len(idx.e_t_events), violations)
 
 
 # ---------------------------------------------------------------------------
@@ -239,9 +244,10 @@ def check_c7(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c8(idx: OcelIndex) -> ConstraintResult:
-    """Each event has at most one message whose source is the participant."""
+    """Each E_T event has at most one message whose source is the participant."""
     violations: list[Violation] = []
-    for eid in idx.events:
+    for e in idx.e_t_events:
+        eid = e["id"]
         participants = _e2o_by_qualifier(idx, eid, "choreo:participant")
         if not participants:
             continue  # C3 handles missing participant
@@ -257,7 +263,7 @@ def check_c8(idx: OcelIndex) -> ConstraintResult:
                 message=f"Event has {len(return_msgs)} return messages (expected at most 1)",
                 event_id=eid,
             ))
-    return ConstraintResult("C8", len(idx.events), violations)
+    return ConstraintResult("C8", len(idx.e_t_events), violations)
 
 
 # ---------------------------------------------------------------------------
@@ -268,7 +274,8 @@ def check_c9(idx: OcelIndex) -> ConstraintResult:
     """The initiating message (source=initiator) must target the participant."""
     violations: list[Violation] = []
     checked = 0
-    for eid in idx.events:
+    for e in idx.e_t_events:
+        eid = e["id"]
         initiators = _e2o_by_qualifier(idx, eid, "choreo:initiator")
         participants = _e2o_by_qualifier(idx, eid, "choreo:participant")
         if not initiators or not participants:
@@ -299,7 +306,8 @@ def check_c10(idx: OcelIndex) -> ConstraintResult:
     """The return message (source=participant) must target the initiator."""
     violations: list[Violation] = []
     checked = 0
-    for eid in idx.events:
+    for e in idx.e_t_events:
+        eid = e["id"]
         initiators = _e2o_by_qualifier(idx, eid, "choreo:initiator")
         participants = _e2o_by_qualifier(idx, eid, "choreo:participant")
         if not initiators or not participants:
@@ -327,9 +335,10 @@ def check_c10(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c11(idx: OcelIndex) -> ConstraintResult:
-    """Each event has at most one choreo:contained-by relation."""
+    """Each E_T event has at most one choreo:contained-by relation."""
     violations: list[Violation] = []
-    for eid in idx.events:
+    for e in idx.e_t_events:
+        eid = e["id"]
         containers = _e2o_by_qualifier(idx, eid, "choreo:contained-by")
         if len(containers) > 1:
             violations.append(Violation(
@@ -337,7 +346,7 @@ def check_c11(idx: OcelIndex) -> ConstraintResult:
                 message=f"Event has {len(containers)} choreo:contained-by relations (expected at most 1)",
                 event_id=eid,
             ))
-    return ConstraintResult("C11", len(idx.events), violations)
+    return ConstraintResult("C11", len(idx.e_t_events), violations)
 
 
 # ---------------------------------------------------------------------------

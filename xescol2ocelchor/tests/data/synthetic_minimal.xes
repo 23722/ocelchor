@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log xes.version="1849.2016" xmlns="http://www.xes-standard.org">
+    <extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext"/>
+    <extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext"/>
+    <extension name="Organizational" prefix="org" uri="http://www.xes-standard.org/org.xesext"/>
+    <string key="concept:name" value="synthetic"/>
+    <trace>
+        <string key="concept:name" value="case_1"/>
+        <event>
+            <string key="concept:name" value="Alice_Internal"/>
+            <date key="time:timestamp" value="2024-01-01T10:00:00.000+00:00"/>
+            <string key="org:group" value="Alice"/>
+        </event>
+        <event>
+            <string key="concept:name" value="Alice_Greet"/>
+            <date key="time:timestamp" value="2024-01-01T10:00:01.000+00:00"/>
+            <string key="org:group" value="Alice"/>
+            <string key="msgType" value="send"/>
+            <string key="msgInstanceId" value="Greeting_1"/>
+            <string key="msgName" value="Greeting"/>
+        </event>
+        <event>
+            <string key="concept:name" value="Bob_Greet"/>
+            <date key="time:timestamp" value="2024-01-01T10:00:01.000+00:00"/>
+            <string key="org:group" value="Bob"/>
+            <string key="msgType" value="receive"/>
+            <string key="msgInstanceId" value="Greeting_1"/>
+            <string key="msgName" value="Greeting"/>
+        </event>
+    </trace>
+    <trace>
+        <string key="concept:name" value="case_2"/>
+        <event>
+            <string key="concept:name" value="Alice_Greet"/>
+            <date key="time:timestamp" value="2024-01-02T10:00:00.000+00:00"/>
+            <string key="org:group" value="Alice"/>
+            <string key="msgType" value="send"/>
+            <string key="msgInstanceId" value="Greeting_1"/>
+            <string key="msgName" value="Greeting"/>
+        </event>
+    </trace>
+</log>

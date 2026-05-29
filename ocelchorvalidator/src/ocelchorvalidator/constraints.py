@@ -53,9 +53,10 @@ def _o2o_by_qualifier(idx: OcelIndex, object_id: str, qualifier: str) -> list[st
 # ---------------------------------------------------------------------------
 
 def check_c0(idx: OcelIndex) -> ConstraintResult:
-    """Every choreography event has exactly one choreo:instance relation."""
+    """Every E_T event has exactly one choreo:instance relation."""
     violations: list[Violation] = []
-    for eid in idx.events:
+    for e in idx.e_t_events:
+        eid = e["id"]
         instances = _e2o_by_qualifier(idx, eid, "choreo:instance")
         if len(instances) != 1:
             violations.append(Violation(
@@ -63,7 +64,7 @@ def check_c0(idx: OcelIndex) -> ConstraintResult:
                 message=f"Event has {len(instances)} choreo:instance relations (expected 1)",
                 event_id=eid,
             ))
-    return ConstraintResult("C0", len(idx.events), violations)
+    return ConstraintResult("C0", len(idx.e_t_events), violations)
 
 
 # ---------------------------------------------------------------------------
@@ -107,9 +108,10 @@ def check_c1(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c2(idx: OcelIndex) -> ConstraintResult:
-    """Each choreography event has exactly one choreo:initiator relation."""
+    """Each E_T event has exactly one choreo:initiator relation."""
     violations: list[Violation] = []
-    for eid in idx.events:
+    for e in idx.e_t_events:
+        eid = e["id"]
         initiators = _e2o_by_qualifier(idx, eid, "choreo:initiator")
         if len(initiators) != 1:
             violations.append(Violation(
@@ -117,7 +119,7 @@ def check_c2(idx: OcelIndex) -> ConstraintResult:
                 message=f"Event has {len(initiators)} choreo:initiator relations (expected 1)",
                 event_id=eid,
             ))
-    return ConstraintResult("C2", len(idx.events), violations)
+    return ConstraintResult("C2", len(idx.e_t_events), violations)
 
 
 # ---------------------------------------------------------------------------
@@ -125,9 +127,10 @@ def check_c2(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c3(idx: OcelIndex) -> ConstraintResult:
-    """Each choreography event has exactly one choreo:participant relation."""
+    """Each E_T event has exactly one choreo:participant relation."""
     violations: list[Violation] = []
-    for eid in idx.events:
+    for e in idx.e_t_events:
+        eid = e["id"]
         participants = _e2o_by_qualifier(idx, eid, "choreo:participant")
         if len(participants) != 1:
             violations.append(Violation(
@@ -135,7 +138,7 @@ def check_c3(idx: OcelIndex) -> ConstraintResult:
                 message=f"Event has {len(participants)} choreo:participant relations (expected 1)",
                 event_id=eid,
             ))
-    return ConstraintResult("C3", len(idx.events), violations)
+    return ConstraintResult("C3", len(idx.e_t_events), violations)
 
 
 # ---------------------------------------------------------------------------

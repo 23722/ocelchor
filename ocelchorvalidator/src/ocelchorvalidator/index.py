@@ -4,6 +4,16 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+# E_T per paper Definition 3: events with at least one choreography qualifier.
+# Events without any of these are not choreography events and are exempt from
+# C0–C10 (e.g., kept internal events carrying only collab:instance).
+_E_T_QUALIFIERS = frozenset({
+    "choreo:instance",
+    "choreo:initiator",
+    "choreo:participant",
+    "choreo:message",
+})
+
 
 @dataclass
 class OcelIndex:
@@ -20,6 +30,7 @@ class OcelIndex:
     o2o: dict[str, list[tuple[str, str]]]
 
     # Derived indexes
+    e_t_events: list[dict]  # E_T per Definition 3 — events subject to C0–C10
     choreo_events: list[dict]  # events with E2O qualifier choreo:instance
     contained_events: list[dict]  # events with E2O qualifier choreo:contained-by
     scoping_objects: list[str]  # object IDs of type "subchoreographyInstance"
@@ -48,6 +59,12 @@ def build_index(ocel: dict) -> OcelIndex:
             rels.append((r["objectId"], r["qualifier"]))
         if rels:
             o2o[o["id"]] = rels
+
+    # Derived: e_t_events (E_T per paper Definition 3)
+    e_t_events = [
+        e for e in ocel["events"]
+        if any(r["qualifier"] in _E_T_QUALIFIERS for r in e.get("relationships", []))
+    ]
 
     # Derived: choreo_events (events with choreo:instance)
     choreo_events = [
@@ -78,6 +95,7 @@ def build_index(ocel: dict) -> OcelIndex:
         objects=objects,
         e2o=e2o,
         o2o=o2o,
+        e_t_events=e_t_events,
         choreo_events=choreo_events,
         contained_events=contained_events,
         scoping_objects=scoping_objects,

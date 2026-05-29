@@ -91,6 +91,15 @@ class TestC0:
         assert r.passed
         assert r.elements_checked == 0
 
+    def test_non_choreo_event_excluded(self) -> None:
+        """Event with no choreo:* qualifier is not in E_T (Definition 3) and is not checked."""
+        ocel = _minimal_ocel([_event("internal_e", [
+            _rel("collab1", "collab:instance"),
+        ])])
+        r = check_c0(build_index(ocel))
+        assert r.passed
+        assert r.elements_checked == 0
+
 
 # ---------------------------------------------------------------------------
 # C1 — Message participation
@@ -184,6 +193,15 @@ class TestC2:
         r = check_c2(build_index(ocel))
         assert not r.passed
 
+    def test_non_choreo_event_excluded(self) -> None:
+        """Event with no choreo:* qualifier is not in E_T and is not checked."""
+        ocel = _minimal_ocel([_event("internal_e", [
+            _rel("collab1", "collab:instance"),
+        ])])
+        r = check_c2(build_index(ocel))
+        assert r.passed
+        assert r.elements_checked == 0
+
 
 # ---------------------------------------------------------------------------
 # C3 — Single participant
@@ -213,6 +231,15 @@ class TestC3:
         ])])
         r = check_c3(build_index(ocel))
         assert not r.passed
+
+    def test_non_choreo_event_excluded(self) -> None:
+        """Event with no choreo:* qualifier is not in E_T and is not checked."""
+        ocel = _minimal_ocel([_event("internal_e", [
+            _rel("collab1", "collab:instance"),
+        ])])
+        r = check_c3(build_index(ocel))
+        assert r.passed
+        assert r.elements_checked == 0
 
 
 # ---------------------------------------------------------------------------

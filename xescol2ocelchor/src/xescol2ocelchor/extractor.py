@@ -25,6 +25,7 @@ from xescol2ocelchor.models import (
     CHOREO_PARTICIPANT,
     CHOREO_SOURCE,
     CHOREO_TARGET,
+    COLLAB_INSTANCE,
     E2O,
     O2O,
     OcelEvent,
@@ -78,19 +79,14 @@ def extract(
     stats = ExtractionStats(traces=len(traces))
 
     for trace in traces:
-        _transform_trace(trace, seen_participants, all_events, all_objects, stats)
+        _transform_trace(
+            trace, seen_participants, all_events, all_objects, stats,
+            keep_internal_events=keep_internal_events,
+        )
 
     # Deterministic output: stable ordering for diffability (spec §8)
     all_events.sort(key=lambda e: e.id)
     all_objects.sort(key=lambda o: (o.type, o.id))
-
-    if keep_internal_events:
-        # Hook reserved for the --keep-internal-events flag. Default behaviour
-        # is to drop them (spec §4.5); attaching them with no choreo:instance
-        # qualifier is a correctness trap. We currently don't emit them at all.
-        logger.warning(
-            "--keep-internal-events is not yet implemented; internal events dropped"
-        )
 
     stats.participant_objects = len(seen_participants)
     stats.participants_by_name = sorted(seen_participants.keys())
@@ -105,12 +101,21 @@ def _transform_trace(
     events_out: list[OcelEvent],
     objects_out: list[OcelObject],
     stats: ExtractionStats,
+    keep_internal_events: bool = False,
 ) -> None:
     """Convert one trace and append produced events/objects into the buffers."""
     inst_id = _instance_id(trace.concept_name)
 
     # The choreography instance object exists once per trace.
     objects_out.append(OcelObject(id=inst_id, type="choreographyInstance"))
+
+    # Flat case-notion object: only created when keeping internal events.
+    # When active, every event in this trace (task + internal) is linked to it
+    # via collab:instance — outside of E_T, so no choreography constraints fire.
+    collab_inst_id: str | None = None
+    if keep_internal_events:
+        collab_inst_id = _collaboration_instance_id(trace.concept_name)
+        objects_out.append(OcelObject(id=collab_inst_id, type="collaborationInstance"))
 
     # Build per-msgInstanceId lookup of receivers within this trace.
     receivers_by_msg: dict[str, list[str]] = {}
@@ -139,14 +144,17 @@ def _transform_trace(
             elif len(receivers) > 1:
                 stats.broadcast_msg_ids += 1
         _emit_task(
-            trace, ev, receivers, inst_id,
+            trace, ev, receivers, inst_id, collab_inst_id,
             seen_participants, seen_msg_ids, events_out, objects_out, stats,
         )
 
-    # Count internal events for later reporting.
+    # Internal events: drop or keep, depending on flag.
     for ev in trace.events:
         if ev.msg_type is None:
-            stats.internal_events_dropped += 1
+            if keep_internal_events:
+                _emit_internal_event(trace, ev, collab_inst_id, events_out, stats)
+            else:
+                stats.internal_events_dropped += 1
 
 
 def _emit_task(
@@ -154,6 +162,7 @@ def _emit_task(
     send: XesEvent,
     receivers: list[str],
     inst_id: str,
+    collab_inst_id: str | None,
     seen_participants: dict[str, OcelObject],
     seen_msg_ids: dict[str, OcelObject],
     events_out: list[OcelEvent],
@@ -204,6 +213,8 @@ def _emit_task(
         E2O(event_id, initiator_obj.id, CHOREO_INITIATOR),
         E2O(event_id, msg_id, CHOREO_MESSAGE),
     ] + [E2O(event_id, r.id, CHOREO_PARTICIPANT) for r in receiver_objs]
+    if collab_inst_id is not None:
+        e2o.append(E2O(event_id, collab_inst_id, COLLAB_INSTANCE))
 
     events_out.append(OcelEvent(
         id=event_id,
@@ -213,6 +224,36 @@ def _emit_task(
         e2o=e2o,
     ))
     stats.task_events += 1
+
+
+def _emit_internal_event(
+    trace: XesTrace,
+    ev: XesEvent,
+    collab_inst_id: str | None,
+    events_out: list[OcelEvent],
+    stats: ExtractionStats,
+) -> None:
+    """Emit one OCEL event for a kept internal (non-message) XES event.
+
+    The event carries no choreo:* qualifiers — it is intentionally outside E_T
+    (paper Definition 3) so it does not trigger C0/C2/C3. Its only E2O link is
+    to the trace's collaborationInstance via collab:instance.
+    """
+    if collab_inst_id is None:
+        # Defensive — _transform_trace only calls this when the flag is active.
+        return
+    event_id = _event_id(trace.concept_name, ev.doc_order)
+    attrs: dict = {"concept:name": ev.concept_name, "org:group": ev.org_group}
+    for k, v in ev.attributes.items():
+        attrs.setdefault(k, v)
+    events_out.append(OcelEvent(
+        id=event_id,
+        type=ev.concept_name,
+        time=ev.timestamp,
+        attributes=attrs,
+        e2o=[E2O(event_id, collab_inst_id, COLLAB_INSTANCE)],
+    ))
+    stats.internal_events_kept += 1
 
 
 def _ensure_participant(
@@ -236,6 +277,10 @@ def _ensure_participant(
 
 def _instance_id(trace_concept_name: str) -> str:
     return f"choreographyInstance:{trace_concept_name}"
+
+
+def _collaboration_instance_id(trace_concept_name: str) -> str:
+    return f"collaborationInstance:{trace_concept_name}"
 
 
 def _participant_id(name: str) -> str:

@@ -17,6 +17,12 @@ CHOREO_INSTANCE = "choreo:instance"
 CHOREO_SOURCE = "choreo:source"
 CHOREO_TARGET = "choreo:target"
 
+# Flat XES case notion (used only when --keep-internal-events is active).
+# Connects every event in a trace — both task and kept internal events — to
+# the trace's collaborationInstance object, without pulling internal events
+# into E_T (per paper Definition 3 / IMPLEMENTATION_SPEC §4.5).
+COLLAB_INSTANCE = "collab:instance"
+
 
 # ---------------------------------------------------------------------------
 # XES input models

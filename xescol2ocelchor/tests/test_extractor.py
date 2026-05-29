@@ -15,6 +15,7 @@ from xescol2ocelchor.models import (
     CHOREO_PARTICIPANT,
     CHOREO_SOURCE,
     CHOREO_TARGET,
+    COLLAB_INSTANCE,
     XesEvent,
     XesTrace,
 )
@@ -204,3 +205,49 @@ class TestRealReal1:
         assert stats.broadcast_send_events == 0
         assert stats.unmatched_msg_ids == 0
         assert stats.broadcast_msg_ids == 0
+
+
+class TestKeepInternalEvents:
+    """--keep-internal-events: emit internal events outside E_T."""
+
+    @pytest.fixture
+    def result(self):
+        traces = load_xes(FIXTURES / "synthetic_minimal.xes")
+        return extract(traces, keep_internal_events=True)
+
+    def test_stats_count_kept_not_dropped(self, result):
+        _, _, stats = result
+        # Synthetic has one internal event (Alice_Internal in case_1).
+        assert stats.internal_events_kept == 1
+        assert stats.internal_events_dropped == 0
+
+    def test_collaboration_instance_per_trace(self, result):
+        _, objects, _ = result
+        collab_objs = [o for o in objects if o.type == "collaborationInstance"]
+        assert {o.id for o in collab_objs} == {
+            "collaborationInstance:case_1",
+            "collaborationInstance:case_2",
+        }
+
+    def test_task_event_has_collab_instance(self, result):
+        events, _, _ = result
+        case1 = next(e for e in events if e.id == "e:case_1:1")
+        quals = _qualifiers(case1.e2o)
+        assert ("collaborationInstance:case_1", COLLAB_INSTANCE) in quals
+        # And the existing choreo:* edges are still present.
+        assert ("choreographyInstance:case_1", CHOREO_INSTANCE) in quals
+
+    def test_kept_event_has_collab_instance_only(self, result):
+        events, _, _ = result
+        # Alice_Internal has doc_order 0 in case_1.
+        internal = next(e for e in events if e.id == "e:case_1:0")
+        assert internal.type == "Alice_Internal"
+        assert len(internal.e2o) == 1
+        rel = internal.e2o[0]
+        assert rel.object_id == "collaborationInstance:case_1"
+        assert rel.qualifier == COLLAB_INSTANCE
+
+    def test_kept_event_has_no_choreo_qualifiers(self, result):
+        events, _, _ = result
+        internal = next(e for e in events if e.id == "e:case_1:0")
+        assert not any(q.startswith("choreo:") for _, q in _qualifiers(internal.e2o))

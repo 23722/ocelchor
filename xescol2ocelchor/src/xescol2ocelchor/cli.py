@@ -126,11 +126,14 @@ def _dataset_name(path: Path) -> str:
 def _print_summary(in_path: Path, out_path: Path, stats: ExtractionStats) -> None:
     out = sys.stderr
     out.write(f"{in_path.name} → {out_path}\n")
+    internal = f"{stats.internal_events_dropped} internal dropped"
+    if stats.internal_events_kept:
+        internal += f", {stats.internal_events_kept} internal kept"
     out.write(
         f"  {stats.traces} traces, {stats.task_events} tasks, "
         f"{stats.message_objects} messages, "
         f"{stats.participant_objects} participants, "
-        f"{stats.internal_events_dropped} internal dropped\n"
+        f"{internal}\n"
     )
     if stats.unmatched_msg_ids or stats.broadcast_msg_ids:
         out.write(

@@ -70,7 +70,11 @@ def _collect_participants(
 def _collect_messages(
     elements: list[ChoreoTask | SubChoreo],
 ) -> dict[str, Message]:
-    """Return {bpmn_id: Message} for all messages in the subtree."""
+    """Return {bpmn_id: Message} for all messages in the subtree.
+
+    Same logical message object referenced by multiple events collapses to
+    one ``bpmn2:message`` element (the message type).
+    """
     result: dict[str, Message] = {}
     for elem in elements:
         if isinstance(elem, ChoreoTask):
@@ -80,6 +84,42 @@ def _collect_messages(
         else:
             result.update(_collect_messages(elem.children))
     return result
+
+
+def _task_mf_id(task_bpmn_id: str, kind: str) -> str:
+    """Stable per-task messageFlow id; kind ∈ {"init", "ret"}."""
+    return f"MF_{task_bpmn_id}_{kind}"
+
+
+def _collect_message_flows(
+    elements: list[ChoreoTask | SubChoreo],
+) -> list[tuple[str, str, str, str]]:
+    """Return one (mf_id, source_bpmn_id, target_bpmn_id, message_bpmn_id)
+    tuple per ``(task, message)`` pair in document order.
+
+    A task with both an initiating and a returning message contributes two
+    tuples. The same logical ``Message`` referenced by multiple tasks
+    contributes multiple tuples — one per task — each carrying the same
+    ``message_bpmn_id`` (the BPMN message-type id used as ``messageRef``).
+    """
+    flows: list[tuple[str, str, str, str]] = []
+    for elem in elements:
+        if isinstance(elem, ChoreoTask):
+            if elem.initiating_msg is not None:
+                msg = elem.initiating_msg
+                flows.append((
+                    _task_mf_id(elem.bpmn_id, "init"),
+                    msg.source.bpmn_id, msg.target.bpmn_id, msg.bpmn_id,
+                ))
+            if elem.returning_msg is not None:
+                msg = elem.returning_msg
+                flows.append((
+                    _task_mf_id(elem.bpmn_id, "ret"),
+                    msg.source.bpmn_id, msg.target.bpmn_id, msg.bpmn_id,
+                ))
+        else:
+            flows.extend(_collect_message_flows(elem.children))
+    return flows
 
 
 def _first_initiator(elements: list[ChoreoTask | SubChoreo]) -> Participant | None:
@@ -352,9 +392,10 @@ def _build_choreo_task(
     ET.SubElement(task_el, _b2("participantRef")).text = task.initiator.bpmn_id
     ET.SubElement(task_el, _b2("participantRef")).text = task.participant.bpmn_id
 
-    for msg in (task.initiating_msg, task.returning_msg):
-        if msg is not None:
-            ET.SubElement(task_el, _b2("messageFlowRef")).text = msg.mf_id
+    if task.initiating_msg is not None:
+        ET.SubElement(task_el, _b2("messageFlowRef")).text = _task_mf_id(task.bpmn_id, "init")
+    if task.returning_msg is not None:
+        ET.SubElement(task_el, _b2("messageFlowRef")).text = _task_mf_id(task.bpmn_id, "ret")
 
 
 def _build_sub_choreo(
@@ -478,13 +519,17 @@ def generate_bpmn(instance: ChoreoInstance, layout: DiagramLayout) -> str:
             "name": part.display_name,
         })
 
-    # Declare all message flows
-    for msg in all_messages.values():
+    # Declare per-task message flows. The same logical message object
+    # referenced by N events yields N distinct messageFlow elements (each
+    # with the same messageRef pointing at the shared bpmn2:message), per
+    # the paper's mapping where the flow is implicit from the (event,
+    # message) E2O plus the message's source/target O2Os.
+    for mf_id, src_id, tgt_id, msg_bpmn_id in _collect_message_flows(instance.elements):
         ET.SubElement(choreo, _b2("messageFlow"), {
-            "id": msg.mf_id,
-            "sourceRef": msg.source.bpmn_id,
-            "targetRef": msg.target.bpmn_id,
-            "messageRef": msg.bpmn_id,
+            "id": mf_id,
+            "sourceRef": src_id,
+            "targetRef": tgt_id,
+            "messageRef": msg_bpmn_id,
         })
 
     # Build top-level flow elements

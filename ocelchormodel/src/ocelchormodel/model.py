@@ -17,7 +17,13 @@ class Participant:
 
 @dataclass
 class Message:
-    """A choreography message (request or response call object)."""
+    """A choreography message type (request or response call object).
+
+    Maps to a single ``bpmn2:message`` element. The corresponding
+    ``bpmn2:messageFlow`` elements are emitted per-choreography-task, not
+    per-message, so that the same message object referenced by N events
+    yields N distinct message flows (each carrying the same ``messageRef``).
+    """
 
     ocel_id: str        # OCEL object ID (e.g. "call:req:abcabcab:root")
     name: str           # OCEL object type (e.g. "swap call")
@@ -25,7 +31,6 @@ class Message:
     source: Participant
     target: Participant
     bpmn_id: str        # Valid XML NCName for the message definition
-    mf_id: str          # Valid XML NCName for the messageFlow element
 
 
 @dataclass

@@ -56,9 +56,28 @@ def _display_name(ocel_type: str, ocel_id: str) -> str:
 
 
 def _short_id(instance_ocel_id: str) -> str:
-    """Extract the last 8 hex chars of the tx hash from an instance id."""
-    hex_part = instance_ocel_id.split("0x", 1)[-1] if "0x" in instance_ocel_id else instance_ocel_id
-    return hex_part[-8:] if len(hex_part) >= 8 else hex_part
+    """Return a short, NCName-safe identifier for a choreography instance.
+
+    Two input shapes:
+    - Blockchain trace2ocelchor: ``choreographyInstance:0x<hex...>`` → last 8
+      hex chars of the tx hash.
+    - XES xescol2ocelchor: ``choreographyInstance:<trace_name>`` → the trace
+      name itself, sanitised for use as an XML NCName suffix.
+
+    The result is used as a suffix in XML ids (``Definitions_<short>``,
+    ``Choreography_<short>``, ``Start_<short>``, etc.), so any character not
+    valid in an NCName (notably ``:``) is replaced with ``_``.
+    """
+    if "0x" in instance_ocel_id:
+        hex_part = instance_ocel_id.split("0x", 1)[-1]
+        raw = hex_part[-8:] if len(hex_part) >= 8 else hex_part
+    elif ":" in instance_ocel_id:
+        # XES form: take the trace name after the LAST colon (e.g.
+        # "choreographyInstance:case_42" → "case_42").
+        raw = instance_ocel_id.rsplit(":", 1)[-1]
+    else:
+        raw = instance_ocel_id
+    return re.sub(r"[^a-zA-Z0-9_.\-]", "_", raw)
 
 
 # ---------------------------------------------------------------------------
@@ -227,7 +246,6 @@ def extract_instance(ocel: dict, instance_id: str, *, order_by: str = "timestamp
             source=source,
             target=target,
             bpmn_id=msg_bpmn_id,
-            mf_id=_xml_id("MF", msg_obj_id),
         )
 
     # --- Build a ChoreoTask from an event ---

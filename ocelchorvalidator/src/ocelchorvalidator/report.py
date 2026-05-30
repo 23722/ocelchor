@@ -126,16 +126,28 @@ def format_constraint_details(stats_list: list[LogStats]) -> str:
     return "\n".join(lines) + "\n"
 
 
-def format_violations(violations: list[Violation]) -> str:
-    """Verbose individual violation details."""
-    if not violations:
+def format_violations(
+    violations_by_file: list[tuple[str, list[Violation]]],
+) -> str:
+    """Verbose individual violation details, grouped per input file.
+
+    ``violations_by_file`` is a list of ``(filename, violations)`` pairs in the
+    order files were validated. Files with an empty violation list are skipped
+    so clean files add no noise.
+    """
+    sections: list[str] = []
+    for source, vs in violations_by_file:
+        if not vs:
+            continue
+        lines = [f"=== {source} ==="]
+        for v in vs:
+            parts = [f"[{v.constraint}] {v.message}"]
+            if v.event_id:
+                parts.append(f"event={v.event_id}")
+            if v.object_id:
+                parts.append(f"object={v.object_id}")
+            lines.append("  " + "  ".join(parts))
+        sections.append("\n".join(lines))
+    if not sections:
         return ""
-    lines: list[str] = []
-    for v in violations:
-        parts = [f"[{v.constraint}] {v.message}"]
-        if v.event_id:
-            parts.append(f"event={v.event_id}")
-        if v.object_id:
-            parts.append(f"object={v.object_id}")
-        lines.append("  ".join(parts))
-    return "\n".join(lines) + "\n"
+    return "\n\n".join(sections) + "\n"

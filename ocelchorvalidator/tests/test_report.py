@@ -163,24 +163,45 @@ class TestFormatViolations:
     def test_empty(self) -> None:
         assert format_violations([]) == ""
 
+    def test_file_with_no_violations_is_skipped(self) -> None:
+        assert format_violations([("clean.json", [])]) == ""
+
     def test_single_violation(self) -> None:
         v = Violation("C0", "Event has 0 instances", "e1")
-        out = format_violations([v])
+        out = format_violations([("a.json", [v])])
         assert "[C0]" in out
         assert "event=e1" in out
+        assert "=== a.json ===" in out
 
     def test_with_object_id(self) -> None:
         v = Violation("C5", "No source", "e1", "msg1")
-        out = format_violations([v])
+        out = format_violations([("a.json", [v])])
         assert "object=msg1" in out
 
-    def test_multiple_violations(self) -> None:
+    def test_multiple_violations_one_file(self) -> None:
         vs = [
             Violation("C0", "bad1", "e1"),
             Violation("C2", "bad2", "e2"),
         ]
-        out = format_violations(vs)
+        out = format_violations([("a.json", vs)])
         assert "[C0]" in out
         assert "[C2]" in out
+        # One header, two violation lines.
         lines = out.strip().split("\n")
-        assert len(lines) == 2
+        assert lines[0] == "=== a.json ==="
+        assert len(lines) == 3
+
+    def test_violations_grouped_per_file(self) -> None:
+        a_vs = [Violation("C0", "bad1", "e1")]
+        b_vs = [Violation("C2", "bad2", "e2")]
+        out = format_violations([("a.json", a_vs), ("b.json", b_vs)])
+        # Both sections present, in order, separated by a blank line.
+        assert out.index("=== a.json ===") < out.index("=== b.json ===")
+        assert "[C0]" in out and "[C2]" in out
+        # Clean files in between should drop out cleanly.
+        out2 = format_violations([
+            ("a.json", a_vs),
+            ("clean.json", []),
+            ("b.json", b_vs),
+        ])
+        assert "clean.json" not in out2

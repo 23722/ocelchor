@@ -67,7 +67,7 @@ def main(argv: list[str] | None = None) -> None:
 
     # Process each input file
     all_stats = []
-    all_violations = []
+    violations_by_file: list[tuple[str, list]] = []
     for file_path in args.input:
         path = Path(file_path)
         try:
@@ -85,8 +85,8 @@ def main(argv: list[str] | None = None) -> None:
         stats = compute_stats(path.name, ocel, idx, results)
         all_stats.append(stats)
 
-        for r in results.values():
-            all_violations.extend(r.violations)
+        file_vs = [v for r in results.values() for v in r.violations]
+        violations_by_file.append((path.name, file_vs))
 
     # Format output
     if args.csv:
@@ -98,7 +98,7 @@ def main(argv: list[str] | None = None) -> None:
 
     if args.verbose:
         output += "\n" + format_constraint_details(all_stats)
-        violation_text = format_violations(all_violations)
+        violation_text = format_violations(violations_by_file)
         if violation_text:
             output += "\n" + violation_text
 
@@ -109,4 +109,5 @@ def main(argv: list[str] | None = None) -> None:
         print(output, end="")
 
     # Exit code
-    sys.exit(1 if all_violations else 0)
+    any_violations = any(vs for _, vs in violations_by_file)
+    sys.exit(1 if any_violations else 0)

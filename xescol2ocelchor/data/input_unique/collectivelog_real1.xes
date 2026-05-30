@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<log xes.version="1849-2016" xes.features="nested-attributes" xmlns="http://www.xes-standard.org/">
+	<extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext" />
+	<extension name="Lifecycle" prefix="lifecycle" uri="http://www.xes-standard.org/lifecycle.xesext" />
+	<extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext" />
+	<extension name="Organizational" prefix="org" uri="http://www.xes-standard.org/org.xesext" />
+	<classifier name="Activity" keys="act" />
+	<classifier name="Resource" keys="org:group" />
+	<string key="concept:name" value="collog_real1" />
+	<string key="lifecycle:model" value="standard" />
+	<string key="creator" value="Fluxicon Disco" />
+	<string key="library" value="Fluxicon Octane" />
+	<global scope="trace">
+		<string key="concept:name" value="name" />
+		<string key="variant" value="string" />
+		<int key="variant-index" value="0" />
+	</global>
+	<global scope="event">
+		<string key="concept:name" value="name" />
+		<string key="lifecycle:transition" value="transition" />
+		<string key="org:resource" value="resource" />
+		<date key="time:timestamp" value="2023-01-08T14:47:19.283000+00:00" />
+		<string key="org:group" value="string" />
+		<string key="act" value="string" />
+	</global>
+	<trace>
+		<string key="concept:name" value="1" />
+		<string key="variant" value="Variant 1" />
+		<int key="variant-index" value="1" />
+		<string key="creator" value="Fluxicon Disco" />
+		<event>
+			<string key="concept:name" value="Rex_Explore" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="org:resource" value="Rex" />
+			<date key="time:timestamp" value="2023-01-03T13:32:36.821000+00:00" />
+			<string key="org:group" value="Rex" />
+			<string key="act" value="Rex_Explore" />
+		</event>
+		<event>
+			<string key="concept:name" value="Rex_target_found" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="org:resource" value="Rex" />
+			<date key="time:timestamp" value="2023-01-03T13:32:37.881000+00:00" />
+			<string key="org:group" value="Rex" />
+			<string key="msgName" value="target_found" />
+			<string key="msgInstanceId" value="target_found_1" />
+			<string key="msgType" value="send" />
+			<string key="msgProtocol" value="Pub/Sub" />
+			<string key="act" value="Rex_target_found" />
+		</event>
+		<event>
+			<string key="concept:name" value="Dingo_target_found" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="org:resource" value="Dingo" />
+			<date key="time:timestamp" value="2023-01-03T13:32:37.881000+00:00" />
+			<string key="org:group" value="Dingo" />
+			<string key="msgName" value="target_found" />
+			<string key="msgInstanceId" value="target_found_1" />
+			<string key="msgType" value="receive" />
+			<string key="msgProtocol" value="Pub/Sub" />
+			<string key="act" value="Dingo_target_found" />
+		</event>
+		<event>
+			<string key="concept:name" value="Dingo_GoTo" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="org:resource" value="Dingo" />
+			<date key="time:timestamp" value="2023-01-03T13:32:38.894000+00:00" />
+			<string key="org:group" value="Dingo" />
+			<string key="act" value="Dingo_GoTo" />
+		</event>
+		<event>
+			<string key="concept:name" value="Dingo_Fire" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="org:resource" value="Dingo" />
+			<date key="time:timestamp" value="2023-01-03T13:32:39.951000+00:00" />
+			<string key="org:group" value="Dingo" />
+			<string key="act" value="Dingo_Fire" />
+		</event>
+		<event>
+			<string key="concept:name" value="Dingo_done" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="org:resource" value="Dingo" />
+			<date key="time:timestamp" value="2023-01-03T13:32:40.981000+00:00" />
+			<string key="org:group" value="Dingo" />
+			<string key="msgName" value="done" />
+			<string key="msgInstanceId" value="done_2" />
+			<string key="msgType" value="send" />
+			<string key="msgProtocol" value="Pub/Sub" />
+			<string key="act" value="Dingo_done" />
+		</event>
+		<event>
+			<string key="concept:name" value="Rex_done" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="org:resource" value="Rex" />
+			<date key="time:timestamp" value="2023-01-03T13:32:40.981000+00:00" />
+			<string key="org:group" value="Rex" />
+			<string key="msgName" value="done" />
+			<string key="msgInstanceId" value="done_2" />
+			<string key="msgType" value="receive" />
+			<string key="msgProtocol" value="Pub/Sub" />
+			<string key="act" value="Rex_done" />
+		</event>
+	</trace>
+</log>

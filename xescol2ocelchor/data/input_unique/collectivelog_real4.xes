@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<log xes.version="1849-2016" xes.features="nested-attributes" xmlns="http://www.xes-standard.org/">
+	<extension name="Organizational" prefix="org" uri="http://www.xes-standard.org/org.xesext" />
+	<extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext" />
+	<extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext" />
+	<extension name="Identity" prefix="identity" uri="http://www.xes-standard.org/identity.xesext" />
+	<string key="concept:name" value="collog_real4" />
+	<trace>
+		<string key="concept:name" value="case_139" />
+		<event>
+			<string key="org:group" value="Visitor" />
+			<string key="concept:name" value="Decide individual or family ticket" />
+			<date key="time:timestamp" value="2021-06-16T16:26:15.991000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Visitor" />
+			<string key="concept:name" value="Prepare personal information" />
+			<date key="time:timestamp" value="2021-06-16T16:26:16.044000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="info_138" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Visitor" />
+			<string key="concept:name" value="Send information to the ZooClub department" />
+			<date key="time:timestamp" value="2021-06-16T16:26:20.599000+00:00" />
+			<string key="msgFlow" value="info" />
+		</event>
+		<event>
+			<string key="org:group" value="Visitor" />
+			<string key="concept:name" value="Wait for card" />
+			<date key="time:timestamp" value="2021-06-16T16:26:24.901000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="info_138" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Zoo" />
+			<string key="concept:name" value="Receive visitor information" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-16T16:26:25.264000+00:00" />
+			<string key="msgFlow" value="info" />
+		</event>
+		<event>
+			<string key="org:group" value="Zoo" />
+			<string key="concept:name" value="Enter customer data into the system" />
+			<date key="time:timestamp" value="2021-06-16T16:26:29.610000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Zoo" />
+			<string key="concept:name" value="Send request to billing department " />
+			<date key="time:timestamp" value="2021-06-16T16:26:34.214000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Zoo" />
+			<string key="concept:name" value="Wait fot payment " />
+			<date key="time:timestamp" value="2021-06-16T16:26:43.418000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="request_136" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Zoo" />
+			<string key="concept:name" value="Send payment request" />
+			<date key="time:timestamp" value="2021-06-16T16:26:51.293000+00:00" />
+			<string key="msgFlow" value="request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="request_136" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Bank" />
+			<string key="concept:name" value="Receive payment request" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-16T16:26:58.471000+00:00" />
+			<string key="msgFlow" value="request" />
+		</event>
+		<event>
+			<string key="org:group" value="Bank" />
+			<string key="concept:name" value="Process payment information" />
+			<date key="time:timestamp" value="2021-06-16T16:26:59.381000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="account_137" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Bank" />
+			<string key="concept:name" value="Change account" />
+			<date key="time:timestamp" value="2021-06-16T16:27:04.206000+00:00" />
+			<string key="msgFlow" value="account" />
+		</event>
+		<event>
+			<string key="org:group" value="Zoo" />
+			<string key="concept:name" value="Forward information to making department" />
+			<date key="time:timestamp" value="2021-06-16T16:27:07.427000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Zoo" />
+			<string key="concept:name" value="Mail ZooClub magazine" />
+			<date key="time:timestamp" value="2021-06-16T16:27:09.366000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="account_137" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Zoo" />
+			<string key="concept:name" value="Payment confirmed" />
+			<string key="eventType" value="notification" />
+			<date key="time:timestamp" value="2021-06-16T16:27:11.774000+00:00" />
+			<string key="msgFlow" value="account" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="card_139" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Zoo" />
+			<string key="concept:name" value="Deliver Zooclub card" />
+			<date key="time:timestamp" value="2021-06-16T16:27:16.713000+00:00" />
+			<string key="msgFlow" value="card" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="card_139" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Visitor" />
+			<string key="concept:name" value="Card received?" />
+			<string key="eventType" value="notification" />
+			<date key="time:timestamp" value="2021-06-16T16:27:17.022000+00:00" />
+			<string key="msgFlow" value="card" />
+		</event>
+		<event>
+			<string key="org:group" value="Visitor" />
+			<string key="concept:name" value="Go home" />
+			<date key="time:timestamp" value="2021-06-16T16:27:19.907000+00:00" />
+		</event>
+	</trace>
+</log>

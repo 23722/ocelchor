@@ -1,0 +1,2496 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<log xes.version="1849-2016" xes.features="nested-attributes" xmlns="http://www.xes-standard.org/">
+	<extension name="Organizational" prefix="org" uri="http://www.xes-standard.org/org.xesext" />
+	<extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext" />
+	<extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext" />
+	<extension name="Identity" prefix="identity" uri="http://www.xes-standard.org/identity.xesext" />
+	<string key="concept:name" value="collog_healthcare" />
+	<trace>
+		<string key="concept:name" value="case_44" />
+		<event>
+			<string key="msgInstanceId" value="disease_47" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T11:06:35.562000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_47" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:06:38.889000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T11:06:42.556000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T11:06:43.712000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_48" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:06:44.910000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_48" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:06:46.314000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:06:48.722000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_49" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T11:06:51.008000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_49" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:06:52.716000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="prescription_50" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send prescription" />
+			<date key="time:timestamp" value="2021-06-17T11:06:55.866000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="prescription" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="prescription_50" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive prescription" />
+			<date key="time:timestamp" value="2021-06-17T11:06:58.103000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="prescription" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_254" />
+		<event>
+			<string key="msgInstanceId" value="disease_272" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T11:41:13.070000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_272" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:41:15.400000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T11:41:19.115000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T11:41:24.058000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_273" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:41:25.102000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_273" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:41:28.481000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:41:29.106000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_274" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T11:41:33.797000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_274" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:41:38.869000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_275" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T11:41:41.611000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_276" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T11:41:46.542000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_276" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:41:58.064000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T11:42:07.269000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_275" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T11:42:09.958000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_277" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:42:14.247000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Request blood analysis" />
+			<date key="time:timestamp" value="2021-06-17T11:42:17.790000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_278" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:42:21.716000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_278" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:42:26.199000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_354" />
+		<event>
+			<string key="msgInstanceId" value="disease_385" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T11:58:48.018000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_385" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:58:48.700000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T11:58:48.976000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_386" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:58:49.832000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_386" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:58:54.007000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:58:57.814000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T11:59:01.628000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_387" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T11:59:05.446000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_387" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:59:06.426000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_388" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T11:59:07.964000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_388" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T11:59:13.265000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_389" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T11:59:15.967000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_389" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:59:20.209000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_390" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:59:26.535000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T11:59:29.097000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Request blood analysis" />
+			<date key="time:timestamp" value="2021-06-17T11:59:33.703000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_391" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:59:37.236000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_391" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:59:43.406000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_184" />
+		<event>
+			<string key="msgInstanceId" value="disease_183" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T11:26:16.324000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_183" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:26:18.037000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T11:26:18.335000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_184" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:26:24.714000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T11:26:27.458000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_184" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:26:31.596000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:26:33.420000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_185" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T11:26:37.840000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_185" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:26:40.856000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_186" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T11:26:49.848000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_186" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T11:26:54.667000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_187" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T11:27:02.991000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_188" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:27:08.869000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_187" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:27:18.566000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T11:27:18.567000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_188" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Receive patient results" />
+			<date key="time:timestamp" value="2021-06-17T11:27:21.490000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_189" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:27:21.599000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_189" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:27:22.700000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_209" />
+		<event>
+			<string key="msgInstanceId" value="disease_215" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T11:31:58.258000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_215" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:32:00.848000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T11:32:06.174000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T11:32:08.995000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_216" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:32:11.173000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_216" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:32:15.545000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:32:16.767000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_217" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T11:32:20.915000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_217" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:32:28.999000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_218" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T11:32:31.919000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_218" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T11:32:40.601000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_219" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T11:32:46.545000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_219" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:32:49.654000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T11:32:55.037000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_220" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:33:02.568000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_220" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Receive patient results" />
+			<date key="time:timestamp" value="2021-06-17T11:33:07.356000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_221" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:33:07.782000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_221" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:33:11.157000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_359" />
+		<event>
+			<string key="msgInstanceId" value="disease_392" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T11:59:47.447000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_392" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:59:48.731000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T11:59:53.268000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T12:00:02.117000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_393" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T12:00:02.772000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_393" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T12:00:06.622000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T12:00:07.160000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_394" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T12:00:09.796000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_394" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T12:00:17.039000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_395" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T12:00:20.492000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_396" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T12:00:29.249000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_396" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T12:00:36.014000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T12:00:41.527000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_397" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T12:00:46.356000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_395" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T12:00:54.581000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_397" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Receive patient results" />
+			<date key="time:timestamp" value="2021-06-17T12:01:02.880000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_398" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T12:01:04.398000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_398" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T12:01:08.903000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_189" />
+		<event>
+			<string key="msgInstanceId" value="disease_190" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T11:27:26.977000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_190" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:27:29.733000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T11:27:35.674000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_191" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:27:37.211000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T11:27:40.598000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_191" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:27:42.221000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:27:44.939000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_192" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T11:27:48.575000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_192" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:27:57.001000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_193" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T11:27:59.034000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_194" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T11:28:07.127000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_195" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:28:13.757000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_194" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:28:24.545000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T11:28:31.871000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_193" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T11:28:40.955000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_195" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Receive patient results" />
+			<date key="time:timestamp" value="2021-06-17T11:28:45.248000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_196" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:28:48.647000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_196" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:28:53.513000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_29" />
+		<event>
+			<string key="msgInstanceId" value="disease_29" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T11:03:43.234000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_29" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:03:44.059000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T11:03:47.011000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T11:03:51.248000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_30" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:03:55.402000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_30" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:03:56.606000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:04:01.145000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_31" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T11:04:05.470000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_31" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:04:10.919000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_32" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T11:04:13.016000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_33" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T11:04:19.282000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_33" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:04:20.660000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T11:04:29.848000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_32" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T11:04:35.328000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_34" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:04:45.974000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_34" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Receive patient results" />
+			<date key="time:timestamp" value="2021-06-17T11:04:51.790000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_35" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:05:00.609000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_35" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:05:00.723000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_314" />
+		<event>
+			<string key="msgInstanceId" value="disease_335" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T11:50:59.474000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_335" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:51:02.772000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T11:51:03.248000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_336" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:51:08.232000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T11:51:10.519000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_336" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:51:15.756000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:51:16.629000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_337" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T11:51:18.860000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_337" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:51:23.592000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_338" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T11:51:24.727000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_338" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T11:51:32.030000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_339" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T11:51:38.556000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_340" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:51:46.818000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_339" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:51:50.200000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T11:51:52.971000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Request blood analysis" />
+			<date key="time:timestamp" value="2021-06-17T11:51:54.142000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_341" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:51:56.456000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_341" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:52:04.641000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_114" />
+		<event>
+			<string key="msgInstanceId" value="disease_112" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T11:15:29.244000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_112" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:15:29.382000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T11:15:32.742000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T11:15:35.374000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_113" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:15:35.507000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_113" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:15:40.187000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:15:44.652000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_114" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T11:15:47.832000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_114" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:15:48.827000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_115" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T11:15:48.985000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_116" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T11:15:56.061000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_116" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:16:02.587000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_117" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:16:11.443000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_115" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T11:16:12.300000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T11:16:20.361000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Request blood analysis" />
+			<date key="time:timestamp" value="2021-06-17T11:16:22.042000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_118" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:16:23.390000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_118" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:16:26.755000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_379" />
+		<event>
+			<string key="msgInstanceId" value="disease_417" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T12:04:15.694000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_417" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T12:04:19.612000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T12:04:25.696000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T12:04:28.915000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_418" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T12:04:29.340000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_418" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T12:04:30.128000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T12:04:33.097000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_419" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T12:04:36.242000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_419" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T12:04:41.188000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_420" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T12:04:43.716000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_421" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T12:04:46.644000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_422" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T12:04:50.125000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_420" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T12:04:52.512000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_421" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T12:05:00.747000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T12:05:05.334000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_422" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Receive patient results" />
+			<date key="time:timestamp" value="2021-06-17T12:05:13.337000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_423" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T12:05:14.695000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_423" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T12:05:20.533000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_474" />
+		<event>
+			<string key="msgInstanceId" value="disease_514" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T12:19:29.527000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_514" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T12:19:34.516000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T12:19:41.396000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T12:19:43.599000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_515" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T12:19:48.197000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_515" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T12:19:48.587000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T12:19:51.483000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_516" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T12:19:51.700000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_516" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T12:19:54.056000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_517" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T12:19:57.235000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_518" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T12:19:57.448000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_519" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T12:20:01.141000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_518" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T12:20:11.972000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T12:20:15.002000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_517" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T12:20:22.114000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Request blood analysis" />
+			<date key="time:timestamp" value="2021-06-17T12:20:27.537000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_520" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T12:20:32.516000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_520" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T12:20:36.936000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_409" />
+		<event>
+			<string key="msgInstanceId" value="disease_447" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T12:08:13.969000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_447" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T12:08:14.336000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T12:08:19.174000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T12:08:25.645000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_448" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T12:08:29.836000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_448" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T12:08:30.065000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T12:08:34.024000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_449" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T12:08:34.327000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_449" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T12:08:39.058000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_450" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T12:08:40.307000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_451" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T12:08:43.856000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_451" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T12:08:47.473000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T12:08:54.380000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Request blood analysis" />
+			<date key="time:timestamp" value="2021-06-17T12:09:09.709000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_450" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T12:09:16.309000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_453" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T12:09:20.626000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_453" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T12:09:25.957000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_452" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T12:09:31.921000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_139" />
+		<event>
+			<string key="msgInstanceId" value="disease_138" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T11:19:05.560000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_138" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:19:09.457000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T11:19:12.590000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T11:19:14.312000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_139" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:19:14.575000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_139" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:19:16.078000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:19:19.488000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_140" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T11:19:20.751000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_140" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:19:21.470000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_141" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T11:19:21.979000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_142" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T11:19:25.316000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_143" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:19:30.062000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_142" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:19:32.632000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T11:19:38.511000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_143" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Receive patient results" />
+			<date key="time:timestamp" value="2021-06-17T11:19:49.033000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_141" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T11:19:55.150000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_144" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:20:01.983000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_144" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:20:04.043000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_74" />
+		<event>
+			<string key="msgInstanceId" value="disease_74" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T11:10:14.067000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_74" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:10:18.797000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T11:10:23.858000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_75" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:10:25.560000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T11:10:28.265000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_75" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:10:32.638000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:10:34.628000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_76" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T11:10:39.513000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_76" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:10:44.351000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_77" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T11:10:44.642000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_78" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T11:10:47.947000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_79" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:10:56.759000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_77" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T11:11:03.718000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_78" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:11:09.462000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T11:11:14.152000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Request blood analysis" />
+			<date key="time:timestamp" value="2021-06-17T11:11:23.018000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_80" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:11:25.701000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_80" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:11:30.069000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_99" />
+		<event>
+			<string key="msgInstanceId" value="disease_97" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T11:13:33.303000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_97" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:13:34.942000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T11:13:41.913000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T11:13:44.896000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_98" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:13:45.463000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_98" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:13:48.093000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T11:13:50.629000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_99" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T11:13:53.338000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_99" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:13:54.504000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_100" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T11:13:55.558000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_101" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T11:14:00.202000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_102" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T11:14:01.547000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_101" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T11:14:02.571000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T11:14:04.724000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Request blood analysis" />
+			<date key="time:timestamp" value="2021-06-17T11:14:10.367000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_103" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:14:11.887000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_100" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T11:14:16.999000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_103" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T11:14:18.546000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="case_374" />
+		<event>
+			<string key="msgInstanceId" value="disease_410" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Communicate disease" />
+			<date key="time:timestamp" value="2021-06-17T12:03:04.958000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="disease_410" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive disease info" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T12:03:07.506000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="disease" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Examine patient" />
+			<date key="time:timestamp" value="2021-06-17T12:03:11.876000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Blood draw" />
+			<date key="time:timestamp" value="2021-06-17T12:03:18.419000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_411" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Send blood sample" />
+			<date key="time:timestamp" value="2021-06-17T12:03:23.148000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="blood sample_411" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Receive blood sample" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T12:03:23.355000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="blood sample" />
+		</event>
+		<event>
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Analyse blood sample" />
+			<date key="time:timestamp" value="2021-06-17T12:03:27.277000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_412" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Laboratory" />
+			<string key="concept:name" value="Send results" />
+			<date key="time:timestamp" value="2021-06-17T12:03:30.735000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="results_412" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Receive blood analysis results" />
+			<date key="time:timestamp" value="2021-06-17T12:03:33.052000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="results" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_413" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Communicate the need to hospitalise" />
+			<date key="time:timestamp" value="2021-06-17T12:03:36.968000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_414" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Require patient admission" />
+			<date key="time:timestamp" value="2021-06-17T12:03:41.233000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="hospitalisation_413" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Hospitalisation needed" />
+			<date key="time:timestamp" value="2021-06-17T12:03:45.973000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="hospitalisation" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="patient analysis_415" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Gynecologist" />
+			<string key="concept:name" value="Forward patient analysis results" />
+			<date key="time:timestamp" value="2021-06-17T12:04:00.823000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="patient analysis" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission request_414" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Admit patient" />
+			<string key="eventType" value="start" />
+			<date key="time:timestamp" value="2021-06-17T12:04:03.727000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission request" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Create medical record" />
+			<date key="time:timestamp" value="2021-06-17T12:04:06.759000+00:00" />
+		</event>
+		<event>
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Request blood analysis" />
+			<date key="time:timestamp" value="2021-06-17T12:04:11.720000+00:00" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_416" />
+			<string key="msgType" value="send" />
+			<string key="org:group" value="Hospital" />
+			<string key="concept:name" value="Send admission info" />
+			<date key="time:timestamp" value="2021-06-17T12:04:14.854000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+		<event>
+			<string key="msgInstanceId" value="admission_416" />
+			<string key="msgType" value="receive" />
+			<string key="org:group" value="Patient" />
+			<string key="concept:name" value="Receive admission info" />
+			<date key="time:timestamp" value="2021-06-17T12:04:15.408000+00:00" />
+			<string key="msgProtocol" value="P2P" />
+			<string key="msgName" value="admission" />
+		</event>
+	</trace>
+</log>

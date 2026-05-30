@@ -37,7 +37,9 @@ class TestStructure:
     def test_object_types_include_choreography_instance(self, synthetic_ocel):
         names = {t["name"] for t in synthetic_ocel["objectTypes"]}
         assert "choreographyInstance" in names
-        assert "participant" in names
+        # Each role is its own object type (Alice, Bob in the synthetic fixture).
+        assert "Alice" in names
+        assert "Bob" in names
         assert "Greeting" in names
 
     def test_event_types_match_concept_names(self, synthetic_ocel):

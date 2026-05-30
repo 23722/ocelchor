@@ -59,15 +59,14 @@ class TestCliReal1:
         # Appendix A: 44 task events (one per send)
         assert len(ocel["events"]) == 44
 
-        # Appendix A: 44 message objects
-        msgs = [o for o in ocel["objects"]
-                if not o["type"].startswith("choreography")
-                and o["type"] != "participant"]
-        assert len(msgs) == 44
-
-        # Appendix A: 2 participants (Dingo, Rex)
-        parts = [o for o in ocel["objects"] if o["type"] == "participant"]
+        # Appendix A: 2 participants (Dingo, Rex) — type and id are the role name
+        participant_ids = {"Dingo", "Rex"}
+        parts = [o for o in ocel["objects"] if o["id"] in participant_ids]
         assert len(parts) == 2
-        assert {p["id"] for p in parts} == {
-            "participant:Dingo", "participant:Rex",
-        }
+        assert {p["type"] for p in parts} == participant_ids
+
+        # Appendix A: 44 message objects (everything else)
+        msgs = [o for o in ocel["objects"]
+                if o["type"] != "choreographyInstance"
+                and o["id"] not in participant_ids]
+        assert len(msgs) == 44

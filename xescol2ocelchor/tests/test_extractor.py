@@ -83,16 +83,16 @@ class TestMinimalSynthetic:
         case1 = next(e for e in events if e.id == "e:case_1:1")
         quals = _qualifiers(case1.e2o)
         assert ("choreographyInstance:case_1", CHOREO_INSTANCE) in quals
-        assert ("participant:Alice", CHOREO_INITIATOR) in quals
-        assert ("participant:Bob", CHOREO_PARTICIPANT) in quals
+        assert ("Alice", CHOREO_INITIATOR) in quals
+        assert ("Bob", CHOREO_PARTICIPANT) in quals
         assert ("message:case_1:Greeting_1", CHOREO_MESSAGE) in quals
 
     def test_message_object_o2o(self, result):
         _, objects, _ = result
         msg = next(o for o in objects if o.id == "message:case_1:Greeting_1")
         quals = _qualifiers(msg.o2o)
-        assert ("participant:Alice", CHOREO_SOURCE) in quals
-        assert ("participant:Bob", CHOREO_TARGET) in quals
+        assert ("Alice", CHOREO_SOURCE) in quals
+        assert ("Bob", CHOREO_TARGET) in quals
 
     def test_message_object_type_uses_msg_name(self, result):
         _, objects, _ = result
@@ -148,11 +148,11 @@ class TestBroadcast:
 
         ev = next(e for e in events if e.id == "e:t:0")
         participants = [r.object_id for r in ev.e2o if r.qualifier == CHOREO_PARTICIPANT]
-        assert set(participants) == {"participant:tractor_1", "participant:tractor_2"}
+        assert set(participants) == {"tractor_1", "tractor_2"}
 
         msg = next(o for o in objects if o.id == "message:t:ping_1")
         targets = [r.target_id for r in msg.o2o if r.qualifier == CHOREO_TARGET]
-        assert set(targets) == {"participant:tractor_1", "participant:tractor_2"}
+        assert set(targets) == {"tractor_1", "tractor_2"}
 
 
 class TestMessageObjectDedup:

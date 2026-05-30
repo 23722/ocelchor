@@ -264,7 +264,7 @@ def _ensure_participant(
     """Return the global participant object for ``name``, creating it on first use."""
     if name in seen:
         return seen[name]
-    obj = OcelObject(id=_participant_id(name), type="participant",
+    obj = OcelObject(id=_participant_id(name), type=name,
                      attributes={"name": name})
     seen[name] = obj
     objects_out.append(obj)
@@ -284,7 +284,11 @@ def _collaboration_instance_id(trace_concept_name: str) -> str:
 
 
 def _participant_id(name: str) -> str:
-    return f"participant:{name}"
+    # The role name itself is the id; it is globally unique by virtue of the
+    # global participant dedup (one OcelObject per distinct org:group value).
+    # No prefix needed — event/message/instance ids all use their own
+    # disambiguating prefixes (e:..., message:..., choreographyInstance:...).
+    return name
 
 
 def _message_id(trace_concept_name: str, msg_instance_id: str) -> str:

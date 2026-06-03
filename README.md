@@ -111,9 +111,21 @@ cd ocelchorvalidator && uv run pytest && cd ..
 
 ## Evaluation results
 
-The table below shows the dataset characteristics and constraint validation results
-for all 12 datasets used in the evaluation. Input files are in `ocelchorvalidator/data/input/`.
+The tables below show the dataset characteristics and constraint validation
+results for the 19 datasets used in the evaluation:
+
+- **12 blockchain logs** — Ethereum transaction traces processed by
+  `trace2ocelchor`.
+- **7 XES collaborative event logs** — from Corradini et al. (2024) [^1],
+  processed by `xescol2ocelchor` (figures reported here come from the
+  unique-trace deduplicated pipeline run).
+
 Column names follow the paper's notation.
+
+[^1]: Corradini, F., Pettinari, S., Re, B., Rossi, L., Tiezzi, F.
+  *A technique for discovering BPMN collaboration diagrams.* Software and
+  Systems Modeling 23(6), 1323–1343 (2024). Data:
+  <https://bitbucket.org/proslabteam/colliery_validation/>.
 
 **Dataset characteristics**
 
@@ -131,6 +143,13 @@ Column names follow the paper's notation.
 | **Yuga Labs: BoredApeYachtClub**<br>`0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d` |  9 |  18 |  21 | 13 |   5 |    84 |    45 |  21 |   9 |   3 |
 | **Nouns DAO: NounsToken**<br>`0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03` |  7 |  12 |  13 | 11 |   3 |    54 |    28 |  13 |   5 |   2 |
 | **Beanstalk Farms: Attack data**<br>`beanstalk_attack_ocel.json` |  3 | 489 | 703 | 59 | 139 |  2656 |  1542 | 703 | 486 | 136 |
+| **Real1: Two-robot search**<br>`collectivelog_real1_uniqueInteraction.xes` |  1 |   2 |   2 |  2 |   0 |     8 |     4 |   2 |   0 |   0 |
+| **Real2: Travel booking**<br>`collectivelog_real2_uniqueInteraction.xes` | 96 | 842 | 480 |  2 |   0 |  3368 |   960 | 842 |   0 |   0 |
+| **Real3: Smart thermostat**<br>`collectivelog_real3_uniqueInteraction.xes` | 59 | 472 | 321 |  3 |   0 |  1880 |   634 | 472 |   0 |   0 |
+| **Real4: ZooClub registration**<br>`collectivelog_real4_uniqueInteraction.xes` |  1 |   4 |   4 |  3 |   0 |    16 |     8 |   4 |   0 |   0 |
+| **Real5: Academic paper review**<br>`collectivelog_real5_uniqueInteraction.xes` |  3 |  15 |  15 |  3 |   0 |    60 |    30 |  15 |   0 |   0 |
+| **Healthcare: Hospitalization**<br>`collectivelog_healthcare_uniqueInteraction.xes` | 17 | 116 | 116 |  4 |   0 |   455 |   223 | 116 |   0 |   0 |
+| **Smart agriculture: Tractor coordination**<br>`collectivelog_smartagriculture_uniqueInteraction.xes` | 10 | 114 | 100 |  3 |   0 |   452 |   206 | 114 |   0 |   0 |
 
 **Constraint validation results** (format: `violations / checked`)
 
@@ -148,17 +167,62 @@ Column names follow the paper's notation.
 | **Yuga Labs: BoredApeYachtClub**<br>`0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d` | 0/18 | 0/21 | 0/18 | 0/18 |   0/18 | 0/21 | 0/21 | 0/18 | 0/18 | 0/18 | 0/3  | 0/18 | 0/5  | 0/5  | 0/5  |  0/9   |  0/5  |
 | **Nouns DAO: NounsToken**<br>`0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03` | 0/12 | 0/13 | 0/12 | 0/12 |   0/12 | 0/13 | 0/13 | 0/12 | 0/12 | 0/12 | 0/1  | 0/12 | 0/3  | 0/3  | 0/3  |  0/5   |  0/3  |
 | **Beanstalk Farms: Attack data**<br>`beanstalk_attack_ocel.json` | 0/489| 0/703| 0/489| 0/489|  0/489 | 0/703| 0/703| 0/489| 0/489| 0/489| 0/214| 0/489| 0/139| 0/139| 0/139|  1/486 | 0/139 |
+| **Real1: Two-robot search**<br>`collectivelog_real1_uniqueInteraction.xes` |  0/2  |  0/2  |  0/2  |   0/2  |   0/2  |  0/2  |   0/2  |  0/2  |  0/2  |  0/2  | 0/0 |  0/2  | 0/0 | 0/0 | 0/0 |  0/1   | 0/0 |
+| **Real2: Travel booking**<br>`collectivelog_real2_uniqueInteraction.xes` | 0/842 | 0/842 | 0/842 |  0/842 |  0/842 | 0/842 |  0/842 | 0/842 | 0/842 | 0/842 | 0/0 | 0/842 | 0/0 | 0/0 | 0/0 |  0/746 | 0/0 |
+| **Real3: Smart thermostat**<br>`collectivelog_real3_uniqueInteraction.xes` | 0/472 | 0/472 | 0/472 |  **8**/472 |  0/472 | 0/472 |  **8**/472 | 0/472 | 0/472 | 0/464 | 0/0 | 0/472 | 0/0 | 0/0 | 0/0 | **99**/413 | 0/0 |
+| **Real4: ZooClub registration**<br>`collectivelog_real4_uniqueInteraction.xes` |  0/4  |  0/4  |  0/4  |   0/4  |   0/4  |  0/4  |   0/4  |  0/4  |  0/4  |  0/4  | 0/0 |  0/4  | 0/0 | 0/0 | 0/0 |  0/3   | 0/0 |
+| **Real5: Academic paper review**<br>`collectivelog_real5_uniqueInteraction.xes` |  0/15 |  0/15 |  0/15 |   0/15 |   0/15 |  0/15 |   0/15 |  0/15 |  0/15 |  0/15 | 0/0 |  0/15 | 0/0 | 0/0 | 0/0 |  0/12  | 0/0 |
+| **Healthcare: Hospitalization**<br>`collectivelog_healthcare_uniqueInteraction.xes` | 0/116 | 0/116 | 0/116 |  **9**/116 |  0/116 | 0/116 |  **9**/116 | 0/116 | 0/116 | 0/107 | 0/0 | 0/116 | 0/0 | 0/0 | 0/0 |  **9**/99 | 0/0 |
+| **Smart agriculture: Tractor coordination**<br>`collectivelog_smartagriculture_uniqueInteraction.xes` | 0/114 | 0/114 | 0/114 | **28**/114 |  0/114 | 0/114 | **28**/114 | 0/114 | 0/114 | 0/98  | 0/0 | 0/114 | 0/0 | 0/0 | 0/0 |  **9**/104 | 0/0 |
 
-Non-zero violation counts:  and 10 in PancakeSwap: MasterChefV3;
+The violations have two distinct sources: blockchain implementation
+particularities (for `trace2ocelchor`) and source-data fidelity choices in
+the XES corpus (for `xescol2ocelchor`).
 
+**Blockchain side.**
 
-The violations can be traced back to blockchain implementation particularities.
+- **C4 has 2 violations in CryptoKitties: Core.** The violations of C4
+  occurred due to the respective calls using a *multicall* pattern, which
+  self-executes functions through explicit CALLs and DELEGATECALLs. Thus the
+  self-execute functions were treated as internal transactions. This results
+  in the caller being equal to the callee. This pattern is typically used to
+  optimize execution costs and enable modular execution.
+- **C4 has 10 violations in PancakeSwap: MasterChefV3.** Same root cause as
+  above — multicall-style self-execution where a contract dispatches calls
+  to itself.
+- **C15 has 1 violation in Beanstalk Farms: Attack data.** The violation of
+  C15 occurred when a contract was created and immediately after started to
+  issue calls on its part. Since the address of the created contract was not
+  known before its creation, it did not appear in the data.
 
-**C4 has 2 violations in CryptoKitties: Core**
-The violations of C4 occurred due to the respective calls using a *multicall* pattern, which self-executes functions through explicit CALLs and DELEGATECALLs. Thus the self-execute functions were treted as internal transactions. This results in the caller being equal to the callee. This pattern is typically used to optimize execution costs and enable modular execution. 
+**XES side.**
 
-**C15 has 1 violation in Beanstalk Farms: Attack data.** 
-The violation of C15 occurred when a contract was created and immediately after started to issue calls on its part. Since the address of the created contract was not known before its creation, it did not appear in the data.
+- **C3 / C6 have 45 violations each across three datasets.** These mark
+  events whose receiver(s) cannot be uniquely recovered from the XES
+  collaboration log, in two flavours:
+  - *Unmatched sends* — a `send` event whose `msgInstanceId` has no matching
+    `receive` in the same trace; 8 in Real3, 9 in Healthcare, 16 in Smart
+    agriculture. The extractor keeps the event with initiator and message
+    but emits it without `choreo:participant` / `choreo:target`, which is
+    what C3 / C6 flag.
+  - *Broadcast over-connection* — a `send` whose `msgInstanceId` is
+    received by multiple participants; 12 occurrences in Smart agriculture
+    (drone broadcasting `weed_position` to both tractors). The extractor
+    attributes every send to the full broadcast group (the source data
+    carries no marker pairing a specific send with a specific receiver),
+    which the validator flags as 2 participants / 2 targets. This is the
+    BPMN multi-instance participant pattern surfaced as a constraint
+    violation (see paper §X.Y).
+- **C15 has 117 violations across three datasets.** These mark
+  initiator-discontinuity in multi-party processes — the initiator of an
+  event was neither initiator nor participant of the immediately preceding
+  event in the same instance. 99 in Real3 (Controller / User re-entering
+  after Thermostat-mediated exchanges), 9 in Healthcare (Hospital
+  re-entering after Patient / Laboratory exchanges), 9 in Smart agriculture
+  (a tractor re-entering after exchanges that did not involve it).
+  Identical figures appear in the Corradini et al. reference choreography
+  logs (`_chor.xes`), confirming the structural origin of these
+  discontinuities in the source data rather than in our conversion.
 
 ---
 
@@ -171,6 +235,31 @@ Figure 4 is produced by the standalone script `generate_fig4.py`, which requires
 pip install pm4py
 python generate_fig4.py
 ```
+
+---
+
+## Regenerating the deduplicated XES data
+
+The seven deduplicated XES logs in `xescol2ocelchor/data/input_unique/` are
+produced from the original Corradini et al. logs in
+`xescol2ocelchor/data/input/` by the standalone script
+`generate_unique_xes.py`, which requires
+[pm4py](https://pm4py.fit.fraunhofer.de/):
+
+```bash
+uv run --with pm4py python generate_unique_xes.py
+```
+
+The deduplicated logs are then converted to OCEL via `xescol2ocelchor`:
+
+```bash
+cd xescol2ocelchor
+uv run xescol2ocelchor data/input_unique/collectivelog_*_uniqueInteraction.xes -o data/output/
+```
+
+The resulting OCEL files in `xescol2ocelchor/data/output/` are the source of
+truth for the XES OCEL files; the validator's and modeler's `data/input/`
+directories hold copies.
 
 ---
 

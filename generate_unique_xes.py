@@ -52,7 +52,7 @@ print('-' * 50)
 
 for name in DATASETS:
     in_path  = os.path.join(INPUT_DIR, f'collectivelog_{name}.xes')
-    out_path = os.path.join(OUT_DIR,   f'collectivelog_{name}.xes')
+    out_path = os.path.join(OUT_DIR,   f'collectivelog_{name}_uniqueInteraction.xes')
 
     log = pm4py.read_xes(in_path, return_legacy_log_object=True)
 

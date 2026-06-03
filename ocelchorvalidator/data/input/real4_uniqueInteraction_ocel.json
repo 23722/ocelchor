@@ -1,0 +1,398 @@
+{
+  "objectTypes": [
+    {
+      "name": "Bank",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Visitor",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Zoo",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "account",
+      "attributes": []
+    },
+    {
+      "name": "card",
+      "attributes": []
+    },
+    {
+      "name": "choreographyInstance",
+      "attributes": []
+    },
+    {
+      "name": "info",
+      "attributes": []
+    },
+    {
+      "name": "request",
+      "attributes": []
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Change account",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "type": "string"
+        },
+        {
+          "name": "msgInstanceId",
+          "type": "string"
+        },
+        {
+          "name": "msgName",
+          "type": "string"
+        },
+        {
+          "name": "org:group",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Deliver Zooclub card",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "type": "string"
+        },
+        {
+          "name": "msgInstanceId",
+          "type": "string"
+        },
+        {
+          "name": "msgName",
+          "type": "string"
+        },
+        {
+          "name": "org:group",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Send information to the ZooClub department",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "type": "string"
+        },
+        {
+          "name": "msgInstanceId",
+          "type": "string"
+        },
+        {
+          "name": "msgName",
+          "type": "string"
+        },
+        {
+          "name": "org:group",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Send payment request",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "type": "string"
+        },
+        {
+          "name": "msgInstanceId",
+          "type": "string"
+        },
+        {
+          "name": "msgName",
+          "type": "string"
+        },
+        {
+          "name": "org:group",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "Bank",
+      "type": "Bank",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "Bank",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "Visitor",
+      "type": "Visitor",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "Visitor",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "Zoo",
+      "type": "Zoo",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "Zoo",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "message:case_139:account_137",
+      "type": "account",
+      "relationships": [
+        {
+          "objectId": "Bank",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Zoo",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_139:card_139",
+      "type": "card",
+      "relationships": [
+        {
+          "objectId": "Zoo",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Visitor",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreographyInstance:case_139",
+      "type": "choreographyInstance"
+    },
+    {
+      "id": "message:case_139:info_138",
+      "type": "info",
+      "relationships": [
+        {
+          "objectId": "Visitor",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Zoo",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_139:request_136",
+      "type": "request",
+      "relationships": [
+        {
+          "objectId": "Zoo",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Bank",
+          "qualifier": "choreo:target"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "e:case_139:11",
+      "type": "Change account",
+      "time": "2021-06-16T16:27:04.206Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Change account"
+        },
+        {
+          "name": "org:group",
+          "value": "Bank"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "account_137"
+        },
+        {
+          "name": "msgName",
+          "value": "account"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_139",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "Bank",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_139:account_137",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Zoo",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_139:15",
+      "type": "Deliver Zooclub card",
+      "time": "2021-06-16T16:27:16.713Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Deliver Zooclub card"
+        },
+        {
+          "name": "org:group",
+          "value": "Zoo"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "card_139"
+        },
+        {
+          "name": "msgName",
+          "value": "card"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_139",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "Zoo",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_139:card_139",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Visitor",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_139:2",
+      "type": "Send information to the ZooClub department",
+      "time": "2021-06-16T16:26:20.599Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Send information to the ZooClub department"
+        },
+        {
+          "name": "org:group",
+          "value": "Visitor"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "info_138"
+        },
+        {
+          "name": "msgName",
+          "value": "info"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_139",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "Visitor",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_139:info_138",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Zoo",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_139:8",
+      "type": "Send payment request",
+      "time": "2021-06-16T16:26:51.293Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Send payment request"
+        },
+        {
+          "name": "org:group",
+          "value": "Zoo"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "request_136"
+        },
+        {
+          "name": "msgName",
+          "value": "request"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_139",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "Zoo",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_139:request_136",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Bank",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    }
+  ]
+}

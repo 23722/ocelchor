@@ -1,0 +1,282 @@
+{
+  "objectTypes": [
+    {
+      "name": "Dingo",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Rex",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "choreographyInstance",
+      "attributes": []
+    },
+    {
+      "name": "done",
+      "attributes": []
+    },
+    {
+      "name": "target_found",
+      "attributes": []
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Dingo_done",
+      "attributes": [
+        {
+          "name": "act",
+          "type": "string"
+        },
+        {
+          "name": "concept:name",
+          "type": "string"
+        },
+        {
+          "name": "lifecycle:transition",
+          "type": "string"
+        },
+        {
+          "name": "msgInstanceId",
+          "type": "string"
+        },
+        {
+          "name": "msgName",
+          "type": "string"
+        },
+        {
+          "name": "msgProtocol",
+          "type": "string"
+        },
+        {
+          "name": "org:group",
+          "type": "string"
+        },
+        {
+          "name": "org:resource",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Rex_target_found",
+      "attributes": [
+        {
+          "name": "act",
+          "type": "string"
+        },
+        {
+          "name": "concept:name",
+          "type": "string"
+        },
+        {
+          "name": "lifecycle:transition",
+          "type": "string"
+        },
+        {
+          "name": "msgInstanceId",
+          "type": "string"
+        },
+        {
+          "name": "msgName",
+          "type": "string"
+        },
+        {
+          "name": "msgProtocol",
+          "type": "string"
+        },
+        {
+          "name": "org:group",
+          "type": "string"
+        },
+        {
+          "name": "org:resource",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "Dingo",
+      "type": "Dingo",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "Dingo",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "Rex",
+      "type": "Rex",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "Rex",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "choreographyInstance:1",
+      "type": "choreographyInstance"
+    },
+    {
+      "id": "message:1:done_2",
+      "type": "done",
+      "relationships": [
+        {
+          "objectId": "Dingo",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Rex",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:1:target_found_1",
+      "type": "target_found",
+      "relationships": [
+        {
+          "objectId": "Rex",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Dingo",
+          "qualifier": "choreo:target"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "e:1:1",
+      "type": "Rex_target_found",
+      "time": "2023-01-03T13:32:37.881Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Rex_target_found"
+        },
+        {
+          "name": "org:group",
+          "value": "Rex"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "target_found_1"
+        },
+        {
+          "name": "msgName",
+          "value": "target_found"
+        },
+        {
+          "name": "lifecycle:transition",
+          "value": "complete"
+        },
+        {
+          "name": "org:resource",
+          "value": "Rex"
+        },
+        {
+          "name": "msgProtocol",
+          "value": "Pub/Sub"
+        },
+        {
+          "name": "act",
+          "value": "Rex_target_found"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:1",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "Rex",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:1:target_found_1",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Dingo",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:1:5",
+      "type": "Dingo_done",
+      "time": "2023-01-03T13:32:40.981Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Dingo_done"
+        },
+        {
+          "name": "org:group",
+          "value": "Dingo"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "done_2"
+        },
+        {
+          "name": "msgName",
+          "value": "done"
+        },
+        {
+          "name": "lifecycle:transition",
+          "value": "complete"
+        },
+        {
+          "name": "org:resource",
+          "value": "Dingo"
+        },
+        {
+          "name": "msgProtocol",
+          "value": "Pub/Sub"
+        },
+        {
+          "name": "act",
+          "value": "Dingo_done"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:1",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "Dingo",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:1:done_2",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Rex",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    }
+  ]
+}

@@ -2,10 +2,7 @@
 
 **trace2choreo** converts pre-processed Ethereum mainnet transaction traces into
 [OCEL 2.0](https://ocel-standard.org/) event logs that encode BPMN choreography
-semantics. It is the reference implementation accompanying the paper
-
-> *[Title]*. [Authors]. [Venue, Year].
-
+semantics. 
 The transformation maps each transaction's internal call tree to a choreography
 instance, producing typed participant objects, typed message objects carrying
 decoded call parameters, and qualified E2O/O2O relations (`choreo:initiator`,

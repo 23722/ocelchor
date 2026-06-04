@@ -2,12 +2,16 @@
 
 Reference implementation accompanying the paper:
 
-> *[Title]*. [Authors]. [Venue, Year].
+> Richard Hobeck, Alessandro Marcelletti, Andrea Morichetta, Ingo Weber.
+> *Representing BPMN Choreographies in OCEL 2.0.*
 
 This repository provides a pipeline for:
-- Representing BPMN 2.0 process choreographies from Ethereum transaction traces via OCEL 2.0 event logs
-- Checking well-formedness of the representations based on 17 constraints
-- Converting the event log representation of individual choreographies encoded in OCEL 2.0 as BPMN files
+- Representing BPMN 2.0 process choreographies as OCEL 2.0 event logs from
+  two source domains: Ethereum transaction traces and XES collaborative
+  event logs (Corradini et al. 2024).
+- Checking well-formedness of the representations based on 17 constraints (C0–C16).
+- Converting the event log representation of individual choreographies
+  encoded in OCEL 2.0 as BPMN files.
 
 ---
 
@@ -15,11 +19,15 @@ This repository provides a pipeline for:
 
 ```
 ocelchor/
-├── trace2ocelchor/    Convert Ethereum transaction traces → OCEL 2.0 event logs
-├── ocelchormodel/     Create BPMN choreography models from OCEL 2.0 event logs
-├── ocelchorvalidator/ Validate OCEL 2.0 logs against formal constraints C0–C15
-├── generate_fig4.py   Standalone script for reproducing Figure 4 (requires pm4py)
-└── src/ocelchor/      Unified CLI dispatcher
+├── trace2ocelchor/        Convert Ethereum transaction traces → OCEL 2.0
+├── xescol2ocelchor/       Convert XES collaborative event logs → OCEL 2.0
+├── ocelchorvalidator/     Validate OCEL 2.0 logs against constraints C0–C16
+├── ocelchormodel/         Create BPMN choreography models from OCEL 2.0 logs
+├── generate_unique_xes.py Standalone script: deduplicate XES traces by
+│                          choreography variant (requires pm4py)
+├── generate_fig4.py       Standalone script for reproducing Figure 4
+│                          (requires pm4py)
+└── src/ocelchor/          Unified CLI dispatcher (blockchain workflow)
 ```
 
 Each tool has its own `README.md`, `tests/`, and `data/` directory.
@@ -43,26 +51,46 @@ cd ocelchor
 uv sync
 ```
 
-This installs the `ocelchor` unified CLI as well as the three individual tool CLIs.
+This installs the `ocelchor` unified CLI as well as the four individual tool CLIs.
 
 ---
 
 ## Pipeline
 
-The three tools form a sequential pipeline:
+The tools form a pipeline with two source-domain entry points sharing the
+downstream validator and converter:
 
 ```
-Ethereum traces  →  OCEL 2.0 log  →  validation  →  BPMN choreography
+                                                       Validator
+                                                  ocelchorvalidator
+                                                       ▲      │
+                                                       │      ▼
+Ethereum traces  ─→  Extractor trace2ocelchor   ─┐
+                                                 ├─→  OCEL 2.0 log  ─→  Converter ocelchormodel  ─→  BPMN choreography model (per inst.)
+XES collab. logs ─→  Extractor xescol2ocelchor  ─┘
 ```
 
-### Step 1 — Convert traces to OCEL 2.0
+### Step 1 — Convert source data to OCEL 2.0
 
-Input traces are in `trace2ocelchor/data/input/`.
-Pre-computed OCEL 2.0 logs are in `trace2ocelchor/data/output/`.
+**Blockchain side.** Input traces are in `trace2ocelchor/data/input/`;
+pre-computed OCEL 2.0 logs are in `trace2ocelchor/data/output/`.
 
 ```bash
 uv run ocelchor convert trace2ocelchor/data/input/ -o log.ocel.json
 ```
+
+**XES side.** Original Corradini et al. logs are in
+`xescol2ocelchor/data/input/`; deduplicated counterparts (one representative
+trace per choreography variant) are in `xescol2ocelchor/data/input_unique/`;
+the resulting OCEL 2.0 logs are in `xescol2ocelchor/data/output/`.
+
+```bash
+cd xescol2ocelchor
+uv run xescol2ocelchor data/input_unique/collectivelog_*_uniqueInteraction.xes -o data/output/
+```
+
+See [Regenerating the deduplicated XES data](#regenerating-the-deduplicated-xes-data)
+below for the pm4py-based dedup script that produces `data/input_unique/`.
 
 ### Step 2 — Validate the log
 
@@ -70,7 +98,17 @@ uv run ocelchor convert trace2ocelchor/data/input/ -o log.ocel.json
 uv run ocelchor validate log.ocel.json
 ```
 
-### Step 3 — Create BPMN choreography models (one per choreograohy instance)
+The `ocelchorvalidator/data/input/` directory mirrors both source domains'
+OCEL outputs, so running
+
+```bash
+cd ocelchorvalidator && uv run ocelchorvalidator data/input/*.json
+```
+
+reproduces the constraint-validation results reported under
+[Evaluation results](#evaluation-results).
+
+### Step 3 — Create BPMN choreography models (one per choreography instance)
 
 Pre-computed BPMN files are in `ocelchormodel/data/output/`.
 
@@ -87,13 +125,16 @@ BPMN files written to `output/` can be opened in
 
 Each tool is also available as a standalone command:
 
-| Command                    | Tool             |
-|----------------------------|------------------|
-| `uv run trace2ocelchor`    | trace2ocelchor   |
-| `uv run ocelchormodel`     | ocelchormodel    |
+| Command                    | Tool              |
+|----------------------------|-------------------|
+| `uv run trace2ocelchor`    | trace2ocelchor    |
+| `uv run xescol2ocelchor`   | xescol2ocelchor   |
 | `uv run ocelchorvalidator` | ocelchorvalidator |
+| `uv run ocelchormodel`     | ocelchormodel     |
 
-Run any command with `--help` for the full list of options.
+Run any command with `--help` for the full list of options. The unified
+`ocelchor` dispatcher currently routes `convert` to `trace2ocelchor`; for
+the XES side, invoke `xescol2ocelchor` directly.
 
 ---
 
@@ -103,8 +144,9 @@ Each tool has its own test suite. From the repository root:
 
 ```bash
 cd trace2ocelchor    && uv run pytest && cd ..
-cd ocelchormodel     && uv run pytest && cd ..
+cd xescol2ocelchor   && uv run pytest && cd ..
 cd ocelchorvalidator && uv run pytest && cd ..
+cd ocelchormodel     && uv run pytest && cd ..
 ```
 
 ---

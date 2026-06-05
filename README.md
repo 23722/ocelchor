@@ -27,6 +27,8 @@ ocelchor/
 │                          choreography variant (requires pm4py)
 ├── generate_fig4.py       Standalone script for reproducing Figure 4
 │                          (requires pm4py)
+├── evaluate_conformance.py Standalone script: log-level trace-variant
+│                          agreement vs Peña _chor.xes (requires pm4py)
 └── src/ocelchor/          Unified CLI dispatcher (blockchain workflow)
 ```
 
@@ -60,15 +62,7 @@ This installs the `ocelchor` unified CLI as well as the four individual tool CLI
 The tools form a pipeline with two source-domain entry points sharing the
 downstream validator and converter:
 
-```
-                                                       Validator
-                                                  ocelchorvalidator
-                                                       ▲      │
-                                                       │      ▼
-Ethereum traces  ─→  Extractor trace2ocelchor   ─┐
-                                                 ├─→  OCEL 2.0 log  ─→  Converter ocelchormodel  ─→  BPMN choreography model (per inst.)
-XES collab. logs ─→  Extractor xescol2ocelchor  ─┘
-```
+![Tool chain: from interaction data via domain-specific extractors and OCEL 2.0 log to BPMN choreography model, with the domain-independent validator on the side](tool_chain_github_cropped.png)
 
 ### Step 1 — Convert source data to OCEL 2.0
 
@@ -116,8 +110,8 @@ Pre-computed BPMN files are in `ocelchormodel/data/output/`.
 uv run ocelchor mine log.ocel.json -o output/
 ```
 
-BPMN files written to `output/` can be opened in
-[chor-js](https://bpt-lab.org/chor-js-demo/).
+BPMN files written to `output/` can be opened in the Live Version of
+[chor-js](https://github.com/bptlab/chor-js-demo).
 
 ---
 
@@ -265,6 +259,41 @@ the XES corpus (for `xescol2ocelchor`).
   Identical figures appear in the Peña et al. reference choreography
   logs (`_chor.xes`), confirming the structural origin of these
   discontinuities in the source data rather than in our conversion.
+
+### Trace-variant agreement against Peña's `_chor.xes`
+
+The script `evaluate_conformance.py` at the repository root quantifies how
+much of the choreography behaviour our OCEL representation preserves by
+comparing trace-variant sets against Peña et al.'s independently created
+`_chor.xes` choreography logs. It produces the paper claim:
+
+> *For the Corradini et al. data, our extracted choreography control-flows
+> show the same trace variants as Peña et al.'s independently created XES
+> choreography logs on **7/7** datasets.*
+
+Requires [pm4py](https://pm4py.fit.fraunhofer.de/):
+
+```bash
+uv run --with pm4py python evaluate_conformance.py
+```
+
+Inputs (third-party Peña reference data) and outputs (regenerable script
+artefacts) live under `eval_artifacts/` — see `eval_artifacts/README.md`
+for the input/output layout.
+
+#### A note on the supplementary alignment-based conformance numbers
+
+The script also computes alignment-based conformance against Peña et al.'s
+*discovered* BPMN choreography models and prints those numbers under a
+"Supplementary analysis (not in paper)" block. We **did not** include them
+in the paper. 
+**The fit numbers are low and need explaining.** Most non-conformance
+occurs because of two reasons: 
+  1. Peña's discovered models are not sufficiently general to allow all observed behavior (even in their own XES logs). Trace variation that our OCEL 2.0 event logs and their XES event logs show is not preserved in their models (e.g., real2 has 96 distinct trace variants in our log that all collapse onto a single canonical model path), and 
+  2. Peña's real3 model mixes two execution cycles that are independent in the data and the normative collaboration model (see [Real3 normative process model](xescol2ocelchor/data/normative%20BPMN%20files%20%28from%20Corradini%20et%20al.%202024%29/Real3.bpmn)), misrepresenting the actually observed behavior in the data.
+
+Both findings are presentable and explainable, even good arguments for future work and better choreography miners. But space in the paper was limited.
+The supplementary numbers are still printed by the script for transparency.
 
 ---
 

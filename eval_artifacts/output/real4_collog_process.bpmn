@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1">
+  <bpmn2:process id="Choreography_1" name="Default_Choreography" isExecutable="false">
+    <bpmn2:startEvent id="Event_0" name="START" />
+    <bpmn2:task id="Task_2" name="Send information to the ZooClub department">
+      </bpmn2:task>
+    <bpmn2:task id="Task_3" name="Send payment request">
+      </bpmn2:task>
+    <bpmn2:task id="Task_0" name="Change account">
+      </bpmn2:task>
+    <bpmn2:task id="Task_1" name="Deliver Zooclub card">
+      </bpmn2:task>
+    <bpmn2:endEvent id="Event_1" name="END" />
+    <bpmn2:sequenceFlow id="Flow_0" sourceRef="Task_0" targetRef="Task_1" />
+    <bpmn2:sequenceFlow id="Flow_1" sourceRef="Task_2" targetRef="Task_3" />
+    <bpmn2:sequenceFlow id="Flow_2" sourceRef="Task_3" targetRef="Task_0" />
+    <bpmn2:sequenceFlow id="Flow_3" sourceRef="Task_1" targetRef="Event_1" />
+    <bpmn2:sequenceFlow id="Flow_4" sourceRef="Event_0" targetRef="Task_2" />
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Choreography_1">
+      <bpmndi:BPMNShape id="_GHlcQEj4Ee6l-ZPiIYIuxA" bpmnElement="Event_0">
+        <dc:Bounds height="30.0" width="30.0" x="85.0" y="35.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_GHlcQUj4Ee6l-ZPiIYIuxA" bpmnElement="Task_2">
+        <dc:Bounds height="60.0" width="120.0" x="240.0" y="20.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_GHlcQkj4Ee6l-ZPiIYIuxA" bpmnElement="Task_3">
+        <dc:Bounds height="60.0" width="120.0" x="440.0" y="20.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_GHlcQ0j4Ee6l-ZPiIYIuxA" bpmnElement="Task_0">
+        <dc:Bounds height="60.0" width="120.0" x="640.0" y="20.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_GHlcREj4Ee6l-ZPiIYIuxA" bpmnElement="Task_1">
+        <dc:Bounds height="60.0" width="120.0" x="840.0" y="20.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_GHlcRUj4Ee6l-ZPiIYIuxA" bpmnElement="Event_1">
+        <dc:Bounds height="30.0" width="30.0" x="1085.0" y="35.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="_GHlcRkj4Ee6l-ZPiIYIuxA" bpmnElement="Flow_0">
+        <di:waypoint xsi:type="dc:Point" x="760.0" y="50.0" />
+        <di:waypoint xsi:type="dc:Point" x="840.0" y="50.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_GHlcR0j4Ee6l-ZPiIYIuxA" bpmnElement="Flow_1">
+        <di:waypoint xsi:type="dc:Point" x="360.0" y="50.0" />
+        <di:waypoint xsi:type="dc:Point" x="440.0" y="50.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_GHlcSEj4Ee6l-ZPiIYIuxA" bpmnElement="Flow_2">
+        <di:waypoint xsi:type="dc:Point" x="560.0" y="50.0" />
+        <di:waypoint xsi:type="dc:Point" x="640.0" y="50.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_GHlcSUj4Ee6l-ZPiIYIuxA" bpmnElement="Flow_3">
+        <di:waypoint xsi:type="dc:Point" x="960.0" y="50.0" />
+        <di:waypoint xsi:type="dc:Point" x="1085.0" y="50.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_GHlcSkj4Ee6l-ZPiIYIuxA" bpmnElement="Flow_4">
+        <di:waypoint xsi:type="dc:Point" x="115.0" y="50.0" />
+        <di:waypoint xsi:type="dc:Point" x="240.0" y="50.0" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

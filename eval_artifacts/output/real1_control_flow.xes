@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log xes.version="1849.2016" xmlns="http://www.xes-standard.org/">
+  <extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext"/>
+  <extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext"/>
+  <trace>
+    <string key="concept:name" value="1"/>
+    <event>
+      <string key="concept:name" value="Rex_target_found"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Dingo_done"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+  </trace>
+</log>

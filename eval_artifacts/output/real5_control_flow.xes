@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log xes.version="1849.2016" xmlns="http://www.xes-standard.org/">
+  <extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext"/>
+  <extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext"/>
+  <trace>
+    <string key="concept:name" value="case_219"/>
+    <event>
+      <string key="concept:name" value="Submit Manuscript"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Assign Paper"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Submit Review"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send Feedback"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send Results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_375"/>
+    <event>
+      <string key="concept:name" value="Submit Manuscript"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Assign Paper"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Submit Review"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send Feedback"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send Results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_39"/>
+    <event>
+      <string key="concept:name" value="Submit Manuscript"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Assign Paper"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Submit Review"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send Feedback"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send Results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+  </trace>
+</log>

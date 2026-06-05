@@ -36,3 +36,7 @@ htmlcov/
 # xescol2ocelchor
 xescol2ocelchor/*.pdf
 xescol2ocelchor/*.md
+
+# Conformance evaluation
+# - working spec lives at /evaluate_conformance.md (not part of the published artefact)
+/evaluate_conformance.md

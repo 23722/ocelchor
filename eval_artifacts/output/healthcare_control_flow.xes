@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log xes.version="1849.2016" xmlns="http://www.xes-standard.org/">
+  <extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext"/>
+  <extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext"/>
+  <trace>
+    <string key="concept:name" value="case_114"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_139"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_184"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_189"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_209"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_254"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_29"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_314"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_354"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_359"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_374"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_379"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_409"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_44"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send prescription"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_474"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_74"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="case_99"/>
+    <event>
+      <string key="concept:name" value="Communicate disease"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:00.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send blood sample"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:01.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:02.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Communicate the need to hospitalise"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:03.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Require patient admission"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:04.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Forward patient analysis results"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:05.000+00:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Send admission info"/>
+      <date key="time:timestamp" value="2000-01-01T00:00:06.000+00:00"/>
+    </event>
+  </trace>
+</log>

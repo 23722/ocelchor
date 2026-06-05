@@ -1,54 +1,71 @@
 # ocelchorvalidator
 
-Validates OCEL 2.0 choreography logs against the 17 formal constraints (C0–C16) defined in:
+Validates OCEL 2.0 choreography logs against the 17 formal constraints
+(C0–C16) defined in *Representing BPMN Choreographies in OCEL 2.0*
+(Section 4.3). Domain-independent: consumes the OCEL output of either
+`trace2ocelchor` (blockchain) or `xescol2ocelchor` (XES) without
+modification.
 
-> "Representing BPMN Choreographies in OCEL 2.0" (Section 4.3)
+Produces a per-dataset characterisation table and per-constraint
+`violations / checked` counts, with CSV and LaTeX output modes for
+paper inclusion.
 
-The validator checks structural and syntactical correctness of choreography logs and produces evaluation statistics — including dataset characterization metrics and per-constraint non-vacuity counts — suitable for inclusion in the paper's evaluation section.
+For repository-wide context (pipeline diagram, evaluation results, unified
+CLI), see the [root README](../README.md).
 
-## Requirements
+---
 
-- Python ≥ 3.10
-- [uv](https://github.com/astral-sh/uv)
-- Zero production dependencies
+## Requirements + Installation
 
-## Installation
+Python ≥ 3.10 and [uv](https://docs.astral.sh/uv/). Zero production
+dependencies; dev extras pull in the test toolchain:
 
 ```bash
+cd ocelchorvalidator
 uv sync --extra dev
 ```
+
+---
 
 ## Usage
 
 ```bash
 # Validate one or more OCEL 2.0 JSON files (human-readable table)
 uv run ocelchorvalidator data/input/mylog.ocel.json
-
-# Multiple files
 uv run ocelchorvalidator data/input/*.json
 
 # With individual violation details
 uv run ocelchorvalidator data/input/*.json --verbose
 
-# CSV output (for spreadsheet / pandas analysis)
+# CSV for spreadsheet / pandas analysis
 uv run ocelchorvalidator data/input/*.json --csv -o results.csv
 
-# LaTeX tabular (for paper inclusion)
+# LaTeX tabular for paper inclusion
 uv run ocelchorvalidator data/input/*.json --latex -o table.tex
 
 # Check a subset of constraints only
 uv run ocelchorvalidator data/input/mylog.ocel.json --constraints C0,C1,C4
 ```
 
-### Exit codes
+Exit codes: **0** all constraints pass; **1** at least one violation;
+**2** input error (file not found, invalid JSON, missing OCEL keys).
 
-| Code | Meaning |
-|------|---------|
-| 0 | All constraints pass |
-| 1 | At least one violation found |
-| 2 | Input error (file not found, invalid JSON, missing OCEL keys) |
+---
 
-## Output table columns
+## Input format
+
+OCEL 2.0 JSON files conforming to the official schema, encoding
+choreography semantics via qualified relationships
+(`choreo:instance`, `choreo:initiator`, `choreo:participant`,
+`choreo:message`, `choreo:source`, `choreo:target`, `choreo:contained-by`,
+`choreo:contains`). See either upstream extractor's README for how those
+qualifiers are produced.
+
+---
+
+## Output format
+
+Per-dataset characterisation columns:
 
 | Column | Description |
 |--------|-------------|
@@ -56,13 +73,15 @@ uv run ocelchorvalidator data/input/mylog.ocel.json --constraints C0,C1,C4
 | `#e` | Total events |
 | `#m` | Distinct message objects (`choreo:message`) |
 | `#parts` | Distinct participant objects (`choreo:initiator` or `choreo:participant`) |
-| `#scoping` | Distinct Subchoreography scoping objects |
+| `#scoping` | Distinct sub-choreography scoping objects |
 | `#E2O` | Total event-to-object relations |
 | `#O2O` | Total object-to-object relations |
 | `#E2O[m]` | E2O relations with qualifier `choreo:message` (1–2 per event) |
 | `#E2O[cb]` | E2O relations with qualifier `choreo:contained-by` |
 | `#O2O[c]` | O2O relations with qualifier `choreo:contains` (nesting) |
-| `C0`–`C16` | Per-constraint result: `violations/checked` |
+| `C0`–`C16` | Per-constraint result: `violations / checked` |
+
+---
 
 ## Constraints
 
@@ -82,38 +101,31 @@ uv run ocelchorvalidator data/input/mylog.ocel.json --constraints C0,C1,C4
 | C9 | Initiating message target | The initiating message is received by the participant |
 | C10 | Return message target | The return message is received by the initiator |
 
-### Subchoreography constraints (C11–C16)
+### Sub-choreography constraints (C11–C16)
 
 | ID | Name | Checks |
 |----|------|--------|
 | C11 | Containment uniqueness | Each event is contained in at most one scoping object |
 | C12 | Non-empty scope | Each scoping object contains at least one event |
-| C13 | Instance consistency | All events transitively enclosed by a scope (`allevents`) link to the same choreography instance |
+| C13 | Instance consistency | All events transitively enclosed by a scope link to the same choreography instance |
 | C14 | Nesting structure | Scoping hierarchy has unique parents and is acyclic (DAG) |
-| C15 | Initiator continuity | The initiator of each choreography task was involved (as initiator or participant) in the previous task within the same instance |
+| C15 | Initiator continuity | The initiator of each task was involved (as initiator or participant) in the previous task within the same instance |
 | C16 | Scope re-entry | Once an instance's sequence flow has left a sub-choreography scope, it cannot re-enter that scope |
+
+---
 
 ## Package structure
 
 ```
-src/ocelchorvalidator/
-├── reader.py       # OCEL 2.0 JSON loader with validation
-├── index.py        # Pre-computed lookup indexes (events, objects, E2O, O2O)
-├── constraints.py  # C0–C16 constraint checks
-├── stats.py        # Dataset characterization + constraint result aggregation
-├── report.py       # Output formatting (table, CSV, LaTeX)
-└── cli.py          # argparse CLI entry point
-```
-
-## Running tests
-
-```bash
-uv run python -m pytest
+src/ocelchorvalidator/  reader, index, constraint checks, stats, report, cli
+tests/                  unit tests per constraint + integration on real OCEL files
+data/input/             mirror of upstream OCEL outputs (12 blockchain + 7 XES; tracked)
 ```
 
 ---
 
-## GenAI assistance disclosure
+## Testing
 
-The implementation of this repository was developed in collaboration with
-[Claude Code](https://claude.ai/code) (Anthropic).
+```bash
+uv run pytest
+```

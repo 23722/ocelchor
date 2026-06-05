@@ -1,30 +1,29 @@
 # ocelchormodel
 
-**ocelchormodel** reads [OCEL 2.0](https://ocel-standard.org/) choreography event logs
-produced by **trace2choreo** and generates BPMN 2.0 choreography models from them.
-It is the reference implementation of the mining step accompanying the paper
+Reads OCEL 2.0 choreography event logs and emits one BPMN 2.0 choreography
+diagram per choreography instance, importable into
+[chor-js](https://github.com/bptlab/chor-js-demo). Domain-independent:
+consumes the OCEL output of either `trace2ocelchor` (blockchain) or
+`xescol2ocelchor` (XES) without modification.
 
-> *[Title]*. [Authors]. [Venue, Year].
+Because each instance corresponds to one observed execution, no gateway
+discovery is performed — output is a purely sequential choreography model
+with nested sub-choreographies. Start and end events are added for visual
+guidance but have no explicit entries in the event log.
 
-For each choreography instance in the log, ocelchormodel reconstructs the
-hierarchical choreography model encoded in the OCEL 2.0 relations and emits a
-BPMN 2.0 XML file importable into [chor-js](https://bpt-lab.org/chor-js-demo/).
-Because each instance corresponds to one individual blockchain transaction trace no gateway discovery is required; the output is a purely sequential choreography model with nested subchoreographies. Start and end events were added to the models for visual guidance, but have no explicit entries in the event log data.
+For repository-wide context (pipeline diagram, evaluation results, unified
+CLI), see the [root README](../README.md).
 
 ---
 
-## Requirements
+## Requirements + Installation
 
-- Python 3.10 or later
-- [uv](https://docs.astral.sh/uv/) (recommended) or pip
-- OCEL 2.0 event log(s) produced by **trace2choreo**
-
-## Installation
+Python ≥ 3.10 and [uv](https://docs.astral.sh/uv/). Install dev extras
+(includes test dependencies):
 
 ```bash
-git clone <repository-url>
 cd ocelchormodel
-uv sync
+uv sync --extra dev
 ```
 
 ---
@@ -35,11 +34,9 @@ uv sync
 uv run ocelchormodel <input files...> [options]
 ```
 
-The CLI accepts one or more OCEL 2.0 JSON files. For each input file, it
-extracts all choreography instances and writes one BPMN file per instance
-into a subdirectory of the output directory.
-
-### Options
+For each input OCEL file, the tool extracts all choreography instances and
+writes one BPMN file per instance into a subdirectory of the output
+directory.
 
 | Flag | Description |
 |------|-------------|
@@ -48,27 +45,20 @@ into a subdirectory of the output directory.
 | `--order-by MODE` | Event ordering: `timestamp` (default) or `trace_order` |
 | `--verbose` | Enable debug logging |
 
-### Examples
-
-Batch-convert all input files, one BPMN per instance:
+Examples:
 
 ```bash
+# Batch-convert all input files, one BPMN per instance
 uv run ocelchormodel data/input/*.json -o data/output/
-```
 
-List all choreography instances across multiple files:
-
-```bash
+# List all choreography instance IDs
 uv run ocelchormodel data/input/*.json --list
-```
 
-Convert a single file:
-
-```bash
+# Convert a single file
 uv run ocelchormodel traces.ocel.json -o output/
 ```
 
-### Output structure
+### Output directory structure
 
 ```
 data/output/
@@ -77,47 +67,29 @@ data/output/
     0x789abc...123456.bpmn
   beanstalk_attack/
     0x68cdec0a...4fa54c6f.bpmn
-    0xcd314668...c5d33ad7.bpmn
 ```
 
-- One subdirectory per input file, named by stripping `_ocel.json` from the filename
-- One BPMN file per choreography instance, named by the full transaction hash
-
----
-
-## Typical workflow
-
-```
-Ethereum traces
-      │
-      ▼  trace2choreo
-OCEL 2.0 event log  (.ocel.json)
-      │
-      ▼  ocelchormodel
-BPMN 2.0 choreography  (.bpmn)
-      │
-      ▼  chor-js demo
-Visual choreography diagram
-```
+One subdirectory per input file (input filename with `_ocel.json` stripped);
+one BPMN file per choreography instance (named by the instance id).
 
 ---
 
 ## Input format
 
-The input must be a valid OCEL 2.0 JSON file produced by **trace2choreo**.
-The tool reads the following OCEL 2.0 constructs:
+Valid OCEL 2.0 JSON file produced by `trace2ocelchor` or `xescol2ocelchor`.
+The tool reads the following qualified relationships:
 
-### Event-to-object (E2O) qualifiers used
+### Event-to-object (E2O)
 
 | Qualifier | Role |
 |-----------|------|
-| `choreo:instance` | Links a choreography event to its `ChoreographyInstance` object; only events carrying this qualifier are processed |
+| `choreo:instance` | Links a choreography event to its `choreographyInstance` object; only events with this qualifier are processed |
 | `choreo:initiator` | The participant that initiates the message exchange |
 | `choreo:participant` | The non-initiating participant |
 | `choreo:message` | A request or response message object |
 | `choreo:contained-by` | Links an event to the `subchoreographyInstance` scope object it belongs to |
 
-### Object-to-object (O2O) qualifiers used
+### Object-to-object (O2O)
 
 | Qualifier | Role |
 |-----------|------|
@@ -125,66 +97,56 @@ The tool reads the following OCEL 2.0 constructs:
 | `choreo:target` | The receiving participant of a message |
 | `choreo:contains` | Links a parent `subchoreographyInstance` scope to a child scope (hierarchy) |
 
-### Event ordering
-
 Events within an instance are ordered by their OCEL `time` field (ISO 8601
-timestamp) by default. The alternative `--order-by trace_order` uses the
-`trace_order` attribute (an integer assigned by trace2choreo).
+timestamp) by default; `--order-by trace_order` switches to the
+`trace_order` event attribute when present.
 
 ---
 
 ## Output format
 
-The output is a BPMN 2.0 XML file conforming to the OMG BPMN 2.0.2
-specification and importable into [chor-js](https://bpt-lab.org/chor-js-demo/).
-
-### BPMN elements produced
+BPMN 2.0 XML conforming to the OMG BPMN 2.0.2 specification.
 
 | Element | Description |
 |---------|-------------|
 | `<choreographyTask>` | One per choreography task event; carries initiating and (if present) returning message flows |
-| `<subChoreography>` | One per subchoreography scope; expanded, containing its own sequential flow |
-| `<participant>` | One per unique participant address in the instance |
-| `<message>` | One per unique message object (request or response) |
-| `<messageFlow>` | Connects a message's source and target participants |
+| `<subChoreography>` | One per sub-choreography scope; expanded, containing its own sequential flow |
+| `<participant>` | One per unique participant in the instance |
+| `<message>` | One per unique message object |
+| `<messageFlow>` | One per choreography task, connecting source and target participants and referencing the message |
 | `<startEvent>` / `<endEvent>` | Boundary events at every level of the hierarchy |
 | `<sequenceFlow>` | Sequential connections between adjacent elements at each level |
 
-### Diagram interchange (DI)
-
-The BPMN XML includes full layout coordinates (`BPMNShape`, `BPMNEdge`,
-`dc:Bounds`, `di:waypoint`) required by chor-js. Participant bands
-(`participantBandKind`, `choreographyActivityShape`, `isMessageVisible`) are
-generated for every choreography task and subchoreography.
-
-Layout is computed automatically using a left-to-right sequential algorithm.
-Subchoreography boxes are sized bottom-up to contain their inner elements at any
-nesting depth.
+The BPMN XML includes full diagram interchange (`BPMNShape`, `BPMNEdge`,
+`dc:Bounds`, `di:waypoint`) so the file renders directly in chor-js.
+Participant bands are generated for every choreography task and
+sub-choreography. Layout is computed by a left-to-right sequential
+algorithm; sub-choreography boxes are sized bottom-up to contain their
+inner elements at any nesting depth.
 
 ---
 
-## Project structure
+## Limitations
+
+- **Sequential models only** — no gateway discovery; one instance
+  corresponds to one observed execution.
+- **One messageFlow per task** — each choreography task gets its own
+  `<bpmn2:messageFlow>` element (even if multiple tasks reference the
+  same logical message object). This is the BPMN-correct mapping; see
+  paper §4.1 for the rationale.
+- **Sub-choreography participant bands** show at most one non-initiating
+  participant on the outer container box; the contained tasks carry the
+  full participant detail.
+
+---
+
+## Package structure
 
 ```
-src/ocelchormodel/
-    reader.py      — OCEL 2.0 JSON loading and validation
-    model.py       — domain dataclasses (Participant, Message, ChoreoTask,
-                     SubChoreo, ChoreoInstance)
-    extractor.py   — instance listing and recursive model extraction from OCEL
-    layout.py      — auto-layout: bottom-up size computation, top-down
-                     coordinate assignment
-    bpmn.py        — BPMN 2.0 XML serialisation (xml.etree.ElementTree)
-    validate.py    — structural validator for chor-js import compatibility
-    cli.py         — command-line interface (batch conversion)
-tests/
-    test_reader.py
-    test_extractor.py
-    test_layout.py
-    test_bpmn.py
-    test_validate.py
-    test_cli.py
-    test_integration.py
-    data/          — OCEL 2.0 test fixtures
+src/ocelchormodel/      reader, model (dataclasses), extractor, layout, bpmn writer, validator, cli
+tests/                  unit + integration tests against OCEL fixtures
+data/input/             mirror of upstream OCEL outputs (12 blockchain + 7 XES; tracked)
+data/output/            generated BPMN files (gitignored)
 ```
 
 ---
@@ -192,49 +154,10 @@ tests/
 ## Testing
 
 ```bash
-uv sync --extra dev
-uv run python -m pytest
+uv run pytest
 ```
 
-The test suite (94 tests) covers:
-
-- **Reader**: valid and malformed inputs, missing keys, non-JSON files.
-- **Extractor**: instance listing, task and subchoreography counts, message
-  directionality, nesting depth (up to 3 levels), ordering, per-instance
-  scope filtering, unknown-instance error handling.
-- **Layout**: bounds arithmetic, band splitting, element sizing, full layout
-  computation including subchoreography start/end events.
-- **BPMN generator**: well-formedness, element counts, referential integrity
-  (all `participantRef`, `messageFlowRef`, `messageRef`, and `bpmnElement`
-  values reference declared IDs), waypoint presence, positive DI bounds,
-  absence of duplicate IDs.
-- **Validator**: structural rules for chor-js compatibility.
-- **CLI**: `--list`, batch conversion, output directory structure, error handling.
-- **Integration**: end-to-end pipeline for test fixtures, verifying
-  element counts, sequence-flow connectivity, duplicate-ID absence, and
-  referential integrity.
-
----
-
-## Limitations
-
-- Produces sequential models only (no gateway discovery); one instance
-  corresponds to one transaction trace.
-- Only request-response call frames are represented; log entries, storage
-  operations, and static calls not modelled in trace2choreo are out of scope.
-- Subchoreography participant bands show at most one non-initiating participant
-  on the outer container box. The contained tasks carry the full participant
-  detail.
-
----
-
-## License
-
-MIT — see [LICENSE](../trace2ocelchor/LICENSE).
-
----
-
-## GenAI assistance disclosure
-
-The implementation of this repository was developed in collaboration with
-[Claude Code](https://claude.ai/code) (Anthropic).
+Covers reader / instance extraction (incl. sub-choreography nesting up to
+3 levels) / layout arithmetic / BPMN well-formedness (element counts,
+referential integrity, waypoint presence, no duplicate ids) / chor-js
+import compatibility / CLI / end-to-end integration on real fixtures.

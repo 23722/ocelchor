@@ -1,4 +1,4 @@
-"""CLI entry point for trace2choreo."""
+"""CLI entry point for trace2ocelchor."""
 
 from __future__ import annotations
 
@@ -7,10 +7,10 @@ import logging
 import sys
 from pathlib import Path
 
-from trace2choreo.ocel import build_ocel, write_ocel
-from trace2choreo.parser import load_trace_dir, load_trace_file
-from trace2choreo.stats import collect_stats, print_stats
-from trace2choreo.transformer import transform_traces
+from trace2ocelchor.ocel import build_ocel, write_ocel
+from trace2ocelchor.parser import load_trace_dir, load_trace_file
+from trace2ocelchor.stats import collect_stats, print_stats
+from trace2ocelchor.transformer import transform_traces
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:

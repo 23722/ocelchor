@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-from trace2choreo.ocel import build_ocel
-from trace2choreo.transformer import transform_traces
+from trace2ocelchor.ocel import build_ocel
+from trace2ocelchor.transformer import transform_traces
 
 SCHEMA_PATH = Path(__file__).parent / "schemas" / "ocel20-schema.json"
 

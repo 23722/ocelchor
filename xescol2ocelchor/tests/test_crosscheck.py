@@ -8,15 +8,20 @@ import pytest
 
 from xescol2ocelchor.crosscheck import crosscheck, discover_collab_pair
 
-DATA = Path(__file__).parent.parent / "data" / "input"
+# Plain (Corradini et al.) inputs live under the package's data/input/;
+# their _collab.xes ground-truth siblings live alongside the tests as
+# tests/data/<...>_collab.xes (added separately so they don't clutter the
+# extractor's input directory).
+DATA_PLAIN = Path(__file__).parent.parent / "data" / "input"
+DATA_COLLAB = Path(__file__).parent / "data"
 
 
 @pytest.mark.parametrize("dataset", [
     "real1", "real2", "real3", "real4", "real5", "healthcare", "smartagriculture",
 ])
 def test_crosscheck_full_agreement_per_dataset(dataset):
-    plain = DATA / f"collectivelog_{dataset}.xes"
-    collab = DATA / f"collectivelog_{dataset}_collab.xes"
+    plain = DATA_PLAIN / f"collectivelog_{dataset}.xes"
+    collab = DATA_COLLAB / f"collectivelog_{dataset}_collab.xes"
     if not (plain.exists() and collab.exists()):
         pytest.skip(f"{dataset} pair not present")
 
@@ -32,10 +37,15 @@ def test_crosscheck_full_agreement_per_dataset(dataset):
     assert result.only_in_collab == []
 
 
-def test_discover_collab_pair_returns_sibling():
-    plain = DATA / "collectivelog_real1.xes"
-    if not plain.exists():
-        pytest.skip("real1 not present")
+def test_discover_collab_pair_returns_sibling(tmp_path):
+    # discover_collab_pair looks for a sibling next to the plain file, so the
+    # test stages both files in a temp dir rather than depending on the
+    # package's data layout (where plain and collab files live in different
+    # directories).
+    plain = tmp_path / "collectivelog_real1.xes"
+    collab = tmp_path / "collectivelog_real1_collab.xes"
+    plain.write_text("<log/>")
+    collab.write_text("<log/>")
     paired = discover_collab_pair(plain)
     assert paired is not None
     assert paired.name == "collectivelog_real1_collab.xes"

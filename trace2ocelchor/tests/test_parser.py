@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-from trace2choreo.models import CallType, InputParam
-from trace2choreo.parser import (
+from trace2ocelchor.models import CallType, InputParam
+from trace2ocelchor.parser import (
     load_trace_file,
     normalize_call_frame,
     parse_timestamp,

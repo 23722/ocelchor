@@ -5,7 +5,7 @@ from __future__ import annotations
 import logging
 from datetime import timedelta
 
-from trace2choreo.models import (
+from trace2ocelchor.models import (
     CHOREO_CONTAINED_BY,
     CHOREO_CONTAINS,
     CHOREO_INITIATOR,

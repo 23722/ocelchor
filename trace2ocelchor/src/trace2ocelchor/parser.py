@@ -7,7 +7,7 @@ import logging
 from datetime import datetime, timezone
 from pathlib import Path
 
-from trace2choreo.models import CallFrame, CallType, InputParam, Trace
+from trace2ocelchor.models import CallFrame, CallType, InputParam, Trace
 
 logger = logging.getLogger(__name__)
 

@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from trace2choreo.models import OcelEvent, OcelObject
+from trace2ocelchor.models import OcelEvent, OcelObject
 
 
 def build_ocel(events: list[OcelEvent], objects: list[OcelObject]) -> dict:

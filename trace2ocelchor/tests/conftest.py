@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from trace2choreo.parser import load_trace_file
+from trace2ocelchor.parser import load_trace_file
 
 
 DATA_DIR = Path(__file__).parent / "data"

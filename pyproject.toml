@@ -5,7 +5,7 @@ description = "BPMN choreography mining pipeline for Ethereum transaction traces
 license = {text = "MIT"}
 requires-python = ">=3.10"
 dependencies = [
-    "trace2choreo",
+    "trace2ocelchor",
     "ocelchormodel",
     "ocelchorvalidator",
 ]
@@ -24,6 +24,6 @@ packages = ["src/ocelchor"]
 members = ["trace2ocelchor", "ocelchormodel", "ocelchorvalidator"]
 
 [tool.uv.sources]
-trace2choreo      = { workspace = true }
+trace2ocelchor      = { workspace = true }
 ocelchormodel     = { workspace = true }
 ocelchorvalidator = { workspace = true }

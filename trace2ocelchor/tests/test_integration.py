@@ -13,7 +13,7 @@ from collections import Counter
 
 import pytest
 
-from trace2choreo.models import (
+from trace2ocelchor.models import (
     CHOREO_CONTAINED_BY,
     CHOREO_CONTAINS,
     CHOREO_INITIATOR,
@@ -23,7 +23,7 @@ from trace2choreo.models import (
     CHOREO_SOURCE,
     CHOREO_TARGET,
 )
-from trace2choreo.transformer import transform_traces
+from trace2ocelchor.transformer import transform_traces
 
 
 # ---------------------------------------------------------------------------

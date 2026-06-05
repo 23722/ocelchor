@@ -262,7 +262,7 @@ the XES corpus (for `xescol2ocelchor`).
   after Thermostat-mediated exchanges), 9 in Healthcare (Hospital
   re-entering after Patient / Laboratory exchanges), 9 in Smart agriculture
   (a tractor re-entering after exchanges that did not involve it).
-  Identical figures appear in the Corradini et al. reference choreography
+  Identical figures appear in the Peña et al. reference choreography
   logs (`_chor.xes`), confirming the structural origin of these
   discontinuities in the source data rather than in our conversion.
 

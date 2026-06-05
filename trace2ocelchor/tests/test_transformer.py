@@ -7,7 +7,7 @@ so these tests define the red phase of TDD.
 
 import pytest
 
-from trace2choreo.models import (
+from trace2ocelchor.models import (
     CHOREO_CONTAINED_BY,
     CHOREO_CONTAINS,
     CHOREO_INITIATOR,
@@ -17,7 +17,7 @@ from trace2choreo.models import (
     CHOREO_SOURCE,
     CHOREO_TARGET,
 )
-from trace2choreo.transformer import transform_traces
+from trace2ocelchor.transformer import transform_traces
 
 
 # ---------------------------------------------------------------------------
@@ -573,7 +573,7 @@ class TestSwapMultiTx:
 
     @pytest.fixture(autouse=True)
     def _transform(self, data_dir):
-        from trace2choreo.parser import load_trace_file
+        from trace2ocelchor.parser import load_trace_file
         traces = load_trace_file(data_dir / "swap_multi_tx.json")
         self.traces = traces
         self.events, self.objects = transform_traces(traces)

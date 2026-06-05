@@ -3,7 +3,7 @@
 Subcommands
 -----------
   convert   Convert Ethereum transaction traces to OCEL 2.0 (trace2ocelchor)
-  validate  Validate an OCEL 2.0 log against constraints C0-C15 (ocelchorvalidator)
+  validate  Validate an OCEL 2.0 log against constraints C0-C16 (ocelchorvalidator)
   mine      Mine BPMN choreography models from an OCEL 2.0 log (ocelchormodel)
 """
 
@@ -17,7 +17,7 @@ usage: ocelchor <command> [options]
 
 Commands:
   convert   Convert Ethereum transaction traces to OCEL 2.0
-  validate  Validate an OCEL 2.0 log against constraints C0-C15
+  validate  Validate an OCEL 2.0 log against constraints C0-C16
   mine      Mine BPMN choreography models from an OCEL 2.0 log
 
 Run 'ocelchor <command> --help' for command-specific options.
@@ -36,7 +36,7 @@ def main(argv: list[str] | None = None) -> None:
     command, rest = args[0], args[1:]
 
     if command == "convert":
-        from trace2choreo.cli import main as _main
+        from trace2ocelchor.cli import main as _main
         _main(rest)
 
     elif command == "validate":

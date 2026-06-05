@@ -5,7 +5,7 @@ from __future__ import annotations
 import sys
 from dataclasses import dataclass, field
 
-from trace2choreo.models import OcelEvent, OcelObject, Trace
+from trace2ocelchor.models import OcelEvent, OcelObject, Trace
 
 
 @dataclass

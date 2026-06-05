@@ -1,6 +1,6 @@
-# trace2choreo
+# trace2ocelchor
 
-**trace2choreo** converts pre-processed Ethereum mainnet transaction traces into
+**trace2ocelchor** converts pre-processed Ethereum mainnet transaction traces into
 [OCEL 2.0](https://ocel-standard.org/) event logs that encode BPMN choreography
 semantics. 
 The transformation maps each transaction's internal call tree to a choreography
@@ -29,7 +29,7 @@ uv sync
 ## Usage
 
 ```bash
-uv run trace2choreo <input> [<input> ...] [options]
+uv run trace2ocelchor <input> [<input> ...] [options]
 ```
 
 `<input>` may be one or more JSON files or a directory. Multiple inputs are
@@ -46,7 +46,7 @@ merged into a single event log with globally deduplicated participant objects.
 ### Example
 
 ```bash
-uv run trace2choreo data/traces.json -o traces.ocel.json --stats
+uv run trace2ocelchor data/traces.json -o traces.ocel.json --stats
 ```
 
 ---
@@ -90,7 +90,7 @@ The output is a valid OCEL 2.0 JSON file. Object types produced:
 ## Project structure
 
 ```
-src/trace2choreo/
+src/trace2ocelchor/
     parser.py       — JSON ingestion and schema normalisation
     transformer.py  — trace-to-OCEL transformation (choreography mining)
     ocel.py         — OCEL 2.0 JSON serialisation

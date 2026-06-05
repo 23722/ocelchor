@@ -256,9 +256,13 @@ the XES corpus (for `xescol2ocelchor`).
   after Thermostat-mediated exchanges), 9 in Healthcare (Hospital
   re-entering after Patient / Laboratory exchanges), 9 in Smart agriculture
   (a tractor re-entering after exchanges that did not involve it).
-  Identical figures appear in the Peña et al. reference choreography
-  logs (`_chor.xes`), confirming the structural origin of these
-  discontinuities in the source data rather than in our conversion.
+  Identical figures appear in the Peña et al. (2024) [^2] reference
+  choreography logs (`_chor.xes`), confirming the structural origin of
+  these discontinuities in the source data rather than in our conversion.
+
+[^2]: Peña, L., Andrade, D., Delgado, A., Calegari, D.
+  *Inter-organizational collaborative BPMN 2.0 business process discovery.*
+  J. Intelligent Information Systems (2024).
 
 ### Trace-variant agreement against Peña's `_chor.xes`
 

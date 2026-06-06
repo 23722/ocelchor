@@ -113,6 +113,13 @@ uv run ocelchor mine log.ocel.json -o output/
 BPMN files written to `output/` can be opened in the Live Version of
 [chor-js](https://github.com/bptlab/chor-js-demo).
 
+One example of many — the choreography model of a single Uniswap
+`UniswapV2Pair (USDC-WETH)` transaction
+([`ocelchormodel/data/output/0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc_uniqueFunction/0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e.bpmn`](ocelchormodel/data/output/0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc_uniqueFunction/0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e.bpmn)),
+rendered:
+
+![Example choreography model produced by ocelchormodel from a Uniswap V2 transaction trace](0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e.png)
+
 ---
 
 ## Individual CLIs

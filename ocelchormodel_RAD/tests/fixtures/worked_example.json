@@ -1,0 +1,969 @@
+{
+  "objectTypes": [
+    {
+      "name": "Governance",
+      "attributes": []
+    },
+    {
+      "name": "Proxy",
+      "attributes": []
+    },
+    {
+      "name": "TORN",
+      "attributes": []
+    },
+    {
+      "name": "Vault",
+      "attributes": []
+    },
+    {
+      "name": "choreographyInstance",
+      "attributes": []
+    },
+    {
+      "name": "message",
+      "attributes": []
+    },
+    {
+      "name": "subchoreographyInstance",
+      "attributes": []
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Request transfer [TORN]",
+      "attributes": []
+    },
+    {
+      "name": "Request unlock [Gov]",
+      "attributes": []
+    },
+    {
+      "name": "Respond to transfer [TORN]",
+      "attributes": []
+    },
+    {
+      "name": "Respond to unlock [Gov]",
+      "attributes": []
+    },
+    {
+      "name": "hook [Vault]",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "choreographyInstance:A",
+      "type": "choreographyInstance",
+      "attributes": [],
+      "relationships": []
+    },
+    {
+      "id": "ProxyA",
+      "type": "Proxy",
+      "attributes": [],
+      "relationships": []
+    },
+    {
+      "id": "GovA",
+      "type": "Governance",
+      "attributes": [],
+      "relationships": []
+    },
+    {
+      "id": "TORNA",
+      "type": "TORN",
+      "attributes": [],
+      "relationships": []
+    },
+    {
+      "id": "VaultA",
+      "type": "Vault",
+      "attributes": [],
+      "relationships": []
+    },
+    {
+      "id": "sub:A:root",
+      "type": "subchoreographyInstance",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography unlock",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "sub:A:t1",
+          "qualifier": "choreo:contains"
+        }
+      ]
+    },
+    {
+      "id": "m:A:R:req",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "unlockArg",
+          "value": "1",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "ProxyA",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "GovA",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:A:t1",
+      "type": "subchoreographyInstance",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography transfer",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m:A:t1:req",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "amount",
+          "value": "10",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "GovA",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "TORNA",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "m:A:t1:hook:req",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "hookArg",
+          "value": "x",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "TORNA",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "VaultA",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "m:A:t1:hook:res",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "ok",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "VaultA",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "TORNA",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "m:A:t1:res",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "1",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "TORNA",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "GovA",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "m:A:R:res",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "done",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "GovA",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "ProxyA",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "choreographyInstance:B",
+      "type": "choreographyInstance",
+      "attributes": [],
+      "relationships": []
+    },
+    {
+      "id": "ProxyB",
+      "type": "Proxy",
+      "attributes": [],
+      "relationships": []
+    },
+    {
+      "id": "GovB",
+      "type": "Governance",
+      "attributes": [],
+      "relationships": []
+    },
+    {
+      "id": "TORNB",
+      "type": "TORN",
+      "attributes": [],
+      "relationships": []
+    },
+    {
+      "id": "VaultB",
+      "type": "Vault",
+      "attributes": [],
+      "relationships": []
+    },
+    {
+      "id": "sub:B:root",
+      "type": "subchoreographyInstance",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography unlock",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "sub:B:t1",
+          "qualifier": "choreo:contains"
+        },
+        {
+          "objectId": "sub:B:t2",
+          "qualifier": "choreo:contains"
+        }
+      ]
+    },
+    {
+      "id": "m:B:R:req",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "unlockArg",
+          "value": "1",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "ProxyB",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "GovB",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:B:t1",
+      "type": "subchoreographyInstance",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography transfer",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m:B:t1:req",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "amount",
+          "value": "10",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "GovB",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "TORNB",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "m:B:t1:hook:req",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "hookArg",
+          "value": "x",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "TORNB",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "VaultB",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "m:B:t1:hook:res",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "ok",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "VaultB",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "TORNB",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "m:B:t1:res",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "1",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "TORNB",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "GovB",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "sub:B:t2",
+      "type": "subchoreographyInstance",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "subchoreography transfer",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m:B:t2:req",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "amount",
+          "value": "10",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "GovB",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "TORNB",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "m:B:t2:hook:req",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "hookArg",
+          "value": "x",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "TORNB",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "VaultB",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "m:B:t2:hook:res",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "ok",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "VaultB",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "TORNB",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "m:B:t2:res",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "1",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "TORNB",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "GovB",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "m:B:R:res",
+      "type": "message",
+      "attributes": [
+        {
+          "name": "output",
+          "value": "done",
+          "time": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "GovB",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "ProxyB",
+          "qualifier": "choreo:target"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "e:A:R:req",
+      "type": "Request unlock [Gov]",
+      "time": "2020-01-01T00:00:00.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": 0
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "ProxyA",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "GovA",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "sub:A:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreographyInstance:A",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "m:A:R:req",
+          "qualifier": "choreo:message"
+        }
+      ]
+    },
+    {
+      "id": "e:A:t1:req",
+      "type": "Request transfer [TORN]",
+      "time": "2020-01-01T00:00:00.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": 1
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "GovA",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "TORNA",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "sub:A:t1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreographyInstance:A",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "m:A:t1:req",
+          "qualifier": "choreo:message"
+        }
+      ]
+    },
+    {
+      "id": "e:A:t1:hook",
+      "type": "hook [Vault]",
+      "time": "2020-01-01T00:00:00.002Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": 2
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "TORNA",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "VaultA",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "sub:A:t1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreographyInstance:A",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "m:A:t1:hook:req",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "m:A:t1:hook:res",
+          "qualifier": "choreo:message"
+        }
+      ]
+    },
+    {
+      "id": "e:A:t1:res",
+      "type": "Respond to transfer [TORN]",
+      "time": "2020-01-01T00:00:00.003Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": 3
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "TORNA",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "GovA",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "sub:A:t1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreographyInstance:A",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "m:A:t1:res",
+          "qualifier": "choreo:message"
+        }
+      ]
+    },
+    {
+      "id": "e:A:R:res",
+      "type": "Respond to unlock [Gov]",
+      "time": "2020-01-01T00:00:00.004Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": 4
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "GovA",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "ProxyA",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "sub:A:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreographyInstance:A",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "m:A:R:res",
+          "qualifier": "choreo:message"
+        }
+      ]
+    },
+    {
+      "id": "e:B:R:req",
+      "type": "Request unlock [Gov]",
+      "time": "2020-01-01T00:00:00.000Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": 0
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "ProxyB",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "GovB",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "sub:B:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreographyInstance:B",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "m:B:R:req",
+          "qualifier": "choreo:message"
+        }
+      ]
+    },
+    {
+      "id": "e:B:t1:req",
+      "type": "Request transfer [TORN]",
+      "time": "2020-01-01T00:00:00.001Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": 1
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "GovB",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "TORNB",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "sub:B:t1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreographyInstance:B",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "m:B:t1:req",
+          "qualifier": "choreo:message"
+        }
+      ]
+    },
+    {
+      "id": "e:B:t1:hook",
+      "type": "hook [Vault]",
+      "time": "2020-01-01T00:00:00.002Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": 2
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "TORNB",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "VaultB",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "sub:B:t1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreographyInstance:B",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "m:B:t1:hook:req",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "m:B:t1:hook:res",
+          "qualifier": "choreo:message"
+        }
+      ]
+    },
+    {
+      "id": "e:B:t1:res",
+      "type": "Respond to transfer [TORN]",
+      "time": "2020-01-01T00:00:00.003Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": 3
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "TORNB",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "GovB",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "sub:B:t1",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreographyInstance:B",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "m:B:t1:res",
+          "qualifier": "choreo:message"
+        }
+      ]
+    },
+    {
+      "id": "e:B:t2:req",
+      "type": "Request transfer [TORN]",
+      "time": "2020-01-01T00:00:00.004Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": 4
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "GovB",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "TORNB",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "sub:B:t2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreographyInstance:B",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "m:B:t2:req",
+          "qualifier": "choreo:message"
+        }
+      ]
+    },
+    {
+      "id": "e:B:t2:hook",
+      "type": "hook [Vault]",
+      "time": "2020-01-01T00:00:00.005Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": 5
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "TORNB",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "VaultB",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "sub:B:t2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreographyInstance:B",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "m:B:t2:hook:req",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "m:B:t2:hook:res",
+          "qualifier": "choreo:message"
+        }
+      ]
+    },
+    {
+      "id": "e:B:t2:res",
+      "type": "Respond to transfer [TORN]",
+      "time": "2020-01-01T00:00:00.006Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": 6
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "TORNB",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "GovB",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "sub:B:t2",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreographyInstance:B",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "m:B:t2:res",
+          "qualifier": "choreo:message"
+        }
+      ]
+    },
+    {
+      "id": "e:B:R:res",
+      "type": "Respond to unlock [Gov]",
+      "time": "2020-01-01T00:00:00.007Z",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "value": 7
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "GovB",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "ProxyB",
+          "qualifier": "choreo:participant"
+        },
+        {
+          "objectId": "sub:B:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
+          "objectId": "choreographyInstance:B",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "m:B:R:res",
+          "qualifier": "choreo:message"
+        }
+      ]
+    }
+  ]
+}

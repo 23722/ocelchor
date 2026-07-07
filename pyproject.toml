@@ -21,9 +21,10 @@ build-backend = "hatchling.build"
 packages = ["src/ocelchor"]
 
 [tool.uv.workspace]
-members = ["trace2ocelchor", "ocelchormodel", "ocelchorvalidator"]
+members = ["trace2ocelchor", "ocelchormodel", "ocelchorvalidator", "ocelchormodel_RAD"]
 
 [tool.uv.sources]
 trace2ocelchor      = { workspace = true }
 ocelchormodel     = { workspace = true }
 ocelchorvalidator = { workspace = true }
+ocelchormodel-rad = { workspace = true }

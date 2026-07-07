@@ -274,11 +274,18 @@ def extract_instance(ocel: dict, instance_id: str, *, order_by: str = "timestamp
     # --- Build a SubChoreo from a scoping object ---
     def _build_scope(scope_id: str) -> SubChoreo:
         scope_obj = scope_objects[scope_id]
-        name = _obj_attr(scope_obj, "name") or scope_obj.get("type", "subchoreographyInstance")
 
         # Collect direct child elements: task events + nested scopes
         direct_events = scope_events.get(scope_id, [])
         child_scope_ids = parent_to_children.get(scope_id, [])
+
+        # Display name per spec I5 / worked example: the call key of the opening
+        # bracket (its event.type minus the kind prefix), e.g. "unlock [Governance]".
+        # After A2 the request bracket is contained in the scope, so it is the
+        # ≻-minimal direct event. Falls back to the scope object's name attribute.
+        name = _scope_display_name(direct_events) or (
+            _obj_attr(scope_obj, "name") or scope_obj.get("type", "subchoreographyInstance")
+        )
 
         children = _build_level(direct_events, child_scope_ids)
 
@@ -310,6 +317,21 @@ def extract_instance(ocel: dict, instance_id: str, *, order_by: str = "timestamp
         # Sort all elements together
         task_items.sort(key=lambda x: x[0])
         return [item for _, item in task_items]
+
+    # --- Scope display name from its opening bracket (spec I5) ---
+    def _scope_display_name(direct_events: list[dict]) -> str | None:
+        """Call key of the scope's opening bracket: its event.type with the
+        ``Request ``/``Respond to `` kind prefix stripped (e.g.
+        ``unlock [Governance]``). Returns None when the scope has no direct
+        event to derive a name from."""
+        if not direct_events:
+            return None
+        opener = min(direct_events, key=_sort_key)
+        t = opener.get("type", "")
+        for prefix in ("Request ", "Respond to "):
+            if t.startswith(prefix):
+                return t[len(prefix):]
+        return t or None
 
     # --- Determine a scope's sort key from its earliest contained event ---
     def _scope_sort_key(scope_id: str, key_fn: object) -> object:

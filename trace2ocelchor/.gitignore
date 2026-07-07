@@ -227,3 +227,8 @@ data/output/*
 output/
 test_output/
 *_ocel.json
+
+# Generated OCEL logs for the full (non-deduplicated) trace family.
+# The full input traces themselves live in data/input_full/ (tracked via
+# Git LFS by the user); their generated OCEL is regenerable and not committed.
+data/output_full/

@@ -150,7 +150,7 @@
   ],
   "eventTypes": [
     {
-      "name": "Request safeTransferFrom",
+      "name": "Request safeTransferFrom [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]",
       "attributes": [
         {
           "name": "trace_order",
@@ -159,7 +159,7 @@
       ]
     },
     {
-      "name": "Request undefined",
+      "name": "Request undefined [GnosisSafe]",
       "attributes": [
         {
           "name": "trace_order",
@@ -168,7 +168,7 @@
       ]
     },
     {
-      "name": "Respond to undefined",
+      "name": "Respond to undefined [GnosisSafe]",
       "attributes": [
         {
           "name": "trace_order",
@@ -177,7 +177,7 @@
       ]
     },
     {
-      "name": "approve",
+      "name": "approve [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]",
       "attributes": [
         {
           "name": "trace_order",
@@ -186,7 +186,7 @@
       ]
     },
     {
-      "name": "delegate",
+      "name": "delegate [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]",
       "attributes": [
         {
           "name": "trace_order",
@@ -195,7 +195,7 @@
       ]
     },
     {
-      "name": "mint",
+      "name": "mint [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]",
       "attributes": [
         {
           "name": "trace_order",
@@ -204,7 +204,7 @@
       ]
     },
     {
-      "name": "onERC721Received",
+      "name": "onERC721Received [DefaultCallbackHandler]",
       "attributes": [
         {
           "name": "trace_order",
@@ -213,7 +213,7 @@
       ]
     },
     {
-      "name": "setApprovalForAll",
+      "name": "setApprovalForAll [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]",
       "attributes": [
         {
           "name": "trace_order",
@@ -222,7 +222,7 @@
       ]
     },
     {
-      "name": "transferFrom",
+      "name": "transferFrom [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]",
       "attributes": [
         {
           "name": "trace_order",
@@ -231,7 +231,7 @@
       ]
     },
     {
-      "name": "transferOwnership",
+      "name": "transferOwnership [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]",
       "attributes": [
         {
           "name": "trace_order",
@@ -658,7 +658,7 @@
   "events": [
     {
       "id": "e:59e96bf8293419e24bd893849b6e7efb7ebb0c90cf50ecd418b8b8971fbbdf12:root",
-      "type": "transferOwnership",
+      "type": "transferOwnership [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]",
       "time": "2021-08-08T16:59:43.000Z",
       "attributes": [
         {
@@ -687,7 +687,7 @@
     },
     {
       "id": "e:db7a321b8de764447cfeb5b6d2f170fd39ef953c228c7b8f3846820157e041d3:root",
-      "type": "transferFrom",
+      "type": "transferFrom [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]",
       "time": "2021-08-12T18:20:19.000Z",
       "attributes": [
         {
@@ -716,7 +716,7 @@
     },
     {
       "id": "e:4f2f905ee55cdb9082a14a280e415b0ebae991557c1bb4e98871edcaa69ef7c7:root",
-      "type": "mint",
+      "type": "mint [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]",
       "time": "2021-08-22T21:27:35.000Z",
       "attributes": [
         {
@@ -745,7 +745,7 @@
     },
     {
       "id": "e:40ea1702effa45506f0787e97aedff218e5b266f4b062cabb7cd4193f5d48203:root",
-      "type": "delegate",
+      "type": "delegate [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]",
       "time": "2021-09-01T17:44:32.000Z",
       "attributes": [
         {
@@ -774,7 +774,7 @@
     },
     {
       "id": "e:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:root:request",
-      "type": "Request safeTransferFrom",
+      "type": "Request safeTransferFrom [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]",
       "time": "2021-09-21T15:49:36.000Z",
       "attributes": [
         {
@@ -796,6 +796,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0xaf4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e",
           "qualifier": "choreo:instance"
         }
@@ -803,7 +807,7 @@
     },
     {
       "id": "e:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:0_1:request",
-      "type": "Request undefined",
+      "type": "Request undefined [GnosisSafe]",
       "time": "2021-09-21T15:49:36.001Z",
       "attributes": [
         {
@@ -825,7 +829,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:root",
+          "objectId": "subchoreographyInstance:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -836,7 +840,7 @@
     },
     {
       "id": "e:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:0_1_1:request",
-      "type": "Request undefined",
+      "type": "Request undefined [GnosisSafe]",
       "time": "2021-09-21T15:49:36.002Z",
       "attributes": [
         {
@@ -858,7 +862,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:0_1",
+          "objectId": "subchoreographyInstance:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:0_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -869,7 +873,7 @@
     },
     {
       "id": "e:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:0_1_1_1",
-      "type": "onERC721Received",
+      "type": "onERC721Received [DefaultCallbackHandler]",
       "time": "2021-09-21T15:49:36.003Z",
       "attributes": [
         {
@@ -906,7 +910,7 @@
     },
     {
       "id": "e:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:0_1_1:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [GnosisSafe]",
       "time": "2021-09-21T15:49:36.004Z",
       "attributes": [
         {
@@ -928,7 +932,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:0_1",
+          "objectId": "subchoreographyInstance:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:0_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -939,7 +943,7 @@
     },
     {
       "id": "e:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:0_1:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [GnosisSafe]",
       "time": "2021-09-21T15:49:36.005Z",
       "attributes": [
         {
@@ -961,7 +965,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:root",
+          "objectId": "subchoreographyInstance:af4a3c5afe2d9949d37c22a0f8c4ec415852632ec5df80c8e83076cf1865494e:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -972,7 +976,7 @@
     },
     {
       "id": "e:c1d607a5ce4d67fa623fc9115a53acdc253701d8386d22c8f97fc4a80301e25f:root",
-      "type": "setApprovalForAll",
+      "type": "setApprovalForAll [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]",
       "time": "2021-11-24T04:31:19.000Z",
       "attributes": [
         {
@@ -1001,7 +1005,7 @@
     },
     {
       "id": "e:56249bbc0547a3f0b0672e518c970cc7f59cccbb4a61b3a145aab0c19fdb7ddc:root",
-      "type": "approve",
+      "type": "approve [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]",
       "time": "2022-01-11T04:11:16.000Z",
       "attributes": [
         {

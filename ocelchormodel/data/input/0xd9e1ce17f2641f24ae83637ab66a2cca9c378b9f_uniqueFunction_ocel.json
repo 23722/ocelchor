@@ -1098,7 +1098,7 @@
   ],
   "eventTypes": [
     {
-      "name": "Request addLiquidity",
+      "name": "Request addLiquidity [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1107,7 +1107,7 @@
       ]
     },
     {
-      "name": "Request addLiquidityETH",
+      "name": "Request addLiquidityETH [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1116,7 +1116,7 @@
       ]
     },
     {
-      "name": "Request balanceOf",
+      "name": "Request balanceOf [EETH]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1125,7 +1125,7 @@
       ]
     },
     {
-      "name": "Request burn",
+      "name": "Request burn [UniswapV2Pair]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1134,7 +1134,7 @@
       ]
     },
     {
-      "name": "Request childImplementation",
+      "name": "Request childImplementation [AdminUpgradeabilityProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1143,7 +1143,7 @@
       ]
     },
     {
-      "name": "Request getAmountsOut",
+      "name": "Request childImplementation [NFTXVaultFactoryUpgradeable]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1152,7 +1152,7 @@
       ]
     },
     {
-      "name": "Request getTotalEtherClaimOf",
+      "name": "Request getAmountsOut [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1161,7 +1161,7 @@
       ]
     },
     {
-      "name": "Request mint",
+      "name": "Request getTotalEtherClaimOf [LiquidityPool]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1170,7 +1170,7 @@
       ]
     },
     {
-      "name": "Request permit",
+      "name": "Request getTotalEtherClaimOf [UUPSProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1179,7 +1179,7 @@
       ]
     },
     {
-      "name": "Request removeLiquidity",
+      "name": "Request mint [UniswapV2Pair]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1188,7 +1188,7 @@
       ]
     },
     {
-      "name": "Request removeLiquidityETH",
+      "name": "Request permit [UniswapV2Pair]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1197,7 +1197,7 @@
       ]
     },
     {
-      "name": "Request removeLiquidityETHSupportingFeeOnTransferTokens",
+      "name": "Request removeLiquidity [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1206,7 +1206,7 @@
       ]
     },
     {
-      "name": "Request removeLiquidityETHWithPermit",
+      "name": "Request removeLiquidityETH [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1215,7 +1215,7 @@
       ]
     },
     {
-      "name": "Request removeLiquidityETHWithPermitSupportingFeeOnTransferTokens",
+      "name": "Request removeLiquidityETHSupportingFeeOnTransferTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1224,7 +1224,7 @@
       ]
     },
     {
-      "name": "Request removeLiquidityWithPermit",
+      "name": "Request removeLiquidityETHWithPermit [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1233,7 +1233,7 @@
       ]
     },
     {
-      "name": "Request shares",
+      "name": "Request removeLiquidityETHWithPermitSupportingFeeOnTransferTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1242,7 +1242,7 @@
       ]
     },
     {
-      "name": "Request sharesForAmount",
+      "name": "Request removeLiquidityWithPermit [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1251,7 +1251,7 @@
       ]
     },
     {
-      "name": "Request swap",
+      "name": "Request shares [UUPSProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1260,7 +1260,7 @@
       ]
     },
     {
-      "name": "Request swapETHForExactTokens",
+      "name": "Request sharesForAmount [LiquidityPool]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1269,7 +1269,7 @@
       ]
     },
     {
-      "name": "Request swapExactETHForTokens",
+      "name": "Request sharesForAmount [UUPSProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1278,7 +1278,7 @@
       ]
     },
     {
-      "name": "Request swapExactETHForTokensSupportingFeeOnTransferTokens",
+      "name": "Request swap [UniswapV2Pair]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1287,7 +1287,7 @@
       ]
     },
     {
-      "name": "Request swapExactTokensForETH",
+      "name": "Request swapETHForExactTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1296,7 +1296,7 @@
       ]
     },
     {
-      "name": "Request swapExactTokensForETHSupportingFeeOnTransferTokens",
+      "name": "Request swapExactETHForTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1305,7 +1305,7 @@
       ]
     },
     {
-      "name": "Request swapExactTokensForTokens",
+      "name": "Request swapExactETHForTokensSupportingFeeOnTransferTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1314,7 +1314,7 @@
       ]
     },
     {
-      "name": "Request swapExactTokensForTokensSupportingFeeOnTransferTokens",
+      "name": "Request swapExactTokensForETH [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1323,7 +1323,7 @@
       ]
     },
     {
-      "name": "Request swapTokensForExactETH",
+      "name": "Request swapExactTokensForETHSupportingFeeOnTransferTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1332,7 +1332,7 @@
       ]
     },
     {
-      "name": "Request totalShares",
+      "name": "Request swapExactTokensForTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1341,7 +1341,7 @@
       ]
     },
     {
-      "name": "Request transfer",
+      "name": "Request swapExactTokensForTokensSupportingFeeOnTransferTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1350,7 +1350,7 @@
       ]
     },
     {
-      "name": "Request transferFrom",
+      "name": "Request swapTokensForExactETH [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1359,7 +1359,7 @@
       ]
     },
     {
-      "name": "Request undefined",
+      "name": "Request totalShares [UUPSProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1368,7 +1368,7 @@
       ]
     },
     {
-      "name": "Request withdraw",
+      "name": "Request transfer [FiatTokenV2_2]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1377,7 +1377,7 @@
       ]
     },
     {
-      "name": "Respond to balanceOf",
+      "name": "Request transferFrom [EETH]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1386,7 +1386,7 @@
       ]
     },
     {
-      "name": "Respond to burn",
+      "name": "Request undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1395,7 +1395,7 @@
       ]
     },
     {
-      "name": "Respond to childImplementation",
+      "name": "Request undefined [FiatTokenProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1404,7 +1404,7 @@
       ]
     },
     {
-      "name": "Respond to getTotalEtherClaimOf",
+      "name": "Request undefined [UUPSProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1413,7 +1413,7 @@
       ]
     },
     {
-      "name": "Respond to mint",
+      "name": "Request withdraw [WETH9]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1422,7 +1422,7 @@
       ]
     },
     {
-      "name": "Respond to permit",
+      "name": "Respond to balanceOf [EETH]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1431,7 +1431,7 @@
       ]
     },
     {
-      "name": "Respond to shares",
+      "name": "Respond to burn [UniswapV2Pair]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1440,7 +1440,7 @@
       ]
     },
     {
-      "name": "Respond to sharesForAmount",
+      "name": "Respond to childImplementation [AdminUpgradeabilityProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1449,7 +1449,7 @@
       ]
     },
     {
-      "name": "Respond to swap",
+      "name": "Respond to childImplementation [NFTXVaultFactoryUpgradeable]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1458,7 +1458,7 @@
       ]
     },
     {
-      "name": "Respond to totalShares",
+      "name": "Respond to getTotalEtherClaimOf [LiquidityPool]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1467,7 +1467,7 @@
       ]
     },
     {
-      "name": "Respond to transfer",
+      "name": "Respond to getTotalEtherClaimOf [UUPSProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1476,7 +1476,7 @@
       ]
     },
     {
-      "name": "Respond to transferFrom",
+      "name": "Respond to mint [UniswapV2Pair]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1485,7 +1485,7 @@
       ]
     },
     {
-      "name": "Respond to undefined",
+      "name": "Respond to permit [UniswapV2Pair]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1494,7 +1494,7 @@
       ]
     },
     {
-      "name": "Respond to withdraw",
+      "name": "Respond to shares [UUPSProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1503,7 +1503,7 @@
       ]
     },
     {
-      "name": "Tranfer",
+      "name": "Respond to sharesForAmount [LiquidityPool]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1512,7 +1512,7 @@
       ]
     },
     {
-      "name": "balanceOf",
+      "name": "Respond to sharesForAmount [UUPSProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1521,7 +1521,7 @@
       ]
     },
     {
-      "name": "childImplementation",
+      "name": "Respond to swap [UniswapV2Pair]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1530,7 +1530,7 @@
       ]
     },
     {
-      "name": "deposit",
+      "name": "Respond to totalShares [UUPSProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1539,7 +1539,7 @@
       ]
     },
     {
-      "name": "feeTo",
+      "name": "Respond to transfer [FiatTokenV2_2]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1548,7 +1548,7 @@
       ]
     },
     {
-      "name": "getPair",
+      "name": "Respond to transferFrom [EETH]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1557,7 +1557,7 @@
       ]
     },
     {
-      "name": "getReserves",
+      "name": "Respond to undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1566,7 +1566,7 @@
       ]
     },
     {
-      "name": "shares",
+      "name": "Respond to undefined [FiatTokenProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1575,7 +1575,7 @@
       ]
     },
     {
-      "name": "swapTokensForExactTokens",
+      "name": "Respond to undefined [UUPSProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1584,7 +1584,7 @@
       ]
     },
     {
-      "name": "totalShares",
+      "name": "Respond to withdraw [WETH9]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1593,7 +1593,7 @@
       ]
     },
     {
-      "name": "transfer",
+      "name": "Tranfer [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1602,7 +1602,7 @@
       ]
     },
     {
-      "name": "transferFrom",
+      "name": "balanceOf [Dai]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1611,7 +1611,430 @@
       ]
     },
     {
-      "name": "undefined",
+      "name": "balanceOf [EdenToken]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf [FiatTokenV2_2]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf [IlluviumERC20]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf [Lon]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf [NFTXVaultUpgradeable]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf [OlympusERC20Token]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf [OmniCat]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf [TetherToken]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf [ThorToken]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf [Token]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf [WETH9]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "balanceOf [YGGToken]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "childImplementation [NFTXVaultFactoryUpgradeable]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "deposit [WETH9]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "feeTo [UniswapV2Factory]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "getPair [UniswapV2Factory]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "getReserves [UniswapV2Pair]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "shares [EETH]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "swapTokensForExactTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "totalShares [EETH]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [0x000000e923f2a967e390ebff6e64bd17004f2df1]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [0x3f13c8ecdd224197ea42fa7722b765d873190f4e]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [0x5470f579a2936290603a2ef038b7a04846c11a47]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [0x666664dc6a1ac0a4f639709837f878cbd0e9bed6]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [0xa9d062b23650c9191673d9496d9e700d37dc55f5]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [0xb20806c111454533ff98303f20f94255d348bd2c]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [0xc570a59faa07fed02f16483825d8e8f55ff692a4]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [0xffc4725e7d9a7c39213c9bb97d130b3441eab205]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [Dai]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [EdenToken]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [FiatTokenV2_2]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [IlluviumERC20]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [Lon]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [OlympusERC20Token]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [OmniCat]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [TetherToken]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [ThorToken]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [UniswapV2Router02]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [WETH9]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [YGGToken]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transferFrom [IlluviumERC20]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transferFrom [NFTXVaultUpgradeable]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transferFrom [TetherToken]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transferFrom [Token]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transferFrom [UniswapV2Pair]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transferFrom [WETH9]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "undefined [0x0000000000000000000000000000000000000001]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "undefined [UniswapV2Router02]",
       "attributes": [
         {
           "name": "trace_order",
@@ -12436,7 +12859,7 @@
   "events": [
     {
       "id": "e:b5a1309cee230a1a57ed9049a70d483b38a9b29df05be6c24f9afa42071c22d2:root",
-      "type": "swapTokensForExactTokens",
+      "type": "swapTokensForExactTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-24T18:07:23.000Z",
       "attributes": [
         {
@@ -12465,7 +12888,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:root:request",
-      "type": "Request removeLiquidityETH",
+      "type": "Request removeLiquidityETH [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-24T18:24:59.000Z",
       "attributes": [
         {
@@ -12487,6 +12910,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0xacd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b",
           "qualifier": "choreo:instance"
         }
@@ -12494,7 +12921,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_1",
-      "type": "transferFrom",
+      "type": "transferFrom [UniswapV2Pair]",
       "time": "2024-03-24T18:24:59.001Z",
       "attributes": [
         {
@@ -12531,7 +12958,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_2:request",
-      "type": "Request burn",
+      "type": "Request burn [UniswapV2Pair]",
       "time": "2024-03-24T18:24:59.002Z",
       "attributes": [
         {
@@ -12553,7 +12980,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:root",
+          "objectId": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -12564,7 +12991,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_2_1",
-      "type": "balanceOf",
+      "type": "balanceOf [IlluviumERC20]",
       "time": "2024-03-24T18:24:59.003Z",
       "attributes": [
         {
@@ -12601,7 +13028,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_2_2",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-24T18:24:59.004Z",
       "attributes": [
         {
@@ -12638,7 +13065,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_2_3",
-      "type": "feeTo",
+      "type": "feeTo [UniswapV2Factory]",
       "time": "2024-03-24T18:24:59.005Z",
       "attributes": [
         {
@@ -12675,7 +13102,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_2_4",
-      "type": "transfer",
+      "type": "transfer [IlluviumERC20]",
       "time": "2024-03-24T18:24:59.006Z",
       "attributes": [
         {
@@ -12712,7 +13139,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_2_5",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2024-03-24T18:24:59.007Z",
       "attributes": [
         {
@@ -12749,7 +13176,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_2_6",
-      "type": "balanceOf",
+      "type": "balanceOf [IlluviumERC20]",
       "time": "2024-03-24T18:24:59.008Z",
       "attributes": [
         {
@@ -12786,7 +13213,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_2_7",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-24T18:24:59.009Z",
       "attributes": [
         {
@@ -12823,7 +13250,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_2:response",
-      "type": "Respond to burn",
+      "type": "Respond to burn [UniswapV2Pair]",
       "time": "2024-03-24T18:24:59.010Z",
       "attributes": [
         {
@@ -12845,7 +13272,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:root",
+          "objectId": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -12856,7 +13283,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_3",
-      "type": "transfer",
+      "type": "transfer [IlluviumERC20]",
       "time": "2024-03-24T18:24:59.011Z",
       "attributes": [
         {
@@ -12893,7 +13320,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_4:request",
-      "type": "Request withdraw",
+      "type": "Request withdraw [WETH9]",
       "time": "2024-03-24T18:24:59.012Z",
       "attributes": [
         {
@@ -12915,7 +13342,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:root",
+          "objectId": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_4",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -12926,7 +13353,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_4_1",
-      "type": "undefined",
+      "type": "undefined [UniswapV2Router02]",
       "time": "2024-03-24T18:24:59.013Z",
       "attributes": [
         {
@@ -12963,7 +13390,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_4:response",
-      "type": "Respond to withdraw",
+      "type": "Respond to withdraw [WETH9]",
       "time": "2024-03-24T18:24:59.014Z",
       "attributes": [
         {
@@ -12985,7 +13412,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:root",
+          "objectId": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_4",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -12996,7 +13423,7 @@
     },
     {
       "id": "e:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_5",
-      "type": "transfer",
+      "type": "transfer [0x666664dc6a1ac0a4f639709837f878cbd0e9bed6]",
       "time": "2024-03-24T18:24:59.015Z",
       "attributes": [
         {
@@ -13033,7 +13460,7 @@
     },
     {
       "id": "e:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:root:request",
-      "type": "Request swapExactTokensForTokens",
+      "type": "Request swapExactTokensForTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-24T18:38:35.000Z",
       "attributes": [
         {
@@ -13055,6 +13482,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08",
           "qualifier": "choreo:instance"
         }
@@ -13062,7 +13493,7 @@
     },
     {
       "id": "e:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:0_1",
-      "type": "getReserves",
+      "type": "getReserves [UniswapV2Pair]",
       "time": "2024-03-24T18:38:35.001Z",
       "attributes": [
         {
@@ -13099,7 +13530,7 @@
     },
     {
       "id": "e:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:0_2",
-      "type": "transferFrom",
+      "type": "transferFrom [Token]",
       "time": "2024-03-24T18:38:35.002Z",
       "attributes": [
         {
@@ -13136,7 +13567,7 @@
     },
     {
       "id": "e:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:0_3:request",
-      "type": "Request swap",
+      "type": "Request swap [UniswapV2Pair]",
       "time": "2024-03-24T18:38:35.003Z",
       "attributes": [
         {
@@ -13158,7 +13589,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:root",
+          "objectId": "subchoreographyInstance:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -13169,7 +13600,7 @@
     },
     {
       "id": "e:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:0_3_1",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2024-03-24T18:38:35.004Z",
       "attributes": [
         {
@@ -13206,7 +13637,7 @@
     },
     {
       "id": "e:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:0_3_2",
-      "type": "balanceOf",
+      "type": "balanceOf [Token]",
       "time": "2024-03-24T18:38:35.005Z",
       "attributes": [
         {
@@ -13243,7 +13674,7 @@
     },
     {
       "id": "e:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:0_3_3",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-24T18:38:35.006Z",
       "attributes": [
         {
@@ -13280,7 +13711,7 @@
     },
     {
       "id": "e:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:0_3:response",
-      "type": "Respond to swap",
+      "type": "Respond to swap [UniswapV2Pair]",
       "time": "2024-03-24T18:38:35.007Z",
       "attributes": [
         {
@@ -13302,7 +13733,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:root",
+          "objectId": "subchoreographyInstance:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -13313,7 +13744,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:root:request",
-      "type": "Request swapExactTokensForETH",
+      "type": "Request swapExactTokensForETH [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-24T18:46:59.000Z",
       "attributes": [
         {
@@ -13335,6 +13766,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0xaaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818",
           "qualifier": "choreo:instance"
         }
@@ -13342,7 +13777,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_1",
-      "type": "getReserves",
+      "type": "getReserves [UniswapV2Pair]",
       "time": "2024-03-24T18:46:59.001Z",
       "attributes": [
         {
@@ -13379,7 +13814,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_2:request",
-      "type": "Request undefined",
+      "type": "Request undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]",
       "time": "2024-03-24T18:46:59.002Z",
       "attributes": [
         {
@@ -13401,7 +13836,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:root",
+          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -13412,7 +13847,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_2_1:request",
-      "type": "Request childImplementation",
+      "type": "Request childImplementation [NFTXVaultFactoryUpgradeable]",
       "time": "2024-03-24T18:46:59.003Z",
       "attributes": [
         {
@@ -13434,7 +13869,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_2",
+          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_2_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -13445,7 +13880,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_2_1_1",
-      "type": "childImplementation",
+      "type": "childImplementation [NFTXVaultFactoryUpgradeable]",
       "time": "2024-03-24T18:46:59.004Z",
       "attributes": [
         {
@@ -13482,7 +13917,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_2_1:response",
-      "type": "Respond to childImplementation",
+      "type": "Respond to childImplementation [NFTXVaultFactoryUpgradeable]",
       "time": "2024-03-24T18:46:59.005Z",
       "attributes": [
         {
@@ -13504,7 +13939,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_2",
+          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_2_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -13515,7 +13950,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_2_2",
-      "type": "transferFrom",
+      "type": "transferFrom [NFTXVaultUpgradeable]",
       "time": "2024-03-24T18:46:59.006Z",
       "attributes": [
         {
@@ -13552,7 +13987,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_2:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]",
       "time": "2024-03-24T18:46:59.007Z",
       "attributes": [
         {
@@ -13574,7 +14009,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:root",
+          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -13585,7 +14020,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3:request",
-      "type": "Request swap",
+      "type": "Request swap [UniswapV2Pair]",
       "time": "2024-03-24T18:46:59.008Z",
       "attributes": [
         {
@@ -13607,7 +14042,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:root",
+          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -13618,7 +14053,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3_1",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2024-03-24T18:46:59.009Z",
       "attributes": [
         {
@@ -13655,7 +14090,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3_2:request",
-      "type": "Request undefined",
+      "type": "Request undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]",
       "time": "2024-03-24T18:46:59.010Z",
       "attributes": [
         {
@@ -13677,7 +14112,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3",
+          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -13688,7 +14123,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3_2_1:request",
-      "type": "Request childImplementation",
+      "type": "Request childImplementation [AdminUpgradeabilityProxy]",
       "time": "2024-03-24T18:46:59.011Z",
       "attributes": [
         {
@@ -13710,7 +14145,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3_2",
+          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3_2_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -13721,7 +14156,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3_2_1_1",
-      "type": "childImplementation",
+      "type": "childImplementation [NFTXVaultFactoryUpgradeable]",
       "time": "2024-03-24T18:46:59.012Z",
       "attributes": [
         {
@@ -13758,7 +14193,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3_2_1:response",
-      "type": "Respond to childImplementation",
+      "type": "Respond to childImplementation [AdminUpgradeabilityProxy]",
       "time": "2024-03-24T18:46:59.013Z",
       "attributes": [
         {
@@ -13780,7 +14215,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3_2",
+          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3_2_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -13791,7 +14226,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3_2_2",
-      "type": "balanceOf",
+      "type": "balanceOf [NFTXVaultUpgradeable]",
       "time": "2024-03-24T18:46:59.014Z",
       "attributes": [
         {
@@ -13828,7 +14263,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3_2:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]",
       "time": "2024-03-24T18:46:59.015Z",
       "attributes": [
         {
@@ -13850,7 +14285,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3",
+          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -13861,7 +14296,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3_3",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-24T18:46:59.016Z",
       "attributes": [
         {
@@ -13898,7 +14333,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3:response",
-      "type": "Respond to swap",
+      "type": "Respond to swap [UniswapV2Pair]",
       "time": "2024-03-24T18:46:59.017Z",
       "attributes": [
         {
@@ -13920,7 +14355,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:root",
+          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -13931,7 +14366,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_4:request",
-      "type": "Request withdraw",
+      "type": "Request withdraw [WETH9]",
       "time": "2024-03-24T18:46:59.018Z",
       "attributes": [
         {
@@ -13953,7 +14388,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:root",
+          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_4",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -13964,7 +14399,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_4_1",
-      "type": "transfer",
+      "type": "transfer [UniswapV2Router02]",
       "time": "2024-03-24T18:46:59.019Z",
       "attributes": [
         {
@@ -14001,7 +14436,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_4:response",
-      "type": "Respond to withdraw",
+      "type": "Respond to withdraw [WETH9]",
       "time": "2024-03-24T18:46:59.020Z",
       "attributes": [
         {
@@ -14023,7 +14458,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:root",
+          "objectId": "subchoreographyInstance:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_4",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -14034,7 +14469,7 @@
     },
     {
       "id": "e:aaf127b664aeb3f2a82720e88e7fa19849c4d7000a5d35a279613afdfa56b818:0_5",
-      "type": "transfer",
+      "type": "transfer [0x3f13c8ecdd224197ea42fa7722b765d873190f4e]",
       "time": "2024-03-24T18:46:59.021Z",
       "attributes": [
         {
@@ -14071,7 +14506,7 @@
     },
     {
       "id": "e:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:root:request",
-      "type": "Request swapETHForExactTokens",
+      "type": "Request swapETHForExactTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-24T19:02:11.000Z",
       "attributes": [
         {
@@ -14093,6 +14528,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f",
           "qualifier": "choreo:instance"
         }
@@ -14100,7 +14539,7 @@
     },
     {
       "id": "e:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_1",
-      "type": "getReserves",
+      "type": "getReserves [UniswapV2Pair]",
       "time": "2024-03-24T19:02:11.001Z",
       "attributes": [
         {
@@ -14137,7 +14576,7 @@
     },
     {
       "id": "e:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_2",
-      "type": "deposit",
+      "type": "deposit [WETH9]",
       "time": "2024-03-24T19:02:11.002Z",
       "attributes": [
         {
@@ -14174,7 +14613,7 @@
     },
     {
       "id": "e:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_3",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2024-03-24T19:02:11.003Z",
       "attributes": [
         {
@@ -14211,7 +14650,7 @@
     },
     {
       "id": "e:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4:request",
-      "type": "Request swap",
+      "type": "Request swap [UniswapV2Pair]",
       "time": "2024-03-24T19:02:11.004Z",
       "attributes": [
         {
@@ -14233,7 +14672,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:root",
+          "objectId": "subchoreographyInstance:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -14244,7 +14683,7 @@
     },
     {
       "id": "e:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4_1:request",
-      "type": "Request transfer",
+      "type": "Request transfer [FiatTokenV2_2]",
       "time": "2024-03-24T19:02:11.005Z",
       "attributes": [
         {
@@ -14266,7 +14705,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4",
+          "objectId": "subchoreographyInstance:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -14277,7 +14716,7 @@
     },
     {
       "id": "e:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4_1_1",
-      "type": "transfer",
+      "type": "transfer [FiatTokenV2_2]",
       "time": "2024-03-24T19:02:11.006Z",
       "attributes": [
         {
@@ -14314,7 +14753,7 @@
     },
     {
       "id": "e:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4_1:response",
-      "type": "Respond to transfer",
+      "type": "Respond to transfer [FiatTokenV2_2]",
       "time": "2024-03-24T19:02:11.007Z",
       "attributes": [
         {
@@ -14336,7 +14775,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4",
+          "objectId": "subchoreographyInstance:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -14347,7 +14786,7 @@
     },
     {
       "id": "e:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4_2:request",
-      "type": "Request undefined",
+      "type": "Request undefined [FiatTokenProxy]",
       "time": "2024-03-24T19:02:11.008Z",
       "attributes": [
         {
@@ -14369,7 +14808,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4",
+          "objectId": "subchoreographyInstance:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -14380,7 +14819,7 @@
     },
     {
       "id": "e:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4_2_1",
-      "type": "balanceOf",
+      "type": "balanceOf [FiatTokenV2_2]",
       "time": "2024-03-24T19:02:11.009Z",
       "attributes": [
         {
@@ -14417,7 +14856,7 @@
     },
     {
       "id": "e:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4_2:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [FiatTokenProxy]",
       "time": "2024-03-24T19:02:11.010Z",
       "attributes": [
         {
@@ -14439,7 +14878,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4",
+          "objectId": "subchoreographyInstance:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -14450,7 +14889,7 @@
     },
     {
       "id": "e:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4_3",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-24T19:02:11.011Z",
       "attributes": [
         {
@@ -14487,7 +14926,7 @@
     },
     {
       "id": "e:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4:response",
-      "type": "Respond to swap",
+      "type": "Respond to swap [UniswapV2Pair]",
       "time": "2024-03-24T19:02:11.012Z",
       "attributes": [
         {
@@ -14509,7 +14948,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:root",
+          "objectId": "subchoreographyInstance:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_4",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -14520,7 +14959,7 @@
     },
     {
       "id": "e:17566a2486406ef141b7ef034a6dc217899ad94bf0af114b146545f6f50d460f:0_5",
-      "type": "transfer",
+      "type": "transfer [0xffc4725e7d9a7c39213c9bb97d130b3441eab205]",
       "time": "2024-03-24T19:02:11.013Z",
       "attributes": [
         {
@@ -14557,7 +14996,7 @@
     },
     {
       "id": "e:15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34:root:request",
-      "type": "Request swapExactETHForTokens",
+      "type": "Request swapExactETHForTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-24T19:06:47.000Z",
       "attributes": [
         {
@@ -14579,6 +15018,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34",
           "qualifier": "choreo:instance"
         }
@@ -14586,7 +15029,7 @@
     },
     {
       "id": "e:15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34:0_1",
-      "type": "getReserves",
+      "type": "getReserves [UniswapV2Pair]",
       "time": "2024-03-24T19:06:47.001Z",
       "attributes": [
         {
@@ -14623,7 +15066,7 @@
     },
     {
       "id": "e:15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34:0_2",
-      "type": "deposit",
+      "type": "deposit [WETH9]",
       "time": "2024-03-24T19:06:47.002Z",
       "attributes": [
         {
@@ -14660,7 +15103,7 @@
     },
     {
       "id": "e:15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34:0_3",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2024-03-24T19:06:47.003Z",
       "attributes": [
         {
@@ -14697,7 +15140,7 @@
     },
     {
       "id": "e:15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34:0_4:request",
-      "type": "Request swap",
+      "type": "Request swap [UniswapV2Pair]",
       "time": "2024-03-24T19:06:47.004Z",
       "attributes": [
         {
@@ -14719,7 +15162,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34:root",
+          "objectId": "subchoreographyInstance:15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34:0_4",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -14730,7 +15173,7 @@
     },
     {
       "id": "e:15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34:0_4_1",
-      "type": "transfer",
+      "type": "transfer [ThorToken]",
       "time": "2024-03-24T19:06:47.005Z",
       "attributes": [
         {
@@ -14767,7 +15210,7 @@
     },
     {
       "id": "e:15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34:0_4_2",
-      "type": "balanceOf",
+      "type": "balanceOf [ThorToken]",
       "time": "2024-03-24T19:06:47.006Z",
       "attributes": [
         {
@@ -14804,7 +15247,7 @@
     },
     {
       "id": "e:15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34:0_4_3",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-24T19:06:47.007Z",
       "attributes": [
         {
@@ -14841,7 +15284,7 @@
     },
     {
       "id": "e:15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34:0_4:response",
-      "type": "Respond to swap",
+      "type": "Respond to swap [UniswapV2Pair]",
       "time": "2024-03-24T19:06:47.008Z",
       "attributes": [
         {
@@ -14863,7 +15306,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34:root",
+          "objectId": "subchoreographyInstance:15c03402fde4ef475d7fb22f29391ff20259c5073f1b34e2aa30171d700aad34:0_4",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -14874,7 +15317,7 @@
     },
     {
       "id": "e:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:root:request",
-      "type": "Request removeLiquidityWithPermit",
+      "type": "Request removeLiquidityWithPermit [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-24T19:33:59.000Z",
       "attributes": [
         {
@@ -14896,6 +15339,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71",
           "qualifier": "choreo:instance"
         }
@@ -14903,7 +15350,7 @@
     },
     {
       "id": "e:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_1:request",
-      "type": "Request permit",
+      "type": "Request permit [UniswapV2Pair]",
       "time": "2024-03-24T19:33:59.001Z",
       "attributes": [
         {
@@ -14925,7 +15372,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:root",
+          "objectId": "subchoreographyInstance:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -14936,7 +15383,7 @@
     },
     {
       "id": "e:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_1_1",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000001]",
       "time": "2024-03-24T19:33:59.002Z",
       "attributes": [
         {
@@ -14973,7 +15420,7 @@
     },
     {
       "id": "e:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_1:response",
-      "type": "Respond to permit",
+      "type": "Respond to permit [UniswapV2Pair]",
       "time": "2024-03-24T19:33:59.003Z",
       "attributes": [
         {
@@ -14995,7 +15442,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:root",
+          "objectId": "subchoreographyInstance:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -15006,7 +15453,7 @@
     },
     {
       "id": "e:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_2",
-      "type": "transferFrom",
+      "type": "transferFrom [UniswapV2Pair]",
       "time": "2024-03-24T19:33:59.004Z",
       "attributes": [
         {
@@ -15043,7 +15490,7 @@
     },
     {
       "id": "e:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_3:request",
-      "type": "Request burn",
+      "type": "Request burn [UniswapV2Pair]",
       "time": "2024-03-24T19:33:59.005Z",
       "attributes": [
         {
@@ -15065,7 +15512,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:root",
+          "objectId": "subchoreographyInstance:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -15076,7 +15523,7 @@
     },
     {
       "id": "e:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_3_1",
-      "type": "balanceOf",
+      "type": "balanceOf [OlympusERC20Token]",
       "time": "2024-03-24T19:33:59.006Z",
       "attributes": [
         {
@@ -15113,7 +15560,7 @@
     },
     {
       "id": "e:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_3_2",
-      "type": "balanceOf",
+      "type": "balanceOf [Dai]",
       "time": "2024-03-24T19:33:59.007Z",
       "attributes": [
         {
@@ -15150,7 +15597,7 @@
     },
     {
       "id": "e:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_3_3",
-      "type": "feeTo",
+      "type": "feeTo [UniswapV2Factory]",
       "time": "2024-03-24T19:33:59.008Z",
       "attributes": [
         {
@@ -15187,7 +15634,7 @@
     },
     {
       "id": "e:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_3_4",
-      "type": "transfer",
+      "type": "transfer [OlympusERC20Token]",
       "time": "2024-03-24T19:33:59.009Z",
       "attributes": [
         {
@@ -15224,7 +15671,7 @@
     },
     {
       "id": "e:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_3_5",
-      "type": "transfer",
+      "type": "transfer [Dai]",
       "time": "2024-03-24T19:33:59.010Z",
       "attributes": [
         {
@@ -15261,7 +15708,7 @@
     },
     {
       "id": "e:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_3_6",
-      "type": "balanceOf",
+      "type": "balanceOf [OlympusERC20Token]",
       "time": "2024-03-24T19:33:59.011Z",
       "attributes": [
         {
@@ -15298,7 +15745,7 @@
     },
     {
       "id": "e:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_3_7",
-      "type": "balanceOf",
+      "type": "balanceOf [Dai]",
       "time": "2024-03-24T19:33:59.012Z",
       "attributes": [
         {
@@ -15335,7 +15782,7 @@
     },
     {
       "id": "e:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_3:response",
-      "type": "Respond to burn",
+      "type": "Respond to burn [UniswapV2Pair]",
       "time": "2024-03-24T19:33:59.013Z",
       "attributes": [
         {
@@ -15357,7 +15804,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:root",
+          "objectId": "subchoreographyInstance:89eee9a03829e44314cc4a59f59dfab65dfd92bd997cce2495381b8d0cc08f71:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -15368,7 +15815,7 @@
     },
     {
       "id": "e:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:root:request",
-      "type": "Request addLiquidityETH",
+      "type": "Request addLiquidityETH [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-24T21:35:59.000Z",
       "attributes": [
         {
@@ -15390,6 +15837,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82",
           "qualifier": "choreo:instance"
         }
@@ -15397,7 +15848,7 @@
     },
     {
       "id": "e:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:0_1",
-      "type": "getPair",
+      "type": "getPair [UniswapV2Factory]",
       "time": "2024-03-24T21:35:59.001Z",
       "attributes": [
         {
@@ -15434,7 +15885,7 @@
     },
     {
       "id": "e:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:0_2",
-      "type": "getReserves",
+      "type": "getReserves [UniswapV2Pair]",
       "time": "2024-03-24T21:35:59.002Z",
       "attributes": [
         {
@@ -15471,7 +15922,7 @@
     },
     {
       "id": "e:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:0_3",
-      "type": "transferFrom",
+      "type": "transferFrom [IlluviumERC20]",
       "time": "2024-03-24T21:35:59.003Z",
       "attributes": [
         {
@@ -15508,7 +15959,7 @@
     },
     {
       "id": "e:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:0_4",
-      "type": "deposit",
+      "type": "deposit [WETH9]",
       "time": "2024-03-24T21:35:59.004Z",
       "attributes": [
         {
@@ -15545,7 +15996,7 @@
     },
     {
       "id": "e:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:0_5",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2024-03-24T21:35:59.005Z",
       "attributes": [
         {
@@ -15582,7 +16033,7 @@
     },
     {
       "id": "e:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:0_6:request",
-      "type": "Request mint",
+      "type": "Request mint [UniswapV2Pair]",
       "time": "2024-03-24T21:35:59.006Z",
       "attributes": [
         {
@@ -15604,7 +16055,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:root",
+          "objectId": "subchoreographyInstance:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:0_6",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -15615,7 +16066,7 @@
     },
     {
       "id": "e:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:0_6_1",
-      "type": "balanceOf",
+      "type": "balanceOf [IlluviumERC20]",
       "time": "2024-03-24T21:35:59.007Z",
       "attributes": [
         {
@@ -15652,7 +16103,7 @@
     },
     {
       "id": "e:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:0_6_2",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-24T21:35:59.008Z",
       "attributes": [
         {
@@ -15689,7 +16140,7 @@
     },
     {
       "id": "e:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:0_6_3",
-      "type": "feeTo",
+      "type": "feeTo [UniswapV2Factory]",
       "time": "2024-03-24T21:35:59.009Z",
       "attributes": [
         {
@@ -15726,7 +16177,7 @@
     },
     {
       "id": "e:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:0_6:response",
-      "type": "Respond to mint",
+      "type": "Respond to mint [UniswapV2Pair]",
       "time": "2024-03-24T21:35:59.010Z",
       "attributes": [
         {
@@ -15748,7 +16199,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:root",
+          "objectId": "subchoreographyInstance:207b48974ae953a19656ebb7c02124b080bc20ec49195e299c00896812c5cb82:0_6",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -15759,7 +16210,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:root:request",
-      "type": "Request removeLiquidityETHWithPermit",
+      "type": "Request removeLiquidityETHWithPermit [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-24T21:52:11.000Z",
       "attributes": [
         {
@@ -15781,6 +16232,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e",
           "qualifier": "choreo:instance"
         }
@@ -15788,7 +16243,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_1:request",
-      "type": "Request permit",
+      "type": "Request permit [UniswapV2Pair]",
       "time": "2024-03-24T21:52:11.001Z",
       "attributes": [
         {
@@ -15810,7 +16265,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:root",
+          "objectId": "subchoreographyInstance:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -15821,7 +16276,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_1_1",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000001]",
       "time": "2024-03-24T21:52:11.002Z",
       "attributes": [
         {
@@ -15858,7 +16313,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_1:response",
-      "type": "Respond to permit",
+      "type": "Respond to permit [UniswapV2Pair]",
       "time": "2024-03-24T21:52:11.003Z",
       "attributes": [
         {
@@ -15880,7 +16335,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:root",
+          "objectId": "subchoreographyInstance:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -15891,7 +16346,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_2",
-      "type": "transferFrom",
+      "type": "transferFrom [UniswapV2Pair]",
       "time": "2024-03-24T21:52:11.004Z",
       "attributes": [
         {
@@ -15928,7 +16383,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_3:request",
-      "type": "Request burn",
+      "type": "Request burn [UniswapV2Pair]",
       "time": "2024-03-24T21:52:11.005Z",
       "attributes": [
         {
@@ -15950,7 +16405,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:root",
+          "objectId": "subchoreographyInstance:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -15961,7 +16416,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_3_1",
-      "type": "balanceOf",
+      "type": "balanceOf [EdenToken]",
       "time": "2024-03-24T21:52:11.006Z",
       "attributes": [
         {
@@ -15998,7 +16453,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_3_2",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-24T21:52:11.007Z",
       "attributes": [
         {
@@ -16035,7 +16490,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_3_3",
-      "type": "feeTo",
+      "type": "feeTo [UniswapV2Factory]",
       "time": "2024-03-24T21:52:11.008Z",
       "attributes": [
         {
@@ -16072,7 +16527,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_3_4",
-      "type": "transfer",
+      "type": "transfer [EdenToken]",
       "time": "2024-03-24T21:52:11.009Z",
       "attributes": [
         {
@@ -16109,7 +16564,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_3_5",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2024-03-24T21:52:11.010Z",
       "attributes": [
         {
@@ -16146,7 +16601,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_3_6",
-      "type": "balanceOf",
+      "type": "balanceOf [EdenToken]",
       "time": "2024-03-24T21:52:11.011Z",
       "attributes": [
         {
@@ -16183,7 +16638,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_3_7",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-24T21:52:11.012Z",
       "attributes": [
         {
@@ -16220,7 +16675,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_3:response",
-      "type": "Respond to burn",
+      "type": "Respond to burn [UniswapV2Pair]",
       "time": "2024-03-24T21:52:11.013Z",
       "attributes": [
         {
@@ -16242,7 +16697,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:root",
+          "objectId": "subchoreographyInstance:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16253,7 +16708,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_4",
-      "type": "transfer",
+      "type": "transfer [EdenToken]",
       "time": "2024-03-24T21:52:11.014Z",
       "attributes": [
         {
@@ -16290,7 +16745,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_5:request",
-      "type": "Request withdraw",
+      "type": "Request withdraw [WETH9]",
       "time": "2024-03-24T21:52:11.015Z",
       "attributes": [
         {
@@ -16312,7 +16767,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:root",
+          "objectId": "subchoreographyInstance:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_5",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16323,7 +16778,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_5_1",
-      "type": "transfer",
+      "type": "transfer [UniswapV2Router02]",
       "time": "2024-03-24T21:52:11.016Z",
       "attributes": [
         {
@@ -16360,7 +16815,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_5:response",
-      "type": "Respond to withdraw",
+      "type": "Respond to withdraw [WETH9]",
       "time": "2024-03-24T21:52:11.017Z",
       "attributes": [
         {
@@ -16382,7 +16837,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:root",
+          "objectId": "subchoreographyInstance:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_5",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16393,7 +16848,7 @@
     },
     {
       "id": "e:315367cb761bf63d0e6678ee48e47c3a4669b78507af42a2b7354cab9249615e:0_6",
-      "type": "transfer",
+      "type": "transfer [0xa9d062b23650c9191673d9496d9e700d37dc55f5]",
       "time": "2024-03-24T21:52:11.018Z",
       "attributes": [
         {
@@ -16430,7 +16885,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:root:request",
-      "type": "Request swapExactTokensForETHSupportingFeeOnTransferTokens",
+      "type": "Request swapExactTokensForETHSupportingFeeOnTransferTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-25T03:50:35.000Z",
       "attributes": [
         {
@@ -16452,6 +16907,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a",
           "qualifier": "choreo:instance"
         }
@@ -16459,7 +16918,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1:request",
-      "type": "Request undefined",
+      "type": "Request undefined [UUPSProxy]",
       "time": "2024-03-25T03:50:35.001Z",
       "attributes": [
         {
@@ -16481,7 +16940,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:root",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16492,7 +16951,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1:request",
-      "type": "Request transferFrom",
+      "type": "Request transferFrom [EETH]",
       "time": "2024-03-25T03:50:35.002Z",
       "attributes": [
         {
@@ -16514,7 +16973,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16525,7 +16984,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1:request",
-      "type": "Request sharesForAmount",
+      "type": "Request sharesForAmount [UUPSProxy]",
       "time": "2024-03-25T03:50:35.003Z",
       "attributes": [
         {
@@ -16547,7 +17006,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16558,7 +17017,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1_1:request",
-      "type": "Request sharesForAmount",
+      "type": "Request sharesForAmount [LiquidityPool]",
       "time": "2024-03-25T03:50:35.004Z",
       "attributes": [
         {
@@ -16580,7 +17039,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16591,7 +17050,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1_1_1:request",
-      "type": "Request totalShares",
+      "type": "Request totalShares [UUPSProxy]",
       "time": "2024-03-25T03:50:35.005Z",
       "attributes": [
         {
@@ -16613,7 +17072,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16624,7 +17083,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1_1_1_1",
-      "type": "totalShares",
+      "type": "totalShares [EETH]",
       "time": "2024-03-25T03:50:35.006Z",
       "attributes": [
         {
@@ -16661,7 +17120,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1_1_1:response",
-      "type": "Respond to totalShares",
+      "type": "Respond to totalShares [UUPSProxy]",
       "time": "2024-03-25T03:50:35.007Z",
       "attributes": [
         {
@@ -16683,7 +17142,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16694,7 +17153,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1_1:response",
-      "type": "Respond to sharesForAmount",
+      "type": "Respond to sharesForAmount [LiquidityPool]",
       "time": "2024-03-25T03:50:35.008Z",
       "attributes": [
         {
@@ -16716,7 +17175,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16727,7 +17186,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1:response",
-      "type": "Respond to sharesForAmount",
+      "type": "Respond to sharesForAmount [UUPSProxy]",
       "time": "2024-03-25T03:50:35.009Z",
       "attributes": [
         {
@@ -16749,7 +17208,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16760,7 +17219,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1:response",
-      "type": "Respond to transferFrom",
+      "type": "Respond to transferFrom [EETH]",
       "time": "2024-03-25T03:50:35.010Z",
       "attributes": [
         {
@@ -16782,7 +17241,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16793,7 +17252,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [UUPSProxy]",
       "time": "2024-03-25T03:50:35.011Z",
       "attributes": [
         {
@@ -16815,7 +17274,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:root",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16826,7 +17285,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_2",
-      "type": "getReserves",
+      "type": "getReserves [UniswapV2Pair]",
       "time": "2024-03-25T03:50:35.012Z",
       "attributes": [
         {
@@ -16863,7 +17322,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3:request",
-      "type": "Request undefined",
+      "type": "Request undefined [UUPSProxy]",
       "time": "2024-03-25T03:50:35.013Z",
       "attributes": [
         {
@@ -16885,7 +17344,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:root",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16896,7 +17355,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1:request",
-      "type": "Request balanceOf",
+      "type": "Request balanceOf [EETH]",
       "time": "2024-03-25T03:50:35.014Z",
       "attributes": [
         {
@@ -16918,7 +17377,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16929,7 +17388,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1:request",
-      "type": "Request getTotalEtherClaimOf",
+      "type": "Request getTotalEtherClaimOf [UUPSProxy]",
       "time": "2024-03-25T03:50:35.015Z",
       "attributes": [
         {
@@ -16951,7 +17410,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16962,7 +17421,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1:request",
-      "type": "Request getTotalEtherClaimOf",
+      "type": "Request getTotalEtherClaimOf [LiquidityPool]",
       "time": "2024-03-25T03:50:35.016Z",
       "attributes": [
         {
@@ -16984,7 +17443,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -16995,7 +17454,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1_1:request",
-      "type": "Request totalShares",
+      "type": "Request totalShares [UUPSProxy]",
       "time": "2024-03-25T03:50:35.017Z",
       "attributes": [
         {
@@ -17017,7 +17476,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17028,7 +17487,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1_1_1",
-      "type": "totalShares",
+      "type": "totalShares [EETH]",
       "time": "2024-03-25T03:50:35.018Z",
       "attributes": [
         {
@@ -17065,7 +17524,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1_1:response",
-      "type": "Respond to totalShares",
+      "type": "Respond to totalShares [UUPSProxy]",
       "time": "2024-03-25T03:50:35.019Z",
       "attributes": [
         {
@@ -17087,7 +17546,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17098,7 +17557,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1_2:request",
-      "type": "Request shares",
+      "type": "Request shares [UUPSProxy]",
       "time": "2024-03-25T03:50:35.020Z",
       "attributes": [
         {
@@ -17120,7 +17579,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17131,7 +17590,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1_2_1",
-      "type": "shares",
+      "type": "shares [EETH]",
       "time": "2024-03-25T03:50:35.021Z",
       "attributes": [
         {
@@ -17168,7 +17627,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1_2:response",
-      "type": "Respond to shares",
+      "type": "Respond to shares [UUPSProxy]",
       "time": "2024-03-25T03:50:35.022Z",
       "attributes": [
         {
@@ -17190,7 +17649,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17201,7 +17660,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1:response",
-      "type": "Respond to getTotalEtherClaimOf",
+      "type": "Respond to getTotalEtherClaimOf [LiquidityPool]",
       "time": "2024-03-25T03:50:35.023Z",
       "attributes": [
         {
@@ -17223,7 +17682,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17234,7 +17693,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1:response",
-      "type": "Respond to getTotalEtherClaimOf",
+      "type": "Respond to getTotalEtherClaimOf [UUPSProxy]",
       "time": "2024-03-25T03:50:35.024Z",
       "attributes": [
         {
@@ -17256,7 +17715,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17267,7 +17726,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1:response",
-      "type": "Respond to balanceOf",
+      "type": "Respond to balanceOf [EETH]",
       "time": "2024-03-25T03:50:35.025Z",
       "attributes": [
         {
@@ -17289,7 +17748,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17300,7 +17759,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [UUPSProxy]",
       "time": "2024-03-25T03:50:35.026Z",
       "attributes": [
         {
@@ -17322,7 +17781,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:root",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17333,7 +17792,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4:request",
-      "type": "Request swap",
+      "type": "Request swap [UniswapV2Pair]",
       "time": "2024-03-25T03:50:35.027Z",
       "attributes": [
         {
@@ -17355,7 +17814,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:root",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17366,7 +17825,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_1",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2024-03-25T03:50:35.028Z",
       "attributes": [
         {
@@ -17403,7 +17862,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2:request",
-      "type": "Request undefined",
+      "type": "Request undefined [UUPSProxy]",
       "time": "2024-03-25T03:50:35.029Z",
       "attributes": [
         {
@@ -17425,7 +17884,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17436,7 +17895,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1:request",
-      "type": "Request balanceOf",
+      "type": "Request balanceOf [EETH]",
       "time": "2024-03-25T03:50:35.030Z",
       "attributes": [
         {
@@ -17458,7 +17917,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17469,7 +17928,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1:request",
-      "type": "Request getTotalEtherClaimOf",
+      "type": "Request getTotalEtherClaimOf [UUPSProxy]",
       "time": "2024-03-25T03:50:35.031Z",
       "attributes": [
         {
@@ -17491,7 +17950,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17502,7 +17961,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1:request",
-      "type": "Request getTotalEtherClaimOf",
+      "type": "Request getTotalEtherClaimOf [LiquidityPool]",
       "time": "2024-03-25T03:50:35.032Z",
       "attributes": [
         {
@@ -17524,7 +17983,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17535,7 +17994,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1_1:request",
-      "type": "Request totalShares",
+      "type": "Request totalShares [UUPSProxy]",
       "time": "2024-03-25T03:50:35.033Z",
       "attributes": [
         {
@@ -17557,7 +18016,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17568,7 +18027,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1_1_1",
-      "type": "totalShares",
+      "type": "totalShares [EETH]",
       "time": "2024-03-25T03:50:35.034Z",
       "attributes": [
         {
@@ -17605,7 +18064,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1_1:response",
-      "type": "Respond to totalShares",
+      "type": "Respond to totalShares [UUPSProxy]",
       "time": "2024-03-25T03:50:35.035Z",
       "attributes": [
         {
@@ -17627,7 +18086,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17638,7 +18097,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1_2:request",
-      "type": "Request shares",
+      "type": "Request shares [UUPSProxy]",
       "time": "2024-03-25T03:50:35.036Z",
       "attributes": [
         {
@@ -17660,7 +18119,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17671,7 +18130,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1_2_1",
-      "type": "shares",
+      "type": "shares [EETH]",
       "time": "2024-03-25T03:50:35.037Z",
       "attributes": [
         {
@@ -17708,7 +18167,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1_2:response",
-      "type": "Respond to shares",
+      "type": "Respond to shares [UUPSProxy]",
       "time": "2024-03-25T03:50:35.038Z",
       "attributes": [
         {
@@ -17730,7 +18189,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17741,7 +18200,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1:response",
-      "type": "Respond to getTotalEtherClaimOf",
+      "type": "Respond to getTotalEtherClaimOf [LiquidityPool]",
       "time": "2024-03-25T03:50:35.039Z",
       "attributes": [
         {
@@ -17763,7 +18222,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17774,7 +18233,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1:response",
-      "type": "Respond to getTotalEtherClaimOf",
+      "type": "Respond to getTotalEtherClaimOf [UUPSProxy]",
       "time": "2024-03-25T03:50:35.040Z",
       "attributes": [
         {
@@ -17796,7 +18255,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17807,7 +18266,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1:response",
-      "type": "Respond to balanceOf",
+      "type": "Respond to balanceOf [EETH]",
       "time": "2024-03-25T03:50:35.041Z",
       "attributes": [
         {
@@ -17829,7 +18288,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17840,7 +18299,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [UUPSProxy]",
       "time": "2024-03-25T03:50:35.042Z",
       "attributes": [
         {
@@ -17862,7 +18321,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17873,7 +18332,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4_3",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-25T03:50:35.043Z",
       "attributes": [
         {
@@ -17910,7 +18369,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4:response",
-      "type": "Respond to swap",
+      "type": "Respond to swap [UniswapV2Pair]",
       "time": "2024-03-25T03:50:35.044Z",
       "attributes": [
         {
@@ -17932,7 +18391,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:root",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_4",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -17943,7 +18402,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_5",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-25T03:50:35.045Z",
       "attributes": [
         {
@@ -17980,7 +18439,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_6:request",
-      "type": "Request withdraw",
+      "type": "Request withdraw [WETH9]",
       "time": "2024-03-25T03:50:35.046Z",
       "attributes": [
         {
@@ -18002,7 +18461,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:root",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_6",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -18013,7 +18472,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_6_1",
-      "type": "transfer",
+      "type": "transfer [UniswapV2Router02]",
       "time": "2024-03-25T03:50:35.047Z",
       "attributes": [
         {
@@ -18050,7 +18509,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_6:response",
-      "type": "Respond to withdraw",
+      "type": "Respond to withdraw [WETH9]",
       "time": "2024-03-25T03:50:35.048Z",
       "attributes": [
         {
@@ -18072,7 +18531,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:root",
+          "objectId": "subchoreographyInstance:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_6",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -18083,7 +18542,7 @@
     },
     {
       "id": "e:448f7e98faf8133adad3c58da26d0bdac6eed795f5fe8f59ebe01e26d0cfa81a:0_7",
-      "type": "transfer",
+      "type": "transfer [0xc570a59faa07fed02f16483825d8e8f55ff692a4]",
       "time": "2024-03-25T03:50:35.049Z",
       "attributes": [
         {
@@ -18120,7 +18579,7 @@
     },
     {
       "id": "e:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:root:request",
-      "type": "Request swapExactETHForTokensSupportingFeeOnTransferTokens",
+      "type": "Request swapExactETHForTokensSupportingFeeOnTransferTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-25T10:01:47.000Z",
       "attributes": [
         {
@@ -18142,6 +18601,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0xb4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251",
           "qualifier": "choreo:instance"
         }
@@ -18149,7 +18612,7 @@
     },
     {
       "id": "e:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:0_1",
-      "type": "deposit",
+      "type": "deposit [WETH9]",
       "time": "2024-03-25T10:01:47.001Z",
       "attributes": [
         {
@@ -18186,7 +18649,7 @@
     },
     {
       "id": "e:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:0_2",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2024-03-25T10:01:47.002Z",
       "attributes": [
         {
@@ -18223,7 +18686,7 @@
     },
     {
       "id": "e:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:0_3",
-      "type": "balanceOf",
+      "type": "balanceOf [OmniCat]",
       "time": "2024-03-25T10:01:47.003Z",
       "attributes": [
         {
@@ -18260,7 +18723,7 @@
     },
     {
       "id": "e:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:0_4",
-      "type": "getReserves",
+      "type": "getReserves [UniswapV2Pair]",
       "time": "2024-03-25T10:01:47.004Z",
       "attributes": [
         {
@@ -18297,7 +18760,7 @@
     },
     {
       "id": "e:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:0_5",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-25T10:01:47.005Z",
       "attributes": [
         {
@@ -18334,7 +18797,7 @@
     },
     {
       "id": "e:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:0_6:request",
-      "type": "Request swap",
+      "type": "Request swap [UniswapV2Pair]",
       "time": "2024-03-25T10:01:47.006Z",
       "attributes": [
         {
@@ -18356,7 +18819,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:root",
+          "objectId": "subchoreographyInstance:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:0_6",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -18367,7 +18830,7 @@
     },
     {
       "id": "e:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:0_6_1",
-      "type": "transfer",
+      "type": "transfer [OmniCat]",
       "time": "2024-03-25T10:01:47.007Z",
       "attributes": [
         {
@@ -18404,7 +18867,7 @@
     },
     {
       "id": "e:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:0_6_2",
-      "type": "balanceOf",
+      "type": "balanceOf [OmniCat]",
       "time": "2024-03-25T10:01:47.008Z",
       "attributes": [
         {
@@ -18441,7 +18904,7 @@
     },
     {
       "id": "e:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:0_6_3",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-25T10:01:47.009Z",
       "attributes": [
         {
@@ -18478,7 +18941,7 @@
     },
     {
       "id": "e:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:0_6:response",
-      "type": "Respond to swap",
+      "type": "Respond to swap [UniswapV2Pair]",
       "time": "2024-03-25T10:01:47.010Z",
       "attributes": [
         {
@@ -18500,7 +18963,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:root",
+          "objectId": "subchoreographyInstance:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:0_6",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -18511,7 +18974,7 @@
     },
     {
       "id": "e:b4ff41f63feb0be4f9ae23c80f5da982144faf49e8a581876510e07b968be251:0_7",
-      "type": "balanceOf",
+      "type": "balanceOf [OmniCat]",
       "time": "2024-03-25T10:01:47.011Z",
       "attributes": [
         {
@@ -18548,7 +19011,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:root:request",
-      "type": "Request removeLiquidityETHSupportingFeeOnTransferTokens",
+      "type": "Request removeLiquidityETHSupportingFeeOnTransferTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-25T12:07:59.000Z",
       "attributes": [
         {
@@ -18570,6 +19033,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388",
           "qualifier": "choreo:instance"
         }
@@ -18577,7 +19044,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_1",
-      "type": "transferFrom",
+      "type": "transferFrom [UniswapV2Pair]",
       "time": "2024-03-25T12:07:59.001Z",
       "attributes": [
         {
@@ -18614,7 +19081,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_2:request",
-      "type": "Request burn",
+      "type": "Request burn [UniswapV2Pair]",
       "time": "2024-03-25T12:07:59.002Z",
       "attributes": [
         {
@@ -18636,7 +19103,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:root",
+          "objectId": "subchoreographyInstance:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -18647,7 +19114,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_2_1",
-      "type": "balanceOf",
+      "type": "balanceOf [IlluviumERC20]",
       "time": "2024-03-25T12:07:59.003Z",
       "attributes": [
         {
@@ -18684,7 +19151,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_2_2",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-25T12:07:59.004Z",
       "attributes": [
         {
@@ -18721,7 +19188,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_2_3",
-      "type": "feeTo",
+      "type": "feeTo [UniswapV2Factory]",
       "time": "2024-03-25T12:07:59.005Z",
       "attributes": [
         {
@@ -18758,7 +19225,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_2_4",
-      "type": "transfer",
+      "type": "transfer [IlluviumERC20]",
       "time": "2024-03-25T12:07:59.006Z",
       "attributes": [
         {
@@ -18795,7 +19262,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_2_5",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2024-03-25T12:07:59.007Z",
       "attributes": [
         {
@@ -18832,7 +19299,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_2_6",
-      "type": "balanceOf",
+      "type": "balanceOf [IlluviumERC20]",
       "time": "2024-03-25T12:07:59.008Z",
       "attributes": [
         {
@@ -18869,7 +19336,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_2_7",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-25T12:07:59.009Z",
       "attributes": [
         {
@@ -18906,7 +19373,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_2:response",
-      "type": "Respond to burn",
+      "type": "Respond to burn [UniswapV2Pair]",
       "time": "2024-03-25T12:07:59.010Z",
       "attributes": [
         {
@@ -18928,7 +19395,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:root",
+          "objectId": "subchoreographyInstance:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -18939,7 +19406,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_3",
-      "type": "balanceOf",
+      "type": "balanceOf [IlluviumERC20]",
       "time": "2024-03-25T12:07:59.011Z",
       "attributes": [
         {
@@ -18976,7 +19443,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_4",
-      "type": "transfer",
+      "type": "transfer [IlluviumERC20]",
       "time": "2024-03-25T12:07:59.012Z",
       "attributes": [
         {
@@ -19013,7 +19480,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_5:request",
-      "type": "Request withdraw",
+      "type": "Request withdraw [WETH9]",
       "time": "2024-03-25T12:07:59.013Z",
       "attributes": [
         {
@@ -19035,7 +19502,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:root",
+          "objectId": "subchoreographyInstance:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_5",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -19046,7 +19513,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_5_1",
-      "type": "transfer",
+      "type": "transfer [UniswapV2Router02]",
       "time": "2024-03-25T12:07:59.014Z",
       "attributes": [
         {
@@ -19083,7 +19550,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_5:response",
-      "type": "Respond to withdraw",
+      "type": "Respond to withdraw [WETH9]",
       "time": "2024-03-25T12:07:59.015Z",
       "attributes": [
         {
@@ -19105,7 +19572,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:root",
+          "objectId": "subchoreographyInstance:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_5",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -19116,7 +19583,7 @@
     },
     {
       "id": "e:6992fa05f1cba6feea103bc2a7df62f05d0734bd3c4a76d077d82b712c7f6388:0_6",
-      "type": "transfer",
+      "type": "transfer [0x000000e923f2a967e390ebff6e64bd17004f2df1]",
       "time": "2024-03-25T12:07:59.016Z",
       "attributes": [
         {
@@ -19153,7 +19620,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:root:request",
-      "type": "Request swapExactTokensForTokensSupportingFeeOnTransferTokens",
+      "type": "Request swapExactTokensForTokensSupportingFeeOnTransferTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-25T15:49:23.000Z",
       "attributes": [
         {
@@ -19175,6 +19642,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50",
           "qualifier": "choreo:instance"
         }
@@ -19182,7 +19653,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_1",
-      "type": "transferFrom",
+      "type": "transferFrom [TetherToken]",
       "time": "2024-03-25T15:49:23.001Z",
       "attributes": [
         {
@@ -19219,7 +19690,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_2",
-      "type": "balanceOf",
+      "type": "balanceOf [YGGToken]",
       "time": "2024-03-25T15:49:23.002Z",
       "attributes": [
         {
@@ -19256,7 +19727,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_3",
-      "type": "getReserves",
+      "type": "getReserves [UniswapV2Pair]",
       "time": "2024-03-25T15:49:23.003Z",
       "attributes": [
         {
@@ -19293,7 +19764,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_4",
-      "type": "balanceOf",
+      "type": "balanceOf [TetherToken]",
       "time": "2024-03-25T15:49:23.004Z",
       "attributes": [
         {
@@ -19330,7 +19801,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_5:request",
-      "type": "Request swap",
+      "type": "Request swap [UniswapV2Pair]",
       "time": "2024-03-25T15:49:23.005Z",
       "attributes": [
         {
@@ -19352,7 +19823,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:root",
+          "objectId": "subchoreographyInstance:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_5",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -19363,7 +19834,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_5_1",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2024-03-25T15:49:23.006Z",
       "attributes": [
         {
@@ -19400,7 +19871,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_5_2",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-25T15:49:23.007Z",
       "attributes": [
         {
@@ -19437,7 +19908,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_5_3",
-      "type": "balanceOf",
+      "type": "balanceOf [TetherToken]",
       "time": "2024-03-25T15:49:23.008Z",
       "attributes": [
         {
@@ -19474,7 +19945,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_5:response",
-      "type": "Respond to swap",
+      "type": "Respond to swap [UniswapV2Pair]",
       "time": "2024-03-25T15:49:23.009Z",
       "attributes": [
         {
@@ -19496,7 +19967,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:root",
+          "objectId": "subchoreographyInstance:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_5",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -19507,7 +19978,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_6",
-      "type": "getReserves",
+      "type": "getReserves [UniswapV2Pair]",
       "time": "2024-03-25T15:49:23.010Z",
       "attributes": [
         {
@@ -19544,7 +20015,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_7",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-25T15:49:23.011Z",
       "attributes": [
         {
@@ -19581,7 +20052,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_8:request",
-      "type": "Request swap",
+      "type": "Request swap [UniswapV2Pair]",
       "time": "2024-03-25T15:49:23.012Z",
       "attributes": [
         {
@@ -19603,7 +20074,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:root",
+          "objectId": "subchoreographyInstance:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_8",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -19614,7 +20085,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_8_1",
-      "type": "transfer",
+      "type": "transfer [YGGToken]",
       "time": "2024-03-25T15:49:23.013Z",
       "attributes": [
         {
@@ -19651,7 +20122,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_8_2",
-      "type": "balanceOf",
+      "type": "balanceOf [YGGToken]",
       "time": "2024-03-25T15:49:23.014Z",
       "attributes": [
         {
@@ -19688,7 +20159,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_8_3",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-25T15:49:23.015Z",
       "attributes": [
         {
@@ -19725,7 +20196,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_8:response",
-      "type": "Respond to swap",
+      "type": "Respond to swap [UniswapV2Pair]",
       "time": "2024-03-25T15:49:23.016Z",
       "attributes": [
         {
@@ -19747,7 +20218,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:root",
+          "objectId": "subchoreographyInstance:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_8",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -19758,7 +20229,7 @@
     },
     {
       "id": "e:0307cfb827516ae503f1d20b7602f2c5280ebd41a2163600797f93aec66baf50:0_9",
-      "type": "balanceOf",
+      "type": "balanceOf [YGGToken]",
       "time": "2024-03-25T15:49:23.017Z",
       "attributes": [
         {
@@ -19795,7 +20266,7 @@
     },
     {
       "id": "e:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:root:request",
-      "type": "Request removeLiquidity",
+      "type": "Request removeLiquidity [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-26T06:39:47.000Z",
       "attributes": [
         {
@@ -19817,6 +20288,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0xfe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75",
           "qualifier": "choreo:instance"
         }
@@ -19824,7 +20299,7 @@
     },
     {
       "id": "e:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:0_1",
-      "type": "transferFrom",
+      "type": "transferFrom [UniswapV2Pair]",
       "time": "2024-03-26T06:39:47.001Z",
       "attributes": [
         {
@@ -19861,7 +20336,7 @@
     },
     {
       "id": "e:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:0_2:request",
-      "type": "Request burn",
+      "type": "Request burn [UniswapV2Pair]",
       "time": "2024-03-26T06:39:47.002Z",
       "attributes": [
         {
@@ -19883,7 +20358,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:root",
+          "objectId": "subchoreographyInstance:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -19894,7 +20369,7 @@
     },
     {
       "id": "e:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:0_2_1",
-      "type": "balanceOf",
+      "type": "balanceOf [Lon]",
       "time": "2024-03-26T06:39:47.003Z",
       "attributes": [
         {
@@ -19931,7 +20406,7 @@
     },
     {
       "id": "e:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:0_2_2",
-      "type": "balanceOf",
+      "type": "balanceOf [TetherToken]",
       "time": "2024-03-26T06:39:47.004Z",
       "attributes": [
         {
@@ -19968,7 +20443,7 @@
     },
     {
       "id": "e:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:0_2_3",
-      "type": "feeTo",
+      "type": "feeTo [UniswapV2Factory]",
       "time": "2024-03-26T06:39:47.005Z",
       "attributes": [
         {
@@ -20005,7 +20480,7 @@
     },
     {
       "id": "e:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:0_2_4",
-      "type": "transfer",
+      "type": "transfer [Lon]",
       "time": "2024-03-26T06:39:47.006Z",
       "attributes": [
         {
@@ -20042,7 +20517,7 @@
     },
     {
       "id": "e:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:0_2_5",
-      "type": "transfer",
+      "type": "transfer [TetherToken]",
       "time": "2024-03-26T06:39:47.007Z",
       "attributes": [
         {
@@ -20079,7 +20554,7 @@
     },
     {
       "id": "e:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:0_2_6",
-      "type": "balanceOf",
+      "type": "balanceOf [Lon]",
       "time": "2024-03-26T06:39:47.008Z",
       "attributes": [
         {
@@ -20116,7 +20591,7 @@
     },
     {
       "id": "e:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:0_2_7",
-      "type": "balanceOf",
+      "type": "balanceOf [TetherToken]",
       "time": "2024-03-26T06:39:47.009Z",
       "attributes": [
         {
@@ -20153,7 +20628,7 @@
     },
     {
       "id": "e:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:0_2:response",
-      "type": "Respond to burn",
+      "type": "Respond to burn [UniswapV2Pair]",
       "time": "2024-03-26T06:39:47.010Z",
       "attributes": [
         {
@@ -20175,7 +20650,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:root",
+          "objectId": "subchoreographyInstance:fe8a1ce218d94f5ba3fe1f131a035aff4e5e6ca6a677e57acdb53c17de063f75:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -20186,7 +20661,7 @@
     },
     {
       "id": "e:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:root:request",
-      "type": "Request swapTokensForExactETH",
+      "type": "Request swapTokensForExactETH [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-28T16:42:47.000Z",
       "attributes": [
         {
@@ -20208,6 +20683,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d",
           "qualifier": "choreo:instance"
         }
@@ -20215,7 +20694,7 @@
     },
     {
       "id": "e:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_1",
-      "type": "getReserves",
+      "type": "getReserves [UniswapV2Pair]",
       "time": "2024-03-28T16:42:47.001Z",
       "attributes": [
         {
@@ -20252,7 +20731,7 @@
     },
     {
       "id": "e:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_2",
-      "type": "transferFrom",
+      "type": "transferFrom [IlluviumERC20]",
       "time": "2024-03-28T16:42:47.002Z",
       "attributes": [
         {
@@ -20289,7 +20768,7 @@
     },
     {
       "id": "e:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_3:request",
-      "type": "Request swap",
+      "type": "Request swap [UniswapV2Pair]",
       "time": "2024-03-28T16:42:47.003Z",
       "attributes": [
         {
@@ -20311,7 +20790,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:root",
+          "objectId": "subchoreographyInstance:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -20322,7 +20801,7 @@
     },
     {
       "id": "e:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_3_1",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2024-03-28T16:42:47.004Z",
       "attributes": [
         {
@@ -20359,7 +20838,7 @@
     },
     {
       "id": "e:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_3_2",
-      "type": "balanceOf",
+      "type": "balanceOf [IlluviumERC20]",
       "time": "2024-03-28T16:42:47.005Z",
       "attributes": [
         {
@@ -20396,7 +20875,7 @@
     },
     {
       "id": "e:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_3_3",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-28T16:42:47.006Z",
       "attributes": [
         {
@@ -20433,7 +20912,7 @@
     },
     {
       "id": "e:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_3:response",
-      "type": "Respond to swap",
+      "type": "Respond to swap [UniswapV2Pair]",
       "time": "2024-03-28T16:42:47.007Z",
       "attributes": [
         {
@@ -20455,7 +20934,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:root",
+          "objectId": "subchoreographyInstance:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -20466,7 +20945,7 @@
     },
     {
       "id": "e:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_4:request",
-      "type": "Request withdraw",
+      "type": "Request withdraw [WETH9]",
       "time": "2024-03-28T16:42:47.008Z",
       "attributes": [
         {
@@ -20488,7 +20967,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:root",
+          "objectId": "subchoreographyInstance:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_4",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -20499,7 +20978,7 @@
     },
     {
       "id": "e:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_4_1",
-      "type": "transfer",
+      "type": "transfer [UniswapV2Router02]",
       "time": "2024-03-28T16:42:47.009Z",
       "attributes": [
         {
@@ -20536,7 +21015,7 @@
     },
     {
       "id": "e:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_4:response",
-      "type": "Respond to withdraw",
+      "type": "Respond to withdraw [WETH9]",
       "time": "2024-03-28T16:42:47.010Z",
       "attributes": [
         {
@@ -20558,7 +21037,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:root",
+          "objectId": "subchoreographyInstance:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_4",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -20569,7 +21048,7 @@
     },
     {
       "id": "e:3dd4d9d0777a96cdb598782b8d5585c1e8aad4ebcbb3066e9cfc899c6532fe9d:0_5",
-      "type": "transfer",
+      "type": "transfer [0xb20806c111454533ff98303f20f94255d348bd2c]",
       "time": "2024-03-28T16:42:47.011Z",
       "attributes": [
         {
@@ -20606,7 +21085,7 @@
     },
     {
       "id": "e:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:root:request",
-      "type": "Request addLiquidity",
+      "type": "Request addLiquidity [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-03-31T20:22:47.000Z",
       "attributes": [
         {
@@ -20628,6 +21107,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1",
           "qualifier": "choreo:instance"
         }
@@ -20635,7 +21118,7 @@
     },
     {
       "id": "e:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:0_1",
-      "type": "getPair",
+      "type": "getPair [UniswapV2Factory]",
       "time": "2024-03-31T20:22:47.001Z",
       "attributes": [
         {
@@ -20672,7 +21155,7 @@
     },
     {
       "id": "e:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:0_2",
-      "type": "getReserves",
+      "type": "getReserves [UniswapV2Pair]",
       "time": "2024-03-31T20:22:47.002Z",
       "attributes": [
         {
@@ -20709,7 +21192,7 @@
     },
     {
       "id": "e:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:0_3",
-      "type": "transferFrom",
+      "type": "transferFrom [IlluviumERC20]",
       "time": "2024-03-31T20:22:47.003Z",
       "attributes": [
         {
@@ -20746,7 +21229,7 @@
     },
     {
       "id": "e:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:0_4",
-      "type": "transferFrom",
+      "type": "transferFrom [WETH9]",
       "time": "2024-03-31T20:22:47.004Z",
       "attributes": [
         {
@@ -20783,7 +21266,7 @@
     },
     {
       "id": "e:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:0_5:request",
-      "type": "Request mint",
+      "type": "Request mint [UniswapV2Pair]",
       "time": "2024-03-31T20:22:47.005Z",
       "attributes": [
         {
@@ -20805,7 +21288,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:root",
+          "objectId": "subchoreographyInstance:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:0_5",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -20816,7 +21299,7 @@
     },
     {
       "id": "e:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:0_5_1",
-      "type": "balanceOf",
+      "type": "balanceOf [IlluviumERC20]",
       "time": "2024-03-31T20:22:47.006Z",
       "attributes": [
         {
@@ -20853,7 +21336,7 @@
     },
     {
       "id": "e:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:0_5_2",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-03-31T20:22:47.007Z",
       "attributes": [
         {
@@ -20890,7 +21373,7 @@
     },
     {
       "id": "e:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:0_5_3",
-      "type": "feeTo",
+      "type": "feeTo [UniswapV2Factory]",
       "time": "2024-03-31T20:22:47.008Z",
       "attributes": [
         {
@@ -20927,7 +21410,7 @@
     },
     {
       "id": "e:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:0_5:response",
-      "type": "Respond to mint",
+      "type": "Respond to mint [UniswapV2Pair]",
       "time": "2024-03-31T20:22:47.009Z",
       "attributes": [
         {
@@ -20949,7 +21432,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:root",
+          "objectId": "subchoreographyInstance:8aafd619a09d3ab7af4aa463215954585e15b1f44843eac5855c803421a874a1:0_5",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -20960,7 +21443,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:root:request",
-      "type": "Request removeLiquidityETHWithPermitSupportingFeeOnTransferTokens",
+      "type": "Request removeLiquidityETHWithPermitSupportingFeeOnTransferTokens [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-05-25T10:43:35.000Z",
       "attributes": [
         {
@@ -20982,6 +21465,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257",
           "qualifier": "choreo:instance"
         }
@@ -20989,7 +21476,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_1:request",
-      "type": "Request permit",
+      "type": "Request permit [UniswapV2Pair]",
       "time": "2024-05-25T10:43:35.001Z",
       "attributes": [
         {
@@ -21011,7 +21498,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:root",
+          "objectId": "subchoreographyInstance:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -21022,7 +21509,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_1_1",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000001]",
       "time": "2024-05-25T10:43:35.002Z",
       "attributes": [
         {
@@ -21059,7 +21546,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_1:response",
-      "type": "Respond to permit",
+      "type": "Respond to permit [UniswapV2Pair]",
       "time": "2024-05-25T10:43:35.003Z",
       "attributes": [
         {
@@ -21081,7 +21568,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:root",
+          "objectId": "subchoreographyInstance:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -21092,7 +21579,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_2",
-      "type": "transferFrom",
+      "type": "transferFrom [UniswapV2Pair]",
       "time": "2024-05-25T10:43:35.004Z",
       "attributes": [
         {
@@ -21129,7 +21616,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_3:request",
-      "type": "Request burn",
+      "type": "Request burn [UniswapV2Pair]",
       "time": "2024-05-25T10:43:35.005Z",
       "attributes": [
         {
@@ -21151,7 +21638,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:root",
+          "objectId": "subchoreographyInstance:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -21162,7 +21649,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_3_1",
-      "type": "balanceOf",
+      "type": "balanceOf [IlluviumERC20]",
       "time": "2024-05-25T10:43:35.006Z",
       "attributes": [
         {
@@ -21199,7 +21686,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_3_2",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-05-25T10:43:35.007Z",
       "attributes": [
         {
@@ -21236,7 +21723,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_3_3",
-      "type": "feeTo",
+      "type": "feeTo [UniswapV2Factory]",
       "time": "2024-05-25T10:43:35.008Z",
       "attributes": [
         {
@@ -21273,7 +21760,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_3_4",
-      "type": "transfer",
+      "type": "transfer [IlluviumERC20]",
       "time": "2024-05-25T10:43:35.009Z",
       "attributes": [
         {
@@ -21310,7 +21797,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_3_5",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2024-05-25T10:43:35.010Z",
       "attributes": [
         {
@@ -21347,7 +21834,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_3_6",
-      "type": "balanceOf",
+      "type": "balanceOf [IlluviumERC20]",
       "time": "2024-05-25T10:43:35.011Z",
       "attributes": [
         {
@@ -21384,7 +21871,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_3_7",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2024-05-25T10:43:35.012Z",
       "attributes": [
         {
@@ -21421,7 +21908,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_3:response",
-      "type": "Respond to burn",
+      "type": "Respond to burn [UniswapV2Pair]",
       "time": "2024-05-25T10:43:35.013Z",
       "attributes": [
         {
@@ -21443,7 +21930,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:root",
+          "objectId": "subchoreographyInstance:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -21454,7 +21941,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_4",
-      "type": "balanceOf",
+      "type": "balanceOf [IlluviumERC20]",
       "time": "2024-05-25T10:43:35.014Z",
       "attributes": [
         {
@@ -21491,7 +21978,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_5",
-      "type": "transfer",
+      "type": "transfer [IlluviumERC20]",
       "time": "2024-05-25T10:43:35.015Z",
       "attributes": [
         {
@@ -21528,7 +22015,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_6:request",
-      "type": "Request withdraw",
+      "type": "Request withdraw [WETH9]",
       "time": "2024-05-25T10:43:35.016Z",
       "attributes": [
         {
@@ -21550,7 +22037,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:root",
+          "objectId": "subchoreographyInstance:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_6",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -21561,7 +22048,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_6_1",
-      "type": "transfer",
+      "type": "transfer [UniswapV2Router02]",
       "time": "2024-05-25T10:43:35.017Z",
       "attributes": [
         {
@@ -21598,7 +22085,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_6:response",
-      "type": "Respond to withdraw",
+      "type": "Respond to withdraw [WETH9]",
       "time": "2024-05-25T10:43:35.018Z",
       "attributes": [
         {
@@ -21620,7 +22107,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:root",
+          "objectId": "subchoreographyInstance:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_6",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -21631,7 +22118,7 @@
     },
     {
       "id": "e:4070b96b2cccdd6869b2347d370c0e7e3d48d67de3e6a22e448d3aa67096d257:0_7",
-      "type": "transfer",
+      "type": "transfer [0x5470f579a2936290603a2ef038b7a04846c11a47]",
       "time": "2024-05-25T10:43:35.019Z",
       "attributes": [
         {
@@ -21668,7 +22155,7 @@
     },
     {
       "id": "e:4483a3e20c1db32a16bcb2f071f248cb474589fbdb163b25994efeb5d0ca691a:root",
-      "type": "Tranfer",
+      "type": "Tranfer [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2024-08-27T04:59:23.000Z",
       "attributes": [
         {
@@ -21697,7 +22184,7 @@
     },
     {
       "id": "e:c7adf99e6d28604a089c2410142cd53e40c8d1bd3ca87cf3893497b34f0dcf3a:root:request",
-      "type": "Request getAmountsOut",
+      "type": "Request getAmountsOut [0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f]",
       "time": "2025-02-26T03:04:47.000Z",
       "attributes": [
         {
@@ -21719,6 +22206,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:c7adf99e6d28604a089c2410142cd53e40c8d1bd3ca87cf3893497b34f0dcf3a:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0xc7adf99e6d28604a089c2410142cd53e40c8d1bd3ca87cf3893497b34f0dcf3a",
           "qualifier": "choreo:instance"
         }
@@ -21726,7 +22217,7 @@
     },
     {
       "id": "e:c7adf99e6d28604a089c2410142cd53e40c8d1bd3ca87cf3893497b34f0dcf3a:0_1",
-      "type": "getReserves",
+      "type": "getReserves [UniswapV2Pair]",
       "time": "2025-02-26T03:04:47.001Z",
       "attributes": [
         {

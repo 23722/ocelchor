@@ -58,7 +58,7 @@
   ],
   "eventTypes": [
     {
-      "name": "Contract source code not verified",
+      "name": "Contract source code not verified [0x0000000000000000000000000000000000000002]",
       "attributes": [
         {
           "name": "trace_order",
@@ -67,7 +67,7 @@
       ]
     },
     {
-      "name": "Request deposit",
+      "name": "Request deposit [0x00000000219ab540356cbb839cbe05303d7705fa]",
       "attributes": [
         {
           "name": "trace_order",
@@ -424,7 +424,7 @@
   "events": [
     {
       "id": "e:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root:request",
-      "type": "Request deposit",
+      "type": "Request deposit [0x00000000219ab540356cbb839cbe05303d7705fa]",
       "time": "2025-01-27T08:09:59.000Z",
       "attributes": [
         {
@@ -446,6 +446,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b",
           "qualifier": "choreo:instance"
         }
@@ -453,7 +457,7 @@
     },
     {
       "id": "e:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:0_1",
-      "type": "Contract source code not verified",
+      "type": "Contract source code not verified [0x0000000000000000000000000000000000000002]",
       "time": "2025-01-27T08:09:59.001Z",
       "attributes": [
         {
@@ -490,7 +494,7 @@
     },
     {
       "id": "e:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:0_2",
-      "type": "Contract source code not verified",
+      "type": "Contract source code not verified [0x0000000000000000000000000000000000000002]",
       "time": "2025-01-27T08:09:59.002Z",
       "attributes": [
         {
@@ -527,7 +531,7 @@
     },
     {
       "id": "e:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:0_3",
-      "type": "Contract source code not verified",
+      "type": "Contract source code not verified [0x0000000000000000000000000000000000000002]",
       "time": "2025-01-27T08:09:59.003Z",
       "attributes": [
         {
@@ -564,7 +568,7 @@
     },
     {
       "id": "e:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:0_4",
-      "type": "Contract source code not verified",
+      "type": "Contract source code not verified [0x0000000000000000000000000000000000000002]",
       "time": "2025-01-27T08:09:59.004Z",
       "attributes": [
         {
@@ -601,7 +605,7 @@
     },
     {
       "id": "e:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:0_5",
-      "type": "Contract source code not verified",
+      "type": "Contract source code not verified [0x0000000000000000000000000000000000000002]",
       "time": "2025-01-27T08:09:59.005Z",
       "attributes": [
         {
@@ -638,7 +642,7 @@
     },
     {
       "id": "e:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:0_6",
-      "type": "Contract source code not verified",
+      "type": "Contract source code not verified [0x0000000000000000000000000000000000000002]",
       "time": "2025-01-27T08:09:59.006Z",
       "attributes": [
         {
@@ -675,7 +679,7 @@
     },
     {
       "id": "e:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:0_7",
-      "type": "Contract source code not verified",
+      "type": "Contract source code not verified [0x0000000000000000000000000000000000000002]",
       "time": "2025-01-27T08:09:59.007Z",
       "attributes": [
         {
@@ -712,7 +716,7 @@
     },
     {
       "id": "e:9a16d78d2302af8f513f6256aa6da13efbf1c434b2b8af9d6b1f8f8a0af0e56b:0_8",
-      "type": "Contract source code not verified",
+      "type": "Contract source code not verified [0x0000000000000000000000000000000000000002]",
       "time": "2025-01-27T08:09:59.008Z",
       "attributes": [
         {

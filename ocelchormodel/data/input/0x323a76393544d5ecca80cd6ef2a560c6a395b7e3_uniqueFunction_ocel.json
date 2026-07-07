@@ -366,7 +366,7 @@
   ],
   "eventTypes": [
     {
-      "name": "COUNTING_MODE",
+      "name": "COUNTING_MODE [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "attributes": [
         {
           "name": "trace_order",
@@ -375,7 +375,7 @@
       ]
     },
     {
-      "name": "Request castVote",
+      "name": "Request castVote [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "attributes": [
         {
           "name": "trace_order",
@@ -384,7 +384,7 @@
       ]
     },
     {
-      "name": "Request castVoteWithReason",
+      "name": "Request castVoteWithReason [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "attributes": [
         {
           "name": "trace_order",
@@ -393,7 +393,7 @@
       ]
     },
     {
-      "name": "Request execute",
+      "name": "Request execute [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "attributes": [
         {
           "name": "trace_order",
@@ -402,7 +402,7 @@
       ]
     },
     {
-      "name": "Request executeBatch",
+      "name": "Request executeBatch [TimelockController]",
       "attributes": [
         {
           "name": "trace_order",
@@ -411,7 +411,7 @@
       ]
     },
     {
-      "name": "Request propose",
+      "name": "Request propose [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "attributes": [
         {
           "name": "trace_order",
@@ -420,7 +420,7 @@
       ]
     },
     {
-      "name": "Request queue",
+      "name": "Request queue [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "attributes": [
         {
           "name": "trace_order",
@@ -429,7 +429,7 @@
       ]
     },
     {
-      "name": "Respond to executeBatch",
+      "name": "Respond to executeBatch [TimelockController]",
       "attributes": [
         {
           "name": "trace_order",
@@ -438,7 +438,7 @@
       ]
     },
     {
-      "name": "approve",
+      "name": "approve [ENSToken]",
       "attributes": [
         {
           "name": "trace_order",
@@ -447,7 +447,7 @@
       ]
     },
     {
-      "name": "castVoteBySig",
+      "name": "castVoteBySig [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "attributes": [
         {
           "name": "trace_order",
@@ -456,7 +456,7 @@
       ]
     },
     {
-      "name": "getMinDelay",
+      "name": "getMinDelay [TimelockController]",
       "attributes": [
         {
           "name": "trace_order",
@@ -465,7 +465,7 @@
       ]
     },
     {
-      "name": "getPastTotalSupply",
+      "name": "getPastTotalSupply [ENSToken]",
       "attributes": [
         {
           "name": "trace_order",
@@ -474,7 +474,7 @@
       ]
     },
     {
-      "name": "getPastVotes",
+      "name": "getPastVotes [ENSToken]",
       "attributes": [
         {
           "name": "trace_order",
@@ -483,7 +483,7 @@
       ]
     },
     {
-      "name": "hashOperationBatch",
+      "name": "hashOperationBatch [TimelockController]",
       "attributes": [
         {
           "name": "trace_order",
@@ -492,7 +492,7 @@
       ]
     },
     {
-      "name": "isOperationDone",
+      "name": "isOperationDone [TimelockController]",
       "attributes": [
         {
           "name": "trace_order",
@@ -501,7 +501,7 @@
       ]
     },
     {
-      "name": "scheduleBatch",
+      "name": "scheduleBatch [TimelockController]",
       "attributes": [
         {
           "name": "trace_order",
@@ -510,7 +510,7 @@
       ]
     },
     {
-      "name": "votingDelay",
+      "name": "votingDelay [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "attributes": [
         {
           "name": "trace_order",
@@ -519,7 +519,7 @@
       ]
     },
     {
-      "name": "votingPeriod",
+      "name": "votingPeriod [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "attributes": [
         {
           "name": "trace_order",
@@ -1468,7 +1468,7 @@
   "events": [
     {
       "id": "e:41d1495f2c642821e6ead76c689ba9c6e8bfba91e6149a3c2eaa7d60e379b357:root:request",
-      "type": "Request propose",
+      "type": "Request propose [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "time": "2022-01-05T01:32:05.000Z",
       "attributes": [
         {
@@ -1490,6 +1490,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:41d1495f2c642821e6ead76c689ba9c6e8bfba91e6149a3c2eaa7d60e379b357:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x41d1495f2c642821e6ead76c689ba9c6e8bfba91e6149a3c2eaa7d60e379b357",
           "qualifier": "choreo:instance"
         }
@@ -1497,7 +1501,7 @@
     },
     {
       "id": "e:41d1495f2c642821e6ead76c689ba9c6e8bfba91e6149a3c2eaa7d60e379b357:0_1",
-      "type": "getPastVotes",
+      "type": "getPastVotes [ENSToken]",
       "time": "2022-01-05T01:32:05.001Z",
       "attributes": [
         {
@@ -1534,7 +1538,7 @@
     },
     {
       "id": "e:af5fd531ad3596b996ed21503ca9e0db4e694e00ee7ac6c82d02e93ca8b8ddd3:root:request",
-      "type": "Request castVoteWithReason",
+      "type": "Request castVoteWithReason [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "time": "2022-01-05T01:40:25.000Z",
       "attributes": [
         {
@@ -1556,6 +1560,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:af5fd531ad3596b996ed21503ca9e0db4e694e00ee7ac6c82d02e93ca8b8ddd3:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0xaf5fd531ad3596b996ed21503ca9e0db4e694e00ee7ac6c82d02e93ca8b8ddd3",
           "qualifier": "choreo:instance"
         }
@@ -1563,7 +1571,7 @@
     },
     {
       "id": "e:af5fd531ad3596b996ed21503ca9e0db4e694e00ee7ac6c82d02e93ca8b8ddd3:0_1",
-      "type": "getPastVotes",
+      "type": "getPastVotes [ENSToken]",
       "time": "2022-01-05T01:40:25.001Z",
       "attributes": [
         {
@@ -1600,7 +1608,7 @@
     },
     {
       "id": "e:b5b4ff8119a8ce6773ca49d185fcf442bc61b56873175cfdfd936719ab82c657:root:request",
-      "type": "Request castVote",
+      "type": "Request castVote [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "time": "2022-01-05T01:44:44.000Z",
       "attributes": [
         {
@@ -1622,6 +1630,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:b5b4ff8119a8ce6773ca49d185fcf442bc61b56873175cfdfd936719ab82c657:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0xb5b4ff8119a8ce6773ca49d185fcf442bc61b56873175cfdfd936719ab82c657",
           "qualifier": "choreo:instance"
         }
@@ -1629,7 +1641,7 @@
     },
     {
       "id": "e:b5b4ff8119a8ce6773ca49d185fcf442bc61b56873175cfdfd936719ab82c657:0_1",
-      "type": "getPastVotes",
+      "type": "getPastVotes [ENSToken]",
       "time": "2022-01-05T01:44:44.001Z",
       "attributes": [
         {
@@ -1666,7 +1678,7 @@
     },
     {
       "id": "e:c4b91a1f892e4bd4d4f8833aed2dd8ba7808d5602f65d540664234991ce6a24c:root:request",
-      "type": "Request queue",
+      "type": "Request queue [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "time": "2022-01-12T20:11:25.000Z",
       "attributes": [
         {
@@ -1688,6 +1700,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:c4b91a1f892e4bd4d4f8833aed2dd8ba7808d5602f65d540664234991ce6a24c:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0xc4b91a1f892e4bd4d4f8833aed2dd8ba7808d5602f65d540664234991ce6a24c",
           "qualifier": "choreo:instance"
         }
@@ -1695,7 +1711,7 @@
     },
     {
       "id": "e:c4b91a1f892e4bd4d4f8833aed2dd8ba7808d5602f65d540664234991ce6a24c:0_1",
-      "type": "getPastTotalSupply",
+      "type": "getPastTotalSupply [ENSToken]",
       "time": "2022-01-12T20:11:25.001Z",
       "attributes": [
         {
@@ -1732,7 +1748,7 @@
     },
     {
       "id": "e:c4b91a1f892e4bd4d4f8833aed2dd8ba7808d5602f65d540664234991ce6a24c:0_2",
-      "type": "getMinDelay",
+      "type": "getMinDelay [TimelockController]",
       "time": "2022-01-12T20:11:25.002Z",
       "attributes": [
         {
@@ -1769,7 +1785,7 @@
     },
     {
       "id": "e:c4b91a1f892e4bd4d4f8833aed2dd8ba7808d5602f65d540664234991ce6a24c:0_3",
-      "type": "hashOperationBatch",
+      "type": "hashOperationBatch [TimelockController]",
       "time": "2022-01-12T20:11:25.003Z",
       "attributes": [
         {
@@ -1806,7 +1822,7 @@
     },
     {
       "id": "e:c4b91a1f892e4bd4d4f8833aed2dd8ba7808d5602f65d540664234991ce6a24c:0_4",
-      "type": "scheduleBatch",
+      "type": "scheduleBatch [TimelockController]",
       "time": "2022-01-12T20:11:25.004Z",
       "attributes": [
         {
@@ -1843,7 +1859,7 @@
     },
     {
       "id": "e:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:root:request",
-      "type": "Request execute",
+      "type": "Request execute [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "time": "2022-01-14T20:14:52.000Z",
       "attributes": [
         {
@@ -1865,6 +1881,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0xe0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e",
           "qualifier": "choreo:instance"
         }
@@ -1872,7 +1892,7 @@
     },
     {
       "id": "e:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:0_1",
-      "type": "getPastTotalSupply",
+      "type": "getPastTotalSupply [ENSToken]",
       "time": "2022-01-14T20:14:52.001Z",
       "attributes": [
         {
@@ -1909,7 +1929,7 @@
     },
     {
       "id": "e:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:0_2",
-      "type": "isOperationDone",
+      "type": "isOperationDone [TimelockController]",
       "time": "2022-01-14T20:14:52.002Z",
       "attributes": [
         {
@@ -1946,7 +1966,7 @@
     },
     {
       "id": "e:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:0_3:request",
-      "type": "Request executeBatch",
+      "type": "Request executeBatch [TimelockController]",
       "time": "2022-01-14T20:14:52.003Z",
       "attributes": [
         {
@@ -1968,7 +1988,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:root",
+          "objectId": "subchoreographyInstance:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -1979,7 +1999,7 @@
     },
     {
       "id": "e:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:0_3_1",
-      "type": "approve",
+      "type": "approve [ENSToken]",
       "time": "2022-01-14T20:14:52.004Z",
       "attributes": [
         {
@@ -2016,7 +2036,7 @@
     },
     {
       "id": "e:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:0_3:response",
-      "type": "Respond to executeBatch",
+      "type": "Respond to executeBatch [TimelockController]",
       "time": "2022-01-14T20:14:52.005Z",
       "attributes": [
         {
@@ -2038,7 +2058,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:root",
+          "objectId": "subchoreographyInstance:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -2049,7 +2069,7 @@
     },
     {
       "id": "e:90bcb52c9c9542cc9016d69b299977cf590d0a8ee3788d2b5f72e9671fe77208:root",
-      "type": "COUNTING_MODE",
+      "type": "COUNTING_MODE [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "time": "2022-02-12T17:10:47.000Z",
       "attributes": [
         {
@@ -2078,7 +2098,7 @@
     },
     {
       "id": "e:bd8c4f861ad2201f3e57d53ca13a600d14bd0c462f769a90519194d4e2d23a3d:root",
-      "type": "votingDelay",
+      "type": "votingDelay [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "time": "2022-02-12T17:15:40.000Z",
       "attributes": [
         {
@@ -2107,7 +2127,7 @@
     },
     {
       "id": "e:01bd9ae905d5739b1f4cb2f861aed73472de38821d57e474fb250c77a0cd39f6:root",
-      "type": "votingPeriod",
+      "type": "votingPeriod [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "time": "2022-02-12T17:17:51.000Z",
       "attributes": [
         {
@@ -2136,7 +2156,7 @@
     },
     {
       "id": "e:f020f22c411810c95b92b8abb774779c4e6f7fe69465a23594b876ac84c2b50d:root",
-      "type": "castVoteBySig",
+      "type": "castVoteBySig [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
       "time": "2024-04-05T00:10:35.000Z",
       "attributes": [
         {

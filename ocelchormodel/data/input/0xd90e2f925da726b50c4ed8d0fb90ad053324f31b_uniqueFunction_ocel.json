@@ -327,7 +327,7 @@
   ],
   "eventTypes": [
     {
-      "name": "MiMCSponge",
+      "name": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "attributes": [
         {
           "name": "trace_order",
@@ -336,7 +336,7 @@
       ]
     },
     {
-      "name": "Request addBurnRewards",
+      "name": "Request addBurnRewards [TornadoStakingRewards]",
       "attributes": [
         {
           "name": "trace_order",
@@ -345,7 +345,7 @@
       ]
     },
     {
-      "name": "Request burn",
+      "name": "Request burn [RelayerRegistry]",
       "attributes": [
         {
           "name": "trace_order",
@@ -354,7 +354,7 @@
       ]
     },
     {
-      "name": "Request deposit",
+      "name": "Request deposit [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
       "attributes": [
         {
           "name": "trace_order",
@@ -363,7 +363,7 @@
       ]
     },
     {
-      "name": "Request instanceFeeWithUpdate",
+      "name": "Request deposit [TornadoCash_eth]",
       "attributes": [
         {
           "name": "trace_order",
@@ -372,7 +372,7 @@
       ]
     },
     {
-      "name": "Request instances",
+      "name": "Request instanceFeeWithUpdate [FeeManager]",
       "attributes": [
         {
           "name": "trace_order",
@@ -381,7 +381,7 @@
       ]
     },
     {
-      "name": "Request userVault",
+      "name": "Request instances [AdminUpgradeableProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -390,7 +390,7 @@
       ]
     },
     {
-      "name": "Request verifyProof",
+      "name": "Request instances [InstanceRegistry]",
       "attributes": [
         {
           "name": "trace_order",
@@ -399,7 +399,7 @@
       ]
     },
     {
-      "name": "Request withdraw",
+      "name": "Request userVault [GovernancePatchUpgrade]",
       "attributes": [
         {
           "name": "trace_order",
@@ -408,7 +408,7 @@
       ]
     },
     {
-      "name": "Respond to addBurnRewards",
+      "name": "Request verifyProof [Verifier]",
       "attributes": [
         {
           "name": "trace_order",
@@ -417,7 +417,7 @@
       ]
     },
     {
-      "name": "Respond to burn",
+      "name": "Request withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
       "attributes": [
         {
           "name": "trace_order",
@@ -426,7 +426,7 @@
       ]
     },
     {
-      "name": "Respond to deposit",
+      "name": "Request withdraw [TornadoCash_eth]",
       "attributes": [
         {
           "name": "trace_order",
@@ -435,7 +435,7 @@
       ]
     },
     {
-      "name": "Respond to instanceFeeWithUpdate",
+      "name": "Respond to addBurnRewards [TornadoStakingRewards]",
       "attributes": [
         {
           "name": "trace_order",
@@ -444,7 +444,7 @@
       ]
     },
     {
-      "name": "Respond to instances",
+      "name": "Respond to burn [RelayerRegistry]",
       "attributes": [
         {
           "name": "trace_order",
@@ -453,7 +453,7 @@
       ]
     },
     {
-      "name": "Respond to userVault",
+      "name": "Respond to deposit [TornadoCash_eth]",
       "attributes": [
         {
           "name": "trace_order",
@@ -462,7 +462,7 @@
       ]
     },
     {
-      "name": "Respond to verifyProof",
+      "name": "Respond to instanceFeeWithUpdate [FeeManager]",
       "attributes": [
         {
           "name": "trace_order",
@@ -471,7 +471,7 @@
       ]
     },
     {
-      "name": "Respond to withdraw",
+      "name": "Respond to instances [AdminUpgradeableProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -480,7 +480,7 @@
       ]
     },
     {
-      "name": "Transfer*",
+      "name": "Respond to instances [InstanceRegistry]",
       "attributes": [
         {
           "name": "trace_order",
@@ -489,7 +489,7 @@
       ]
     },
     {
-      "name": "balanceOf",
+      "name": "Respond to userVault [GovernancePatchUpgrade]",
       "attributes": [
         {
           "name": "trace_order",
@@ -498,7 +498,7 @@
       ]
     },
     {
-      "name": "instanceFeeWithUpdate",
+      "name": "Respond to verifyProof [Verifier]",
       "attributes": [
         {
           "name": "trace_order",
@@ -507,7 +507,7 @@
       ]
     },
     {
-      "name": "instances",
+      "name": "Respond to withdraw [TornadoCash_eth]",
       "attributes": [
         {
           "name": "trace_order",
@@ -516,7 +516,7 @@
       ]
     },
     {
-      "name": "transfer",
+      "name": "Transfer* [0x0000000000000000000000000000000000000006]",
       "attributes": [
         {
           "name": "trace_order",
@@ -525,7 +525,7 @@
       ]
     },
     {
-      "name": "undefined",
+      "name": "balanceOf [TORN]",
       "attributes": [
         {
           "name": "trace_order",
@@ -534,7 +534,70 @@
       ]
     },
     {
-      "name": "userVault",
+      "name": "instanceFeeWithUpdate [FeeManager]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "instances [InstanceRegistry]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [0x2038d51a98967f2c9443e2ca35642abb3e63169e]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [0xd8f1eb586ecb93745392ee254a028f1f67e1437e]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "undefined [0x0000000000000000000000000000000000000006]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "undefined [0x0000000000000000000000000000000000000007]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "undefined [0x0000000000000000000000000000000000000008]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "userVault [GovernancePatchUpgrade]",
       "attributes": [
         {
           "name": "trace_order",
@@ -3899,7 +3962,7 @@
   "events": [
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:root:request",
-      "type": "Request deposit",
+      "type": "Request deposit [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
       "time": "2024-01-05T18:32:47.000Z",
       "attributes": [
         {
@@ -3921,6 +3984,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b",
           "qualifier": "choreo:instance"
         }
@@ -3928,7 +3995,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_1:request",
-      "type": "Request instances",
+      "type": "Request instances [InstanceRegistry]",
       "time": "2024-01-05T18:32:47.001Z",
       "attributes": [
         {
@@ -3950,7 +4017,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:root",
+          "objectId": "subchoreographyInstance:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3961,7 +4028,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_1_1",
-      "type": "instances",
+      "type": "instances [InstanceRegistry]",
       "time": "2024-01-05T18:32:47.002Z",
       "attributes": [
         {
@@ -3998,7 +4065,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_1:response",
-      "type": "Respond to instances",
+      "type": "Respond to instances [InstanceRegistry]",
       "time": "2024-01-05T18:32:47.003Z",
       "attributes": [
         {
@@ -4020,7 +4087,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:root",
+          "objectId": "subchoreographyInstance:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4031,7 +4098,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2:request",
-      "type": "Request deposit",
+      "type": "Request deposit [TornadoCash_eth]",
       "time": "2024-01-05T18:32:47.004Z",
       "attributes": [
         {
@@ -4053,7 +4120,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:root",
+          "objectId": "subchoreographyInstance:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4064,7 +4131,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_1",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.005Z",
       "attributes": [
         {
@@ -4101,7 +4168,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_2",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.006Z",
       "attributes": [
         {
@@ -4138,7 +4205,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_3",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.007Z",
       "attributes": [
         {
@@ -4175,7 +4242,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_4",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.008Z",
       "attributes": [
         {
@@ -4212,7 +4279,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_5",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.009Z",
       "attributes": [
         {
@@ -4249,7 +4316,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_6",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.010Z",
       "attributes": [
         {
@@ -4286,7 +4353,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_7",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.011Z",
       "attributes": [
         {
@@ -4323,7 +4390,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_8",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.012Z",
       "attributes": [
         {
@@ -4360,7 +4427,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_9",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.013Z",
       "attributes": [
         {
@@ -4397,7 +4464,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_10",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.014Z",
       "attributes": [
         {
@@ -4434,7 +4501,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_11",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.015Z",
       "attributes": [
         {
@@ -4471,7 +4538,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_12",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.016Z",
       "attributes": [
         {
@@ -4508,7 +4575,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_13",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.017Z",
       "attributes": [
         {
@@ -4545,7 +4612,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_14",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.018Z",
       "attributes": [
         {
@@ -4582,7 +4649,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_15",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.019Z",
       "attributes": [
         {
@@ -4619,7 +4686,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_16",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.020Z",
       "attributes": [
         {
@@ -4656,7 +4723,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_17",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.021Z",
       "attributes": [
         {
@@ -4693,7 +4760,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_18",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.022Z",
       "attributes": [
         {
@@ -4730,7 +4797,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_19",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.023Z",
       "attributes": [
         {
@@ -4767,7 +4834,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_20",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.024Z",
       "attributes": [
         {
@@ -4804,7 +4871,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_21",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.025Z",
       "attributes": [
         {
@@ -4841,7 +4908,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_22",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.026Z",
       "attributes": [
         {
@@ -4878,7 +4945,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_23",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.027Z",
       "attributes": [
         {
@@ -4915,7 +4982,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_24",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.028Z",
       "attributes": [
         {
@@ -4952,7 +5019,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_25",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.029Z",
       "attributes": [
         {
@@ -4989,7 +5056,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_26",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.030Z",
       "attributes": [
         {
@@ -5026,7 +5093,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_27",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.031Z",
       "attributes": [
         {
@@ -5063,7 +5130,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_28",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.032Z",
       "attributes": [
         {
@@ -5100,7 +5167,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_29",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.033Z",
       "attributes": [
         {
@@ -5137,7 +5204,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_30",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.034Z",
       "attributes": [
         {
@@ -5174,7 +5241,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_31",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.035Z",
       "attributes": [
         {
@@ -5211,7 +5278,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_32",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.036Z",
       "attributes": [
         {
@@ -5248,7 +5315,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_33",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.037Z",
       "attributes": [
         {
@@ -5285,7 +5352,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_34",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.038Z",
       "attributes": [
         {
@@ -5322,7 +5389,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_35",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.039Z",
       "attributes": [
         {
@@ -5359,7 +5426,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_36",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.040Z",
       "attributes": [
         {
@@ -5396,7 +5463,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_37",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.041Z",
       "attributes": [
         {
@@ -5433,7 +5500,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_38",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.042Z",
       "attributes": [
         {
@@ -5470,7 +5537,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_39",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.043Z",
       "attributes": [
         {
@@ -5507,7 +5574,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2_40",
-      "type": "MiMCSponge",
+      "type": "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
       "time": "2024-01-05T18:32:47.044Z",
       "attributes": [
         {
@@ -5544,7 +5611,7 @@
     },
     {
       "id": "e:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2:response",
-      "type": "Respond to deposit",
+      "type": "Respond to deposit [TornadoCash_eth]",
       "time": "2024-01-05T18:32:47.045Z",
       "attributes": [
         {
@@ -5566,7 +5633,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:root",
+          "objectId": "subchoreographyInstance:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -5577,7 +5644,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:root:request",
-      "type": "Request withdraw",
+      "type": "Request withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
       "time": "2024-01-05T18:32:47.000Z",
       "attributes": [
         {
@@ -5599,6 +5666,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116",
           "qualifier": "choreo:instance"
         }
@@ -5606,7 +5677,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_1:request",
-      "type": "Request instances",
+      "type": "Request instances [AdminUpgradeableProxy]",
       "time": "2024-01-05T18:32:47.001Z",
       "attributes": [
         {
@@ -5628,7 +5699,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:root",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -5639,7 +5710,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_1_1",
-      "type": "instances",
+      "type": "instances [InstanceRegistry]",
       "time": "2024-01-05T18:32:47.002Z",
       "attributes": [
         {
@@ -5676,7 +5747,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_1:response",
-      "type": "Respond to instances",
+      "type": "Respond to instances [AdminUpgradeableProxy]",
       "time": "2024-01-05T18:32:47.003Z",
       "attributes": [
         {
@@ -5698,7 +5769,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:root",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -5709,7 +5780,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2:request",
-      "type": "Request burn",
+      "type": "Request burn [RelayerRegistry]",
       "time": "2024-01-05T18:32:47.004Z",
       "attributes": [
         {
@@ -5731,7 +5802,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:root",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -5742,7 +5813,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1:request",
-      "type": "Request burn",
+      "type": "Request burn [RelayerRegistry]",
       "time": "2024-01-05T18:32:47.005Z",
       "attributes": [
         {
@@ -5764,7 +5835,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -5775,7 +5846,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_1:request",
-      "type": "Request instanceFeeWithUpdate",
+      "type": "Request instanceFeeWithUpdate [FeeManager]",
       "time": "2024-01-05T18:32:47.006Z",
       "attributes": [
         {
@@ -5797,7 +5868,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -5808,7 +5879,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_1_1",
-      "type": "instanceFeeWithUpdate",
+      "type": "instanceFeeWithUpdate [FeeManager]",
       "time": "2024-01-05T18:32:47.007Z",
       "attributes": [
         {
@@ -5845,7 +5916,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_1:response",
-      "type": "Respond to instanceFeeWithUpdate",
+      "type": "Respond to instanceFeeWithUpdate [FeeManager]",
       "time": "2024-01-05T18:32:47.008Z",
       "attributes": [
         {
@@ -5867,7 +5938,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -5878,7 +5949,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2:request",
-      "type": "Request addBurnRewards",
+      "type": "Request addBurnRewards [TornadoStakingRewards]",
       "time": "2024-01-05T18:32:47.009Z",
       "attributes": [
         {
@@ -5900,7 +5971,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -5911,7 +5982,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2_1:request",
-      "type": "Request addBurnRewards",
+      "type": "Request addBurnRewards [TornadoStakingRewards]",
       "time": "2024-01-05T18:32:47.010Z",
       "attributes": [
         {
@@ -5933,7 +6004,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -5944,7 +6015,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2_1_1:request",
-      "type": "Request userVault",
+      "type": "Request userVault [GovernancePatchUpgrade]",
       "time": "2024-01-05T18:32:47.011Z",
       "attributes": [
         {
@@ -5966,7 +6037,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2_1",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -5977,7 +6048,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2_1_1_1",
-      "type": "userVault",
+      "type": "userVault [GovernancePatchUpgrade]",
       "time": "2024-01-05T18:32:47.012Z",
       "attributes": [
         {
@@ -6014,7 +6085,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2_1_1:response",
-      "type": "Respond to userVault",
+      "type": "Respond to userVault [GovernancePatchUpgrade]",
       "time": "2024-01-05T18:32:47.013Z",
       "attributes": [
         {
@@ -6036,7 +6107,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2_1",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2_1_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -6047,7 +6118,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2_1_2",
-      "type": "balanceOf",
+      "type": "balanceOf [TORN]",
       "time": "2024-01-05T18:32:47.014Z",
       "attributes": [
         {
@@ -6084,7 +6155,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2_1:response",
-      "type": "Respond to addBurnRewards",
+      "type": "Respond to addBurnRewards [TornadoStakingRewards]",
       "time": "2024-01-05T18:32:47.015Z",
       "attributes": [
         {
@@ -6106,7 +6177,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -6117,7 +6188,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2:response",
-      "type": "Respond to addBurnRewards",
+      "type": "Respond to addBurnRewards [TornadoStakingRewards]",
       "time": "2024-01-05T18:32:47.016Z",
       "attributes": [
         {
@@ -6139,7 +6210,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -6150,7 +6221,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1:response",
-      "type": "Respond to burn",
+      "type": "Respond to burn [RelayerRegistry]",
       "time": "2024-01-05T18:32:47.017Z",
       "attributes": [
         {
@@ -6172,7 +6243,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -6183,7 +6254,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2:response",
-      "type": "Respond to burn",
+      "type": "Respond to burn [RelayerRegistry]",
       "time": "2024-01-05T18:32:47.018Z",
       "attributes": [
         {
@@ -6205,7 +6276,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:root",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -6216,7 +6287,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3:request",
-      "type": "Request withdraw",
+      "type": "Request withdraw [TornadoCash_eth]",
       "time": "2024-01-05T18:32:47.019Z",
       "attributes": [
         {
@@ -6238,7 +6309,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:root",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -6249,7 +6320,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1:request",
-      "type": "Request verifyProof",
+      "type": "Request verifyProof [Verifier]",
       "time": "2024-01-05T18:32:47.020Z",
       "attributes": [
         {
@@ -6271,7 +6342,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -6282,7 +6353,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1_1",
-      "type": "Transfer*",
+      "type": "Transfer* [0x0000000000000000000000000000000000000006]",
       "time": "2024-01-05T18:32:47.021Z",
       "attributes": [
         {
@@ -6319,7 +6390,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1_2",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000007]",
       "time": "2024-01-05T18:32:47.022Z",
       "attributes": [
         {
@@ -6356,7 +6427,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1_3",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000006]",
       "time": "2024-01-05T18:32:47.023Z",
       "attributes": [
         {
@@ -6393,7 +6464,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1_4",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000007]",
       "time": "2024-01-05T18:32:47.024Z",
       "attributes": [
         {
@@ -6430,7 +6501,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1_5",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000006]",
       "time": "2024-01-05T18:32:47.025Z",
       "attributes": [
         {
@@ -6467,7 +6538,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1_6",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000007]",
       "time": "2024-01-05T18:32:47.026Z",
       "attributes": [
         {
@@ -6504,7 +6575,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1_7",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000006]",
       "time": "2024-01-05T18:32:47.027Z",
       "attributes": [
         {
@@ -6541,7 +6612,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1_8",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000007]",
       "time": "2024-01-05T18:32:47.028Z",
       "attributes": [
         {
@@ -6578,7 +6649,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1_9",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000006]",
       "time": "2024-01-05T18:32:47.029Z",
       "attributes": [
         {
@@ -6615,7 +6686,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1_10",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000007]",
       "time": "2024-01-05T18:32:47.030Z",
       "attributes": [
         {
@@ -6652,7 +6723,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1_11",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000006]",
       "time": "2024-01-05T18:32:47.031Z",
       "attributes": [
         {
@@ -6689,7 +6760,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1_12",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000007]",
       "time": "2024-01-05T18:32:47.032Z",
       "attributes": [
         {
@@ -6726,7 +6797,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1_13",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000006]",
       "time": "2024-01-05T18:32:47.033Z",
       "attributes": [
         {
@@ -6763,7 +6834,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1_14",
-      "type": "undefined",
+      "type": "undefined [0x0000000000000000000000000000000000000008]",
       "time": "2024-01-05T18:32:47.034Z",
       "attributes": [
         {
@@ -6800,7 +6871,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1:response",
-      "type": "Respond to verifyProof",
+      "type": "Respond to verifyProof [Verifier]",
       "time": "2024-01-05T18:32:47.035Z",
       "attributes": [
         {
@@ -6822,7 +6893,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -6833,7 +6904,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_2",
-      "type": "transfer",
+      "type": "transfer [0x2038d51a98967f2c9443e2ca35642abb3e63169e]",
       "time": "2024-01-05T18:32:47.036Z",
       "attributes": [
         {
@@ -6870,7 +6941,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3_3",
-      "type": "transfer",
+      "type": "transfer [0xd8f1eb586ecb93745392ee254a028f1f67e1437e]",
       "time": "2024-01-05T18:32:47.037Z",
       "attributes": [
         {
@@ -6907,7 +6978,7 @@
     },
     {
       "id": "e:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3:response",
-      "type": "Respond to withdraw",
+      "type": "Respond to withdraw [TornadoCash_eth]",
       "time": "2024-01-05T18:32:47.038Z",
       "attributes": [
         {
@@ -6929,7 +7000,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:root",
+          "objectId": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3",
           "qualifier": "choreo:contained-by"
         },
         {

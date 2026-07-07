@@ -30,6 +30,43 @@ def _tx_hash_id(tx_hash: str) -> str:
     return tx_hash.removeprefix("0x")
 
 
+# ---------------------------------------------------------------------------
+# Participant-aware event typing (spec §A1 / participant_aware_event_typing_outline.md)
+#
+# The event type is a participant-aware call key so that equally named function
+# calls executed by different contracts are not merged by downstream miners:
+#
+#     event type = [kind prefix] + activity + " [" + called-contract disc + "]"
+#
+# Deliberate coarsening (documented for the paper): the discriminator omits
+# parameter-type signatures, so overloaded functions on one contract share a
+# type. Signature-based discrimination is left as future work.
+# ---------------------------------------------------------------------------
+
+def _participant_discriminator(contract_called_name: str | None, address: str) -> str:
+    """Called-contract discriminator: the called-contract name, else its address.
+
+    Never falls back to a generic type like "CA" — that would merge unrelated
+    contracts.
+    """
+    return contract_called_name or address
+
+
+def _call_key(activity: str, participant: str) -> str:
+    """Participant-aware call key shared by event types and scope keys."""
+    return f"{activity} [{participant}]"
+
+
+def _event_type(activity: str, participant: str, kind: str = "atomic") -> str:
+    """Event type from the call key plus the event kind prefix."""
+    key = _call_key(activity, participant)
+    if kind == "request":
+        return f"Request {key}"
+    if kind == "response":
+        return f"Respond to {key}"
+    return key
+
+
 def _make_time(trace: Trace, trace_order: int):
     """Create an event timestamp offset by trace_order milliseconds."""
     return trace.timestamp + timedelta(milliseconds=trace_order)
@@ -182,9 +219,10 @@ def _create_root_task_simple(
     ))
 
     # Event
+    root_disc = _participant_discriminator(trace.contract_called_name, trace.contract_address)
     event = OcelEvent(
         id=event_id,
-        type=trace.function_name,
+        type=_event_type(trace.function_name, root_disc),
         time=_make_time(trace, 0),
         attributes={"trace_order": 0},
         e2o=[
@@ -237,16 +275,19 @@ def _create_root_split(
     objects.append(sub_obj)
     scoping[sub_obj_id] = sub_obj
 
-    # Request event (no choreo:contained-by — outermost, no parent scope)
+    # Request event — contained in the root scope it opens (spec I3/A2:
+    # the outermost bracket pair is contained in the instance's root scope).
+    root_disc = _participant_discriminator(trace.contract_called_name, trace.contract_address)
     events.append(OcelEvent(
         id=req_event_id,
-        type=f"Request {trace.function_name}",
+        type=_event_type(trace.function_name, root_disc, kind="request"),
         time=_make_time(trace, trace_order),
         attributes={"trace_order": trace_order},
         e2o=[
             E2O(req_event_id, trace.sender, CHOREO_INITIATOR),
             E2O(req_event_id, trace.contract_address, CHOREO_PARTICIPANT),
             E2O(req_event_id, req_msg_id, CHOREO_MESSAGE),
+            E2O(req_event_id, sub_obj_id, CHOREO_CONTAINED_BY),
             E2O(req_event_id, choreo_inst_id, CHOREO_INSTANCE),
         ],
     ))
@@ -324,9 +365,10 @@ def _create_leaf_task(
     ))
 
     # Single event with both messages
+    disc = _participant_discriminator(frame.contract_called_name, frame.to_addr)
     event = OcelEvent(
         id=event_id,
-        type=frame.activity,
+        type=_event_type(frame.activity, disc),
         time=_make_time(trace, trace_order),
         attributes={"trace_order": trace_order},
         e2o=[
@@ -397,17 +439,18 @@ def _create_subchoreography(
         O2O(parent_sub_id, sub_obj_id, CHOREO_CONTAINS)
     )
 
-    # Request event
+    # Request event — contained in the scope it opens (spec I3/A2), not the parent
+    disc = _participant_discriminator(frame.contract_called_name, frame.to_addr)
     events.append(OcelEvent(
         id=req_event_id,
-        type=f"Request {frame.activity}",
+        type=_event_type(frame.activity, disc, kind="request"),
         time=_make_time(trace, trace_order),
         attributes={"trace_order": trace_order},
         e2o=[
             E2O(req_event_id, frame.from_addr, CHOREO_INITIATOR),
             E2O(req_event_id, frame.to_addr, CHOREO_PARTICIPANT),
             E2O(req_event_id, req_msg_id, CHOREO_MESSAGE),
-            E2O(req_event_id, parent_sub_id, CHOREO_CONTAINED_BY),
+            E2O(req_event_id, sub_obj_id, CHOREO_CONTAINED_BY),
             E2O(req_event_id, choreo_inst_id, CHOREO_INSTANCE),
         ],
     ))
@@ -421,17 +464,17 @@ def _create_subchoreography(
         events.extend(child_events)
         objects.extend(child_objects)
 
-    # Response event (after all children)
+    # Response event (after all children) — contained in the scope it closes (I3/A2)
     events.append(OcelEvent(
         id=res_event_id,
-        type=f"Respond to {frame.activity}",
+        type=_event_type(frame.activity, disc, kind="response"),
         time=_make_time(trace, trace_order),
         attributes={"trace_order": trace_order},
         e2o=[
             E2O(res_event_id, frame.to_addr, CHOREO_INITIATOR),
             E2O(res_event_id, frame.from_addr, CHOREO_PARTICIPANT),
             E2O(res_event_id, res_msg_id, CHOREO_MESSAGE),
-            E2O(res_event_id, parent_sub_id, CHOREO_CONTAINED_BY),
+            E2O(res_event_id, sub_obj_id, CHOREO_CONTAINED_BY),
             E2O(res_event_id, choreo_inst_id, CHOREO_INSTANCE),
         ],
     ))

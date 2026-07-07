@@ -55,6 +55,7 @@ def _parse_transaction(raw: dict) -> Trace:
         contract_address=raw["contractAddress"].lower(),
         sender=raw["sender"].lower(),
         timestamp=parse_timestamp(raw["timestamp"]),
+        contract_called_name=raw.get("contractCalledName"),
         block_number=raw.get("blockNumber"),
         gas_used=raw.get("gasUsed"),
         value=raw.get("value", 0),

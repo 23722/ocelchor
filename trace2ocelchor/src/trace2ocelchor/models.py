@@ -72,6 +72,7 @@ class Trace:
     contract_address: str
     sender: str
     timestamp: datetime
+    contract_called_name: str | None = None
     block_number: int | None = None
     gas_used: int | None = None
     value: int | float = 0

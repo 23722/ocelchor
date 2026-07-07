@@ -126,7 +126,8 @@ class TestGroundTruth0x55:
     def test_relation_counts(self):
         e2o = sum(len(e.e2o) for e in self.events)
         o2o = sum(len(o.o2o) for o in self.objects)
-        assert e2o == 820
+        # A2: each of the 7 internal-call roots gains a contained-by on its root request.
+        assert e2o == 827
         assert o2o == 509
 
     def test_e2o_qualifier_distribution(self):
@@ -135,7 +136,8 @@ class TestGroundTruth0x55:
         assert counts[CHOREO_PARTICIPANT] == 146
         assert counts[CHOREO_MESSAGE] == 245
         assert counts[CHOREO_INSTANCE] == 146
-        assert counts[CHOREO_CONTAINED_BY] == 137
+        # A2: +7 (one per internal-call root request now contained in its root scope).
+        assert counts[CHOREO_CONTAINED_BY] == 144
 
     def test_structural_invariants(self):
         assert_structural_invariants(self.traces, self.events, self.objects)
@@ -164,7 +166,8 @@ class TestGroundTruth0x5e:
     def test_relation_counts(self):
         e2o = sum(len(e.e2o) for e in self.events)
         o2o = sum(len(o.o2o) for o in self.objects)
-        assert e2o == 190
+        # A2: each of the 6 internal-call roots gains a contained-by on its root request.
+        assert e2o == 196
         assert o2o == 106
 
     def test_e2o_qualifier_distribution(self):
@@ -173,7 +176,8 @@ class TestGroundTruth0x5e:
         assert counts[CHOREO_PARTICIPANT] == 37
         assert counts[CHOREO_MESSAGE] == 48
         assert counts[CHOREO_INSTANCE] == 37
-        assert counts[CHOREO_CONTAINED_BY] == 31
+        # A2: +6 (one per internal-call root request now contained in its root scope).
+        assert counts[CHOREO_CONTAINED_BY] == 37
 
     def test_structural_invariants(self):
         assert_structural_invariants(self.traces, self.events, self.objects)

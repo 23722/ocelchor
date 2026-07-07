@@ -90,7 +90,7 @@ class TestSwapRootOnly:
     def test_event_id_and_type(self):
         e = self.events[0]
         assert e.id == "e:aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111:root"
-        assert e.type == "approve"
+        assert e.type == "approve [0xcccccccccccccccccccccccccccccccccccccccc]"
 
     def test_event_trace_order(self):
         assert self.events[0].attributes["trace_order"] == 0
@@ -184,8 +184,8 @@ class TestSwap1:
     def test_event_types(self):
         types = [e.type for e in self.events]
         assert types == [
-            "Request swapAssets",
-            "swap",
+            "Request swapAssets [0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]",
+            "swap [SwapPool]",
         ]
 
     def test_trace_order_values(self):
@@ -221,12 +221,14 @@ class TestSwap1:
         e = self.events[0]
         assert _e2o_target(e, CHOREO_INSTANCE) is not None
 
-    def test_root_request_no_contained_by(self):
+    def test_root_request_contained_by_root_scope(self):
+        # Spec I3/A2: the outermost bracket is contained in the instance's root scope.
         e = self.events[0]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) is None
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == \
+            "subchoreographyInstance:abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca:root"
 
     def test_root_request_e2o_count(self):
-        assert len(self.events[0].e2o) == 4
+        assert len(self.events[0].e2o) == 5
 
     # -- leaf event (0_1) E2O --
 
@@ -361,14 +363,14 @@ class TestSwap3:
     def test_event_types(self):
         types = [e.type for e in self.events]
         assert types == [
-            "Request swap",
-            "Request swap",
-            "Request transfer",
-            "balanceOf",
-            "Respond to transfer",
-            "updateReserves",
-            "Respond to swap",
-            "logSwap",
+            "Request swap [0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]",
+            "Request swap [SwapRouter]",
+            "Request transfer [TokenContract]",
+            "balanceOf [BalanceOracle]",
+            "Respond to transfer [TokenContract]",
+            "updateReserves [LiquidityPool]",
+            "Respond to swap [SwapRouter]",
+            "logSwap [SwapLogger]",
         ]
 
     def test_no_subchoreography_events(self):
@@ -416,9 +418,10 @@ class TestSwap3:
 
     def test_total_e2o_count(self):
         total = sum(len(e.e2o) for e in self.events)
-        # root:req(4) + 0_1:req(5) + 0_1_1:req(5) + 0_1_1_1(6) + 0_1_1:res(5)
-        # + 0_1_2(6) + 0_1:res(5) + 0_2(6) = 42
-        assert total == 42
+        # After A2 the root request is contained in the root scope (+1 vs. before):
+        # root:req(5) + 0_1:req(5) + 0_1_1:req(5) + 0_1_1_1(6) + 0_1_1:res(5)
+        # + 0_1_2(6) + 0_1:res(5) + 0_2(6) = 43
+        assert total == 43
 
     def test_total_o2o_count(self):
         total = sum(len(o.o2o) for o in self.objects)
@@ -429,14 +432,14 @@ class TestSwap3:
     # -- choreo:contained-by links to immediate parent --
 
     def test_contained_by_0_1_request(self):
-        """0_1:request is contained by root subchoreography."""
+        """A2: 0_1:request is contained by the scope it opens (0_1), not the parent."""
         e = self.events[1]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
 
     def test_contained_by_0_1_1_request(self):
-        """0_1_1:request is contained by 0_1 subchoreography."""
+        """A2: 0_1_1:request is contained by the scope it opens (0_1_1)."""
         e = self.events[2]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1"
 
     def test_contained_by_0_1_1_1(self):
         """Leaf 0_1_1_1 is contained by 0_1_1 subchoreography."""
@@ -444,9 +447,9 @@ class TestSwap3:
         assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1"
 
     def test_contained_by_0_1_1_response(self):
-        """0_1_1:response is contained by 0_1 subchoreography."""
+        """A2: 0_1_1:response is contained by the scope it closes (0_1_1)."""
         e = self.events[4]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1_1"
 
     def test_contained_by_0_1_2(self):
         """Leaf 0_1_2 is contained by 0_1 subchoreography."""
@@ -454,9 +457,9 @@ class TestSwap3:
         assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
 
     def test_contained_by_0_1_response(self):
-        """0_1:response is contained by root subchoreography."""
+        """A2: 0_1:response is contained by the scope it closes (0_1)."""
         e = self.events[6]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root"
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:0_1"
 
     def test_contained_by_0_2(self):
         """Leaf 0_2 is contained by root subchoreography."""
@@ -552,9 +555,11 @@ class TestSwap3:
             "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         assert _e2o_target(e, CHOREO_MESSAGE) == "call:req:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root"
 
-    def test_root_request_no_contained_by(self):
+    def test_root_request_contained_by_root_scope(self):
+        # Spec I3/A2: outermost bracket is contained in the instance's root scope.
         e = self.events[0]
-        assert _e2o_target(e, CHOREO_CONTAINED_BY) is None
+        assert _e2o_target(e, CHOREO_CONTAINED_BY) == \
+            "subchoreographyInstance:fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2fed2:root"
 
 
 # ---------------------------------------------------------------------------
@@ -629,7 +634,7 @@ class TestSwapMultiTx:
     def test_trace1_produces_single_root_event(self):
         """approve (root-only) → one choreography task event."""
         assert self.events[0].id == f"e:{_BBBB}:root"
-        assert self.events[0].type == "approve"
+        assert self.events[0].type == "approve [0xcccccccccccccccccccccccccccccccccccccccc]"
 
     def test_trace2_event_ids_in_order(self):
         ids = [e.id for e in self.events[1:]]
@@ -649,7 +654,8 @@ class TestSwapMultiTx:
         assert counts[CHOREO_PARTICIPANT] == 5
         assert counts[CHOREO_MESSAGE] == 6
         assert counts[CHOREO_INSTANCE] == 5
-        assert counts[CHOREO_CONTAINED_BY] == 3
+        # A2: trace-2 root request is now contained in its root scope (3 → 4).
+        assert counts[CHOREO_CONTAINED_BY] == 4
 
 
 # ---------------------------------------------------------------------------
@@ -930,13 +936,14 @@ class TestDelegatecallIntegration:
         assert obj is not None, "Governance should be a participant object"
 
     def test_governance_is_initiator_of_transfer(self):
-        # The transfer event (leaf 0_1_1) should have Governance as initiator
-        transfer_events = [e for e in self.events if e.type == "transfer"]
+        # The transfer event (leaf 0_1_1) should have Governance as initiator.
+        # Type is now participant-aware ("transfer [<disc>]", spec A1).
+        transfer_events = [e for e in self.events if e.type.startswith("transfer [")]
         assert len(transfer_events) == 1
         initiator = _e2o_target(transfer_events[0], CHOREO_INITIATOR)
         assert initiator == self.GOVERNANCE
 
     def test_proxy_not_initiator_of_transfer(self):
-        transfer_events = [e for e in self.events if e.type == "transfer"]
+        transfer_events = [e for e in self.events if e.type.startswith("transfer [")]
         initiator = _e2o_target(transfer_events[0], CHOREO_INITIATOR)
         assert initiator != self.PROXY

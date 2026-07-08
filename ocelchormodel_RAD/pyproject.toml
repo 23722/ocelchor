@@ -9,6 +9,9 @@ requires-python = ">=3.10"
 # hierarchy/paths layer installs without the heavy scientific stack.
 dependencies = [
     "ocelchorvalidator",
+    # Pinned: basic Inductive Miner, no noise filtering (spec §B4). Verified on
+    # Python 3.14. Bump deliberately — IM output is part of discovery behaviour.
+    "pm4py==2.7.22.2",
 ]
 
 [project.optional-dependencies]

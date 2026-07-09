@@ -74,13 +74,48 @@ Valid OCEL 2.0 JSON file. Object types produced:
 
 | Type | Description |
 |------|-------------|
-| `EOA` | Externally owned account (transaction sender) |
-| `CA` | Contract address without a known name |
-| *contract name* | Named contract (from `contractCalledName` field) |
+| `EOA` | Externally owned account (user where identifiable as sender of a transaction) |
+| *contract name* | Named contract (from `contractCalledName`, resolved log-wide) |
+| *contract address* | Contract without a known name anywhere in the log |
 | `<function> call` | Request message object |
 | `<function> call response` | Response message object |
 | `subchoreographyInstance` | Scoping object grouping nested calls; carries a `name` attribute (e.g. `"subchoreography swap"`) |
 | `choreographyInstance` | One instance per transaction |
+
+### Participant typing and event types
+
+Participant objects use the address as `id` and their **role** as `type`,
+resolved with a deterministic, log-wide priority:
+
+```
+type = EOA                  the address sends a transaction anywhere in the log
+       contractCalledName   named contract (address→name map over all traces)
+       <address>            otherwise
+```
+
+The sender set and the address→name map are collected over the whole log
+before typing, so an object's type never depends on the order in which the
+address is first encountered (an EOA may, e.g., receive a payout in an
+earlier transaction before sending its own). Unnamed contracts are
+deliberately typed by their address rather than a generic class (such as
+`CA`): object types are the roles that appear as participant bands in
+choreography models discovered downstream, and a generic type would collapse
+distinct contracts into one meaningless band — for an unverified contract,
+the finest role that can be asserted is its identity. (Trade-off: distinct
+unnamed contracts never pool into one role.)
+
+Event types are participant-aware call keys,
+
+```
+[kind prefix +] <function> [<discriminator>]
+```
+
+with kind prefix `Request ` / `Respond to ` for the bracket events of
+non-leaf calls (e.g. `transfer [TORN]`, `Request unlock [Governance]`). The
+discriminator resolves through the **same** log-wide name map (name where
+known anywhere in the log, else the called contract's address — never a
+generic class), so event-type discriminators and participant roles agree by
+construction.
 
 ---
 

@@ -125,9 +125,11 @@ class TestSwapRootOnly:
         assert eoa.type == "EOA"
 
     def test_participant_ca(self):
+        # Unnamed contracts are typed by their ADDRESS (no generic "CA"):
+        # object types feed the discovered models' participant bands.
         ca = _obj_by_id(self.objects, "0xcccccccccccccccccccccccccccccccccccccccc")
         assert ca is not None
-        assert ca.type == "CA"
+        assert ca.type == "0xcccccccccccccccccccccccccccccccccccccccc"
 
     def test_message_object(self):
         msg = _obj_by_id(self.objects, "call:req:aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111:root")
@@ -265,14 +267,16 @@ class TestSwap1:
         assert len(self.objects) == 8
 
     def test_participant_count(self):
-        participants = [o for o in self.objects if o.type in ("EOA", "CA", "SwapPool")]
+        participants = [o for o in self.objects if o.type in (
+            "EOA", "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "SwapPool")]
         assert len(participants) == 3
 
     def test_participant_types(self):
         eoa = _obj_by_id(self.objects, "0x1111111111111111111111111111111111111111")
         assert eoa.type == "EOA"
+        # unnamed root contract → typed by its address (no generic "CA")
         ca = _obj_by_id(self.objects, "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-        assert ca.type == "CA"
+        assert ca.type == "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         pool = _obj_by_id(self.objects, "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
         assert pool.type == "SwapPool"
 
@@ -383,7 +387,9 @@ class TestSwap3:
         assert len(self.objects) == 22
 
     def test_participant_count(self):
-        participant_types = {"EOA", "CA", "SwapRouter", "TokenContract",
+        # unnamed root contract 0xaaaa… is typed by its address
+        participant_types = {"EOA", "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                             "SwapRouter", "TokenContract",
                              "BalanceOracle", "LiquidityPool", "SwapLogger"}
         participants = [o for o in self.objects if o.type in participant_types]
         assert len(participants) == 7
@@ -634,7 +640,9 @@ class TestSwapMultiTx:
     def test_trace1_produces_single_root_event(self):
         """approve (root-only) → one choreography task event."""
         assert self.events[0].id == f"e:{_BBBB}:root"
-        assert self.events[0].type == "approve [0xcccccccccccccccccccccccccccccccccccccccc]"
+        # 0xcccc… is named TokenContract on a frame of the OTHER trace — the
+        # log-wide map propagates the name into every discriminator.
+        assert self.events[0].type == "approve [TokenContract]"
 
     def test_trace2_event_ids_in_order(self):
         ids = [e.id for e in self.events[1:]]

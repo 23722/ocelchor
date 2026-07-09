@@ -46,8 +46,12 @@ def _tx_hash_id(tx_hash: str) -> str:
 def _participant_discriminator(contract_called_name: str | None, address: str) -> str:
     """Called-contract discriminator: the called-contract name, else its address.
 
-    Never falls back to a generic type like "CA" — that would merge unrelated
-    contracts.
+    Call sites resolve the name through the LOG-WIDE map
+    (_collect_contract_names), not the frame-local field, so event-type
+    discriminators and participant object types can never disagree: a contract
+    named anywhere in the log carries that name in every discriminator
+    (spec I1). Never falls back to a generic type like "CA" (or "EOA") —
+    generic types would merge unrelated participants.
     """
     return contract_called_name or address
 
@@ -72,11 +76,59 @@ def _make_time(trace: Trace, trace_order: int):
     return trace.timestamp + timedelta(milliseconds=trace_order)
 
 
-def _participant_type(trace: Trace, address: str) -> str:
-    """Determine the OCEL object type for a participant address."""
-    if address == trace.sender:
+def _collect_contract_names(traces: list[Trace]) -> dict[str, str]:
+    """Address → contractCalledName over ALL traces of the log (first name wins).
+
+    Names can surface anywhere: a contract may first appear unnamed (as the
+    root or a caller) and only later as a named callee — possibly in a
+    different trace. Collecting names up front keeps object typing consistent
+    across the whole log (e.g. the MasterChefV3 root contract, whose name only
+    appears on internal frames that call back into it).
+    """
+    names: dict[str, str] = {}
+
+    def walk(frame: CallFrame) -> None:
+        if frame.contract_called_name and frame.to_addr not in names:
+            names[frame.to_addr] = frame.contract_called_name
+        for child in frame.calls:
+            walk(child)
+
+    for trace in traces:
+        if trace.contract_called_name and trace.contract_address not in names:
+            names[trace.contract_address] = trace.contract_called_name
+        for frame in trace.internal_txs:
+            walk(frame)
+    return names
+
+
+def _collect_senders(traces: list[Trace]) -> set[str]:
+    """All transaction senders of the log (EOAs), collected up front so the
+    EOA/contract distinction is deterministic and independent of the order in
+    which an address is first encountered (an address may participate in an
+    earlier trace before sending its own transaction in a later one)."""
+    return {trace.sender for trace in traces}
+
+
+def _participant_type(address: str, senders: set[str], names: dict[str, str]) -> str:
+    """Determine the OCEL object type for a participant address.
+
+    Object type = the participant's role in the choreography, resolved with a
+    deterministic, log-wide priority:
+
+        EOA                  the address sends a transaction anywhere in the log
+        contractCalledName   named contract (log-wide map, _collect_contract_names)
+        <address>            otherwise (identity as the finest assertible role)
+
+    Unnamed contracts deliberately do NOT share a generic ``CA`` type: object
+    types feed the discovered models' participant bands, and a generic type
+    would collapse distinct contracts into one meaningless band (decision
+    revising participant_aware_event_typing_outline.md; the trade-off —
+    distinct unnamed contracts never pool into one role — is accepted in
+    favour of faithful, readable bands).
+    """
+    if address in senders:
         return "EOA"
-    return "CA"
+    return names.get(address, address)
 
 
 def _request_message_type(activity: str) -> str:
@@ -152,9 +204,11 @@ def transform_traces(
     all_events: list[OcelEvent] = []
     all_objects: list[OcelObject] = []
     seen_participants: dict[str, OcelObject] = {}
+    names = _collect_contract_names(traces)  # log-wide address → name map
+    senders = _collect_senders(traces)        # log-wide sender (EOA) set
 
     for trace in traces:
-        events, objects = _transform_single(trace, seen_participants)
+        events, objects = _transform_single(trace, seen_participants, senders, names)
         all_events.extend(events)
         all_objects.extend(objects)
 
@@ -164,6 +218,8 @@ def transform_traces(
 def _transform_single(
     trace: Trace,
     seen_participants: dict[str, OcelObject],
+    senders: set[str],
+    names: dict[str, str],
 ) -> tuple[list[OcelEvent], list[OcelObject]]:
     """Transform a single transaction trace."""
     txid = _tx_hash_id(trace.transaction_hash)
@@ -176,12 +232,12 @@ def _transform_single(
 
     if not trace.internal_txs:
         # Section 4.3: empty internalTxs → single choreography task
-        e, objs = _create_root_task_simple(trace, txid, choreo_inst_id, seen_participants)
+        e, objs = _create_root_task_simple(trace, txid, choreo_inst_id, seen_participants, senders, names)
         events.append(e)
         objects.extend(objs)
     else:
         # Section 4.3: non-empty internalTxs → request + subchoreography (no response, EOA)
-        evts, objs, _ = _create_root_split(trace, txid, choreo_inst_id, seen_participants, scoping)
+        evts, objs, _ = _create_root_split(trace, txid, choreo_inst_id, seen_participants, scoping, senders, names)
         events.extend(evts)
         objects.extend(objs)
 
@@ -196,6 +252,8 @@ def _create_root_task_simple(
     txid: str,
     choreo_inst_id: str,
     seen: dict,
+    senders: set[str],
+    names: dict[str, str],
 ) -> tuple[OcelEvent, list[OcelObject]]:
     """Root with no internal calls → single choreography task event."""
     event_id = f"e:{txid}:root"
@@ -207,7 +265,13 @@ def _create_root_task_simple(
     p = _make_participant(trace.sender, "EOA", seen)
     if p:
         objects.append(p)
-    p = _make_participant(trace.contract_address, "CA", seen)
+    # Root contract typed via the log-wide name map (its name may only surface
+    # on internal frames calling back into it), else its address.
+    p = _make_participant(
+        trace.contract_address,
+        _participant_type(trace.contract_address, senders, names),
+        seen,
+    )
     if p:
         objects.append(p)
 
@@ -219,7 +283,7 @@ def _create_root_task_simple(
     ))
 
     # Event
-    root_disc = _participant_discriminator(trace.contract_called_name, trace.contract_address)
+    root_disc = _participant_discriminator(names.get(trace.contract_address), trace.contract_address)
     event = OcelEvent(
         id=event_id,
         type=_event_type(trace.function_name, root_disc),
@@ -242,6 +306,8 @@ def _create_root_split(
     choreo_inst_id: str,
     seen: dict,
     scoping: dict[str, OcelObject],
+    senders: set[str],
+    names: dict[str, str],
 ) -> tuple[list[OcelEvent], list[OcelObject], int]:
     """Root with internal calls → request event + scoping object, then recurse children."""
     req_event_id = f"e:{txid}:root:request"
@@ -256,7 +322,13 @@ def _create_root_split(
     p = _make_participant(trace.sender, "EOA", seen)
     if p:
         objects.append(p)
-    p = _make_participant(trace.contract_address, "CA", seen)
+    # Root contract typed via the log-wide name map (its name may only surface
+    # on internal frames calling back into it), else its address.
+    p = _make_participant(
+        trace.contract_address,
+        _participant_type(trace.contract_address, senders, names),
+        seen,
+    )
     if p:
         objects.append(p)
 
@@ -277,7 +349,7 @@ def _create_root_split(
 
     # Request event — contained in the root scope it opens (spec I3/A2:
     # the outermost bracket pair is contained in the instance's root scope).
-    root_disc = _participant_discriminator(trace.contract_called_name, trace.contract_address)
+    root_disc = _participant_discriminator(names.get(trace.contract_address), trace.contract_address)
     events.append(OcelEvent(
         id=req_event_id,
         type=_event_type(trace.function_name, root_disc, kind="request"),
@@ -296,7 +368,7 @@ def _create_root_split(
     # Process children in callId order
     for child in trace.internal_txs:
         child_events, child_objects, trace_order = _process_call_frame(
-            child, trace, txid, choreo_inst_id, sub_obj_id, seen, trace_order, scoping,
+            child, trace, txid, choreo_inst_id, sub_obj_id, seen, trace_order, scoping, senders, names,
         )
         events.extend(child_events)
         objects.extend(child_objects)
@@ -313,15 +385,17 @@ def _process_call_frame(
     seen: dict,
     trace_order: int,
     scoping: dict[str, OcelObject],
+    senders: set[str],
+    names: dict[str, str],
 ) -> tuple[list[OcelEvent], list[OcelObject], int]:
     """Recursively process a call frame. Returns events, objects, updated trace_order."""
     if frame.calls:
         return _create_subchoreography(
-            frame, trace, txid, choreo_inst_id, parent_sub_id, seen, trace_order, scoping,
+            frame, trace, txid, choreo_inst_id, parent_sub_id, seen, trace_order, scoping, senders, names,
         )
     else:
         events, objects = _create_leaf_task(
-            frame, trace, txid, choreo_inst_id, parent_sub_id, seen, trace_order,
+            frame, trace, txid, choreo_inst_id, parent_sub_id, seen, trace_order, senders, names,
         )
         return events, objects, trace_order + 1
 
@@ -334,6 +408,8 @@ def _create_leaf_task(
     parent_sub_id: str,
     seen: dict,
     trace_order: int,
+    senders: set[str],
+    names: dict[str, str],
 ) -> tuple[list[OcelEvent], list[OcelObject]]:
     """Create OCEL events/objects for a leaf choreography task (section 4.4)."""
     event_id = f"e:{txid}:{frame.call_id}"
@@ -343,12 +419,11 @@ def _create_leaf_task(
     objects: list[OcelObject] = []
 
     # Participants
-    p = _make_participant(frame.from_addr, _participant_type(trace, frame.from_addr), seen)
+    p = _make_participant(frame.from_addr, _participant_type(frame.from_addr, senders, names), seen)
     if p:
         objects.append(p)
 
-    to_type = frame.contract_called_name or _participant_type(trace, frame.to_addr)
-    p = _make_participant(frame.to_addr, to_type, seen)
+    p = _make_participant(frame.to_addr, _participant_type(frame.to_addr, senders, names), seen)
     if p:
         objects.append(p)
 
@@ -365,7 +440,7 @@ def _create_leaf_task(
     ))
 
     # Single event with both messages
-    disc = _participant_discriminator(frame.contract_called_name, frame.to_addr)
+    disc = _participant_discriminator(names.get(frame.to_addr), frame.to_addr)
     event = OcelEvent(
         id=event_id,
         type=_event_type(frame.activity, disc),
@@ -393,6 +468,8 @@ def _create_subchoreography(
     seen: dict,
     trace_order: int,
     scoping: dict[str, OcelObject],
+    senders: set[str],
+    names: dict[str, str],
 ) -> tuple[list[OcelEvent], list[OcelObject], int]:
     """Create request/response events for a non-leaf call with scoping object."""
     req_event_id = f"e:{txid}:{frame.call_id}:request"
@@ -405,12 +482,11 @@ def _create_subchoreography(
     objects: list[OcelObject] = []
 
     # Participants
-    p = _make_participant(frame.from_addr, _participant_type(trace, frame.from_addr), seen)
+    p = _make_participant(frame.from_addr, _participant_type(frame.from_addr, senders, names), seen)
     if p:
         objects.append(p)
 
-    to_type = frame.contract_called_name or _participant_type(trace, frame.to_addr)
-    p = _make_participant(frame.to_addr, to_type, seen)
+    p = _make_participant(frame.to_addr, _participant_type(frame.to_addr, senders, names), seen)
     if p:
         objects.append(p)
 
@@ -440,7 +516,7 @@ def _create_subchoreography(
     )
 
     # Request event — contained in the scope it opens (spec I3/A2), not the parent
-    disc = _participant_discriminator(frame.contract_called_name, frame.to_addr)
+    disc = _participant_discriminator(names.get(frame.to_addr), frame.to_addr)
     events.append(OcelEvent(
         id=req_event_id,
         type=_event_type(frame.activity, disc, kind="request"),
@@ -459,7 +535,7 @@ def _create_subchoreography(
     # Recurse into children
     for child in frame.calls:
         child_events, child_objects, trace_order = _process_call_frame(
-            child, trace, txid, choreo_inst_id, sub_obj_id, seen, trace_order, scoping,
+            child, trace, txid, choreo_inst_id, sub_obj_id, seen, trace_order, scoping, senders, names,
         )
         events.extend(child_events)
         objects.extend(child_objects)

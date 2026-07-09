@@ -228,7 +228,8 @@ output/
 test_output/
 *_ocel.json
 
-# Generated OCEL logs for the full (non-deduplicated) trace family.
-# The full input traces themselves live in data/input_full/ (tracked via
-# Git LFS by the user); their generated OCEL is regenerable and not committed.
+# Full (non-deduplicated) trace family: the input traces (≈3 GB, from the
+# upstream BlockchainDataset repository — the canonical source, see README
+# Data attribution) and their generated OCEL are NOT committed.
+data/input_full/
 data/output_full/

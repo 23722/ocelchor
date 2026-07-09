@@ -1,0 +1,1036 @@
+{
+  "objectTypes": [
+    {
+      "name": "Contact_Author",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Feedback",
+      "attributes": []
+    },
+    {
+      "name": "Manuscript",
+      "attributes": []
+    },
+    {
+      "name": "Notification",
+      "attributes": []
+    },
+    {
+      "name": "PC_Chair",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Review",
+      "attributes": []
+    },
+    {
+      "name": "Review Request",
+      "attributes": []
+    },
+    {
+      "name": "Reviewer",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "choreographyInstance",
+      "attributes": []
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Assign Paper",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "type": "string"
+        },
+        {
+          "name": "msgInstanceId",
+          "type": "string"
+        },
+        {
+          "name": "msgName",
+          "type": "string"
+        },
+        {
+          "name": "org:group",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Send Feedback",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "type": "string"
+        },
+        {
+          "name": "msgInstanceId",
+          "type": "string"
+        },
+        {
+          "name": "msgName",
+          "type": "string"
+        },
+        {
+          "name": "org:group",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Send Results",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "type": "string"
+        },
+        {
+          "name": "msgInstanceId",
+          "type": "string"
+        },
+        {
+          "name": "msgName",
+          "type": "string"
+        },
+        {
+          "name": "org:group",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Submit Manuscript",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "type": "string"
+        },
+        {
+          "name": "msgInstanceId",
+          "type": "string"
+        },
+        {
+          "name": "msgName",
+          "type": "string"
+        },
+        {
+          "name": "org:group",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Submit Review",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "type": "string"
+        },
+        {
+          "name": "msgInstanceId",
+          "type": "string"
+        },
+        {
+          "name": "msgName",
+          "type": "string"
+        },
+        {
+          "name": "org:group",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "Contact_Author",
+      "type": "Contact_Author",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "Contact_Author",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "message:case_219:Feedback_188",
+      "type": "Feedback",
+      "relationships": [
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_375:Feedback_328",
+      "type": "Feedback",
+      "relationships": [
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_39:Feedback_33",
+      "type": "Feedback",
+      "relationships": [
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_219:Manuscript_185",
+      "type": "Manuscript",
+      "relationships": [
+        {
+          "objectId": "Contact_Author",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_375:Manuscript_325",
+      "type": "Manuscript",
+      "relationships": [
+        {
+          "objectId": "Contact_Author",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_39:Manuscript_30",
+      "type": "Manuscript",
+      "relationships": [
+        {
+          "objectId": "Contact_Author",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_219:Notification_189",
+      "type": "Notification",
+      "relationships": [
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Contact_Author",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_375:Notification_329",
+      "type": "Notification",
+      "relationships": [
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Contact_Author",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_39:Notification_34",
+      "type": "Notification",
+      "relationships": [
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Contact_Author",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "PC_Chair",
+      "type": "PC_Chair",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "PC_Chair",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "message:case_219:Review_187",
+      "type": "Review",
+      "relationships": [
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_375:Review_327",
+      "type": "Review",
+      "relationships": [
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_39:Review_32",
+      "type": "Review",
+      "relationships": [
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_219:Review Request_186",
+      "type": "Review Request",
+      "relationships": [
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_375:Review Request_326",
+      "type": "Review Request",
+      "relationships": [
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "message:case_39:Review Request_31",
+      "type": "Review Request",
+      "relationships": [
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:source"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:target"
+        }
+      ]
+    },
+    {
+      "id": "Reviewer",
+      "type": "Reviewer",
+      "attributes": [
+        {
+          "name": "name",
+          "value": "Reviewer",
+          "time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "choreographyInstance:case_219",
+      "type": "choreographyInstance"
+    },
+    {
+      "id": "choreographyInstance:case_375",
+      "type": "choreographyInstance"
+    },
+    {
+      "id": "choreographyInstance:case_39",
+      "type": "choreographyInstance"
+    }
+  ],
+  "events": [
+    {
+      "id": "e:case_219:14",
+      "type": "Send Feedback",
+      "time": "2021-06-22T13:03:10.714Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Send Feedback"
+        },
+        {
+          "name": "org:group",
+          "value": "PC_Chair"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Feedback_188"
+        },
+        {
+          "name": "msgName",
+          "value": "Feedback"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_219",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_219:Feedback_188",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_219:15",
+      "type": "Send Results",
+      "time": "2021-06-22T13:03:12.209Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Send Results"
+        },
+        {
+          "name": "org:group",
+          "value": "PC_Chair"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Notification_189"
+        },
+        {
+          "name": "msgName",
+          "value": "Notification"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_219",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_219:Notification_189",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Contact_Author",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_219:3",
+      "type": "Submit Manuscript",
+      "time": "2021-06-22T13:02:42.293Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Submit Manuscript"
+        },
+        {
+          "name": "org:group",
+          "value": "Contact_Author"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Manuscript_185"
+        },
+        {
+          "name": "msgName",
+          "value": "Manuscript"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_219",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "Contact_Author",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_219:Manuscript_185",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_219:5",
+      "type": "Assign Paper",
+      "time": "2021-06-22T13:02:50.459Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Assign Paper"
+        },
+        {
+          "name": "org:group",
+          "value": "PC_Chair"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Review Request_186"
+        },
+        {
+          "name": "msgName",
+          "value": "Review Request"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_219",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_219:Review Request_186",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_219:8",
+      "type": "Submit Review",
+      "time": "2021-06-22T13:02:55.772Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Submit Review"
+        },
+        {
+          "name": "org:group",
+          "value": "Reviewer"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Review_187"
+        },
+        {
+          "name": "msgName",
+          "value": "Review"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_219",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_219:Review_187",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_375:12",
+      "type": "Send Feedback",
+      "time": "2021-06-22T13:29:56.596Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Send Feedback"
+        },
+        {
+          "name": "org:group",
+          "value": "PC_Chair"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Feedback_328"
+        },
+        {
+          "name": "msgName",
+          "value": "Feedback"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_375",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_375:Feedback_328",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_375:13",
+      "type": "Send Results",
+      "time": "2021-06-22T13:29:56.802Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Send Results"
+        },
+        {
+          "name": "org:group",
+          "value": "PC_Chair"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Notification_329"
+        },
+        {
+          "name": "msgName",
+          "value": "Notification"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_375",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_375:Notification_329",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Contact_Author",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_375:3",
+      "type": "Submit Manuscript",
+      "time": "2021-06-22T13:29:36.124Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Submit Manuscript"
+        },
+        {
+          "name": "org:group",
+          "value": "Contact_Author"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Manuscript_325"
+        },
+        {
+          "name": "msgName",
+          "value": "Manuscript"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_375",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "Contact_Author",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_375:Manuscript_325",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_375:5",
+      "type": "Assign Paper",
+      "time": "2021-06-22T13:29:42.123Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Assign Paper"
+        },
+        {
+          "name": "org:group",
+          "value": "PC_Chair"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Review Request_326"
+        },
+        {
+          "name": "msgName",
+          "value": "Review Request"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_375",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_375:Review Request_326",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_375:8",
+      "type": "Submit Review",
+      "time": "2021-06-22T13:29:47.194Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Submit Review"
+        },
+        {
+          "name": "org:group",
+          "value": "Reviewer"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Review_327"
+        },
+        {
+          "name": "msgName",
+          "value": "Review"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_375",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_375:Review_327",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_39:11",
+      "type": "Send Feedback",
+      "time": "2021-06-22T12:35:14.742Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Send Feedback"
+        },
+        {
+          "name": "org:group",
+          "value": "PC_Chair"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Feedback_33"
+        },
+        {
+          "name": "msgName",
+          "value": "Feedback"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_39",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_39:Feedback_33",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_39:13",
+      "type": "Send Results",
+      "time": "2021-06-22T12:35:25.615Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Send Results"
+        },
+        {
+          "name": "org:group",
+          "value": "PC_Chair"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Notification_34"
+        },
+        {
+          "name": "msgName",
+          "value": "Notification"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_39",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_39:Notification_34",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Contact_Author",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_39:2",
+      "type": "Submit Manuscript",
+      "time": "2021-06-22T12:34:49.779Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Submit Manuscript"
+        },
+        {
+          "name": "org:group",
+          "value": "Contact_Author"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Manuscript_30"
+        },
+        {
+          "name": "msgName",
+          "value": "Manuscript"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_39",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "Contact_Author",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_39:Manuscript_30",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_39:4",
+      "type": "Assign Paper",
+      "time": "2021-06-22T12:34:56.106Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Assign Paper"
+        },
+        {
+          "name": "org:group",
+          "value": "PC_Chair"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Review Request_31"
+        },
+        {
+          "name": "msgName",
+          "value": "Review Request"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_39",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_39:Review Request_31",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    },
+    {
+      "id": "e:case_39:7",
+      "type": "Submit Review",
+      "time": "2021-06-22T12:35:05.282Z",
+      "attributes": [
+        {
+          "name": "concept:name",
+          "value": "Submit Review"
+        },
+        {
+          "name": "org:group",
+          "value": "Reviewer"
+        },
+        {
+          "name": "msgInstanceId",
+          "value": "Review_32"
+        },
+        {
+          "name": "msgName",
+          "value": "Review"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "choreographyInstance:case_39",
+          "qualifier": "choreo:instance"
+        },
+        {
+          "objectId": "Reviewer",
+          "qualifier": "choreo:initiator"
+        },
+        {
+          "objectId": "message:case_39:Review_32",
+          "qualifier": "choreo:message"
+        },
+        {
+          "objectId": "PC_Chair",
+          "qualifier": "choreo:participant"
+        }
+      ]
+    }
+  ]
+}

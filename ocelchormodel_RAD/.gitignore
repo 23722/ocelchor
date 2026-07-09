@@ -1,3 +1,10 @@
 # Generated discovered models + diagnostics (regenerable; not committed)
 data/output/*
 !data/output/.gitkeep
+
+# chor-js render harness (local dev tooling only, not part of the published
+# artifact): drives the third-party chor-js renderer headlessly to verify
+# model layout. Contains a bundled copy of chor-js (built from the separately
+# downloaded chor-js-demo), node_modules, and the driver scripts. Rebuildable;
+# excluded from the repo entirely.
+tools/chorjs-render/

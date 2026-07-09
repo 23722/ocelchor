@@ -40,6 +40,7 @@ xescol2ocelchor/*.md
 # ocelchormodel_RAD — reference material & specs (docs, not the code artefact)
 ocelchormodel_RAD/*.pdf
 ocelchormodel_RAD/*.md
+!ocelchormodel_RAD/README.md
 ocelchormodel_RAD/*.zip
 ocelchormodel_RAD/Statechart-master/
 ocelchormodel_RAD/archive/

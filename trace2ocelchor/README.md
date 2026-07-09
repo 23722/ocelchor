@@ -135,10 +135,18 @@ construction.
 
 ## Data attribution
 
-The blockchain transaction-trace inputs in `data/input/` are from
+The blockchain transaction-trace inputs are from
 
 > A. Marcelletti. *BlockchainDataset.*
 > <https://github.com/AlessandroMarcellettiUnicam1/BlockchainDataset>
+
+Two families are used: the deduplicated `data/input_unique/` traces
+(committed here) and the full, non-deduplicated traces in
+`data/input_full/` — the latter are **not committed** (≈3 GB; stored via
+Git LFS in the upstream repository
+<https://github.com/AlessandroMarcellettiUnicam1/BlockchainDataset>, which
+remains the canonical source; download them there and place them in
+`data/input_full/`).
 
 Cite the source when reusing the datasets.
 

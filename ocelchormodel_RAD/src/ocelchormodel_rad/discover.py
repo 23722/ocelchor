@@ -94,7 +94,8 @@ def _message_lookup(model: Model) -> dict[str, dict]:
                 tgt = r["objectId"]
         if src is not None or tgt is not None:
             attrs = {a["name"]: a["value"] for a in o.get("attributes", [])}
-            out[o["id"]] = {"source": src, "target": tgt, "attributes": attrs}
+            out[o["id"]] = {"source": src, "target": tgt, "attributes": attrs,
+                            "type": o.get("type", "")}
     return out
 
 
@@ -111,7 +112,8 @@ def _index_event(model: Model, e: Event, msgs: dict[str, dict], side: SideIndex)
             direction = "backward"  # noninit → init
         else:
             direction = "other"
-        entry.messages[direction].append(m["attributes"])
+        entry.messages[direction].append(
+            {"attrs": m["attributes"], "type": m["type"]})
     entry.provenance.append({
         "event_id": e.id,
         "instance_id": e.instance_id,
@@ -194,7 +196,7 @@ _OP = {
 }
 
 
-def _mine_bucket(subtraces: list[list[Symbol]], allow_and: bool) -> TreeNode:
+def _mine_bucket(subtraces: list[list[Symbol]]) -> TreeNode:
     """Run stock pm4py IM over one bucket and convert the tree to a TreeNode."""
     label_of: dict[Symbol, str] = {}
     symbol_of: dict[str, Symbol] = {}
@@ -213,10 +215,7 @@ def _mine_bucket(subtraces: list[list[Symbol]], allow_and: bool) -> TreeNode:
         log.append(tr)
 
     pt = im.apply(log, variant=im.Variants.IM)
-    node = _convert(pt, symbol_of)
-    if not allow_and:
-        node = _reject_and(node)
-    return node
+    return _convert(pt, symbol_of)
 
 
 def _convert(pt, symbol_of: dict[str, Symbol]) -> TreeNode:
@@ -227,23 +226,25 @@ def _convert(pt, symbol_of: dict[str, Symbol]) -> TreeNode:
     return TreeNode(_OP[pt.operator], None, [_convert(c, symbol_of) for c in pt.children])
 
 
-def _reject_and(node: TreeNode) -> TreeNode:
-    """--allow-and off: a parallel cut in a totally-ordered log is unexpected."""
+def _collect_and(node: TreeNode, acc: list) -> None:
+    """Collect every ∧ node of the composed tree for diagnostic D6
+    (spec B4: the model is never changed — diagnostics report).
+    Note the B4 correction: pm4py's fallthroughs (ActivityOncePerTrace) can
+    emit ∧ even for a single totally ordered subtrace with non-adjacent
+    repeats — D6 distinguishes witnessed parallelism from such artifacts."""
     if node.op == "∧":
-        raise ValueError("Parallel (∧) cut discovered with --allow-and disabled")
-    node.children = [_reject_and(c) for c in node.children]
-    return node
+        acc.append(node)
+    for c in node.children:
+        _collect_and(c, acc)
 
 
 # ---------------------------------------------------------------------------
 # Post-order composition (spec §B4.2 / worked-example step 4)
 # ---------------------------------------------------------------------------
 
-def _compose(
-    buckets: dict[BucketKey, list[list[Symbol]]], allow_and: bool
-) -> TreeNode:
+def _compose(buckets: dict[BucketKey, list[list[Symbol]]]) -> TreeNode:
     mined: dict[BucketKey, TreeNode] = {
-        key: _mine_bucket(subs, allow_and) for key, subs in buckets.items()
+        key: _mine_bucket(subs) for key, subs in buckets.items()
     }
     memo: dict[BucketKey, TreeNode] = {}
 
@@ -313,10 +314,16 @@ class Discovery:
     tree: TreeNode
     side_index: SideIndex
     recursion: list[RecursionFinding]
+    # every ∧ node of the tree — audited by diagnostic D6 (witnessed
+    # orderings vs. fallthrough artifact); the model is never changed
+    and_nodes: list[TreeNode] = field(default_factory=list)
 
 
-def discover(model: Model, *, allow_and: bool = True) -> Discovery:
+def discover(model: Model) -> Discovery:
     buckets, side = project(model)
-    tree = _compose(buckets, allow_and)
+    tree = _compose(buckets)
     recursion = detect_recursion(buckets)
-    return Discovery(tree=tree, side_index=side, recursion=recursion)
+    and_nodes: list[TreeNode] = []
+    _collect_and(tree, and_nodes)
+    return Discovery(tree=tree, side_index=side, recursion=recursion,
+                     and_nodes=and_nodes)

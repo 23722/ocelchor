@@ -102,7 +102,7 @@ def test_per_instance_round_trip(dataset):
             continue
         checked += 1
         m = reader.build_model(sub, run_validator=False)
-        d = discover(m, allow_and=False)
+        d = discover(m)
         disc = collapse_loops(structural_signature_xml(to_bpmn(d.tree, d.side_index)))
         ref = collapse_loops(structural_signature(ET.parse(bpmn).getroot()))
         assert disc == ref, f"{dataset} / {bpmn.stem}: round-trip structural mismatch"
@@ -110,8 +110,75 @@ def test_per_instance_round_trip(dataset):
 
 
 def _discover_tuple(model):
-    d = discover(model, allow_and=True)
+    d = discover(model)
     return d.tree, d.side_index
+
+
+# --- message generalisation (B6) --------------------------------------------
+
+def test_messages_emitted_with_generalised_labels(worked_example):
+    xml = to_bpmn(*_discover_tuple(worked_example))
+    root = ET.fromstring(xml)
+    labels = {m.get("name") for m in root.iter(_b("message"))}
+    # attribute-name labels from the side index (fixture: unlockArg/amount/hookArg/output)
+    assert {"unlockArg", "amount", "hookArg", "output"} <= labels
+
+    # hook [Vault] is atomic two-way → forward AND backward flows, both bands visible
+    choreo = root.find(_b("choreography"))
+    task = next(e for e in root.iter(_b("choreographyTask")) if e.get("name") == "hook [Vault]")
+    refs = [c.text for c in task if c.tag == _b("messageFlowRef")]
+    assert len(refs) == 2
+    flows = {f.get("id"): f for f in choreo.iter(_b("messageFlow"))}
+    assert all(r in flows for r in refs)
+    # flow endpoints are the task's participants
+    prefs = [c.text for c in task if c.tag == _b("participantRef")]
+    init_flow = flows[f"MF_{task.get('id')}_init"]
+    ret_flow = flows[f"MF_{task.get('id')}_ret"]
+    assert init_flow.get("sourceRef") == prefs[0] and init_flow.get("targetRef") == prefs[1]
+    assert ret_flow.get("sourceRef") == prefs[1] and ret_flow.get("targetRef") == prefs[0]
+
+    # DI: both bands of the two-way task show the envelope
+    DI = "{http://www.omg.org/spec/BPMN/20100524/DI}"
+    top = next(s for s in root.iter(DI + "BPMNShape") if s.get("id") == f"{task.get('id')}_top")
+    bot = next(s for s in root.iter(DI + "BPMNShape") if s.get("id") == f"{task.get('id')}_bot")
+    assert top.get("isMessageVisible") == "true"
+    assert bot.get("isMessageVisible") == "true"
+    # request bracket: forward only
+    req = next(e for e in root.iter(_b("choreographyTask"))
+               if e.get("name") == "Request unlock [Gov]")
+    req_bot = next(s for s in root.iter(DI + "BPMNShape") if s.get("id") == f"{req.get('id')}_bot")
+    assert req_bot.get("isMessageVisible") == "false"
+
+
+def test_message_label_chain():
+    """Label chain: payload schema → message kind (object type) → generic;
+    disagreements → generic + conflict flag (D8 seed); never split the type."""
+    from ocelchormodel_rad.layout import message_label
+
+    def e(attrs, typ="x call"):
+        return {"attrs": attrs, "type": typ}
+
+    # payload schema (attribute names)
+    label, conflict = message_label([e({"amount": "1"}), e({"amount": "2"})], "forward")
+    assert (label, conflict) == ("amount", False)
+    # incompatible payload structures → conflict, no fall-through
+    label, conflict = message_label([e({"amount": "1"}), e({"spender": "x"})], "forward")
+    assert (label, conflict) == ("input", True)
+    # unnamed ABI params (attributes named "") drop; kind (object type) takes over
+    label, conflict = message_label([e({"": "0xabc"}, "balanceOf call")], "forward")
+    assert (label, conflict) == ("balanceOf call", False)
+    label, conflict = message_label(
+        [e({"": "s", "amount0": "1", "data": "0x"})], "forward")
+    assert (label, conflict) == ("amount0, data", False)
+    # XES family: no payload at all → the message kind labels the flow
+    label, conflict = message_label([e({}, "Confirmation"), e({}, "Confirmation")], "forward")
+    assert (label, conflict) == ("Confirmation", False)
+    # no payload, disagreeing kinds → conflict
+    label, conflict = message_label([e({}, "Offer"), e({}, "Confirmation")], "forward")
+    assert (label, conflict) == ("input", True)
+    # nothing at all → generic
+    label, conflict = message_label([e({}, "")], "backward")
+    assert (label, conflict) == ("output", False)
 
 
 # --- process-tree s-expression (process_tree.txt) ---------------------------
@@ -120,7 +187,7 @@ def test_tree_sexpr_snapshot(worked_example):
     """The worked example's tree in IM notation — user-approved format."""
     from ocelchormodel_rad.export_bpmn import tree_sexpr
 
-    d = discover(worked_example, allow_and=True)
+    d = discover(worked_example)
     assert tree_sexpr(d.tree) == (
         "∇_{unlock [Gov]}(\n"
         "  →(\n"

@@ -23,6 +23,11 @@ from ocelchormodel_rad.export_bpmn import (
 from ocelchormodel_rad.typing import TaskType
 
 
+# Vertical clearance for a message envelope + its label as chor-js renders
+# them above the initiating band / below the non-initiating band.
+MSG_CLEAR = 55
+
+
 def _b(t: str) -> str:
     return f"{{{BPMN}}}{t}"
 
@@ -46,6 +51,9 @@ class Shape:
     # Atoms connect at their geometric centre; a scope connects on its INNER
     # FLOW LINE, which sits half a band off-centre when its band count is odd.
     port_dy: float | None = None  # None → h/2
+    # message-flow presence per direction (B6), drives band isMessageVisible
+    msg_fwd: bool = False  # initiator → non-initiator
+    msg_bwd: bool = False  # non-initiator → initiator
 
 
 @dataclass
@@ -120,8 +128,12 @@ def _band_roles(node: TreeNode) -> list[str]:
 # ---------------------------------------------------------------------------
 
 class _Layout:
-    def __init__(self) -> None:
+    def __init__(self, msg_dirs: dict | None = None) -> None:
         self._n = 0
+        # TaskType → (has forward message, has backward message); message
+        # envelopes render outside the task shape, so such tasks reserve
+        # vertical clearance in their fragment.
+        self.msg_dirs = msg_dirs or {}
 
     def uid(self, p: str) -> str:
         self._n += 1
@@ -139,7 +151,15 @@ class _Layout:
             if node.label is None:
                 return Frag(0, 0, 0, [], [], [], None, None)  # tau
             if isinstance(node.label, TaskType):
-                return self._atom("task", TASK_W, TASK_H, node)
+                f = self._atom("task", TASK_W, TASK_H, node)
+                fwd, bwd = self.msg_dirs.get(node.label, (False, False))
+                top = MSG_CLEAR if fwd else 0
+                bot = MSG_CLEAR if bwd else 0
+                if top or bot:
+                    f.shapes[0].y += top
+                    return Frag(f.w, top + TASK_H + bot, top + TASK_H / 2,
+                                f.shapes, f.edges, f.members, f.entry, f.exit)
+                return f
             raise AssertionError("unexpanded scope leaf")
         if op == "NS":
             return self._scope(node)
@@ -163,8 +183,10 @@ class _Layout:
         x = 0.0
         shapes, edges, members = [], [], []
         entry = prev = None
+        h = TASK_H
         for f in frags:
             _shift(f, x, cy - f.cy)
+            h = max(h, (cy - f.cy) + f.h)
             shapes += f.shapes
             edges += f.edges
             members += f.members
@@ -174,7 +196,6 @@ class _Layout:
                 edges.append(Edge(self.uid("Flow"), prev, f.entry))
             prev = f.exit
             x += f.w + HGAP
-        h = max((s.y + s.h for s in shapes), default=TASK_H)
         return Frag(x - HGAP, h, cy, shapes, edges, members, entry, prev)
 
     # -- exclusive / parallel branches --------------------------------------
@@ -206,6 +227,8 @@ class _Layout:
             y += f.h + VGAP
             maxw = max(maxw, f.w)
         total_h = max(y - VGAP, GW)
+        if any(not f.entry for f in frags):
+            total_h += 50  # headroom for the tau-skip bypass arc below
         if cy is None:
             cy = GW / 2
         split.x, split.y = 0, cy - GW / 2
@@ -245,7 +268,9 @@ class _Layout:
 
         if redo_tau:
             edges.append(Edge(self.uid("Flow"), split.id, merge.id))
-            return Frag(split.x + GW, top_bottom, cy, shapes, edges, members, merge.id, split.id)
+            # headroom for the back-edge channel below the body (keeps the
+            # arc inside the enclosing scope)
+            return Frag(split.x + GW, top_bottom + 50, cy, shapes, edges, members, merge.id, split.id)
 
         # Redo carries flow: put it on its own track below the body.
         fr = self.flow(redo)
@@ -261,7 +286,7 @@ class _Layout:
         edges.append(Edge(self.uid("Flow"), split.id, fr.entry, hint=f"loop-enter{multi}"))
         edges.append(Edge(self.uid("Flow"), fr.exit, merge.id, hint=f"loop-back{multi}"))
         w = max(split.x + GW, bdx + fr.w)
-        h = redo_y + fr.h
+        h = redo_y + fr.h + 50  # headroom for the loop-back channel
         return Frag(w, h, cy, shapes, edges, members, merge.id, split.id)
 
     # -- container (start … flow … end) -------------------------------------
@@ -284,7 +309,7 @@ class _Layout:
         end.y = cy - EVENT / 2
         shapes = [start] + fb.shapes + [end]
         members = [start.id] + fb.members + [end.id]
-        h = max((s.y + s.h for s in shapes), default=EVENT)
+        h = max(EVENT, (cy - fb.cy) + fb.h if fb.entry else EVENT)
         return Frag(end.x + EVENT, h, cy, shapes, edges, members, start.id, end.id)
 
     # -- scope (nested subChoreography) -------------------------------------
@@ -393,8 +418,8 @@ def _route(edge: Edge, by_id: dict, in_container: dict,
         """Allocate a distinct horizontal channel per back edge and container,
         so parallel return arcs never coincide."""
         if channels is None:
-            return base + 25
-        off = channels.get(edge.container, 25)
+            return base + 30
+        off = channels.get(edge.container, 30)
         channels[edge.container] = off + 20
         return base + off
 
@@ -411,29 +436,53 @@ def _route(edge: Edge, by_id: dict, in_container: dict,
         entry_x = min(max(scx, t.x + 30), t.x + t.w - 30)
         return [(scx, s.y + s.h), (scx, ch_y), (entry_x, ch_y), (entry_x, t.y)]
 
+    def _top_entry_x(shape) -> float:
+        """x for a vertical drop into a shape's TOP: off-centre when a forward
+        envelope (centred above the band) occupies the middle."""
+        if shape.kind == "task" and shape.msg_fwd:
+            return shape.x + 18
+        return shape.x + shape.w / 2
+
+    def _bottom_entry_x(shape) -> float:
+        """x for a vertical rise into a shape's BOTTOM (mirror of the above)."""
+        if shape.kind == "task" and shape.msg_bwd:
+            return shape.x + 18
+        return shape.x + shape.w / 2
+
     if edge.hint == "loop-enter-multi":
         # multi-element redo: drop into the FIRST element's TOP via the channel
         # above the redo track. The channel must clear the row's TALLEST member
-        # (siblings can reach higher than the entry element itself).
+        # (siblings can reach higher than the entry element itself), including
+        # forward-message envelopes above tasks.
         peers = in_container.get(edge.container, [])
         lo, hi = min(tcx, scx) - 1, max(tcx, scx) + 1
-        row_top = min((p.y for p in peers
+        row_top = min((p.y - (MSG_CLEAR if getattr(p, "msg_fwd", False) else 0)
+                       for p in peers
                        if p.x < hi and p.x + p.w > lo and p.y + p.h / 2 > t.y),
                       default=t.y)
         ch_y = min(t.y, row_top) - VGAP / 2
-        return [(scx, s.y + s.h), (scx, ch_y), (tcx, ch_y), (tcx, t.y)]
+        ex = _top_entry_x(t)
+        return [(scx, s.y + s.h), (scx, ch_y), (ex, ch_y), (ex, t.y)]
+
+    def _eff_bottom(p) -> float:
+        """A shape's visual bottom incl. the return-message envelope zone."""
+        return p.y + p.h + (MSG_CLEAR if getattr(p, "msg_bwd", False) else 0)
 
     def _spanning_below(lo: float, hi: float) -> float:
-        """Bottom of everything the horizontal channel run would cross."""
+        """Bottom of everything the horizontal channel run would cross,
+        including message envelopes hanging below tasks."""
         peers = in_container.get(edge.container, [])
-        return max((p.y + p.h for p in peers if p.x < hi and p.x + p.w > lo),
-                   default=max(s.y + s.h, t.y + t.h))
+        return max((_eff_bottom(p) for p in peers if p.x < hi and p.x + p.w > lo),
+                   default=max(_eff_bottom(s), _eff_bottom(t)))
 
     def _down_exit(below: float) -> list[tuple]:
         """Descend from the source into a below-channel. Straight down from
-        the bottom port; only a gateway whose bottom port is BUSY (incoming
-        returns) detours via its right corner."""
-        if s.kind in ("xgw", "pgw") and busy_bottom and s.id in busy_bottom:
+        the bottom port; detour via the right corner when the bottom is
+        occupied — a gateway with incoming returns, or a task whose return-
+        message envelope hangs below it."""
+        occupied = (s.kind in ("xgw", "pgw") and busy_bottom and s.id in busy_bottom) \
+            or (s.kind == "task" and s.msg_bwd)
+        if occupied:
             dx = s.x + s.w + 15
             return [(s.x + s.w, scy), (dx, scy), (dx, below)]
         return [(scx, s.y + s.h), (scx, below)]
@@ -442,7 +491,8 @@ def _route(edge: Edge, by_id: dict, in_container: dict,
         # multi-element redo: leave the LAST element via the channel BELOW
         # everything the return spans, then up into the merge's BOTTOM.
         below = _channel(_spanning_below(min(t.x, s.x), max(t.x + t.w, s.x + s.w)))
-        return _down_exit(below) + [(tcx, below), (tcx, t.y + t.h)]
+        rx = _bottom_entry_x(t)
+        return _down_exit(below) + [(rx, below), (rx, t.y + t.h)]
 
     if edge.hint == "loop-back":
         # redo → merge: out the redo's LEFT, then up into the merge's BOTTOM.
@@ -450,13 +500,15 @@ def _route(edge: Edge, by_id: dict, in_container: dict,
             return [(s.x, scy), (tcx, scy), (tcx, t.y + t.h)]
         # fallback: below everything, then up into merge bottom
         below = _channel(_spanning_below(min(t.x, s.x), max(t.x + t.w, s.x + s.w)))
-        return _down_exit(below) + [(tcx, below), (tcx, t.y + t.h)]
+        rx = _bottom_entry_x(t)
+        return _down_exit(below) + [(rx, below), (rx, t.y + t.h)]
 
     if edge.hint == "gw-skip":
         # tau branch: bypass arc below everything between split and merge,
         # entering the merge's BOTTOM (never along the through-line row).
         below = _channel(_spanning_below(s.x, t.x + t.w))
-        return _down_exit(below) + [(tcx, below), (tcx, t.y + t.h)]
+        rx = _bottom_entry_x(t)
+        return _down_exit(below) + [(rx, below), (rx, t.y + t.h)]
 
     if edge.hint == "gw-out" and abs(scy - tcy) >= 2:
         # gateway → off-row branch: TOP/BOTTOM port, horizontal into branch LEFT
@@ -477,11 +529,52 @@ def _route(edge: Edge, by_id: dict, in_container: dict,
         return [p0, (mx, p0[1]), (mx, pn[1]), pn]
     # generic back edge → drop below everything it spans in the same container
     below = _channel(_spanning_below(min(t.x, s.x), max(t.x + t.w, s.x + s.w)))
-    return _down_exit(below) + [(tcx, below), (tcx, t.y + t.h)]
+    rx = _bottom_entry_x(t)
+    return _down_exit(below) + [(rx, below), (rx, t.y + t.h)]
+
+
+def message_label(entries: list[dict], direction: str) -> tuple[str, bool]:
+    """One label per task type × direction (spec B6).
+
+    Preference chain, all plain OCEL-level data (no domain knowledge):
+
+    1. **payload schema** — the attribute names of the collected message
+       objects, where all agree (source order of the first occurrence).
+       Empty attribute names (e.g. unnamed ABI parameters, stored verbatim
+       by producers) carry no display value and are dropped first.
+    2. **message kind** — the message object type, where no payload schema
+       exists but all objects share one type (e.g. the XES family, whose
+       sources carry no message payload at all — the kind, "Offer" etc.,
+       lives in the type slot).
+    3. generic ``input``/``output``.
+
+    Disagreeing payload structures (or, lacking those, disagreeing kinds)
+    yield the generic label plus the conflict flag that feeds diagnostic D8;
+    the task type is never split.
+    """
+    generic = "input" if direction == "forward" else "output"
+    keysets = {tuple(k for k in e["attrs"].keys() if k) for e in entries}
+    if len({frozenset(ks) for ks in keysets}) > 1:
+        return generic, True  # incompatible payload structures → D8
+    keys = next(iter(keysets))
+    if keys:
+        return ", ".join(keys), False
+    # no payload schema → message kind (object type)
+    types = {e["type"] for e in entries}
+    if len(types) == 1 and next(iter(types)):
+        return next(iter(types)), False
+    if len(types) > 1:
+        return generic, True  # incompatible kinds → D8
+    return generic, False
 
 
 def build_bpmn(tree: TreeNode, side_index: SideIndex, *, include_di: bool = True) -> str:
-    lay = _Layout()
+    msg_dirs = {
+        key: (bool(entry.messages.get("forward")), bool(entry.messages.get("backward")))
+        for key, entry in side_index.items()
+        if not hasattr(key, "opener")  # TaskType entries only
+    }
+    lay = _Layout(msg_dirs)
     if tree.op == "×":
         # Root-level XOR: each entry on its own lane, its own start/end.
         shapes, edges = [], []
@@ -516,6 +609,53 @@ def build_bpmn(tree: TreeNode, side_index: SideIndex, *, include_di: bool = True
 
     for pid, role in roles.declared():
         ET.SubElement(choreo, _b("participant"), {"id": pid, "name": role})
+
+    # --- message generalisation (B6): one bpmn2:message per distinct label,
+    # one messageFlow per task × direction, referenced from the task. ---
+    msg_ids: dict[str, str] = {}  # label → message element id
+
+    def _message_for(label: str) -> str:
+        if label not in msg_ids:
+            msg_ids[label] = f"Msg_{len(msg_ids) + 1}"
+        return msg_ids[label]
+
+    for s in shapes:
+        if s.kind != "task":
+            continue
+        entry = side_index.get(s.node.label)
+        if entry is None:
+            continue
+        tt = s.node.label
+        init_ref = roles.get(tt.init_role)
+        noninit_ref = (roles.alt(tt.noninit_role) if tt.noninit_role == tt.init_role
+                       else roles.get(tt.noninit_role))
+        task_el = elmap[s.id]
+        doc_idx = next((i for i, c in enumerate(task_el)
+                        if c.tag == _b("documentation")), len(list(task_el)))
+        for direction, src_ref, tgt_ref, suffix in (
+                ("forward", init_ref, noninit_ref, "init"),
+                ("backward", noninit_ref, init_ref, "ret")):
+            entries = entry.messages.get(direction) or []
+            if not entries:
+                continue
+            label, _conflict = message_label(entries, direction)
+            mf_id = f"MF_{s.id}_{suffix}"
+            ET.SubElement(choreo, _b("messageFlow"), {
+                "id": mf_id, "sourceRef": src_ref, "targetRef": tgt_ref,
+                "messageRef": _message_for(label),
+            })
+            ref = ET.Element(_b("messageFlowRef"))
+            ref.text = mf_id
+            task_el.insert(doc_idx, ref)
+            doc_idx += 1
+            if direction == "forward":
+                s.msg_fwd = True
+            else:
+                s.msg_bwd = True
+
+    # message elements precede the choreography inside definitions
+    for pos, (label, mid) in enumerate(msg_ids.items()):
+        defs.insert(pos, ET.Element(_b("message"), {"id": mid, "name": label}))
 
     by_container: dict[str | None, list] = {}
     for s in shapes:
@@ -596,10 +736,12 @@ def _emit_bands(plane, s: Shape, roles: "_Participants"):
         noninit = (roles.alt(tt.noninit_role) if tt.noninit_role == tt.init_role
                    else roles.get(tt.noninit_role))
         _add_shape(plane, f"{s.id}_top", roles.get(tt.init_role), (x, y, w, BAND_H),
-                   participantBandKind="top_initiating", isMessageVisible="false",
+                   participantBandKind="top_initiating",
+                   isMessageVisible="true" if s.msg_fwd else "false",
                    choreographyActivityShape=f"{s.id}_di")
         _add_shape(plane, f"{s.id}_bot", noninit, (x, y + h - BAND_H, w, BAND_H),
-                   participantBandKind="bottom_non_initiating", isMessageVisible="false",
+                   participantBandKind="bottom_non_initiating",
+                   isMessageVisible="true" if s.msg_bwd else "false",
                    choreographyActivityShape=f"{s.id}_di")
         return
     band_roles = _band_roles(s.node)

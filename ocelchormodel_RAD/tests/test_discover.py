@@ -44,7 +44,7 @@ def render(n) -> str:
 # --- fixture pooling + frame-exact splitting ------------------------------
 
 def test_fixture_frame_exact_and_pooling(worked_example):
-    d = discover(worked_example, allow_and=True)
+    d = discover(worked_example)
     assert render(d.tree) == (
         "NS[Request unlock [Gov]]("
         "→("
@@ -63,7 +63,7 @@ def test_single_instance_reproduces_structure():
     b = _wex.Builder()
     _wex._instance(b, "A", transfer_frames=1)
     m = reader.build_model(b.build())
-    d = discover(m, allow_and=True)
+    d = discover(m)
     # One frame → no loop; the transfer frame stays a single named subtree.
     assert render(d.tree) == (
         "NS[Request unlock [Gov]]("
@@ -126,7 +126,7 @@ def _load_blockchain(name):
 
 def test_recursion_beanstalk():
     m = _load_blockchain("beanstalk_attack")
-    d = discover(m, allow_and=True)
+    d = discover(m)
     execs = {f.exec_type for f in d.recursion}
     # The Curve reentrancy / read-only-reentrancy pattern (spec settled facts).
     for fn in ("exchange", "add_liquidity", "get_virtual_price", "remove_liquidity_one_coin"):
@@ -156,10 +156,7 @@ def test_no_activity_dropped(dataset):
     alphabet). Guards against dropping a loop's non-tau redo path (§B4/§B5)."""
     from ocelchormodel_rad.typing import task_type
     m = _load_blockchain(dataset)
-    try:
-        d = discover(m, allow_and=False)
-    except ValueError:
-        d = discover(m, allow_and=True)
+    d = discover(m)
     model_tts = {task_type(m, e) for e in m.events.values()}
     assert _leaf_task_types(d.tree) == model_tts
 
@@ -167,8 +164,19 @@ def test_no_activity_dropped(dataset):
 def test_recursion_silent_on_non_recursive_log():
     # Beacon deposit: depth 1, no recursion.
     m = _load_blockchain("0x00000000219ab540356cbb839cbe05303d7705fa_uniqueFunction")
-    d = discover(m, allow_and=True)
+    d = discover(m)
     assert d.recursion == []
+
+
+def test_and_nodes_collected_not_raised():
+    """Fallthrough-∧ stays in the model (diagnostics never change the model)
+    and the nodes are recorded for D6 (spec B4 correction):
+    pm4py's ActivityOncePerTrace emits ∧ even on a single totally ordered
+    subtrace with non-adjacent repeats — e.g. d9e1ce's
+    swapExactTokensForTokensSupportingFeeOnTransferTokens frame."""
+    m = _load_blockchain("0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f_uniqueFunction")
+    d = discover(m)  # must not raise
+    assert len(d.and_nodes) >= 1
 
 
 def test_d5_matches_refreshed_audit():
@@ -183,7 +191,7 @@ def test_d5_matches_refreshed_audit():
         if name not in audit:
             continue
         checked += 1
-        d = discover(reader.load(path), allow_and=True)
+        d = discover(reader.load(path))
         d5 = {f.exec_type for f in d.recursion}
         expected = {t["exec_type"] for t in audit[name]["type_level"]["recurring_types"]}
         assert d5 == expected, f"{name}: D5={d5} audit={expected}"

@@ -136,6 +136,34 @@ def test_recursion_beanstalk():
     assert any(f.direct for f in gvp) and any(not f.direct for f in gvp)
 
 
+def _leaf_task_types(node):
+    out = set()
+    if node.op is None and isinstance(node.label, TaskType):
+        out.add(node.label)
+    for c in node.children:
+        out |= _leaf_task_types(c)
+    return out
+
+
+@pytest.mark.parametrize("dataset", [
+    "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc_uniqueFunction",  # loop with non-tau redo
+    "0x5efda50f22d34f262c29268506c5fa42cb56a1ce_uniqueFunction",
+    "0x06012c8cf97bead5deae237070f9587f8e7a266d_uniqueFunction",
+    "beanstalk_attack",
+])
+def test_no_activity_dropped(dataset):
+    """Every task type in the log appears as a discovered leaf (IM preserves the
+    alphabet). Guards against dropping a loop's non-tau redo path (§B4/§B5)."""
+    from ocelchormodel_rad.typing import task_type
+    m = _load_blockchain(dataset)
+    try:
+        d = discover(m, allow_and=False)
+    except ValueError:
+        d = discover(m, allow_and=True)
+    model_tts = {task_type(m, e) for e in m.events.values()}
+    assert _leaf_task_types(d.tree) == model_tts
+
+
 def test_recursion_silent_on_non_recursive_log():
     # Beacon deposit: depth 1, no recursion.
     m = _load_blockchain("0x00000000219ab540356cbb839cbe05303d7705fa_uniqueFunction")

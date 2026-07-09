@@ -64,11 +64,12 @@ def test_brackets_inside_with_caller_band(worked_example):
 
 
 def test_loop_marker_on_single_element_body(worked_example):
-    """Repeated transfer frame → standardLoopCharacteristics on that subChoreography."""
+    """Repeated transfer frame → loopType="Standard" on that subChoreography
+    (the choreography-activity loop marker, BPMN 11.5.3)."""
     xml = to_bpmn(*_discover_tuple(worked_example))
     root = ET.fromstring(xml)
     sub = next(e for e in root.iter(_b("subChoreography")) if e.get("name") == "transfer [TORN]")
-    assert any(c.tag == _b("standardLoopCharacteristics") for c in sub)
+    assert sub.get("loopType") == "Standard"
 
 
 def test_root_xor_renders_multiple_start_events():

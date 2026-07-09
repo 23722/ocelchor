@@ -112,3 +112,25 @@ def test_per_instance_round_trip(dataset):
 def _discover_tuple(model):
     d = discover(model, allow_and=True)
     return d.tree, d.side_index
+
+
+# --- process-tree s-expression (process_tree.txt) ---------------------------
+
+def test_tree_sexpr_snapshot(worked_example):
+    """The worked example's tree in IM notation — user-approved format."""
+    from ocelchormodel_rad.export_bpmn import tree_sexpr
+
+    d = discover(worked_example, allow_and=True)
+    assert tree_sexpr(d.tree) == (
+        "∇_{unlock [Gov]}(\n"
+        "  →(\n"
+        "    'Request unlock [Gov]' ⟨Proxy→Governance⟩,\n"
+        "    ↻(\n"
+        "      ∇_{transfer [TORN]}(\n"
+        "        →(\n"
+        "          'Request transfer [TORN]' ⟨Governance→TORN⟩,\n"
+        "          'hook [Vault]' ⟨TORN→Vault⟩,\n"
+        "          'Respond to transfer [TORN]' ⟨TORN→Governance⟩)),\n"
+        "      τ),\n"
+        "    'Respond to unlock [Gov]' ⟨Governance→Proxy⟩))"
+    )

@@ -504,6 +504,32 @@ def _find_by_id(parent: ET.Element, eid: str) -> ET.Element:
 
 
 # ---------------------------------------------------------------------------
+# Process-tree serialization — indented s-expression in the inductive-miner
+# literature's notation: operators → × ↻ ∧, τ for silent steps, and RAD's
+# ∇_{scope} for named subtrees. Leaves show the FULL discovery alphabet
+# symbol — 'execType' ⟨initRole→noninitRole⟩ — i.e. the participant
+# annotation exactly as it drives pooling (spec §B2.2).
+# ---------------------------------------------------------------------------
+
+def tree_sexpr(node: TreeNode, indent: int = 0) -> str:
+    """Render the discovered choreography tree as an indented s-expression.
+
+    The first line is not indented; nested children indent by two spaces per
+    level. Emitted per log as ``process_tree.txt`` next to the discovered
+    model.
+    """
+    if node.op is None:
+        if node.label is None:
+            return "τ"
+        tt = node.label
+        return f"'{tt.exec_type}' ⟨{tt.init_role}→{tt.noninit_role}⟩"
+    head = f"∇_{{{scope_display_name(node.label)}}}" if node.op == "NS" else node.op
+    pad = "  " * (indent + 1)
+    children = ",\n".join(pad + tree_sexpr(c, indent + 1) for c in node.children)
+    return f"{head}(\n{children})"
+
+
+# ---------------------------------------------------------------------------
 # Structural signature — tree isomorphism over (element type, name, band
 # multiset), ignoring ids and coordinates (spec §B5 round-trip).
 # ---------------------------------------------------------------------------

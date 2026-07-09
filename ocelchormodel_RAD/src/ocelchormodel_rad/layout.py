@@ -353,8 +353,28 @@ def _participant_map(shapes) -> _Participants:
     return parts
 
 
+def _busy_bottom_ports(edges: list, by_id: dict) -> set:
+    """Gateway ids whose BOTTOM port receives incoming edges (branch returns,
+    skip arcs, loop returns). Only these need the right-corner detour when an
+    outgoing back edge leaves downward; all others exit the bottom port
+    directly (straight vertical, per the user's arc corrections)."""
+    busy: set = set()
+    for e in edges:
+        t = by_id[e.tgt]
+        if t.kind not in ("xgw", "pgw"):
+            continue
+        s = by_id[e.src]
+        if e.hint in ("gw-skip", "loop-back", "loop-back-multi"):
+            busy.add(t.id)
+        elif e.hint == "gw-in" and s.y + s.h / 2 > t.y + t.h / 2 + 1:
+            busy.add(t.id)  # return from a branch below → enters bottom port
+        elif e.hint is None and t.x + t.w - 1 < s.x + s.w and t.x < s.x:
+            busy.add(t.id)  # generic back edge ends at the target's bottom
+    return busy
+
+
 def _route(edge: Edge, by_id: dict, in_container: dict,
-           channels: dict | None = None) -> list[tuple]:
+           channels: dict | None = None, busy_bottom: set | None = None) -> list[tuple]:
     """Waypoints per edge kind. Conventions follow the user's hand-arranged
     reference (discovered_model_rearranged_v2): activities enter LEFT / exit
     RIGHT; gateways take off-row branches via TOP/BOTTOM ports; a loop's redo
@@ -393,23 +413,35 @@ def _route(edge: Edge, by_id: dict, in_container: dict,
 
     if edge.hint == "loop-enter-multi":
         # multi-element redo: drop into the FIRST element's TOP via the channel
-        # above the redo track (never sideways through its siblings).
-        ch_y = t.y - VGAP
+        # above the redo track. The channel must clear the row's TALLEST member
+        # (siblings can reach higher than the entry element itself).
+        peers = in_container.get(edge.container, [])
+        lo, hi = min(tcx, scx) - 1, max(tcx, scx) + 1
+        row_top = min((p.y for p in peers
+                       if p.x < hi and p.x + p.w > lo and p.y + p.h / 2 > t.y),
+                      default=t.y)
+        ch_y = min(t.y, row_top) - VGAP / 2
         return [(scx, s.y + s.h), (scx, ch_y), (tcx, ch_y), (tcx, t.y)]
 
+    def _spanning_below(lo: float, hi: float) -> float:
+        """Bottom of everything the horizontal channel run would cross."""
+        peers = in_container.get(edge.container, [])
+        return max((p.y + p.h for p in peers if p.x < hi and p.x + p.w > lo),
+                   default=max(s.y + s.h, t.y + t.h))
+
     def _down_exit(below: float) -> list[tuple]:
-        """Descend from the source into a below-channel. A gateway source exits
-        via its RIGHT corner (its bottom port is reserved for incoming
-        returns); anything else drops straight from its bottom."""
-        if s.kind in ("xgw", "pgw"):
+        """Descend from the source into a below-channel. Straight down from
+        the bottom port; only a gateway whose bottom port is BUSY (incoming
+        returns) detours via its right corner."""
+        if s.kind in ("xgw", "pgw") and busy_bottom and s.id in busy_bottom:
             dx = s.x + s.w + 15
             return [(s.x + s.w, scy), (dx, scy), (dx, below)]
         return [(scx, s.y + s.h), (scx, below)]
 
     if edge.hint == "loop-back-multi":
-        # multi-element redo: leave the LAST element via the channel BELOW the
-        # redo track, then up into the merge's BOTTOM.
-        below = _channel(max(s.y + s.h, t.y + t.h))
+        # multi-element redo: leave the LAST element via the channel BELOW
+        # everything the return spans, then up into the merge's BOTTOM.
+        below = _channel(_spanning_below(min(t.x, s.x), max(t.x + t.w, s.x + s.w)))
         return _down_exit(below) + [(tcx, below), (tcx, t.y + t.h)]
 
     if edge.hint == "loop-back":
@@ -417,17 +449,13 @@ def _route(edge: Edge, by_id: dict, in_container: dict,
         if t.x + t.w < s.x:
             return [(s.x, scy), (tcx, scy), (tcx, t.y + t.h)]
         # fallback: below everything, then up into merge bottom
-        below = _channel(max(s.y + s.h, t.y + t.h))
-        return [(scx, s.y + s.h), (scx, below), (tcx, below), (tcx, t.y + t.h)]
+        below = _channel(_spanning_below(min(t.x, s.x), max(t.x + t.w, s.x + s.w)))
+        return _down_exit(below) + [(tcx, below), (tcx, t.y + t.h)]
 
     if edge.hint == "gw-skip":
         # tau branch: bypass arc below everything between split and merge,
         # entering the merge's BOTTOM (never along the through-line row).
-        lo, hi = s.x, t.x + t.w
-        peers = in_container.get(edge.container, [])
-        below = _channel(max((p.y + p.h for p in peers
-                              if p.x < hi and p.x + p.w > lo),
-                             default=max(s.y + s.h, t.y + t.h)))
+        below = _channel(_spanning_below(s.x, t.x + t.w))
         return _down_exit(below) + [(tcx, below), (tcx, t.y + t.h)]
 
     if edge.hint == "gw-out" and abs(scy - tcy) >= 2:
@@ -448,17 +476,8 @@ def _route(edge: Edge, by_id: dict, in_container: dict,
         mx = (p0[0] + pn[0]) / 2
         return [p0, (mx, p0[1]), (mx, pn[1]), pn]
     # generic back edge → drop below everything it spans in the same container
-    lo, hi = min(t.x, s.x), max(t.x + t.w, s.x + s.w)
-    peers = in_container.get(edge.container, [])
-    below = _channel(max((p.y + p.h for p in peers
-                          if p.x < hi and p.x + p.w > lo),
-                         default=max(s.y + s.h, t.y + t.h)))
-    if s.kind in ("xgw", "pgw"):
-        # leave via the gateway's RIGHT corner: its bottom port is reserved for
-        # incoming branch returns (avoids opposite-direction line sharing)
-        dx = s.x + s.w + 15
-        return [(s.x + s.w, scy), (dx, scy), (dx, below), (tcx, below), (tcx, t.y + t.h)]
-    return [(scx, s.y + s.h), (scx, below), (tcx, below), (tcx, t.y + t.h)]
+    below = _channel(_spanning_below(min(t.x, s.x), max(t.x + t.w, s.x + s.w)))
+    return _down_exit(below) + [(tcx, below), (tcx, t.y + t.h)]
 
 
 def build_bpmn(tree: TreeNode, side_index: SideIndex, *, include_di: bool = True) -> str:
@@ -618,8 +637,9 @@ def _emit_di(defs, choreo, shapes, edges, roles: "_Participants"):
     for s in shapes:
         in_container.setdefault(s.container, []).append(s)
     channels: dict = {}  # container id → next back-edge channel offset
+    busy_bottom = _busy_bottom_ports(edges, by_id)
     for e in edges:
-        pts = _route(e, by_id, in_container, channels)
+        pts = _route(e, by_id, in_container, channels, busy_bottom)
         edge = ET.SubElement(plane, f"{{{BPMNDI}}}BPMNEdge",
                              {"id": f"{e.id}_di", "bpmnElement": e.id})
         for px, py in pts:

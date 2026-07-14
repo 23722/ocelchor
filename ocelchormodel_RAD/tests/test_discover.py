@@ -1,8 +1,8 @@
 """M2 — discovery acceptance (spec build-order M2 / §B4).
 
 Mandatory: frame-exact splitting, context separation, fixture pooling, and
-recursion detection (D5) on Beanstalk with the refreshed-audit behaviour on the
-other logs.
+recursion detection (D12) on Beanstalk with the refreshed-audit behaviour on
+the other logs.
 """
 
 from __future__ import annotations
@@ -115,7 +115,7 @@ def test_context_separation_distinct_buckets():
     assert len(keys) == 2  # never pooled across parents
 
 
-# --- recursion (D5) --------------------------------------------------------
+# --- recursion (D12) -------------------------------------------------------
 
 def _load_blockchain(name):
     path = BLOCKCHAIN / f"{name}_ocel.json"
@@ -170,7 +170,7 @@ def test_recursion_silent_on_non_recursive_log():
 
 def test_and_nodes_collected_not_raised():
     """Fallthrough-∧ stays in the model (diagnostics never change the model)
-    and the nodes are recorded for D6 (spec B4 correction):
+    and the nodes are recorded for D9 (spec B4 correction):
     pm4py's ActivityOncePerTrace emits ∧ even on a single totally ordered
     subtrace with non-adjacent repeats — e.g. d9e1ce's
     swapExactTokensForTokensSupportingFeeOnTransferTokens frame."""
@@ -179,8 +179,8 @@ def test_and_nodes_collected_not_raised():
     assert len(d.and_nodes) >= 1
 
 
-def test_d5_matches_refreshed_audit():
-    """D5 recursive execType set == refreshed recursion_report.json, all datasets."""
+def test_d12_matches_refreshed_audit():
+    """D12 recursive execType set == refreshed recursion_report.json, all datasets."""
     audit_path = Path(__file__).resolve().parents[2] / "recursion_report.json"
     if not audit_path.exists():
         pytest.skip("recursion_report.json not present")
@@ -192,7 +192,7 @@ def test_d5_matches_refreshed_audit():
             continue
         checked += 1
         d = discover(reader.load(path))
-        d5 = {f.exec_type for f in d.recursion}
+        d12 = {f.exec_type for f in d.recursion}
         expected = {t["exec_type"] for t in audit[name]["type_level"]["recurring_types"]}
-        assert d5 == expected, f"{name}: D5={d5} audit={expected}"
+        assert d12 == expected, f"{name}: D12={d12} audit={expected}"
     assert checked >= 12

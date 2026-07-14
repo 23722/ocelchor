@@ -2,6 +2,11 @@
 data/output/*
 !data/output/.gitkeep
 
+# One-off validation script (M4): instruments pm4py's fallthrough factory to
+# cross-check the signature-based D9/D10 flags against ground truth. Not part
+# of the published artifact.
+tools/instrument_fallthroughs.py
+
 # chor-js render harness (local dev tooling only, not part of the published
 # artifact): drives the third-party chor-js renderer headlessly to verify
 # model layout. Contains a bundled copy of chor-js (built from the separately

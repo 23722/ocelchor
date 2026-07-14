@@ -1,4 +1,4 @@
-"""M1 — paths: ≻ ordering, one hierarchical trace per instance, D9 (spec §B2.4)."""
+"""M1 — paths: ≻ ordering, one hierarchical trace per instance, D1 (spec §B2.4)."""
 
 from __future__ import annotations
 

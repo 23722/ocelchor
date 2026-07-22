@@ -184,16 +184,18 @@ def test_message_label_chain():
 # --- process-tree s-expression (process_tree.txt) ---------------------------
 
 def test_tree_sexpr_snapshot(worked_example):
-    """The worked example's tree in IM notation — user-approved format."""
+    """The worked example's tree in IM notation — user-approved format.
+    Every symbol shows its full type (name plus role pair); the ∇ pair is the
+    opener's, demonstrating scopeType = taskType(opener)."""
     from ocelchormodel_rad.export_bpmn import tree_sexpr
 
     d = discover(worked_example)
     assert tree_sexpr(d.tree) == (
-        "∇_{unlock [Gov]}(\n"
+        "∇_{unlock [Gov]} ⟨Proxy→Governance⟩(\n"
         "  →(\n"
         "    'Request unlock [Gov]' ⟨Proxy→Governance⟩,\n"
         "    ↻(\n"
-        "      ∇_{transfer [TORN]}(\n"
+        "      ∇_{transfer [TORN]} ⟨Governance→TORN⟩(\n"
         "        →(\n"
         "          'Request transfer [TORN]' ⟨Governance→TORN⟩,\n"
         "          'hook [Vault]' ⟨TORN→Vault⟩,\n"

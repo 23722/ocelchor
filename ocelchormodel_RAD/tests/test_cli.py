@@ -21,7 +21,8 @@ def test_cli_fixture_three_files(worked_example_path, tmp_path, capsys):
     bpmn = (out / "discovered_model.bpmn").read_text()
     assert bpmn.startswith("<?xml") and "choreography" in bpmn
     tree = (out / "process_tree.txt").read_text()
-    assert tree.startswith("∇_{unlock [Gov]}") and tree.endswith(")\n")
+    assert tree.startswith("∇_{unlock [Gov]} ⟨Proxy→Governance⟩(")
+    assert tree.endswith(")\n")
     diag = json.loads((out / "diagnostics.json").read_text())
     assert diag["log"] == "worked_example"
     assert diag["d02_scope_openers"]["non_request_openers"] == 0

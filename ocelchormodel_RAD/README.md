@@ -52,7 +52,7 @@ diagnostics never change the model.
 | File | Content |
 |------|---------|
 | `discovered_model.bpmn` | The generalised choreography model (semantics + layout) |
-| `process_tree.txt` | The discovered process tree as an indented s-expression: operators `→ × ↻ ∧`, `τ` for silent steps, `∇_{scope}` for named subtrees; leaves show the full discovery alphabet symbol `'event type' ⟨initiator→receiver⟩` |
+| `process_tree.txt` | The discovered process tree as an indented s-expression: operators `→ × ↻ ∧`, `τ` for silent steps, `∇_{scope} ⟨initiator→receiver⟩` for named subtrees; leaves show `'event type' ⟨initiator→receiver⟩`. Every symbol prints its full type — the ∇ pair is its opening bracket's role pair, so scopes with the same name but different openers (an outer call vs. a re-entrant self-call) stay distinguishable on the ∇ line |
 | `diagnostics.json` | Diagnostics D1–D13 (below) plus the non-blocking validator constraint summary |
 
 ## Message labels

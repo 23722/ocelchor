@@ -517,13 +517,24 @@ def tree_sexpr(node: TreeNode, indent: int = 0) -> str:
     The first line is not indented; nested children indent by two spaces per
     level. Emitted per log as ``process_tree.txt`` next to the discovered
     model.
+
+    Every symbol prints its full type: ``'execType' ⟨init→noninit⟩`` for
+    tasks, ``∇_{name} ⟨init→noninit⟩`` for scopes (the opener's role pair —
+    scopeType = taskType(opener)). Without the pair, scopes of the same
+    display name but different opener roles (e.g. an outer call vs. a
+    re-entrant self-call) would be indistinguishable on the ∇ line.
     """
     if node.op is None:
         if node.label is None:
             return "τ"
         tt = node.label
         return f"'{tt.exec_type}' ⟨{tt.init_role}→{tt.noninit_role}⟩"
-    head = f"∇_{{{scope_display_name(node.label)}}}" if node.op == "NS" else node.op
+    if node.op == "NS":
+        op = node.label.opener
+        head = (f"∇_{{{scope_display_name(node.label)}}}"
+                f" ⟨{op.init_role}→{op.noninit_role}⟩")
+    else:
+        head = node.op
     pad = "  " * (indent + 1)
     children = ",\n".join(pad + tree_sexpr(c, indent + 1) for c in node.children)
     return f"{head}(\n{children})"

@@ -79,7 +79,7 @@ Valid OCEL 2.0 JSON file. Object types produced:
 | *contract address* | Contract without a known name anywhere in the log |
 | `<function> call` | Request message object |
 | `<function> call response` | Response message object |
-| `subchoreographyInstance` | Scoping object grouping nested calls; carries a `name` attribute (e.g. `"subchoreography swap"`) |
+| `subchoreographyInstance` | Scoping object grouping nested calls; carries a `name` attribute in task-label style (e.g. `"swap [Router]"` — the function plus the same log-wide discriminator as event types), which downstream discovery consumes as the sub-choreography label |
 | `choreographyInstance` | One instance per transaction |
 
 ### Participant typing and event types

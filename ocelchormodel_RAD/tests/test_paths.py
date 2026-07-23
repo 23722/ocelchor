@@ -15,8 +15,7 @@ def _render(path):
     out = []
     for node in path:
         if isinstance(node, ScopeType):
-            o = node.opener
-            out.append(("S", o.exec_type, o.init_role, o.noninit_role))
+            out.append(("S", node.label, node.init_role, node.noninit_role))
         else:
             assert isinstance(node, TaskType)
             out.append(("T", node.exec_type, node.init_role, node.noninit_role))
@@ -39,8 +38,8 @@ def test_instance_order_is_by_timestamp(worked_example):
 
 def test_event_path_snapshot_instance_a(worked_example):
     m = worked_example
-    S_UNLOCK = ("S", "Request unlock [Gov]", "Proxy", "Governance")
-    S_TRANSFER = ("S", "Request transfer [TORN]", "Governance", "TORN")
+    S_UNLOCK = ("S", "unlock [Gov]", "Proxy", "Governance")
+    S_TRANSFER = ("S", "transfer [TORN]", "Governance", "TORN")
     paths = [_render(event_path(m, e)) for e in instance_order(m, "choreographyInstance:A")]
     assert paths == [
         (S_UNLOCK, ("T", "Request unlock [Gov]", "Proxy", "Governance")),

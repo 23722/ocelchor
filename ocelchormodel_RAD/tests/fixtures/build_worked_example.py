@@ -114,7 +114,7 @@ def _instance(b: Builder, suffix: str, transfer_frames: int) -> None:
     torn = b.obj(f"TORN{suffix}", "TORN")
     vault = b.obj(f"Vault{suffix}", "Vault")
 
-    root = b.scope(f"sub:{suffix}:root", "subchoreography unlock")
+    root = b.scope(f"sub:{suffix}:root", "unlock [Gov]")
     ms = 0
 
     # R: Request unlock [Gov]  (Proxy → Governance)
@@ -122,7 +122,7 @@ def _instance(b: Builder, suffix: str, transfer_frames: int) -> None:
             [b.msg(f"m:{suffix}:R:req", proxy, gov, {"unlockArg": "1"})]); ms += 1
 
     for k in range(1, transfer_frames + 1):
-        t = b.scope(f"sub:{suffix}:t{k}", "subchoreography transfer")
+        t = b.scope(f"sub:{suffix}:t{k}", "transfer [TORN]")
         b.contains(root, t)
         # Request transfer [TORN]  (Governance → TORN)
         b.event(f"e:{suffix}:t{k}:req", "Request transfer [TORN]", ms, gov, torn, t, inst,

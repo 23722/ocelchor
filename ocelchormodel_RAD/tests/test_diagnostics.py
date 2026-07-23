@@ -119,7 +119,7 @@ def _two_role_hook_model():
         gov = b.obj(f"Gov{tag}", "Governance")
         issuer = gov if issuer_t == "Governance" else b.obj(f"Issuer{tag}", issuer_t)
         vault = b.obj(f"Vault{tag}", "Vault")
-        root = b.scope(f"sub:{tag}:unlock", "subchoreography unlock")
+        root = b.scope(f"sub:{tag}:unlock", "unlock [Gov]")
         ms = 0
         b.event(f"e:{tag}:req", "Request unlock [Gov]", ms, proxy, gov, root, inst, []); ms += 1
         b.event(f"e:{tag}:hook", "hook [Vault]", ms, issuer, vault, root, inst, []); ms += 1
@@ -141,7 +141,7 @@ def test_d7_fixture_pooling(worked_example):
     d7 = compute_diagnostics(worked_example, discover(worked_example))[
         "d07_scope_pooling"]
     transfer = [e for e in d7["top"]
-                if e["context"][-1] == "Request transfer [TORN]"]
+                if e["context"][-1] == "transfer [TORN]"]
     assert transfer and transfer[0]["occurrences"] == 3
     assert transfer[0]["variants"] == 1
     assert transfer[0]["pooling_ratio"] == 3.0
@@ -160,7 +160,7 @@ def test_d8_synthetic_payload_conflict():
     proxy = b.obj("ProxyM", "Proxy")
     gov = b.obj("GovM", "Governance")
     vault = b.obj("VaultM", "Vault")
-    root = b.scope("sub:M:unlock", "subchoreography unlock")
+    root = b.scope("sub:M:unlock", "unlock [Gov]")
     m1 = b.msg("m:1", "GovM", "VaultM", {"amount": "1"})
     m2 = b.msg("m:2", "GovM", "VaultM", {"recipient": "0xabc"})
     ms = 0
@@ -257,8 +257,8 @@ def test_d12_beanstalk_summary():
     d12 = _diag("beanstalk_attack")["d12_recursion"]
     assert d12["direct"] >= 1 and d12["indirect"] >= 1
     assert d12["max_depth_delta"] >= 1
-    execs = {f["exec_type"] for f in d12["findings"]}
-    assert any("get_virtual_price" in e for e in execs)
+    labels = {f["label"] for f in d12["findings"]}
+    assert any("get_virtual_price" in l for l in labels)
 
 
 def test_d13_cross_depth_0x5e():

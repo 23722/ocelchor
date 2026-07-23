@@ -373,7 +373,9 @@ def _d13_cross_depth_participants(model: Model) -> dict:
     examples = []
     for s in model.scopes:
         for dsc in descendants(s):
-            for obj in per_scope[s].keys() & per_scope[dsc].keys():
+            # sorted: set-intersection order is hash-seed dependent, and the
+            # bounded examples must be deterministic across runs
+            for obj in sorted(per_scope[s].keys() & per_scope[dsc].keys()):
                 if per_scope[s][obj] != per_scope[dsc][obj]:
                     count += 1
                     if len(examples) < MAX_EXAMPLES:

@@ -31,13 +31,13 @@ _spec.loader.exec_module(_wex)
 def render(n) -> str:
     """Render a TreeNode to a compact s-expression over exec types."""
     if n.op == "NS":
-        return f"NS[{n.label.opener.exec_type}]({render(n.children[0])})"
+        return f"NS[{n.label.label}]({render(n.children[0])})"
     if n.op is None:
         if n.label is None:
             return "tau"
         if isinstance(n.label, TaskType):
             return f"'{n.label.exec_type}'"
-        return f"REF[{n.label.opener.exec_type}]"
+        return f"REF[{n.label.label}]"
     return f"{n.op}(" + ", ".join(render(c) for c in n.children) + ")"
 
 
@@ -46,10 +46,10 @@ def render(n) -> str:
 def test_fixture_frame_exact_and_pooling(worked_example):
     d = discover(worked_example)
     assert render(d.tree) == (
-        "NS[Request unlock [Gov]]("
+        "NS[unlock [Gov]]("
         "→("
         "'Request unlock [Gov]', "
-        "↻(NS[Request transfer [TORN]]("
+        "↻(NS[transfer [TORN]]("
         "→('Request transfer [TORN]', 'hook [Vault]', 'Respond to transfer [TORN]')"
         "), tau), "
         "'Respond to unlock [Gov]'"
@@ -66,10 +66,10 @@ def test_single_instance_reproduces_structure():
     d = discover(m)
     # One frame → no loop; the transfer frame stays a single named subtree.
     assert render(d.tree) == (
-        "NS[Request unlock [Gov]]("
+        "NS[unlock [Gov]]("
         "→("
         "'Request unlock [Gov]', "
-        "NS[Request transfer [TORN]]("
+        "NS[transfer [TORN]]("
         "→('Request transfer [TORN]', 'hook [Vault]', 'Respond to transfer [TORN]')"
         "), "
         "'Respond to unlock [Gov]'"
@@ -88,12 +88,12 @@ def test_context_separation_distinct_buckets():
     proxy = b.obj("ProxyC", "Proxy")
 
     # unlock scope containing a transfer frame
-    root = b.scope("sub:C:unlock", "subchoreography unlock")
-    tr_u = b.scope("sub:C:unlock:t", "subchoreography transfer")
+    root = b.scope("sub:C:unlock", "unlock [Gov]")
+    tr_u = b.scope("sub:C:unlock:t", "transfer [TORN]")
     b.contains(root, tr_u)
     # swap scope containing a transfer frame
-    swap = b.scope("sub:C:swap", "subchoreography swap")
-    tr_s = b.scope("sub:C:swap:t", "subchoreography transfer")
+    swap = b.scope("sub:C:swap", "swap [Router]")
+    tr_s = b.scope("sub:C:swap:t", "transfer [TORN]")
     b.contains(swap, tr_s)
 
     ms = 0
@@ -109,9 +109,9 @@ def test_context_separation_distinct_buckets():
     m = reader.build_model(b.build(), run_validator=False)
     buckets, _ = project(m)
     # Both transfer frames share the scopeType symbol, but their context paths differ.
-    keys = [k for k in buckets if k and k[-1].opener.exec_type == "Request transfer [TORN]"]
-    parents = {k[-2].opener.exec_type for k in keys}
-    assert parents == {"Request unlock [Gov]", "Request swap [Router]"}
+    keys = [k for k in buckets if k and k[-1].label == "transfer [TORN]"]
+    parents = {k[-2].label for k in keys}
+    assert parents == {"unlock [Gov]", "swap [Router]"}
     assert len(keys) == 2  # never pooled across parents
 
 
@@ -127,12 +127,12 @@ def _load_blockchain(name):
 def test_recursion_beanstalk():
     m = _load_blockchain("beanstalk_attack")
     d = discover(m)
-    execs = {f.exec_type for f in d.recursion}
+    labels = {f.label for f in d.recursion}
     # The Curve reentrancy / read-only-reentrancy pattern (spec settled facts).
     for fn in ("exchange", "add_liquidity", "get_virtual_price", "remove_liquidity_one_coin"):
-        assert any(fn in e for e in execs), f"missing recursive execType for {fn!r}: {execs}"
+        assert any(fn in l for l in labels), f"missing recursive label for {fn!r}: {labels}"
     # get_virtual_price recurs both directly and indirectly.
-    gvp = [f for f in d.recursion if "get_virtual_price" in f.exec_type]
+    gvp = [f for f in d.recursion if "get_virtual_price" in f.label]
     assert any(f.direct for f in gvp) and any(not f.direct for f in gvp)
 
 
@@ -192,7 +192,7 @@ def test_d12_matches_refreshed_audit():
             continue
         checked += 1
         d = discover(reader.load(path))
-        d12 = {f.exec_type for f in d.recursion}
+        d12 = {f.label for f in d.recursion}
         expected = {t["exec_type"] for t in audit[name]["type_level"]["recurring_types"]}
         assert d12 == expected, f"{name}: D12={d12} audit={expected}"
     assert checked >= 12

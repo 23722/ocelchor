@@ -23,7 +23,9 @@ blockchain extractor types participants and events, see the
 OCEL 2.0 choreography log
   → reader      (constraint validation; hard gates C0, C2, C3, C11, C12, C14)
   → typing      (taskType = ⟨event type, initiator role, receiver role⟩;
-                 scopeType = taskType of a scope's opening bracket)
+                 scopeType = ⟨label, initiator role, receiver role⟩ — label
+                 from the scoping object's name attribute, else derived from
+                 the first task event; roles from that same first task event)
   → projection  (one subtrace per scope object, keyed by containment context)
   → discovery   (stock pm4py inductive miner per sublog; post-order
                  composition of named subtrees; recursion detection)
@@ -52,7 +54,7 @@ diagnostics never change the model.
 | File | Content |
 |------|---------|
 | `discovered_model.bpmn` | The generalised choreography model (semantics + layout) |
-| `process_tree.txt` | The discovered process tree as an indented s-expression: operators `→ × ↻ ∧`, `τ` for silent steps, `∇_{scope} ⟨initiator→receiver⟩` for named subtrees; leaves show `'event type' ⟨initiator→receiver⟩`. Every symbol prints its full type — the ∇ pair is its opening bracket's role pair, so scopes with the same name but different openers (an outer call vs. a re-entrant self-call) stay distinguishable on the ∇ line |
+| `process_tree.txt` | The discovered process tree as an indented s-expression: operators `→ × ↻ ∧`, `τ` for silent steps, `∇_{scope} ⟨initiator→receiver⟩` for named subtrees; leaves show `'event type' ⟨initiator→receiver⟩`. Every symbol prints its full type — the ∇ pair is the role pair of the scope's first task event, so scopes with the same label but different openers (an outer call vs. a re-entrant self-call) stay distinguishable on the ∇ line |
 | `diagnostics.json` | Diagnostics D1–D13 (below) plus the non-blocking validator constraint summary |
 
 ## Message labels
@@ -85,6 +87,36 @@ message-object *attributes*, the message kind in the message-object *type*:
 | kind (object type) | `<function> call` / `… call response` — used when all parameters are unnamed | `Offer`, `Confirmation`, … → the label |
 | generic | undecodable / conflicting cases | messages without kind |
 
+## Sub-choreography labels
+
+A sub-choreography is typed like a task — label + participants. The label
+resolves through a two-rung chain of plain OCEL-level data:
+
+1. **Stored name** — the scoping object's `name` attribute, where present:
+   an explicit sub-choreography label supplied at extraction.
+2. **Derived** — the type of the scope's first task event, with the kind
+   prefix (`Request `/`Respond to `) stripped.
+
+Both roles always come from the scope's ≻-first *choreography task event*
+(one carrying initiator and participant edges) — never from internal
+non-choreography events, which cannot supply them. A scope containing no
+task event at all is untypeable and aborts the log: reported, never
+repaired. Diagnostic D2 certifies the derivation (first task event = the
+request bracket); it applies on both rungs, since a stored name does not
+exempt the roles.
+
+Because the roles are part of the type, identical stored names never merge
+scopes opened by different role pairs — Beanstalk's outer `exchange`
+(attacker → pool) and its re-entrant `exchange` (pool → pool) stay separate
+submodels even though both scoping objects carry the same name. The same
+role component keys recursion detection (D12: ⟨label, receiver role⟩
+recurring on its own containment path).
+
+As with roles (the object type, consumed verbatim) and message labels
+(chain above), the rungs advance on *absence*, not disagreement — each
+lookup location has exactly one auditing diagnostic: D2 for scope labels,
+D4 for the role slot, D8 for message content.
+
 ## Same-role interactions (doppelgänger participants)
 
 A choreography task whose initiator and receiver map to the **same role**
@@ -112,7 +144,7 @@ contract?)
 | D | Diagnostic | What it means |
 |---|-----------|----------------|
 | D1 | Ordering determinism | Timestamps totally order every instance; any residual tie would make discovery non-deterministic. Expect `passed`. |
-| D2 | Scope openers | Every scope's first event is its request bracket. A hit means broken bracket encoding upstream. Expect zero. |
+| D2 | Scope openers | Every scope's first task event is its request bracket, certifying the role/label derivation as branch-invariant (checked even when the label comes from a stored name). A scope with no task event at all is untypeable and aborts the log — reported, never repaired. Expect zero. |
 | D3 | Bracket completeness | Scopes without their own response bracket, split into **expected** (the root-scope asymmetry: an outermost initiator that never receives a reply) and **unexpected** (interior scopes — an encoding defect). |
 | D4 | Identity-as-label | Event types whose discriminator is a participant **object id** (an unnamed participant): the type is as fine-grained as the instance level, so pooling across such participants is impossible by construction. |
 

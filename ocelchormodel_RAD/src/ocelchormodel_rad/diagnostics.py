@@ -23,7 +23,7 @@ from ocelchormodel_rad import __version__
 from ocelchormodel_rad.discover import Discovery, TreeNode, project
 from ocelchormodel_rad.layout import message_label
 from ocelchormodel_rad.reader import Model, order_key
-from ocelchormodel_rad.typing import ScopeType, TaskType, scope_type, task_type
+from ocelchormodel_rad.typing import ScopeType, TaskType, scope_certified, task_type
 
 _REQUEST = "Request "
 _RESPOND = "Respond to "
@@ -99,7 +99,7 @@ def _first_initiating_role(node: TreeNode) -> str | None:
     if node.op is None:
         return node.label.init_role if isinstance(node.label, TaskType) else None
     if node.op == "NS":
-        return node.label.opener.init_role
+        return node.label.init_role
     for c in node.children:
         role = _first_initiating_role(c)
         if role is not None:
@@ -108,7 +108,7 @@ def _first_initiating_role(node: TreeNode) -> str | None:
 
 
 def _sym_name(sym) -> str:
-    return sym.opener.exec_type if isinstance(sym, ScopeType) else sym.exec_type
+    return sym.label if isinstance(sym, ScopeType) else sym.exec_type
 
 
 # ---------------------------------------------------------------------------
@@ -131,7 +131,10 @@ def _d01_ordering(model: Model) -> dict:
 
 
 def _d02_scope_openers(model: Model) -> dict:
-    bad = [s for s in model.scopes if not scope_type(model, s).opener_is_request]
+    """Certification of the role/label derivation: the scope's first task
+    event should be its request bracket (branch-invariant). Applies on both
+    label rungs — a stored name does not exempt the roles (spec §B2.3)."""
+    bad = [s for s in model.scopes if not scope_certified(model, s)]
     return {"non_request_openers": len(bad), "examples": bad[:MAX_EXAMPLES]}
 
 
@@ -194,7 +197,7 @@ def _d07_scope_pooling(buckets: dict) -> dict:
             continue  # instance level
         variants = len({tuple(s) for s in subs})
         entries.append({
-            "context": [st.opener.exec_type for st in key],
+            "context": [st.label for st in key],
             "occurrences": len(subs),
             "variants": variants,
             "pooling_ratio": round(len(subs) / variants, 2),
@@ -279,7 +282,7 @@ def _d09_parallelism_witnesses(tree: TreeNode, buckets: dict) -> list[dict]:
                    else "unwitnessed" if flagged == len(pairs)
                    else "partially_witnessed")
         out.append({
-            "context": [st.opener.exec_type for st in ctx],
+            "context": [st.label for st in ctx],
             "branches": len(node.children),
             "subtraces": len(subs),
             "verdict": verdict,
@@ -300,7 +303,7 @@ def _d10_unrestricted_repetition(tree: TreeNode) -> list[dict]:
             for redo in node.children[1:]:
                 redo_alpha |= _branch_alphabet(redo)
             out.append({
-                "context": [st.opener.exec_type for st in ctx],
+                "context": [st.label for st in ctx],
                 "redo_alphabet": sorted(
                     _sym_name(s) for s in redo_alpha)[:MAX_EXAMPLES],
             })
@@ -320,7 +323,7 @@ def _d11_choice_realizability(tree: TreeNode) -> list[dict]:
                 roles[role] += 1
         if len(roles) > 1:
             out.append({
-                "context": [st.opener.exec_type for st in ctx],
+                "context": [st.label for st in ctx],
                 "branch_initiating_roles": sorted(roles),
             })
     return out
@@ -332,7 +335,8 @@ def _d11_choice_realizability(tree: TreeNode) -> list[dict]:
 
 def _d12_recursion(discovery: Discovery) -> dict:
     findings = [{
-        "exec_type": f.exec_type,
+        "label": f.label,
+        "noninit_role": f.noninit_role,
         "context_path": list(f.context_path),
         "first_depth": f.first_depth,
         "recurrence_depth": f.recurrence_depth,

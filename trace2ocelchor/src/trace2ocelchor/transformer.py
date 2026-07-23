@@ -339,17 +339,19 @@ def _create_root_split(
         attributes=_input_attrs(trace.inputs),
     ))
 
-    # Scoping object
+    # Scoping object — named with the call key (task-label style), so the
+    # stored name IS the sub-choreography label downstream (scope-typing
+    # rung 1) and matches the event-type discriminator by construction.
+    root_disc = _participant_discriminator(names.get(trace.contract_address), trace.contract_address)
     sub_obj = OcelObject(
         id=sub_obj_id, type="subchoreographyInstance",
-        attributes={"name": f"subchoreography {trace.function_name}"},
+        attributes={"name": _call_key(trace.function_name, root_disc)},
     )
     objects.append(sub_obj)
     scoping[sub_obj_id] = sub_obj
 
     # Request event — contained in the root scope it opens (spec I3/A2:
     # the outermost bracket pair is contained in the instance's root scope).
-    root_disc = _participant_discriminator(names.get(trace.contract_address), trace.contract_address)
     events.append(OcelEvent(
         id=req_event_id,
         type=_event_type(trace.function_name, root_disc, kind="request"),
@@ -502,10 +504,12 @@ def _create_subchoreography(
         attributes=_output_attrs(frame.output),
     ))
 
-    # Scoping object (C14: parent contains child)
+    # Scoping object (C14: parent contains child) — named with the call key
+    # (task-label style), matching the event-type discriminator by construction
+    disc = _participant_discriminator(names.get(frame.to_addr), frame.to_addr)
     sub_obj = OcelObject(
         id=sub_obj_id, type="subchoreographyInstance",
-        attributes={"name": f"subchoreography {frame.activity}"},
+        attributes={"name": _call_key(frame.activity, disc)},
     )
     objects.append(sub_obj)
     scoping[sub_obj_id] = sub_obj
@@ -516,7 +520,6 @@ def _create_subchoreography(
     )
 
     # Request event — contained in the scope it opens (spec I3/A2), not the parent
-    disc = _participant_discriminator(names.get(frame.to_addr), frame.to_addr)
     events.append(OcelEvent(
         id=req_event_id,
         type=_event_type(frame.activity, disc, kind="request"),

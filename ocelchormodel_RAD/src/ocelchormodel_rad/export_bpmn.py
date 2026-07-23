@@ -10,7 +10,7 @@ Consumes only the discovered tree and the side index (never the log). Per node:
   '↻'  single-element  → standardLoopCharacteristics marker
   '↻'  multi-element   → exclusive gateways with a back edge
 Artificial start/end events per scope. Names per I5 (task = verbatim execType;
-subChoreography = execType minus the kind prefix). Roles are bands, never names.
+subChoreography = the ScopeType label, verbatim). Roles are bands, never names.
 """
 
 from __future__ import annotations
@@ -53,12 +53,9 @@ def _ncname(s: str) -> str:
 
 
 def scope_display_name(st: ScopeType) -> str:
-    """subChoreography name per I5: the opener's execType minus its kind prefix."""
-    t = st.opener.exec_type
-    for pfx in (_REQUEST, _RESPOND):
-        if t.startswith(pfx):
-            return t[len(pfx):]
-    return t
+    """subChoreography display name per I5: the ScopeType label, verbatim
+    (rung 1: stored name; rung 2: derived — no display surgery here)."""
+    return st.label
 
 
 class _Exporter:
@@ -123,7 +120,7 @@ class _Exporter:
         el = ET.SubElement(parent, _b("subChoreography"), {
             "id": sid,
             "name": scope_display_name(st),
-            "initiatingParticipantRef": self._participant(st.opener.init_role),
+            "initiatingParticipantRef": self._participant(st.init_role),
         })
         for r in bands:
             ET.SubElement(el, _b("participantRef")).text = self._participant(r)
@@ -519,9 +516,9 @@ def tree_sexpr(node: TreeNode, indent: int = 0) -> str:
     model.
 
     Every symbol prints its full type: ``'execType' ⟨init→noninit⟩`` for
-    tasks, ``∇_{name} ⟨init→noninit⟩`` for scopes (the opener's role pair —
-    scopeType = taskType(opener)). Without the pair, scopes of the same
-    display name but different opener roles (e.g. an outer call vs. a
+    tasks, ``∇_{label} ⟨init→noninit⟩`` for scopes (the roles of the scope's
+    first task event, per §B2.3). Without the pair, scopes of the same
+    label but different opener roles (e.g. an outer call vs. a
     re-entrant self-call) would be indistinguishable on the ∇ line.
     """
     if node.op is None:
@@ -530,9 +527,9 @@ def tree_sexpr(node: TreeNode, indent: int = 0) -> str:
         tt = node.label
         return f"'{tt.exec_type}' ⟨{tt.init_role}→{tt.noninit_role}⟩"
     if node.op == "NS":
-        op = node.label.opener
-        head = (f"∇_{{{scope_display_name(node.label)}}}"
-                f" ⟨{op.init_role}→{op.noninit_role}⟩")
+        st = node.label
+        head = (f"∇_{{{scope_display_name(st)}}}"
+                f" ⟨{st.init_role}→{st.noninit_role}⟩")
     else:
         head = node.op
     pad = "  " * (indent + 1)

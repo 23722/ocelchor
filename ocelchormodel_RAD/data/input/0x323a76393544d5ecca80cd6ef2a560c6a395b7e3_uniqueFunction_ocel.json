@@ -579,7 +579,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography propose",
+          "value": "propose [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -676,7 +676,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography castVoteWithReason",
+          "value": "castVoteWithReason [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -768,7 +768,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography castVote",
+          "value": "castVote [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -870,7 +870,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography queue",
+          "value": "queue [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -1138,7 +1138,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography execute",
+          "value": "execute [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
           "time": "1970-01-01T00:00:00Z"
         }
       ],
@@ -1301,7 +1301,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography executeBatch",
+          "value": "executeBatch [TimelockController]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]

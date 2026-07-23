@@ -658,7 +658,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography deposit",
+          "value": "deposit [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
           "time": "1970-01-01T00:00:00Z"
         }
       ],
@@ -725,7 +725,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography instances",
+          "value": "instances [InstanceRegistry]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -828,7 +828,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography deposit",
+          "value": "deposit [TornadoCash_eth]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -2587,7 +2587,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography withdraw",
+          "value": "withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
           "time": "1970-01-01T00:00:00Z"
         }
       ],
@@ -2654,7 +2654,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography instances",
+          "value": "instances [InstanceRegistry]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -2763,7 +2763,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography burn",
+          "value": "burn [RelayerRegistry]",
           "time": "1970-01-01T00:00:00Z"
         }
       ],
@@ -2836,7 +2836,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography burn",
+          "value": "burn [RelayerRegistry]",
           "time": "1970-01-01T00:00:00Z"
         }
       ],
@@ -2903,7 +2903,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography instanceFeeWithUpdate",
+          "value": "instanceFeeWithUpdate [FeeManager]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -3006,7 +3006,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography addBurnRewards",
+          "value": "addBurnRewards [TornadoStakingRewards]",
           "time": "1970-01-01T00:00:00Z"
         }
       ],
@@ -3069,7 +3069,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography addBurnRewards",
+          "value": "addBurnRewards [TornadoStakingRewards]",
           "time": "1970-01-01T00:00:00Z"
         }
       ],
@@ -3132,7 +3132,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography userVault",
+          "value": "userVault [GovernancePatchUpgrade]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -3307,7 +3307,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography withdraw",
+          "value": "withdraw [TornadoCash_eth]",
           "time": "1970-01-01T00:00:00Z"
         }
       ],
@@ -3375,7 +3375,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography verifyProof",
+          "value": "verifyProof [Verifier]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]

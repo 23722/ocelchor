@@ -70,10 +70,12 @@ class SideIndex(dict):
 
 @dataclass
 class RecursionFinding:
-    """One D5 recursion finding: an execType reappearing on its own path."""
+    """One D12 recursion finding: a ⟨label, callee role⟩ reappearing on its
+    own containment path."""
 
-    exec_type: str
-    context_path: tuple[str, ...]  # scopeType execTypes root→scope
+    label: str
+    noninit_role: str  # the callee-role half of the matching key
+    context_path: tuple[str, ...]  # scopeType labels root→scope
     first_depth: int
     recurrence_depth: int
     direct: bool
@@ -272,11 +274,14 @@ def _compose(buckets: dict[BucketKey, list[list[Symbol]]]) -> TreeNode:
 # ---------------------------------------------------------------------------
 
 def detect_recursion(buckets: dict[BucketKey, list[list[Symbol]]]) -> list[RecursionFinding]:
-    """A scopeType's execType reappearing on its own containment path (spec §B4).
+    """A scopeType's ⟨label, non-initiating role⟩ reappearing on its own
+    containment path (spec §B4).
 
-    Uses the execType component (not the full ScopeType tuple) to match the
-    audit: re-entrant frames typically have a different initiator than the outer
-    frame, so full-tuple equality would miss exactly the case that matters.
+    Matches on ⟨label, callee role⟩ — NOT the full ScopeType tuple (re-entrant
+    frames typically have a different initiator than the outer frame, so
+    full-tuple equality would miss exactly the case that matters) and NOT the
+    label alone (undiscriminated labels collide across distinct callees; the
+    callee-role half restores the discrimination the label may lack).
     Detection is diagnostic-only; it never changes discovery.
     """
     findings: list[RecursionFinding] = []
@@ -284,24 +289,26 @@ def detect_recursion(buckets: dict[BucketKey, list[list[Symbol]]]) -> list[Recur
     for key in buckets:
         if not key:
             continue
-        execs = tuple(st.opener.exec_type for st in key)
-        first: dict[str, int] = {}
-        for depth, et in enumerate(execs):
-            if et in first:
+        pairs = tuple((st.label, st.noninit_role) for st in key)
+        labels = tuple(st.label for st in key)
+        first: dict[tuple, int] = {}
+        for depth, pair in enumerate(pairs):
+            if pair in first:
                 # Record every recurrence (measured from the earliest occurrence),
                 # so both direct (depth == first+1) and indirect repeats survive.
-                sig = (et, execs, first[et], depth)
+                sig = (pair, pairs, first[pair], depth)
                 if sig not in seen:
                     seen.add(sig)
                     findings.append(RecursionFinding(
-                        exec_type=et,
-                        context_path=execs,
-                        first_depth=first[et],
+                        label=pair[0],
+                        noninit_role=pair[1],
+                        context_path=labels,
+                        first_depth=first[pair],
                         recurrence_depth=depth,
-                        direct=(depth == first[et] + 1),
+                        direct=(depth == first[pair] + 1),
                     ))
             else:
-                first[et] = depth
+                first[pair] = depth
     return findings
 
 

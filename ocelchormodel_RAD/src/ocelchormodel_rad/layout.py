@@ -101,7 +101,7 @@ def _init_role(node: TreeNode) -> str | None:
     if node.op is None and isinstance(node.label, TaskType):
         return node.label.init_role
     if node.op == "NS":
-        return node.label.opener.init_role
+        return node.label.init_role
     return None
 
 
@@ -572,7 +572,7 @@ def build_bpmn(tree: TreeNode, side_index: SideIndex, *, include_di: bool = True
     msg_dirs = {
         key: (bool(entry.messages.get("forward")), bool(entry.messages.get("backward")))
         for key, entry in side_index.items()
-        if not hasattr(key, "opener")  # TaskType entries only
+        if not hasattr(key, "label")  # TaskType entries only
     }
     lay = _Layout(msg_dirs)
     if tree.op == "×":
@@ -710,7 +710,7 @@ def _make_element(s: Shape, roles: dict) -> ET.Element:
     node = s.node
     el = ET.Element(_b("subChoreography"),
                     {"id": s.id, "name": scope_display_name(node.label),
-                     "initiatingParticipantRef": roles.get(node.label.opener.init_role)})
+                     "initiatingParticipantRef": roles.get(node.label.init_role)})
     band_roles = _band_roles(node)
     refs = [roles.get(r) for r in band_roles]
     if len(refs) == 1:  # all interactions inside share one role → need a 2nd band

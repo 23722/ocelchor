@@ -40,10 +40,16 @@ class ContractViolation(Exception):
 
 
 class OrderingTie(Exception):
-    """Two distinct events of one instance share a timestamp (spec §I6/D9).
+    """Two distinct events of one instance share a timestamp (spec §I6/D1).
 
     OCEL 2.0 has no secondary ordering attribute, so this is unresolvable and a
     hard error — an extractor bug, not something the miner works around."""
+
+
+class UntypeableScope(ContractViolation):
+    """A scope contains (transitively) no choreography task event, so neither
+    its roles nor a derived label exist. Reported, never repaired — no
+    fallback type is invented (spec §B2.3)."""
 
 
 @dataclass
@@ -66,12 +72,14 @@ class Model:
     """In-memory view of one OCEL 2.0 choreography log."""
 
     ocel: dict
-    events: dict[str, Event]
+    events: dict[str, Event]  # E_T only: choreography task events (see build_model)
     objtype: dict[str, str]  # object id → OCEL object type (= role)
     scope_contains: dict[str, list[str]]  # parent scope id → [child scope ids]
     scope_parent: dict[str, str]  # child scope id → parent scope id
     instances: list[str]  # choreographyInstance object ids
     scopes: list[str]  # subchoreographyInstance object ids
+    scope_names: dict[str, str] = field(default_factory=dict)  # scope id → name attr
+    non_task_events: int = 0  # events excluded from E_T (no initiator/participant)
     constraints: dict[str, ConstraintResult] = field(default_factory=dict)
 
     # -- accessors (spec §B2) ------------------------------------------------
@@ -89,6 +97,11 @@ class Model:
         if obj_id is None:
             return ""
         return self.objtype.get(obj_id, "")
+
+    def scope_name(self, scope_id: str) -> str | None:
+        """The scoping object's `name` attribute — scope-typing rung 1
+        (an explicit sub-choreography label supplied at extraction)."""
+        return self.scope_names.get(scope_id)
 
     def events_of_instance(self, instance_id: str) -> list[Event]:
         return [e for e in self.events.values() if e.instance_id == instance_id]
@@ -144,16 +157,26 @@ def build_model(ocel: dict, *, run_validator: bool = True) -> Model:
     """Build the in-memory model and assert the hard gates (spec §B8/§B10)."""
     objtype = {o["id"]: o.get("type", "") for o in ocel["objects"]}
 
+    # E_T filter: the miner's alphabet is choreography task events — events
+    # carrying both role edges (the same universe C2/C3 constrain). Internal
+    # non-choreography events supply no roles and are excluded up front,
+    # counted for diagnostics (never silently: the count is reported).
     events: dict[str, Event] = {}
+    non_task = 0
     for e in ocel["events"]:
+        initiator = _rel(e, Q_INITIATOR)
+        participant = _rel(e, Q_PARTICIPANT)
+        if initiator is None or participant is None:
+            non_task += 1
+            continue
         to = _attr(e, "trace_order", 0)
         events[e["id"]] = Event(
             id=e["id"],
             type=e["type"],
             time=e.get("time", ""),
             trace_order=int(to) if to is not None else 0,
-            initiator=_rel(e, Q_INITIATOR),
-            participant=_rel(e, Q_PARTICIPANT),
+            initiator=initiator,
+            participant=participant,
             message_ids=_rels(e, Q_MESSAGE),
             scope_id=_rel(e, Q_CONTAINED_BY),
             instance_id=_rel(e, Q_INSTANCE),
@@ -161,10 +184,14 @@ def build_model(ocel: dict, *, run_validator: bool = True) -> Model:
 
     scope_contains: dict[str, list[str]] = {}
     scope_parent: dict[str, str] = {}
+    scope_names: dict[str, str] = {}
     scopes = [o["id"] for o in ocel["objects"] if o.get("type") == TYPE_SCOPE]
     for o in ocel["objects"]:
         if o.get("type") != TYPE_SCOPE:
             continue
+        name = _attr(o, "name")
+        if name:
+            scope_names[o["id"]] = name
         for child in _rels(o, Q_CONTAINS):
             scope_contains.setdefault(o["id"], []).append(child)
             scope_parent[child] = o["id"]
@@ -194,6 +221,8 @@ def build_model(ocel: dict, *, run_validator: bool = True) -> Model:
         scope_parent=scope_parent,
         instances=instances,
         scopes=scopes,
+        scope_names=scope_names,
+        non_task_events=non_task,
         constraints=constraints,
     )
 

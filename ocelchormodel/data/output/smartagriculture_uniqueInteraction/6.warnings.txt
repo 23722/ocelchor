@@ -1,0 +1,10 @@
+6: model converted despite unrecorded endpoints.
+
+5 event(s) lack a recorded endpoint (missing role edge); each is rendered with an empty phantom participant band on both layers (band and message flow). The gap is the validator's C3/C6 finding for this instance — reported, not repaired.
+
+Events:
+  e:6:23
+  e:6:24
+  e:6:25
+  e:6:29
+  e:6:33

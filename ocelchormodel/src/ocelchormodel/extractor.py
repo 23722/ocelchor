@@ -37,6 +37,21 @@ _TYPE_SUBCHOREOGRAPHY = "subchoreographyInstance"
 _GENERIC_TYPES = {"EOA", "CA"}
 
 
+class InstanceRefused(Exception):
+    """The instance asserts something a bilateral choreography task cannot
+    express — multicast (an event with more than one receiver) or
+    participant self-identity (initiator = receiver, C4). Rendering it would
+    require inventing or dropping information, so the converter refuses the
+    instance and points at the validator flag. Recording *gaps* (a missing
+    receiver) are NOT refused: they render as empty phantom bands."""
+
+    def __init__(self, shape: str, constraint: str, event_id: str, detail: str):
+        self.shape = shape
+        self.constraint = constraint
+        self.event_id = event_id
+        super().__init__(f"{shape} ({constraint}) at event {event_id!r}: {detail}")
+
+
 # ---------------------------------------------------------------------------
 # ID helpers
 # ---------------------------------------------------------------------------
@@ -230,14 +245,42 @@ def extract_instance(ocel: dict, instance_id: str, *, order_by: str = "timestamp
             )
         return _participant_cache[pid]
 
+    # --- Phantom participants (unrecorded endpoints) ---
+    # A missing role edge is an *incompleteness* of the record: the
+    # interaction presumably had that endpoint, it went unrecorded. The
+    # converter renders that honestly as an empty phantom band. One phantom
+    # per event (a shared phantom would visually assert that all unrecorded
+    # endpoints are the SAME participant — an identity claim the log does
+    # not make), in a reserved id namespace outside P_<objectId>. The
+    # phantom is presentational only: an element of the generated .bpmn,
+    # never of any OCEL file — the log keeps recording nothing and the
+    # validator keeps flagging it (C2/C3, C5/C6).
+    phantom_events: list[str] = []
+    _phantom_cache: dict[str, Participant] = {}
+
+    def _phantom_for(event_id: str) -> Participant:
+        if event_id not in _phantom_cache:
+            _phantom_cache[event_id] = Participant(
+                ocel_id="",
+                ocel_type="",
+                display_name="",
+                bpmn_id=_xml_id("P__unknown", event_id),
+            )
+            phantom_events.append(event_id)
+        return _phantom_cache[event_id]
+
     # --- Build message objects ---
-    def _get_message(msg_obj_id: str, initiator_id: str) -> Message:
+    # The phantom is the endpoint of BOTH layers: the participant band and
+    # the message flow's source/target. Substituting the recorded
+    # counterpart here would put a self-send assertion in the semantic
+    # layer that the diagram no longer shows.
+    def _get_message(msg_obj_id: str, initiator_id: str, event_id: str) -> Message:
         obj = objects.get(msg_obj_id, {})
         source_id = _rel(obj, _SOURCE)
         target_id = _rel(obj, _TARGET)
         is_init = source_id == initiator_id
-        source = _get_participant(source_id) if source_id else _get_participant(initiator_id)
-        target = _get_participant(target_id) if target_id else _get_participant(initiator_id)
+        source = _get_participant(source_id) if source_id else _phantom_for(event_id)
+        target = _get_participant(target_id) if target_id else _phantom_for(event_id)
         msg_bpmn_id = _xml_id("Msg", msg_obj_id)
         return Message(
             ocel_id=msg_obj_id,
@@ -250,14 +293,34 @@ def extract_instance(ocel: dict, instance_id: str, *, order_by: str = "timestamp
 
     # --- Build a ChoreoTask from an event ---
     def _build_task(event: dict) -> ChoreoTask:
-        initiator_id = _rel(event, _INITIATOR) or ""
-        participant_id = _rel(event, _PARTICIPANT) or ""
+        initiator_ids = _rels(event, _INITIATOR)
+        participant_ids = _rels(event, _PARTICIPANT)
         msg_ids = _rels(event, _MESSAGE)
 
-        initiator = _get_participant(initiator_id) if initiator_id else _get_participant(participant_id)
-        participant = _get_participant(participant_id) if participant_id else initiator
+        # Positive assertions bilateral tasks cannot express → refuse.
+        if len(participant_ids) > 1:
+            raise InstanceRefused(
+                "multicast", "C3", event["id"],
+                f"{len(participant_ids)} receivers; a bilateral choreography "
+                "task cannot express it, and keeping one would silently drop "
+                "the other(s)",
+            )
+        initiator_id = initiator_ids[0] if initiator_ids else ""
+        participant_id = participant_ids[0] if participant_ids else ""
+        if initiator_id and initiator_id == participant_id:
+            raise InstanceRefused(
+                "participant self-identity", "C4", event["id"],
+                f"object {initiator_id!r} is both initiator and receiver; "
+                "two bands for one identity would misrepresent the record",
+            )
 
-        messages = [_get_message(mid, initiator_id) for mid in msg_ids]
+        # Recording gaps → empty phantom band (honest incompleteness).
+        initiator = (_get_participant(initiator_id) if initiator_id
+                     else _phantom_for(event["id"]))
+        participant = (_get_participant(participant_id) if participant_id
+                       else _phantom_for(event["id"]))
+
+        messages = [_get_message(mid, initiator_id, event["id"]) for mid in msg_ids]
         initiating_msg = next((m for m in messages if m.is_initiating), None)
         returning_msg = next((m for m in messages if not m.is_initiating), None)
 
@@ -350,4 +413,5 @@ def extract_instance(ocel: dict, instance_id: str, *, order_by: str = "timestamp
         ocel_id=instance_id,
         short_id=_short_id(instance_id),
         elements=elements,
+        phantom_events=phantom_events,
     )

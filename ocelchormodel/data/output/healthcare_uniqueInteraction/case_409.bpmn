@@ -12,13 +12,14 @@
     <bpmn2:participant id="P_Gynecologist" name="Gynecologist" />
     <bpmn2:participant id="P_Laboratory" name="Laboratory" />
     <bpmn2:participant id="P_Hospital" name="Hospital" />
+    <bpmn2:participant id="P__unknown_e_case_409_17" name="" />
     <bpmn2:messageFlow id="MF_Task_e_case_409_0_init" sourceRef="P_Patient" targetRef="P_Gynecologist" messageRef="Msg_message_case_409_disease_447" />
     <bpmn2:messageFlow id="MF_Task_e_case_409_4_init" sourceRef="P_Gynecologist" targetRef="P_Laboratory" messageRef="Msg_message_case_409_blood_sample_448" />
     <bpmn2:messageFlow id="MF_Task_e_case_409_7_init" sourceRef="P_Laboratory" targetRef="P_Gynecologist" messageRef="Msg_message_case_409_results_449" />
     <bpmn2:messageFlow id="MF_Task_e_case_409_9_init" sourceRef="P_Gynecologist" targetRef="P_Patient" messageRef="Msg_message_case_409_hospitalisation_450" />
     <bpmn2:messageFlow id="MF_Task_e_case_409_10_init" sourceRef="P_Gynecologist" targetRef="P_Hospital" messageRef="Msg_message_case_409_admission_request_451" />
     <bpmn2:messageFlow id="MF_Task_e_case_409_15_init" sourceRef="P_Hospital" targetRef="P_Patient" messageRef="Msg_message_case_409_admission_453" />
-    <bpmn2:messageFlow id="MF_Task_e_case_409_17_init" sourceRef="P_Gynecologist" targetRef="P_Gynecologist" messageRef="Msg_message_case_409_patient_analysis_452" />
+    <bpmn2:messageFlow id="MF_Task_e_case_409_17_init" sourceRef="P_Gynecologist" targetRef="P__unknown_e_case_409_17" messageRef="Msg_message_case_409_patient_analysis_452" />
     <bpmn2:startEvent id="Start_case_409">
       <bpmn2:outgoing>SF_1</bpmn2:outgoing>
     </bpmn2:startEvent>
@@ -68,7 +69,7 @@
       <bpmn2:incoming>SF_7</bpmn2:incoming>
       <bpmn2:outgoing>SF_8</bpmn2:outgoing>
       <bpmn2:participantRef>P_Gynecologist</bpmn2:participantRef>
-      <bpmn2:participantRef>P_Gynecologist</bpmn2:participantRef>
+      <bpmn2:participantRef>P__unknown_e_case_409_17</bpmn2:participantRef>
       <bpmn2:messageFlowRef>MF_Task_e_case_409_17_init</bpmn2:messageFlowRef>
     </bpmn2:choreographyTask>
     <bpmn2:endEvent id="End_case_409">
@@ -148,7 +149,7 @@
       <bpmndi:BPMNShape id="Task_e_case_409_17_di_top" bpmnElement="P_Gynecologist" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_409_17_di">
         <dc:Bounds x="1086" y="210" width="100" height="20" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_e_case_409_17_di_bot" bpmnElement="P_Gynecologist" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_409_17_di">
+      <bpmndi:BPMNShape id="Task_e_case_409_17_di_bot" bpmnElement="P__unknown_e_case_409_17" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_409_17_di">
         <dc:Bounds x="1086" y="270" width="100" height="20" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="End_case_409_di" bpmnElement="End_case_409">

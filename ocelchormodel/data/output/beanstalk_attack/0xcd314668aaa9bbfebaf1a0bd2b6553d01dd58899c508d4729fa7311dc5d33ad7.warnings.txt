@@ -1,0 +1,6 @@
+0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7: model converted despite unrecorded endpoints.
+
+1 event(s) lack a recorded endpoint (missing role edge); each is rendered with an empty phantom participant band on both layers (band and message flow). The gap is the validator's C3/C6 finding for this instance — reported, not repaired.
+
+Events:
+  e:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:root:request

@@ -1,34 +1,8 @@
 {
   "input": "/Users/rhob/Documents/ocelchor/ocelchormodel/data/output/smartagriculture_uniqueInteraction/6.bpmn",
-  "error": "element with id P_drone_Task_e_6_23 already exists",
+  "error": null,
   "importWarnings": [],
   "defined": 25,
-  "rendered": 0,
-  "missing": [
-    "Start_6",
-    "Task_e_6_3",
-    "Task_e_6_5",
-    "Task_e_6_7",
-    "Task_e_6_13",
-    "Task_e_6_15",
-    "Task_e_6_17",
-    "Task_e_6_23",
-    "Task_e_6_24",
-    "Task_e_6_25",
-    "Task_e_6_29",
-    "Task_e_6_33",
-    "End_6",
-    "SF_1",
-    "SF_2",
-    "SF_3",
-    "SF_4",
-    "SF_5",
-    "SF_6",
-    "SF_7",
-    "SF_8",
-    "SF_9",
-    "SF_10",
-    "SF_11",
-    "SF_12"
-  ]
+  "rendered": 59,
+  "missing": []
 }

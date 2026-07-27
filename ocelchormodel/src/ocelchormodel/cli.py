@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 from ocelchormodel.bpmn import generate_bpmn, write_bpmn
-from ocelchormodel.extractor import extract_instance, list_instances
+from ocelchormodel.extractor import InstanceRefused, extract_instance, list_instances
 from ocelchormodel.layout import compute_layout
 from ocelchormodel.reader import read_ocel
 
@@ -113,6 +113,7 @@ def main(argv: list[str] | None = None) -> None:
     # Batch processing
     total = 0
     failed = 0
+    refused = 0
     for input_path in input_paths:
         try:
             ocel = read_ocel(input_path)
@@ -130,17 +131,63 @@ def main(argv: list[str] | None = None) -> None:
         subdir.mkdir(parents=True, exist_ok=True)
 
         for inst_id, short_id in instances:
+            tx = _tx_hash(inst_id)
             try:
                 instance = extract_instance(ocel, inst_id, order_by=args.order_by)
+            except InstanceRefused as e:
+                # A positive assertion bilateral tasks cannot express:
+                # refuse the instance, leave a note, keep converting the
+                # log's remaining instances, exit nonzero at the end.
+                print(
+                    f"REFUSE {input_path.name} / {tx}: {e}",
+                    file=sys.stderr,
+                )
+                (subdir / f"{tx}.refused.txt").write_text(
+                    f"{tx}: no model converted.\n\n{e}\n\nSee the validator's "
+                    f"{e.constraint} finding for this instance.\n",
+                    encoding="utf-8",
+                )
+                refused += 1
+                continue
+            except Exception as e:
+                log.warning("Failed instance %s in %s: %s", short_id, input_path.name, e)
+                failed += 1
+                continue
+
+            try:
                 layout = compute_layout(instance)
                 xml_str = generate_bpmn(instance, layout)
-
-                bpmn_path = subdir / f"{_tx_hash(inst_id)}.bpmn"
+                bpmn_path = subdir / f"{tx}.bpmn"
                 write_bpmn(xml_str, bpmn_path)
                 total += 1
                 print(f"  {bpmn_path}", file=sys.stderr)
             except Exception as e:
                 log.warning("Failed instance %s in %s: %s", short_id, input_path.name, e)
                 failed += 1
+                continue
 
-    print(f"Done: {total} BPMN files written, {failed} failed.", file=sys.stderr)
+            if instance.phantom_events:
+                ids = "\n".join(f"  {eid}" for eid in instance.phantom_events)
+                print(
+                    f"WARN {input_path.name} / {tx}: "
+                    f"{len(instance.phantom_events)} event(s) with unrecorded "
+                    "endpoint rendered as empty phantom band(s)",
+                    file=sys.stderr,
+                )
+                (subdir / f"{tx}.warnings.txt").write_text(
+                    f"{tx}: model converted despite unrecorded endpoints.\n\n"
+                    f"{len(instance.phantom_events)} event(s) lack a recorded "
+                    "endpoint (missing role edge); each is rendered with an "
+                    "empty phantom participant band on both layers (band and "
+                    "message flow). The gap is the validator's C3/C6 finding "
+                    "for this instance — reported, not repaired.\n\nEvents:\n"
+                    f"{ids}\n",
+                    encoding="utf-8",
+                )
+
+    print(
+        f"Done: {total} BPMN files written, {refused} refused, {failed} failed.",
+        file=sys.stderr,
+    )
+    if refused or failed:
+        sys.exit(1)

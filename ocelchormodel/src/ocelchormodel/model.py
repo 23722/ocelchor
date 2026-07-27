@@ -63,3 +63,7 @@ class ChoreoInstance:
     ocel_id: str   # "choreographyInstance:0x…"
     short_id: str  # last 8 hex chars of the tx hash, for display
     elements: list[ChoreoTask | SubChoreo] = field(default_factory=list)
+    # Events whose unrecorded endpoint is rendered as an empty phantom band
+    # (reported by the CLI in a per-instance warnings note; the validator
+    # flags the underlying gap as C2/C3 + C5/C6).
+    phantom_events: list[str] = field(default_factory=list)

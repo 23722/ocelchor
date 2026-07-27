@@ -36,3 +36,5 @@ data/output/**
 !data/output/.gitkeep
 !data/output/*/*.bpmn
 !data/output/*/*.chorjs.report.json
+!data/output/*/*.refused.txt
+!data/output/*/*.warnings.txt

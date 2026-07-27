@@ -11,17 +11,22 @@
     <bpmn2:participant id="P_drone" name="drone" />
     <bpmn2:participant id="P_tractor_2" name="tractor_2" />
     <bpmn2:participant id="P_tractor_1" name="tractor_1" />
+    <bpmn2:participant id="P__unknown_e_6_23" name="" />
+    <bpmn2:participant id="P__unknown_e_6_24" name="" />
+    <bpmn2:participant id="P__unknown_e_6_25" name="" />
+    <bpmn2:participant id="P__unknown_e_6_29" name="" />
+    <bpmn2:participant id="P__unknown_e_6_33" name="" />
     <bpmn2:messageFlow id="MF_Task_e_6_3_init" sourceRef="P_drone" targetRef="P_tractor_2" messageRef="Msg_message_6_weed_position_173" />
     <bpmn2:messageFlow id="MF_Task_e_6_5_init" sourceRef="P_tractor_2" targetRef="P_drone" messageRef="Msg_message_6_tractor_position_174" />
     <bpmn2:messageFlow id="MF_Task_e_6_7_init" sourceRef="P_drone" targetRef="P_tractor_2" messageRef="Msg_message_6_closest_tractor_175" />
     <bpmn2:messageFlow id="MF_Task_e_6_13_init" sourceRef="P_drone" targetRef="P_tractor_1" messageRef="Msg_message_6_weed_position_179" />
     <bpmn2:messageFlow id="MF_Task_e_6_15_init" sourceRef="P_tractor_1" targetRef="P_drone" messageRef="Msg_message_6_tractor_position_180" />
     <bpmn2:messageFlow id="MF_Task_e_6_17_init" sourceRef="P_drone" targetRef="P_tractor_1" messageRef="Msg_message_6_closest_tractor_181" />
-    <bpmn2:messageFlow id="MF_Task_e_6_23_init" sourceRef="P_drone" targetRef="P_drone" messageRef="Msg_message_6_weed_position_182" />
-    <bpmn2:messageFlow id="MF_Task_e_6_24_init" sourceRef="P_drone" targetRef="P_drone" messageRef="Msg_message_6_weed_position_182" />
-    <bpmn2:messageFlow id="MF_Task_e_6_25_init" sourceRef="P_drone" targetRef="P_drone" messageRef="Msg_message_6_weed_position_182" />
-    <bpmn2:messageFlow id="MF_Task_e_6_29_init" sourceRef="P_drone" targetRef="P_drone" messageRef="Msg_message_6_weed_position_182" />
-    <bpmn2:messageFlow id="MF_Task_e_6_33_init" sourceRef="P_drone" targetRef="P_drone" messageRef="Msg_message_6_weed_position_182" />
+    <bpmn2:messageFlow id="MF_Task_e_6_23_init" sourceRef="P_drone" targetRef="P__unknown_e_6_23" messageRef="Msg_message_6_weed_position_182" />
+    <bpmn2:messageFlow id="MF_Task_e_6_24_init" sourceRef="P_drone" targetRef="P__unknown_e_6_24" messageRef="Msg_message_6_weed_position_182" />
+    <bpmn2:messageFlow id="MF_Task_e_6_25_init" sourceRef="P_drone" targetRef="P__unknown_e_6_25" messageRef="Msg_message_6_weed_position_182" />
+    <bpmn2:messageFlow id="MF_Task_e_6_29_init" sourceRef="P_drone" targetRef="P__unknown_e_6_29" messageRef="Msg_message_6_weed_position_182" />
+    <bpmn2:messageFlow id="MF_Task_e_6_33_init" sourceRef="P_drone" targetRef="P__unknown_e_6_33" messageRef="Msg_message_6_weed_position_182" />
     <bpmn2:startEvent id="Start_6">
       <bpmn2:outgoing>SF_1</bpmn2:outgoing>
     </bpmn2:startEvent>
@@ -71,35 +76,35 @@
       <bpmn2:incoming>SF_7</bpmn2:incoming>
       <bpmn2:outgoing>SF_8</bpmn2:outgoing>
       <bpmn2:participantRef>P_drone</bpmn2:participantRef>
-      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:participantRef>P__unknown_e_6_23</bpmn2:participantRef>
       <bpmn2:messageFlowRef>MF_Task_e_6_23_init</bpmn2:messageFlowRef>
     </bpmn2:choreographyTask>
     <bpmn2:choreographyTask id="Task_e_6_24" name="drone_WEED_POSITION" initiatingParticipantRef="P_drone">
       <bpmn2:incoming>SF_8</bpmn2:incoming>
       <bpmn2:outgoing>SF_9</bpmn2:outgoing>
       <bpmn2:participantRef>P_drone</bpmn2:participantRef>
-      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:participantRef>P__unknown_e_6_24</bpmn2:participantRef>
       <bpmn2:messageFlowRef>MF_Task_e_6_24_init</bpmn2:messageFlowRef>
     </bpmn2:choreographyTask>
     <bpmn2:choreographyTask id="Task_e_6_25" name="drone_WEED_POSITION" initiatingParticipantRef="P_drone">
       <bpmn2:incoming>SF_9</bpmn2:incoming>
       <bpmn2:outgoing>SF_10</bpmn2:outgoing>
       <bpmn2:participantRef>P_drone</bpmn2:participantRef>
-      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:participantRef>P__unknown_e_6_25</bpmn2:participantRef>
       <bpmn2:messageFlowRef>MF_Task_e_6_25_init</bpmn2:messageFlowRef>
     </bpmn2:choreographyTask>
     <bpmn2:choreographyTask id="Task_e_6_29" name="drone_WEED_POSITION" initiatingParticipantRef="P_drone">
       <bpmn2:incoming>SF_10</bpmn2:incoming>
       <bpmn2:outgoing>SF_11</bpmn2:outgoing>
       <bpmn2:participantRef>P_drone</bpmn2:participantRef>
-      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:participantRef>P__unknown_e_6_29</bpmn2:participantRef>
       <bpmn2:messageFlowRef>MF_Task_e_6_29_init</bpmn2:messageFlowRef>
     </bpmn2:choreographyTask>
     <bpmn2:choreographyTask id="Task_e_6_33" name="drone_WEED_POSITION" initiatingParticipantRef="P_drone">
       <bpmn2:incoming>SF_11</bpmn2:incoming>
       <bpmn2:outgoing>SF_12</bpmn2:outgoing>
       <bpmn2:participantRef>P_drone</bpmn2:participantRef>
-      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:participantRef>P__unknown_e_6_33</bpmn2:participantRef>
       <bpmn2:messageFlowRef>MF_Task_e_6_33_init</bpmn2:messageFlowRef>
     </bpmn2:choreographyTask>
     <bpmn2:endEvent id="End_6">
@@ -183,7 +188,7 @@
       <bpmndi:BPMNShape id="Task_e_6_23_di_top" bpmnElement="P_drone" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_6_23_di">
         <dc:Bounds x="1086" y="210" width="100" height="20" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_e_6_23_di_bot" bpmnElement="P_drone" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_6_23_di">
+      <bpmndi:BPMNShape id="Task_e_6_23_di_bot" bpmnElement="P__unknown_e_6_23" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_6_23_di">
         <dc:Bounds x="1086" y="270" width="100" height="20" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_e_6_24_di" bpmnElement="Task_e_6_24">
@@ -192,7 +197,7 @@
       <bpmndi:BPMNShape id="Task_e_6_24_di_top" bpmnElement="P_drone" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_6_24_di">
         <dc:Bounds x="1236" y="210" width="100" height="20" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_e_6_24_di_bot" bpmnElement="P_drone" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_6_24_di">
+      <bpmndi:BPMNShape id="Task_e_6_24_di_bot" bpmnElement="P__unknown_e_6_24" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_6_24_di">
         <dc:Bounds x="1236" y="270" width="100" height="20" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_e_6_25_di" bpmnElement="Task_e_6_25">
@@ -201,7 +206,7 @@
       <bpmndi:BPMNShape id="Task_e_6_25_di_top" bpmnElement="P_drone" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_6_25_di">
         <dc:Bounds x="1386" y="210" width="100" height="20" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_e_6_25_di_bot" bpmnElement="P_drone" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_6_25_di">
+      <bpmndi:BPMNShape id="Task_e_6_25_di_bot" bpmnElement="P__unknown_e_6_25" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_6_25_di">
         <dc:Bounds x="1386" y="270" width="100" height="20" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_e_6_29_di" bpmnElement="Task_e_6_29">
@@ -210,7 +215,7 @@
       <bpmndi:BPMNShape id="Task_e_6_29_di_top" bpmnElement="P_drone" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_6_29_di">
         <dc:Bounds x="1536" y="210" width="100" height="20" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_e_6_29_di_bot" bpmnElement="P_drone" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_6_29_di">
+      <bpmndi:BPMNShape id="Task_e_6_29_di_bot" bpmnElement="P__unknown_e_6_29" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_6_29_di">
         <dc:Bounds x="1536" y="270" width="100" height="20" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_e_6_33_di" bpmnElement="Task_e_6_33">
@@ -219,7 +224,7 @@
       <bpmndi:BPMNShape id="Task_e_6_33_di_top" bpmnElement="P_drone" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_6_33_di">
         <dc:Bounds x="1686" y="210" width="100" height="20" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_e_6_33_di_bot" bpmnElement="P_drone" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_6_33_di">
+      <bpmndi:BPMNShape id="Task_e_6_33_di_bot" bpmnElement="P__unknown_e_6_33" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_6_33_di">
         <dc:Bounds x="1686" y="270" width="100" height="20" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="End_6_di" bpmnElement="End_6">

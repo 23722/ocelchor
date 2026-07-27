@@ -11,6 +11,34 @@ discovery is performed — output is a purely sequential choreography model
 with nested sub-choreographies. Start and end events are added for visual
 guidance but have no explicit entries in the event log.
 
+## Degenerate-data policy
+
+One rule: **the converter renders what is recorded, makes recording gaps
+visible, and refuses what bilateral choreography tasks cannot express.**
+
+- **Unrecorded endpoint** (an event without a receiver — missing
+  `choreo:participant` / `choreo:target` edges, the validator's C3/C6
+  finding): an *incompleteness* of the record, rendered honestly as an
+  **empty phantom participant band**. One phantom per event (a shared
+  phantom would assert all unrecorded receivers are the same participant),
+  in a reserved id namespace (`P__unknown_<eventId>`), on **both layers** —
+  the participant band *and* the message flow's endpoint. The phantom is
+  presentational only: an element of the generated `.bpmn`, never of any
+  OCEL file — the log keeps recording nothing, the validator keeps
+  flagging it. The instance converts, a `<instance>.warnings.txt` names
+  the affected events, and the CLI warns on stderr.
+- **Multicast** (an event with more than one receiver) and **participant
+  self-identity** (initiator = receiver, the validator's C4): *positive
+  assertions* the bilateral choreography-task construct cannot express —
+  rendering them would require inventing or dropping information. The
+  instance is **refused**: a stderr line and a `<instance>.refused.txt`
+  name the shape and the validator constraint, the log's remaining
+  instances still convert, and the exit code is nonzero.
+
+`validate.py` enforces the both-layers consistency machine-side: each
+task's two bands must be distinct, and each of its message flows must
+connect exactly those two bands (which also rejects self-sends).
+
 For repository-wide context (pipeline diagram, evaluation results, unified
 CLI), see the [root README](../README.md).
 

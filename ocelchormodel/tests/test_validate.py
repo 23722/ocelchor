@@ -199,3 +199,55 @@ class TestDetectsDefects:
         )
         errors = validate_chorjs_compat(broken)
         assert any("sourceRef" in e or "NONEXISTENT_SRC" in e for e in errors)
+
+
+# ---------------------------------------------------------------------------
+# Both-layers consistency (bands vs message flows)
+# ---------------------------------------------------------------------------
+
+class TestBothLayersConsistency:
+
+    def test_duplicate_band_reference_flagged(self, swap1_ocel):
+        """Two identical participantRefs on one task (the old
+        initiator-substitution shape) must be flagged."""
+        xml = _generate(swap1_ocel, SWAP1_ID)
+        # collapse the task's second band onto its first participant
+        m = re.findall(r"<bpmn2:participantRef>([^<]+)</bpmn2:participantRef>", xml)
+        broken = xml.replace(
+            f"<bpmn2:participantRef>{m[1]}</bpmn2:participantRef>",
+            f"<bpmn2:participantRef>{m[0]}</bpmn2:participantRef>", 1)
+        errors = validate_chorjs_compat(broken)
+        assert any("same participant in both bands" in e for e in errors)
+
+    def test_messageflow_endpoint_outside_bands_flagged(self, swap1_ocel):
+        """A messageFlow whose endpoint is not one of its task's bands (the
+        old self-send shape in the semantic layer) must be flagged."""
+        xml = _generate(swap1_ocel, SWAP1_ID)
+        mf = re.search(r'<bpmn2:messageFlow[^>]*sourceRef="([^"]+)"[^>]*targetRef="([^"]+)"', xml)
+        broken = xml.replace(f'targetRef="{mf.group(2)}"', f'targetRef="{mf.group(1)}"', 1)
+        errors = validate_chorjs_compat(broken)
+        assert any("do not connect the two participant bands" in e for e in errors)
+
+    def test_phantom_band_model_passes(self):
+        """A model with an empty phantom band (unrecorded receiver) is
+        structurally valid on both layers."""
+        ocel = {
+            "objectTypes": [], "eventTypes": [],
+            "objects": [
+                {"id": "choreographyInstance:0xt1", "type": "choreographyInstance"},
+                {"id": "0xaaa", "type": "EOA"},
+                {"id": "msg1", "type": "deposit call", "relationships": [
+                    {"objectId": "0xaaa", "qualifier": "choreo:source"}]},
+            ],
+            "events": [{
+                "id": "e:t1:root", "type": "deposit [Vault]",
+                "time": "2024-01-01T00:00:00.000Z",
+                "attributes": [{"name": "trace_order", "value": 0}],
+                "relationships": [
+                    {"objectId": "0xaaa", "qualifier": "choreo:initiator"},
+                    {"objectId": "msg1", "qualifier": "choreo:message"},
+                    {"objectId": "choreographyInstance:0xt1", "qualifier": "choreo:instance"},
+                ],
+            }],
+        }
+        assert validate_chorjs_compat(_generate(ocel, "choreographyInstance:0xt1")) == []

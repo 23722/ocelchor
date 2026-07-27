@@ -9,11 +9,12 @@
     <bpmn2:participant id="P_User" name="User" />
     <bpmn2:participant id="P_Thermostat" name="Thermostat" />
     <bpmn2:participant id="P_Controller" name="Controller" />
+    <bpmn2:participant id="P__unknown_e_case_347_11" name="" />
     <bpmn2:messageFlow id="MF_Task_e_case_347_0_init" sourceRef="P_User" targetRef="P_Thermostat" messageRef="Msg_message_case_347_termostat_on_424" />
     <bpmn2:messageFlow id="MF_Task_e_case_347_2_init" sourceRef="P_Thermostat" targetRef="P_Controller" messageRef="Msg_message_case_347_controller_on_425" />
     <bpmn2:messageFlow id="MF_Task_e_case_347_3_init" sourceRef="P_User" targetRef="P_Thermostat" messageRef="Msg_message_case_347_termostat_off_426" />
     <bpmn2:messageFlow id="MF_Task_e_case_347_9_init" sourceRef="P_Thermostat" targetRef="P_Controller" messageRef="Msg_message_case_347_controller_off_427" />
-    <bpmn2:messageFlow id="MF_Task_e_case_347_11_init" sourceRef="P_Controller" targetRef="P_Controller" messageRef="Msg_message_case_347_env_info_428" />
+    <bpmn2:messageFlow id="MF_Task_e_case_347_11_init" sourceRef="P_Controller" targetRef="P__unknown_e_case_347_11" messageRef="Msg_message_case_347_env_info_428" />
     <bpmn2:startEvent id="Start_case_347">
       <bpmn2:outgoing>SF_1</bpmn2:outgoing>
     </bpmn2:startEvent>
@@ -49,7 +50,7 @@
       <bpmn2:incoming>SF_5</bpmn2:incoming>
       <bpmn2:outgoing>SF_6</bpmn2:outgoing>
       <bpmn2:participantRef>P_Controller</bpmn2:participantRef>
-      <bpmn2:participantRef>P_Controller</bpmn2:participantRef>
+      <bpmn2:participantRef>P__unknown_e_case_347_11</bpmn2:participantRef>
       <bpmn2:messageFlowRef>MF_Task_e_case_347_11_init</bpmn2:messageFlowRef>
     </bpmn2:choreographyTask>
     <bpmn2:endEvent id="End_case_347">
@@ -109,7 +110,7 @@
       <bpmndi:BPMNShape id="Task_e_case_347_11_di_top" bpmnElement="P_Controller" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_347_11_di">
         <dc:Bounds x="786" y="210" width="100" height="20" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_e_case_347_11_di_bot" bpmnElement="P_Controller" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_347_11_di">
+      <bpmndi:BPMNShape id="Task_e_case_347_11_di_bot" bpmnElement="P__unknown_e_case_347_11" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_347_11_di">
         <dc:Bounds x="786" y="270" width="100" height="20" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="End_case_347_di" bpmnElement="End_case_347">

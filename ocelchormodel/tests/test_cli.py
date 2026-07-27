@@ -129,3 +129,71 @@ class TestErrors:
         with pytest.raises(SystemExit) as exc:
             main([str(bad), "--list"])
         assert exc.value.code != 0
+
+
+# ---------------------------------------------------------------------------
+# Hardening: refusal and warnings notes
+# ---------------------------------------------------------------------------
+
+class TestHardeningNotes:
+
+    def _write_log(self, tmp_path, event_rels, msg_rels):
+        import json
+        ocel = {
+            "objectTypes": [], "eventTypes": [],
+            "objects": [
+                {"id": "choreographyInstance:0xt1", "type": "choreographyInstance"},
+                {"id": "0xaaa", "type": "EOA"},
+                {"id": "0xbbb", "type": "Vault"},
+                {"id": "0xccc", "type": "Pool"},
+                {"id": "msg1", "type": "deposit call", "relationships": msg_rels},
+            ],
+            "events": [{
+                "id": "e:t1:root", "type": "deposit [Vault]",
+                "time": "2024-01-01T00:00:00.000Z",
+                "attributes": [{"name": "trace_order", "value": 0}],
+                "relationships": event_rels + [
+                    {"objectId": "msg1", "qualifier": "choreo:message"},
+                    {"objectId": "choreographyInstance:0xt1", "qualifier": "choreo:instance"},
+                ],
+            }],
+        }
+        p = tmp_path / "synthetic_ocel.json"
+        p.write_text(json.dumps(ocel))
+        return p
+
+    def test_multicast_instance_refused_with_note(self, tmp_path, capsys):
+        log = self._write_log(
+            tmp_path,
+            [{"objectId": "0xaaa", "qualifier": "choreo:initiator"},
+             {"objectId": "0xbbb", "qualifier": "choreo:participant"},
+             {"objectId": "0xccc", "qualifier": "choreo:participant"}],
+            [{"objectId": "0xaaa", "qualifier": "choreo:source"},
+             {"objectId": "0xbbb", "qualifier": "choreo:target"},
+             {"objectId": "0xccc", "qualifier": "choreo:target"}],
+        )
+        out = tmp_path / "out"
+        with pytest.raises(SystemExit) as exc:
+            main([str(log), "-o", str(out)])
+        assert exc.value.code == 1
+        err = capsys.readouterr().err
+        assert "REFUSE" in err and "multicast" in err
+        subdir = out / "synthetic"
+        assert list(subdir.glob("*.bpmn")) == []
+        note = (subdir / "0xt1.refused.txt").read_text()
+        assert "no model converted" in note and "C3" in note
+
+    def test_missing_receiver_converted_with_warning_note(self, tmp_path, capsys):
+        log = self._write_log(
+            tmp_path,
+            [{"objectId": "0xaaa", "qualifier": "choreo:initiator"}],
+            [{"objectId": "0xaaa", "qualifier": "choreo:source"}],
+        )
+        out = tmp_path / "out"
+        main([str(log), "-o", str(out)])  # exits normally (no SystemExit)
+        err = capsys.readouterr().err
+        assert "WARN" in err and "phantom" in err
+        subdir = out / "synthetic"
+        assert len(list(subdir.glob("*.bpmn"))) == 1
+        note = (subdir / "0xt1.warnings.txt").read_text()
+        assert "unrecorded endpoints" in note and "e:t1:root" in note

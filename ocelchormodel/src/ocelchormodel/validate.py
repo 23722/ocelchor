@@ -102,6 +102,40 @@ def validate_chorjs_compat(xml_str: str) -> list[str]:
                     f"'{act.get('id')}' not in declared participants"
                 )
 
+    # --- Both-layers consistency (choreographyTask bands vs message flows) ---
+    # The diagram layer (participant bands) and the semantic layer (message
+    # flow endpoints) must tell the same story: a task's message flows may
+    # only connect the task's own two participants, and the two bands must
+    # be distinct elements (chor-js rejects duplicate band references; a
+    # self-send messageFlow would assert an interaction the bands don't
+    # show). Duplicate *display names* are legal (doppelgänger bands).
+    mf_by_id = {mf.get("id"): mf for mf in choreo.findall(_b2("messageFlow"))}
+    for task in root.iter(_b2("choreographyTask")):
+        tid = task.get("id")
+        prefs = [p.text for p in task.findall(_b2("participantRef"))]
+        if len(prefs) != len(set(prefs)):
+            errors.append(
+                f"choreographyTask '{tid}' references the same participant "
+                f"in both bands: {prefs}"
+            )
+        band = set(prefs)
+        for mfref in task.findall(_b2("messageFlowRef")):
+            mf = mf_by_id.get(mfref.text)
+            if mf is None:
+                continue  # unresolved ref already reported above
+            endpoints = {mf.get("sourceRef"), mf.get("targetRef")}
+            # Set equality: the flow must connect the two distinct bands —
+            # one endpoint each. This also catches a self-send
+            # (sourceRef == targetRef) between band members, the exact
+            # shape the old initiator-substitution fallback produced.
+            if endpoints != band:
+                errors.append(
+                    f"messageFlow '{mf.get('id')}' endpoints "
+                    f"{sorted(endpoints)} do not connect the two "
+                    f"participant bands of its task '{tid}' "
+                    f"(bands: {sorted(band)})"
+                )
+
     # --- Rule 8: sequenceFlow sourceRef/targetRef resolve ---
     for sf in root.iter(_b2("sequenceFlow")):
         src = sf.get("sourceRef")

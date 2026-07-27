@@ -1,0 +1,5 @@
+0xe477364f661349b00f5ddfcf916d424b588c52b2b012e1193e1756105b8586aa: no model converted.
+
+participant self-identity (C4) at event 'e:e477364f661349b00f5ddfcf916d424b588c52b2b012e1193e1756105b8586aa:0_8:request': object '0x9d58779365b067d5d3fcc6e92d237acd06f1e6a1' is both initiator and receiver; two bands for one identity would misrepresent the record
+
+See the validator's C4 finding for this instance.

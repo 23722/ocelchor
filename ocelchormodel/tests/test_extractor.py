@@ -212,3 +212,81 @@ class TestExtractRealWorld:
                     if isinstance(e, SubChoreo):
                         _check(e.children)
             _check(inst.elements)
+
+
+# ---------------------------------------------------------------------------
+# Hardening: unrecorded endpoints (phantom bands) and refused shapes
+# ---------------------------------------------------------------------------
+
+def _hardening_ocel(event_rels: list[dict], msg_rels: list[dict]) -> dict:
+    """Minimal one-instance log with one event and one message object."""
+    return {
+        "objectTypes": [], "eventTypes": [],
+        "objects": [
+            {"id": "choreographyInstance:0xt1", "type": "choreographyInstance"},
+            {"id": "0xaaa", "type": "EOA"},
+            {"id": "0xbbb", "type": "Vault"},
+            {"id": "0xccc", "type": "Pool"},
+            {"id": "msg1", "type": "deposit call", "relationships": msg_rels},
+        ],
+        "events": [{
+            "id": "e:t1:root", "type": "deposit [Vault]",
+            "time": "2024-01-01T00:00:00.000Z",
+            "attributes": [{"name": "trace_order", "value": 0}],
+            "relationships": event_rels + [
+                {"objectId": "msg1", "qualifier": "choreo:message"},
+                {"objectId": "choreographyInstance:0xt1", "qualifier": "choreo:instance"},
+            ],
+        }],
+    }
+
+
+class TestPhantomBands:
+
+    def test_missing_receiver_gets_per_event_phantom_on_both_layers(self):
+        """The phantom is the endpoint of BOTH layers: participant band and
+        message-flow target — never the initiator substituted (a self-send)."""
+        ocel = _hardening_ocel(
+            [{"objectId": "0xaaa", "qualifier": "choreo:initiator"}],
+            [{"objectId": "0xaaa", "qualifier": "choreo:source"}],  # no target
+        )
+        inst = extract_instance(ocel, "choreographyInstance:0xt1")
+        task = inst.elements[0]
+        assert task.initiator.bpmn_id == "P_0xaaa"
+        assert task.participant.bpmn_id.startswith("P__unknown_")
+        assert task.participant.display_name == ""
+        assert task.participant.ocel_id == ""  # presentational only
+        # semantic layer points at the SAME phantom, not back at the initiator
+        assert task.initiating_msg.target.bpmn_id == task.participant.bpmn_id
+        assert inst.phantom_events == ["e:t1:root"]
+
+    def test_recorded_endpoints_produce_no_phantom(self, swap1_ocel):
+        inst = extract_instance(swap1_ocel, SWAP1_INSTANCE)
+        assert inst.phantom_events == []
+
+
+class TestRefusedShapes:
+
+    def test_multicast_refused(self):
+        from ocelchormodel.extractor import InstanceRefused
+        ocel = _hardening_ocel(
+            [{"objectId": "0xaaa", "qualifier": "choreo:initiator"},
+             {"objectId": "0xbbb", "qualifier": "choreo:participant"},
+             {"objectId": "0xccc", "qualifier": "choreo:participant"}],
+            [{"objectId": "0xaaa", "qualifier": "choreo:source"},
+             {"objectId": "0xbbb", "qualifier": "choreo:target"},
+             {"objectId": "0xccc", "qualifier": "choreo:target"}],
+        )
+        with pytest.raises(InstanceRefused, match="multicast"):
+            extract_instance(ocel, "choreographyInstance:0xt1")
+
+    def test_self_identity_refused(self):
+        from ocelchormodel.extractor import InstanceRefused
+        ocel = _hardening_ocel(
+            [{"objectId": "0xbbb", "qualifier": "choreo:initiator"},
+             {"objectId": "0xbbb", "qualifier": "choreo:participant"}],
+            [{"objectId": "0xbbb", "qualifier": "choreo:source"},
+             {"objectId": "0xbbb", "qualifier": "choreo:target"}],
+        )
+        with pytest.raises(InstanceRefused, match="C4"):
+            extract_instance(ocel, "choreographyInstance:0xt1")

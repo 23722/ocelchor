@@ -12,12 +12,13 @@
     <bpmn2:participant id="P_Gynecologist" name="Gynecologist" />
     <bpmn2:participant id="P_Laboratory" name="Laboratory" />
     <bpmn2:participant id="P_Hospital" name="Hospital" />
+    <bpmn2:participant id="P__unknown_e_case_354_13" name="" />
     <bpmn2:messageFlow id="MF_Task_e_case_354_0_init" sourceRef="P_Patient" targetRef="P_Gynecologist" messageRef="Msg_message_case_354_disease_385" />
     <bpmn2:messageFlow id="MF_Task_e_case_354_3_init" sourceRef="P_Gynecologist" targetRef="P_Laboratory" messageRef="Msg_message_case_354_blood_sample_386" />
     <bpmn2:messageFlow id="MF_Task_e_case_354_7_init" sourceRef="P_Laboratory" targetRef="P_Gynecologist" messageRef="Msg_message_case_354_results_387" />
     <bpmn2:messageFlow id="MF_Task_e_case_354_9_init" sourceRef="P_Gynecologist" targetRef="P_Patient" messageRef="Msg_message_case_354_hospitalisation_388" />
     <bpmn2:messageFlow id="MF_Task_e_case_354_11_init" sourceRef="P_Gynecologist" targetRef="P_Hospital" messageRef="Msg_message_case_354_admission_request_389" />
-    <bpmn2:messageFlow id="MF_Task_e_case_354_13_init" sourceRef="P_Gynecologist" targetRef="P_Gynecologist" messageRef="Msg_message_case_354_patient_analysis_390" />
+    <bpmn2:messageFlow id="MF_Task_e_case_354_13_init" sourceRef="P_Gynecologist" targetRef="P__unknown_e_case_354_13" messageRef="Msg_message_case_354_patient_analysis_390" />
     <bpmn2:messageFlow id="MF_Task_e_case_354_16_init" sourceRef="P_Hospital" targetRef="P_Patient" messageRef="Msg_message_case_354_admission_391" />
     <bpmn2:startEvent id="Start_case_354">
       <bpmn2:outgoing>SF_1</bpmn2:outgoing>
@@ -61,7 +62,7 @@
       <bpmn2:incoming>SF_6</bpmn2:incoming>
       <bpmn2:outgoing>SF_7</bpmn2:outgoing>
       <bpmn2:participantRef>P_Gynecologist</bpmn2:participantRef>
-      <bpmn2:participantRef>P_Gynecologist</bpmn2:participantRef>
+      <bpmn2:participantRef>P__unknown_e_case_354_13</bpmn2:participantRef>
       <bpmn2:messageFlowRef>MF_Task_e_case_354_13_init</bpmn2:messageFlowRef>
     </bpmn2:choreographyTask>
     <bpmn2:choreographyTask id="Task_e_case_354_16" name="Send admission info" initiatingParticipantRef="P_Hospital">
@@ -139,7 +140,7 @@
       <bpmndi:BPMNShape id="Task_e_case_354_13_di_top" bpmnElement="P_Gynecologist" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_354_13_di">
         <dc:Bounds x="936" y="210" width="100" height="20" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_e_case_354_13_di_bot" bpmnElement="P_Gynecologist" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_354_13_di">
+      <bpmndi:BPMNShape id="Task_e_case_354_13_di_bot" bpmnElement="P__unknown_e_case_354_13" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_354_13_di">
         <dc:Bounds x="936" y="270" width="100" height="20" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_e_case_354_16_di" bpmnElement="Task_e_case_354_16">

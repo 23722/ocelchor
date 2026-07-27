@@ -1,0 +1,5 @@
+4: no model converted.
+
+multicast (C3) at event 'e:4:3': 2 receivers; a bilateral choreography task cannot express it, and keeping one would silently drop the other(s)
+
+See the validator's C3 finding for this instance.

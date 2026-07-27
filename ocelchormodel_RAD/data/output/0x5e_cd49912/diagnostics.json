@@ -1,0 +1,160 @@
+{
+  "log": "0x5e_cd49912",
+  "generated_by": "ocelchormodel-rad 0.1.0",
+  "hard_gates": {
+    "passed": true
+  },
+  "constraints": {
+    "C0": {
+      "checked": 4,
+      "violations": 0
+    },
+    "C1": {
+      "checked": 5,
+      "violations": 0
+    },
+    "C10": {
+      "checked": 1,
+      "violations": 0
+    },
+    "C11": {
+      "checked": 4,
+      "violations": 0
+    },
+    "C12": {
+      "checked": 2,
+      "violations": 0
+    },
+    "C13": {
+      "checked": 2,
+      "violations": 0
+    },
+    "C14": {
+      "checked": 2,
+      "violations": 0
+    },
+    "C15": {
+      "checked": 3,
+      "violations": 0
+    },
+    "C16": {
+      "checked": 2,
+      "violations": 0
+    },
+    "C2": {
+      "checked": 4,
+      "violations": 0
+    },
+    "C3": {
+      "checked": 4,
+      "violations": 0
+    },
+    "C4": {
+      "checked": 4,
+      "violations": 0
+    },
+    "C5": {
+      "checked": 5,
+      "violations": 0
+    },
+    "C6": {
+      "checked": 5,
+      "violations": 0
+    },
+    "C7": {
+      "checked": 4,
+      "violations": 0
+    },
+    "C8": {
+      "checked": 4,
+      "violations": 0
+    },
+    "C9": {
+      "checked": 4,
+      "violations": 0
+    }
+  },
+  "d01_ordering_determinism": {
+    "residual_ties": 0,
+    "examples": [],
+    "passed": true
+  },
+  "d02_scope_openers": {
+    "non_request_openers": 0,
+    "examples": []
+  },
+  "d03_bracket_completeness": {
+    "expected_missing_response": 1,
+    "unexpected_missing_response": 0,
+    "unexpected_examples": []
+  },
+  "d04_identity_labels": {
+    "exec_types": 1,
+    "occurrences": 1,
+    "examples": [
+      "Request unlock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]"
+    ]
+  },
+  "d05_event_type_fanout": [
+    {
+      "name": "unlock",
+      "exec_types": 2,
+      "examples": [
+        "unlock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+        "unlock [Governance]"
+      ]
+    }
+  ],
+  "d06_task_type_fanout": [],
+  "d07_scope_pooling": {
+    "buckets": 2,
+    "total_scope_occurrences": 2,
+    "buckets_with_pooling": 0,
+    "top": [
+      {
+        "context": [
+          "unlock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "unlock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+          "unlock [Governance]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      }
+    ]
+  },
+  "d08_message_merging": [],
+  "d09_parallelism_witnesses": [],
+  "d10_unrestricted_repetition": [],
+  "d11_choice_realizability": [],
+  "d12_recursion": {
+    "findings": [],
+    "direct": 0,
+    "indirect": 0,
+    "max_depth_delta": 0
+  },
+  "d13_cross_depth_participants": {
+    "pairs": 1,
+    "examples": [
+      {
+        "object": "0x5efda50f22d34f262c29268506c5fa42cb56a1ce",
+        "ancestor_scope": "subchoreographyInstance:cd49912d9a4783abc4aa1ca545091dccb4aa4899d191ed62a1fd610b89af1af9:root",
+        "descendant_scope": "subchoreographyInstance:cd49912d9a4783abc4aa1ca545091dccb4aa4899d191ed62a1fd610b89af1af9:0_1",
+        "ancestor_task_types": [
+          "Request unlock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]"
+        ],
+        "descendant_task_types": [
+          "Request unlock [Governance]",
+          "Respond to unlock [Governance]"
+        ]
+      }
+    ]
+  }
+}

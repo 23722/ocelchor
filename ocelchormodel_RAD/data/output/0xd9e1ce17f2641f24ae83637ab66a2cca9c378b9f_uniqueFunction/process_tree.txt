@@ -1,0 +1,409 @@
+×(
+  ∇_{swapTokensForExactETH [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request swapTokensForExactETH [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      'getReserves [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+      'transferFrom [IlluviumERC20]' ⟨UniswapV2Router02→IlluviumERC20⟩,
+      ∇_{swap [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request swap [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          'transfer [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+          'balanceOf [IlluviumERC20]' ⟨UniswapV2Pair→IlluviumERC20⟩,
+          'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+          'Respond to swap [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)),
+      ∇_{withdraw [WETH9]} ⟨UniswapV2Router02→WETH9⟩(
+        →(
+          'Request withdraw [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+          'transfer [UniswapV2Router02]' ⟨WETH9→UniswapV2Router02⟩,
+          'Respond to withdraw [WETH9]' ⟨WETH9→UniswapV2Router02⟩)),
+      'transfer [0xb20806c111454533ff98303f20f94255d348bd2c]' ⟨UniswapV2Router02→EOA⟩)),
+  ∇_{swapExactETHForTokens [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request swapExactETHForTokens [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      'getReserves [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+      'deposit [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+      'transfer [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+      ∇_{swap [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request swap [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          'transfer [ThorToken]' ⟨UniswapV2Pair→ThorToken⟩,
+          'balanceOf [ThorToken]' ⟨UniswapV2Pair→ThorToken⟩,
+          'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+          'Respond to swap [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)))),
+  ∇_{addLiquidityETH [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request addLiquidityETH [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      'getPair [UniswapV2Factory]' ⟨UniswapV2Router02→UniswapV2Factory⟩,
+      'getReserves [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+      'transferFrom [IlluviumERC20]' ⟨UniswapV2Router02→IlluviumERC20⟩,
+      'deposit [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+      'transfer [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+      ∇_{mint [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request mint [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          'balanceOf [IlluviumERC20]' ⟨UniswapV2Pair→IlluviumERC20⟩,
+          'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+          'feeTo [UniswapV2Factory]' ⟨UniswapV2Pair→UniswapV2Factory⟩,
+          'Respond to mint [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)))),
+  ∇_{swapETHForExactTokens [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request swapETHForExactTokens [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      'getReserves [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+      'deposit [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+      'transfer [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+      ∇_{swap [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request swap [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          ∇_{transfer [FiatTokenV2_2]} ⟨UniswapV2Pair→FiatTokenV2_2⟩(
+            →(
+              'Request transfer [FiatTokenV2_2]' ⟨UniswapV2Pair→FiatTokenV2_2⟩,
+              'transfer [FiatTokenV2_2]' ⟨FiatTokenV2_2→FiatTokenV2_2⟩,
+              'Respond to transfer [FiatTokenV2_2]' ⟨FiatTokenV2_2→UniswapV2Pair⟩)),
+          ∇_{undefined [FiatTokenV2_2]} ⟨UniswapV2Pair→FiatTokenV2_2⟩(
+            →(
+              'Request undefined [FiatTokenV2_2]' ⟨UniswapV2Pair→FiatTokenV2_2⟩,
+              'balanceOf [FiatTokenV2_2]' ⟨FiatTokenV2_2→FiatTokenV2_2⟩,
+              'Respond to undefined [FiatTokenV2_2]' ⟨FiatTokenV2_2→UniswapV2Pair⟩)),
+          'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+          'Respond to swap [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)),
+      'transfer [0xffc4725e7d9a7c39213c9bb97d130b3441eab205]' ⟨UniswapV2Router02→EOA⟩)),
+  ∇_{swapExactTokensForETHSupportingFeeOnTransferTokens [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request swapExactTokensForETHSupportingFeeOnTransferTokens [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      ↻(
+        ∇_{undefined [UUPSProxy]} ⟨UniswapV2Router02→UUPSProxy⟩(
+          →(
+            'Request undefined [UUPSProxy]' ⟨UniswapV2Router02→UUPSProxy⟩,
+            ×(
+              ∇_{balanceOf [EETH]} ⟨UUPSProxy→EETH⟩(
+                →(
+                  'Request balanceOf [EETH]' ⟨UUPSProxy→EETH⟩,
+                  ∇_{getTotalEtherClaimOf [UUPSProxy]} ⟨EETH→UUPSProxy⟩(
+                    →(
+                      'Request getTotalEtherClaimOf [UUPSProxy]' ⟨EETH→UUPSProxy⟩,
+                      ∇_{getTotalEtherClaimOf [LiquidityPool]} ⟨UUPSProxy→LiquidityPool⟩(
+                        →(
+                          'Request getTotalEtherClaimOf [LiquidityPool]' ⟨UUPSProxy→LiquidityPool⟩,
+                          ∇_{totalShares [UUPSProxy]} ⟨LiquidityPool→UUPSProxy⟩(
+                            →(
+                              'Request totalShares [UUPSProxy]' ⟨LiquidityPool→UUPSProxy⟩,
+                              'totalShares [EETH]' ⟨UUPSProxy→EETH⟩,
+                              'Respond to totalShares [UUPSProxy]' ⟨UUPSProxy→LiquidityPool⟩)),
+                          ∇_{shares [UUPSProxy]} ⟨LiquidityPool→UUPSProxy⟩(
+                            →(
+                              'Request shares [UUPSProxy]' ⟨LiquidityPool→UUPSProxy⟩,
+                              'shares [EETH]' ⟨UUPSProxy→EETH⟩,
+                              'Respond to shares [UUPSProxy]' ⟨UUPSProxy→LiquidityPool⟩)),
+                          'Respond to getTotalEtherClaimOf [LiquidityPool]' ⟨LiquidityPool→UUPSProxy⟩)),
+                      'Respond to getTotalEtherClaimOf [UUPSProxy]' ⟨UUPSProxy→EETH⟩)),
+                  'Respond to balanceOf [EETH]' ⟨EETH→UUPSProxy⟩)),
+              ∇_{transferFrom [EETH]} ⟨UUPSProxy→EETH⟩(
+                →(
+                  'Request transferFrom [EETH]' ⟨UUPSProxy→EETH⟩,
+                  ∇_{sharesForAmount [UUPSProxy]} ⟨EETH→UUPSProxy⟩(
+                    →(
+                      'Request sharesForAmount [UUPSProxy]' ⟨EETH→UUPSProxy⟩,
+                      ∇_{sharesForAmount [LiquidityPool]} ⟨UUPSProxy→LiquidityPool⟩(
+                        →(
+                          'Request sharesForAmount [LiquidityPool]' ⟨UUPSProxy→LiquidityPool⟩,
+                          ∇_{totalShares [UUPSProxy]} ⟨LiquidityPool→UUPSProxy⟩(
+                            →(
+                              'Request totalShares [UUPSProxy]' ⟨LiquidityPool→UUPSProxy⟩,
+                              'totalShares [EETH]' ⟨UUPSProxy→EETH⟩,
+                              'Respond to totalShares [UUPSProxy]' ⟨UUPSProxy→LiquidityPool⟩)),
+                          'Respond to sharesForAmount [LiquidityPool]' ⟨LiquidityPool→UUPSProxy⟩)),
+                      'Respond to sharesForAmount [UUPSProxy]' ⟨UUPSProxy→EETH⟩)),
+                  'Respond to transferFrom [EETH]' ⟨EETH→UUPSProxy⟩))),
+            'Respond to undefined [UUPSProxy]' ⟨UUPSProxy→UniswapV2Router02⟩)),
+        'getReserves [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩),
+      ∇_{swap [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request swap [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          'transfer [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+          ∇_{undefined [UUPSProxy]} ⟨UniswapV2Pair→UUPSProxy⟩(
+            →(
+              'Request undefined [UUPSProxy]' ⟨UniswapV2Pair→UUPSProxy⟩,
+              ∇_{balanceOf [EETH]} ⟨UUPSProxy→EETH⟩(
+                →(
+                  'Request balanceOf [EETH]' ⟨UUPSProxy→EETH⟩,
+                  ∇_{getTotalEtherClaimOf [UUPSProxy]} ⟨EETH→UUPSProxy⟩(
+                    →(
+                      'Request getTotalEtherClaimOf [UUPSProxy]' ⟨EETH→UUPSProxy⟩,
+                      ∇_{getTotalEtherClaimOf [LiquidityPool]} ⟨UUPSProxy→LiquidityPool⟩(
+                        →(
+                          'Request getTotalEtherClaimOf [LiquidityPool]' ⟨UUPSProxy→LiquidityPool⟩,
+                          ∇_{totalShares [UUPSProxy]} ⟨LiquidityPool→UUPSProxy⟩(
+                            →(
+                              'Request totalShares [UUPSProxy]' ⟨LiquidityPool→UUPSProxy⟩,
+                              'totalShares [EETH]' ⟨UUPSProxy→EETH⟩,
+                              'Respond to totalShares [UUPSProxy]' ⟨UUPSProxy→LiquidityPool⟩)),
+                          ∇_{shares [UUPSProxy]} ⟨LiquidityPool→UUPSProxy⟩(
+                            →(
+                              'Request shares [UUPSProxy]' ⟨LiquidityPool→UUPSProxy⟩,
+                              'shares [EETH]' ⟨UUPSProxy→EETH⟩,
+                              'Respond to shares [UUPSProxy]' ⟨UUPSProxy→LiquidityPool⟩)),
+                          'Respond to getTotalEtherClaimOf [LiquidityPool]' ⟨LiquidityPool→UUPSProxy⟩)),
+                      'Respond to getTotalEtherClaimOf [UUPSProxy]' ⟨UUPSProxy→EETH⟩)),
+                  'Respond to balanceOf [EETH]' ⟨EETH→UUPSProxy⟩)),
+              'Respond to undefined [UUPSProxy]' ⟨UUPSProxy→UniswapV2Pair⟩)),
+          'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+          'Respond to swap [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)),
+      'balanceOf [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+      ∇_{withdraw [WETH9]} ⟨UniswapV2Router02→WETH9⟩(
+        →(
+          'Request withdraw [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+          'transfer [UniswapV2Router02]' ⟨WETH9→UniswapV2Router02⟩,
+          'Respond to withdraw [WETH9]' ⟨WETH9→UniswapV2Router02⟩)),
+      'transfer [0xc570a59faa07fed02f16483825d8e8f55ff692a4]' ⟨UniswapV2Router02→EOA⟩)),
+  ∇_{removeLiquidity [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request removeLiquidity [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      'transferFrom [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+      ∇_{burn [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request burn [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          ↻(
+            →(
+              'balanceOf [Lon]' ⟨UniswapV2Pair→Lon⟩,
+              'balanceOf [TetherToken]' ⟨UniswapV2Pair→TetherToken⟩),
+            →(
+              'feeTo [UniswapV2Factory]' ⟨UniswapV2Pair→UniswapV2Factory⟩,
+              'transfer [Lon]' ⟨UniswapV2Pair→Lon⟩,
+              'transfer [TetherToken]' ⟨UniswapV2Pair→TetherToken⟩)),
+          'Respond to burn [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)))),
+  'Tranfer [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+  ∇_{getAmountsOut [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request getAmountsOut [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      'getReserves [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩)),
+  ∇_{swapExactTokensForTokensSupportingFeeOnTransferTokens [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request swapExactTokensForTokensSupportingFeeOnTransferTokens [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      'transferFrom [TetherToken]' ⟨UniswapV2Router02→TetherToken⟩,
+      ↻(
+        'balanceOf [YGGToken]' ⟨UniswapV2Router02→YGGToken⟩,
+        ∧(
+          'balanceOf [TetherToken]' ⟨UniswapV2Router02→TetherToken⟩,
+          ↻(
+            →(
+              'getReserves [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+              ∇_{swap [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+                →(
+                  'Request swap [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+                  ×(
+                    'transfer [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+                    →(
+                      'transfer [YGGToken]' ⟨UniswapV2Pair→YGGToken⟩,
+                      'balanceOf [YGGToken]' ⟨UniswapV2Pair→YGGToken⟩)),
+                  'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+                  ×(
+                    τ,
+                    'balanceOf [TetherToken]' ⟨UniswapV2Pair→TetherToken⟩),
+                  'Respond to swap [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩))),
+            τ),
+          'balanceOf [WETH9]' ⟨UniswapV2Router02→WETH9⟩)))),
+  ∇_{swapExactTokensForTokens [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request swapExactTokensForTokens [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      'getReserves [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+      'transferFrom [Token]' ⟨UniswapV2Router02→Token⟩,
+      ∇_{swap [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request swap [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          'transfer [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+          'balanceOf [Token]' ⟨UniswapV2Pair→Token⟩,
+          'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+          'Respond to swap [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)))),
+  ∇_{swapExactTokensForETH [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request swapExactTokensForETH [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      'getReserves [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+      ∇_{undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]} ⟨UniswapV2Router02→0x68ac463a7a8d4b55ab210646359726033e331eed⟩(
+        →(
+          'Request undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]' ⟨UniswapV2Router02→0x68ac463a7a8d4b55ab210646359726033e331eed⟩,
+          ∇_{childImplementation [NFTXVaultFactoryUpgradeable]} ⟨0x68ac463a7a8d4b55ab210646359726033e331eed→NFTXVaultFactoryUpgradeable⟩(
+            →(
+              'Request childImplementation [NFTXVaultFactoryUpgradeable]' ⟨0x68ac463a7a8d4b55ab210646359726033e331eed→NFTXVaultFactoryUpgradeable⟩,
+              'childImplementation [NFTXVaultFactoryUpgradeable]' ⟨NFTXVaultFactoryUpgradeable→NFTXVaultFactoryUpgradeable⟩,
+              'Respond to childImplementation [NFTXVaultFactoryUpgradeable]' ⟨NFTXVaultFactoryUpgradeable→0x68ac463a7a8d4b55ab210646359726033e331eed⟩)),
+          'transferFrom [NFTXVaultUpgradeable]' ⟨0x68ac463a7a8d4b55ab210646359726033e331eed→NFTXVaultUpgradeable⟩,
+          'Respond to undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]' ⟨0x68ac463a7a8d4b55ab210646359726033e331eed→UniswapV2Router02⟩)),
+      ∇_{swap [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request swap [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          'transfer [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+          ∇_{undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]} ⟨UniswapV2Pair→0x68ac463a7a8d4b55ab210646359726033e331eed⟩(
+            →(
+              'Request undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]' ⟨UniswapV2Pair→0x68ac463a7a8d4b55ab210646359726033e331eed⟩,
+              ∇_{childImplementation [NFTXVaultFactoryUpgradeable]} ⟨0x68ac463a7a8d4b55ab210646359726033e331eed→NFTXVaultFactoryUpgradeable⟩(
+                →(
+                  'Request childImplementation [NFTXVaultFactoryUpgradeable]' ⟨0x68ac463a7a8d4b55ab210646359726033e331eed→NFTXVaultFactoryUpgradeable⟩,
+                  'childImplementation [NFTXVaultFactoryUpgradeable]' ⟨NFTXVaultFactoryUpgradeable→NFTXVaultFactoryUpgradeable⟩,
+                  'Respond to childImplementation [NFTXVaultFactoryUpgradeable]' ⟨NFTXVaultFactoryUpgradeable→0x68ac463a7a8d4b55ab210646359726033e331eed⟩)),
+              'balanceOf [NFTXVaultUpgradeable]' ⟨0x68ac463a7a8d4b55ab210646359726033e331eed→NFTXVaultUpgradeable⟩,
+              'Respond to undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]' ⟨0x68ac463a7a8d4b55ab210646359726033e331eed→UniswapV2Pair⟩)),
+          'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+          'Respond to swap [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)),
+      ∇_{withdraw [WETH9]} ⟨UniswapV2Router02→WETH9⟩(
+        →(
+          'Request withdraw [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+          'transfer [UniswapV2Router02]' ⟨WETH9→UniswapV2Router02⟩,
+          'Respond to withdraw [WETH9]' ⟨WETH9→UniswapV2Router02⟩)),
+      'transfer [0x3f13c8ecdd224197ea42fa7722b765d873190f4e]' ⟨UniswapV2Router02→EOA⟩)),
+  ∇_{addLiquidity [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request addLiquidity [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      'getPair [UniswapV2Factory]' ⟨UniswapV2Router02→UniswapV2Factory⟩,
+      'getReserves [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+      'transferFrom [IlluviumERC20]' ⟨UniswapV2Router02→IlluviumERC20⟩,
+      'transferFrom [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+      ∇_{mint [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request mint [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          'balanceOf [IlluviumERC20]' ⟨UniswapV2Pair→IlluviumERC20⟩,
+          'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+          'feeTo [UniswapV2Factory]' ⟨UniswapV2Pair→UniswapV2Factory⟩,
+          'Respond to mint [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)))),
+  ∇_{removeLiquidityETHSupportingFeeOnTransferTokens [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request removeLiquidityETHSupportingFeeOnTransferTokens [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      'transferFrom [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+      ∇_{burn [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request burn [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          ↻(
+            →(
+              'balanceOf [IlluviumERC20]' ⟨UniswapV2Pair→IlluviumERC20⟩,
+              'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩),
+            →(
+              'feeTo [UniswapV2Factory]' ⟨UniswapV2Pair→UniswapV2Factory⟩,
+              'transfer [IlluviumERC20]' ⟨UniswapV2Pair→IlluviumERC20⟩,
+              'transfer [WETH9]' ⟨UniswapV2Pair→WETH9⟩)),
+          'Respond to burn [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)),
+      'balanceOf [IlluviumERC20]' ⟨UniswapV2Router02→IlluviumERC20⟩,
+      'transfer [IlluviumERC20]' ⟨UniswapV2Router02→IlluviumERC20⟩,
+      ∇_{withdraw [WETH9]} ⟨UniswapV2Router02→WETH9⟩(
+        →(
+          'Request withdraw [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+          'transfer [UniswapV2Router02]' ⟨WETH9→UniswapV2Router02⟩,
+          'Respond to withdraw [WETH9]' ⟨WETH9→UniswapV2Router02⟩)),
+      'transfer [0x000000e923f2a967e390ebff6e64bd17004f2df1]' ⟨UniswapV2Router02→EOA⟩)),
+  ∇_{removeLiquidityETHWithPermit [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request removeLiquidityETHWithPermit [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      ∇_{permit [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request permit [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          'undefined [0x0000000000000000000000000000000000000001]' ⟨UniswapV2Pair→0x0000000000000000000000000000000000000001⟩,
+          'Respond to permit [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)),
+      'transferFrom [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+      ∇_{burn [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request burn [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          ↻(
+            →(
+              'balanceOf [EdenToken]' ⟨UniswapV2Pair→EdenToken⟩,
+              'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩),
+            →(
+              'feeTo [UniswapV2Factory]' ⟨UniswapV2Pair→UniswapV2Factory⟩,
+              'transfer [EdenToken]' ⟨UniswapV2Pair→EdenToken⟩,
+              'transfer [WETH9]' ⟨UniswapV2Pair→WETH9⟩)),
+          'Respond to burn [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)),
+      'transfer [EdenToken]' ⟨UniswapV2Router02→EdenToken⟩,
+      ∇_{withdraw [WETH9]} ⟨UniswapV2Router02→WETH9⟩(
+        →(
+          'Request withdraw [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+          'transfer [UniswapV2Router02]' ⟨WETH9→UniswapV2Router02⟩,
+          'Respond to withdraw [WETH9]' ⟨WETH9→UniswapV2Router02⟩)),
+      'transfer [0xa9d062b23650c9191673d9496d9e700d37dc55f5]' ⟨UniswapV2Router02→EOA⟩)),
+  ∇_{swapExactETHForTokensSupportingFeeOnTransferTokens [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request swapExactETHForTokensSupportingFeeOnTransferTokens [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      'deposit [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+      'transfer [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+      ↻(
+        'balanceOf [OmniCat]' ⟨UniswapV2Router02→OmniCat⟩,
+        →(
+          'getReserves [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          'balanceOf [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+          ∇_{swap [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+            →(
+              'Request swap [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+              'transfer [OmniCat]' ⟨UniswapV2Pair→OmniCat⟩,
+              'balanceOf [OmniCat]' ⟨UniswapV2Pair→OmniCat⟩,
+              'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+              'Respond to swap [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)))))),
+  'swapTokensForExactTokens [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+  ∇_{removeLiquidityETH [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request removeLiquidityETH [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      'transferFrom [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+      ∇_{burn [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request burn [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          ↻(
+            →(
+              'balanceOf [IlluviumERC20]' ⟨UniswapV2Pair→IlluviumERC20⟩,
+              'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩),
+            →(
+              'feeTo [UniswapV2Factory]' ⟨UniswapV2Pair→UniswapV2Factory⟩,
+              'transfer [IlluviumERC20]' ⟨UniswapV2Pair→IlluviumERC20⟩,
+              'transfer [WETH9]' ⟨UniswapV2Pair→WETH9⟩)),
+          'Respond to burn [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)),
+      'transfer [IlluviumERC20]' ⟨UniswapV2Router02→IlluviumERC20⟩,
+      ∇_{withdraw [WETH9]} ⟨UniswapV2Router02→WETH9⟩(
+        →(
+          'Request withdraw [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+          'undefined [UniswapV2Router02]' ⟨WETH9→UniswapV2Router02⟩,
+          'Respond to withdraw [WETH9]' ⟨WETH9→UniswapV2Router02⟩)),
+      'transfer [0x666664dc6a1ac0a4f639709837f878cbd0e9bed6]' ⟨UniswapV2Router02→EOA⟩)),
+  ∇_{removeLiquidityWithPermit [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request removeLiquidityWithPermit [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      ∇_{permit [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request permit [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          'undefined [0x0000000000000000000000000000000000000001]' ⟨UniswapV2Pair→0x0000000000000000000000000000000000000001⟩,
+          'Respond to permit [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)),
+      'transferFrom [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+      ∇_{burn [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request burn [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          ↻(
+            →(
+              'balanceOf [OlympusERC20Token]' ⟨UniswapV2Pair→OlympusERC20Token⟩,
+              'balanceOf [Dai]' ⟨UniswapV2Pair→Dai⟩),
+            →(
+              'feeTo [UniswapV2Factory]' ⟨UniswapV2Pair→UniswapV2Factory⟩,
+              'transfer [OlympusERC20Token]' ⟨UniswapV2Pair→OlympusERC20Token⟩,
+              'transfer [Dai]' ⟨UniswapV2Pair→Dai⟩)),
+          'Respond to burn [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)))),
+  ∇_{removeLiquidityETHWithPermitSupportingFeeOnTransferTokens [UniswapV2Router02]} ⟨EOA→UniswapV2Router02⟩(
+    →(
+      'Request removeLiquidityETHWithPermitSupportingFeeOnTransferTokens [UniswapV2Router02]' ⟨EOA→UniswapV2Router02⟩,
+      ∇_{permit [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request permit [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          'undefined [0x0000000000000000000000000000000000000001]' ⟨UniswapV2Pair→0x0000000000000000000000000000000000000001⟩,
+          'Respond to permit [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)),
+      'transferFrom [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+      ∇_{burn [UniswapV2Pair]} ⟨UniswapV2Router02→UniswapV2Pair⟩(
+        →(
+          'Request burn [UniswapV2Pair]' ⟨UniswapV2Router02→UniswapV2Pair⟩,
+          ↻(
+            →(
+              'balanceOf [IlluviumERC20]' ⟨UniswapV2Pair→IlluviumERC20⟩,
+              'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩),
+            →(
+              'feeTo [UniswapV2Factory]' ⟨UniswapV2Pair→UniswapV2Factory⟩,
+              'transfer [IlluviumERC20]' ⟨UniswapV2Pair→IlluviumERC20⟩,
+              'transfer [WETH9]' ⟨UniswapV2Pair→WETH9⟩)),
+          'Respond to burn [UniswapV2Pair]' ⟨UniswapV2Pair→UniswapV2Router02⟩)),
+      'balanceOf [IlluviumERC20]' ⟨UniswapV2Router02→IlluviumERC20⟩,
+      'transfer [IlluviumERC20]' ⟨UniswapV2Router02→IlluviumERC20⟩,
+      ∇_{withdraw [WETH9]} ⟨UniswapV2Router02→WETH9⟩(
+        →(
+          'Request withdraw [WETH9]' ⟨UniswapV2Router02→WETH9⟩,
+          'transfer [UniswapV2Router02]' ⟨WETH9→UniswapV2Router02⟩,
+          'Respond to withdraw [WETH9]' ⟨WETH9→UniswapV2Router02⟩)),
+      'transfer [0x5470f579a2936290603a2ef038b7a04846c11a47]' ⟨UniswapV2Router02→EOA⟩)))

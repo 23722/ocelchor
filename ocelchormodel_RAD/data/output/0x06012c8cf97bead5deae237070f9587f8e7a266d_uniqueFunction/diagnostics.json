@@ -1,0 +1,554 @@
+{
+  "log": "0x06012c8cf97bead5deae237070f9587f8e7a266d_uniqueFunction",
+  "generated_by": "ocelchormodel-rad 0.1.0",
+  "hard_gates": {
+    "passed": true
+  },
+  "constraints": {
+    "C0": {
+      "checked": 204,
+      "violations": 0
+    },
+    "C1": {
+      "checked": 302,
+      "violations": 0
+    },
+    "C10": {
+      "checked": 100,
+      "violations": 0
+    },
+    "C11": {
+      "checked": 204,
+      "violations": 0
+    },
+    "C12": {
+      "checked": 59,
+      "violations": 0
+    },
+    "C13": {
+      "checked": 59,
+      "violations": 0
+    },
+    "C14": {
+      "checked": 59,
+      "violations": 0
+    },
+    "C15": {
+      "checked": 182,
+      "violations": 0
+    },
+    "C16": {
+      "checked": 59,
+      "violations": 0
+    },
+    "C2": {
+      "checked": 204,
+      "violations": 0
+    },
+    "C3": {
+      "checked": 204,
+      "violations": 0
+    },
+    "C4": {
+      "checked": 204,
+      "violations": 2
+    },
+    "C5": {
+      "checked": 302,
+      "violations": 0
+    },
+    "C6": {
+      "checked": 302,
+      "violations": 0
+    },
+    "C7": {
+      "checked": 204,
+      "violations": 0
+    },
+    "C8": {
+      "checked": 204,
+      "violations": 0
+    },
+    "C9": {
+      "checked": 204,
+      "violations": 0
+    }
+  },
+  "d01_ordering_determinism": {
+    "residual_ties": 0,
+    "examples": [],
+    "passed": true
+  },
+  "d02_scope_openers": {
+    "non_request_openers": 0,
+    "examples": []
+  },
+  "d03_bracket_completeness": {
+    "expected_missing_response": 17,
+    "unexpected_missing_response": 0,
+    "unexpected_examples": []
+  },
+  "d04_identity_labels": {
+    "exec_types": 35,
+    "occurrences": 40,
+    "examples": [
+      "0x0ef82558 [0x0000000000000000000000000000000000000001]",
+      "0x1cf290dc [0x0000000000000000000000000000000000000001]",
+      "0x2ed95c94 [0x0000000000000000000000000000000000000001]",
+      "0x36016c7a [0x0000000000000000000000000000000000000004]",
+      "0x5239c0f9 [0x0000000000000000000000000000000000000001]"
+    ]
+  },
+  "d05_event_type_fanout": [
+    {
+      "name": "createAuction",
+      "exec_types": 2,
+      "examples": [
+        "createAuction [SaleClockAuction]",
+        "createAuction [SiringClockAuction]"
+      ]
+    },
+    {
+      "name": "execTransaction",
+      "exec_types": 2,
+      "examples": [
+        "execTransaction [0xbeddf3e43015f5221f5d1ac0fd0d2ab3352d2f7b]",
+        "execTransaction [GnosisSafe]"
+      ]
+    },
+    {
+      "name": "execute",
+      "exec_types": 2,
+      "examples": [
+        "execute [ArgentModule]",
+        "execute [Conduit]"
+      ]
+    },
+    {
+      "name": "invoke1CosignerSends",
+      "exec_types": 2,
+      "examples": [
+        "invoke1CosignerSends [0x526d2dee2e6ea828b04607face8f9dd84b167234]",
+        "invoke1CosignerSends [CloneableWallet]"
+      ]
+    },
+    {
+      "name": "onERC1155Received",
+      "exec_types": 3,
+      "examples": [
+        "onERC1155Received [CompatibilityFallbackHandler]",
+        "onERC1155Received [GnosisSafeProxy]",
+        "onERC1155Received [GnosisSafe]"
+      ]
+    },
+    {
+      "name": "safeTransferFrom",
+      "exec_types": 5,
+      "examples": [
+        "safeTransferFrom [ACK]",
+        "safeTransferFrom [CurioERC1155Wrapper]",
+        "safeTransferFrom [ERC1155CreatorImplementation]",
+        "safeTransferFrom [RaribleToken]",
+        "safeTransferFrom [RaribleUserToken]"
+      ]
+    },
+    {
+      "name": "transfer",
+      "exec_types": 11,
+      "examples": [
+        "transfer [0x482579f93dc13e6b434e38b5a0447ca543d88a46]",
+        "transfer [0x89f4fa054434097da5e475cad3a47c249d804f20]",
+        "transfer [0x91e04c5fe50a02440d822092f87ae6b8b957f4d4]",
+        "transfer [0xa306dc890a5bb419d9d711d661c73f371da521c0]",
+        "transfer [0xab5622d7da96c571c6abe08e4b85e462eb666e4f]"
+      ]
+    },
+    {
+      "name": "transferFrom",
+      "exec_types": 16,
+      "examples": [
+        "transferFrom [BaseRegistrarImplementation]",
+        "transferFrom [BoredApeKennelClub]",
+        "transferFrom [Delusion]",
+        "transferFrom [DigitalMediaCore]",
+        "transferFrom [Doodles]"
+      ]
+    }
+  ],
+  "d06_task_type_fanout": [
+    {
+      "exec_type": "Request execute [Conduit]",
+      "role_pairs": [
+        [
+          "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
+          "Conduit"
+        ],
+        [
+          "0x0000000000c2d145a2526bd8c716263bfebe1a72",
+          "Conduit"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Request invoke [BaseWallet]",
+      "role_pairs": [
+        [
+          "ArgentModule",
+          "BaseWallet"
+        ],
+        [
+          "BaseWallet",
+          "BaseWallet"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Request onERC1155Received [GnosisSafeProxy]",
+      "role_pairs": [
+        [
+          "ACK",
+          "GnosisSafeProxy"
+        ],
+        [
+          "RaribleToken",
+          "GnosisSafeProxy"
+        ],
+        [
+          "RaribleUserToken",
+          "GnosisSafeProxy"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Request transferFrom [PassportDecaUpgraded]",
+      "role_pairs": [
+        [
+          "Conduit",
+          "PassportDecaUpgraded"
+        ],
+        [
+          "PassportDecaUpgraded",
+          "PassportDecaUpgraded"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to execute [Conduit]",
+      "role_pairs": [
+        [
+          "Conduit",
+          "0x00000000000000adc04c56bf30ac9d3c0aaf14dc"
+        ],
+        [
+          "Conduit",
+          "0x0000000000c2d145a2526bd8c716263bfebe1a72"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to invoke [BaseWallet]",
+      "role_pairs": [
+        [
+          "BaseWallet",
+          "ArgentModule"
+        ],
+        [
+          "BaseWallet",
+          "BaseWallet"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to onERC1155Received [GnosisSafeProxy]",
+      "role_pairs": [
+        [
+          "GnosisSafeProxy",
+          "ACK"
+        ],
+        [
+          "GnosisSafeProxy",
+          "RaribleToken"
+        ],
+        [
+          "GnosisSafeProxy",
+          "RaribleUserToken"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to transferFrom [PassportDecaUpgraded]",
+      "role_pairs": [
+        [
+          "PassportDecaUpgraded",
+          "Conduit"
+        ],
+        [
+          "PassportDecaUpgraded",
+          "PassportDecaUpgraded"
+        ]
+      ]
+    },
+    {
+      "exec_type": "owner [BaseWallet]",
+      "role_pairs": [
+        [
+          "BaseWallet",
+          "BaseWallet"
+        ],
+        [
+          "Proxy",
+          "BaseWallet"
+        ]
+      ]
+    },
+    {
+      "exec_type": "ownerOf [KittyCore]",
+      "role_pairs": [
+        [
+          "0x09fe5f0236f0ea5d930197dce254d77b04128075",
+          "KittyCore"
+        ],
+        [
+          "0x25c7b64a93eb1261e130ec21a3e9918caa38b611",
+          "KittyCore"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transfer [KittyCore]",
+      "role_pairs": [
+        [
+          "0x09fe5f0236f0ea5d930197dce254d77b04128075",
+          "KittyCore"
+        ],
+        [
+          "BaseWallet",
+          "KittyCore"
+        ],
+        [
+          "CloneableWallet",
+          "KittyCore"
+        ],
+        [
+          "EOA",
+          "KittyCore"
+        ],
+        [
+          "MultiSendCallOnly",
+          "KittyCore"
+        ],
+        [
+          "SaleClockAuction",
+          "KittyCore"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transferFrom [KittyCore]",
+      "role_pairs": [
+        [
+          "0x25c7b64a93eb1261e130ec21a3e9918caa38b611",
+          "KittyCore"
+        ],
+        [
+          "Conduit",
+          "KittyCore"
+        ],
+        [
+          "SaleClockAuction",
+          "KittyCore"
+        ],
+        [
+          "SiringClockAuction",
+          "KittyCore"
+        ]
+      ]
+    }
+  ],
+  "d07_scope_pooling": {
+    "buckets": 51,
+    "total_scope_occurrences": 59,
+    "buckets_with_pooling": 5,
+    "top": [
+      {
+        "context": [
+          "execTransaction [0xbeddf3e43015f5221f5d1ac0fd0d2ab3352d2f7b]",
+          "execTransaction [GnosisSafe]",
+          "multiSend [MultiSendCallOnly]",
+          "safeTransferFrom [RaribleUserToken]"
+        ],
+        "occurrences": 3,
+        "variants": 1,
+        "pooling_ratio": 3.0
+      },
+      {
+        "context": [
+          "execTransaction [0xbeddf3e43015f5221f5d1ac0fd0d2ab3352d2f7b]",
+          "execTransaction [GnosisSafe]",
+          "multiSend [MultiSendCallOnly]",
+          "safeTransferFrom [RaribleUserToken]",
+          "onERC1155Received [GnosisSafeProxy]"
+        ],
+        "occurrences": 3,
+        "variants": 1,
+        "pooling_ratio": 3.0
+      },
+      {
+        "context": [
+          "execTransaction [0xbeddf3e43015f5221f5d1ac0fd0d2ab3352d2f7b]",
+          "execTransaction [GnosisSafe]",
+          "multiSend [MultiSendCallOnly]",
+          "safeTransferFrom [RaribleUserToken]",
+          "onERC1155Received [GnosisSafeProxy]",
+          "onERC1155Received [GnosisSafe]"
+        ],
+        "occurrences": 3,
+        "variants": 1,
+        "pooling_ratio": 3.0
+      },
+      {
+        "context": [
+          "bulkTransfer [0x0000000000c2d145a2526bd8c716263bfebe1a72]",
+          "execute [Conduit]",
+          "safeTransferFrom [ERC1155CreatorImplementation]"
+        ],
+        "occurrences": 2,
+        "variants": 1,
+        "pooling_ratio": 2.0
+      },
+      {
+        "context": [
+          "matchOrders [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]",
+          "execute [Conduit]",
+          "transferFrom [ERC721SingleEdition]"
+        ],
+        "occurrences": 2,
+        "variants": 1,
+        "pooling_ratio": 2.0
+      }
+    ]
+  },
+  "d08_message_merging": [],
+  "d09_parallelism_witnesses": [],
+  "d10_unrestricted_repetition": [],
+  "d11_choice_realizability": [],
+  "d12_recursion": {
+    "findings": [
+      {
+        "label": "transferFrom [PassportDecaUpgraded]",
+        "noninit_role": "PassportDecaUpgraded",
+        "context_path": [
+          "matchOrders [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]",
+          "execute [Conduit]",
+          "transferFrom [PassportDecaUpgraded]",
+          "transferFrom [PassportDecaUpgraded]"
+        ],
+        "first_depth": 2,
+        "recurrence_depth": 3,
+        "direct": true
+      },
+      {
+        "label": "invoke [BaseWallet]",
+        "noninit_role": "BaseWallet",
+        "context_path": [
+          "execute [ArgentModule]",
+          "multiCallWithGuardians [ArgentModule]",
+          "invoke [BaseWallet]",
+          "invoke [BaseWallet]"
+        ],
+        "first_depth": 2,
+        "recurrence_depth": 3,
+        "direct": true
+      },
+      {
+        "label": "invoke [BaseWallet]",
+        "noninit_role": "BaseWallet",
+        "context_path": [
+          "execute [ArgentModule]",
+          "invoke [BaseWallet]",
+          "invoke [BaseWallet]"
+        ],
+        "first_depth": 1,
+        "recurrence_depth": 2,
+        "direct": true
+      }
+    ],
+    "direct": 3,
+    "indirect": 0,
+    "max_depth_delta": 1
+  },
+  "d13_cross_depth_participants": {
+    "pairs": 54,
+    "examples": [
+      {
+        "object": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+        "ancestor_scope": "subchoreographyInstance:0435b744aa5ca8967e1a69649a2cf27244232dbcc07ba7bd0e1b05ab2aecd224:root",
+        "descendant_scope": "subchoreographyInstance:0435b744aa5ca8967e1a69649a2cf27244232dbcc07ba7bd0e1b05ab2aecd224:0_1",
+        "ancestor_task_types": [
+          "Request createSaleAuction [KittyCore]"
+        ],
+        "descendant_task_types": [
+          "Request createAuction [SaleClockAuction]",
+          "Respond to createAuction [SaleClockAuction]",
+          "transferFrom [KittyCore]"
+        ]
+      },
+      {
+        "object": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
+        "ancestor_scope": "subchoreographyInstance:e9d7bf7178a13cfd815eef37d6bc25064c3d4fc10c0a730edb2e07996fd42044:root",
+        "descendant_scope": "subchoreographyInstance:e9d7bf7178a13cfd815eef37d6bc25064c3d4fc10c0a730edb2e07996fd42044:0_2",
+        "ancestor_task_types": [
+          "0xf2c92568 [0x0000000000000000000000000000000000000001]",
+          "Request fulfillBasicOrder_efficient_6GL6yc [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]",
+          "transfer [0x91e04c5fe50a02440d822092f87ae6b8b957f4d4]",
+          "transfer [PayableProxy]"
+        ],
+        "descendant_task_types": [
+          "Request execute [Conduit]",
+          "Respond to execute [Conduit]"
+        ]
+      },
+      {
+        "object": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
+        "ancestor_scope": "subchoreographyInstance:bed088ff364bd84d7e1df1c3e48493a79c78390e7bd765f02b1102cf672c4d20:root",
+        "descendant_scope": "subchoreographyInstance:bed088ff364bd84d7e1df1c3e48493a79c78390e7bd765f02b1102cf672c4d20:0_5",
+        "ancestor_task_types": [
+          "0x0ef82558 [0x0000000000000000000000000000000000000001]",
+          "0x5239c0f9 [0x0000000000000000000000000000000000000001]",
+          "Request fulfillAvailableAdvancedOrders [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]",
+          "transfer [0xe9ce9119f45806c3cd17b95d8b7c47a5365120e2]",
+          "transfer [PayableProxy]"
+        ],
+        "descendant_task_types": [
+          "Request execute [Conduit]",
+          "Respond to execute [Conduit]"
+        ]
+      },
+      {
+        "object": "0x526d2dee2e6ea828b04607face8f9dd84b167234",
+        "ancestor_scope": "subchoreographyInstance:4b678e669ce3690774f913f6f1acf1c1084d3554936ee6ba760fb966f0c07310:root",
+        "descendant_scope": "subchoreographyInstance:4b678e669ce3690774f913f6f1acf1c1084d3554936ee6ba760fb966f0c07310:0_1",
+        "ancestor_task_types": [
+          "Request invoke1CosignerSends [0x526d2dee2e6ea828b04607face8f9dd84b167234]"
+        ],
+        "descendant_task_types": [
+          "Request invoke1CosignerSends [CloneableWallet]",
+          "Respond to invoke1CosignerSends [CloneableWallet]"
+        ]
+      },
+      {
+        "object": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+        "ancestor_scope": "subchoreographyInstance:5cc3f487ea080b4d578684666cdc6d9bd4f815b1bebd1e9096fa2d3c744d6809:root",
+        "descendant_scope": "subchoreographyInstance:5cc3f487ea080b4d578684666cdc6d9bd4f815b1bebd1e9096fa2d3c744d6809:0_1",
+        "ancestor_task_types": [
+          "Request createSiringAuction [KittyCore]"
+        ],
+        "descendant_task_types": [
+          "Request createAuction [SiringClockAuction]",
+          "Respond to createAuction [SiringClockAuction]",
+          "transferFrom [KittyCore]"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,432 @@
+{
+  "log": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b_uniqueFunction",
+  "generated_by": "ocelchormodel-rad 0.1.0",
+  "hard_gates": {
+    "passed": true
+  },
+  "constraints": {
+    "C0": {
+      "checked": 85,
+      "violations": 0
+    },
+    "C1": {
+      "checked": 146,
+      "violations": 0
+    },
+    "C10": {
+      "checked": 61,
+      "violations": 0
+    },
+    "C11": {
+      "checked": 85,
+      "violations": 0
+    },
+    "C12": {
+      "checked": 13,
+      "violations": 0
+    },
+    "C13": {
+      "checked": 13,
+      "violations": 0
+    },
+    "C14": {
+      "checked": 13,
+      "violations": 0
+    },
+    "C15": {
+      "checked": 83,
+      "violations": 0
+    },
+    "C16": {
+      "checked": 13,
+      "violations": 0
+    },
+    "C2": {
+      "checked": 85,
+      "violations": 0
+    },
+    "C3": {
+      "checked": 85,
+      "violations": 0
+    },
+    "C4": {
+      "checked": 85,
+      "violations": 0
+    },
+    "C5": {
+      "checked": 146,
+      "violations": 0
+    },
+    "C6": {
+      "checked": 146,
+      "violations": 0
+    },
+    "C7": {
+      "checked": 85,
+      "violations": 0
+    },
+    "C8": {
+      "checked": 85,
+      "violations": 0
+    },
+    "C9": {
+      "checked": 85,
+      "violations": 0
+    }
+  },
+  "d01_ordering_determinism": {
+    "residual_ties": 0,
+    "examples": [],
+    "passed": true
+  },
+  "d02_scope_openers": {
+    "non_request_openers": 0,
+    "examples": []
+  },
+  "d03_bracket_completeness": {
+    "expected_missing_response": 2,
+    "unexpected_missing_response": 0,
+    "unexpected_examples": []
+  },
+  "d04_identity_labels": {
+    "exec_types": 9,
+    "occurrences": 58,
+    "examples": [
+      "MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]",
+      "Request deposit [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
+      "Request withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
+      "Transfer* [0x0000000000000000000000000000000000000006]",
+      "transfer [0x2038d51a98967f2c9443e2ca35642abb3e63169e]"
+    ]
+  },
+  "d05_event_type_fanout": [
+    {
+      "name": "deposit",
+      "exec_types": 2,
+      "examples": [
+        "deposit [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
+        "deposit [TornadoCash_eth]"
+      ]
+    },
+    {
+      "name": "transfer",
+      "exec_types": 2,
+      "examples": [
+        "transfer [0x2038d51a98967f2c9443e2ca35642abb3e63169e]",
+        "transfer [0xd8f1eb586ecb93745392ee254a028f1f67e1437e]"
+      ]
+    },
+    {
+      "name": "undefined",
+      "exec_types": 3,
+      "examples": [
+        "undefined [0x0000000000000000000000000000000000000006]",
+        "undefined [0x0000000000000000000000000000000000000007]",
+        "undefined [0x0000000000000000000000000000000000000008]"
+      ]
+    },
+    {
+      "name": "withdraw",
+      "exec_types": 2,
+      "examples": [
+        "withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
+        "withdraw [TornadoCash_eth]"
+      ]
+    }
+  ],
+  "d06_task_type_fanout": [
+    {
+      "exec_type": "Request addBurnRewards [TornadoStakingRewards]",
+      "role_pairs": [
+        [
+          "RelayerRegistry",
+          "TornadoStakingRewards"
+        ],
+        [
+          "TornadoStakingRewards",
+          "TornadoStakingRewards"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Request burn [RelayerRegistry]",
+      "role_pairs": [
+        [
+          "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+          "RelayerRegistry"
+        ],
+        [
+          "RelayerRegistry",
+          "RelayerRegistry"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to addBurnRewards [TornadoStakingRewards]",
+      "role_pairs": [
+        [
+          "TornadoStakingRewards",
+          "RelayerRegistry"
+        ],
+        [
+          "TornadoStakingRewards",
+          "TornadoStakingRewards"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to burn [RelayerRegistry]",
+      "role_pairs": [
+        [
+          "RelayerRegistry",
+          "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b"
+        ],
+        [
+          "RelayerRegistry",
+          "RelayerRegistry"
+        ]
+      ]
+    }
+  ],
+  "d07_scope_pooling": {
+    "buckets": 13,
+    "total_scope_occurrences": 13,
+    "buckets_with_pooling": 0,
+    "top": [
+      {
+        "context": [
+          "deposit [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "deposit [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
+          "instances [InstanceRegistry]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "deposit [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
+          "deposit [TornadoCash_eth]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
+          "instances [InstanceRegistry]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      }
+    ]
+  },
+  "d08_message_merging": [
+    {
+      "exec_type": "Request instances [InstanceRegistry]",
+      "roles": [
+        "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+        "InstanceRegistry"
+      ],
+      "direction": "forward",
+      "cause": "payload-structures",
+      "structures": [
+        [],
+        [
+          "address"
+        ]
+      ],
+      "kinds": [
+        "instances call"
+      ]
+    }
+  ],
+  "d09_parallelism_witnesses": [],
+  "d10_unrestricted_repetition": [],
+  "d11_choice_realizability": [],
+  "d12_recursion": {
+    "findings": [
+      {
+        "label": "burn [RelayerRegistry]",
+        "noninit_role": "RelayerRegistry",
+        "context_path": [
+          "withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
+          "burn [RelayerRegistry]",
+          "burn [RelayerRegistry]"
+        ],
+        "first_depth": 1,
+        "recurrence_depth": 2,
+        "direct": true
+      },
+      {
+        "label": "burn [RelayerRegistry]",
+        "noninit_role": "RelayerRegistry",
+        "context_path": [
+          "withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
+          "burn [RelayerRegistry]",
+          "burn [RelayerRegistry]",
+          "instanceFeeWithUpdate [FeeManager]"
+        ],
+        "first_depth": 1,
+        "recurrence_depth": 2,
+        "direct": true
+      },
+      {
+        "label": "burn [RelayerRegistry]",
+        "noninit_role": "RelayerRegistry",
+        "context_path": [
+          "withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
+          "burn [RelayerRegistry]",
+          "burn [RelayerRegistry]",
+          "addBurnRewards [TornadoStakingRewards]"
+        ],
+        "first_depth": 1,
+        "recurrence_depth": 2,
+        "direct": true
+      },
+      {
+        "label": "burn [RelayerRegistry]",
+        "noninit_role": "RelayerRegistry",
+        "context_path": [
+          "withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
+          "burn [RelayerRegistry]",
+          "burn [RelayerRegistry]",
+          "addBurnRewards [TornadoStakingRewards]",
+          "addBurnRewards [TornadoStakingRewards]"
+        ],
+        "first_depth": 1,
+        "recurrence_depth": 2,
+        "direct": true
+      },
+      {
+        "label": "addBurnRewards [TornadoStakingRewards]",
+        "noninit_role": "TornadoStakingRewards",
+        "context_path": [
+          "withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
+          "burn [RelayerRegistry]",
+          "burn [RelayerRegistry]",
+          "addBurnRewards [TornadoStakingRewards]",
+          "addBurnRewards [TornadoStakingRewards]"
+        ],
+        "first_depth": 3,
+        "recurrence_depth": 4,
+        "direct": true
+      },
+      {
+        "label": "burn [RelayerRegistry]",
+        "noninit_role": "RelayerRegistry",
+        "context_path": [
+          "withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
+          "burn [RelayerRegistry]",
+          "burn [RelayerRegistry]",
+          "addBurnRewards [TornadoStakingRewards]",
+          "addBurnRewards [TornadoStakingRewards]",
+          "userVault [GovernancePatchUpgrade]"
+        ],
+        "first_depth": 1,
+        "recurrence_depth": 2,
+        "direct": true
+      },
+      {
+        "label": "addBurnRewards [TornadoStakingRewards]",
+        "noninit_role": "TornadoStakingRewards",
+        "context_path": [
+          "withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]",
+          "burn [RelayerRegistry]",
+          "burn [RelayerRegistry]",
+          "addBurnRewards [TornadoStakingRewards]",
+          "addBurnRewards [TornadoStakingRewards]",
+          "userVault [GovernancePatchUpgrade]"
+        ],
+        "first_depth": 3,
+        "recurrence_depth": 4,
+        "direct": true
+      }
+    ],
+    "direct": 7,
+    "indirect": 0,
+    "max_depth_delta": 1
+  },
+  "d13_cross_depth_participants": {
+    "pairs": 11,
+    "examples": [
+      {
+        "object": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+        "ancestor_scope": "subchoreographyInstance:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:root",
+        "descendant_scope": "subchoreographyInstance:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_1",
+        "ancestor_task_types": [
+          "Request deposit [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]"
+        ],
+        "descendant_task_types": [
+          "Request instances [InstanceRegistry]",
+          "Respond to instances [InstanceRegistry]"
+        ]
+      },
+      {
+        "object": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+        "ancestor_scope": "subchoreographyInstance:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:root",
+        "descendant_scope": "subchoreographyInstance:609fa446fd8145be3752f9ff828847411a9b95469c1252baaa8ab43bddbbee9b:0_2",
+        "ancestor_task_types": [
+          "Request deposit [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]"
+        ],
+        "descendant_task_types": [
+          "Request deposit [TornadoCash_eth]",
+          "Respond to deposit [TornadoCash_eth]"
+        ]
+      },
+      {
+        "object": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+        "ancestor_scope": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:root",
+        "descendant_scope": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_1",
+        "ancestor_task_types": [
+          "Request withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]"
+        ],
+        "descendant_task_types": [
+          "Request instances [InstanceRegistry]",
+          "Respond to instances [InstanceRegistry]"
+        ]
+      },
+      {
+        "object": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+        "ancestor_scope": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:root",
+        "descendant_scope": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_2",
+        "ancestor_task_types": [
+          "Request withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]"
+        ],
+        "descendant_task_types": [
+          "Request burn [RelayerRegistry]",
+          "Respond to burn [RelayerRegistry]"
+        ]
+      },
+      {
+        "object": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+        "ancestor_scope": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:root",
+        "descendant_scope": "subchoreographyInstance:7cac129c2b6f01ea42abfdeb40753707bfa7d96cb297cd60a87d61d93125e116:0_3",
+        "ancestor_task_types": [
+          "Request withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]"
+        ],
+        "descendant_task_types": [
+          "Request withdraw [TornadoCash_eth]",
+          "Respond to withdraw [TornadoCash_eth]"
+        ]
+      }
+    ]
+  }
+}

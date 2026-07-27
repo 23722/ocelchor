@@ -1,0 +1,329 @@
+{
+  "log": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc_uniqueFunction",
+  "generated_by": "ocelchormodel-rad 0.1.0",
+  "hard_gates": {
+    "passed": true
+  },
+  "constraints": {
+    "C0": {
+      "checked": 61,
+      "violations": 0
+    },
+    "C1": {
+      "checked": 88,
+      "violations": 0
+    },
+    "C10": {
+      "checked": 27,
+      "violations": 0
+    },
+    "C11": {
+      "checked": 61,
+      "violations": 0
+    },
+    "C12": {
+      "checked": 17,
+      "violations": 0
+    },
+    "C13": {
+      "checked": 17,
+      "violations": 0
+    },
+    "C14": {
+      "checked": 17,
+      "violations": 0
+    },
+    "C15": {
+      "checked": 55,
+      "violations": 0
+    },
+    "C16": {
+      "checked": 17,
+      "violations": 0
+    },
+    "C2": {
+      "checked": 61,
+      "violations": 0
+    },
+    "C3": {
+      "checked": 61,
+      "violations": 0
+    },
+    "C4": {
+      "checked": 61,
+      "violations": 0
+    },
+    "C5": {
+      "checked": 88,
+      "violations": 0
+    },
+    "C6": {
+      "checked": 88,
+      "violations": 0
+    },
+    "C7": {
+      "checked": 61,
+      "violations": 0
+    },
+    "C8": {
+      "checked": 61,
+      "violations": 0
+    },
+    "C9": {
+      "checked": 61,
+      "violations": 0
+    }
+  },
+  "d01_ordering_determinism": {
+    "residual_ties": 0,
+    "examples": [],
+    "passed": true
+  },
+  "d02_scope_openers": {
+    "non_request_openers": 0,
+    "examples": []
+  },
+  "d03_bracket_completeness": {
+    "expected_missing_response": 3,
+    "unexpected_missing_response": 0,
+    "unexpected_examples": []
+  },
+  "d04_identity_labels": {
+    "exec_types": 0,
+    "occurrences": 0,
+    "examples": []
+  },
+  "d05_event_type_fanout": [
+    {
+      "name": "balanceOf",
+      "exec_types": 3,
+      "examples": [
+        "balanceOf [FiatTokenV1]",
+        "balanceOf [FiatTokenV2]",
+        "balanceOf [WETH9]"
+      ]
+    },
+    {
+      "name": "transfer",
+      "exec_types": 3,
+      "examples": [
+        "transfer [FiatTokenV1]",
+        "transfer [UniswapV2Pair]",
+        "transfer [WETH9]"
+      ]
+    },
+    {
+      "name": "transferFrom",
+      "exec_types": 2,
+      "examples": [
+        "transferFrom [FiatTokenV1]",
+        "transferFrom [UniswapV2Pair]"
+      ]
+    }
+  ],
+  "d06_task_type_fanout": [
+    {
+      "exec_type": "Request undefined [SignatureChecker]",
+      "role_pairs": [
+        [
+          "DODO",
+          "SignatureChecker"
+        ],
+        [
+          "UniswapArbitrageur",
+          "SignatureChecker"
+        ],
+        [
+          "UniswapV2Pair",
+          "SignatureChecker"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to undefined [SignatureChecker]",
+      "role_pairs": [
+        [
+          "SignatureChecker",
+          "DODO"
+        ],
+        [
+          "SignatureChecker",
+          "UniswapArbitrageur"
+        ],
+        [
+          "SignatureChecker",
+          "UniswapV2Pair"
+        ]
+      ]
+    },
+    {
+      "exec_type": "balanceOf [WETH9]",
+      "role_pairs": [
+        [
+          "DODO",
+          "WETH9"
+        ],
+        [
+          "UniswapArbitrageur",
+          "WETH9"
+        ],
+        [
+          "UniswapV2Pair",
+          "WETH9"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transfer [WETH9]",
+      "role_pairs": [
+        [
+          "DODO",
+          "WETH9"
+        ],
+        [
+          "UniswapArbitrageur",
+          "WETH9"
+        ],
+        [
+          "UniswapV2Pair",
+          "WETH9"
+        ]
+      ]
+    }
+  ],
+  "d07_scope_pooling": {
+    "buckets": 11,
+    "total_scope_occurrences": 17,
+    "buckets_with_pooling": 2,
+    "top": [
+      {
+        "context": [
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [UniswapArbitrageur]",
+          "buyBaseToken [DODO]",
+          "getPrice [ChainlinkETHPriceOracleProxy]"
+        ],
+        "occurrences": 2,
+        "variants": 1,
+        "pooling_ratio": 2.0
+      },
+      {
+        "context": [
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [UniswapArbitrageur]",
+          "buyBaseToken [DODO]",
+          "undefined [SignatureChecker]"
+        ],
+        "occurrences": 3,
+        "variants": 2,
+        "pooling_ratio": 1.5
+      },
+      {
+        "context": [
+          "swap [UniswapV2Pair]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "swap [UniswapV2Pair]",
+          "undefined [SignatureChecker]"
+        ],
+        "occurrences": 2,
+        "variants": 2,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [UniswapArbitrageur]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      }
+    ]
+  },
+  "d08_message_merging": [],
+  "d09_parallelism_witnesses": [],
+  "d10_unrestricted_repetition": [],
+  "d11_choice_realizability": [],
+  "d12_recursion": {
+    "findings": [],
+    "direct": 0,
+    "indirect": 0,
+    "max_depth_delta": 0
+  },
+  "d13_cross_depth_participants": {
+    "pairs": 17,
+    "examples": [
+      {
+        "object": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "ancestor_scope": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+        "descendant_scope": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1",
+        "ancestor_task_types": [
+          "Request swap [UniswapV2Pair]",
+          "balanceOf [WETH9]"
+        ],
+        "descendant_task_types": [
+          "Request undefined [SignatureChecker]",
+          "Respond to undefined [SignatureChecker]"
+        ]
+      },
+      {
+        "object": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "ancestor_scope": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+        "descendant_scope": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+        "ancestor_task_types": [
+          "Request swap [UniswapV2Pair]",
+          "balanceOf [WETH9]"
+        ],
+        "descendant_task_types": [
+          "Request uniswapV2Call [UniswapArbitrageur]",
+          "Respond to uniswapV2Call [UniswapArbitrageur]",
+          "token0 [UniswapV2Pair]",
+          "token1 [UniswapV2Pair]"
+        ]
+      },
+      {
+        "object": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "ancestor_scope": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+        "descendant_scope": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+        "ancestor_task_types": [
+          "balanceOf [WETH9]"
+        ],
+        "descendant_task_types": [
+          "balanceOf [WETH9]",
+          "transfer [WETH9]"
+        ]
+      },
+      {
+        "object": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "ancestor_scope": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+        "descendant_scope": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+        "ancestor_task_types": [
+          "balanceOf [WETH9]"
+        ],
+        "descendant_task_types": [
+          "balanceOf [WETH9]",
+          "transfer [WETH9]"
+        ]
+      },
+      {
+        "object": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "ancestor_scope": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+        "descendant_scope": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3",
+        "ancestor_task_types": [
+          "Request swap [UniswapV2Pair]",
+          "balanceOf [WETH9]"
+        ],
+        "descendant_task_types": [
+          "Request undefined [SignatureChecker]",
+          "Respond to undefined [SignatureChecker]"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,525 @@
+{
+  "log": "0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f_uniqueFunction",
+  "generated_by": "ocelchormodel-rad 0.1.0",
+  "hard_gates": {
+    "passed": true
+  },
+  "constraints": {
+    "C0": {
+      "checked": 267,
+      "violations": 0
+    },
+    "C1": {
+      "checked": 415,
+      "violations": 0
+    },
+    "C10": {
+      "checked": 148,
+      "violations": 0
+    },
+    "C11": {
+      "checked": 267,
+      "violations": 0
+    },
+    "C12": {
+      "checked": 67,
+      "violations": 0
+    },
+    "C13": {
+      "checked": 67,
+      "violations": 0
+    },
+    "C14": {
+      "checked": 67,
+      "violations": 0
+    },
+    "C15": {
+      "checked": 248,
+      "violations": 0
+    },
+    "C16": {
+      "checked": 67,
+      "violations": 0
+    },
+    "C2": {
+      "checked": 267,
+      "violations": 0
+    },
+    "C3": {
+      "checked": 267,
+      "violations": 0
+    },
+    "C4": {
+      "checked": 267,
+      "violations": 0
+    },
+    "C5": {
+      "checked": 415,
+      "violations": 0
+    },
+    "C6": {
+      "checked": 415,
+      "violations": 0
+    },
+    "C7": {
+      "checked": 267,
+      "violations": 0
+    },
+    "C8": {
+      "checked": 267,
+      "violations": 0
+    },
+    "C9": {
+      "checked": 267,
+      "violations": 0
+    }
+  },
+  "d01_ordering_determinism": {
+    "residual_ties": 0,
+    "examples": [],
+    "passed": true
+  },
+  "d02_scope_openers": {
+    "non_request_openers": 0,
+    "examples": []
+  },
+  "d03_bracket_completeness": {
+    "expected_missing_response": 17,
+    "unexpected_missing_response": 0,
+    "unexpected_examples": []
+  },
+  "d04_identity_labels": {
+    "exec_types": 11,
+    "occurrences": 15,
+    "examples": [
+      "Request undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]",
+      "Respond to undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]",
+      "transfer [0x000000e923f2a967e390ebff6e64bd17004f2df1]",
+      "transfer [0x3f13c8ecdd224197ea42fa7722b765d873190f4e]",
+      "transfer [0x5470f579a2936290603a2ef038b7a04846c11a47]"
+    ]
+  },
+  "d05_event_type_fanout": [
+    {
+      "name": "balanceOf",
+      "exec_types": 14,
+      "examples": [
+        "balanceOf [Dai]",
+        "balanceOf [EETH]",
+        "balanceOf [EdenToken]",
+        "balanceOf [FiatTokenV2_2]",
+        "balanceOf [IlluviumERC20]"
+      ]
+    },
+    {
+      "name": "getTotalEtherClaimOf",
+      "exec_types": 2,
+      "examples": [
+        "getTotalEtherClaimOf [LiquidityPool]",
+        "getTotalEtherClaimOf [UUPSProxy]"
+      ]
+    },
+    {
+      "name": "shares",
+      "exec_types": 2,
+      "examples": [
+        "shares [EETH]",
+        "shares [UUPSProxy]"
+      ]
+    },
+    {
+      "name": "sharesForAmount",
+      "exec_types": 2,
+      "examples": [
+        "sharesForAmount [LiquidityPool]",
+        "sharesForAmount [UUPSProxy]"
+      ]
+    },
+    {
+      "name": "totalShares",
+      "exec_types": 2,
+      "examples": [
+        "totalShares [EETH]",
+        "totalShares [UUPSProxy]"
+      ]
+    },
+    {
+      "name": "transfer",
+      "exec_types": 20,
+      "examples": [
+        "transfer [0x000000e923f2a967e390ebff6e64bd17004f2df1]",
+        "transfer [0x3f13c8ecdd224197ea42fa7722b765d873190f4e]",
+        "transfer [0x5470f579a2936290603a2ef038b7a04846c11a47]",
+        "transfer [0x666664dc6a1ac0a4f639709837f878cbd0e9bed6]",
+        "transfer [0xa9d062b23650c9191673d9496d9e700d37dc55f5]"
+      ]
+    },
+    {
+      "name": "transferFrom",
+      "exec_types": 7,
+      "examples": [
+        "transferFrom [EETH]",
+        "transferFrom [IlluviumERC20]",
+        "transferFrom [NFTXVaultUpgradeable]",
+        "transferFrom [TetherToken]",
+        "transferFrom [Token]"
+      ]
+    },
+    {
+      "name": "undefined",
+      "exec_types": 5,
+      "examples": [
+        "undefined [0x0000000000000000000000000000000000000001]",
+        "undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]",
+        "undefined [FiatTokenV2_2]",
+        "undefined [UUPSProxy]",
+        "undefined [UniswapV2Router02]"
+      ]
+    }
+  ],
+  "d06_task_type_fanout": [
+    {
+      "exec_type": "Request undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]",
+      "role_pairs": [
+        [
+          "UniswapV2Pair",
+          "0x68ac463a7a8d4b55ab210646359726033e331eed"
+        ],
+        [
+          "UniswapV2Router02",
+          "0x68ac463a7a8d4b55ab210646359726033e331eed"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Request undefined [UUPSProxy]",
+      "role_pairs": [
+        [
+          "UniswapV2Pair",
+          "UUPSProxy"
+        ],
+        [
+          "UniswapV2Router02",
+          "UUPSProxy"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to undefined [0x68ac463a7a8d4b55ab210646359726033e331eed]",
+      "role_pairs": [
+        [
+          "0x68ac463a7a8d4b55ab210646359726033e331eed",
+          "UniswapV2Pair"
+        ],
+        [
+          "0x68ac463a7a8d4b55ab210646359726033e331eed",
+          "UniswapV2Router02"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to undefined [UUPSProxy]",
+      "role_pairs": [
+        [
+          "UUPSProxy",
+          "UniswapV2Pair"
+        ],
+        [
+          "UUPSProxy",
+          "UniswapV2Router02"
+        ]
+      ]
+    },
+    {
+      "exec_type": "balanceOf [IlluviumERC20]",
+      "role_pairs": [
+        [
+          "UniswapV2Pair",
+          "IlluviumERC20"
+        ],
+        [
+          "UniswapV2Router02",
+          "IlluviumERC20"
+        ]
+      ]
+    },
+    {
+      "exec_type": "balanceOf [OmniCat]",
+      "role_pairs": [
+        [
+          "UniswapV2Pair",
+          "OmniCat"
+        ],
+        [
+          "UniswapV2Router02",
+          "OmniCat"
+        ]
+      ]
+    },
+    {
+      "exec_type": "balanceOf [TetherToken]",
+      "role_pairs": [
+        [
+          "UniswapV2Pair",
+          "TetherToken"
+        ],
+        [
+          "UniswapV2Router02",
+          "TetherToken"
+        ]
+      ]
+    },
+    {
+      "exec_type": "balanceOf [WETH9]",
+      "role_pairs": [
+        [
+          "UniswapV2Pair",
+          "WETH9"
+        ],
+        [
+          "UniswapV2Router02",
+          "WETH9"
+        ]
+      ]
+    },
+    {
+      "exec_type": "balanceOf [YGGToken]",
+      "role_pairs": [
+        [
+          "UniswapV2Pair",
+          "YGGToken"
+        ],
+        [
+          "UniswapV2Router02",
+          "YGGToken"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transfer [EdenToken]",
+      "role_pairs": [
+        [
+          "UniswapV2Pair",
+          "EdenToken"
+        ],
+        [
+          "UniswapV2Router02",
+          "EdenToken"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transfer [IlluviumERC20]",
+      "role_pairs": [
+        [
+          "UniswapV2Pair",
+          "IlluviumERC20"
+        ],
+        [
+          "UniswapV2Router02",
+          "IlluviumERC20"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transfer [WETH9]",
+      "role_pairs": [
+        [
+          "UniswapV2Pair",
+          "WETH9"
+        ],
+        [
+          "UniswapV2Router02",
+          "WETH9"
+        ]
+      ]
+    }
+  ],
+  "d07_scope_pooling": {
+    "buckets": 65,
+    "total_scope_occurrences": 67,
+    "buckets_with_pooling": 0,
+    "top": [
+      {
+        "context": [
+          "removeLiquidityETH [UniswapV2Router02]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "removeLiquidityETH [UniswapV2Router02]",
+          "burn [UniswapV2Pair]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "removeLiquidityETH [UniswapV2Router02]",
+          "withdraw [WETH9]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "swapExactTokensForTokens [UniswapV2Router02]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "swapExactTokensForTokens [UniswapV2Router02]",
+          "swap [UniswapV2Pair]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      }
+    ]
+  },
+  "d08_message_merging": [],
+  "d09_parallelism_witnesses": [
+    {
+      "context": [
+        "swapExactTokensForTokensSupportingFeeOnTransferTokens [UniswapV2Router02]"
+      ],
+      "branches": 3,
+      "subtraces": 1,
+      "verdict": "partially_witnessed",
+      "flagged_pairs": 1,
+      "pairs": [
+        {
+          "a": [
+            "balanceOf [TetherToken]"
+          ],
+          "b": [
+            "getReserves [UniswapV2Pair]",
+            "swap [UniswapV2Pair]"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 1,
+          "flagged": false
+        },
+        {
+          "a": [
+            "balanceOf [TetherToken]"
+          ],
+          "b": [
+            "balanceOf [WETH9]"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 0,
+          "flagged": true
+        },
+        {
+          "a": [
+            "getReserves [UniswapV2Pair]",
+            "swap [UniswapV2Pair]"
+          ],
+          "b": [
+            "balanceOf [WETH9]"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 1,
+          "flagged": false
+        }
+      ]
+    }
+  ],
+  "d10_unrestricted_repetition": [],
+  "d11_choice_realizability": [],
+  "d12_recursion": {
+    "findings": [],
+    "direct": 0,
+    "indirect": 0,
+    "max_depth_delta": 0
+  },
+  "d13_cross_depth_participants": {
+    "pairs": 116,
+    "examples": [
+      {
+        "object": "0x6a091a3406e0073c3cd6340122143009adac0eda",
+        "ancestor_scope": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:root",
+        "descendant_scope": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_2",
+        "ancestor_task_types": [
+          "transferFrom [UniswapV2Pair]"
+        ],
+        "descendant_task_types": [
+          "Request burn [UniswapV2Pair]",
+          "Respond to burn [UniswapV2Pair]",
+          "balanceOf [IlluviumERC20]",
+          "balanceOf [WETH9]",
+          "feeTo [UniswapV2Factory]",
+          "transfer [IlluviumERC20]",
+          "transfer [WETH9]"
+        ]
+      },
+      {
+        "object": "0x767fe9edc9e0df98e07454847909b5e959d7ca0e",
+        "ancestor_scope": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:root",
+        "descendant_scope": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_2",
+        "ancestor_task_types": [
+          "transfer [IlluviumERC20]"
+        ],
+        "descendant_task_types": [
+          "balanceOf [IlluviumERC20]",
+          "transfer [IlluviumERC20]"
+        ]
+      },
+      {
+        "object": "0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f",
+        "ancestor_scope": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:root",
+        "descendant_scope": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_2",
+        "ancestor_task_types": [
+          "Request removeLiquidityETH [UniswapV2Router02]",
+          "transfer [0x666664dc6a1ac0a4f639709837f878cbd0e9bed6]",
+          "transfer [IlluviumERC20]",
+          "transferFrom [UniswapV2Pair]"
+        ],
+        "descendant_task_types": [
+          "Request burn [UniswapV2Pair]",
+          "Respond to burn [UniswapV2Pair]"
+        ]
+      },
+      {
+        "object": "0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f",
+        "ancestor_scope": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:root",
+        "descendant_scope": "subchoreographyInstance:acd914199402da164cfdc7ea183eb52165e4441511e10af75193a3618f50f62b:0_4",
+        "ancestor_task_types": [
+          "Request removeLiquidityETH [UniswapV2Router02]",
+          "transfer [0x666664dc6a1ac0a4f639709837f878cbd0e9bed6]",
+          "transfer [IlluviumERC20]",
+          "transferFrom [UniswapV2Pair]"
+        ],
+        "descendant_task_types": [
+          "Request withdraw [WETH9]",
+          "Respond to withdraw [WETH9]",
+          "undefined [UniswapV2Router02]"
+        ]
+      },
+      {
+        "object": "0x45b6ffb13e5206dafe2cc8780e4ddc0e32496265",
+        "ancestor_scope": "subchoreographyInstance:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:root",
+        "descendant_scope": "subchoreographyInstance:950c2e57607e105869359155804a555fc07c132133c1e53495ee774695351a08:0_3",
+        "ancestor_task_types": [
+          "getReserves [UniswapV2Pair]"
+        ],
+        "descendant_task_types": [
+          "Request swap [UniswapV2Pair]",
+          "Respond to swap [UniswapV2Pair]",
+          "balanceOf [Token]",
+          "balanceOf [WETH9]",
+          "transfer [WETH9]"
+        ]
+      }
+    ]
+  }
+}

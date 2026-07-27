@@ -1,0 +1,6 @@
+→(
+  'Submit Manuscript' ⟨Contact_Author→PC_Chair⟩,
+  'Assign Paper' ⟨PC_Chair→Reviewer⟩,
+  'Submit Review' ⟨Reviewer→PC_Chair⟩,
+  'Send Feedback' ⟨PC_Chair→Reviewer⟩,
+  'Send Results' ⟨PC_Chair→Contact_Author⟩)

@@ -23,7 +23,16 @@ dist/
 # Project
 publications/
 *.bpmn
-data/output/
-!data/output/.gitkeep
 PLAN.md
 NOTES_multi_instance_participant.md
+
+# Converted per-instance models: only the canonical artifact files are
+# tracked (model + chor-js render report per instance) — the regression
+# baseline, auditable via git diff. Everything else under data/output
+# (rendered SVGs — large, regenerable — and ad-hoc files) stays ignored.
+# The negations below deliberately override the global *.bpmn above.
+data/output/**
+!data/output/*/
+!data/output/.gitkeep
+!data/output/*/*.bpmn
+!data/output/*/*.chorjs.report.json

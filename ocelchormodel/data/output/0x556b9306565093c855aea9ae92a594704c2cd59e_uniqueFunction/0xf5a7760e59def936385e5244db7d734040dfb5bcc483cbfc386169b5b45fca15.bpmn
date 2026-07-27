@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" targetNamespace="http://bpmn.io/schema/bpmn2" id="Definitions_b45fca15">
+  <bpmn2:message id="Msg_call_req_f5a7760e59def936385e5244db7d734040dfb5bcc483cbfc386169b5b45fca15_root" name="_LMPoolDeployer" />
+  <bpmn2:choreography id="Choreography_b45fca15" name="b45fca15">
+    <bpmn2:participant id="P_0x53a89fc8f55e5272ab0fd6d95bf7b894d692e6f2" name="EOA …92e6f2" />
+    <bpmn2:participant id="P_0x556b9306565093c855aea9ae92a594704c2cd59e" name="MasterChefV3" />
+    <bpmn2:messageFlow id="MF_Task_e_f5a7760e59def936385e5244db7d734040dfb5bcc483cbfc386169b5b45fca15_root_init" sourceRef="P_0x53a89fc8f55e5272ab0fd6d95bf7b894d692e6f2" targetRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" messageRef="Msg_call_req_f5a7760e59def936385e5244db7d734040dfb5bcc483cbfc386169b5b45fca15_root" />
+    <bpmn2:startEvent id="Start_b45fca15">
+      <bpmn2:outgoing>SF_1</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:choreographyTask id="Task_e_f5a7760e59def936385e5244db7d734040dfb5bcc483cbfc386169b5b45fca15_root" name="setLMPoolDeployer [MasterChefV3]" initiatingParticipantRef="P_0x53a89fc8f55e5272ab0fd6d95bf7b894d692e6f2">
+      <bpmn2:incoming>SF_1</bpmn2:incoming>
+      <bpmn2:outgoing>SF_2</bpmn2:outgoing>
+      <bpmn2:participantRef>P_0x53a89fc8f55e5272ab0fd6d95bf7b894d692e6f2</bpmn2:participantRef>
+      <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_f5a7760e59def936385e5244db7d734040dfb5bcc483cbfc386169b5b45fca15_root_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:endEvent id="End_b45fca15">
+      <bpmn2:incoming>SF_2</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SF_1" sourceRef="Start_b45fca15" targetRef="Task_e_f5a7760e59def936385e5244db7d734040dfb5bcc483cbfc386169b5b45fca15_root" />
+    <bpmn2:sequenceFlow id="SF_2" sourceRef="Task_e_f5a7760e59def936385e5244db7d734040dfb5bcc483cbfc386169b5b45fca15_root" targetRef="End_b45fca15" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_b45fca15">
+    <bpmndi:BPMNPlane id="BPMNPlane_b45fca15" bpmnElement="Choreography_b45fca15">
+      <bpmndi:BPMNShape id="Start_b45fca15_di" bpmnElement="Start_b45fca15">
+        <dc:Bounds x="100" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_f5a7760e59def936385e5244db7d734040dfb5bcc483cbfc386169b5b45fca15_root_di" bpmnElement="Task_e_f5a7760e59def936385e5244db7d734040dfb5bcc483cbfc386169b5b45fca15_root">
+        <dc:Bounds x="186" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_f5a7760e59def936385e5244db7d734040dfb5bcc483cbfc386169b5b45fca15_root_di_top" bpmnElement="P_0x53a89fc8f55e5272ab0fd6d95bf7b894d692e6f2" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_f5a7760e59def936385e5244db7d734040dfb5bcc483cbfc386169b5b45fca15_root_di">
+        <dc:Bounds x="186" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_f5a7760e59def936385e5244db7d734040dfb5bcc483cbfc386169b5b45fca15_root_di_bot" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_f5a7760e59def936385e5244db7d734040dfb5bcc483cbfc386169b5b45fca15_root_di">
+        <dc:Bounds x="186" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_b45fca15_di" bpmnElement="End_b45fca15">
+        <dc:Bounds x="336" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SF_1_di" bpmnElement="SF_1">
+        <di:waypoint x="136" y="250" />
+        <di:waypoint x="186" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_2_di" bpmnElement="SF_2">
+        <di:waypoint x="286" y="250" />
+        <di:waypoint x="336" y="250" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

@@ -1,0 +1,321 @@
+{
+  "log": "0x5efda50f22d34f262c29268506c5fa42cb56a1ce_uniqueFunction",
+  "generated_by": "ocelchormodel-rad 0.1.0",
+  "hard_gates": {
+    "passed": true
+  },
+  "constraints": {
+    "C0": {
+      "checked": 35,
+      "violations": 0
+    },
+    "C1": {
+      "checked": 47,
+      "violations": 0
+    },
+    "C10": {
+      "checked": 12,
+      "violations": 0
+    },
+    "C11": {
+      "checked": 35,
+      "violations": 0
+    },
+    "C12": {
+      "checked": 17,
+      "violations": 0
+    },
+    "C13": {
+      "checked": 17,
+      "violations": 0
+    },
+    "C14": {
+      "checked": 17,
+      "violations": 0
+    },
+    "C15": {
+      "checked": 24,
+      "violations": 0
+    },
+    "C16": {
+      "checked": 17,
+      "violations": 0
+    },
+    "C2": {
+      "checked": 35,
+      "violations": 0
+    },
+    "C3": {
+      "checked": 35,
+      "violations": 0
+    },
+    "C4": {
+      "checked": 35,
+      "violations": 0
+    },
+    "C5": {
+      "checked": 47,
+      "violations": 0
+    },
+    "C6": {
+      "checked": 47,
+      "violations": 0
+    },
+    "C7": {
+      "checked": 35,
+      "violations": 0
+    },
+    "C8": {
+      "checked": 35,
+      "violations": 0
+    },
+    "C9": {
+      "checked": 35,
+      "violations": 0
+    }
+  },
+  "d01_ordering_determinism": {
+    "residual_ties": 0,
+    "examples": [],
+    "passed": true
+  },
+  "d02_scope_openers": {
+    "non_request_openers": 0,
+    "examples": []
+  },
+  "d03_bracket_completeness": {
+    "expected_missing_response": 11,
+    "unexpected_missing_response": 0,
+    "unexpected_examples": []
+  },
+  "d04_identity_labels": {
+    "exec_types": 12,
+    "occurrences": 12,
+    "examples": [
+      "Request Tranfer [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+      "Request castDelegatedVote [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+      "Request delegate [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+      "Request execute [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+      "Request lock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]"
+    ]
+  },
+  "d05_event_type_fanout": [
+    {
+      "name": "castDelegatedVote",
+      "exec_types": 2,
+      "examples": [
+        "castDelegatedVote [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+        "castDelegatedVote [Governance]"
+      ]
+    },
+    {
+      "name": "delegate",
+      "exec_types": 2,
+      "examples": [
+        "delegate [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+        "delegate [Governance]"
+      ]
+    },
+    {
+      "name": "execute",
+      "exec_types": 2,
+      "examples": [
+        "execute [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+        "execute [Governance]"
+      ]
+    },
+    {
+      "name": "lock",
+      "exec_types": 2,
+      "examples": [
+        "lock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+        "lock [Governance]"
+      ]
+    },
+    {
+      "name": "lockWithApproval",
+      "exec_types": 2,
+      "examples": [
+        "lockWithApproval [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+        "lockWithApproval [Governance]"
+      ]
+    },
+    {
+      "name": "propose",
+      "exec_types": 2,
+      "examples": [
+        "propose [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+        "propose [Governance]"
+      ]
+    },
+    {
+      "name": "proposeByDelegate",
+      "exec_types": 2,
+      "examples": [
+        "proposeByDelegate [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+        "proposeByDelegate [Governance]"
+      ]
+    },
+    {
+      "name": "transfer",
+      "exec_types": 2,
+      "examples": [
+        "transfer [GovernanceStakingUpgrade]",
+        "transfer [TORN]"
+      ]
+    },
+    {
+      "name": "undelegate",
+      "exec_types": 2,
+      "examples": [
+        "undelegate [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+        "undelegate [Governance]"
+      ]
+    },
+    {
+      "name": "unlock",
+      "exec_types": 2,
+      "examples": [
+        "unlock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+        "unlock [Governance]"
+      ]
+    },
+    {
+      "name": "withdrawFromHelper",
+      "exec_types": 2,
+      "examples": [
+        "withdrawFromHelper [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+        "withdrawFromHelper [GovernanceStakingUpgrade]"
+      ]
+    }
+  ],
+  "d06_task_type_fanout": [],
+  "d07_scope_pooling": {
+    "buckets": 17,
+    "total_scope_occurrences": 17,
+    "buckets_with_pooling": 0,
+    "top": [
+      {
+        "context": [
+          "lock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "lock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+          "lock [Governance]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "lock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]",
+          "lock [Governance]",
+          "permit [TORN]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "delegate [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "unlock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      }
+    ]
+  },
+  "d08_message_merging": [],
+  "d09_parallelism_witnesses": [],
+  "d10_unrestricted_repetition": [],
+  "d11_choice_realizability": [],
+  "d12_recursion": {
+    "findings": [],
+    "direct": 0,
+    "indirect": 0,
+    "max_depth_delta": 0
+  },
+  "d13_cross_depth_participants": {
+    "pairs": 7,
+    "examples": [
+      {
+        "object": "0x5efda50f22d34f262c29268506c5fa42cb56a1ce",
+        "ancestor_scope": "subchoreographyInstance:879a69fe53df36cfd0afdddc8bd8f1530db48de55fbd125034c47f66e19caac3:root",
+        "descendant_scope": "subchoreographyInstance:879a69fe53df36cfd0afdddc8bd8f1530db48de55fbd125034c47f66e19caac3:0_1",
+        "ancestor_task_types": [
+          "Request lock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]"
+        ],
+        "descendant_task_types": [
+          "Request lock [Governance]",
+          "Respond to lock [Governance]"
+        ]
+      },
+      {
+        "object": "0x77777feddddffc19ff86db637967013e6c6a116c",
+        "ancestor_scope": "subchoreographyInstance:879a69fe53df36cfd0afdddc8bd8f1530db48de55fbd125034c47f66e19caac3:0_1",
+        "descendant_scope": "subchoreographyInstance:879a69fe53df36cfd0afdddc8bd8f1530db48de55fbd125034c47f66e19caac3:0_1_1",
+        "ancestor_task_types": [
+          "transferFrom [TORN]"
+        ],
+        "descendant_task_types": [
+          "Request permit [TORN]",
+          "Respond to permit [TORN]",
+          "undefined [0x0000000000000000000000000000000000000001]"
+        ]
+      },
+      {
+        "object": "0xffbac21a641dcfe4552920138d90f3638b3c9fba",
+        "ancestor_scope": "subchoreographyInstance:879a69fe53df36cfd0afdddc8bd8f1530db48de55fbd125034c47f66e19caac3:0_1",
+        "descendant_scope": "subchoreographyInstance:879a69fe53df36cfd0afdddc8bd8f1530db48de55fbd125034c47f66e19caac3:0_1_1",
+        "ancestor_task_types": [
+          "Request lock [Governance]",
+          "Respond to lock [Governance]",
+          "transferFrom [TORN]"
+        ],
+        "descendant_task_types": [
+          "Request permit [TORN]",
+          "Respond to permit [TORN]"
+        ]
+      },
+      {
+        "object": "0x5efda50f22d34f262c29268506c5fa42cb56a1ce",
+        "ancestor_scope": "subchoreographyInstance:cd49912d9a4783abc4aa1ca545091dccb4aa4899d191ed62a1fd610b89af1af9:root",
+        "descendant_scope": "subchoreographyInstance:cd49912d9a4783abc4aa1ca545091dccb4aa4899d191ed62a1fd610b89af1af9:0_1",
+        "ancestor_task_types": [
+          "Request unlock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]"
+        ],
+        "descendant_task_types": [
+          "Request unlock [Governance]",
+          "Respond to unlock [Governance]"
+        ]
+      },
+      {
+        "object": "0x5efda50f22d34f262c29268506c5fa42cb56a1ce",
+        "ancestor_scope": "subchoreographyInstance:c978be12d6e1aea5f6c76301e7e03e9c5dd55e3fc5d05acdcae17f445e474ca4:root",
+        "descendant_scope": "subchoreographyInstance:c978be12d6e1aea5f6c76301e7e03e9c5dd55e3fc5d05acdcae17f445e474ca4:0_1",
+        "ancestor_task_types": [
+          "Request lockWithApproval [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]"
+        ],
+        "descendant_task_types": [
+          "Request lockWithApproval [Governance]",
+          "Respond to lockWithApproval [Governance]"
+        ]
+      }
+    ]
+  }
+}

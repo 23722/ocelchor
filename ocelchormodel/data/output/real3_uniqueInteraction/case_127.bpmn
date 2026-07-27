@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" targetNamespace="http://bpmn.io/schema/bpmn2" id="Definitions_case_127">
+  <bpmn2:message id="Msg_message_case_127_termostat_on_152" name="termostat_on" />
+  <bpmn2:message id="Msg_message_case_127_controller_on_153" name="controller_on" />
+  <bpmn2:message id="Msg_message_case_127_env_info_154" name="env_info" />
+  <bpmn2:message id="Msg_message_case_127_temperature_155" name="temperature" />
+  <bpmn2:message id="Msg_message_case_127_termostat_off_156" name="termostat_off" />
+  <bpmn2:message id="Msg_message_case_127_controller_off_157" name="controller_off" />
+  <bpmn2:choreography id="Choreography_case_127" name="case_127">
+    <bpmn2:participant id="P_User" name="User" />
+    <bpmn2:participant id="P_Thermostat" name="Thermostat" />
+    <bpmn2:participant id="P_Controller" name="Controller" />
+    <bpmn2:messageFlow id="MF_Task_e_case_127_0_init" sourceRef="P_User" targetRef="P_Thermostat" messageRef="Msg_message_case_127_termostat_on_152" />
+    <bpmn2:messageFlow id="MF_Task_e_case_127_2_init" sourceRef="P_Thermostat" targetRef="P_Controller" messageRef="Msg_message_case_127_controller_on_153" />
+    <bpmn2:messageFlow id="MF_Task_e_case_127_7_init" sourceRef="P_Controller" targetRef="P_Thermostat" messageRef="Msg_message_case_127_env_info_154" />
+    <bpmn2:messageFlow id="MF_Task_e_case_127_9_init" sourceRef="P_Thermostat" targetRef="P_User" messageRef="Msg_message_case_127_temperature_155" />
+    <bpmn2:messageFlow id="MF_Task_e_case_127_14_init" sourceRef="P_Controller" targetRef="P_Thermostat" messageRef="Msg_message_case_127_env_info_154" />
+    <bpmn2:messageFlow id="MF_Task_e_case_127_18_init" sourceRef="P_User" targetRef="P_Thermostat" messageRef="Msg_message_case_127_termostat_off_156" />
+    <bpmn2:messageFlow id="MF_Task_e_case_127_21_init" sourceRef="P_Thermostat" targetRef="P_Controller" messageRef="Msg_message_case_127_controller_off_157" />
+    <bpmn2:messageFlow id="MF_Task_e_case_127_23_init" sourceRef="P_Thermostat" targetRef="P_User" messageRef="Msg_message_case_127_temperature_155" />
+    <bpmn2:startEvent id="Start_case_127">
+      <bpmn2:outgoing>SF_1</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:choreographyTask id="Task_e_case_127_0" name="Set Up Thermostat" initiatingParticipantRef="P_User">
+      <bpmn2:incoming>SF_1</bpmn2:incoming>
+      <bpmn2:outgoing>SF_2</bpmn2:outgoing>
+      <bpmn2:participantRef>P_User</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_127_0_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_127_2" name="Turn On Controller" initiatingParticipantRef="P_Thermostat">
+      <bpmn2:incoming>SF_2</bpmn2:incoming>
+      <bpmn2:outgoing>SF_3</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Controller</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_127_2_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_127_7" name="Send Env Info" initiatingParticipantRef="P_Controller">
+      <bpmn2:incoming>SF_3</bpmn2:incoming>
+      <bpmn2:outgoing>SF_4</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Controller</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_127_7_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_127_9" name="Send Temperature" initiatingParticipantRef="P_Thermostat">
+      <bpmn2:incoming>SF_4</bpmn2:incoming>
+      <bpmn2:outgoing>SF_5</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:participantRef>P_User</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_127_9_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_127_14" name="Send Env Info" initiatingParticipantRef="P_Controller">
+      <bpmn2:incoming>SF_5</bpmn2:incoming>
+      <bpmn2:outgoing>SF_6</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Controller</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_127_14_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_127_18" name="Switch Off Thermostat" initiatingParticipantRef="P_User">
+      <bpmn2:incoming>SF_6</bpmn2:incoming>
+      <bpmn2:outgoing>SF_7</bpmn2:outgoing>
+      <bpmn2:participantRef>P_User</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_127_18_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_127_21" name="Turn Off" initiatingParticipantRef="P_Thermostat">
+      <bpmn2:incoming>SF_7</bpmn2:incoming>
+      <bpmn2:outgoing>SF_8</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Controller</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_127_21_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_127_23" name="Send Temperature" initiatingParticipantRef="P_Thermostat">
+      <bpmn2:incoming>SF_8</bpmn2:incoming>
+      <bpmn2:outgoing>SF_9</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:participantRef>P_User</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_127_23_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:endEvent id="End_case_127">
+      <bpmn2:incoming>SF_9</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SF_1" sourceRef="Start_case_127" targetRef="Task_e_case_127_0" />
+    <bpmn2:sequenceFlow id="SF_2" sourceRef="Task_e_case_127_0" targetRef="Task_e_case_127_2" />
+    <bpmn2:sequenceFlow id="SF_3" sourceRef="Task_e_case_127_2" targetRef="Task_e_case_127_7" />
+    <bpmn2:sequenceFlow id="SF_4" sourceRef="Task_e_case_127_7" targetRef="Task_e_case_127_9" />
+    <bpmn2:sequenceFlow id="SF_5" sourceRef="Task_e_case_127_9" targetRef="Task_e_case_127_14" />
+    <bpmn2:sequenceFlow id="SF_6" sourceRef="Task_e_case_127_14" targetRef="Task_e_case_127_18" />
+    <bpmn2:sequenceFlow id="SF_7" sourceRef="Task_e_case_127_18" targetRef="Task_e_case_127_21" />
+    <bpmn2:sequenceFlow id="SF_8" sourceRef="Task_e_case_127_21" targetRef="Task_e_case_127_23" />
+    <bpmn2:sequenceFlow id="SF_9" sourceRef="Task_e_case_127_23" targetRef="End_case_127" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_case_127">
+    <bpmndi:BPMNPlane id="BPMNPlane_case_127" bpmnElement="Choreography_case_127">
+      <bpmndi:BPMNShape id="Start_case_127_di" bpmnElement="Start_case_127">
+        <dc:Bounds x="100" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_0_di" bpmnElement="Task_e_case_127_0">
+        <dc:Bounds x="186" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_0_di_top" bpmnElement="P_User" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_127_0_di">
+        <dc:Bounds x="186" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_0_di_bot" bpmnElement="P_Thermostat" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_127_0_di">
+        <dc:Bounds x="186" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_2_di" bpmnElement="Task_e_case_127_2">
+        <dc:Bounds x="336" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_2_di_top" bpmnElement="P_Thermostat" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_127_2_di">
+        <dc:Bounds x="336" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_2_di_bot" bpmnElement="P_Controller" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_127_2_di">
+        <dc:Bounds x="336" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_7_di" bpmnElement="Task_e_case_127_7">
+        <dc:Bounds x="486" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_7_di_top" bpmnElement="P_Controller" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_127_7_di">
+        <dc:Bounds x="486" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_7_di_bot" bpmnElement="P_Thermostat" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_127_7_di">
+        <dc:Bounds x="486" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_9_di" bpmnElement="Task_e_case_127_9">
+        <dc:Bounds x="636" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_9_di_top" bpmnElement="P_Thermostat" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_127_9_di">
+        <dc:Bounds x="636" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_9_di_bot" bpmnElement="P_User" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_127_9_di">
+        <dc:Bounds x="636" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_14_di" bpmnElement="Task_e_case_127_14">
+        <dc:Bounds x="786" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_14_di_top" bpmnElement="P_Controller" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_127_14_di">
+        <dc:Bounds x="786" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_14_di_bot" bpmnElement="P_Thermostat" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_127_14_di">
+        <dc:Bounds x="786" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_18_di" bpmnElement="Task_e_case_127_18">
+        <dc:Bounds x="936" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_18_di_top" bpmnElement="P_User" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_127_18_di">
+        <dc:Bounds x="936" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_18_di_bot" bpmnElement="P_Thermostat" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_127_18_di">
+        <dc:Bounds x="936" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_21_di" bpmnElement="Task_e_case_127_21">
+        <dc:Bounds x="1086" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_21_di_top" bpmnElement="P_Thermostat" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_127_21_di">
+        <dc:Bounds x="1086" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_21_di_bot" bpmnElement="P_Controller" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_127_21_di">
+        <dc:Bounds x="1086" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_23_di" bpmnElement="Task_e_case_127_23">
+        <dc:Bounds x="1236" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_23_di_top" bpmnElement="P_Thermostat" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_127_23_di">
+        <dc:Bounds x="1236" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_127_23_di_bot" bpmnElement="P_User" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_127_23_di">
+        <dc:Bounds x="1236" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_case_127_di" bpmnElement="End_case_127">
+        <dc:Bounds x="1386" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SF_1_di" bpmnElement="SF_1">
+        <di:waypoint x="136" y="250" />
+        <di:waypoint x="186" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_2_di" bpmnElement="SF_2">
+        <di:waypoint x="286" y="250" />
+        <di:waypoint x="336" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_3_di" bpmnElement="SF_3">
+        <di:waypoint x="436" y="250" />
+        <di:waypoint x="486" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_4_di" bpmnElement="SF_4">
+        <di:waypoint x="586" y="250" />
+        <di:waypoint x="636" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_5_di" bpmnElement="SF_5">
+        <di:waypoint x="736" y="250" />
+        <di:waypoint x="786" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_6_di" bpmnElement="SF_6">
+        <di:waypoint x="886" y="250" />
+        <di:waypoint x="936" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_7_di" bpmnElement="SF_7">
+        <di:waypoint x="1036" y="250" />
+        <di:waypoint x="1086" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_8_di" bpmnElement="SF_8">
+        <di:waypoint x="1186" y="250" />
+        <di:waypoint x="1236" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_9_di" bpmnElement="SF_9">
+        <di:waypoint x="1336" y="250" />
+        <di:waypoint x="1386" y="250" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

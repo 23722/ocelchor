@@ -1,0 +1,70 @@
+×(
+  ∇_{proposeByDelegate [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]} ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩(
+    →(
+      'Request proposeByDelegate [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]' ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩,
+      'proposeByDelegate [Governance]' ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩)),
+  ∇_{execute [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]} ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩(
+    →(
+      'Request execute [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]' ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩,
+      ∇_{execute [Governance]} ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩(
+        →(
+          'Request execute [Governance]' ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩,
+          ∇_{executeProposal [TokenProposalTransfersEnable]} ⟨Governance→TokenProposalTransfersEnable⟩(
+            →(
+              'Request executeProposal [TokenProposalTransfersEnable]' ⟨Governance→TokenProposalTransfersEnable⟩,
+              'changeTransferability [TORN]' ⟨TokenProposalTransfersEnable→TORN⟩,
+              'Respond to executeProposal [TokenProposalTransfersEnable]' ⟨TokenProposalTransfersEnable→Governance⟩)),
+          'Respond to execute [Governance]' ⟨Governance→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩)))),
+  ∇_{undelegate [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]} ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩(
+    →(
+      'Request undelegate [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]' ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩,
+      'undelegate [Governance]' ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩)),
+  ∇_{Tranfer [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]} ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩(
+    →(
+      'Request Tranfer [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]' ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩,
+      'transfer [GovernanceStakingUpgrade]' ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→GovernanceStakingUpgrade⟩)),
+  ∇_{unlock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]} ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩(
+    →(
+      'Request unlock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]' ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩,
+      ∇_{unlock [Governance]} ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩(
+        →(
+          'Request unlock [Governance]' ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩,
+          'transfer [TORN]' ⟨Governance→TORN⟩,
+          'Respond to unlock [Governance]' ⟨Governance→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩)))),
+  ∇_{lockWithApproval [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]} ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩(
+    →(
+      'Request lockWithApproval [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]' ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩,
+      ∇_{lockWithApproval [Governance]} ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩(
+        →(
+          'Request lockWithApproval [Governance]' ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩,
+          'transferFrom [TORN]' ⟨Governance→TORN⟩,
+          'Respond to lockWithApproval [Governance]' ⟨Governance→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩)))),
+  ∇_{propose [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]} ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩(
+    →(
+      'Request propose [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]' ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩,
+      'propose [Governance]' ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩)),
+  ∇_{withdrawFromHelper [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]} ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩(
+    →(
+      'Request withdrawFromHelper [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]' ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩,
+      'withdrawFromHelper [GovernanceStakingUpgrade]' ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→GovernanceStakingUpgrade⟩)),
+  ∇_{lock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]} ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩(
+    →(
+      'Request lock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]' ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩,
+      ∇_{lock [Governance]} ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩(
+        →(
+          'Request lock [Governance]' ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩,
+          ∇_{permit [TORN]} ⟨Governance→TORN⟩(
+            →(
+              'Request permit [TORN]' ⟨Governance→TORN⟩,
+              'undefined [0x0000000000000000000000000000000000000001]' ⟨TORN→0x0000000000000000000000000000000000000001⟩,
+              'Respond to permit [TORN]' ⟨TORN→Governance⟩)),
+          'transferFrom [TORN]' ⟨Governance→TORN⟩,
+          'Respond to lock [Governance]' ⟨Governance→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩)))),
+  ∇_{delegate [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]} ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩(
+    →(
+      'Request delegate [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]' ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩,
+      'delegate [Governance]' ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩)),
+  ∇_{castDelegatedVote [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]} ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩(
+    →(
+      'Request castDelegatedVote [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]' ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩,
+      'castDelegatedVote [Governance]' ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩)))

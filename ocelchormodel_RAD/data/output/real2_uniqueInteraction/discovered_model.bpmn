@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_discovered" targetNamespace="http://ocelchor/discovered">
+  <bpmn2:message id="Msg_1" name="Ticket" />
+  <bpmn2:message id="Msg_2" name="Payment" />
+  <bpmn2:message id="Msg_3" name="Confirmation" />
+  <bpmn2:message id="Msg_4" name="Offer" />
+  <bpmn2:message id="Msg_5" name="Travel" />
+  <bpmn2:choreography id="Choreography_discovered">
+    <bpmn2:participant id="P_TravelAgency" name="TravelAgency" />
+    <bpmn2:participant id="P_Customer" name="Customer" />
+    <bpmn2:messageFlow id="MF_task_4_init" sourceRef="P_TravelAgency" targetRef="P_Customer" messageRef="Msg_1" />
+    <bpmn2:messageFlow id="MF_task_5_init" sourceRef="P_Customer" targetRef="P_TravelAgency" messageRef="Msg_2" />
+    <bpmn2:messageFlow id="MF_task_6_init" sourceRef="P_TravelAgency" targetRef="P_Customer" messageRef="Msg_3" />
+    <bpmn2:messageFlow id="MF_task_7_init" sourceRef="P_TravelAgency" targetRef="P_Customer" messageRef="Msg_4" />
+    <bpmn2:messageFlow id="MF_task_8_init" sourceRef="P_Customer" targetRef="P_TravelAgency" messageRef="Msg_5" />
+    <bpmn2:startEvent id="Start_1" />
+    <bpmn2:parallelGateway id="pgw_2" />
+    <bpmn2:choreographyTask id="task_4" name="Order Ticket" initiatingParticipantRef="P_TravelAgency">
+      <bpmn2:participantRef>P_TravelAgency</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Customer</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_4_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Order Ticket</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="task_5" name="Pay Travel" initiatingParticipantRef="P_Customer">
+      <bpmn2:participantRef>P_Customer</bpmn2:participantRef>
+      <bpmn2:participantRef>P_TravelAgency</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_5_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Pay Travel</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="task_6" name="Confirm Booking" initiatingParticipantRef="P_TravelAgency">
+      <bpmn2:participantRef>P_TravelAgency</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Customer</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_6_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Confirm Booking</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="task_7" name="Make Travel Offer" initiatingParticipantRef="P_TravelAgency" loopType="Standard">
+      <bpmn2:participantRef>P_TravelAgency</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Customer</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_7_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Make Travel Offer</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="task_8" name="Book Travel" initiatingParticipantRef="P_Customer">
+      <bpmn2:participantRef>P_Customer</bpmn2:participantRef>
+      <bpmn2:participantRef>P_TravelAgency</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_8_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Book Travel</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:parallelGateway id="pgw_3" />
+    <bpmn2:endEvent id="End_19" />
+    <bpmn2:sequenceFlow id="Flow_9" sourceRef="pgw_2" targetRef="task_4" />
+    <bpmn2:sequenceFlow id="Flow_10" sourceRef="task_4" targetRef="pgw_3" />
+    <bpmn2:sequenceFlow id="Flow_11" sourceRef="pgw_2" targetRef="task_5" />
+    <bpmn2:sequenceFlow id="Flow_12" sourceRef="task_5" targetRef="pgw_3" />
+    <bpmn2:sequenceFlow id="Flow_13" sourceRef="pgw_2" targetRef="task_6" />
+    <bpmn2:sequenceFlow id="Flow_14" sourceRef="task_6" targetRef="pgw_3" />
+    <bpmn2:sequenceFlow id="Flow_15" sourceRef="pgw_2" targetRef="task_7" />
+    <bpmn2:sequenceFlow id="Flow_16" sourceRef="task_7" targetRef="pgw_3" />
+    <bpmn2:sequenceFlow id="Flow_17" sourceRef="pgw_2" targetRef="task_8" />
+    <bpmn2:sequenceFlow id="Flow_18" sourceRef="task_8" targetRef="pgw_3" />
+    <bpmn2:sequenceFlow id="Flow_20" sourceRef="Start_1" targetRef="pgw_2" />
+    <bpmn2:sequenceFlow id="Flow_21" sourceRef="pgw_3" targetRef="End_19" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Choreography_discovered">
+      <bpmndi:BPMNShape id="Start_1_di" bpmnElement="Start_1">
+        <dc:Bounds x="100" y="177" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="pgw_2_di" bpmnElement="pgw_2">
+        <dc:Bounds x="196" y="170" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_4_di" bpmnElement="task_4">
+        <dc:Bounds x="306" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_4_top" bpmnElement="P_TravelAgency" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_4_di">
+        <dc:Bounds x="306" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_4_bot" bpmnElement="P_Customer" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_4_di">
+        <dc:Bounds x="306" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_5_di" bpmnElement="task_5">
+        <dc:Bounds x="306" y="350" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_5_top" bpmnElement="P_Customer" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_5_di">
+        <dc:Bounds x="306" y="350" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_5_bot" bpmnElement="P_TravelAgency" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_5_di">
+        <dc:Bounds x="306" y="410" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_6_di" bpmnElement="task_6">
+        <dc:Bounds x="306" y="545" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_6_top" bpmnElement="P_TravelAgency" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_6_di">
+        <dc:Bounds x="306" y="545" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_6_bot" bpmnElement="P_Customer" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_6_di">
+        <dc:Bounds x="306" y="605" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_7_di" bpmnElement="task_7">
+        <dc:Bounds x="306" y="740" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_7_top" bpmnElement="P_TravelAgency" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_7_di">
+        <dc:Bounds x="306" y="740" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_7_bot" bpmnElement="P_Customer" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_7_di">
+        <dc:Bounds x="306" y="800" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_8_di" bpmnElement="task_8">
+        <dc:Bounds x="306" y="935" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_8_top" bpmnElement="P_Customer" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_8_di">
+        <dc:Bounds x="306" y="935" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_8_bot" bpmnElement="P_TravelAgency" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_8_di">
+        <dc:Bounds x="306" y="995" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="pgw_3_di" bpmnElement="pgw_3">
+        <dc:Bounds x="466" y="170" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_19_di" bpmnElement="End_19">
+        <dc:Bounds x="576" y="177" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_9_di" bpmnElement="Flow_9">
+        <di:waypoint x="246" y="195" />
+        <di:waypoint x="306" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_10_di" bpmnElement="Flow_10">
+        <di:waypoint x="406" y="195" />
+        <di:waypoint x="466" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11_di" bpmnElement="Flow_11">
+        <di:waypoint x="221" y="220" />
+        <di:waypoint x="221" y="390" />
+        <di:waypoint x="306" y="390" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12_di" bpmnElement="Flow_12">
+        <di:waypoint x="406" y="390" />
+        <di:waypoint x="491" y="390" />
+        <di:waypoint x="491" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13_di" bpmnElement="Flow_13">
+        <di:waypoint x="221" y="220" />
+        <di:waypoint x="221" y="585" />
+        <di:waypoint x="306" y="585" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_14_di" bpmnElement="Flow_14">
+        <di:waypoint x="406" y="585" />
+        <di:waypoint x="491" y="585" />
+        <di:waypoint x="491" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15_di" bpmnElement="Flow_15">
+        <di:waypoint x="221" y="220" />
+        <di:waypoint x="221" y="780" />
+        <di:waypoint x="306" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16_di" bpmnElement="Flow_16">
+        <di:waypoint x="406" y="780" />
+        <di:waypoint x="491" y="780" />
+        <di:waypoint x="491" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17_di" bpmnElement="Flow_17">
+        <di:waypoint x="221" y="220" />
+        <di:waypoint x="221" y="975" />
+        <di:waypoint x="306" y="975" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18_di" bpmnElement="Flow_18">
+        <di:waypoint x="406" y="975" />
+        <di:waypoint x="491" y="975" />
+        <di:waypoint x="491" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_20_di" bpmnElement="Flow_20">
+        <di:waypoint x="136" y="195" />
+        <di:waypoint x="196" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_21_di" bpmnElement="Flow_21">
+        <di:waypoint x="516" y="195" />
+        <di:waypoint x="576" y="195" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

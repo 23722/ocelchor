@@ -1,0 +1,220 @@
+{
+  "log": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d_uniqueFunction",
+  "generated_by": "ocelchormodel-rad 0.1.0",
+  "hard_gates": {
+    "passed": true
+  },
+  "constraints": {
+    "C0": {
+      "checked": 18,
+      "violations": 0
+    },
+    "C1": {
+      "checked": 21,
+      "violations": 0
+    },
+    "C10": {
+      "checked": 3,
+      "violations": 0
+    },
+    "C11": {
+      "checked": 18,
+      "violations": 0
+    },
+    "C12": {
+      "checked": 5,
+      "violations": 0
+    },
+    "C13": {
+      "checked": 5,
+      "violations": 0
+    },
+    "C14": {
+      "checked": 5,
+      "violations": 0
+    },
+    "C15": {
+      "checked": 9,
+      "violations": 0
+    },
+    "C16": {
+      "checked": 5,
+      "violations": 0
+    },
+    "C2": {
+      "checked": 18,
+      "violations": 0
+    },
+    "C3": {
+      "checked": 18,
+      "violations": 0
+    },
+    "C4": {
+      "checked": 18,
+      "violations": 0
+    },
+    "C5": {
+      "checked": 21,
+      "violations": 0
+    },
+    "C6": {
+      "checked": 21,
+      "violations": 0
+    },
+    "C7": {
+      "checked": 18,
+      "violations": 0
+    },
+    "C8": {
+      "checked": 18,
+      "violations": 0
+    },
+    "C9": {
+      "checked": 18,
+      "violations": 0
+    }
+  },
+  "d01_ordering_determinism": {
+    "residual_ties": 0,
+    "examples": [],
+    "passed": true
+  },
+  "d02_scope_openers": {
+    "non_request_openers": 0,
+    "examples": []
+  },
+  "d03_bracket_completeness": {
+    "expected_missing_response": 2,
+    "unexpected_missing_response": 0,
+    "unexpected_examples": []
+  },
+  "d04_identity_labels": {
+    "exec_types": 12,
+    "occurrences": 12,
+    "examples": [
+      "Request onERC721Received [0x7c15561590fc9eb063b3803b55165633eef207ec]",
+      "Request safeTransferFrom [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]",
+      "Request withdraw [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]",
+      "Respond to onERC721Received [0x7c15561590fc9eb063b3803b55165633eef207ec]",
+      "Tranfer [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]"
+    ]
+  },
+  "d05_event_type_fanout": [
+    {
+      "name": "onERC721Received",
+      "exec_types": 2,
+      "examples": [
+        "onERC721Received [0x7c15561590fc9eb063b3803b55165633eef207ec]",
+        "onERC721Received [NFT20Pair]"
+      ]
+    }
+  ],
+  "d06_task_type_fanout": [],
+  "d07_scope_pooling": {
+    "buckets": 5,
+    "total_scope_occurrences": 5,
+    "buckets_with_pooling": 0,
+    "top": [
+      {
+        "context": [
+          "withdraw [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "safeTransferFrom [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "safeTransferFrom [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]",
+          "onERC721Received [0x7c15561590fc9eb063b3803b55165633eef207ec]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "safeTransferFrom [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]",
+          "onERC721Received [0x7c15561590fc9eb063b3803b55165633eef207ec]",
+          "onERC721Received [NFT20Pair]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "safeTransferFrom [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]",
+          "onERC721Received [0x7c15561590fc9eb063b3803b55165633eef207ec]",
+          "onERC721Received [NFT20Pair]",
+          "fee [NFT20FactoryV4]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      }
+    ]
+  },
+  "d08_message_merging": [],
+  "d09_parallelism_witnesses": [],
+  "d10_unrestricted_repetition": [],
+  "d11_choice_realizability": [],
+  "d12_recursion": {
+    "findings": [],
+    "direct": 0,
+    "indirect": 0,
+    "max_depth_delta": 0
+  },
+  "d13_cross_depth_participants": {
+    "pairs": 3,
+    "examples": [
+      {
+        "object": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "ancestor_scope": "subchoreographyInstance:e0d03075e2762324c035f21e81c51e320e81be1886f2a3130887cfc7da666985:root",
+        "descendant_scope": "subchoreographyInstance:e0d03075e2762324c035f21e81c51e320e81be1886f2a3130887cfc7da666985:0_1",
+        "ancestor_task_types": [
+          "Request safeTransferFrom [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]"
+        ],
+        "descendant_task_types": [
+          "Request onERC721Received [0x7c15561590fc9eb063b3803b55165633eef207ec]",
+          "Respond to onERC721Received [0x7c15561590fc9eb063b3803b55165633eef207ec]"
+        ]
+      },
+      {
+        "object": "0x7c15561590fc9eb063b3803b55165633eef207ec",
+        "ancestor_scope": "subchoreographyInstance:e0d03075e2762324c035f21e81c51e320e81be1886f2a3130887cfc7da666985:0_1",
+        "descendant_scope": "subchoreographyInstance:e0d03075e2762324c035f21e81c51e320e81be1886f2a3130887cfc7da666985:0_1_2",
+        "ancestor_task_types": [
+          "Request onERC721Received [0x7c15561590fc9eb063b3803b55165633eef207ec]",
+          "Respond to onERC721Received [0x7c15561590fc9eb063b3803b55165633eef207ec]",
+          "implementation [UpgradeableBeacon]"
+        ],
+        "descendant_task_types": [
+          "Request onERC721Received [NFT20Pair]",
+          "Respond to onERC721Received [NFT20Pair]"
+        ]
+      },
+      {
+        "object": "0xc53d0a52358ff0f0e4dfe93a1f0c84d2b17e68df",
+        "ancestor_scope": "subchoreographyInstance:e0d03075e2762324c035f21e81c51e320e81be1886f2a3130887cfc7da666985:0_1_2",
+        "descendant_scope": "subchoreographyInstance:e0d03075e2762324c035f21e81c51e320e81be1886f2a3130887cfc7da666985:0_1_2_1",
+        "ancestor_task_types": [
+          "Request onERC721Received [NFT20Pair]",
+          "Respond to onERC721Received [NFT20Pair]"
+        ],
+        "descendant_task_types": [
+          "Request fee [NFT20FactoryV4]",
+          "Respond to fee [NFT20FactoryV4]"
+        ]
+      }
+    ]
+  }
+}

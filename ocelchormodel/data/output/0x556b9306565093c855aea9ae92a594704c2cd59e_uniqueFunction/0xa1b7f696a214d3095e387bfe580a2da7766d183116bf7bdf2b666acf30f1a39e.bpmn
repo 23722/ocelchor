@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" targetNamespace="http://bpmn.io/schema/bpmn2" id="Definitions_30f1a39e">
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root" name="_tokenId" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1" name="inputsCall" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1" name="output" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2" name="currTimestamp" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1" name="_v3Pool" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1" name="output" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2" name="output" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3" name="tickLower, tickUpper" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1" name="inputsCall" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1" name="output" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3" name="output" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4" name=", tokenId" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4" name="output" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5" name="_tokenId" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1" name="userPositionInfos call" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1" name="output" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2" name="poolInfo call" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2" name="output" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3" name="inputsCall" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3" name="output" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4" name="inputsCall" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4" name="output" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5" name=", _user, account" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5" name="output" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5" name="output" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6" name="inputsCall" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6" name="output" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7" name="liquidityDelta, tickLower, tickUpper" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1" name="inputsCall" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1" name="output" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2" name="inputsCall" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2" name="output" />
+  <bpmn2:message id="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3" name="inputsCall" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3" name="output" />
+  <bpmn2:message id="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7" name="output" />
+  <bpmn2:choreography id="Choreography_30f1a39e" name="30f1a39e">
+    <bpmn2:participant id="P_0xa13bb13609c3b9aabb8a4d5b4e9ecbaf502ca56e" name="EOA …2ca56e" />
+    <bpmn2:participant id="P_0x556b9306565093c855aea9ae92a594704c2cd59e" name="MasterChefV3" />
+    <bpmn2:participant id="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" name="PancakeV3Pool" />
+    <bpmn2:participant id="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" name="PancakeV3LmPool" />
+    <bpmn2:participant id="P_0x46a15b0b27311cedf172ab29e4f4766fbe7f4364" name="NonfungiblePositionManager" />
+    <bpmn2:participant id="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" name="FarmBoosterV3" />
+    <bpmn2:participant id="P_0x0ac4ed1d63c51f2b35c555ee09b425f08e6ea556" name="VECakeProxy" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_request_init" sourceRef="P_0xa13bb13609c3b9aabb8a4d5b4e9ecbaf502ca56e" targetRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1_init" sourceRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" targetRef="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1_ret" sourceRef="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" targetRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_request_init" sourceRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" targetRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1_init" sourceRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" targetRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1_ret" sourceRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" targetRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_response_init" sourceRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" targetRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_request_init" sourceRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" targetRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1_init" sourceRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" targetRef="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1_ret" sourceRef="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" targetRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_response_init" sourceRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" targetRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4_init" sourceRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" targetRef="P_0x46a15b0b27311cedf172ab29e4f4766fbe7f4364" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4_ret" sourceRef="P_0x46a15b0b27311cedf172ab29e4f4766fbe7f4364" targetRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_request_init" sourceRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" targetRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1_init" sourceRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" targetRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1_ret" sourceRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" targetRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2_init" sourceRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" targetRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2_ret" sourceRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" targetRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3_init" sourceRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" targetRef="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3_ret" sourceRef="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" targetRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4_init" sourceRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" targetRef="P_0x0ac4ed1d63c51f2b35c555ee09b425f08e6ea556" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4_ret" sourceRef="P_0x0ac4ed1d63c51f2b35c555ee09b425f08e6ea556" targetRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5_init" sourceRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" targetRef="P_0x0ac4ed1d63c51f2b35c555ee09b425f08e6ea556" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5_ret" sourceRef="P_0x0ac4ed1d63c51f2b35c555ee09b425f08e6ea556" targetRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_response_init" sourceRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" targetRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6_init" sourceRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" targetRef="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6_ret" sourceRef="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" targetRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_request_init" sourceRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" targetRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1_init" sourceRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" targetRef="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1_ret" sourceRef="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" targetRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2_init" sourceRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" targetRef="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2_ret" sourceRef="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" targetRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3_init" sourceRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" targetRef="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" messageRef="Msg_call_req_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3_ret" sourceRef="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" targetRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3" />
+    <bpmn2:messageFlow id="MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_response_init" sourceRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" targetRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" messageRef="Msg_call_res_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7" />
+    <bpmn2:startEvent id="Start_30f1a39e">
+      <bpmn2:outgoing>SF_32</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:subChoreography id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root" name="updateLiquidity [MasterChefV3]" initiatingParticipantRef="P_0xa13bb13609c3b9aabb8a4d5b4e9ecbaf502ca56e">
+      <bpmn2:incoming>SF_32</bpmn2:incoming>
+      <bpmn2:outgoing>SF_33</bpmn2:outgoing>
+      <bpmn2:participantRef>P_0xa13bb13609c3b9aabb8a4d5b4e9ecbaf502ca56e</bpmn2:participantRef>
+      <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+      <bpmn2:participantRef>P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd</bpmn2:participantRef>
+      <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+      <bpmn2:participantRef>P_0x46a15b0b27311cedf172ab29e4f4766fbe7f4364</bpmn2:participantRef>
+      <bpmn2:participantRef>P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38</bpmn2:participantRef>
+      <bpmn2:participantRef>P_0x0ac4ed1d63c51f2b35c555ee09b425f08e6ea556</bpmn2:participantRef>
+      <bpmn2:startEvent id="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root">
+        <bpmn2:outgoing>SF_23</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_request" name="Request updateLiquidity [MasterChefV3]" initiatingParticipantRef="P_0xa13bb13609c3b9aabb8a4d5b4e9ecbaf502ca56e">
+        <bpmn2:incoming>SF_23</bpmn2:incoming>
+        <bpmn2:outgoing>SF_24</bpmn2:outgoing>
+        <bpmn2:participantRef>P_0xa13bb13609c3b9aabb8a4d5b4e9ecbaf502ca56e</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+        <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_request_init</bpmn2:messageFlowRef>
+      </bpmn2:choreographyTask>
+      <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1" name="lmPool [PancakeV3Pool]" initiatingParticipantRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e">
+        <bpmn2:incoming>SF_24</bpmn2:incoming>
+        <bpmn2:outgoing>SF_25</bpmn2:outgoing>
+        <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd</bpmn2:participantRef>
+        <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1_init</bpmn2:messageFlowRef>
+        <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1_ret</bpmn2:messageFlowRef>
+      </bpmn2:choreographyTask>
+      <bpmn2:subChoreography id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2" name="accumulateReward [PancakeV3LmPool]" initiatingParticipantRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e">
+        <bpmn2:incoming>SF_25</bpmn2:incoming>
+        <bpmn2:outgoing>SF_26</bpmn2:outgoing>
+        <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+        <bpmn2:startEvent id="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2">
+          <bpmn2:outgoing>SF_1</bpmn2:outgoing>
+        </bpmn2:startEvent>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_request" name="Request accumulateReward [PancakeV3LmPool]" initiatingParticipantRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e">
+          <bpmn2:incoming>SF_1</bpmn2:incoming>
+          <bpmn2:outgoing>SF_2</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_request_init</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1" name="getLatestPeriodInfo [MasterChefV3]" initiatingParticipantRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87">
+          <bpmn2:incoming>SF_2</bpmn2:incoming>
+          <bpmn2:outgoing>SF_3</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1_init</bpmn2:messageFlowRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1_ret</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_response" name="Respond to accumulateReward [PancakeV3LmPool]" initiatingParticipantRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87">
+          <bpmn2:incoming>SF_3</bpmn2:incoming>
+          <bpmn2:outgoing>SF_4</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_response_init</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:endEvent id="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2">
+          <bpmn2:incoming>SF_4</bpmn2:incoming>
+        </bpmn2:endEvent>
+        <bpmn2:sequenceFlow id="SF_1" sourceRef="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_request" />
+        <bpmn2:sequenceFlow id="SF_2" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_request" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1" />
+        <bpmn2:sequenceFlow id="SF_3" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_response" />
+        <bpmn2:sequenceFlow id="SF_4" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_response" targetRef="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2" />
+      </bpmn2:subChoreography>
+      <bpmn2:subChoreography id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3" name="getRewardGrowthInside [PancakeV3LmPool]" initiatingParticipantRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e">
+        <bpmn2:incoming>SF_26</bpmn2:incoming>
+        <bpmn2:outgoing>SF_27</bpmn2:outgoing>
+        <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd</bpmn2:participantRef>
+        <bpmn2:startEvent id="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3">
+          <bpmn2:outgoing>SF_5</bpmn2:outgoing>
+        </bpmn2:startEvent>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_request" name="Request getRewardGrowthInside [PancakeV3LmPool]" initiatingParticipantRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e">
+          <bpmn2:incoming>SF_5</bpmn2:incoming>
+          <bpmn2:outgoing>SF_6</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_request_init</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1" name="slot0 [PancakeV3Pool]" initiatingParticipantRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87">
+          <bpmn2:incoming>SF_6</bpmn2:incoming>
+          <bpmn2:outgoing>SF_7</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1_init</bpmn2:messageFlowRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1_ret</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_response" name="Respond to getRewardGrowthInside [PancakeV3LmPool]" initiatingParticipantRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87">
+          <bpmn2:incoming>SF_7</bpmn2:incoming>
+          <bpmn2:outgoing>SF_8</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_response_init</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:endEvent id="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3">
+          <bpmn2:incoming>SF_8</bpmn2:incoming>
+        </bpmn2:endEvent>
+        <bpmn2:sequenceFlow id="SF_5" sourceRef="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_request" />
+        <bpmn2:sequenceFlow id="SF_6" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_request" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1" />
+        <bpmn2:sequenceFlow id="SF_7" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_response" />
+        <bpmn2:sequenceFlow id="SF_8" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_response" targetRef="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3" />
+      </bpmn2:subChoreography>
+      <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4" name="positions [NonfungiblePositionManager]" initiatingParticipantRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e">
+        <bpmn2:incoming>SF_27</bpmn2:incoming>
+        <bpmn2:outgoing>SF_28</bpmn2:outgoing>
+        <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x46a15b0b27311cedf172ab29e4f4766fbe7f4364</bpmn2:participantRef>
+        <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4_init</bpmn2:messageFlowRef>
+        <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4_ret</bpmn2:messageFlowRef>
+      </bpmn2:choreographyTask>
+      <bpmn2:subChoreography id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5" name="updatePositionBoostMultiplier [FarmBoosterV3]" initiatingParticipantRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e">
+        <bpmn2:incoming>SF_28</bpmn2:incoming>
+        <bpmn2:outgoing>SF_29</bpmn2:outgoing>
+        <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x0ac4ed1d63c51f2b35c555ee09b425f08e6ea556</bpmn2:participantRef>
+        <bpmn2:startEvent id="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5">
+          <bpmn2:outgoing>SF_9</bpmn2:outgoing>
+        </bpmn2:startEvent>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_request" name="Request updatePositionBoostMultiplier [FarmBoosterV3]" initiatingParticipantRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e">
+          <bpmn2:incoming>SF_9</bpmn2:incoming>
+          <bpmn2:outgoing>SF_10</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_request_init</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1" name="userPositionInfos [MasterChefV3]" initiatingParticipantRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38">
+          <bpmn2:incoming>SF_10</bpmn2:incoming>
+          <bpmn2:outgoing>SF_11</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1_init</bpmn2:messageFlowRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1_ret</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2" name="poolInfo [MasterChefV3]" initiatingParticipantRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38">
+          <bpmn2:incoming>SF_11</bpmn2:incoming>
+          <bpmn2:outgoing>SF_12</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2_init</bpmn2:messageFlowRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2_ret</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3" name="liquidity [PancakeV3Pool]" initiatingParticipantRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38">
+          <bpmn2:incoming>SF_12</bpmn2:incoming>
+          <bpmn2:outgoing>SF_13</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3_init</bpmn2:messageFlowRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3_ret</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4" name="totalSupply [VECakeProxy]" initiatingParticipantRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38">
+          <bpmn2:incoming>SF_13</bpmn2:incoming>
+          <bpmn2:outgoing>SF_14</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x0ac4ed1d63c51f2b35c555ee09b425f08e6ea556</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4_init</bpmn2:messageFlowRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4_ret</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5" name="balanceOf [VECakeProxy]" initiatingParticipantRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38">
+          <bpmn2:incoming>SF_14</bpmn2:incoming>
+          <bpmn2:outgoing>SF_15</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x0ac4ed1d63c51f2b35c555ee09b425f08e6ea556</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5_init</bpmn2:messageFlowRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5_ret</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_response" name="Respond to updatePositionBoostMultiplier [FarmBoosterV3]" initiatingParticipantRef="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38">
+          <bpmn2:incoming>SF_15</bpmn2:incoming>
+          <bpmn2:outgoing>SF_16</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_response_init</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:endEvent id="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5">
+          <bpmn2:incoming>SF_16</bpmn2:incoming>
+        </bpmn2:endEvent>
+        <bpmn2:sequenceFlow id="SF_9" sourceRef="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_request" />
+        <bpmn2:sequenceFlow id="SF_10" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_request" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1" />
+        <bpmn2:sequenceFlow id="SF_11" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2" />
+        <bpmn2:sequenceFlow id="SF_12" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3" />
+        <bpmn2:sequenceFlow id="SF_13" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4" />
+        <bpmn2:sequenceFlow id="SF_14" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5" />
+        <bpmn2:sequenceFlow id="SF_15" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_response" />
+        <bpmn2:sequenceFlow id="SF_16" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_response" targetRef="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5" />
+      </bpmn2:subChoreography>
+      <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6" name="lmPool [PancakeV3Pool]" initiatingParticipantRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e">
+        <bpmn2:incoming>SF_29</bpmn2:incoming>
+        <bpmn2:outgoing>SF_30</bpmn2:outgoing>
+        <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd</bpmn2:participantRef>
+        <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6_init</bpmn2:messageFlowRef>
+        <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6_ret</bpmn2:messageFlowRef>
+      </bpmn2:choreographyTask>
+      <bpmn2:subChoreography id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7" name="updatePosition [PancakeV3LmPool]" initiatingParticipantRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e">
+        <bpmn2:incoming>SF_30</bpmn2:incoming>
+        <bpmn2:outgoing>SF_31</bpmn2:outgoing>
+        <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd</bpmn2:participantRef>
+        <bpmn2:startEvent id="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7">
+          <bpmn2:outgoing>SF_17</bpmn2:outgoing>
+        </bpmn2:startEvent>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_request" name="Request updatePosition [PancakeV3LmPool]" initiatingParticipantRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e">
+          <bpmn2:incoming>SF_17</bpmn2:incoming>
+          <bpmn2:outgoing>SF_18</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_request_init</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1" name="slot0 [PancakeV3Pool]" initiatingParticipantRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87">
+          <bpmn2:incoming>SF_18</bpmn2:incoming>
+          <bpmn2:outgoing>SF_19</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1_init</bpmn2:messageFlowRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1_ret</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2" name="maxLiquidityPerTick [PancakeV3Pool]" initiatingParticipantRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87">
+          <bpmn2:incoming>SF_19</bpmn2:incoming>
+          <bpmn2:outgoing>SF_20</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2_init</bpmn2:messageFlowRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2_ret</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3" name="slot0 [PancakeV3Pool]" initiatingParticipantRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87">
+          <bpmn2:incoming>SF_20</bpmn2:incoming>
+          <bpmn2:outgoing>SF_21</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3_init</bpmn2:messageFlowRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3_ret</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:choreographyTask id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_response" name="Respond to updatePosition [PancakeV3LmPool]" initiatingParticipantRef="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87">
+          <bpmn2:incoming>SF_21</bpmn2:incoming>
+          <bpmn2:outgoing>SF_22</bpmn2:outgoing>
+          <bpmn2:participantRef>P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87</bpmn2:participantRef>
+          <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+          <bpmn2:messageFlowRef>MF_Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_response_init</bpmn2:messageFlowRef>
+        </bpmn2:choreographyTask>
+        <bpmn2:endEvent id="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7">
+          <bpmn2:incoming>SF_22</bpmn2:incoming>
+        </bpmn2:endEvent>
+        <bpmn2:sequenceFlow id="SF_17" sourceRef="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_request" />
+        <bpmn2:sequenceFlow id="SF_18" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_request" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1" />
+        <bpmn2:sequenceFlow id="SF_19" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2" />
+        <bpmn2:sequenceFlow id="SF_20" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3" />
+        <bpmn2:sequenceFlow id="SF_21" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_response" />
+        <bpmn2:sequenceFlow id="SF_22" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_response" targetRef="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7" />
+      </bpmn2:subChoreography>
+      <bpmn2:endEvent id="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root">
+        <bpmn2:incoming>SF_31</bpmn2:incoming>
+      </bpmn2:endEvent>
+      <bpmn2:sequenceFlow id="SF_23" sourceRef="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_request" />
+      <bpmn2:sequenceFlow id="SF_24" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_request" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1" />
+      <bpmn2:sequenceFlow id="SF_25" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1" targetRef="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2" />
+      <bpmn2:sequenceFlow id="SF_26" sourceRef="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2" targetRef="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3" />
+      <bpmn2:sequenceFlow id="SF_27" sourceRef="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4" />
+      <bpmn2:sequenceFlow id="SF_28" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4" targetRef="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5" />
+      <bpmn2:sequenceFlow id="SF_29" sourceRef="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5" targetRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6" />
+      <bpmn2:sequenceFlow id="SF_30" sourceRef="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6" targetRef="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7" />
+      <bpmn2:sequenceFlow id="SF_31" sourceRef="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7" targetRef="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root" />
+    </bpmn2:subChoreography>
+    <bpmn2:endEvent id="End_30f1a39e">
+      <bpmn2:incoming>SF_33</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SF_32" sourceRef="Start_30f1a39e" targetRef="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root" />
+    <bpmn2:sequenceFlow id="SF_33" sourceRef="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root" targetRef="End_30f1a39e" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_30f1a39e">
+    <bpmndi:BPMNPlane id="BPMNPlane_30f1a39e" bpmnElement="Choreography_30f1a39e">
+      <bpmndi:BPMNShape id="Start_30f1a39e_di" bpmnElement="Start_30f1a39e">
+        <dc:Bounds x="100" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di" bpmnElement="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root" isExpanded="true">
+        <dc:Bounds x="186" y="20" width="4410" height="460" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di_band_t0" bpmnElement="P_0xa13bb13609c3b9aabb8a4d5b4e9ecbaf502ca56e" participantBandKind="top_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di">
+        <dc:Bounds x="186" y="20" width="4410" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di_band_t1" bpmnElement="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" participantBandKind="middle_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di">
+        <dc:Bounds x="186" y="40" width="4410" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di_band_t2" bpmnElement="P_0x46a15b0b27311cedf172ab29e4f4766fbe7f4364" participantBandKind="middle_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di">
+        <dc:Bounds x="186" y="60" width="4410" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di_band_t3" bpmnElement="P_0x0ac4ed1d63c51f2b35c555ee09b425f08e6ea556" participantBandKind="middle_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di">
+        <dc:Bounds x="186" y="80" width="4410" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di_band_b0" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di">
+        <dc:Bounds x="186" y="460" width="4410" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di_band_b1" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="middle_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di">
+        <dc:Bounds x="186" y="440" width="4410" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di_band_b2" bpmnElement="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" participantBandKind="middle_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di">
+        <dc:Bounds x="186" y="420" width="4410" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di" bpmnElement="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root">
+        <dc:Bounds x="216" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_request_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_request">
+        <dc:Bounds x="302" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_request_di_top" bpmnElement="P_0xa13bb13609c3b9aabb8a4d5b4e9ecbaf502ca56e" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_request_di">
+        <dc:Bounds x="302" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_request_di_bot" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_request_di">
+        <dc:Bounds x="302" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1">
+        <dc:Bounds x="452" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1_di_top" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1_di">
+        <dc:Bounds x="452" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1_di_bot" bpmnElement="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_1_di">
+        <dc:Bounds x="452" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_di" bpmnElement="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2" isExpanded="true">
+        <dc:Bounds x="602" y="160" width="632" height="200" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_di_band_t0" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="top_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_di">
+        <dc:Bounds x="602" y="160" width="632" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_di_band_b0" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_di">
+        <dc:Bounds x="602" y="340" width="632" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_di" bpmnElement="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2">
+        <dc:Bounds x="632" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_request_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_request">
+        <dc:Bounds x="718" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_request_di_top" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_request_di">
+        <dc:Bounds x="718" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_request_di_bot" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_request_di">
+        <dc:Bounds x="718" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1">
+        <dc:Bounds x="868" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1_di_top" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1_di">
+        <dc:Bounds x="868" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1_di_bot" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_1_di">
+        <dc:Bounds x="868" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_response_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_response">
+        <dc:Bounds x="1018" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_response_di_top" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_response_di">
+        <dc:Bounds x="1018" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_response_di_bot" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_response_di">
+        <dc:Bounds x="1018" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2_di" bpmnElement="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_2">
+        <dc:Bounds x="1168" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_di" bpmnElement="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3" isExpanded="true">
+        <dc:Bounds x="1284" y="150" width="632" height="220" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_di_band_t0" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="top_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_di">
+        <dc:Bounds x="1284" y="150" width="632" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_di_band_t1" bpmnElement="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" participantBandKind="middle_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_di">
+        <dc:Bounds x="1284" y="170" width="632" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_di_band_b0" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_di">
+        <dc:Bounds x="1284" y="350" width="632" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_di" bpmnElement="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3">
+        <dc:Bounds x="1314" y="252" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_request_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_request">
+        <dc:Bounds x="1400" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_request_di_top" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_request_di">
+        <dc:Bounds x="1400" y="230" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_request_di_bot" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_request_di">
+        <dc:Bounds x="1400" y="290" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1">
+        <dc:Bounds x="1550" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1_di_top" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1_di">
+        <dc:Bounds x="1550" y="230" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1_di_bot" bpmnElement="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_1_di">
+        <dc:Bounds x="1550" y="290" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_response_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_response">
+        <dc:Bounds x="1700" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_response_di_top" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_response_di">
+        <dc:Bounds x="1700" y="230" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_response_di_bot" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_response_di">
+        <dc:Bounds x="1700" y="290" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3_di" bpmnElement="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_3">
+        <dc:Bounds x="1850" y="252" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4">
+        <dc:Bounds x="1966" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4_di_top" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4_di">
+        <dc:Bounds x="1966" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4_di_bot" bpmnElement="P_0x46a15b0b27311cedf172ab29e4f4766fbe7f4364" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_4_di">
+        <dc:Bounds x="1966" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_di" bpmnElement="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5" isExpanded="true">
+        <dc:Bounds x="2116" y="140" width="1232" height="240" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_di_band_t0" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="top_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_di">
+        <dc:Bounds x="2116" y="140" width="1232" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_di_band_t1" bpmnElement="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" participantBandKind="middle_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_di">
+        <dc:Bounds x="2116" y="160" width="1232" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_di_band_b0" bpmnElement="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_di">
+        <dc:Bounds x="2116" y="360" width="1232" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_di_band_b1" bpmnElement="P_0x0ac4ed1d63c51f2b35c555ee09b425f08e6ea556" participantBandKind="middle_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_di">
+        <dc:Bounds x="2116" y="340" width="1232" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_di" bpmnElement="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5">
+        <dc:Bounds x="2146" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_request_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_request">
+        <dc:Bounds x="2232" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_request_di_top" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_request_di">
+        <dc:Bounds x="2232" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_request_di_bot" bpmnElement="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_request_di">
+        <dc:Bounds x="2232" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1">
+        <dc:Bounds x="2382" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1_di_top" bpmnElement="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1_di">
+        <dc:Bounds x="2382" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1_di_bot" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_1_di">
+        <dc:Bounds x="2382" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2">
+        <dc:Bounds x="2532" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2_di_top" bpmnElement="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2_di">
+        <dc:Bounds x="2532" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2_di_bot" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_2_di">
+        <dc:Bounds x="2532" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3">
+        <dc:Bounds x="2682" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3_di_top" bpmnElement="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3_di">
+        <dc:Bounds x="2682" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3_di_bot" bpmnElement="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_3_di">
+        <dc:Bounds x="2682" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4">
+        <dc:Bounds x="2832" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4_di_top" bpmnElement="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4_di">
+        <dc:Bounds x="2832" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4_di_bot" bpmnElement="P_0x0ac4ed1d63c51f2b35c555ee09b425f08e6ea556" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_4_di">
+        <dc:Bounds x="2832" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5">
+        <dc:Bounds x="2982" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5_di_top" bpmnElement="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5_di">
+        <dc:Bounds x="2982" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5_di_bot" bpmnElement="P_0x0ac4ed1d63c51f2b35c555ee09b425f08e6ea556" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_5_di">
+        <dc:Bounds x="2982" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_response_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_response">
+        <dc:Bounds x="3132" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_response_di_top" bpmnElement="P_0xe604940c06df1b6a9851f8e8d8d22468cb932e38" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_response_di">
+        <dc:Bounds x="3132" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_response_di_bot" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_response_di">
+        <dc:Bounds x="3132" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5_di" bpmnElement="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_5">
+        <dc:Bounds x="3282" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6">
+        <dc:Bounds x="3398" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6_di_top" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6_di">
+        <dc:Bounds x="3398" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6_di_bot" bpmnElement="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_6_di">
+        <dc:Bounds x="3398" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_di" bpmnElement="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7" isExpanded="true">
+        <dc:Bounds x="3548" y="150" width="932" height="220" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_di_band_t0" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="top_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_di">
+        <dc:Bounds x="3548" y="150" width="932" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_di_band_t1" bpmnElement="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" participantBandKind="middle_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_di">
+        <dc:Bounds x="3548" y="170" width="932" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_di_band_b0" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_di">
+        <dc:Bounds x="3548" y="350" width="932" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_di" bpmnElement="Start_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7">
+        <dc:Bounds x="3578" y="252" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_request_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_request">
+        <dc:Bounds x="3664" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_request_di_top" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_request_di">
+        <dc:Bounds x="3664" y="230" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_request_di_bot" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_request_di">
+        <dc:Bounds x="3664" y="290" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1">
+        <dc:Bounds x="3814" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1_di_top" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1_di">
+        <dc:Bounds x="3814" y="230" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1_di_bot" bpmnElement="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_1_di">
+        <dc:Bounds x="3814" y="290" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2">
+        <dc:Bounds x="3964" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2_di_top" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2_di">
+        <dc:Bounds x="3964" y="230" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2_di_bot" bpmnElement="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_2_di">
+        <dc:Bounds x="3964" y="290" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3">
+        <dc:Bounds x="4114" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3_di_top" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3_di">
+        <dc:Bounds x="4114" y="230" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3_di_bot" bpmnElement="P_0x2201d2400d30bfd8172104b4ad046d019ca4e7bd" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_3_di">
+        <dc:Bounds x="4114" y="290" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_response_di" bpmnElement="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_response">
+        <dc:Bounds x="4264" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_response_di_top" bpmnElement="P_0x03e7205e3198c0ac593d354efbb6a4f345e93d87" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_response_di">
+        <dc:Bounds x="4264" y="230" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_response_di_bot" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_response_di">
+        <dc:Bounds x="4264" y="290" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7_di" bpmnElement="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_0_7">
+        <dc:Bounds x="4414" y="252" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root_di" bpmnElement="End_30f1a39e_Sub_subchoreographyInstance_a1b7f696a214d3095e387bfe580a2da7766d183116bf7bdf2b666acf30f1a39e_root">
+        <dc:Bounds x="4530" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_30f1a39e_di" bpmnElement="End_30f1a39e">
+        <dc:Bounds x="4646" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SF_1_di" bpmnElement="SF_1">
+        <di:waypoint x="668" y="260" />
+        <di:waypoint x="718" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_2_di" bpmnElement="SF_2">
+        <di:waypoint x="818" y="260" />
+        <di:waypoint x="868" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_3_di" bpmnElement="SF_3">
+        <di:waypoint x="968" y="260" />
+        <di:waypoint x="1018" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_4_di" bpmnElement="SF_4">
+        <di:waypoint x="1118" y="260" />
+        <di:waypoint x="1168" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_5_di" bpmnElement="SF_5">
+        <di:waypoint x="1350" y="270" />
+        <di:waypoint x="1400" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_6_di" bpmnElement="SF_6">
+        <di:waypoint x="1500" y="270" />
+        <di:waypoint x="1550" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_7_di" bpmnElement="SF_7">
+        <di:waypoint x="1650" y="270" />
+        <di:waypoint x="1700" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_8_di" bpmnElement="SF_8">
+        <di:waypoint x="1800" y="270" />
+        <di:waypoint x="1850" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_9_di" bpmnElement="SF_9">
+        <di:waypoint x="2182" y="260" />
+        <di:waypoint x="2232" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_10_di" bpmnElement="SF_10">
+        <di:waypoint x="2332" y="260" />
+        <di:waypoint x="2382" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_11_di" bpmnElement="SF_11">
+        <di:waypoint x="2482" y="260" />
+        <di:waypoint x="2532" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_12_di" bpmnElement="SF_12">
+        <di:waypoint x="2632" y="260" />
+        <di:waypoint x="2682" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_13_di" bpmnElement="SF_13">
+        <di:waypoint x="2782" y="260" />
+        <di:waypoint x="2832" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_14_di" bpmnElement="SF_14">
+        <di:waypoint x="2932" y="260" />
+        <di:waypoint x="2982" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_15_di" bpmnElement="SF_15">
+        <di:waypoint x="3082" y="260" />
+        <di:waypoint x="3132" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_16_di" bpmnElement="SF_16">
+        <di:waypoint x="3232" y="260" />
+        <di:waypoint x="3282" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_17_di" bpmnElement="SF_17">
+        <di:waypoint x="3614" y="270" />
+        <di:waypoint x="3664" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_18_di" bpmnElement="SF_18">
+        <di:waypoint x="3764" y="270" />
+        <di:waypoint x="3814" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_19_di" bpmnElement="SF_19">
+        <di:waypoint x="3914" y="270" />
+        <di:waypoint x="3964" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_20_di" bpmnElement="SF_20">
+        <di:waypoint x="4064" y="270" />
+        <di:waypoint x="4114" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_21_di" bpmnElement="SF_21">
+        <di:waypoint x="4214" y="270" />
+        <di:waypoint x="4264" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_22_di" bpmnElement="SF_22">
+        <di:waypoint x="4364" y="270" />
+        <di:waypoint x="4414" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_23_di" bpmnElement="SF_23">
+        <di:waypoint x="252" y="260" />
+        <di:waypoint x="302" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_24_di" bpmnElement="SF_24">
+        <di:waypoint x="402" y="260" />
+        <di:waypoint x="452" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_25_di" bpmnElement="SF_25">
+        <di:waypoint x="552" y="260" />
+        <di:waypoint x="602" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_26_di" bpmnElement="SF_26">
+        <di:waypoint x="1234" y="260" />
+        <di:waypoint x="1284" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_27_di" bpmnElement="SF_27">
+        <di:waypoint x="1916" y="260" />
+        <di:waypoint x="1966" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_28_di" bpmnElement="SF_28">
+        <di:waypoint x="2066" y="260" />
+        <di:waypoint x="2116" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_29_di" bpmnElement="SF_29">
+        <di:waypoint x="3348" y="260" />
+        <di:waypoint x="3398" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_30_di" bpmnElement="SF_30">
+        <di:waypoint x="3498" y="260" />
+        <di:waypoint x="3548" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_31_di" bpmnElement="SF_31">
+        <di:waypoint x="4480" y="260" />
+        <di:waypoint x="4530" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_32_di" bpmnElement="SF_32">
+        <di:waypoint x="136" y="250" />
+        <di:waypoint x="186" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_33_di" bpmnElement="SF_33">
+        <di:waypoint x="4596" y="250" />
+        <di:waypoint x="4646" y="250" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

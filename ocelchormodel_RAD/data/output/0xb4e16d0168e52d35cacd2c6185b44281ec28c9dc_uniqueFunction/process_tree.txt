@@ -1,0 +1,82 @@
+×(
+  ∇_{burn [UniswapV2Pair]} ⟨EOA→UniswapV2Pair⟩(
+    →(
+      'Request burn [UniswapV2Pair]' ⟨EOA→UniswapV2Pair⟩,
+      ∇_{undefined [SignatureChecker]} ⟨UniswapV2Pair→SignatureChecker⟩(
+        →(
+          'Request undefined [SignatureChecker]' ⟨UniswapV2Pair→SignatureChecker⟩,
+          'balanceOf [FiatTokenV2]' ⟨SignatureChecker→FiatTokenV2⟩,
+          'Respond to undefined [SignatureChecker]' ⟨SignatureChecker→UniswapV2Pair⟩)),
+      'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+      'feeTo [UniswapV2Factory]' ⟨UniswapV2Pair→UniswapV2Factory⟩)),
+  'transferFrom [UniswapV2Pair]' ⟨EOA→UniswapV2Pair⟩,
+  ∇_{swap [UniswapV2Pair]} ⟨EOA→UniswapV2Pair⟩(
+    →(
+      'Request swap [UniswapV2Pair]' ⟨EOA→UniswapV2Pair⟩,
+      ↻(
+        ∇_{undefined [SignatureChecker]} ⟨UniswapV2Pair→SignatureChecker⟩(
+          →(
+            'Request undefined [SignatureChecker]' ⟨UniswapV2Pair→SignatureChecker⟩,
+            ×(
+              'balanceOf [FiatTokenV1]' ⟨SignatureChecker→FiatTokenV1⟩,
+              'transfer [FiatTokenV1]' ⟨SignatureChecker→FiatTokenV1⟩),
+            'Respond to undefined [SignatureChecker]' ⟨SignatureChecker→UniswapV2Pair⟩)),
+        ∇_{uniswapV2Call [UniswapArbitrageur]} ⟨UniswapV2Pair→UniswapArbitrageur⟩(
+          →(
+            'Request uniswapV2Call [UniswapArbitrageur]' ⟨UniswapV2Pair→UniswapArbitrageur⟩,
+            'token0 [UniswapV2Pair]' ⟨UniswapArbitrageur→UniswapV2Pair⟩,
+            'token1 [UniswapV2Pair]' ⟨UniswapArbitrageur→UniswapV2Pair⟩,
+            ∇_{buyBaseToken [DODO]} ⟨UniswapArbitrageur→DODO⟩(
+              →(
+                'Request buyBaseToken [DODO]' ⟨UniswapArbitrageur→DODO⟩,
+                ↻(
+                  ∇_{getPrice [ChainlinkETHPriceOracleProxy]} ⟨DODO→ChainlinkETHPriceOracleProxy⟩(
+                    →(
+                      'Request getPrice [ChainlinkETHPriceOracleProxy]' ⟨DODO→ChainlinkETHPriceOracleProxy⟩,
+                      'latestAnswer [Aggregator]' ⟨ChainlinkETHPriceOracleProxy→Aggregator⟩,
+                      'Respond to getPrice [ChainlinkETHPriceOracleProxy]' ⟨ChainlinkETHPriceOracleProxy→DODO⟩)),
+                  τ),
+                ↻(
+                  ∇_{undefined [SignatureChecker]} ⟨DODO→SignatureChecker⟩(
+                    →(
+                      'Request undefined [SignatureChecker]' ⟨DODO→SignatureChecker⟩,
+                      ×(
+                        'transferFrom [FiatTokenV1]' ⟨SignatureChecker→FiatTokenV1⟩,
+                        'balanceOf [FiatTokenV1]' ⟨SignatureChecker→FiatTokenV1⟩),
+                      'Respond to undefined [SignatureChecker]' ⟨SignatureChecker→DODO⟩)),
+                  τ),
+                ↻(
+                  ↻(
+                    'balanceOf [WETH9]' ⟨DODO→WETH9⟩,
+                    τ),
+                  'transfer [WETH9]' ⟨DODO→WETH9⟩),
+                'Respond to buyBaseToken [DODO]' ⟨DODO→UniswapArbitrageur⟩)),
+            'balanceOf [WETH9]' ⟨UniswapArbitrageur→WETH9⟩,
+            'transfer [WETH9]' ⟨UniswapArbitrageur→WETH9⟩,
+            ↻(
+              ∇_{undefined [SignatureChecker]} ⟨UniswapArbitrageur→SignatureChecker⟩(
+                →(
+                  'Request undefined [SignatureChecker]' ⟨UniswapArbitrageur→SignatureChecker⟩,
+                  ×(
+                    'transfer [FiatTokenV1]' ⟨SignatureChecker→FiatTokenV1⟩,
+                    'balanceOf [FiatTokenV1]' ⟨SignatureChecker→FiatTokenV1⟩),
+                  'Respond to undefined [SignatureChecker]' ⟨SignatureChecker→UniswapArbitrageur⟩)),
+              τ),
+            'Respond to uniswapV2Call [UniswapArbitrageur]' ⟨UniswapArbitrageur→UniswapV2Pair⟩))),
+      'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩)),
+  ∇_{skim [UniswapV2Pair]} ⟨EOA→UniswapV2Pair⟩(
+    →(
+      'Request skim [UniswapV2Pair]' ⟨EOA→UniswapV2Pair⟩,
+      ↻(
+        ∇_{undefined [SignatureChecker]} ⟨UniswapV2Pair→SignatureChecker⟩(
+          →(
+            'Request undefined [SignatureChecker]' ⟨UniswapV2Pair→SignatureChecker⟩,
+            ×(
+              'transfer [FiatTokenV1]' ⟨SignatureChecker→FiatTokenV1⟩,
+              'balanceOf [FiatTokenV1]' ⟨SignatureChecker→FiatTokenV1⟩),
+            'Respond to undefined [SignatureChecker]' ⟨SignatureChecker→UniswapV2Pair⟩)),
+        τ),
+      'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+      'transfer [WETH9]' ⟨UniswapV2Pair→WETH9⟩)),
+  'approve [UniswapV2Pair]' ⟨EOA→UniswapV2Pair⟩,
+  'transfer [UniswapV2Pair]' ⟨EOA→UniswapV2Pair⟩)

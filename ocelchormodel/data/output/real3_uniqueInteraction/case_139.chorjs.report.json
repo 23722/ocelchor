@@ -1,0 +1,18 @@
+{
+  "input": "/Users/rhob/Documents/ocelchor/ocelchormodel/data/output/real3_uniqueInteraction/case_139.bpmn",
+  "error": "element with id P_Thermostat_Task_e_case_139_4 already exists",
+  "importWarnings": [],
+  "defined": 9,
+  "rendered": 0,
+  "missing": [
+    "Start_case_139",
+    "Task_e_case_139_0",
+    "Task_e_case_139_2",
+    "Task_e_case_139_4",
+    "End_case_139",
+    "SF_1",
+    "SF_2",
+    "SF_3",
+    "SF_4"
+  ]
+}

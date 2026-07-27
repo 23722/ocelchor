@@ -1,6 +1,15 @@
-# Generated discovered models + diagnostics (regenerable; not committed)
-data/output/*
+# Discovery outputs: only the canonical artifact files are tracked (model,
+# process tree, diagnostics, chor-js render report per log) — the regression
+# baseline, auditable via git diff. Everything else under data/output
+# (rendered SVGs — large, regenerable — and ad-hoc figure/layout
+# experiments) stays ignored.
+data/output/**
+!data/output/*/
 !data/output/.gitkeep
+!data/output/*/discovered_model.bpmn
+!data/output/*/process_tree.txt
+!data/output/*/diagnostics.json
+!data/output/*/discovered_model.chorjs.report.json
 
 # One-off validation script (M4): instruments pm4py's fallthrough factory to
 # cross-check the signature-based D9/D10 flags against ground truth. Not part

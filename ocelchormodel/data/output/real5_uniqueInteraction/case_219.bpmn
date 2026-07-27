@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" targetNamespace="http://bpmn.io/schema/bpmn2" id="Definitions_case_219">
+  <bpmn2:message id="Msg_message_case_219_Manuscript_185" name="Manuscript" />
+  <bpmn2:message id="Msg_message_case_219_Review_Request_186" name="Review Request" />
+  <bpmn2:message id="Msg_message_case_219_Review_187" name="Review" />
+  <bpmn2:message id="Msg_message_case_219_Feedback_188" name="Feedback" />
+  <bpmn2:message id="Msg_message_case_219_Notification_189" name="Notification" />
+  <bpmn2:choreography id="Choreography_case_219" name="case_219">
+    <bpmn2:participant id="P_Contact_Author" name="Contact_Author" />
+    <bpmn2:participant id="P_PC_Chair" name="PC_Chair" />
+    <bpmn2:participant id="P_Reviewer" name="Reviewer" />
+    <bpmn2:messageFlow id="MF_Task_e_case_219_3_init" sourceRef="P_Contact_Author" targetRef="P_PC_Chair" messageRef="Msg_message_case_219_Manuscript_185" />
+    <bpmn2:messageFlow id="MF_Task_e_case_219_5_init" sourceRef="P_PC_Chair" targetRef="P_Reviewer" messageRef="Msg_message_case_219_Review_Request_186" />
+    <bpmn2:messageFlow id="MF_Task_e_case_219_8_init" sourceRef="P_Reviewer" targetRef="P_PC_Chair" messageRef="Msg_message_case_219_Review_187" />
+    <bpmn2:messageFlow id="MF_Task_e_case_219_14_init" sourceRef="P_PC_Chair" targetRef="P_Reviewer" messageRef="Msg_message_case_219_Feedback_188" />
+    <bpmn2:messageFlow id="MF_Task_e_case_219_15_init" sourceRef="P_PC_Chair" targetRef="P_Contact_Author" messageRef="Msg_message_case_219_Notification_189" />
+    <bpmn2:startEvent id="Start_case_219">
+      <bpmn2:outgoing>SF_1</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:choreographyTask id="Task_e_case_219_3" name="Submit Manuscript" initiatingParticipantRef="P_Contact_Author">
+      <bpmn2:incoming>SF_1</bpmn2:incoming>
+      <bpmn2:outgoing>SF_2</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Contact_Author</bpmn2:participantRef>
+      <bpmn2:participantRef>P_PC_Chair</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_219_3_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_219_5" name="Assign Paper" initiatingParticipantRef="P_PC_Chair">
+      <bpmn2:incoming>SF_2</bpmn2:incoming>
+      <bpmn2:outgoing>SF_3</bpmn2:outgoing>
+      <bpmn2:participantRef>P_PC_Chair</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Reviewer</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_219_5_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_219_8" name="Submit Review" initiatingParticipantRef="P_Reviewer">
+      <bpmn2:incoming>SF_3</bpmn2:incoming>
+      <bpmn2:outgoing>SF_4</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Reviewer</bpmn2:participantRef>
+      <bpmn2:participantRef>P_PC_Chair</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_219_8_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_219_14" name="Send Feedback" initiatingParticipantRef="P_PC_Chair">
+      <bpmn2:incoming>SF_4</bpmn2:incoming>
+      <bpmn2:outgoing>SF_5</bpmn2:outgoing>
+      <bpmn2:participantRef>P_PC_Chair</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Reviewer</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_219_14_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_219_15" name="Send Results" initiatingParticipantRef="P_PC_Chair">
+      <bpmn2:incoming>SF_5</bpmn2:incoming>
+      <bpmn2:outgoing>SF_6</bpmn2:outgoing>
+      <bpmn2:participantRef>P_PC_Chair</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Contact_Author</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_219_15_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:endEvent id="End_case_219">
+      <bpmn2:incoming>SF_6</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SF_1" sourceRef="Start_case_219" targetRef="Task_e_case_219_3" />
+    <bpmn2:sequenceFlow id="SF_2" sourceRef="Task_e_case_219_3" targetRef="Task_e_case_219_5" />
+    <bpmn2:sequenceFlow id="SF_3" sourceRef="Task_e_case_219_5" targetRef="Task_e_case_219_8" />
+    <bpmn2:sequenceFlow id="SF_4" sourceRef="Task_e_case_219_8" targetRef="Task_e_case_219_14" />
+    <bpmn2:sequenceFlow id="SF_5" sourceRef="Task_e_case_219_14" targetRef="Task_e_case_219_15" />
+    <bpmn2:sequenceFlow id="SF_6" sourceRef="Task_e_case_219_15" targetRef="End_case_219" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_case_219">
+    <bpmndi:BPMNPlane id="BPMNPlane_case_219" bpmnElement="Choreography_case_219">
+      <bpmndi:BPMNShape id="Start_case_219_di" bpmnElement="Start_case_219">
+        <dc:Bounds x="100" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_3_di" bpmnElement="Task_e_case_219_3">
+        <dc:Bounds x="186" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_3_di_top" bpmnElement="P_Contact_Author" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_219_3_di">
+        <dc:Bounds x="186" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_3_di_bot" bpmnElement="P_PC_Chair" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_219_3_di">
+        <dc:Bounds x="186" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_5_di" bpmnElement="Task_e_case_219_5">
+        <dc:Bounds x="336" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_5_di_top" bpmnElement="P_PC_Chair" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_219_5_di">
+        <dc:Bounds x="336" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_5_di_bot" bpmnElement="P_Reviewer" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_219_5_di">
+        <dc:Bounds x="336" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_8_di" bpmnElement="Task_e_case_219_8">
+        <dc:Bounds x="486" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_8_di_top" bpmnElement="P_Reviewer" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_219_8_di">
+        <dc:Bounds x="486" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_8_di_bot" bpmnElement="P_PC_Chair" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_219_8_di">
+        <dc:Bounds x="486" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_14_di" bpmnElement="Task_e_case_219_14">
+        <dc:Bounds x="636" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_14_di_top" bpmnElement="P_PC_Chair" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_219_14_di">
+        <dc:Bounds x="636" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_14_di_bot" bpmnElement="P_Reviewer" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_219_14_di">
+        <dc:Bounds x="636" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_15_di" bpmnElement="Task_e_case_219_15">
+        <dc:Bounds x="786" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_15_di_top" bpmnElement="P_PC_Chair" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_219_15_di">
+        <dc:Bounds x="786" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_219_15_di_bot" bpmnElement="P_Contact_Author" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_219_15_di">
+        <dc:Bounds x="786" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_case_219_di" bpmnElement="End_case_219">
+        <dc:Bounds x="936" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SF_1_di" bpmnElement="SF_1">
+        <di:waypoint x="136" y="250" />
+        <di:waypoint x="186" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_2_di" bpmnElement="SF_2">
+        <di:waypoint x="286" y="250" />
+        <di:waypoint x="336" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_3_di" bpmnElement="SF_3">
+        <di:waypoint x="436" y="250" />
+        <di:waypoint x="486" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_4_di" bpmnElement="SF_4">
+        <di:waypoint x="586" y="250" />
+        <di:waypoint x="636" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_5_di" bpmnElement="SF_5">
+        <di:waypoint x="736" y="250" />
+        <di:waypoint x="786" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_6_di" bpmnElement="SF_6">
+        <di:waypoint x="886" y="250" />
+        <di:waypoint x="936" y="250" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

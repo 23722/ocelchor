@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_discovered" targetNamespace="http://ocelchor/discovered">
+  <bpmn2:message id="Msg_1" name="target_found" />
+  <bpmn2:message id="Msg_2" name="done" />
+  <bpmn2:choreography id="Choreography_discovered">
+    <bpmn2:participant id="P_Rex" name="Rex" />
+    <bpmn2:participant id="P_Dingo" name="Dingo" />
+    <bpmn2:messageFlow id="MF_task_2_init" sourceRef="P_Rex" targetRef="P_Dingo" messageRef="Msg_1" />
+    <bpmn2:messageFlow id="MF_task_3_init" sourceRef="P_Dingo" targetRef="P_Rex" messageRef="Msg_2" />
+    <bpmn2:startEvent id="Start_1" />
+    <bpmn2:choreographyTask id="task_2" name="Rex_target_found" initiatingParticipantRef="P_Rex">
+      <bpmn2:participantRef>P_Rex</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Dingo</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_2_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Rex_target_found</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="task_3" name="Dingo_done" initiatingParticipantRef="P_Dingo">
+      <bpmn2:participantRef>P_Dingo</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Rex</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_3_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Dingo_done</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:endEvent id="End_5" />
+    <bpmn2:sequenceFlow id="Flow_4" sourceRef="task_2" targetRef="task_3" />
+    <bpmn2:sequenceFlow id="Flow_6" sourceRef="Start_1" targetRef="task_2" />
+    <bpmn2:sequenceFlow id="Flow_7" sourceRef="task_3" targetRef="End_5" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Choreography_discovered">
+      <bpmndi:BPMNShape id="Start_1_di" bpmnElement="Start_1">
+        <dc:Bounds x="100" y="177" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_2_di" bpmnElement="task_2">
+        <dc:Bounds x="196" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_2_top" bpmnElement="P_Rex" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_2_di">
+        <dc:Bounds x="196" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_2_bot" bpmnElement="P_Dingo" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_2_di">
+        <dc:Bounds x="196" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_3_di" bpmnElement="task_3">
+        <dc:Bounds x="356" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_3_top" bpmnElement="P_Dingo" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_3_di">
+        <dc:Bounds x="356" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_3_bot" bpmnElement="P_Rex" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_3_di">
+        <dc:Bounds x="356" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_5_di" bpmnElement="End_5">
+        <dc:Bounds x="516" y="177" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_4_di" bpmnElement="Flow_4">
+        <di:waypoint x="296" y="195" />
+        <di:waypoint x="356" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_6_di" bpmnElement="Flow_6">
+        <di:waypoint x="136" y="195" />
+        <di:waypoint x="196" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_7_di" bpmnElement="Flow_7">
+        <di:waypoint x="456" y="195" />
+        <di:waypoint x="516" y="195" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

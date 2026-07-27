@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_discovered" targetNamespace="http://ocelchor/discovered">
+  <bpmn2:message id="Msg_1" name="Manuscript" />
+  <bpmn2:message id="Msg_2" name="Review Request" />
+  <bpmn2:message id="Msg_3" name="Review" />
+  <bpmn2:message id="Msg_4" name="Feedback" />
+  <bpmn2:message id="Msg_5" name="Notification" />
+  <bpmn2:choreography id="Choreography_discovered">
+    <bpmn2:participant id="P_Contact_Author" name="Contact_Author" />
+    <bpmn2:participant id="P_PC_Chair" name="PC_Chair" />
+    <bpmn2:participant id="P_Reviewer" name="Reviewer" />
+    <bpmn2:messageFlow id="MF_task_2_init" sourceRef="P_Contact_Author" targetRef="P_PC_Chair" messageRef="Msg_1" />
+    <bpmn2:messageFlow id="MF_task_3_init" sourceRef="P_PC_Chair" targetRef="P_Reviewer" messageRef="Msg_2" />
+    <bpmn2:messageFlow id="MF_task_4_init" sourceRef="P_Reviewer" targetRef="P_PC_Chair" messageRef="Msg_3" />
+    <bpmn2:messageFlow id="MF_task_5_init" sourceRef="P_PC_Chair" targetRef="P_Reviewer" messageRef="Msg_4" />
+    <bpmn2:messageFlow id="MF_task_6_init" sourceRef="P_PC_Chair" targetRef="P_Contact_Author" messageRef="Msg_5" />
+    <bpmn2:startEvent id="Start_1" />
+    <bpmn2:choreographyTask id="task_2" name="Submit Manuscript" initiatingParticipantRef="P_Contact_Author">
+      <bpmn2:participantRef>P_Contact_Author</bpmn2:participantRef>
+      <bpmn2:participantRef>P_PC_Chair</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_2_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Submit Manuscript</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="task_3" name="Assign Paper" initiatingParticipantRef="P_PC_Chair">
+      <bpmn2:participantRef>P_PC_Chair</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Reviewer</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_3_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Assign Paper</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="task_4" name="Submit Review" initiatingParticipantRef="P_Reviewer">
+      <bpmn2:participantRef>P_Reviewer</bpmn2:participantRef>
+      <bpmn2:participantRef>P_PC_Chair</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_4_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Submit Review</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="task_5" name="Send Feedback" initiatingParticipantRef="P_PC_Chair">
+      <bpmn2:participantRef>P_PC_Chair</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Reviewer</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_5_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Send Feedback</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="task_6" name="Send Results" initiatingParticipantRef="P_PC_Chair">
+      <bpmn2:participantRef>P_PC_Chair</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Contact_Author</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_6_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Send Results</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:endEvent id="End_11" />
+    <bpmn2:sequenceFlow id="Flow_7" sourceRef="task_2" targetRef="task_3" />
+    <bpmn2:sequenceFlow id="Flow_8" sourceRef="task_3" targetRef="task_4" />
+    <bpmn2:sequenceFlow id="Flow_9" sourceRef="task_4" targetRef="task_5" />
+    <bpmn2:sequenceFlow id="Flow_10" sourceRef="task_5" targetRef="task_6" />
+    <bpmn2:sequenceFlow id="Flow_12" sourceRef="Start_1" targetRef="task_2" />
+    <bpmn2:sequenceFlow id="Flow_13" sourceRef="task_6" targetRef="End_11" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Choreography_discovered">
+      <bpmndi:BPMNShape id="Start_1_di" bpmnElement="Start_1">
+        <dc:Bounds x="100" y="177" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_2_di" bpmnElement="task_2">
+        <dc:Bounds x="196" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_2_top" bpmnElement="P_Contact_Author" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_2_di">
+        <dc:Bounds x="196" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_2_bot" bpmnElement="P_PC_Chair" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_2_di">
+        <dc:Bounds x="196" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_3_di" bpmnElement="task_3">
+        <dc:Bounds x="356" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_3_top" bpmnElement="P_PC_Chair" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_3_di">
+        <dc:Bounds x="356" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_3_bot" bpmnElement="P_Reviewer" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_3_di">
+        <dc:Bounds x="356" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_4_di" bpmnElement="task_4">
+        <dc:Bounds x="516" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_4_top" bpmnElement="P_Reviewer" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_4_di">
+        <dc:Bounds x="516" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_4_bot" bpmnElement="P_PC_Chair" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_4_di">
+        <dc:Bounds x="516" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_5_di" bpmnElement="task_5">
+        <dc:Bounds x="676" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_5_top" bpmnElement="P_PC_Chair" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_5_di">
+        <dc:Bounds x="676" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_5_bot" bpmnElement="P_Reviewer" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_5_di">
+        <dc:Bounds x="676" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_6_di" bpmnElement="task_6">
+        <dc:Bounds x="836" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_6_top" bpmnElement="P_PC_Chair" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_6_di">
+        <dc:Bounds x="836" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_6_bot" bpmnElement="P_Contact_Author" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_6_di">
+        <dc:Bounds x="836" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_11_di" bpmnElement="End_11">
+        <dc:Bounds x="996" y="177" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_7_di" bpmnElement="Flow_7">
+        <di:waypoint x="296" y="195" />
+        <di:waypoint x="356" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_8_di" bpmnElement="Flow_8">
+        <di:waypoint x="456" y="195" />
+        <di:waypoint x="516" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_9_di" bpmnElement="Flow_9">
+        <di:waypoint x="616" y="195" />
+        <di:waypoint x="676" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_10_di" bpmnElement="Flow_10">
+        <di:waypoint x="776" y="195" />
+        <di:waypoint x="836" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12_di" bpmnElement="Flow_12">
+        <di:waypoint x="136" y="195" />
+        <di:waypoint x="196" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13_di" bpmnElement="Flow_13">
+        <di:waypoint x="936" y="195" />
+        <di:waypoint x="996" y="195" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

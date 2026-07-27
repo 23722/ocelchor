@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_discovered" targetNamespace="http://ocelchor/discovered">
+  <bpmn2:message id="Msg_1" name="info" />
+  <bpmn2:message id="Msg_2" name="request" />
+  <bpmn2:message id="Msg_3" name="account" />
+  <bpmn2:message id="Msg_4" name="card" />
+  <bpmn2:choreography id="Choreography_discovered">
+    <bpmn2:participant id="P_Visitor" name="Visitor" />
+    <bpmn2:participant id="P_Zoo" name="Zoo" />
+    <bpmn2:participant id="P_Bank" name="Bank" />
+    <bpmn2:messageFlow id="MF_task_2_init" sourceRef="P_Visitor" targetRef="P_Zoo" messageRef="Msg_1" />
+    <bpmn2:messageFlow id="MF_task_3_init" sourceRef="P_Zoo" targetRef="P_Bank" messageRef="Msg_2" />
+    <bpmn2:messageFlow id="MF_task_4_init" sourceRef="P_Bank" targetRef="P_Zoo" messageRef="Msg_3" />
+    <bpmn2:messageFlow id="MF_task_5_init" sourceRef="P_Zoo" targetRef="P_Visitor" messageRef="Msg_4" />
+    <bpmn2:startEvent id="Start_1" />
+    <bpmn2:choreographyTask id="task_2" name="Send information to the ZooClub department" initiatingParticipantRef="P_Visitor">
+      <bpmn2:participantRef>P_Visitor</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Zoo</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_2_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Send information to the ZooClub department</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="task_3" name="Send payment request" initiatingParticipantRef="P_Zoo">
+      <bpmn2:participantRef>P_Zoo</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Bank</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_3_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Send payment request</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="task_4" name="Change account" initiatingParticipantRef="P_Bank">
+      <bpmn2:participantRef>P_Bank</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Zoo</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_4_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Change account</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="task_5" name="Deliver Zooclub card" initiatingParticipantRef="P_Zoo">
+      <bpmn2:participantRef>P_Zoo</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Visitor</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_5_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Deliver Zooclub card</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:endEvent id="End_9" />
+    <bpmn2:sequenceFlow id="Flow_6" sourceRef="task_2" targetRef="task_3" />
+    <bpmn2:sequenceFlow id="Flow_7" sourceRef="task_3" targetRef="task_4" />
+    <bpmn2:sequenceFlow id="Flow_8" sourceRef="task_4" targetRef="task_5" />
+    <bpmn2:sequenceFlow id="Flow_10" sourceRef="Start_1" targetRef="task_2" />
+    <bpmn2:sequenceFlow id="Flow_11" sourceRef="task_5" targetRef="End_9" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Choreography_discovered">
+      <bpmndi:BPMNShape id="Start_1_di" bpmnElement="Start_1">
+        <dc:Bounds x="100" y="177" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_2_di" bpmnElement="task_2">
+        <dc:Bounds x="196" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_2_top" bpmnElement="P_Visitor" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_2_di">
+        <dc:Bounds x="196" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_2_bot" bpmnElement="P_Zoo" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_2_di">
+        <dc:Bounds x="196" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_3_di" bpmnElement="task_3">
+        <dc:Bounds x="356" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_3_top" bpmnElement="P_Zoo" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_3_di">
+        <dc:Bounds x="356" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_3_bot" bpmnElement="P_Bank" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_3_di">
+        <dc:Bounds x="356" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_4_di" bpmnElement="task_4">
+        <dc:Bounds x="516" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_4_top" bpmnElement="P_Bank" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_4_di">
+        <dc:Bounds x="516" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_4_bot" bpmnElement="P_Zoo" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_4_di">
+        <dc:Bounds x="516" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_5_di" bpmnElement="task_5">
+        <dc:Bounds x="676" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_5_top" bpmnElement="P_Zoo" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_5_di">
+        <dc:Bounds x="676" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_5_bot" bpmnElement="P_Visitor" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_5_di">
+        <dc:Bounds x="676" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_9_di" bpmnElement="End_9">
+        <dc:Bounds x="836" y="177" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_6_di" bpmnElement="Flow_6">
+        <di:waypoint x="296" y="195" />
+        <di:waypoint x="356" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_7_di" bpmnElement="Flow_7">
+        <di:waypoint x="456" y="195" />
+        <di:waypoint x="516" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_8_di" bpmnElement="Flow_8">
+        <di:waypoint x="616" y="195" />
+        <di:waypoint x="676" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_10_di" bpmnElement="Flow_10">
+        <di:waypoint x="136" y="195" />
+        <di:waypoint x="196" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11_di" bpmnElement="Flow_11">
+        <di:waypoint x="776" y="195" />
+        <di:waypoint x="836" y="195" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

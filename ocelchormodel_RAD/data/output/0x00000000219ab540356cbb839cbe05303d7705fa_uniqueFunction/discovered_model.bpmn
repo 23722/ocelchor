@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_discovered" targetNamespace="http://ocelchor/discovered">
+  <bpmn2:message id="Msg_1" name="pubkey, withdrawal_credentials, signature, deposit_data_root" />
+  <bpmn2:message id="Msg_2" name="Contract source code not verified call" />
+  <bpmn2:message id="Msg_3" name="output" />
+  <bpmn2:choreography id="Choreography_discovered">
+    <bpmn2:participant id="P_EOA" name="EOA" />
+    <bpmn2:participant id="P_0x00000000219ab540356cbb839cbe05303d7705fa" name="0x00000000219ab540356cbb839cbe05303d7705fa" />
+    <bpmn2:participant id="P_0x0000000000000000000000000000000000000002" name="0x0000000000000000000000000000000000000002" />
+    <bpmn2:messageFlow id="MF_task_3_init" sourceRef="P_EOA" targetRef="P_0x00000000219ab540356cbb839cbe05303d7705fa" messageRef="Msg_1" />
+    <bpmn2:messageFlow id="MF_task_4_init" sourceRef="P_0x00000000219ab540356cbb839cbe05303d7705fa" targetRef="P_0x0000000000000000000000000000000000000002" messageRef="Msg_2" />
+    <bpmn2:messageFlow id="MF_task_4_ret" sourceRef="P_0x0000000000000000000000000000000000000002" targetRef="P_0x00000000219ab540356cbb839cbe05303d7705fa" messageRef="Msg_3" />
+    <bpmn2:startEvent id="Start_1" />
+    <bpmn2:subChoreography id="Sub_9" name="deposit [0x00000000219ab540356cbb839cbe05303d7705fa]" initiatingParticipantRef="P_EOA">
+      <bpmn2:participantRef>P_EOA</bpmn2:participantRef>
+      <bpmn2:participantRef>P_0x00000000219ab540356cbb839cbe05303d7705fa</bpmn2:participantRef>
+      <bpmn2:participantRef>P_0x0000000000000000000000000000000000000002</bpmn2:participantRef>
+      <bpmn2:startEvent id="Start_2" />
+      <bpmn2:choreographyTask id="task_3" name="Request deposit [0x00000000219ab540356cbb839cbe05303d7705fa]" initiatingParticipantRef="P_EOA">
+        <bpmn2:participantRef>P_EOA</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x00000000219ab540356cbb839cbe05303d7705fa</bpmn2:participantRef>
+        <bpmn2:messageFlowRef>MF_task_3_init</bpmn2:messageFlowRef>
+        <bpmn2:documentation>Request deposit [0x00000000219ab540356cbb839cbe05303d7705fa]</bpmn2:documentation>
+      </bpmn2:choreographyTask>
+      <bpmn2:choreographyTask id="task_4" name="Contract source code not verified [0x0000000000000000000000000000000000000002]" initiatingParticipantRef="P_0x00000000219ab540356cbb839cbe05303d7705fa" loopType="Standard">
+        <bpmn2:participantRef>P_0x00000000219ab540356cbb839cbe05303d7705fa</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x0000000000000000000000000000000000000002</bpmn2:participantRef>
+        <bpmn2:messageFlowRef>MF_task_4_init</bpmn2:messageFlowRef>
+        <bpmn2:messageFlowRef>MF_task_4_ret</bpmn2:messageFlowRef>
+        <bpmn2:documentation>Contract source code not verified [0x0000000000000000000000000000000000000002]</bpmn2:documentation>
+      </bpmn2:choreographyTask>
+      <bpmn2:endEvent id="End_6" />
+      <bpmn2:sequenceFlow id="Flow_5" sourceRef="task_3" targetRef="task_4" />
+      <bpmn2:sequenceFlow id="Flow_7" sourceRef="Start_2" targetRef="task_3" />
+      <bpmn2:sequenceFlow id="Flow_8" sourceRef="task_4" targetRef="End_6" />
+    </bpmn2:subChoreography>
+    <bpmn2:endEvent id="End_10" />
+    <bpmn2:sequenceFlow id="Flow_11" sourceRef="Start_1" targetRef="Sub_9" />
+    <bpmn2:sequenceFlow id="Flow_12" sourceRef="Sub_9" targetRef="End_10" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Choreography_discovered">
+      <bpmndi:BPMNShape id="Start_1_di" bpmnElement="Start_1">
+        <dc:Bounds x="100" y="257" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_9_di" bpmnElement="Sub_9" isExpanded="true">
+        <dc:Bounds x="196" y="100" width="512" height="330" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_9_t0" bpmnElement="P_EOA" participantBandKind="top_initiating" isMessageVisible="false" choreographyActivityShape="Sub_9_di">
+        <dc:Bounds x="196" y="100" width="512" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_9_t1" bpmnElement="P_0x0000000000000000000000000000000000000002" participantBandKind="middle_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_9_di">
+        <dc:Bounds x="196" y="120" width="512" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_9_b0" bpmnElement="P_0x00000000219ab540356cbb839cbe05303d7705fa" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_9_di">
+        <dc:Bounds x="196" y="410" width="512" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Start_2_di" bpmnElement="Start_2">
+        <dc:Bounds x="226" y="257" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_3_di" bpmnElement="task_3">
+        <dc:Bounds x="322" y="235" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_3_top" bpmnElement="P_EOA" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_3_di">
+        <dc:Bounds x="322" y="235" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_3_bot" bpmnElement="P_0x00000000219ab540356cbb839cbe05303d7705fa" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_3_di">
+        <dc:Bounds x="322" y="295" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_4_di" bpmnElement="task_4">
+        <dc:Bounds x="482" y="235" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_4_top" bpmnElement="P_0x00000000219ab540356cbb839cbe05303d7705fa" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_4_di">
+        <dc:Bounds x="482" y="235" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_4_bot" bpmnElement="P_0x0000000000000000000000000000000000000002" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="task_4_di">
+        <dc:Bounds x="482" y="295" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_6_di" bpmnElement="End_6">
+        <dc:Bounds x="642" y="257" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_10_di" bpmnElement="End_10">
+        <dc:Bounds x="768" y="257" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_5_di" bpmnElement="Flow_5">
+        <di:waypoint x="422" y="275" />
+        <di:waypoint x="482" y="275" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_7_di" bpmnElement="Flow_7">
+        <di:waypoint x="262" y="275" />
+        <di:waypoint x="322" y="275" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_8_di" bpmnElement="Flow_8">
+        <di:waypoint x="582" y="275" />
+        <di:waypoint x="642" y="275" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11_di" bpmnElement="Flow_11">
+        <di:waypoint x="136" y="275" />
+        <di:waypoint x="196" y="275" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12_di" bpmnElement="Flow_12">
+        <di:waypoint x="708" y="275" />
+        <di:waypoint x="768" y="275" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

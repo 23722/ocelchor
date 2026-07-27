@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" targetNamespace="http://bpmn.io/schema/bpmn2" id="Definitions_0ab787d4">
+  <bpmn2:message id="Msg_call_req_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root" name="_destinationAddresses, _kittyIds" />
+  <bpmn2:message id="Msg_call_req_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1" name="_tokenId" />
+  <bpmn2:message id="Msg_call_res_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1" name="output" />
+  <bpmn2:message id="Msg_call_req_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2" name="_to, _tokenId" />
+  <bpmn2:message id="Msg_call_res_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2" name="output" />
+  <bpmn2:choreography id="Choreography_0ab787d4" name="0ab787d4">
+    <bpmn2:participant id="P_0xc79fd9befd02ec67cab3ee2bae66976c182e4d31" name="EOA …2e4d31" />
+    <bpmn2:participant id="P_0x09fe5f0236f0ea5d930197dce254d77b04128075" name="0x09fe5f0236f0ea5d930197dce254d77b04128075" />
+    <bpmn2:participant id="P_0x06012c8cf97bead5deae237070f9587f8e7a266d" name="KittyCore" />
+    <bpmn2:messageFlow id="MF_Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_request_init" sourceRef="P_0xc79fd9befd02ec67cab3ee2bae66976c182e4d31" targetRef="P_0x09fe5f0236f0ea5d930197dce254d77b04128075" messageRef="Msg_call_req_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root" />
+    <bpmn2:messageFlow id="MF_Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1_init" sourceRef="P_0x09fe5f0236f0ea5d930197dce254d77b04128075" targetRef="P_0x06012c8cf97bead5deae237070f9587f8e7a266d" messageRef="Msg_call_req_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1" />
+    <bpmn2:messageFlow id="MF_Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1_ret" sourceRef="P_0x06012c8cf97bead5deae237070f9587f8e7a266d" targetRef="P_0x09fe5f0236f0ea5d930197dce254d77b04128075" messageRef="Msg_call_res_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1" />
+    <bpmn2:messageFlow id="MF_Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2_init" sourceRef="P_0x09fe5f0236f0ea5d930197dce254d77b04128075" targetRef="P_0x06012c8cf97bead5deae237070f9587f8e7a266d" messageRef="Msg_call_req_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2" />
+    <bpmn2:messageFlow id="MF_Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2_ret" sourceRef="P_0x06012c8cf97bead5deae237070f9587f8e7a266d" targetRef="P_0x09fe5f0236f0ea5d930197dce254d77b04128075" messageRef="Msg_call_res_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2" />
+    <bpmn2:startEvent id="Start_0ab787d4">
+      <bpmn2:outgoing>SF_5</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:subChoreography id="Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root" name="burnTokensAndWithdrawKitties [0x09fe5f0236f0ea5d930197dce254d77b04128075]" initiatingParticipantRef="P_0xc79fd9befd02ec67cab3ee2bae66976c182e4d31">
+      <bpmn2:incoming>SF_5</bpmn2:incoming>
+      <bpmn2:outgoing>SF_6</bpmn2:outgoing>
+      <bpmn2:participantRef>P_0xc79fd9befd02ec67cab3ee2bae66976c182e4d31</bpmn2:participantRef>
+      <bpmn2:participantRef>P_0x09fe5f0236f0ea5d930197dce254d77b04128075</bpmn2:participantRef>
+      <bpmn2:participantRef>P_0x06012c8cf97bead5deae237070f9587f8e7a266d</bpmn2:participantRef>
+      <bpmn2:startEvent id="Start_0ab787d4_Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root">
+        <bpmn2:outgoing>SF_1</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:choreographyTask id="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_request" name="Request burnTokensAndWithdrawKitties [0x09fe5f0236f0ea5d930197dce254d77b04128075]" initiatingParticipantRef="P_0xc79fd9befd02ec67cab3ee2bae66976c182e4d31">
+        <bpmn2:incoming>SF_1</bpmn2:incoming>
+        <bpmn2:outgoing>SF_2</bpmn2:outgoing>
+        <bpmn2:participantRef>P_0xc79fd9befd02ec67cab3ee2bae66976c182e4d31</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x09fe5f0236f0ea5d930197dce254d77b04128075</bpmn2:participantRef>
+        <bpmn2:messageFlowRef>MF_Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_request_init</bpmn2:messageFlowRef>
+      </bpmn2:choreographyTask>
+      <bpmn2:choreographyTask id="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1" name="ownerOf [KittyCore]" initiatingParticipantRef="P_0x09fe5f0236f0ea5d930197dce254d77b04128075">
+        <bpmn2:incoming>SF_2</bpmn2:incoming>
+        <bpmn2:outgoing>SF_3</bpmn2:outgoing>
+        <bpmn2:participantRef>P_0x09fe5f0236f0ea5d930197dce254d77b04128075</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x06012c8cf97bead5deae237070f9587f8e7a266d</bpmn2:participantRef>
+        <bpmn2:messageFlowRef>MF_Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1_init</bpmn2:messageFlowRef>
+        <bpmn2:messageFlowRef>MF_Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1_ret</bpmn2:messageFlowRef>
+      </bpmn2:choreographyTask>
+      <bpmn2:choreographyTask id="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2" name="transfer [KittyCore]" initiatingParticipantRef="P_0x09fe5f0236f0ea5d930197dce254d77b04128075">
+        <bpmn2:incoming>SF_3</bpmn2:incoming>
+        <bpmn2:outgoing>SF_4</bpmn2:outgoing>
+        <bpmn2:participantRef>P_0x09fe5f0236f0ea5d930197dce254d77b04128075</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x06012c8cf97bead5deae237070f9587f8e7a266d</bpmn2:participantRef>
+        <bpmn2:messageFlowRef>MF_Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2_init</bpmn2:messageFlowRef>
+        <bpmn2:messageFlowRef>MF_Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2_ret</bpmn2:messageFlowRef>
+      </bpmn2:choreographyTask>
+      <bpmn2:endEvent id="End_0ab787d4_Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root">
+        <bpmn2:incoming>SF_4</bpmn2:incoming>
+      </bpmn2:endEvent>
+      <bpmn2:sequenceFlow id="SF_1" sourceRef="Start_0ab787d4_Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root" targetRef="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_request" />
+      <bpmn2:sequenceFlow id="SF_2" sourceRef="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_request" targetRef="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1" />
+      <bpmn2:sequenceFlow id="SF_3" sourceRef="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1" targetRef="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2" />
+      <bpmn2:sequenceFlow id="SF_4" sourceRef="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2" targetRef="End_0ab787d4_Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root" />
+    </bpmn2:subChoreography>
+    <bpmn2:endEvent id="End_0ab787d4">
+      <bpmn2:incoming>SF_6</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SF_5" sourceRef="Start_0ab787d4" targetRef="Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root" />
+    <bpmn2:sequenceFlow id="SF_6" sourceRef="Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root" targetRef="End_0ab787d4" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_0ab787d4">
+    <bpmndi:BPMNPlane id="BPMNPlane_0ab787d4" bpmnElement="Choreography_0ab787d4">
+      <bpmndi:BPMNShape id="Start_0ab787d4_di" bpmnElement="Start_0ab787d4">
+        <dc:Bounds x="100" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_di" bpmnElement="Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root" isExpanded="true">
+        <dc:Bounds x="186" y="140" width="632" height="220" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_di_band_t0" bpmnElement="P_0xc79fd9befd02ec67cab3ee2bae66976c182e4d31" participantBandKind="top_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_di">
+        <dc:Bounds x="186" y="140" width="632" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_di_band_t1" bpmnElement="P_0x06012c8cf97bead5deae237070f9587f8e7a266d" participantBandKind="middle_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_di">
+        <dc:Bounds x="186" y="160" width="632" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_di_band_b0" bpmnElement="P_0x09fe5f0236f0ea5d930197dce254d77b04128075" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_di">
+        <dc:Bounds x="186" y="340" width="632" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Start_0ab787d4_Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_di" bpmnElement="Start_0ab787d4_Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root">
+        <dc:Bounds x="216" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_request_di" bpmnElement="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_request">
+        <dc:Bounds x="302" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_request_di_top" bpmnElement="P_0xc79fd9befd02ec67cab3ee2bae66976c182e4d31" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_request_di">
+        <dc:Bounds x="302" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_request_di_bot" bpmnElement="P_0x09fe5f0236f0ea5d930197dce254d77b04128075" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_request_di">
+        <dc:Bounds x="302" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1_di" bpmnElement="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1">
+        <dc:Bounds x="452" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1_di_top" bpmnElement="P_0x09fe5f0236f0ea5d930197dce254d77b04128075" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1_di">
+        <dc:Bounds x="452" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1_di_bot" bpmnElement="P_0x06012c8cf97bead5deae237070f9587f8e7a266d" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_1_di">
+        <dc:Bounds x="452" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2_di" bpmnElement="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2">
+        <dc:Bounds x="602" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2_di_top" bpmnElement="P_0x09fe5f0236f0ea5d930197dce254d77b04128075" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2_di">
+        <dc:Bounds x="602" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2_di_bot" bpmnElement="P_0x06012c8cf97bead5deae237070f9587f8e7a266d" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_0_2_di">
+        <dc:Bounds x="602" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_0ab787d4_Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root_di" bpmnElement="End_0ab787d4_Sub_subchoreographyInstance_a3b68d1208ea402f47799c4385db1dc613ebdaa8f864ae48ee22345e0ab787d4_root">
+        <dc:Bounds x="752" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_0ab787d4_di" bpmnElement="End_0ab787d4">
+        <dc:Bounds x="868" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SF_1_di" bpmnElement="SF_1">
+        <di:waypoint x="252" y="260" />
+        <di:waypoint x="302" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_2_di" bpmnElement="SF_2">
+        <di:waypoint x="402" y="260" />
+        <di:waypoint x="452" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_3_di" bpmnElement="SF_3">
+        <di:waypoint x="552" y="260" />
+        <di:waypoint x="602" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_4_di" bpmnElement="SF_4">
+        <di:waypoint x="702" y="260" />
+        <di:waypoint x="752" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_5_di" bpmnElement="SF_5">
+        <di:waypoint x="136" y="250" />
+        <di:waypoint x="186" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_6_di" bpmnElement="SF_6">
+        <di:waypoint x="818" y="250" />
+        <di:waypoint x="868" y="250" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

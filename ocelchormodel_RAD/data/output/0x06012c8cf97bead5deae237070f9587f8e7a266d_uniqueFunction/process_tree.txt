@@ -1,0 +1,296 @@
+×(
+  ∇_{execTransaction [0xbeddf3e43015f5221f5d1ac0fd0d2ab3352d2f7b]} ⟨EOA→0xbeddf3e43015f5221f5d1ac0fd0d2ab3352d2f7b⟩(
+    →(
+      'Request execTransaction [0xbeddf3e43015f5221f5d1ac0fd0d2ab3352d2f7b]' ⟨EOA→0xbeddf3e43015f5221f5d1ac0fd0d2ab3352d2f7b⟩,
+      ∇_{execTransaction [GnosisSafe]} ⟨0xbeddf3e43015f5221f5d1ac0fd0d2ab3352d2f7b→GnosisSafe⟩(
+        →(
+          'Request execTransaction [GnosisSafe]' ⟨0xbeddf3e43015f5221f5d1ac0fd0d2ab3352d2f7b→GnosisSafe⟩,
+          ↻(
+            '0x906ba091 [0x0000000000000000000000000000000000000001]' ⟨GnosisSafe→0x0000000000000000000000000000000000000001⟩,
+            τ),
+          ∇_{multiSend [MultiSendCallOnly]} ⟨GnosisSafe→MultiSendCallOnly⟩(
+            →(
+              'Request multiSend [MultiSendCallOnly]' ⟨GnosisSafe→MultiSendCallOnly⟩,
+              'transfer [KittyCore]' ⟨MultiSendCallOnly→KittyCore⟩,
+              ∇_{safeTransferFrom [ACK]} ⟨MultiSendCallOnly→ACK⟩(
+                →(
+                  'Request safeTransferFrom [ACK]' ⟨MultiSendCallOnly→ACK⟩,
+                  ∇_{onERC1155Received [GnosisSafeProxy]} ⟨ACK→GnosisSafeProxy⟩(
+                    →(
+                      'Request onERC1155Received [GnosisSafeProxy]' ⟨ACK→GnosisSafeProxy⟩,
+                      ∇_{onERC1155Received [GnosisSafe]} ⟨GnosisSafeProxy→GnosisSafe⟩(
+                        →(
+                          'Request onERC1155Received [GnosisSafe]' ⟨GnosisSafeProxy→GnosisSafe⟩,
+                          'onERC1155Received [CompatibilityFallbackHandler]' ⟨GnosisSafe→CompatibilityFallbackHandler⟩,
+                          'Respond to onERC1155Received [GnosisSafe]' ⟨GnosisSafe→GnosisSafeProxy⟩)),
+                      'Respond to onERC1155Received [GnosisSafeProxy]' ⟨GnosisSafeProxy→ACK⟩)),
+                  'Respond to safeTransferFrom [ACK]' ⟨ACK→MultiSendCallOnly⟩)),
+              ↻(
+                'transfer [SupeRare]' ⟨MultiSendCallOnly→SupeRare⟩,
+                τ),
+              ∇_{safeTransferFrom [RaribleToken]} ⟨MultiSendCallOnly→RaribleToken⟩(
+                →(
+                  'Request safeTransferFrom [RaribleToken]' ⟨MultiSendCallOnly→RaribleToken⟩,
+                  ∇_{onERC1155Received [GnosisSafeProxy]} ⟨RaribleToken→GnosisSafeProxy⟩(
+                    →(
+                      'Request onERC1155Received [GnosisSafeProxy]' ⟨RaribleToken→GnosisSafeProxy⟩,
+                      ∇_{onERC1155Received [GnosisSafe]} ⟨GnosisSafeProxy→GnosisSafe⟩(
+                        →(
+                          'Request onERC1155Received [GnosisSafe]' ⟨GnosisSafeProxy→GnosisSafe⟩,
+                          'onERC1155Received [CompatibilityFallbackHandler]' ⟨GnosisSafe→CompatibilityFallbackHandler⟩,
+                          'Respond to onERC1155Received [GnosisSafe]' ⟨GnosisSafe→GnosisSafeProxy⟩)),
+                      'Respond to onERC1155Received [GnosisSafeProxy]' ⟨GnosisSafeProxy→RaribleToken⟩)),
+                  'Respond to safeTransferFrom [RaribleToken]' ⟨RaribleToken→MultiSendCallOnly⟩)),
+              ↻(
+                ∇_{safeTransferFrom [RaribleUserToken]} ⟨MultiSendCallOnly→RaribleUserToken⟩(
+                  →(
+                    'Request safeTransferFrom [RaribleUserToken]' ⟨MultiSendCallOnly→RaribleUserToken⟩,
+                    ∇_{onERC1155Received [GnosisSafeProxy]} ⟨RaribleUserToken→GnosisSafeProxy⟩(
+                      →(
+                        'Request onERC1155Received [GnosisSafeProxy]' ⟨RaribleUserToken→GnosisSafeProxy⟩,
+                        ∇_{onERC1155Received [GnosisSafe]} ⟨GnosisSafeProxy→GnosisSafe⟩(
+                          →(
+                            'Request onERC1155Received [GnosisSafe]' ⟨GnosisSafeProxy→GnosisSafe⟩,
+                            'onERC1155Received [CompatibilityFallbackHandler]' ⟨GnosisSafe→CompatibilityFallbackHandler⟩,
+                            'Respond to onERC1155Received [GnosisSafe]' ⟨GnosisSafe→GnosisSafeProxy⟩)),
+                        'Respond to onERC1155Received [GnosisSafeProxy]' ⟨GnosisSafeProxy→RaribleUserToken⟩)),
+                    'Respond to safeTransferFrom [RaribleUserToken]' ⟨RaribleUserToken→MultiSendCallOnly⟩)),
+                τ),
+              ↻(
+                'transferFrom [DigitalMediaCore]' ⟨MultiSendCallOnly→DigitalMediaCore⟩,
+                τ),
+              'Respond to multiSend [MultiSendCallOnly]' ⟨MultiSendCallOnly→GnosisSafe⟩)),
+          'Respond to execTransaction [GnosisSafe]' ⟨GnosisSafe→0xbeddf3e43015f5221f5d1ac0fd0d2ab3352d2f7b⟩)))),
+  ∇_{bulkTransfer [0x0000000000c2d145a2526bd8c716263bfebe1a72]} ⟨EOA→0x0000000000c2d145a2526bd8c716263bfebe1a72⟩(
+    →(
+      'Request bulkTransfer [0x0000000000c2d145a2526bd8c716263bfebe1a72]' ⟨EOA→0x0000000000c2d145a2526bd8c716263bfebe1a72⟩,
+      ∇_{execute [Conduit]} ⟨0x0000000000c2d145a2526bd8c716263bfebe1a72→Conduit⟩(
+        →(
+          'Request execute [Conduit]' ⟨0x0000000000c2d145a2526bd8c716263bfebe1a72→Conduit⟩,
+          ↻(
+            ↻(
+              'transferFrom [EmblemVault]' ⟨Conduit→EmblemVault⟩,
+              τ),
+            ↻(
+              ∇_{safeTransferFrom [ERC1155CreatorImplementation]} ⟨Conduit→ERC1155CreatorImplementation⟩(
+                →(
+                  'Request safeTransferFrom [ERC1155CreatorImplementation]' ⟨Conduit→ERC1155CreatorImplementation⟩,
+                  'safeTransferFrom [ERC1155CreatorImplementation]' ⟨ERC1155CreatorImplementation→ERC1155CreatorImplementation⟩,
+                  'Respond to safeTransferFrom [ERC1155CreatorImplementation]' ⟨ERC1155CreatorImplementation→Conduit⟩)),
+              'safeTransferFrom [RaribleUserToken]' ⟨Conduit→RaribleUserToken⟩)),
+          ↻(
+            'safeTransferFrom [CurioERC1155Wrapper]' ⟨Conduit→CurioERC1155Wrapper⟩,
+            τ),
+          ↻(
+            'transferFrom [SpacePoggers]' ⟨Conduit→SpacePoggers⟩,
+            τ),
+          ↻(
+            'transferFrom [KittyCore]' ⟨Conduit→KittyCore⟩,
+            τ),
+          'Respond to execute [Conduit]' ⟨Conduit→0x0000000000c2d145a2526bd8c716263bfebe1a72⟩)))),
+  ∇_{fulfillBasicOrder_efficient_6GL6yc [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]} ⟨EOA→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩(
+    →(
+      'Request fulfillBasicOrder_efficient_6GL6yc [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]' ⟨EOA→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩,
+      '0xf2c92568 [0x0000000000000000000000000000000000000001]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→0x0000000000000000000000000000000000000001⟩,
+      ∇_{execute [Conduit]} ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→Conduit⟩(
+        →(
+          'Request execute [Conduit]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→Conduit⟩,
+          'transferFrom [KittyCore]' ⟨Conduit→KittyCore⟩,
+          'Respond to execute [Conduit]' ⟨Conduit→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩)),
+      'transfer [PayableProxy]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→PayableProxy⟩,
+      'transfer [0x91e04c5fe50a02440d822092f87ae6b8b957f4d4]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→0x91e04c5fe50a02440d822092f87ae6b8b957f4d4⟩)),
+  ∇_{depositKittiesAndMintTokens [0x25c7b64a93eb1261e130ec21a3e9918caa38b611]} ⟨EOA→0x25c7b64a93eb1261e130ec21a3e9918caa38b611⟩(
+    →(
+      'Request depositKittiesAndMintTokens [0x25c7b64a93eb1261e130ec21a3e9918caa38b611]' ⟨EOA→0x25c7b64a93eb1261e130ec21a3e9918caa38b611⟩,
+      'getKitty [KittyCore]' ⟨0x25c7b64a93eb1261e130ec21a3e9918caa38b611→KittyCore⟩,
+      'ownerOf [KittyCore]' ⟨0x25c7b64a93eb1261e130ec21a3e9918caa38b611→KittyCore⟩,
+      'kittyIndexToApproved [KittyCore]' ⟨0x25c7b64a93eb1261e130ec21a3e9918caa38b611→KittyCore⟩,
+      'transferFrom [KittyCore]' ⟨0x25c7b64a93eb1261e130ec21a3e9918caa38b611→KittyCore⟩)),
+  ∇_{execute [ArgentModule]} ⟨EOA→ArgentModule⟩(
+    →(
+      'Request execute [ArgentModule]' ⟨EOA→ArgentModule⟩,
+      'guardianCount [0x44da3a8051ba88eab0440db3779cab9d679ae76f]' ⟨ArgentModule→0x44da3a8051ba88eab0440db3779cab9d679ae76f⟩,
+      'getGuardians [0x44da3a8051ba88eab0440db3779cab9d679ae76f]' ⟨ArgentModule→0x44da3a8051ba88eab0440db3779cab9d679ae76f⟩,
+      ↻(
+        ↻(
+          '0xf713246c [0x0000000000000000000000000000000000000001]' ⟨ArgentModule→0x0000000000000000000000000000000000000001⟩,
+          τ),
+        ∇_{owner [BaseWallet]} ⟨ArgentModule→BaseWallet⟩(
+          →(
+            'Request owner [BaseWallet]' ⟨ArgentModule→BaseWallet⟩,
+            'owner [BaseWallet]' ⟨BaseWallet→BaseWallet⟩,
+            'Respond to owner [BaseWallet]' ⟨BaseWallet→ArgentModule⟩))),
+      ∇_{0x8da5cb5b [Proxy]} ⟨ArgentModule→Proxy⟩(
+        →(
+          'Request 0x8da5cb5b [Proxy]' ⟨ArgentModule→Proxy⟩,
+          'owner [BaseWallet]' ⟨Proxy→BaseWallet⟩,
+          'Respond to 0x8da5cb5b [Proxy]' ⟨Proxy→ArgentModule⟩)),
+      ∇_{multiCallWithGuardians [ArgentModule]} ⟨ArgentModule→ArgentModule⟩(
+        →(
+          'Request multiCallWithGuardians [ArgentModule]' ⟨ArgentModule→ArgentModule⟩,
+          ∇_{invoke [BaseWallet]} ⟨ArgentModule→BaseWallet⟩(
+            →(
+              'Request invoke [BaseWallet]' ⟨ArgentModule→BaseWallet⟩,
+              ∇_{invoke [BaseWallet]} ⟨BaseWallet→BaseWallet⟩(
+                →(
+                  'Request invoke [BaseWallet]' ⟨BaseWallet→BaseWallet⟩,
+                  'transfer [KittyCore]' ⟨BaseWallet→KittyCore⟩,
+                  'Respond to invoke [BaseWallet]' ⟨BaseWallet→BaseWallet⟩)),
+              'Respond to invoke [BaseWallet]' ⟨BaseWallet→ArgentModule⟩)),
+          'Respond to multiCallWithGuardians [ArgentModule]' ⟨ArgentModule→ArgentModule⟩)),
+      ∇_{invoke [BaseWallet]} ⟨ArgentModule→BaseWallet⟩(
+        →(
+          'Request invoke [BaseWallet]' ⟨ArgentModule→BaseWallet⟩,
+          ∇_{invoke [BaseWallet]} ⟨BaseWallet→BaseWallet⟩(
+            →(
+              'Request invoke [BaseWallet]' ⟨BaseWallet→BaseWallet⟩,
+              'transfer [0x482579f93dc13e6b434e38b5a0447ca543d88a46]' ⟨BaseWallet→0x482579f93dc13e6b434e38b5a0447ca543d88a46⟩,
+              'Respond to invoke [BaseWallet]' ⟨BaseWallet→BaseWallet⟩)),
+          'Respond to invoke [BaseWallet]' ⟨BaseWallet→ArgentModule⟩)))),
+  'transfer [KittyCore]' ⟨EOA→KittyCore⟩,
+  ∇_{invoke1CosignerSends [0x526d2dee2e6ea828b04607face8f9dd84b167234]} ⟨EOA→0x526d2dee2e6ea828b04607face8f9dd84b167234⟩(
+    →(
+      'Request invoke1CosignerSends [0x526d2dee2e6ea828b04607face8f9dd84b167234]' ⟨EOA→0x526d2dee2e6ea828b04607face8f9dd84b167234⟩,
+      ∇_{invoke1CosignerSends [CloneableWallet]} ⟨0x526d2dee2e6ea828b04607face8f9dd84b167234→CloneableWallet⟩(
+        →(
+          'Request invoke1CosignerSends [CloneableWallet]' ⟨0x526d2dee2e6ea828b04607face8f9dd84b167234→CloneableWallet⟩,
+          '0xc79f0aec [0x0000000000000000000000000000000000000001]' ⟨CloneableWallet→0x0000000000000000000000000000000000000001⟩,
+          'transfer [KittyCore]' ⟨CloneableWallet→KittyCore⟩,
+          'Respond to invoke1CosignerSends [CloneableWallet]' ⟨CloneableWallet→0x526d2dee2e6ea828b04607face8f9dd84b167234⟩)))),
+  ∇_{matchAdvancedOrders [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]} ⟨EOA→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩(
+    →(
+      'Request matchAdvancedOrders [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]' ⟨EOA→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩,
+      '0x2ed95c94 [0x0000000000000000000000000000000000000001]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→0x0000000000000000000000000000000000000001⟩,
+      ∇_{execute [Conduit]} ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→Conduit⟩(
+        →(
+          'Request execute [Conduit]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→Conduit⟩,
+          'transferFrom [KittyCore]' ⟨Conduit→KittyCore⟩,
+          ↻(
+            'transferFrom [WETH9]' ⟨Conduit→WETH9⟩,
+            τ),
+          'Respond to execute [Conduit]' ⟨Conduit→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩)),
+      ↻(
+        'Transfer* [0x0000000000000000000000000000000000000004]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→0x0000000000000000000000000000000000000004⟩,
+        τ),
+      '0x36016c7a [0x0000000000000000000000000000000000000004]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→0x0000000000000000000000000000000000000004⟩,
+      ∇_{validateOrder [SignedZone]} ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→SignedZone⟩(
+        →(
+          'Request validateOrder [SignedZone]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→SignedZone⟩,
+          '0xe0906b8a [0x0000000000000000000000000000000000000001]' ⟨SignedZone→0x0000000000000000000000000000000000000001⟩,
+          'Respond to validateOrder [SignedZone]' ⟨SignedZone→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩)))),
+  'setAutoBirthFee [KittyCore]' ⟨EOA→KittyCore⟩,
+  ∇_{matchOrders [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]} ⟨EOA→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩(
+    →(
+      'Request matchOrders [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]' ⟨EOA→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩,
+      '0xe7c6c7da [0x0000000000000000000000000000000000000001]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→0x0000000000000000000000000000000000000001⟩,
+      ∇_{execute [Conduit]} ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→Conduit⟩(
+        →(
+          'Request execute [Conduit]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→Conduit⟩,
+          'transferFrom [Doodles]' ⟨Conduit→Doodles⟩,
+          'transferFrom [KittyCore]' ⟨Conduit→KittyCore⟩,
+          ↻(
+            ∇_{transferFrom [ERC721SingleEdition]} ⟨Conduit→ERC721SingleEdition⟩(
+              →(
+                'Request transferFrom [ERC721SingleEdition]' ⟨Conduit→ERC721SingleEdition⟩,
+                'transferFrom [ERC721SingleEdition]' ⟨ERC721SingleEdition→ERC721SingleEdition⟩,
+                'Respond to transferFrom [ERC721SingleEdition]' ⟨ERC721SingleEdition→Conduit⟩)),
+            τ),
+          'transferFrom [Empyreal]' ⟨Conduit→Empyreal⟩,
+          'transferFrom [Delusion]' ⟨Conduit→Delusion⟩,
+          ∇_{transferFrom [PassportDecaUpgraded]} ⟨Conduit→PassportDecaUpgraded⟩(
+            →(
+              'Request transferFrom [PassportDecaUpgraded]' ⟨Conduit→PassportDecaUpgraded⟩,
+              ∇_{transferFrom [PassportDecaUpgraded]} ⟨PassportDecaUpgraded→PassportDecaUpgraded⟩(
+                →(
+                  'Request transferFrom [PassportDecaUpgraded]' ⟨PassportDecaUpgraded→PassportDecaUpgraded⟩,
+                  'beforeTransferLogic [DecagonTimelock]' ⟨PassportDecaUpgraded→DecagonTimelock⟩,
+                  'Respond to transferFrom [PassportDecaUpgraded]' ⟨PassportDecaUpgraded→PassportDecaUpgraded⟩)),
+              'Respond to transferFrom [PassportDecaUpgraded]' ⟨PassportDecaUpgraded→Conduit⟩)),
+          'transferFrom [Web4Ded]' ⟨Conduit→Web4Ded⟩,
+          'transferFrom [RedCandleHeros]' ⟨Conduit→RedCandleHeros⟩,
+          'transferFrom [GFTShoppe]' ⟨Conduit→GFTShoppe⟩,
+          ∇_{transferFrom [xmfers]} ⟨Conduit→xmfers⟩(
+            →(
+              'Request transferFrom [xmfers]' ⟨Conduit→xmfers⟩,
+              'proxies [WyvernProxyRegistry]' ⟨xmfers→WyvernProxyRegistry⟩,
+              'Respond to transferFrom [xmfers]' ⟨xmfers→Conduit⟩)),
+          ↻(
+            'transferFrom [BaseRegistrarImplementation]' ⟨Conduit→BaseRegistrarImplementation⟩,
+            τ),
+          'transferFrom [BoredApeKennelClub]' ⟨Conduit→BoredApeKennelClub⟩,
+          'Respond to execute [Conduit]' ⟨Conduit→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩)))),
+  'buyAndRedeem [0x941a6d105802cccaa06de58a13a6f49ebdcd481c]' ⟨EOA→0x941a6d105802cccaa06de58a13a6f49ebdcd481c⟩,
+  ∇_{cancelAuction [SaleClockAuction]} ⟨EOA→SaleClockAuction⟩(
+    →(
+      'Request cancelAuction [SaleClockAuction]' ⟨EOA→SaleClockAuction⟩,
+      'transfer [KittyCore]' ⟨SaleClockAuction→KittyCore⟩)),
+  'approve [KittyCore]' ⟨EOA→KittyCore⟩,
+  ∇_{createSaleAuction [KittyCore]} ⟨EOA→KittyCore⟩(
+    →(
+      'Request createSaleAuction [KittyCore]' ⟨EOA→KittyCore⟩,
+      ∇_{createAuction [SaleClockAuction]} ⟨KittyCore→SaleClockAuction⟩(
+        →(
+          'Request createAuction [SaleClockAuction]' ⟨KittyCore→SaleClockAuction⟩,
+          'transferFrom [KittyCore]' ⟨SaleClockAuction→KittyCore⟩,
+          'Respond to createAuction [SaleClockAuction]' ⟨SaleClockAuction→KittyCore⟩)))),
+  ∇_{fulfillBasicOrder [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]} ⟨EOA→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩(
+    →(
+      'Request fulfillBasicOrder [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]' ⟨EOA→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩,
+      '0xaeca77f8 [0x0000000000000000000000000000000000000001]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→0x0000000000000000000000000000000000000001⟩,
+      ∇_{execute [Conduit]} ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→Conduit⟩(
+        →(
+          'Request execute [Conduit]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→Conduit⟩,
+          'transferFrom [KittyCore]' ⟨Conduit→KittyCore⟩,
+          'Respond to execute [Conduit]' ⟨Conduit→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩)),
+      'transfer [PayableProxy]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→PayableProxy⟩,
+      'transfer [0xaf0b85097971e4149a294f462868df07ed41cc70]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→0xaf0b85097971e4149a294f462868df07ed41cc70⟩)),
+  ∇_{createSiringAuction [KittyCore]} ⟨EOA→KittyCore⟩(
+    →(
+      'Request createSiringAuction [KittyCore]' ⟨EOA→KittyCore⟩,
+      ∇_{createAuction [SiringClockAuction]} ⟨KittyCore→SiringClockAuction⟩(
+        →(
+          'Request createAuction [SiringClockAuction]' ⟨KittyCore→SiringClockAuction⟩,
+          'transferFrom [KittyCore]' ⟨SiringClockAuction→KittyCore⟩,
+          'Respond to createAuction [SiringClockAuction]' ⟨SiringClockAuction→KittyCore⟩)))),
+  ∇_{fulfillAvailableAdvancedOrders [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]} ⟨EOA→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩(
+    →(
+      'Request fulfillAvailableAdvancedOrders [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]' ⟨EOA→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩,
+      '0x5239c0f9 [0x0000000000000000000000000000000000000001]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→0x0000000000000000000000000000000000000001⟩,
+      '0x0ef82558 [0x0000000000000000000000000000000000000001]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→0x0000000000000000000000000000000000000001⟩,
+      'transfer [0xe9ce9119f45806c3cd17b95d8b7c47a5365120e2]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→EOA⟩,
+      'transfer [PayableProxy]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→PayableProxy⟩,
+      ∇_{execute [Conduit]} ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→Conduit⟩(
+        →(
+          'Request execute [Conduit]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→Conduit⟩,
+          ↻(
+            'transferFrom [KittyCore]' ⟨Conduit→KittyCore⟩,
+            τ),
+          'Respond to execute [Conduit]' ⟨Conduit→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩)))),
+  ∇_{bid [SaleClockAuction]} ⟨EOA→SaleClockAuction⟩(
+    →(
+      'Request bid [SaleClockAuction]' ⟨EOA→SaleClockAuction⟩,
+      'transfer [0xf6b1fde85d1d0d2f88f2c98c8926f4ff3abe259c]' ⟨SaleClockAuction→0xf6b1fde85d1d0d2f88f2c98c8926f4ff3abe259c⟩,
+      'transfer [0xa306dc890a5bb419d9d711d661c73f371da521c0]' ⟨SaleClockAuction→EOA⟩,
+      'transfer [KittyCore]' ⟨SaleClockAuction→KittyCore⟩)),
+  ∇_{giveBirth [KittyCore]} ⟨EOA→KittyCore⟩(
+    →(
+      'Request giveBirth [KittyCore]' ⟨EOA→KittyCore⟩,
+      'mixGenes [GeneScience]' ⟨KittyCore→GeneScience⟩,
+      'transfer [0xab5622d7da96c571c6abe08e4b85e462eb666e4f]' ⟨KittyCore→EOA⟩)),
+  'breedWithAuto [KittyCore]' ⟨EOA→KittyCore⟩,
+  ∇_{burnTokensAndWithdrawKitties [0x09fe5f0236f0ea5d930197dce254d77b04128075]} ⟨EOA→0x09fe5f0236f0ea5d930197dce254d77b04128075⟩(
+    →(
+      'Request burnTokensAndWithdrawKitties [0x09fe5f0236f0ea5d930197dce254d77b04128075]' ⟨EOA→0x09fe5f0236f0ea5d930197dce254d77b04128075⟩,
+      'ownerOf [KittyCore]' ⟨0x09fe5f0236f0ea5d930197dce254d77b04128075→KittyCore⟩,
+      'transfer [KittyCore]' ⟨0x09fe5f0236f0ea5d930197dce254d77b04128075→KittyCore⟩)),
+  ∇_{fulfillAdvancedOrder [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]} ⟨EOA→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩(
+    →(
+      'Request fulfillAdvancedOrder [0x00000000000000adc04c56bf30ac9d3c0aaf14dc]' ⟨EOA→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩,
+      '0x1cf290dc [0x0000000000000000000000000000000000000001]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→0x0000000000000000000000000000000000000001⟩,
+      'transfer [0x89f4fa054434097da5e475cad3a47c249d804f20]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→0x89f4fa054434097da5e475cad3a47c249d804f20⟩,
+      'transfer [PayableProxy]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→PayableProxy⟩,
+      ∇_{execute [Conduit]} ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→Conduit⟩(
+        →(
+          'Request execute [Conduit]' ⟨0x00000000000000adc04c56bf30ac9d3c0aaf14dc→Conduit⟩,
+          'transferFrom [KittyCore]' ⟨Conduit→KittyCore⟩,
+          'Respond to execute [Conduit]' ⟨Conduit→0x00000000000000adc04c56bf30ac9d3c0aaf14dc⟩)))))

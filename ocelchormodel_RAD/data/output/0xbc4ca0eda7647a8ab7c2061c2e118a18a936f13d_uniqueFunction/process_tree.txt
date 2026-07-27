@@ -1,0 +1,29 @@
+×(
+  ∇_{safeTransferFrom [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]} ⟨EOA→0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d⟩(
+    →(
+      'Request safeTransferFrom [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]' ⟨EOA→0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d⟩,
+      ∇_{onERC721Received [0x7c15561590fc9eb063b3803b55165633eef207ec]} ⟨0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d→0x7c15561590fc9eb063b3803b55165633eef207ec⟩(
+        →(
+          'Request onERC721Received [0x7c15561590fc9eb063b3803b55165633eef207ec]' ⟨0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d→0x7c15561590fc9eb063b3803b55165633eef207ec⟩,
+          'implementation [UpgradeableBeacon]' ⟨0x7c15561590fc9eb063b3803b55165633eef207ec→UpgradeableBeacon⟩,
+          ∇_{onERC721Received [NFT20Pair]} ⟨0x7c15561590fc9eb063b3803b55165633eef207ec→NFT20Pair⟩(
+            →(
+              'Request onERC721Received [NFT20Pair]' ⟨0x7c15561590fc9eb063b3803b55165633eef207ec→NFT20Pair⟩,
+              ∇_{fee [NFT20FactoryV4]} ⟨NFT20Pair→NFT20FactoryV4⟩(
+                →(
+                  'Request fee [NFT20FactoryV4]' ⟨NFT20Pair→NFT20FactoryV4⟩,
+                  'fee [NFT20FactoryV4]' ⟨NFT20FactoryV4→NFT20FactoryV4⟩,
+                  'Respond to fee [NFT20FactoryV4]' ⟨NFT20FactoryV4→NFT20Pair⟩)),
+              'Respond to onERC721Received [NFT20Pair]' ⟨NFT20Pair→0x7c15561590fc9eb063b3803b55165633eef207ec⟩)),
+          'Respond to onERC721Received [0x7c15561590fc9eb063b3803b55165633eef207ec]' ⟨0x7c15561590fc9eb063b3803b55165633eef207ec→0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d⟩)))),
+  'setProvenanceHash [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]' ⟨EOA→0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d⟩,
+  'approve [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]' ⟨EOA→0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d⟩,
+  'transferFrom [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]' ⟨EOA→0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d⟩,
+  ∇_{withdraw [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]} ⟨EOA→0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d⟩(
+    →(
+      'Request withdraw [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]' ⟨EOA→0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d⟩,
+      'transfer [0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03]' ⟨0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d→EOA⟩)),
+  'setBaseURI [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]' ⟨EOA→0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d⟩,
+  'setApprovalForAll [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]' ⟨EOA→0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d⟩,
+  'mintApe [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]' ⟨EOA→0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d⟩,
+  'Tranfer [0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d]' ⟨EOA→0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d⟩)

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" targetNamespace="http://bpmn.io/schema/bpmn2" id="Definitions_8f032147">
+  <bpmn2:message id="Msg_call_req_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root" name="_receiver" />
+  <bpmn2:message id="Msg_call_req_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1" name=", owner, spender" />
+  <bpmn2:message id="Msg_call_res_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1" name="output" />
+  <bpmn2:choreography id="Choreography_8f032147" name="8f032147">
+    <bpmn2:participant id="P_0x53a89fc8f55e5272ab0fd6d95bf7b894d692e6f2" name="EOA …92e6f2" />
+    <bpmn2:participant id="P_0x556b9306565093c855aea9ae92a594704c2cd59e" name="MasterChefV3" />
+    <bpmn2:participant id="P_0x152649ea73beab28c5b49b26eb48f7ead6d4c898" name="CakeOFT" />
+    <bpmn2:messageFlow id="MF_Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_request_init" sourceRef="P_0x53a89fc8f55e5272ab0fd6d95bf7b894d692e6f2" targetRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" messageRef="Msg_call_req_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root" />
+    <bpmn2:messageFlow id="MF_Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1_init" sourceRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" targetRef="P_0x152649ea73beab28c5b49b26eb48f7ead6d4c898" messageRef="Msg_call_req_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1" />
+    <bpmn2:messageFlow id="MF_Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1_ret" sourceRef="P_0x152649ea73beab28c5b49b26eb48f7ead6d4c898" targetRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e" messageRef="Msg_call_res_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1" />
+    <bpmn2:startEvent id="Start_8f032147">
+      <bpmn2:outgoing>SF_4</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:subChoreography id="Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root" name="setReceiver [MasterChefV3]" initiatingParticipantRef="P_0x53a89fc8f55e5272ab0fd6d95bf7b894d692e6f2">
+      <bpmn2:incoming>SF_4</bpmn2:incoming>
+      <bpmn2:outgoing>SF_5</bpmn2:outgoing>
+      <bpmn2:participantRef>P_0x53a89fc8f55e5272ab0fd6d95bf7b894d692e6f2</bpmn2:participantRef>
+      <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+      <bpmn2:participantRef>P_0x152649ea73beab28c5b49b26eb48f7ead6d4c898</bpmn2:participantRef>
+      <bpmn2:startEvent id="Start_8f032147_Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root">
+        <bpmn2:outgoing>SF_1</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:choreographyTask id="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_request" name="Request setReceiver [MasterChefV3]" initiatingParticipantRef="P_0x53a89fc8f55e5272ab0fd6d95bf7b894d692e6f2">
+        <bpmn2:incoming>SF_1</bpmn2:incoming>
+        <bpmn2:outgoing>SF_2</bpmn2:outgoing>
+        <bpmn2:participantRef>P_0x53a89fc8f55e5272ab0fd6d95bf7b894d692e6f2</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+        <bpmn2:messageFlowRef>MF_Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_request_init</bpmn2:messageFlowRef>
+      </bpmn2:choreographyTask>
+      <bpmn2:choreographyTask id="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1" name="allowance [CakeOFT]" initiatingParticipantRef="P_0x556b9306565093c855aea9ae92a594704c2cd59e">
+        <bpmn2:incoming>SF_2</bpmn2:incoming>
+        <bpmn2:outgoing>SF_3</bpmn2:outgoing>
+        <bpmn2:participantRef>P_0x556b9306565093c855aea9ae92a594704c2cd59e</bpmn2:participantRef>
+        <bpmn2:participantRef>P_0x152649ea73beab28c5b49b26eb48f7ead6d4c898</bpmn2:participantRef>
+        <bpmn2:messageFlowRef>MF_Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1_init</bpmn2:messageFlowRef>
+        <bpmn2:messageFlowRef>MF_Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1_ret</bpmn2:messageFlowRef>
+      </bpmn2:choreographyTask>
+      <bpmn2:endEvent id="End_8f032147_Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root">
+        <bpmn2:incoming>SF_3</bpmn2:incoming>
+      </bpmn2:endEvent>
+      <bpmn2:sequenceFlow id="SF_1" sourceRef="Start_8f032147_Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root" targetRef="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_request" />
+      <bpmn2:sequenceFlow id="SF_2" sourceRef="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_request" targetRef="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1" />
+      <bpmn2:sequenceFlow id="SF_3" sourceRef="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1" targetRef="End_8f032147_Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root" />
+    </bpmn2:subChoreography>
+    <bpmn2:endEvent id="End_8f032147">
+      <bpmn2:incoming>SF_5</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SF_4" sourceRef="Start_8f032147" targetRef="Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root" />
+    <bpmn2:sequenceFlow id="SF_5" sourceRef="Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root" targetRef="End_8f032147" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_8f032147">
+    <bpmndi:BPMNPlane id="BPMNPlane_8f032147" bpmnElement="Choreography_8f032147">
+      <bpmndi:BPMNShape id="Start_8f032147_di" bpmnElement="Start_8f032147">
+        <dc:Bounds x="100" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_di" bpmnElement="Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root" isExpanded="true">
+        <dc:Bounds x="186" y="140" width="482" height="220" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_di_band_t0" bpmnElement="P_0x53a89fc8f55e5272ab0fd6d95bf7b894d692e6f2" participantBandKind="top_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_di">
+        <dc:Bounds x="186" y="140" width="482" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_di_band_t1" bpmnElement="P_0x152649ea73beab28c5b49b26eb48f7ead6d4c898" participantBandKind="middle_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_di">
+        <dc:Bounds x="186" y="160" width="482" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_di_band_b0" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_di">
+        <dc:Bounds x="186" y="340" width="482" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Start_8f032147_Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_di" bpmnElement="Start_8f032147_Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root">
+        <dc:Bounds x="216" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_request_di" bpmnElement="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_request">
+        <dc:Bounds x="302" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_request_di_top" bpmnElement="P_0x53a89fc8f55e5272ab0fd6d95bf7b894d692e6f2" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_request_di">
+        <dc:Bounds x="302" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_request_di_bot" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_request_di">
+        <dc:Bounds x="302" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1_di" bpmnElement="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1">
+        <dc:Bounds x="452" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1_di_top" bpmnElement="P_0x556b9306565093c855aea9ae92a594704c2cd59e" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1_di">
+        <dc:Bounds x="452" y="220" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1_di_bot" bpmnElement="P_0x152649ea73beab28c5b49b26eb48f7ead6d4c898" participantBandKind="bottom_non_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_0_1_di">
+        <dc:Bounds x="452" y="280" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_8f032147_Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root_di" bpmnElement="End_8f032147_Sub_subchoreographyInstance_10cf262a5a439e4b58843256d55826dfd5087d147cc4ea3e7e7628a88f032147_root">
+        <dc:Bounds x="602" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_8f032147_di" bpmnElement="End_8f032147">
+        <dc:Bounds x="718" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SF_1_di" bpmnElement="SF_1">
+        <di:waypoint x="252" y="260" />
+        <di:waypoint x="302" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_2_di" bpmnElement="SF_2">
+        <di:waypoint x="402" y="260" />
+        <di:waypoint x="452" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_3_di" bpmnElement="SF_3">
+        <di:waypoint x="552" y="260" />
+        <di:waypoint x="602" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_4_di" bpmnElement="SF_4">
+        <di:waypoint x="136" y="250" />
+        <di:waypoint x="186" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_5_di" bpmnElement="SF_5">
+        <di:waypoint x="668" y="250" />
+        <di:waypoint x="718" y="250" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

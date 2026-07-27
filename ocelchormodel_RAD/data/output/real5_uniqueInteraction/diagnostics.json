@@ -1,0 +1,118 @@
+{
+  "log": "real5_uniqueInteraction",
+  "generated_by": "ocelchormodel-rad 0.1.0",
+  "hard_gates": {
+    "passed": true
+  },
+  "constraints": {
+    "C0": {
+      "checked": 15,
+      "violations": 0
+    },
+    "C1": {
+      "checked": 15,
+      "violations": 0
+    },
+    "C10": {
+      "checked": 0,
+      "violations": 0
+    },
+    "C11": {
+      "checked": 15,
+      "violations": 0
+    },
+    "C12": {
+      "checked": 0,
+      "violations": 0
+    },
+    "C13": {
+      "checked": 0,
+      "violations": 0
+    },
+    "C14": {
+      "checked": 0,
+      "violations": 0
+    },
+    "C15": {
+      "checked": 12,
+      "violations": 0
+    },
+    "C16": {
+      "checked": 0,
+      "violations": 0
+    },
+    "C2": {
+      "checked": 15,
+      "violations": 0
+    },
+    "C3": {
+      "checked": 15,
+      "violations": 0
+    },
+    "C4": {
+      "checked": 15,
+      "violations": 0
+    },
+    "C5": {
+      "checked": 15,
+      "violations": 0
+    },
+    "C6": {
+      "checked": 15,
+      "violations": 0
+    },
+    "C7": {
+      "checked": 15,
+      "violations": 0
+    },
+    "C8": {
+      "checked": 15,
+      "violations": 0
+    },
+    "C9": {
+      "checked": 15,
+      "violations": 0
+    }
+  },
+  "d01_ordering_determinism": {
+    "residual_ties": 0,
+    "examples": [],
+    "passed": true
+  },
+  "d02_scope_openers": {
+    "non_request_openers": 0,
+    "examples": []
+  },
+  "d03_bracket_completeness": {
+    "expected_missing_response": 0,
+    "unexpected_missing_response": 0,
+    "unexpected_examples": []
+  },
+  "d04_identity_labels": {
+    "exec_types": 0,
+    "occurrences": 0,
+    "examples": []
+  },
+  "d05_event_type_fanout": [],
+  "d06_task_type_fanout": [],
+  "d07_scope_pooling": {
+    "buckets": 0,
+    "total_scope_occurrences": 0,
+    "buckets_with_pooling": 0,
+    "top": []
+  },
+  "d08_message_merging": [],
+  "d09_parallelism_witnesses": [],
+  "d10_unrestricted_repetition": [],
+  "d11_choice_realizability": [],
+  "d12_recursion": {
+    "findings": [],
+    "direct": 0,
+    "indirect": 0,
+    "max_depth_delta": 0
+  },
+  "d13_cross_depth_participants": {
+    "pairs": 0,
+    "examples": []
+  }
+}

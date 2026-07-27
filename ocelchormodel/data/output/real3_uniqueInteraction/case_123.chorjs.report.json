@@ -1,0 +1,22 @@
+{
+  "input": "/Users/rhob/Documents/ocelchor/ocelchormodel/data/output/real3_uniqueInteraction/case_123.bpmn",
+  "error": "element with id P_Controller_Task_e_case_123_11 already exists",
+  "importWarnings": [],
+  "defined": 13,
+  "rendered": 0,
+  "missing": [
+    "Start_case_123",
+    "Task_e_case_123_0",
+    "Task_e_case_123_2",
+    "Task_e_case_123_4",
+    "Task_e_case_123_8",
+    "Task_e_case_123_11",
+    "End_case_123",
+    "SF_1",
+    "SF_2",
+    "SF_3",
+    "SF_4",
+    "SF_5",
+    "SF_6"
+  ]
+}

@@ -1,0 +1,3058 @@
+{
+  "log": "beanstalk_attack",
+  "generated_by": "ocelchormodel-rad 0.1.0",
+  "hard_gates": {
+    "passed": true
+  },
+  "constraints": {
+    "C0": {
+      "checked": 489,
+      "violations": 0
+    },
+    "C1": {
+      "checked": 703,
+      "violations": 0
+    },
+    "C10": {
+      "checked": 214,
+      "violations": 0
+    },
+    "C11": {
+      "checked": 489,
+      "violations": 0
+    },
+    "C12": {
+      "checked": 139,
+      "violations": 0
+    },
+    "C13": {
+      "checked": 139,
+      "violations": 0
+    },
+    "C14": {
+      "checked": 139,
+      "violations": 0
+    },
+    "C15": {
+      "checked": 486,
+      "violations": 1
+    },
+    "C16": {
+      "checked": 139,
+      "violations": 0
+    },
+    "C2": {
+      "checked": 489,
+      "violations": 0
+    },
+    "C3": {
+      "checked": 489,
+      "violations": 0
+    },
+    "C4": {
+      "checked": 489,
+      "violations": 0
+    },
+    "C5": {
+      "checked": 703,
+      "violations": 0
+    },
+    "C6": {
+      "checked": 703,
+      "violations": 0
+    },
+    "C7": {
+      "checked": 489,
+      "violations": 0
+    },
+    "C8": {
+      "checked": 489,
+      "violations": 0
+    },
+    "C9": {
+      "checked": 489,
+      "violations": 0
+    }
+  },
+  "d01_ordering_determinism": {
+    "residual_ties": 0,
+    "examples": [],
+    "passed": true
+  },
+  "d02_scope_openers": {
+    "non_request_openers": 0,
+    "examples": []
+  },
+  "d03_bracket_completeness": {
+    "expected_missing_response": 3,
+    "unexpected_missing_response": 0,
+    "unexpected_examples": []
+  },
+  "d04_identity_labels": {
+    "exec_types": 19,
+    "occurrences": 54,
+    "examples": [
+      "Request 0x60806040 []",
+      "Request executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+      "Request init [0xe5ecf73603d98a0128f05ed30506ac7a663dbb69]",
+      "Request swap [0x5777d92f208679db4b9778590fa3cab3ac9e2168]",
+      "Request swap [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640]"
+    ]
+  },
+  "d05_event_type_fanout": [
+    {
+      "name": "allowance",
+      "exec_types": 6,
+      "examples": [
+        "allowance [Bean]",
+        "allowance [Dai]",
+        "allowance [FiatTokenV2_1]",
+        "allowance [LUSDToken]",
+        "allowance [TetherToken]"
+      ]
+    },
+    {
+      "name": "approve",
+      "exec_types": 6,
+      "examples": [
+        "approve [Bean]",
+        "approve [Dai]",
+        "approve [FiatTokenV2_1]",
+        "approve [LUSDToken]",
+        "approve [TetherToken]"
+      ]
+    },
+    {
+      "name": "balanceOf",
+      "exec_types": 9,
+      "examples": [
+        "balanceOf [Bean]",
+        "balanceOf [Dai]",
+        "balanceOf [FiatTokenV2_1]",
+        "balanceOf [LUSDToken]",
+        "balanceOf [OlympusERC20Token]"
+      ]
+    },
+    {
+      "name": "curveToBDV",
+      "exec_types": 2,
+      "examples": [
+        "curveToBDV [BDVFacet]",
+        "curveToBDV [Diamond]"
+      ]
+    },
+    {
+      "name": "deposit",
+      "exec_types": 2,
+      "examples": [
+        "deposit [Diamond]",
+        "deposit [SiloV2Facet]"
+      ]
+    },
+    {
+      "name": "emergencyCommit",
+      "exec_types": 2,
+      "examples": [
+        "emergencyCommit [Diamond]",
+        "emergencyCommit [GovernanceFacet]"
+      ]
+    },
+    {
+      "name": "flashLoan",
+      "exec_types": 2,
+      "examples": [
+        "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+        "flashLoan [LendingPool]"
+      ]
+    },
+    {
+      "name": "getReserveNormalizedIncome",
+      "exec_types": 2,
+      "examples": [
+        "getReserveNormalizedIncome [InitializableImmutableAdminUpgradeabilityProxy]",
+        "getReserveNormalizedIncome [LendingPool]"
+      ]
+    },
+    {
+      "name": "getSupplyData",
+      "exec_types": 2,
+      "examples": [
+        "getSupplyData [InitializableImmutableAdminUpgradeabilityProxy]",
+        "getSupplyData [StableDebtToken]"
+      ]
+    },
+    {
+      "name": "getTotalSupplyAndAvgRate",
+      "exec_types": 2,
+      "examples": [
+        "getTotalSupplyAndAvgRate [InitializableImmutableAdminUpgradeabilityProxy]",
+        "getTotalSupplyAndAvgRate [StableDebtToken]"
+      ]
+    },
+    {
+      "name": "handleAction",
+      "exec_types": 2,
+      "examples": [
+        "handleAction [InitializableImmutableAdminUpgradeabilityProxy]",
+        "handleAction [StakedTokenIncentivesController]"
+      ]
+    },
+    {
+      "name": "mint",
+      "exec_types": 2,
+      "examples": [
+        "mint [Bean]",
+        "mint [Vyper_contract]"
+      ]
+    },
+    {
+      "name": "mintToTreasury",
+      "exec_types": 2,
+      "examples": [
+        "mintToTreasury [AToken]",
+        "mintToTreasury [InitializableImmutableAdminUpgradeabilityProxy]"
+      ]
+    },
+    {
+      "name": "propose",
+      "exec_types": 2,
+      "examples": [
+        "propose [Diamond]",
+        "propose [GovernanceFacet]"
+      ]
+    },
+    {
+      "name": "scaledTotalSupply",
+      "exec_types": 2,
+      "examples": [
+        "scaledTotalSupply [InitializableImmutableAdminUpgradeabilityProxy]",
+        "scaledTotalSupply [VariableDebtToken]"
+      ]
+    },
+    {
+      "name": "swap",
+      "exec_types": 4,
+      "examples": [
+        "swap [0x5777d92f208679db4b9778590fa3cab3ac9e2168]",
+        "swap [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640]",
+        "swap [UniswapV2Pair]",
+        "swap [UniswapV3Pool]"
+      ]
+    },
+    {
+      "name": "totalSupply",
+      "exec_types": 2,
+      "examples": [
+        "totalSupply [AToken]",
+        "totalSupply [Vyper_contract]"
+      ]
+    },
+    {
+      "name": "transfer",
+      "exec_types": 10,
+      "examples": [
+        "transfer [0x1c5dcdd006ea78a7e4783f9e6021c32935a10fb4]",
+        "transfer [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "transfer [Bean]",
+        "transfer [Dai]",
+        "transfer [FiatTokenV2_1]"
+      ]
+    },
+    {
+      "name": "transferFrom",
+      "exec_types": 6,
+      "examples": [
+        "transferFrom [Bean]",
+        "transferFrom [Dai]",
+        "transferFrom [FiatTokenV2_1]",
+        "transferFrom [LUSDToken]",
+        "transferFrom [TetherToken]"
+      ]
+    },
+    {
+      "name": "transferUnderlyingTo",
+      "exec_types": 2,
+      "examples": [
+        "transferUnderlyingTo [AToken]",
+        "transferUnderlyingTo [InitializableImmutableAdminUpgradeabilityProxy]"
+      ]
+    },
+    {
+      "name": "undefined",
+      "exec_types": 7,
+      "examples": [
+        "undefined [0x0000000000000000000000000000000000000004]",
+        "undefined [0x5777d92f208679db4b9778590fa3cab3ac9e2168]",
+        "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "undefined [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640]",
+        "undefined [Diamond]"
+      ]
+    },
+    {
+      "name": "vote",
+      "exec_types": 2,
+      "examples": [
+        "vote [Diamond]",
+        "vote [GovernanceFacet]"
+      ]
+    }
+  ],
+  "d06_task_type_fanout": [
+    {
+      "exec_type": "Request add_liquidity [Vyper_contract]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "Vyper_contract"
+        ],
+        [
+          "Vyper_contract",
+          "Vyper_contract"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Request balanceOf [Vyper_contract]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "Vyper_contract"
+        ],
+        [
+          "0xe5ecf73603d98a0128f05ed30506ac7a663dbb69",
+          "Vyper_contract"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Request exchange [Vyper_contract]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "Vyper_contract"
+        ],
+        [
+          "Vyper_contract",
+          "Vyper_contract"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Request get_virtual_price [Vyper_contract]",
+      "role_pairs": [
+        [
+          "BDVFacet",
+          "Vyper_contract"
+        ],
+        [
+          "Vyper_contract",
+          "Vyper_contract"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Request remove_liquidity_one_coin [Vyper_contract]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "Vyper_contract"
+        ],
+        [
+          "Vyper_contract",
+          "Vyper_contract"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Request undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+      "role_pairs": [
+        [
+          "0x5777d92f208679db4b9778590fa3cab3ac9e2168",
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def"
+        ],
+        [
+          "0x728ad672409da288ca5b9aa85d1a55b803ba97d7",
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def"
+        ],
+        [
+          "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def"
+        ],
+        [
+          "UniswapV3Pool",
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Request undefined [FiatTokenProxy]",
+      "role_pairs": [
+        [
+          "0x5777d92f208679db4b9778590fa3cab3ac9e2168",
+          "FiatTokenProxy"
+        ],
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "FiatTokenProxy"
+        ],
+        [
+          "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+          "FiatTokenProxy"
+        ],
+        [
+          "AToken",
+          "FiatTokenProxy"
+        ],
+        [
+          "LendingPool",
+          "FiatTokenProxy"
+        ],
+        [
+          "Vyper_contract",
+          "FiatTokenProxy"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to add_liquidity [Vyper_contract]",
+      "role_pairs": [
+        [
+          "Vyper_contract",
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def"
+        ],
+        [
+          "Vyper_contract",
+          "Vyper_contract"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to balanceOf [Vyper_contract]",
+      "role_pairs": [
+        [
+          "Vyper_contract",
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def"
+        ],
+        [
+          "Vyper_contract",
+          "0xe5ecf73603d98a0128f05ed30506ac7a663dbb69"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to exchange [Vyper_contract]",
+      "role_pairs": [
+        [
+          "Vyper_contract",
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def"
+        ],
+        [
+          "Vyper_contract",
+          "Vyper_contract"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to get_virtual_price [Vyper_contract]",
+      "role_pairs": [
+        [
+          "Vyper_contract",
+          "BDVFacet"
+        ],
+        [
+          "Vyper_contract",
+          "Vyper_contract"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to remove_liquidity_one_coin [Vyper_contract]",
+      "role_pairs": [
+        [
+          "Vyper_contract",
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def"
+        ],
+        [
+          "Vyper_contract",
+          "Vyper_contract"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "0x5777d92f208679db4b9778590fa3cab3ac9e2168"
+        ],
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "0x728ad672409da288ca5b9aa85d1a55b803ba97d7"
+        ],
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+        ],
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "UniswapV3Pool"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to undefined [FiatTokenProxy]",
+      "role_pairs": [
+        [
+          "FiatTokenProxy",
+          "0x5777d92f208679db4b9778590fa3cab3ac9e2168"
+        ],
+        [
+          "FiatTokenProxy",
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def"
+        ],
+        [
+          "FiatTokenProxy",
+          "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+        ],
+        [
+          "FiatTokenProxy",
+          "AToken"
+        ],
+        [
+          "FiatTokenProxy",
+          "LendingPool"
+        ],
+        [
+          "FiatTokenProxy",
+          "Vyper_contract"
+        ]
+      ]
+    },
+    {
+      "exec_type": "allowance [Vyper_contract]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "Vyper_contract"
+        ],
+        [
+          "Vyper_contract",
+          "Vyper_contract"
+        ]
+      ]
+    },
+    {
+      "exec_type": "approve [Vyper_contract]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "Vyper_contract"
+        ],
+        [
+          "Vyper_contract",
+          "Vyper_contract"
+        ]
+      ]
+    },
+    {
+      "exec_type": "balanceOf [Bean]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "Bean"
+        ],
+        [
+          "0xe5ecf73603d98a0128f05ed30506ac7a663dbb69",
+          "Bean"
+        ],
+        [
+          "UniswapV2Pair",
+          "Bean"
+        ]
+      ]
+    },
+    {
+      "exec_type": "balanceOf [Dai]",
+      "role_pairs": [
+        [
+          "0x5777d92f208679db4b9778590fa3cab3ac9e2168",
+          "Dai"
+        ],
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "Dai"
+        ],
+        [
+          "LendingPool",
+          "Dai"
+        ]
+      ]
+    },
+    {
+      "exec_type": "balanceOf [LUSDToken]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "LUSDToken"
+        ],
+        [
+          "UniswapV2Pair",
+          "LUSDToken"
+        ]
+      ]
+    },
+    {
+      "exec_type": "balanceOf [TetherToken]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "TetherToken"
+        ],
+        [
+          "LendingPool",
+          "TetherToken"
+        ],
+        [
+          "UniswapV3Pool",
+          "TetherToken"
+        ],
+        [
+          "Vyper_contract",
+          "TetherToken"
+        ]
+      ]
+    },
+    {
+      "exec_type": "balanceOf [UniswapV2Pair]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "UniswapV2Pair"
+        ],
+        [
+          "0xe5ecf73603d98a0128f05ed30506ac7a663dbb69",
+          "UniswapV2Pair"
+        ]
+      ]
+    },
+    {
+      "exec_type": "balanceOf [Vyper_contract]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "Vyper_contract"
+        ],
+        [
+          "Vyper_contract",
+          "Vyper_contract"
+        ]
+      ]
+    },
+    {
+      "exec_type": "balanceOf [WETH9]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "WETH9"
+        ],
+        [
+          "UniswapV2Pair",
+          "WETH9"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transfer [Bean]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "Bean"
+        ],
+        [
+          "0xe5ecf73603d98a0128f05ed30506ac7a663dbb69",
+          "Bean"
+        ],
+        [
+          "UniswapV2Pair",
+          "Bean"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transfer [Dai]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "Dai"
+        ],
+        [
+          "AToken",
+          "Dai"
+        ],
+        [
+          "Vyper_contract",
+          "Dai"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transfer [LUSDToken]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "LUSDToken"
+        ],
+        [
+          "UniswapV2Pair",
+          "LUSDToken"
+        ],
+        [
+          "Vyper_contract",
+          "LUSDToken"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transfer [TetherToken]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "TetherToken"
+        ],
+        [
+          "AToken",
+          "TetherToken"
+        ],
+        [
+          "Vyper_contract",
+          "TetherToken"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transfer [UniswapV2Pair]",
+      "role_pairs": [
+        [
+          "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+          "UniswapV2Pair"
+        ],
+        [
+          "0xe5ecf73603d98a0128f05ed30506ac7a663dbb69",
+          "UniswapV2Pair"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transfer [WETH9]",
+      "role_pairs": [
+        [
+          "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+          "WETH9"
+        ],
+        [
+          "UniswapV2Pair",
+          "WETH9"
+        ],
+        [
+          "UniswapV3Pool",
+          "WETH9"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transferFrom [Dai]",
+      "role_pairs": [
+        [
+          "LendingPool",
+          "Dai"
+        ],
+        [
+          "Vyper_contract",
+          "Dai"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transferFrom [TetherToken]",
+      "role_pairs": [
+        [
+          "LendingPool",
+          "TetherToken"
+        ],
+        [
+          "Vyper_contract",
+          "TetherToken"
+        ]
+      ]
+    }
+  ],
+  "d07_scope_pooling": {
+    "buckets": 77,
+    "total_scope_occurrences": 139,
+    "buckets_with_pooling": 26,
+    "top": [
+      {
+        "context": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "scaledTotalSupply [InitializableImmutableAdminUpgradeabilityProxy]"
+        ],
+        "occurrences": 6,
+        "variants": 1,
+        "pooling_ratio": 6.0
+      },
+      {
+        "context": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "balanceOf [Vyper_contract]"
+        ],
+        "occurrences": 4,
+        "variants": 1,
+        "pooling_ratio": 4.0
+      },
+      {
+        "context": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "transferUnderlyingTo [InitializableImmutableAdminUpgradeabilityProxy]"
+        ],
+        "occurrences": 3,
+        "variants": 1,
+        "pooling_ratio": 3.0
+      },
+      {
+        "context": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "getSupplyData [InitializableImmutableAdminUpgradeabilityProxy]"
+        ],
+        "occurrences": 3,
+        "variants": 1,
+        "pooling_ratio": 3.0
+      },
+      {
+        "context": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "mintToTreasury [InitializableImmutableAdminUpgradeabilityProxy]"
+        ],
+        "occurrences": 3,
+        "variants": 1,
+        "pooling_ratio": 3.0
+      }
+    ]
+  },
+  "d08_message_merging": [
+    {
+      "exec_type": "Request add_liquidity [Vyper_contract]",
+      "roles": [
+        "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "Vyper_contract"
+      ],
+      "direction": "forward",
+      "cause": "payload-structures",
+      "structures": [
+        [
+          "_amounts",
+          "_min_mint_amount"
+        ],
+        [
+          "amounts",
+          "min_mint_amount"
+        ]
+      ],
+      "kinds": [
+        "add_liquidity call"
+      ]
+    },
+    {
+      "exec_type": "Request remove_liquidity_one_coin [Vyper_contract]",
+      "roles": [
+        "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "Vyper_contract"
+      ],
+      "direction": "forward",
+      "cause": "payload-structures",
+      "structures": [
+        [
+          "_burn_amount",
+          "i",
+          "_min_received"
+        ],
+        [
+          "_token_amount",
+          "i",
+          "min_amount"
+        ]
+      ],
+      "kinds": [
+        "remove_liquidity_one_coin call"
+      ]
+    },
+    {
+      "exec_type": "Request propose [Diamond]",
+      "roles": [
+        "EOA",
+        "Diamond"
+      ],
+      "direction": "forward",
+      "cause": "payload-structures",
+      "structures": [
+        [],
+        [
+          "_contractOwner"
+        ]
+      ],
+      "kinds": [
+        "propose call"
+      ]
+    }
+  ],
+  "d09_parallelism_witnesses": [
+    {
+      "context": [
+        "0x60806040 []",
+        "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+        "flashLoan [LendingPool]",
+        "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "swap [UniswapV2Pair]",
+        "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "swap [UniswapV2Pair]",
+        "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "add_liquidity [Vyper_contract]",
+        "add_liquidity [Vyper_contract]"
+      ],
+      "branches": 3,
+      "subtraces": 2,
+      "verdict": "partially_witnessed",
+      "flagged_pairs": 1,
+      "pairs": [
+        {
+          "a": [
+            "transferFrom [LUSDToken]"
+          ],
+          "b": [
+            "Transfer* [0x0000000000000000000000000000000000000004]",
+            "undefined [0x0000000000000000000000000000000000000004]"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 1,
+          "flagged": false
+        },
+        {
+          "a": [
+            "transferFrom [LUSDToken]"
+          ],
+          "b": [
+            "transferFrom [Bean]"
+          ],
+          "a_before_b": 0,
+          "b_before_a": 1,
+          "flagged": true
+        },
+        {
+          "a": [
+            "Transfer* [0x0000000000000000000000000000000000000004]",
+            "undefined [0x0000000000000000000000000000000000000004]"
+          ],
+          "b": [
+            "transferFrom [Bean]"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 1,
+          "flagged": false
+        }
+      ]
+    },
+    {
+      "context": [
+        "0x60806040 []",
+        "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+        "flashLoan [LendingPool]",
+        "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "swap [UniswapV2Pair]",
+        "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "swap [UniswapV2Pair]",
+        "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "add_liquidity [Vyper_contract]"
+      ],
+      "branches": 4,
+      "subtraces": 3,
+      "verdict": "partially_witnessed",
+      "flagged_pairs": 3,
+      "pairs": [
+        {
+          "a": [
+            "undefined [FiatTokenProxy]"
+          ],
+          "b": [
+            "transferFrom [TetherToken]"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 0,
+          "flagged": true
+        },
+        {
+          "a": [
+            "undefined [FiatTokenProxy]"
+          ],
+          "b": [
+            "transferFrom [Dai]"
+          ],
+          "a_before_b": 0,
+          "b_before_a": 1,
+          "flagged": true
+        },
+        {
+          "a": [
+            "undefined [FiatTokenProxy]"
+          ],
+          "b": [
+            "Transfer* [0x0000000000000000000000000000000000000004]",
+            "balanceOf [TetherToken]",
+            "undefined [0x0000000000000000000000000000000000000004]"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 1,
+          "flagged": false
+        },
+        {
+          "a": [
+            "transferFrom [TetherToken]"
+          ],
+          "b": [
+            "transferFrom [Dai]"
+          ],
+          "a_before_b": 0,
+          "b_before_a": 1,
+          "flagged": true
+        },
+        {
+          "a": [
+            "transferFrom [TetherToken]"
+          ],
+          "b": [
+            "Transfer* [0x0000000000000000000000000000000000000004]",
+            "balanceOf [TetherToken]",
+            "undefined [0x0000000000000000000000000000000000000004]"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 1,
+          "flagged": false
+        },
+        {
+          "a": [
+            "transferFrom [Dai]"
+          ],
+          "b": [
+            "Transfer* [0x0000000000000000000000000000000000000004]",
+            "balanceOf [TetherToken]",
+            "undefined [0x0000000000000000000000000000000000000004]"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 1,
+          "flagged": false
+        }
+      ]
+    },
+    {
+      "context": [
+        "0x60806040 []",
+        "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+        "flashLoan [LendingPool]",
+        "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "swap [UniswapV2Pair]",
+        "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "swap [UniswapV2Pair]",
+        "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]"
+      ],
+      "branches": 4,
+      "subtraces": 1,
+      "verdict": "partially_witnessed",
+      "flagged_pairs": 3,
+      "pairs": [
+        {
+          "a": [
+            "remove_liquidity_one_coin [Vyper_contract]"
+          ],
+          "b": [
+            "emergencyCommit [Diamond]"
+          ],
+          "a_before_b": 0,
+          "b_before_a": 1,
+          "flagged": true
+        },
+        {
+          "a": [
+            "remove_liquidity_one_coin [Vyper_contract]"
+          ],
+          "b": [
+            "vote [Diamond]"
+          ],
+          "a_before_b": 0,
+          "b_before_a": 1,
+          "flagged": true
+        },
+        {
+          "a": [
+            "remove_liquidity_one_coin [Vyper_contract]"
+          ],
+          "b": [
+            "balanceOf [Vyper_contract]",
+            "deposit [Diamond]"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 1,
+          "flagged": false
+        },
+        {
+          "a": [
+            "emergencyCommit [Diamond]"
+          ],
+          "b": [
+            "vote [Diamond]"
+          ],
+          "a_before_b": 0,
+          "b_before_a": 1,
+          "flagged": true
+        },
+        {
+          "a": [
+            "emergencyCommit [Diamond]"
+          ],
+          "b": [
+            "balanceOf [Vyper_contract]",
+            "deposit [Diamond]"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 1,
+          "flagged": false
+        },
+        {
+          "a": [
+            "vote [Diamond]"
+          ],
+          "b": [
+            "balanceOf [Vyper_contract]",
+            "deposit [Diamond]"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 1,
+          "flagged": false
+        }
+      ]
+    },
+    {
+      "context": [
+        "0x60806040 []",
+        "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+        "flashLoan [LendingPool]"
+      ],
+      "branches": 2,
+      "subtraces": 1,
+      "verdict": "witnessed",
+      "flagged_pairs": 0,
+      "pairs": [
+        {
+          "a": [
+            "calculateInterestRates [DefaultReserveInterestRateStrategy]"
+          ],
+          "b": [
+            "balanceOf [Dai]",
+            "balanceOf [TetherToken]",
+            "getSupplyData [InitializableImmutableAdminUpgradeabilityProxy]"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 1,
+          "flagged": false
+        }
+      ]
+    },
+    {
+      "context": [
+        "0x60806040 []",
+        "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]"
+      ],
+      "branches": 2,
+      "subtraces": 2,
+      "verdict": "witnessed",
+      "flagged_pairs": 0,
+      "pairs": [
+        {
+          "a": [
+            "undefined [FiatTokenProxy]"
+          ],
+          "b": [
+            "allowance [Bean]",
+            "allowance [Dai]",
+            "allowance [LUSDToken]"
+          ],
+          "a_before_b": 2,
+          "b_before_a": 2,
+          "flagged": false
+        }
+      ]
+    }
+  ],
+  "d10_unrestricted_repetition": [],
+  "d11_choice_realizability": [],
+  "d12_recursion": {
+    "findings": [
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "undefined [FiatTokenProxy]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "undefined [FiatTokenProxy]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "add_liquidity [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "add_liquidity [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "add_liquidity [Vyper_contract]",
+          "undefined [FiatTokenProxy]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "add_liquidity [Vyper_contract]",
+          "undefined [FiatTokenProxy]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "exchange [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "exchange [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "exchange [Vyper_contract]",
+          "exchange [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "exchange [Vyper_contract]",
+          "exchange [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "exchange [Vyper_contract]",
+        "noninit_role": "Vyper_contract",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "exchange [Vyper_contract]",
+          "exchange [Vyper_contract]"
+        ],
+        "first_depth": 9,
+        "recurrence_depth": 10,
+        "direct": true
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "exchange [Vyper_contract]",
+          "exchange [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "exchange [Vyper_contract]",
+          "exchange [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "exchange [Vyper_contract]",
+        "noninit_role": "Vyper_contract",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "exchange [Vyper_contract]",
+          "exchange [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 9,
+        "recurrence_depth": 10,
+        "direct": true
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "add_liquidity [Vyper_contract]",
+          "add_liquidity [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "add_liquidity [Vyper_contract]",
+          "add_liquidity [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "add_liquidity [Vyper_contract]",
+        "noninit_role": "Vyper_contract",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "add_liquidity [Vyper_contract]",
+          "add_liquidity [Vyper_contract]"
+        ],
+        "first_depth": 9,
+        "recurrence_depth": 10,
+        "direct": true
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "add_liquidity [Vyper_contract]",
+          "add_liquidity [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "add_liquidity [Vyper_contract]",
+          "add_liquidity [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "add_liquidity [Vyper_contract]",
+        "noninit_role": "Vyper_contract",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "add_liquidity [Vyper_contract]",
+          "add_liquidity [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 9,
+        "recurrence_depth": 10,
+        "direct": true
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "balanceOf [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "balanceOf [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "transferFrom [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "transferFrom [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]",
+          "get_previous_balances [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]",
+          "get_previous_balances [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]",
+          "get_virtual_price [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]",
+          "get_virtual_price [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "get_virtual_price [Vyper_contract]",
+        "noninit_role": "Vyper_contract",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]",
+          "get_virtual_price [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 13,
+        "recurrence_depth": 14,
+        "direct": true
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]",
+          "get_virtual_price [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]",
+          "get_virtual_price [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "get_virtual_price [Vyper_contract]",
+        "noninit_role": "Vyper_contract",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]",
+          "get_virtual_price [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 13,
+        "recurrence_depth": 14,
+        "direct": true
+      },
+      {
+        "label": "get_virtual_price [Vyper_contract]",
+        "noninit_role": "Vyper_contract",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]",
+          "get_virtual_price [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 13,
+        "recurrence_depth": 15,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]",
+          "A_precise [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "curveToBDV [Diamond]",
+          "curveToBDV [BDVFacet]",
+          "A_precise [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "undefined [Diamond]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "undefined [Diamond]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "undefined [Diamond]",
+          "lusdToBDV [BDVFacet]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "undefined [Diamond]",
+          "lusdToBDV [BDVFacet]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "undefined [Diamond]",
+          "lusdToBDV [BDVFacet]",
+          "A_precise [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "undefined [Diamond]",
+          "lusdToBDV [BDVFacet]",
+          "A_precise [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "undefined [Diamond]",
+          "lusdToBDV [BDVFacet]",
+          "get_previous_balances [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "undefined [Diamond]",
+          "lusdToBDV [BDVFacet]",
+          "get_previous_balances [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "undefined [Diamond]",
+          "lusdToBDV [BDVFacet]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "deposit [Diamond]",
+          "deposit [SiloV2Facet]",
+          "undefined [Diamond]",
+          "lusdToBDV [BDVFacet]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "vote [Diamond]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "vote [Diamond]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "emergencyCommit [Diamond]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "emergencyCommit [Diamond]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "emergencyCommit [Diamond]",
+          "emergencyCommit [GovernanceFacet]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "emergencyCommit [Diamond]",
+          "emergencyCommit [GovernanceFacet]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "emergencyCommit [Diamond]",
+          "emergencyCommit [GovernanceFacet]",
+          "init [0xe5ecf73603d98a0128f05ed30506ac7a663dbb69]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "emergencyCommit [Diamond]",
+          "emergencyCommit [GovernanceFacet]",
+          "init [0xe5ecf73603d98a0128f05ed30506ac7a663dbb69]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "emergencyCommit [Diamond]",
+          "emergencyCommit [GovernanceFacet]",
+          "init [0xe5ecf73603d98a0128f05ed30506ac7a663dbb69]",
+          "balanceOf [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "emergencyCommit [Diamond]",
+          "emergencyCommit [GovernanceFacet]",
+          "init [0xe5ecf73603d98a0128f05ed30506ac7a663dbb69]",
+          "balanceOf [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "emergencyCommit [Diamond]",
+          "emergencyCommit [GovernanceFacet]",
+          "init [0xe5ecf73603d98a0128f05ed30506ac7a663dbb69]",
+          "transfer [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "emergencyCommit [Diamond]",
+          "emergencyCommit [GovernanceFacet]",
+          "init [0xe5ecf73603d98a0128f05ed30506ac7a663dbb69]",
+          "transfer [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "remove_liquidity_one_coin [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "remove_liquidity_one_coin [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "remove_liquidity_one_coin [Vyper_contract]",
+          "remove_liquidity_one_coin [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "remove_liquidity_one_coin [Vyper_contract]",
+          "remove_liquidity_one_coin [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "remove_liquidity_one_coin [Vyper_contract]",
+        "noninit_role": "Vyper_contract",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "remove_liquidity_one_coin [Vyper_contract]",
+          "remove_liquidity_one_coin [Vyper_contract]"
+        ],
+        "first_depth": 9,
+        "recurrence_depth": 10,
+        "direct": true
+      },
+      {
+        "label": "swap [UniswapV2Pair]",
+        "noninit_role": "UniswapV2Pair",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "remove_liquidity_one_coin [Vyper_contract]",
+          "remove_liquidity_one_coin [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 7,
+        "direct": false
+      },
+      {
+        "label": "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "remove_liquidity_one_coin [Vyper_contract]",
+          "remove_liquidity_one_coin [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 6,
+        "recurrence_depth": 8,
+        "direct": false
+      },
+      {
+        "label": "remove_liquidity_one_coin [Vyper_contract]",
+        "noninit_role": "Vyper_contract",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV2Pair]",
+          "uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "remove_liquidity_one_coin [Vyper_contract]",
+          "remove_liquidity_one_coin [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 9,
+        "recurrence_depth": 10,
+        "direct": true
+      },
+      {
+        "label": "exchange [Vyper_contract]",
+        "noninit_role": "Vyper_contract",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "exchange [Vyper_contract]",
+          "exchange [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 6,
+        "direct": true
+      },
+      {
+        "label": "exchange [Vyper_contract]",
+        "noninit_role": "Vyper_contract",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "flashLoan [InitializableImmutableAdminUpgradeabilityProxy]",
+          "flashLoan [LendingPool]",
+          "executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "exchange [Vyper_contract]",
+          "exchange [Vyper_contract]",
+          "get_virtual_price [Vyper_contract]"
+        ],
+        "first_depth": 5,
+        "recurrence_depth": 6,
+        "direct": true
+      },
+      {
+        "label": "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [0x5777d92f208679db4b9778590fa3cab3ac9e2168]",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]"
+        ],
+        "first_depth": 1,
+        "recurrence_depth": 3,
+        "direct": false
+      },
+      {
+        "label": "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640]",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]"
+        ],
+        "first_depth": 1,
+        "recurrence_depth": 3,
+        "direct": false
+      },
+      {
+        "label": "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640]",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "undefined [FiatTokenProxy]"
+        ],
+        "first_depth": 1,
+        "recurrence_depth": 3,
+        "direct": false
+      },
+      {
+        "label": "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+        "noninit_role": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "context_path": [
+          "0x60806040 []",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "swap [UniswapV3Pool]",
+          "undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]"
+        ],
+        "first_depth": 1,
+        "recurrence_depth": 3,
+        "direct": false
+      }
+    ],
+    "direct": 10,
+    "indirect": 74,
+    "max_depth_delta": 2
+  },
+  "d13_cross_depth_participants": {
+    "pairs": 396,
+    "examples": [
+      {
+        "object": "0x1c5dcdd006ea78a7e4783f9e6021c32935a10fb4",
+        "ancestor_scope": "subchoreographyInstance:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:root",
+        "descendant_scope": "subchoreographyInstance:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:0_2",
+        "ancestor_task_types": [
+          "Request 0x60806040 []"
+        ],
+        "descendant_task_types": [
+          "transfer [0x1c5dcdd006ea78a7e4783f9e6021c32935a10fb4]"
+        ]
+      },
+      {
+        "object": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "ancestor_scope": "subchoreographyInstance:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:0_1",
+        "descendant_scope": "subchoreographyInstance:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:0_1_3",
+        "ancestor_task_types": [
+          "Request undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "Respond to undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "allowance [Bean]",
+          "allowance [Dai]",
+          "allowance [LUSDToken]",
+          "allowance [TetherToken]",
+          "allowance [Vyper_contract]",
+          "approve [Bean]",
+          "approve [Dai]",
+          "approve [LUSDToken]",
+          "approve [TetherToken]",
+          "approve [Vyper_contract]"
+        ],
+        "descendant_task_types": [
+          "Request undefined [FiatTokenProxy]",
+          "Respond to undefined [FiatTokenProxy]"
+        ]
+      },
+      {
+        "object": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "ancestor_scope": "subchoreographyInstance:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:0_1",
+        "descendant_scope": "subchoreographyInstance:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:0_1_4",
+        "ancestor_task_types": [
+          "Request undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "Respond to undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "allowance [Bean]",
+          "allowance [Dai]",
+          "allowance [LUSDToken]",
+          "allowance [TetherToken]",
+          "allowance [Vyper_contract]",
+          "approve [Bean]",
+          "approve [Dai]",
+          "approve [LUSDToken]",
+          "approve [TetherToken]",
+          "approve [Vyper_contract]"
+        ],
+        "descendant_task_types": [
+          "Request undefined [FiatTokenProxy]",
+          "Respond to undefined [FiatTokenProxy]"
+        ]
+      },
+      {
+        "object": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "ancestor_scope": "subchoreographyInstance:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:0_1",
+        "descendant_scope": "subchoreographyInstance:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:0_1_9",
+        "ancestor_task_types": [
+          "Request undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "Respond to undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "allowance [Bean]",
+          "allowance [Dai]",
+          "allowance [LUSDToken]",
+          "allowance [TetherToken]",
+          "allowance [Vyper_contract]",
+          "approve [Bean]",
+          "approve [Dai]",
+          "approve [LUSDToken]",
+          "approve [TetherToken]",
+          "approve [Vyper_contract]"
+        ],
+        "descendant_task_types": [
+          "Request undefined [FiatTokenProxy]",
+          "Respond to undefined [FiatTokenProxy]"
+        ]
+      },
+      {
+        "object": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+        "ancestor_scope": "subchoreographyInstance:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:0_1",
+        "descendant_scope": "subchoreographyInstance:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:0_1_10",
+        "ancestor_task_types": [
+          "Request undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "Respond to undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
+          "allowance [Bean]",
+          "allowance [Dai]",
+          "allowance [LUSDToken]",
+          "allowance [TetherToken]",
+          "allowance [Vyper_contract]",
+          "approve [Bean]",
+          "approve [Dai]",
+          "approve [LUSDToken]",
+          "approve [TetherToken]",
+          "approve [Vyper_contract]"
+        ],
+        "descendant_task_types": [
+          "Request undefined [FiatTokenProxy]",
+          "Respond to undefined [FiatTokenProxy]"
+        ]
+      }
+    ]
+  }
+}

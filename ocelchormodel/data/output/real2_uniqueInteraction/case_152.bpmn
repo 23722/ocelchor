@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" targetNamespace="http://bpmn.io/schema/bpmn2" id="Definitions_case_152">
+  <bpmn2:message id="Msg_message_case_152_Offer_250" name="Offer" />
+  <bpmn2:message id="Msg_message_case_152_Travel_251" name="Travel" />
+  <bpmn2:message id="Msg_message_case_152_Payment_252" name="Payment" />
+  <bpmn2:message id="Msg_message_case_152_Confirmation_253" name="Confirmation" />
+  <bpmn2:message id="Msg_message_case_152_Ticket_254" name="Ticket" />
+  <bpmn2:choreography id="Choreography_case_152" name="case_152">
+    <bpmn2:participant id="P_TravelAgency" name="TravelAgency" />
+    <bpmn2:participant id="P_Customer" name="Customer" />
+    <bpmn2:messageFlow id="MF_Task_e_case_152_0_init" sourceRef="P_TravelAgency" targetRef="P_Customer" messageRef="Msg_message_case_152_Offer_250" />
+    <bpmn2:messageFlow id="MF_Task_e_case_152_2_init" sourceRef="P_TravelAgency" targetRef="P_Customer" messageRef="Msg_message_case_152_Offer_250" />
+    <bpmn2:messageFlow id="MF_Task_e_case_152_4_init" sourceRef="P_TravelAgency" targetRef="P_Customer" messageRef="Msg_message_case_152_Offer_250" />
+    <bpmn2:messageFlow id="MF_Task_e_case_152_5_init" sourceRef="P_Customer" targetRef="P_TravelAgency" messageRef="Msg_message_case_152_Travel_251" />
+    <bpmn2:messageFlow id="MF_Task_e_case_152_7_init" sourceRef="P_TravelAgency" targetRef="P_Customer" messageRef="Msg_message_case_152_Offer_250" />
+    <bpmn2:messageFlow id="MF_Task_e_case_152_8_init" sourceRef="P_Customer" targetRef="P_TravelAgency" messageRef="Msg_message_case_152_Payment_252" />
+    <bpmn2:messageFlow id="MF_Task_e_case_152_10_init" sourceRef="P_TravelAgency" targetRef="P_Customer" messageRef="Msg_message_case_152_Offer_250" />
+    <bpmn2:messageFlow id="MF_Task_e_case_152_11_init" sourceRef="P_TravelAgency" targetRef="P_Customer" messageRef="Msg_message_case_152_Confirmation_253" />
+    <bpmn2:messageFlow id="MF_Task_e_case_152_12_init" sourceRef="P_TravelAgency" targetRef="P_Customer" messageRef="Msg_message_case_152_Ticket_254" />
+    <bpmn2:startEvent id="Start_case_152">
+      <bpmn2:outgoing>SF_1</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:choreographyTask id="Task_e_case_152_0" name="Make Travel Offer" initiatingParticipantRef="P_TravelAgency">
+      <bpmn2:incoming>SF_1</bpmn2:incoming>
+      <bpmn2:outgoing>SF_2</bpmn2:outgoing>
+      <bpmn2:participantRef>P_TravelAgency</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Customer</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_152_0_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_152_2" name="Make Travel Offer" initiatingParticipantRef="P_TravelAgency">
+      <bpmn2:incoming>SF_2</bpmn2:incoming>
+      <bpmn2:outgoing>SF_3</bpmn2:outgoing>
+      <bpmn2:participantRef>P_TravelAgency</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Customer</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_152_2_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_152_4" name="Make Travel Offer" initiatingParticipantRef="P_TravelAgency">
+      <bpmn2:incoming>SF_3</bpmn2:incoming>
+      <bpmn2:outgoing>SF_4</bpmn2:outgoing>
+      <bpmn2:participantRef>P_TravelAgency</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Customer</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_152_4_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_152_5" name="Book Travel" initiatingParticipantRef="P_Customer">
+      <bpmn2:incoming>SF_4</bpmn2:incoming>
+      <bpmn2:outgoing>SF_5</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Customer</bpmn2:participantRef>
+      <bpmn2:participantRef>P_TravelAgency</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_152_5_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_152_7" name="Make Travel Offer" initiatingParticipantRef="P_TravelAgency">
+      <bpmn2:incoming>SF_5</bpmn2:incoming>
+      <bpmn2:outgoing>SF_6</bpmn2:outgoing>
+      <bpmn2:participantRef>P_TravelAgency</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Customer</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_152_7_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_152_8" name="Pay Travel" initiatingParticipantRef="P_Customer">
+      <bpmn2:incoming>SF_6</bpmn2:incoming>
+      <bpmn2:outgoing>SF_7</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Customer</bpmn2:participantRef>
+      <bpmn2:participantRef>P_TravelAgency</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_152_8_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_152_10" name="Make Travel Offer" initiatingParticipantRef="P_TravelAgency">
+      <bpmn2:incoming>SF_7</bpmn2:incoming>
+      <bpmn2:outgoing>SF_8</bpmn2:outgoing>
+      <bpmn2:participantRef>P_TravelAgency</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Customer</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_152_10_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_152_11" name="Confirm Booking" initiatingParticipantRef="P_TravelAgency">
+      <bpmn2:incoming>SF_8</bpmn2:incoming>
+      <bpmn2:outgoing>SF_9</bpmn2:outgoing>
+      <bpmn2:participantRef>P_TravelAgency</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Customer</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_152_11_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_152_12" name="Order Ticket" initiatingParticipantRef="P_TravelAgency">
+      <bpmn2:incoming>SF_9</bpmn2:incoming>
+      <bpmn2:outgoing>SF_10</bpmn2:outgoing>
+      <bpmn2:participantRef>P_TravelAgency</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Customer</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_152_12_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:endEvent id="End_case_152">
+      <bpmn2:incoming>SF_10</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SF_1" sourceRef="Start_case_152" targetRef="Task_e_case_152_0" />
+    <bpmn2:sequenceFlow id="SF_2" sourceRef="Task_e_case_152_0" targetRef="Task_e_case_152_2" />
+    <bpmn2:sequenceFlow id="SF_3" sourceRef="Task_e_case_152_2" targetRef="Task_e_case_152_4" />
+    <bpmn2:sequenceFlow id="SF_4" sourceRef="Task_e_case_152_4" targetRef="Task_e_case_152_5" />
+    <bpmn2:sequenceFlow id="SF_5" sourceRef="Task_e_case_152_5" targetRef="Task_e_case_152_7" />
+    <bpmn2:sequenceFlow id="SF_6" sourceRef="Task_e_case_152_7" targetRef="Task_e_case_152_8" />
+    <bpmn2:sequenceFlow id="SF_7" sourceRef="Task_e_case_152_8" targetRef="Task_e_case_152_10" />
+    <bpmn2:sequenceFlow id="SF_8" sourceRef="Task_e_case_152_10" targetRef="Task_e_case_152_11" />
+    <bpmn2:sequenceFlow id="SF_9" sourceRef="Task_e_case_152_11" targetRef="Task_e_case_152_12" />
+    <bpmn2:sequenceFlow id="SF_10" sourceRef="Task_e_case_152_12" targetRef="End_case_152" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_case_152">
+    <bpmndi:BPMNPlane id="BPMNPlane_case_152" bpmnElement="Choreography_case_152">
+      <bpmndi:BPMNShape id="Start_case_152_di" bpmnElement="Start_case_152">
+        <dc:Bounds x="100" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_0_di" bpmnElement="Task_e_case_152_0">
+        <dc:Bounds x="186" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_0_di_top" bpmnElement="P_TravelAgency" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_152_0_di">
+        <dc:Bounds x="186" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_0_di_bot" bpmnElement="P_Customer" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_152_0_di">
+        <dc:Bounds x="186" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_2_di" bpmnElement="Task_e_case_152_2">
+        <dc:Bounds x="336" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_2_di_top" bpmnElement="P_TravelAgency" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_152_2_di">
+        <dc:Bounds x="336" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_2_di_bot" bpmnElement="P_Customer" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_152_2_di">
+        <dc:Bounds x="336" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_4_di" bpmnElement="Task_e_case_152_4">
+        <dc:Bounds x="486" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_4_di_top" bpmnElement="P_TravelAgency" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_152_4_di">
+        <dc:Bounds x="486" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_4_di_bot" bpmnElement="P_Customer" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_152_4_di">
+        <dc:Bounds x="486" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_5_di" bpmnElement="Task_e_case_152_5">
+        <dc:Bounds x="636" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_5_di_top" bpmnElement="P_Customer" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_152_5_di">
+        <dc:Bounds x="636" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_5_di_bot" bpmnElement="P_TravelAgency" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_152_5_di">
+        <dc:Bounds x="636" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_7_di" bpmnElement="Task_e_case_152_7">
+        <dc:Bounds x="786" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_7_di_top" bpmnElement="P_TravelAgency" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_152_7_di">
+        <dc:Bounds x="786" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_7_di_bot" bpmnElement="P_Customer" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_152_7_di">
+        <dc:Bounds x="786" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_8_di" bpmnElement="Task_e_case_152_8">
+        <dc:Bounds x="936" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_8_di_top" bpmnElement="P_Customer" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_152_8_di">
+        <dc:Bounds x="936" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_8_di_bot" bpmnElement="P_TravelAgency" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_152_8_di">
+        <dc:Bounds x="936" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_10_di" bpmnElement="Task_e_case_152_10">
+        <dc:Bounds x="1086" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_10_di_top" bpmnElement="P_TravelAgency" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_152_10_di">
+        <dc:Bounds x="1086" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_10_di_bot" bpmnElement="P_Customer" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_152_10_di">
+        <dc:Bounds x="1086" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_11_di" bpmnElement="Task_e_case_152_11">
+        <dc:Bounds x="1236" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_11_di_top" bpmnElement="P_TravelAgency" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_152_11_di">
+        <dc:Bounds x="1236" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_11_di_bot" bpmnElement="P_Customer" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_152_11_di">
+        <dc:Bounds x="1236" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_12_di" bpmnElement="Task_e_case_152_12">
+        <dc:Bounds x="1386" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_12_di_top" bpmnElement="P_TravelAgency" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_152_12_di">
+        <dc:Bounds x="1386" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_152_12_di_bot" bpmnElement="P_Customer" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_152_12_di">
+        <dc:Bounds x="1386" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_case_152_di" bpmnElement="End_case_152">
+        <dc:Bounds x="1536" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SF_1_di" bpmnElement="SF_1">
+        <di:waypoint x="136" y="250" />
+        <di:waypoint x="186" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_2_di" bpmnElement="SF_2">
+        <di:waypoint x="286" y="250" />
+        <di:waypoint x="336" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_3_di" bpmnElement="SF_3">
+        <di:waypoint x="436" y="250" />
+        <di:waypoint x="486" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_4_di" bpmnElement="SF_4">
+        <di:waypoint x="586" y="250" />
+        <di:waypoint x="636" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_5_di" bpmnElement="SF_5">
+        <di:waypoint x="736" y="250" />
+        <di:waypoint x="786" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_6_di" bpmnElement="SF_6">
+        <di:waypoint x="886" y="250" />
+        <di:waypoint x="936" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_7_di" bpmnElement="SF_7">
+        <di:waypoint x="1036" y="250" />
+        <di:waypoint x="1086" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_8_di" bpmnElement="SF_8">
+        <di:waypoint x="1186" y="250" />
+        <di:waypoint x="1236" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_9_di" bpmnElement="SF_9">
+        <di:waypoint x="1336" y="250" />
+        <di:waypoint x="1386" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_10_di" bpmnElement="SF_10">
+        <di:waypoint x="1486" y="250" />
+        <di:waypoint x="1536" y="250" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

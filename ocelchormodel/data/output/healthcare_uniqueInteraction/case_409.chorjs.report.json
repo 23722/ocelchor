@@ -1,0 +1,26 @@
+{
+  "input": "/Users/rhob/Documents/ocelchor/ocelchormodel/data/output/healthcare_uniqueInteraction/case_409.bpmn",
+  "error": "element with id P_Gynecologist_Task_e_case_409_17 already exists",
+  "importWarnings": [],
+  "defined": 17,
+  "rendered": 0,
+  "missing": [
+    "Start_case_409",
+    "Task_e_case_409_0",
+    "Task_e_case_409_4",
+    "Task_e_case_409_7",
+    "Task_e_case_409_9",
+    "Task_e_case_409_10",
+    "Task_e_case_409_15",
+    "Task_e_case_409_17",
+    "End_case_409",
+    "SF_1",
+    "SF_2",
+    "SF_3",
+    "SF_4",
+    "SF_5",
+    "SF_6",
+    "SF_7",
+    "SF_8"
+  ]
+}

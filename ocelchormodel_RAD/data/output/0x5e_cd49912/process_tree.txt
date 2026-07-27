@@ -1,0 +1,8 @@
+∇_{unlock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]} ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩(
+  →(
+    'Request unlock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]' ⟨EOA→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩,
+    ∇_{unlock [Governance]} ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩(
+      →(
+        'Request unlock [Governance]' ⟨0x5efda50f22d34f262c29268506c5fa42cb56a1ce→Governance⟩,
+        'transfer [TORN]' ⟨Governance→TORN⟩,
+        'Respond to unlock [Governance]' ⟨Governance→0x5efda50f22d34f262c29268506c5fa42cb56a1ce⟩))))

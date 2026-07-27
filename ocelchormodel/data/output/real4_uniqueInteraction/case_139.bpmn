@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" targetNamespace="http://bpmn.io/schema/bpmn2" id="Definitions_case_139">
+  <bpmn2:message id="Msg_message_case_139_info_138" name="info" />
+  <bpmn2:message id="Msg_message_case_139_request_136" name="request" />
+  <bpmn2:message id="Msg_message_case_139_account_137" name="account" />
+  <bpmn2:message id="Msg_message_case_139_card_139" name="card" />
+  <bpmn2:choreography id="Choreography_case_139" name="case_139">
+    <bpmn2:participant id="P_Visitor" name="Visitor" />
+    <bpmn2:participant id="P_Zoo" name="Zoo" />
+    <bpmn2:participant id="P_Bank" name="Bank" />
+    <bpmn2:messageFlow id="MF_Task_e_case_139_2_init" sourceRef="P_Visitor" targetRef="P_Zoo" messageRef="Msg_message_case_139_info_138" />
+    <bpmn2:messageFlow id="MF_Task_e_case_139_8_init" sourceRef="P_Zoo" targetRef="P_Bank" messageRef="Msg_message_case_139_request_136" />
+    <bpmn2:messageFlow id="MF_Task_e_case_139_11_init" sourceRef="P_Bank" targetRef="P_Zoo" messageRef="Msg_message_case_139_account_137" />
+    <bpmn2:messageFlow id="MF_Task_e_case_139_15_init" sourceRef="P_Zoo" targetRef="P_Visitor" messageRef="Msg_message_case_139_card_139" />
+    <bpmn2:startEvent id="Start_case_139">
+      <bpmn2:outgoing>SF_1</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:choreographyTask id="Task_e_case_139_2" name="Send information to the ZooClub department" initiatingParticipantRef="P_Visitor">
+      <bpmn2:incoming>SF_1</bpmn2:incoming>
+      <bpmn2:outgoing>SF_2</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Visitor</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Zoo</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_139_2_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_139_8" name="Send payment request" initiatingParticipantRef="P_Zoo">
+      <bpmn2:incoming>SF_2</bpmn2:incoming>
+      <bpmn2:outgoing>SF_3</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Zoo</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Bank</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_139_8_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_139_11" name="Change account" initiatingParticipantRef="P_Bank">
+      <bpmn2:incoming>SF_3</bpmn2:incoming>
+      <bpmn2:outgoing>SF_4</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Bank</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Zoo</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_139_11_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_139_15" name="Deliver Zooclub card" initiatingParticipantRef="P_Zoo">
+      <bpmn2:incoming>SF_4</bpmn2:incoming>
+      <bpmn2:outgoing>SF_5</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Zoo</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Visitor</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_139_15_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:endEvent id="End_case_139">
+      <bpmn2:incoming>SF_5</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SF_1" sourceRef="Start_case_139" targetRef="Task_e_case_139_2" />
+    <bpmn2:sequenceFlow id="SF_2" sourceRef="Task_e_case_139_2" targetRef="Task_e_case_139_8" />
+    <bpmn2:sequenceFlow id="SF_3" sourceRef="Task_e_case_139_8" targetRef="Task_e_case_139_11" />
+    <bpmn2:sequenceFlow id="SF_4" sourceRef="Task_e_case_139_11" targetRef="Task_e_case_139_15" />
+    <bpmn2:sequenceFlow id="SF_5" sourceRef="Task_e_case_139_15" targetRef="End_case_139" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_case_139">
+    <bpmndi:BPMNPlane id="BPMNPlane_case_139" bpmnElement="Choreography_case_139">
+      <bpmndi:BPMNShape id="Start_case_139_di" bpmnElement="Start_case_139">
+        <dc:Bounds x="100" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_139_2_di" bpmnElement="Task_e_case_139_2">
+        <dc:Bounds x="186" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_139_2_di_top" bpmnElement="P_Visitor" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_139_2_di">
+        <dc:Bounds x="186" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_139_2_di_bot" bpmnElement="P_Zoo" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_139_2_di">
+        <dc:Bounds x="186" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_139_8_di" bpmnElement="Task_e_case_139_8">
+        <dc:Bounds x="336" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_139_8_di_top" bpmnElement="P_Zoo" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_139_8_di">
+        <dc:Bounds x="336" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_139_8_di_bot" bpmnElement="P_Bank" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_139_8_di">
+        <dc:Bounds x="336" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_139_11_di" bpmnElement="Task_e_case_139_11">
+        <dc:Bounds x="486" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_139_11_di_top" bpmnElement="P_Bank" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_139_11_di">
+        <dc:Bounds x="486" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_139_11_di_bot" bpmnElement="P_Zoo" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_139_11_di">
+        <dc:Bounds x="486" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_139_15_di" bpmnElement="Task_e_case_139_15">
+        <dc:Bounds x="636" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_139_15_di_top" bpmnElement="P_Zoo" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_139_15_di">
+        <dc:Bounds x="636" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_139_15_di_bot" bpmnElement="P_Visitor" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_139_15_di">
+        <dc:Bounds x="636" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_case_139_di" bpmnElement="End_case_139">
+        <dc:Bounds x="786" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SF_1_di" bpmnElement="SF_1">
+        <di:waypoint x="136" y="250" />
+        <di:waypoint x="186" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_2_di" bpmnElement="SF_2">
+        <di:waypoint x="286" y="250" />
+        <di:waypoint x="336" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_3_di" bpmnElement="SF_3">
+        <di:waypoint x="436" y="250" />
+        <di:waypoint x="486" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_4_di" bpmnElement="SF_4">
+        <di:waypoint x="586" y="250" />
+        <di:waypoint x="636" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_5_di" bpmnElement="SF_5">
+        <di:waypoint x="736" y="250" />
+        <di:waypoint x="786" y="250" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

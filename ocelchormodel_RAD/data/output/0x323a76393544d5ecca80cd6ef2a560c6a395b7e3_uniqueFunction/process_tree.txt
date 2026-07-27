@@ -1,0 +1,34 @@
+×(
+  'COUNTING_MODE [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]' ⟨EOA→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩,
+  'votingPeriod [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]' ⟨EOA→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩,
+  ∇_{execute [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]} ⟨EOA→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩(
+    →(
+      'Request execute [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]' ⟨EOA→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩,
+      'getPastTotalSupply [ENSToken]' ⟨0x323a76393544d5ecca80cd6ef2a560c6a395b7e3→ENSToken⟩,
+      'isOperationDone [TimelockController]' ⟨0x323a76393544d5ecca80cd6ef2a560c6a395b7e3→TimelockController⟩,
+      ∇_{executeBatch [TimelockController]} ⟨0x323a76393544d5ecca80cd6ef2a560c6a395b7e3→TimelockController⟩(
+        →(
+          'Request executeBatch [TimelockController]' ⟨0x323a76393544d5ecca80cd6ef2a560c6a395b7e3→TimelockController⟩,
+          'approve [ENSToken]' ⟨TimelockController→ENSToken⟩,
+          'Respond to executeBatch [TimelockController]' ⟨TimelockController→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩)))),
+  ∇_{castVote [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]} ⟨EOA→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩(
+    →(
+      'Request castVote [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]' ⟨EOA→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩,
+      'getPastVotes [ENSToken]' ⟨0x323a76393544d5ecca80cd6ef2a560c6a395b7e3→ENSToken⟩)),
+  ∇_{queue [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]} ⟨EOA→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩(
+    →(
+      'Request queue [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]' ⟨EOA→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩,
+      'getPastTotalSupply [ENSToken]' ⟨0x323a76393544d5ecca80cd6ef2a560c6a395b7e3→ENSToken⟩,
+      'getMinDelay [TimelockController]' ⟨0x323a76393544d5ecca80cd6ef2a560c6a395b7e3→TimelockController⟩,
+      'hashOperationBatch [TimelockController]' ⟨0x323a76393544d5ecca80cd6ef2a560c6a395b7e3→TimelockController⟩,
+      'scheduleBatch [TimelockController]' ⟨0x323a76393544d5ecca80cd6ef2a560c6a395b7e3→TimelockController⟩)),
+  'castVoteBySig [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]' ⟨EOA→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩,
+  ∇_{propose [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]} ⟨EOA→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩(
+    →(
+      'Request propose [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]' ⟨EOA→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩,
+      'getPastVotes [ENSToken]' ⟨0x323a76393544d5ecca80cd6ef2a560c6a395b7e3→ENSToken⟩)),
+  ∇_{castVoteWithReason [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]} ⟨EOA→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩(
+    →(
+      'Request castVoteWithReason [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]' ⟨EOA→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩,
+      'getPastVotes [ENSToken]' ⟨0x323a76393544d5ecca80cd6ef2a560c6a395b7e3→ENSToken⟩)),
+  'votingDelay [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]' ⟨EOA→0x323a76393544d5ecca80cd6ef2a560c6a395b7e3⟩)

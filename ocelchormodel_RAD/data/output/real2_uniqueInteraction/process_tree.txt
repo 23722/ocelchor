@@ -1,0 +1,8 @@
+∧(
+  'Order Ticket' ⟨TravelAgency→Customer⟩,
+  'Pay Travel' ⟨Customer→TravelAgency⟩,
+  'Confirm Booking' ⟨TravelAgency→Customer⟩,
+  ↻(
+    'Make Travel Offer' ⟨TravelAgency→Customer⟩,
+    τ),
+  'Book Travel' ⟨Customer→TravelAgency⟩)

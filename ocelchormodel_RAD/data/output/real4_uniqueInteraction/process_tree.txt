@@ -1,0 +1,5 @@
+→(
+  'Send information to the ZooClub department' ⟨Visitor→Zoo⟩,
+  'Send payment request' ⟨Zoo→Bank⟩,
+  'Change account' ⟨Bank→Zoo⟩,
+  'Deliver Zooclub card' ⟨Zoo→Visitor⟩)

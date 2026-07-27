@@ -1,0 +1,68 @@
+×(
+  ∇_{deposit [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]} ⟨EOA→0xd90e2f925da726b50c4ed8d0fb90ad053324f31b⟩(
+    →(
+      'Request deposit [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]' ⟨EOA→0xd90e2f925da726b50c4ed8d0fb90ad053324f31b⟩,
+      ∇_{instances [InstanceRegistry]} ⟨0xd90e2f925da726b50c4ed8d0fb90ad053324f31b→InstanceRegistry⟩(
+        →(
+          'Request instances [InstanceRegistry]' ⟨0xd90e2f925da726b50c4ed8d0fb90ad053324f31b→InstanceRegistry⟩,
+          'instances [InstanceRegistry]' ⟨InstanceRegistry→InstanceRegistry⟩,
+          'Respond to instances [InstanceRegistry]' ⟨InstanceRegistry→0xd90e2f925da726b50c4ed8d0fb90ad053324f31b⟩)),
+      ∇_{deposit [TornadoCash_eth]} ⟨0xd90e2f925da726b50c4ed8d0fb90ad053324f31b→TornadoCash_eth⟩(
+        →(
+          'Request deposit [TornadoCash_eth]' ⟨0xd90e2f925da726b50c4ed8d0fb90ad053324f31b→TornadoCash_eth⟩,
+          ↻(
+            'MiMCSponge [0x83584f83f26af4edda9cbe8c730bc87c364b28fe]' ⟨TornadoCash_eth→0x83584f83f26af4edda9cbe8c730bc87c364b28fe⟩,
+            τ),
+          'Respond to deposit [TornadoCash_eth]' ⟨TornadoCash_eth→0xd90e2f925da726b50c4ed8d0fb90ad053324f31b⟩)))),
+  ∇_{withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]} ⟨EOA→0xd90e2f925da726b50c4ed8d0fb90ad053324f31b⟩(
+    →(
+      'Request withdraw [0xd90e2f925da726b50c4ed8d0fb90ad053324f31b]' ⟨EOA→0xd90e2f925da726b50c4ed8d0fb90ad053324f31b⟩,
+      ∇_{instances [InstanceRegistry]} ⟨0xd90e2f925da726b50c4ed8d0fb90ad053324f31b→InstanceRegistry⟩(
+        →(
+          'Request instances [InstanceRegistry]' ⟨0xd90e2f925da726b50c4ed8d0fb90ad053324f31b→InstanceRegistry⟩,
+          'instances [InstanceRegistry]' ⟨InstanceRegistry→InstanceRegistry⟩,
+          'Respond to instances [InstanceRegistry]' ⟨InstanceRegistry→0xd90e2f925da726b50c4ed8d0fb90ad053324f31b⟩)),
+      ∇_{burn [RelayerRegistry]} ⟨0xd90e2f925da726b50c4ed8d0fb90ad053324f31b→RelayerRegistry⟩(
+        →(
+          'Request burn [RelayerRegistry]' ⟨0xd90e2f925da726b50c4ed8d0fb90ad053324f31b→RelayerRegistry⟩,
+          ∇_{burn [RelayerRegistry]} ⟨RelayerRegistry→RelayerRegistry⟩(
+            →(
+              'Request burn [RelayerRegistry]' ⟨RelayerRegistry→RelayerRegistry⟩,
+              ∇_{instanceFeeWithUpdate [FeeManager]} ⟨RelayerRegistry→FeeManager⟩(
+                →(
+                  'Request instanceFeeWithUpdate [FeeManager]' ⟨RelayerRegistry→FeeManager⟩,
+                  'instanceFeeWithUpdate [FeeManager]' ⟨FeeManager→FeeManager⟩,
+                  'Respond to instanceFeeWithUpdate [FeeManager]' ⟨FeeManager→RelayerRegistry⟩)),
+              ∇_{addBurnRewards [TornadoStakingRewards]} ⟨RelayerRegistry→TornadoStakingRewards⟩(
+                →(
+                  'Request addBurnRewards [TornadoStakingRewards]' ⟨RelayerRegistry→TornadoStakingRewards⟩,
+                  ∇_{addBurnRewards [TornadoStakingRewards]} ⟨TornadoStakingRewards→TornadoStakingRewards⟩(
+                    →(
+                      'Request addBurnRewards [TornadoStakingRewards]' ⟨TornadoStakingRewards→TornadoStakingRewards⟩,
+                      ∇_{userVault [GovernancePatchUpgrade]} ⟨TornadoStakingRewards→GovernancePatchUpgrade⟩(
+                        →(
+                          'Request userVault [GovernancePatchUpgrade]' ⟨TornadoStakingRewards→GovernancePatchUpgrade⟩,
+                          'userVault [GovernancePatchUpgrade]' ⟨GovernancePatchUpgrade→GovernancePatchUpgrade⟩,
+                          'Respond to userVault [GovernancePatchUpgrade]' ⟨GovernancePatchUpgrade→TornadoStakingRewards⟩)),
+                      'balanceOf [TORN]' ⟨TornadoStakingRewards→TORN⟩,
+                      'Respond to addBurnRewards [TornadoStakingRewards]' ⟨TornadoStakingRewards→TornadoStakingRewards⟩)),
+                  'Respond to addBurnRewards [TornadoStakingRewards]' ⟨TornadoStakingRewards→RelayerRegistry⟩)),
+              'Respond to burn [RelayerRegistry]' ⟨RelayerRegistry→RelayerRegistry⟩)),
+          'Respond to burn [RelayerRegistry]' ⟨RelayerRegistry→0xd90e2f925da726b50c4ed8d0fb90ad053324f31b⟩)),
+      ∇_{withdraw [TornadoCash_eth]} ⟨0xd90e2f925da726b50c4ed8d0fb90ad053324f31b→TornadoCash_eth⟩(
+        →(
+          'Request withdraw [TornadoCash_eth]' ⟨0xd90e2f925da726b50c4ed8d0fb90ad053324f31b→TornadoCash_eth⟩,
+          ∇_{verifyProof [Verifier]} ⟨TornadoCash_eth→Verifier⟩(
+            →(
+              'Request verifyProof [Verifier]' ⟨TornadoCash_eth→Verifier⟩,
+              'Transfer* [0x0000000000000000000000000000000000000006]' ⟨Verifier→0x0000000000000000000000000000000000000006⟩,
+              ↻(
+                →(
+                  'undefined [0x0000000000000000000000000000000000000007]' ⟨Verifier→0x0000000000000000000000000000000000000007⟩,
+                  'undefined [0x0000000000000000000000000000000000000006]' ⟨Verifier→0x0000000000000000000000000000000000000006⟩),
+                τ),
+              'undefined [0x0000000000000000000000000000000000000008]' ⟨Verifier→0x0000000000000000000000000000000000000008⟩,
+              'Respond to verifyProof [Verifier]' ⟨Verifier→TornadoCash_eth⟩)),
+          'transfer [0x2038d51a98967f2c9443e2ca35642abb3e63169e]' ⟨TornadoCash_eth→0x2038d51a98967f2c9443e2ca35642abb3e63169e⟩,
+          'transfer [0xd8f1eb586ecb93745392ee254a028f1f67e1437e]' ⟨TornadoCash_eth→0xd8f1eb586ecb93745392ee254a028f1f67e1437e⟩,
+          'Respond to withdraw [TornadoCash_eth]' ⟨TornadoCash_eth→0xd90e2f925da726b50c4ed8d0fb90ad053324f31b⟩)))))

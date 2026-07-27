@@ -1,0 +1,149 @@
+{
+  "log": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c_uniqueFunction",
+  "generated_by": "ocelchormodel-rad 0.1.0",
+  "hard_gates": {
+    "passed": true
+  },
+  "constraints": {
+    "C0": {
+      "checked": 6,
+      "violations": 0
+    },
+    "C1": {
+      "checked": 10,
+      "violations": 0
+    },
+    "C10": {
+      "checked": 4,
+      "violations": 0
+    },
+    "C11": {
+      "checked": 6,
+      "violations": 0
+    },
+    "C12": {
+      "checked": 2,
+      "violations": 0
+    },
+    "C13": {
+      "checked": 2,
+      "violations": 0
+    },
+    "C14": {
+      "checked": 2,
+      "violations": 0
+    },
+    "C15": {
+      "checked": 4,
+      "violations": 0
+    },
+    "C16": {
+      "checked": 2,
+      "violations": 0
+    },
+    "C2": {
+      "checked": 6,
+      "violations": 0
+    },
+    "C3": {
+      "checked": 6,
+      "violations": 0
+    },
+    "C4": {
+      "checked": 6,
+      "violations": 0
+    },
+    "C5": {
+      "checked": 10,
+      "violations": 0
+    },
+    "C6": {
+      "checked": 10,
+      "violations": 0
+    },
+    "C7": {
+      "checked": 6,
+      "violations": 0
+    },
+    "C8": {
+      "checked": 6,
+      "violations": 0
+    },
+    "C9": {
+      "checked": 6,
+      "violations": 0
+    }
+  },
+  "d01_ordering_determinism": {
+    "residual_ties": 0,
+    "examples": [],
+    "passed": true
+  },
+  "d02_scope_openers": {
+    "non_request_openers": 0,
+    "examples": []
+  },
+  "d03_bracket_completeness": {
+    "expected_missing_response": 2,
+    "unexpected_missing_response": 0,
+    "unexpected_examples": []
+  },
+  "d04_identity_labels": {
+    "exec_types": 4,
+    "occurrences": 4,
+    "examples": [
+      "Request bid [0xb1690c08e213a35ed9bab7b318de14420fb57d8c]",
+      "Request cancelAuction [0xb1690c08e213a35ed9bab7b318de14420fb57d8c]",
+      "deposit [0x672ec49f7f7eac25c3a2e651f67f579bb5da8936]",
+      "deposit [0xba52c75764d6f594735dc735be7f1830cdf58ddf]"
+    ]
+  },
+  "d05_event_type_fanout": [
+    {
+      "name": "deposit",
+      "exec_types": 2,
+      "examples": [
+        "deposit [0x672ec49f7f7eac25c3a2e651f67f579bb5da8936]",
+        "deposit [0xba52c75764d6f594735dc735be7f1830cdf58ddf]"
+      ]
+    }
+  ],
+  "d06_task_type_fanout": [],
+  "d07_scope_pooling": {
+    "buckets": 2,
+    "total_scope_occurrences": 2,
+    "buckets_with_pooling": 0,
+    "top": [
+      {
+        "context": [
+          "bid [0xb1690c08e213a35ed9bab7b318de14420fb57d8c]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "cancelAuction [0xb1690c08e213a35ed9bab7b318de14420fb57d8c]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      }
+    ]
+  },
+  "d08_message_merging": [],
+  "d09_parallelism_witnesses": [],
+  "d10_unrestricted_repetition": [],
+  "d11_choice_realizability": [],
+  "d12_recursion": {
+    "findings": [],
+    "direct": 0,
+    "indirect": 0,
+    "max_depth_delta": 0
+  },
+  "d13_cross_depth_participants": {
+    "pairs": 0,
+    "examples": []
+  }
+}

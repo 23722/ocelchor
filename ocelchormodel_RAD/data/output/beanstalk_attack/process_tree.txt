@@ -1,0 +1,543 @@
+×(
+  ∇_{0x60806040 []} ⟨EOA→⟩(
+    →(
+      'Request 0x60806040 []' ⟨EOA→⟩,
+      ↻(
+        ∇_{undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]} ⟨0x728ad672409da288ca5b9aa85d1a55b803ba97d7→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩(
+          →(
+            'Request undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨0x728ad672409da288ca5b9aa85d1a55b803ba97d7→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩,
+            ×(
+              τ,
+              →(
+                ∇_{flashLoan [InitializableImmutableAdminUpgradeabilityProxy]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→InitializableImmutableAdminUpgradeabilityProxy⟩(
+                  →(
+                    'Request flashLoan [InitializableImmutableAdminUpgradeabilityProxy]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→InitializableImmutableAdminUpgradeabilityProxy⟩,
+                    ∇_{flashLoan [LendingPool]} ⟨InitializableImmutableAdminUpgradeabilityProxy→LendingPool⟩(
+                      →(
+                        'Request flashLoan [LendingPool]' ⟨InitializableImmutableAdminUpgradeabilityProxy→LendingPool⟩,
+                        ↻(
+                          ∇_{transferUnderlyingTo [InitializableImmutableAdminUpgradeabilityProxy]} ⟨LendingPool→InitializableImmutableAdminUpgradeabilityProxy⟩(
+                            →(
+                              'Request transferUnderlyingTo [InitializableImmutableAdminUpgradeabilityProxy]' ⟨LendingPool→InitializableImmutableAdminUpgradeabilityProxy⟩,
+                              ∇_{transferUnderlyingTo [AToken]} ⟨InitializableImmutableAdminUpgradeabilityProxy→AToken⟩(
+                                →(
+                                  'Request transferUnderlyingTo [AToken]' ⟨InitializableImmutableAdminUpgradeabilityProxy→AToken⟩,
+                                  ×(
+                                    'transfer [TetherToken]' ⟨AToken→TetherToken⟩,
+                                    ∇_{undefined [FiatTokenProxy]} ⟨AToken→FiatTokenProxy⟩(
+                                      →(
+                                        'Request undefined [FiatTokenProxy]' ⟨AToken→FiatTokenProxy⟩,
+                                        'transfer [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                                        'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→AToken⟩)),
+                                    'transfer [Dai]' ⟨AToken→Dai⟩),
+                                  'Respond to transferUnderlyingTo [AToken]' ⟨AToken→InitializableImmutableAdminUpgradeabilityProxy⟩)),
+                              'Respond to transferUnderlyingTo [InitializableImmutableAdminUpgradeabilityProxy]' ⟨InitializableImmutableAdminUpgradeabilityProxy→LendingPool⟩)),
+                          τ),
+                        ∇_{executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]} ⟨LendingPool→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩(
+                          →(
+                            'Request executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨LendingPool→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩,
+                            'balanceOf [Bean]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Bean⟩,
+                            ∇_{swap [UniswapV2Pair]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→UniswapV2Pair⟩(
+                              →(
+                                'Request swap [UniswapV2Pair]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→UniswapV2Pair⟩,
+                                'transfer [Bean]' ⟨UniswapV2Pair→Bean⟩,
+                                ∇_{uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]} ⟨UniswapV2Pair→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩(
+                                  →(
+                                    'Request uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨UniswapV2Pair→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩,
+                                    'balanceOf [LUSDToken]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→LUSDToken⟩,
+                                    ∇_{swap [UniswapV2Pair]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→UniswapV2Pair⟩(
+                                      →(
+                                        'Request swap [UniswapV2Pair]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→UniswapV2Pair⟩,
+                                        'transfer [LUSDToken]' ⟨UniswapV2Pair→LUSDToken⟩,
+                                        ∇_{uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]} ⟨UniswapV2Pair→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩(
+                                          →(
+                                            'Request uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨UniswapV2Pair→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩,
+                                            'balanceOf [Dai]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Dai⟩,
+                                            ∇_{undefined [FiatTokenProxy]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→FiatTokenProxy⟩(
+                                              →(
+                                                'Request undefined [FiatTokenProxy]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→FiatTokenProxy⟩,
+                                                'balanceOf [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                                                'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                                            'balanceOf [TetherToken]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→TetherToken⟩,
+                                            ↻(
+                                              ∇_{add_liquidity [Vyper_contract]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩(
+                                                →(
+                                                  'Request add_liquidity [Vyper_contract]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩,
+                                                  ×(
+                                                    ∇_{add_liquidity [Vyper_contract]} ⟨Vyper_contract→Vyper_contract⟩(
+                                                      →(
+                                                        'Request add_liquidity [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                        ×(
+                                                          →(
+                                                            ∇_{get_virtual_price [Vyper_contract]} ⟨Vyper_contract→Vyper_contract⟩(
+                                                              →(
+                                                                'Request get_virtual_price [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                'totalSupply [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                'Respond to get_virtual_price [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩)),
+                                                            'transferFrom [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩),
+                                                          ∧(
+                                                            'transferFrom [LUSDToken]' ⟨Vyper_contract→LUSDToken⟩,
+                                                            ↻(
+                                                              →(
+                                                                'undefined [0x0000000000000000000000000000000000000004]' ⟨Vyper_contract→0x0000000000000000000000000000000000000004⟩,
+                                                                ↻(
+                                                                  'Transfer* [0x0000000000000000000000000000000000000004]' ⟨Vyper_contract→0x0000000000000000000000000000000000000004⟩,
+                                                                  τ)),
+                                                              τ),
+                                                            'transferFrom [Bean]' ⟨Vyper_contract→Bean⟩)),
+                                                        'Respond to add_liquidity [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩)),
+                                                    →(
+                                                      'totalSupply [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                      ∧(
+                                                        ∇_{undefined [FiatTokenProxy]} ⟨Vyper_contract→FiatTokenProxy⟩(
+                                                          →(
+                                                            'Request undefined [FiatTokenProxy]' ⟨Vyper_contract→FiatTokenProxy⟩,
+                                                            'transferFrom [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                                                            'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→Vyper_contract⟩)),
+                                                        'transferFrom [TetherToken]' ⟨Vyper_contract→TetherToken⟩,
+                                                        'transferFrom [Dai]' ⟨Vyper_contract→Dai⟩,
+                                                        ↻(
+                                                          →(
+                                                            ↻(
+                                                              →(
+                                                                'undefined [0x0000000000000000000000000000000000000004]' ⟨Vyper_contract→0x0000000000000000000000000000000000000004⟩,
+                                                                ↻(
+                                                                  'Transfer* [0x0000000000000000000000000000000000000004]' ⟨Vyper_contract→0x0000000000000000000000000000000000000004⟩,
+                                                                  τ)),
+                                                              τ),
+                                                            'balanceOf [TetherToken]' ⟨Vyper_contract→TetherToken⟩),
+                                                          τ)),
+                                                      'mint [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩)),
+                                                  'Respond to add_liquidity [Vyper_contract]' ⟨Vyper_contract→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                                              ×(
+                                                →(
+                                                  'balanceOf [Bean]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Bean⟩,
+                                                  'balanceOf [LUSDToken]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→LUSDToken⟩),
+                                                →(
+                                                  ∇_{exchange [Vyper_contract]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩(
+                                                    →(
+                                                      'Request exchange [Vyper_contract]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩,
+                                                      ∇_{exchange [Vyper_contract]} ⟨Vyper_contract→Vyper_contract⟩(
+                                                        →(
+                                                          'Request exchange [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                          ∇_{get_virtual_price [Vyper_contract]} ⟨Vyper_contract→Vyper_contract⟩(
+                                                            →(
+                                                              'Request get_virtual_price [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                              'totalSupply [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                              'Respond to get_virtual_price [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩)),
+                                                          'transferFrom [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                          'transfer [LUSDToken]' ⟨Vyper_contract→LUSDToken⟩,
+                                                          'Respond to exchange [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩)),
+                                                      'Respond to exchange [Vyper_contract]' ⟨Vyper_contract→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                                                  'balanceOf [Vyper_contract]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩))),
+                                            ∧(
+                                              ↻(
+                                                ∇_{remove_liquidity_one_coin [Vyper_contract]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩(
+                                                  →(
+                                                    'Request remove_liquidity_one_coin [Vyper_contract]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩,
+                                                    ∇_{remove_liquidity_one_coin [Vyper_contract]} ⟨Vyper_contract→Vyper_contract⟩(
+                                                      →(
+                                                        'Request remove_liquidity_one_coin [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                        ×(
+                                                          →(
+                                                            ∇_{get_virtual_price [Vyper_contract]} ⟨Vyper_contract→Vyper_contract⟩(
+                                                              →(
+                                                                'Request get_virtual_price [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                'totalSupply [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                'Respond to get_virtual_price [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩)),
+                                                            'transfer [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩),
+                                                          →(
+                                                            'undefined [0x0000000000000000000000000000000000000004]' ⟨Vyper_contract→0x0000000000000000000000000000000000000004⟩,
+                                                            ↻(
+                                                              'Transfer* [0x0000000000000000000000000000000000000004]' ⟨Vyper_contract→0x0000000000000000000000000000000000000004⟩,
+                                                              'transfer [LUSDToken]' ⟨Vyper_contract→LUSDToken⟩))),
+                                                        'Respond to remove_liquidity_one_coin [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩)),
+                                                    'Respond to remove_liquidity_one_coin [Vyper_contract]' ⟨Vyper_contract→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                                                τ),
+                                              ∇_{emergencyCommit [Diamond]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Diamond⟩(
+                                                →(
+                                                  'Request emergencyCommit [Diamond]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Diamond⟩,
+                                                  ∇_{emergencyCommit [GovernanceFacet]} ⟨Diamond→GovernanceFacet⟩(
+                                                    →(
+                                                      'Request emergencyCommit [GovernanceFacet]' ⟨Diamond→GovernanceFacet⟩,
+                                                      ∇_{init [0xe5ecf73603d98a0128f05ed30506ac7a663dbb69]} ⟨GovernanceFacet→0xe5ecf73603d98a0128f05ed30506ac7a663dbb69⟩(
+                                                        →(
+                                                          'Request init [0xe5ecf73603d98a0128f05ed30506ac7a663dbb69]' ⟨GovernanceFacet→0xe5ecf73603d98a0128f05ed30506ac7a663dbb69⟩,
+                                                          'balanceOf [Bean]' ⟨0xe5ecf73603d98a0128f05ed30506ac7a663dbb69→Bean⟩,
+                                                          'transfer [Bean]' ⟨0xe5ecf73603d98a0128f05ed30506ac7a663dbb69→Bean⟩,
+                                                          'balanceOf [UniswapV2Pair]' ⟨0xe5ecf73603d98a0128f05ed30506ac7a663dbb69→UniswapV2Pair⟩,
+                                                          'transfer [UniswapV2Pair]' ⟨0xe5ecf73603d98a0128f05ed30506ac7a663dbb69→UniswapV2Pair⟩,
+                                                          ↻(
+                                                            →(
+                                                              ∇_{balanceOf [Vyper_contract]} ⟨0xe5ecf73603d98a0128f05ed30506ac7a663dbb69→Vyper_contract⟩(
+                                                                →(
+                                                                  'Request balanceOf [Vyper_contract]' ⟨0xe5ecf73603d98a0128f05ed30506ac7a663dbb69→Vyper_contract⟩,
+                                                                  'balanceOf [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                  'Respond to balanceOf [Vyper_contract]' ⟨Vyper_contract→0xe5ecf73603d98a0128f05ed30506ac7a663dbb69⟩)),
+                                                              ∇_{transfer [Vyper_contract]} ⟨0xe5ecf73603d98a0128f05ed30506ac7a663dbb69→Vyper_contract⟩(
+                                                                →(
+                                                                  'Request transfer [Vyper_contract]' ⟨0xe5ecf73603d98a0128f05ed30506ac7a663dbb69→Vyper_contract⟩,
+                                                                  'transfer [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                  'Respond to transfer [Vyper_contract]' ⟨Vyper_contract→0xe5ecf73603d98a0128f05ed30506ac7a663dbb69⟩))),
+                                                            τ),
+                                                          'Respond to init [0xe5ecf73603d98a0128f05ed30506ac7a663dbb69]' ⟨0xe5ecf73603d98a0128f05ed30506ac7a663dbb69→GovernanceFacet⟩)),
+                                                      'mint [Bean]' ⟨GovernanceFacet→Bean⟩,
+                                                      'Respond to emergencyCommit [GovernanceFacet]' ⟨GovernanceFacet→Diamond⟩)),
+                                                  'Respond to emergencyCommit [Diamond]' ⟨Diamond→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                                              ∇_{vote [Diamond]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Diamond⟩(
+                                                →(
+                                                  'Request vote [Diamond]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Diamond⟩,
+                                                  'vote [GovernanceFacet]' ⟨Diamond→GovernanceFacet⟩,
+                                                  'Respond to vote [Diamond]' ⟨Diamond→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                                              ↻(
+                                                ↻(
+                                                  ∇_{balanceOf [Vyper_contract]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩(
+                                                    →(
+                                                      'Request balanceOf [Vyper_contract]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩,
+                                                      'balanceOf [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                      'Respond to balanceOf [Vyper_contract]' ⟨Vyper_contract→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                                                  τ),
+                                                ∇_{deposit [Diamond]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Diamond⟩(
+                                                  →(
+                                                    'Request deposit [Diamond]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Diamond⟩,
+                                                    ∇_{deposit [SiloV2Facet]} ⟨Diamond→SiloV2Facet⟩(
+                                                      →(
+                                                        'Request deposit [SiloV2Facet]' ⟨Diamond→SiloV2Facet⟩,
+                                                        ↻(
+                                                          'updateSilo [SiloFacet]' ⟨SiloV2Facet→SiloFacet⟩,
+                                                          ∇_{transferFrom [Vyper_contract]} ⟨SiloV2Facet→Vyper_contract⟩(
+                                                            →(
+                                                              'Request transferFrom [Vyper_contract]' ⟨SiloV2Facet→Vyper_contract⟩,
+                                                              'transferFrom [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                              'Respond to transferFrom [Vyper_contract]' ⟨Vyper_contract→SiloV2Facet⟩))),
+                                                        ×(
+                                                          ∇_{undefined [Diamond]} ⟨SiloV2Facet→Diamond⟩(
+                                                            →(
+                                                              'Request undefined [Diamond]' ⟨SiloV2Facet→Diamond⟩,
+                                                              ∇_{lusdToBDV [BDVFacet]} ⟨Diamond→BDVFacet⟩(
+                                                                →(
+                                                                  'Request lusdToBDV [BDVFacet]' ⟨Diamond→BDVFacet⟩,
+                                                                  ↻(
+                                                                    →(
+                                                                      ∇_{A_precise [Vyper_contract]} ⟨BDVFacet→Vyper_contract⟩(
+                                                                        →(
+                                                                          'Request A_precise [Vyper_contract]' ⟨BDVFacet→Vyper_contract⟩,
+                                                                          'A_precise [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                          'Respond to A_precise [Vyper_contract]' ⟨Vyper_contract→BDVFacet⟩)),
+                                                                      ∇_{get_previous_balances [Vyper_contract]} ⟨BDVFacet→Vyper_contract⟩(
+                                                                        →(
+                                                                          'Request get_previous_balances [Vyper_contract]' ⟨BDVFacet→Vyper_contract⟩,
+                                                                          'get_previous_balances [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                          'Respond to get_previous_balances [Vyper_contract]' ⟨Vyper_contract→BDVFacet⟩)),
+                                                                      ↻(
+                                                                        ∇_{get_virtual_price [Vyper_contract]} ⟨BDVFacet→Vyper_contract⟩(
+                                                                          →(
+                                                                            'Request get_virtual_price [Vyper_contract]' ⟨BDVFacet→Vyper_contract⟩,
+                                                                            ×(
+                                                                              'get_virtual_price [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                              'totalSupply [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩),
+                                                                            'Respond to get_virtual_price [Vyper_contract]' ⟨Vyper_contract→BDVFacet⟩)),
+                                                                        τ)),
+                                                                    τ),
+                                                                  'Respond to lusdToBDV [BDVFacet]' ⟨BDVFacet→Diamond⟩)),
+                                                              'Respond to undefined [Diamond]' ⟨Diamond→SiloV2Facet⟩)),
+                                                          ∇_{curveToBDV [Diamond]} ⟨SiloV2Facet→Diamond⟩(
+                                                            →(
+                                                              'Request curveToBDV [Diamond]' ⟨SiloV2Facet→Diamond⟩,
+                                                              ∇_{curveToBDV [BDVFacet]} ⟨Diamond→BDVFacet⟩(
+                                                                →(
+                                                                  'Request curveToBDV [BDVFacet]' ⟨Diamond→BDVFacet⟩,
+                                                                  ∇_{get_previous_balances [Vyper_contract]} ⟨BDVFacet→Vyper_contract⟩(
+                                                                    →(
+                                                                      'Request get_previous_balances [Vyper_contract]' ⟨BDVFacet→Vyper_contract⟩,
+                                                                      'get_previous_balances [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                      'Respond to get_previous_balances [Vyper_contract]' ⟨Vyper_contract→BDVFacet⟩)),
+                                                                  ↻(
+                                                                    ∇_{get_virtual_price [Vyper_contract]} ⟨BDVFacet→Vyper_contract⟩(
+                                                                      →(
+                                                                        'Request get_virtual_price [Vyper_contract]' ⟨BDVFacet→Vyper_contract⟩,
+                                                                        ×(
+                                                                          'totalSupply [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                          ∇_{get_virtual_price [Vyper_contract]} ⟨Vyper_contract→Vyper_contract⟩(
+                                                                            →(
+                                                                              'Request get_virtual_price [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                              ∇_{get_virtual_price [Vyper_contract]} ⟨Vyper_contract→Vyper_contract⟩(
+                                                                                →(
+                                                                                  'Request get_virtual_price [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                                  'totalSupply [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                                  'Respond to get_virtual_price [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩)),
+                                                                              'Respond to get_virtual_price [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩))),
+                                                                        'Respond to get_virtual_price [Vyper_contract]' ⟨Vyper_contract→BDVFacet⟩)),
+                                                                    τ),
+                                                                  ∇_{A_precise [Vyper_contract]} ⟨BDVFacet→Vyper_contract⟩(
+                                                                    →(
+                                                                      'Request A_precise [Vyper_contract]' ⟨BDVFacet→Vyper_contract⟩,
+                                                                      'A_precise [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                                                      'Respond to A_precise [Vyper_contract]' ⟨Vyper_contract→BDVFacet⟩)),
+                                                                  'Respond to curveToBDV [BDVFacet]' ⟨BDVFacet→Diamond⟩)),
+                                                              'Respond to curveToBDV [Diamond]' ⟨Diamond→SiloV2Facet⟩))),
+                                                        'Respond to deposit [SiloV2Facet]' ⟨SiloV2Facet→Diamond⟩)),
+                                                    'Respond to deposit [Diamond]' ⟨Diamond→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)))),
+                                            'transfer [LUSDToken]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→LUSDToken⟩,
+                                            'Respond to uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→UniswapV2Pair⟩)),
+                                        'balanceOf [LUSDToken]' ⟨UniswapV2Pair→LUSDToken⟩,
+                                        'balanceOf [OlympusERC20Token]' ⟨UniswapV2Pair→OlympusERC20Token⟩,
+                                        'Respond to swap [UniswapV2Pair]' ⟨UniswapV2Pair→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                                    'transfer [Bean]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Bean⟩,
+                                    'Respond to uniswapV2Call [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→UniswapV2Pair⟩)),
+                                'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+                                'balanceOf [Bean]' ⟨UniswapV2Pair→Bean⟩,
+                                'Respond to swap [UniswapV2Pair]' ⟨UniswapV2Pair→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                            'balanceOf [LUSDToken]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→LUSDToken⟩,
+                            ∇_{exchange [Vyper_contract]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩(
+                              →(
+                                'Request exchange [Vyper_contract]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩,
+                                ∇_{exchange [Vyper_contract]} ⟨Vyper_contract→Vyper_contract⟩(
+                                  →(
+                                    'Request exchange [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                    ∇_{get_virtual_price [Vyper_contract]} ⟨Vyper_contract→Vyper_contract⟩(
+                                      →(
+                                        'Request get_virtual_price [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                        'totalSupply [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                        'Respond to get_virtual_price [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩)),
+                                    'transferFrom [LUSDToken]' ⟨Vyper_contract→LUSDToken⟩,
+                                    'transfer [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                    'Respond to exchange [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩)),
+                                'Respond to exchange [Vyper_contract]' ⟨Vyper_contract→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                            'balanceOf [Vyper_contract]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩,
+                            ↻(
+                              ∇_{remove_liquidity_one_coin [Vyper_contract]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩(
+                                →(
+                                  'Request remove_liquidity_one_coin [Vyper_contract]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩,
+                                  'totalSupply [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                  'burnFrom [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                  'undefined [0x0000000000000000000000000000000000000004]' ⟨Vyper_contract→0x0000000000000000000000000000000000000004⟩,
+                                  ↻(
+                                    'Transfer* [0x0000000000000000000000000000000000000004]' ⟨Vyper_contract→0x0000000000000000000000000000000000000004⟩,
+                                    ×(
+                                      ∇_{undefined [FiatTokenProxy]} ⟨Vyper_contract→FiatTokenProxy⟩(
+                                        →(
+                                          'Request undefined [FiatTokenProxy]' ⟨Vyper_contract→FiatTokenProxy⟩,
+                                          'transfer [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                                          'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→Vyper_contract⟩)),
+                                      'transfer [Dai]' ⟨Vyper_contract→Dai⟩,
+                                      'transfer [TetherToken]' ⟨Vyper_contract→TetherToken⟩)),
+                                  'Respond to remove_liquidity_one_coin [Vyper_contract]' ⟨Vyper_contract→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                              τ),
+                            'balanceOf [Dai]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Dai⟩,
+                            ∇_{undefined [FiatTokenProxy]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→FiatTokenProxy⟩(
+                              →(
+                                'Request undefined [FiatTokenProxy]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→FiatTokenProxy⟩,
+                                'balanceOf [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                                'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                            'balanceOf [TetherToken]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→TetherToken⟩,
+                            'Respond to executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→LendingPool⟩)),
+                        ↻(
+                          ∧(
+                            ↻(
+                              ∇_{calculateInterestRates [DefaultReserveInterestRateStrategy]} ⟨LendingPool→DefaultReserveInterestRateStrategy⟩(
+                                →(
+                                  'Request calculateInterestRates [DefaultReserveInterestRateStrategy]' ⟨LendingPool→DefaultReserveInterestRateStrategy⟩,
+                                  'getLendingRateOracle [LendingPoolAddressesProvider]' ⟨DefaultReserveInterestRateStrategy→LendingPoolAddressesProvider⟩,
+                                  'getMarketBorrowRate [LendingRateOracle]' ⟨DefaultReserveInterestRateStrategy→LendingRateOracle⟩,
+                                  'Respond to calculateInterestRates [DefaultReserveInterestRateStrategy]' ⟨DefaultReserveInterestRateStrategy→LendingPool⟩)),
+                              τ),
+                            →(
+                              ↻(
+                                ∇_{scaledTotalSupply [InitializableImmutableAdminUpgradeabilityProxy]} ⟨LendingPool→InitializableImmutableAdminUpgradeabilityProxy⟩(
+                                  →(
+                                    'Request scaledTotalSupply [InitializableImmutableAdminUpgradeabilityProxy]' ⟨LendingPool→InitializableImmutableAdminUpgradeabilityProxy⟩,
+                                    'scaledTotalSupply [VariableDebtToken]' ⟨InitializableImmutableAdminUpgradeabilityProxy→VariableDebtToken⟩,
+                                    'Respond to scaledTotalSupply [InitializableImmutableAdminUpgradeabilityProxy]' ⟨InitializableImmutableAdminUpgradeabilityProxy→LendingPool⟩)),
+                                ×(
+                                  ↻(
+                                    ∇_{undefined [FiatTokenProxy]} ⟨LendingPool→FiatTokenProxy⟩(
+                                      →(
+                                        'Request undefined [FiatTokenProxy]' ⟨LendingPool→FiatTokenProxy⟩,
+                                        ×(
+                                          'transferFrom [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                                          'balanceOf [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩),
+                                        'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→LendingPool⟩)),
+                                    τ),
+                                  →(
+                                    ∇_{getSupplyData [InitializableImmutableAdminUpgradeabilityProxy]} ⟨LendingPool→InitializableImmutableAdminUpgradeabilityProxy⟩(
+                                      →(
+                                        'Request getSupplyData [InitializableImmutableAdminUpgradeabilityProxy]' ⟨LendingPool→InitializableImmutableAdminUpgradeabilityProxy⟩,
+                                        'getSupplyData [StableDebtToken]' ⟨InitializableImmutableAdminUpgradeabilityProxy→StableDebtToken⟩,
+                                        'Respond to getSupplyData [InitializableImmutableAdminUpgradeabilityProxy]' ⟨InitializableImmutableAdminUpgradeabilityProxy→LendingPool⟩)),
+                                    ∇_{mintToTreasury [InitializableImmutableAdminUpgradeabilityProxy]} ⟨LendingPool→InitializableImmutableAdminUpgradeabilityProxy⟩(
+                                      →(
+                                        'Request mintToTreasury [InitializableImmutableAdminUpgradeabilityProxy]' ⟨LendingPool→InitializableImmutableAdminUpgradeabilityProxy⟩,
+                                        ∇_{mintToTreasury [AToken]} ⟨InitializableImmutableAdminUpgradeabilityProxy→AToken⟩(
+                                          →(
+                                            'Request mintToTreasury [AToken]' ⟨InitializableImmutableAdminUpgradeabilityProxy→AToken⟩,
+                                            ∇_{handleAction [InitializableImmutableAdminUpgradeabilityProxy]} ⟨AToken→InitializableImmutableAdminUpgradeabilityProxy⟩(
+                                              →(
+                                                'Request handleAction [InitializableImmutableAdminUpgradeabilityProxy]' ⟨AToken→InitializableImmutableAdminUpgradeabilityProxy⟩,
+                                                'handleAction [StakedTokenIncentivesController]' ⟨InitializableImmutableAdminUpgradeabilityProxy→StakedTokenIncentivesController⟩,
+                                                'Respond to handleAction [InitializableImmutableAdminUpgradeabilityProxy]' ⟨InitializableImmutableAdminUpgradeabilityProxy→AToken⟩)),
+                                            'Respond to mintToTreasury [AToken]' ⟨AToken→InitializableImmutableAdminUpgradeabilityProxy⟩)),
+                                        'Respond to mintToTreasury [InitializableImmutableAdminUpgradeabilityProxy]' ⟨InitializableImmutableAdminUpgradeabilityProxy→LendingPool⟩)),
+                                    ∇_{undefined [InitializableImmutableAdminUpgradeabilityProxy]} ⟨LendingPool→InitializableImmutableAdminUpgradeabilityProxy⟩(
+                                      →(
+                                        'Request undefined [InitializableImmutableAdminUpgradeabilityProxy]' ⟨LendingPool→InitializableImmutableAdminUpgradeabilityProxy⟩,
+                                        ∇_{totalSupply [AToken]} ⟨InitializableImmutableAdminUpgradeabilityProxy→AToken⟩(
+                                          →(
+                                            'Request totalSupply [AToken]' ⟨InitializableImmutableAdminUpgradeabilityProxy→AToken⟩,
+                                            ∇_{getReserveNormalizedIncome [InitializableImmutableAdminUpgradeabilityProxy]} ⟨AToken→InitializableImmutableAdminUpgradeabilityProxy⟩(
+                                              →(
+                                                'Request getReserveNormalizedIncome [InitializableImmutableAdminUpgradeabilityProxy]' ⟨AToken→InitializableImmutableAdminUpgradeabilityProxy⟩,
+                                                'getReserveNormalizedIncome [LendingPool]' ⟨InitializableImmutableAdminUpgradeabilityProxy→LendingPool⟩,
+                                                'Respond to getReserveNormalizedIncome [InitializableImmutableAdminUpgradeabilityProxy]' ⟨InitializableImmutableAdminUpgradeabilityProxy→AToken⟩)),
+                                            'Respond to totalSupply [AToken]' ⟨AToken→InitializableImmutableAdminUpgradeabilityProxy⟩)),
+                                        'Respond to undefined [InitializableImmutableAdminUpgradeabilityProxy]' ⟨InitializableImmutableAdminUpgradeabilityProxy→LendingPool⟩)),
+                                    ∇_{getTotalSupplyAndAvgRate [InitializableImmutableAdminUpgradeabilityProxy]} ⟨LendingPool→InitializableImmutableAdminUpgradeabilityProxy⟩(
+                                      →(
+                                        'Request getTotalSupplyAndAvgRate [InitializableImmutableAdminUpgradeabilityProxy]' ⟨LendingPool→InitializableImmutableAdminUpgradeabilityProxy⟩,
+                                        'getTotalSupplyAndAvgRate [StableDebtToken]' ⟨InitializableImmutableAdminUpgradeabilityProxy→StableDebtToken⟩,
+                                        'Respond to getTotalSupplyAndAvgRate [InitializableImmutableAdminUpgradeabilityProxy]' ⟨InitializableImmutableAdminUpgradeabilityProxy→LendingPool⟩))))),
+                              ×(
+                                'balanceOf [TetherToken]' ⟨LendingPool→TetherToken⟩,
+                                'balanceOf [Dai]' ⟨LendingPool→Dai⟩))),
+                          'transferFrom [Dai]' ⟨LendingPool→Dai⟩),
+                        'transferFrom [TetherToken]' ⟨LendingPool→TetherToken⟩,
+                        'Respond to flashLoan [LendingPool]' ⟨LendingPool→InitializableImmutableAdminUpgradeabilityProxy⟩)),
+                    'Respond to flashLoan [InitializableImmutableAdminUpgradeabilityProxy]' ⟨InitializableImmutableAdminUpgradeabilityProxy→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                'balanceOf [UniswapV2Pair]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→UniswapV2Pair⟩,
+                'transfer [UniswapV2Pair]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→UniswapV2Pair⟩,
+                ∇_{burn [UniswapV2Pair]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→UniswapV2Pair⟩(
+                  →(
+                    'Request burn [UniswapV2Pair]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→UniswapV2Pair⟩,
+                    ↻(
+                      →(
+                        'balanceOf [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+                        'balanceOf [Bean]' ⟨UniswapV2Pair→Bean⟩),
+                      →(
+                        'feeTo [UniswapV2Factory]' ⟨UniswapV2Pair→UniswapV2Factory⟩,
+                        'transfer [WETH9]' ⟨UniswapV2Pair→WETH9⟩,
+                        'transfer [Bean]' ⟨UniswapV2Pair→Bean⟩)),
+                    'Respond to burn [UniswapV2Pair]' ⟨UniswapV2Pair→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)))),
+            ∧(
+              ↻(
+                ∇_{undefined [FiatTokenProxy]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→FiatTokenProxy⟩(
+                  →(
+                    'Request undefined [FiatTokenProxy]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→FiatTokenProxy⟩,
+                    ×(
+                      'balanceOf [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                      'transfer [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                      'approve [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                      'allowance [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩),
+                    'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                τ),
+              ×(
+                →(
+                  'balanceOf [Dai]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Dai⟩,
+                  'undefined [0x5777d92f208679db4b9778590fa3cab3ac9e2168]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→0x5777d92f208679db4b9778590fa3cab3ac9e2168⟩,
+                  ∇_{swap [0x5777d92f208679db4b9778590fa3cab3ac9e2168]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→0x5777d92f208679db4b9778590fa3cab3ac9e2168⟩(
+                    →(
+                      'Request swap [0x5777d92f208679db4b9778590fa3cab3ac9e2168]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→0x5777d92f208679db4b9778590fa3cab3ac9e2168⟩,
+                      ∇_{undefined [FiatTokenProxy]} ⟨0x5777d92f208679db4b9778590fa3cab3ac9e2168→FiatTokenProxy⟩(
+                        →(
+                          'Request undefined [FiatTokenProxy]' ⟨0x5777d92f208679db4b9778590fa3cab3ac9e2168→FiatTokenProxy⟩,
+                          'transfer [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                          'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→0x5777d92f208679db4b9778590fa3cab3ac9e2168⟩)),
+                      ↻(
+                        'balanceOf [Dai]' ⟨0x5777d92f208679db4b9778590fa3cab3ac9e2168→Dai⟩,
+                        ∇_{undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]} ⟨0x5777d92f208679db4b9778590fa3cab3ac9e2168→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩(
+                          →(
+                            'Request undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨0x5777d92f208679db4b9778590fa3cab3ac9e2168→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩,
+                            'transfer [Dai]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Dai⟩,
+                            'Respond to undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→0x5777d92f208679db4b9778590fa3cab3ac9e2168⟩))),
+                      'Respond to swap [0x5777d92f208679db4b9778590fa3cab3ac9e2168]' ⟨0x5777d92f208679db4b9778590fa3cab3ac9e2168→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩))),
+                ↻(
+                  →(
+                    'allowance [Bean]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Bean⟩,
+                    'approve [Bean]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Bean⟩,
+                    ×(
+                      τ,
+                      ↻(
+                        ×(
+                          →(
+                            'allowance [Dai]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Dai⟩,
+                            'approve [Dai]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Dai⟩),
+                          →(
+                            'allowance [TetherToken]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→TetherToken⟩,
+                            'approve [TetherToken]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→TetherToken⟩)),
+                        τ)),
+                    ×(
+                      τ,
+                      →(
+                        'allowance [Vyper_contract]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩,
+                        'approve [Vyper_contract]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩)),
+                    ×(
+                      τ,
+                      →(
+                        'allowance [LUSDToken]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→LUSDToken⟩,
+                        'approve [LUSDToken]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→LUSDToken⟩,
+                        ×(
+                          τ,
+                          ↻(
+                            →(
+                              ∇_{allowance [Vyper_contract]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩(
+                                →(
+                                  'Request allowance [Vyper_contract]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩,
+                                  'allowance [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                  'Respond to allowance [Vyper_contract]' ⟨Vyper_contract→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                              ∇_{approve [Vyper_contract]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩(
+                                →(
+                                  'Request approve [Vyper_contract]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→Vyper_contract⟩,
+                                  'approve [Vyper_contract]' ⟨Vyper_contract→Vyper_contract⟩,
+                                  'Respond to approve [Vyper_contract]' ⟨Vyper_contract→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩))),
+                            τ))))),
+                  τ))),
+            ×(
+              τ,
+              →(
+                'undefined [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640⟩,
+                ∇_{swap [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640⟩(
+                  →(
+                    'Request swap [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640⟩,
+                    'transfer [WETH9]' ⟨0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640→WETH9⟩,
+                    ↻(
+                      ∇_{undefined [FiatTokenProxy]} ⟨0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640→FiatTokenProxy⟩(
+                        →(
+                          'Request undefined [FiatTokenProxy]' ⟨0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640→FiatTokenProxy⟩,
+                          'balanceOf [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                          'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640⟩)),
+                      ∇_{undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]} ⟨0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩(
+                        →(
+                          'Request undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩,
+                          ∇_{undefined [FiatTokenProxy]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→FiatTokenProxy⟩(
+                            →(
+                              'Request undefined [FiatTokenProxy]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→FiatTokenProxy⟩,
+                              'transfer [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                              'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                          'Respond to undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640⟩))),
+                    'Respond to swap [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640]' ⟨0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                'balanceOf [TetherToken]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→TetherToken⟩,
+                'token0 [UniswapV3Pool]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→UniswapV3Pool⟩,
+                ∇_{swap [UniswapV3Pool]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→UniswapV3Pool⟩(
+                  →(
+                    'Request swap [UniswapV3Pool]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→UniswapV3Pool⟩,
+                    'transfer [WETH9]' ⟨UniswapV3Pool→WETH9⟩,
+                    ↻(
+                      'balanceOf [TetherToken]' ⟨UniswapV3Pool→TetherToken⟩,
+                      ∇_{undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]} ⟨UniswapV3Pool→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩(
+                        →(
+                          'Request undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨UniswapV3Pool→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩,
+                          'transfer [TetherToken]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→TetherToken⟩,
+                          'Respond to undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→UniswapV3Pool⟩))),
+                    'Respond to swap [UniswapV3Pool]' ⟨UniswapV3Pool→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                'balanceOf [WETH9]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→WETH9⟩,
+                ∇_{withdraw [WETH9]} ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→WETH9⟩(
+                  →(
+                    'Request withdraw [WETH9]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→WETH9⟩,
+                    'transfer [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨WETH9→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩,
+                    'Respond to withdraw [WETH9]' ⟨WETH9→0x79224bc0bf70ec34f0ef56ed8251619499a59def⟩)),
+                'transfer [0x1c5dcdd006ea78a7e4783f9e6021c32935a10fb4]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→EOA⟩)),
+            'Respond to undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]' ⟨0x79224bc0bf70ec34f0ef56ed8251619499a59def→0x728ad672409da288ca5b9aa85d1a55b803ba97d7⟩)),
+        τ))),
+  ∇_{propose [Diamond]} ⟨EOA→Diamond⟩(
+    →(
+      'Request propose [Diamond]' ⟨EOA→Diamond⟩,
+      'propose [GovernanceFacet]' ⟨Diamond→GovernanceFacet⟩)))

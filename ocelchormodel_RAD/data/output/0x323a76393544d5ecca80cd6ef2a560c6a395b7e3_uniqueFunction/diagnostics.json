@@ -1,0 +1,204 @@
+{
+  "log": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3_uniqueFunction",
+  "generated_by": "ocelchormodel-rad 0.1.0",
+  "hard_gates": {
+    "passed": true
+  },
+  "constraints": {
+    "C0": {
+      "checked": 21,
+      "violations": 0
+    },
+    "C1": {
+      "checked": 31,
+      "violations": 0
+    },
+    "C10": {
+      "checked": 10,
+      "violations": 0
+    },
+    "C11": {
+      "checked": 21,
+      "violations": 0
+    },
+    "C12": {
+      "checked": 6,
+      "violations": 0
+    },
+    "C13": {
+      "checked": 6,
+      "violations": 0
+    },
+    "C14": {
+      "checked": 6,
+      "violations": 0
+    },
+    "C15": {
+      "checked": 12,
+      "violations": 0
+    },
+    "C16": {
+      "checked": 6,
+      "violations": 0
+    },
+    "C2": {
+      "checked": 21,
+      "violations": 0
+    },
+    "C3": {
+      "checked": 21,
+      "violations": 0
+    },
+    "C4": {
+      "checked": 21,
+      "violations": 0
+    },
+    "C5": {
+      "checked": 31,
+      "violations": 0
+    },
+    "C6": {
+      "checked": 31,
+      "violations": 0
+    },
+    "C7": {
+      "checked": 21,
+      "violations": 0
+    },
+    "C8": {
+      "checked": 21,
+      "violations": 0
+    },
+    "C9": {
+      "checked": 21,
+      "violations": 0
+    }
+  },
+  "d01_ordering_determinism": {
+    "residual_ties": 0,
+    "examples": [],
+    "passed": true
+  },
+  "d02_scope_openers": {
+    "non_request_openers": 0,
+    "examples": []
+  },
+  "d03_bracket_completeness": {
+    "expected_missing_response": 5,
+    "unexpected_missing_response": 0,
+    "unexpected_examples": []
+  },
+  "d04_identity_labels": {
+    "exec_types": 9,
+    "occurrences": 9,
+    "examples": [
+      "COUNTING_MODE [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
+      "Request castVote [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
+      "Request castVoteWithReason [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
+      "Request execute [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
+      "Request propose [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]"
+    ]
+  },
+  "d05_event_type_fanout": [],
+  "d06_task_type_fanout": [],
+  "d07_scope_pooling": {
+    "buckets": 6,
+    "total_scope_occurrences": 6,
+    "buckets_with_pooling": 0,
+    "top": [
+      {
+        "context": [
+          "propose [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "castVoteWithReason [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "castVote [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "queue [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "execute [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      }
+    ]
+  },
+  "d08_message_merging": [],
+  "d09_parallelism_witnesses": [],
+  "d10_unrestricted_repetition": [],
+  "d11_choice_realizability": [],
+  "d12_recursion": {
+    "findings": [],
+    "direct": 0,
+    "indirect": 0,
+    "max_depth_delta": 0
+  },
+  "d13_cross_depth_participants": {
+    "pairs": 3,
+    "examples": [
+      {
+        "object": "0x323a76393544d5ecca80cd6ef2a560c6a395b7e3",
+        "ancestor_scope": "subchoreographyInstance:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:root",
+        "descendant_scope": "subchoreographyInstance:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:0_3",
+        "ancestor_task_types": [
+          "Request execute [0x323a76393544d5ecca80cd6ef2a560c6a395b7e3]",
+          "getPastTotalSupply [ENSToken]",
+          "isOperationDone [TimelockController]"
+        ],
+        "descendant_task_types": [
+          "Request executeBatch [TimelockController]",
+          "Respond to executeBatch [TimelockController]"
+        ]
+      },
+      {
+        "object": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
+        "ancestor_scope": "subchoreographyInstance:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:root",
+        "descendant_scope": "subchoreographyInstance:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:0_3",
+        "ancestor_task_types": [
+          "getPastTotalSupply [ENSToken]"
+        ],
+        "descendant_task_types": [
+          "approve [ENSToken]"
+        ]
+      },
+      {
+        "object": "0xfe89cc7abb2c4183683ab71653c4cdc9b02d44b7",
+        "ancestor_scope": "subchoreographyInstance:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:root",
+        "descendant_scope": "subchoreographyInstance:e0b0c1ec787b0e24e079734dda5f6571d5495518700aed89d6da87d9fd47475e:0_3",
+        "ancestor_task_types": [
+          "isOperationDone [TimelockController]"
+        ],
+        "descendant_task_types": [
+          "Request executeBatch [TimelockController]",
+          "Respond to executeBatch [TimelockController]",
+          "approve [ENSToken]"
+        ]
+      }
+    ]
+  }
+}

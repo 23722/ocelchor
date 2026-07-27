@@ -1,0 +1,345 @@
+×(
+  ∇_{multicall [MasterChefV3]} ⟨EOA→MasterChefV3⟩(
+    →(
+      'Request multicall [MasterChefV3]' ⟨EOA→MasterChefV3⟩,
+      ∇_{decreaseLiquidity [MasterChefV3]} ⟨MasterChefV3→MasterChefV3⟩(
+        →(
+          'Request decreaseLiquidity [MasterChefV3]' ⟨MasterChefV3→MasterChefV3⟩,
+          ∇_{decreaseLiquidity [NonfungiblePositionManager]} ⟨MasterChefV3→NonfungiblePositionManager⟩(
+            →(
+              'Request decreaseLiquidity [NonfungiblePositionManager]' ⟨MasterChefV3→NonfungiblePositionManager⟩,
+              'burn [PancakeV3Pool]' ⟨NonfungiblePositionManager→PancakeV3Pool⟩,
+              'positions [PancakeV3Pool]' ⟨NonfungiblePositionManager→PancakeV3Pool⟩,
+              'Respond to decreaseLiquidity [NonfungiblePositionManager]' ⟨NonfungiblePositionManager→MasterChefV3⟩)),
+          ↻(
+            →(
+              'lmPool [PancakeV3Pool]' ⟨MasterChefV3→PancakeV3Pool⟩,
+              ↻(
+                ∇_{undefined [0xc7497bcf94cd1b69d6cdac99da116af6859815c2]} ⟨MasterChefV3→0xc7497bcf94cd1b69d6cdac99da116af6859815c2⟩(
+                  →(
+                    'Request undefined [0xc7497bcf94cd1b69d6cdac99da116af6859815c2]' ⟨MasterChefV3→0xc7497bcf94cd1b69d6cdac99da116af6859815c2⟩,
+                    ×(
+                      'getLatestPeriodInfo [MasterChefV3]' ⟨0xc7497bcf94cd1b69d6cdac99da116af6859815c2→MasterChefV3⟩,
+                      →(
+                        'slot0 [PancakeV3Pool]' ⟨0xc7497bcf94cd1b69d6cdac99da116af6859815c2→PancakeV3Pool⟩,
+                        ×(
+                          τ,
+                          'maxLiquidityPerTick [PancakeV3Pool]' ⟨0xc7497bcf94cd1b69d6cdac99da116af6859815c2→PancakeV3Pool⟩))),
+                    'Respond to undefined [0xc7497bcf94cd1b69d6cdac99da116af6859815c2]' ⟨0xc7497bcf94cd1b69d6cdac99da116af6859815c2→MasterChefV3⟩)),
+                τ)),
+            'positions [NonfungiblePositionManager]' ⟨MasterChefV3→NonfungiblePositionManager⟩),
+          'Respond to decreaseLiquidity [MasterChefV3]' ⟨MasterChefV3→MasterChefV3⟩)),
+      ∇_{collect [MasterChefV3]} ⟨MasterChefV3→MasterChefV3⟩(
+        →(
+          'Request collect [MasterChefV3]' ⟨MasterChefV3→MasterChefV3⟩,
+          ∇_{collect [NonfungiblePositionManager]} ⟨MasterChefV3→NonfungiblePositionManager⟩(
+            →(
+              'Request collect [NonfungiblePositionManager]' ⟨MasterChefV3→NonfungiblePositionManager⟩,
+              ∇_{collect [PancakeV3Pool]} ⟨NonfungiblePositionManager→PancakeV3Pool⟩(
+                →(
+                  'Request collect [PancakeV3Pool]' ⟨NonfungiblePositionManager→PancakeV3Pool⟩,
+                  ∇_{undefined [FiatTokenProxy]} ⟨PancakeV3Pool→FiatTokenProxy⟩(
+                    →(
+                      'Request undefined [FiatTokenProxy]' ⟨PancakeV3Pool→FiatTokenProxy⟩,
+                      'transfer [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                      'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→PancakeV3Pool⟩)),
+                  'transfer [WETH9]' ⟨PancakeV3Pool→WETH9⟩,
+                  'Respond to collect [PancakeV3Pool]' ⟨PancakeV3Pool→NonfungiblePositionManager⟩)),
+              'Respond to collect [NonfungiblePositionManager]' ⟨NonfungiblePositionManager→MasterChefV3⟩)),
+          'Respond to collect [MasterChefV3]' ⟨MasterChefV3→MasterChefV3⟩)),
+      ∇_{unwrapWETH9 [MasterChefV3]} ⟨MasterChefV3→MasterChefV3⟩(
+        →(
+          'Request unwrapWETH9 [MasterChefV3]' ⟨MasterChefV3→MasterChefV3⟩,
+          'balanceOf [WETH9]' ⟨MasterChefV3→WETH9⟩,
+          ∇_{withdraw [WETH9]} ⟨MasterChefV3→WETH9⟩(
+            →(
+              'Request withdraw [WETH9]' ⟨MasterChefV3→WETH9⟩,
+              'transfer [MasterChefV3]' ⟨WETH9→MasterChefV3⟩,
+              'Respond to withdraw [WETH9]' ⟨WETH9→MasterChefV3⟩)),
+          'transfer [0xa13bb13609c3b9aabb8a4d5b4e9ecbaf502ca56e]' ⟨MasterChefV3→EOA⟩,
+          'Respond to unwrapWETH9 [MasterChefV3]' ⟨MasterChefV3→MasterChefV3⟩)),
+      ∇_{sweepToken [MasterChefV3]} ⟨MasterChefV3→MasterChefV3⟩(
+        →(
+          'Request sweepToken [MasterChefV3]' ⟨MasterChefV3→MasterChefV3⟩,
+          ↻(
+            ∇_{undefined [FiatTokenProxy]} ⟨MasterChefV3→FiatTokenProxy⟩(
+              →(
+                'Request undefined [FiatTokenProxy]' ⟨MasterChefV3→FiatTokenProxy⟩,
+                ×(
+                  'transfer [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                  'balanceOf [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩),
+                'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→MasterChefV3⟩)),
+            τ),
+          'Respond to sweepToken [MasterChefV3]' ⟨MasterChefV3→MasterChefV3⟩)),
+      ∇_{withdraw [MasterChefV3]} ⟨MasterChefV3→MasterChefV3⟩(
+        →(
+          'Request withdraw [MasterChefV3]' ⟨MasterChefV3→MasterChefV3⟩,
+          ∧(
+            'undefined [0xc7497bcf94cd1b69d6cdac99da116af6859815c2]' ⟨MasterChefV3→0xc7497bcf94cd1b69d6cdac99da116af6859815c2⟩,
+            ↻(
+              →(
+                'lmPool [PancakeV3Pool]' ⟨MasterChefV3→PancakeV3Pool⟩,
+                ∇_{undefined [0xc7497bcf94cd1b69d6cdac99da116af6859815c2]} ⟨MasterChefV3→0xc7497bcf94cd1b69d6cdac99da116af6859815c2⟩(
+                  →(
+                    'Request undefined [0xc7497bcf94cd1b69d6cdac99da116af6859815c2]' ⟨MasterChefV3→0xc7497bcf94cd1b69d6cdac99da116af6859815c2⟩,
+                    'slot0 [PancakeV3Pool]' ⟨0xc7497bcf94cd1b69d6cdac99da116af6859815c2→PancakeV3Pool⟩,
+                    ×(
+                      τ,
+                      'maxLiquidityPerTick [PancakeV3Pool]' ⟨0xc7497bcf94cd1b69d6cdac99da116af6859815c2→PancakeV3Pool⟩),
+                    'Respond to undefined [0xc7497bcf94cd1b69d6cdac99da116af6859815c2]' ⟨0xc7497bcf94cd1b69d6cdac99da116af6859815c2→MasterChefV3⟩))),
+              τ)),
+          'safeTransferFrom [NonfungiblePositionManager]' ⟨MasterChefV3→NonfungiblePositionManager⟩,
+          'Respond to withdraw [MasterChefV3]' ⟨MasterChefV3→MasterChefV3⟩)))),
+  ∇_{harvest [MasterChefV3]} ⟨EOA→MasterChefV3⟩(
+    →(
+      'Request harvest [MasterChefV3]' ⟨EOA→MasterChefV3⟩,
+      'lmPool [PancakeV3Pool]' ⟨MasterChefV3→PancakeV3Pool⟩,
+      ↻(
+        ∇_{undefined [0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14]} ⟨MasterChefV3→0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14⟩(
+          →(
+            'Request undefined [0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14]' ⟨MasterChefV3→0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14⟩,
+            ×(
+              'slot0 [PancakeV3Pool]' ⟨0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14→PancakeV3Pool⟩,
+              'getLatestPeriodInfo [MasterChefV3]' ⟨0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14→MasterChefV3⟩),
+            'Respond to undefined [0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14]' ⟨0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14→MasterChefV3⟩)),
+        τ),
+      'balanceOf [CakeOFT]' ⟨MasterChefV3→CakeOFT⟩,
+      'transfer [CakeOFT]' ⟨MasterChefV3→CakeOFT⟩)),
+  ∇_{withdraw [MasterChefV3]} ⟨EOA→MasterChefV3⟩(
+    →(
+      'Request withdraw [MasterChefV3]' ⟨EOA→MasterChefV3⟩,
+      ↻(
+        →(
+          'lmPool [PancakeV3Pool]' ⟨MasterChefV3→PancakeV3Pool⟩,
+          ↻(
+            ∇_{undefined [0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb]} ⟨MasterChefV3→0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb⟩(
+              →(
+                'Request undefined [0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb]' ⟨MasterChefV3→0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb⟩,
+                ×(
+                  'getLatestPeriodInfo [MasterChefV3]' ⟨0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb→MasterChefV3⟩,
+                  →(
+                    'slot0 [PancakeV3Pool]' ⟨0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb→PancakeV3Pool⟩,
+                    ×(
+                      τ,
+                      'maxLiquidityPerTick [PancakeV3Pool]' ⟨0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb→PancakeV3Pool⟩))),
+                'Respond to undefined [0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb]' ⟨0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb→MasterChefV3⟩)),
+            τ)),
+        τ),
+      'safeTransferFrom [NonfungiblePositionManager]' ⟨MasterChefV3→NonfungiblePositionManager⟩)),
+  ∇_{collect [MasterChefV3]} ⟨EOA→MasterChefV3⟩(
+    →(
+      'Request collect [MasterChefV3]' ⟨EOA→MasterChefV3⟩,
+      ∇_{collect [NonfungiblePositionManager]} ⟨MasterChefV3→NonfungiblePositionManager⟩(
+        →(
+          'Request collect [NonfungiblePositionManager]' ⟨MasterChefV3→NonfungiblePositionManager⟩,
+          'burn [PancakeV3Pool]' ⟨NonfungiblePositionManager→PancakeV3Pool⟩,
+          'positions [PancakeV3Pool]' ⟨NonfungiblePositionManager→PancakeV3Pool⟩,
+          ∇_{collect [PancakeV3Pool]} ⟨NonfungiblePositionManager→PancakeV3Pool⟩(
+            →(
+              'Request collect [PancakeV3Pool]' ⟨NonfungiblePositionManager→PancakeV3Pool⟩,
+              ∇_{undefined [FiatTokenProxy]} ⟨PancakeV3Pool→FiatTokenProxy⟩(
+                →(
+                  'Request undefined [FiatTokenProxy]' ⟨PancakeV3Pool→FiatTokenProxy⟩,
+                  'transfer [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                  'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→PancakeV3Pool⟩)),
+              'transfer [TetherToken]' ⟨PancakeV3Pool→TetherToken⟩,
+              'Respond to collect [PancakeV3Pool]' ⟨PancakeV3Pool→NonfungiblePositionManager⟩)),
+          'Respond to collect [NonfungiblePositionManager]' ⟨NonfungiblePositionManager→MasterChefV3⟩)))),
+  'Tranfer [MasterChefV3]' ⟨EOA→MasterChefV3⟩,
+  ∇_{add [MasterChefV3]} ⟨EOA→MasterChefV3⟩(
+    →(
+      'Request add [MasterChefV3]' ⟨EOA→MasterChefV3⟩,
+      ∇_{deploy [PancakeV3LmPoolDeployer]} ⟨MasterChefV3→PancakeV3LmPoolDeployer⟩(
+        →(
+          'Request deploy [PancakeV3LmPoolDeployer]' ⟨MasterChefV3→PancakeV3LmPoolDeployer⟩,
+          'undefined [0xc7497bcf94cd1b69d6cdac99da116af6859815c2]' ⟨PancakeV3LmPoolDeployer→0xc7497bcf94cd1b69d6cdac99da116af6859815c2⟩,
+          'undefined [MasterChefV3]' ⟨PancakeV3LmPoolDeployer→MasterChefV3⟩,
+          'undefined [NonfungiblePositionManager]' ⟨PancakeV3LmPoolDeployer→NonfungiblePositionManager⟩,
+          ∇_{setLmPool [PancakeV3Factory]} ⟨PancakeV3LmPoolDeployer→PancakeV3Factory⟩(
+            →(
+              'Request setLmPool [PancakeV3Factory]' ⟨PancakeV3LmPoolDeployer→PancakeV3Factory⟩,
+              'setLmPool [PancakeV3Pool]' ⟨PancakeV3Factory→PancakeV3Pool⟩,
+              'Respond to setLmPool [PancakeV3Factory]' ⟨PancakeV3Factory→PancakeV3LmPoolDeployer⟩)),
+          'Respond to deploy [PancakeV3LmPoolDeployer]' ⟨PancakeV3LmPoolDeployer→MasterChefV3⟩)),
+      'token0 [PancakeV3Pool]' ⟨MasterChefV3→PancakeV3Pool⟩,
+      'token1 [PancakeV3Pool]' ⟨MasterChefV3→PancakeV3Pool⟩,
+      'fee [PancakeV3Pool]' ⟨MasterChefV3→PancakeV3Pool⟩,
+      ↻(
+        ∇_{undefined [FiatTokenProxy]} ⟨MasterChefV3→FiatTokenProxy⟩(
+          →(
+            'Request undefined [FiatTokenProxy]' ⟨MasterChefV3→FiatTokenProxy⟩,
+            ×(
+              'approve [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+              'allowance [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩),
+            'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→MasterChefV3⟩)),
+        τ),
+      ↻(
+        'allowance [WETH9]' ⟨MasterChefV3→WETH9⟩,
+        τ),
+      'approve [WETH9]' ⟨MasterChefV3→WETH9⟩)),
+  ∇_{setReceiver [MasterChefV3]} ⟨EOA→MasterChefV3⟩(
+    →(
+      'Request setReceiver [MasterChefV3]' ⟨EOA→MasterChefV3⟩,
+      'allowance [CakeOFT]' ⟨MasterChefV3→CakeOFT⟩)),
+  ∇_{updateLiquidity [MasterChefV3]} ⟨EOA→MasterChefV3⟩(
+    →(
+      'Request updateLiquidity [MasterChefV3]' ⟨EOA→MasterChefV3⟩,
+      ↻(
+        'lmPool [PancakeV3Pool]' ⟨MasterChefV3→PancakeV3Pool⟩,
+        →(
+          ∇_{accumulateReward [PancakeV3LmPool]} ⟨MasterChefV3→PancakeV3LmPool⟩(
+            →(
+              'Request accumulateReward [PancakeV3LmPool]' ⟨MasterChefV3→PancakeV3LmPool⟩,
+              'getLatestPeriodInfo [MasterChefV3]' ⟨PancakeV3LmPool→MasterChefV3⟩,
+              'Respond to accumulateReward [PancakeV3LmPool]' ⟨PancakeV3LmPool→MasterChefV3⟩)),
+          ∇_{getRewardGrowthInside [PancakeV3LmPool]} ⟨MasterChefV3→PancakeV3LmPool⟩(
+            →(
+              'Request getRewardGrowthInside [PancakeV3LmPool]' ⟨MasterChefV3→PancakeV3LmPool⟩,
+              'slot0 [PancakeV3Pool]' ⟨PancakeV3LmPool→PancakeV3Pool⟩,
+              'Respond to getRewardGrowthInside [PancakeV3LmPool]' ⟨PancakeV3LmPool→MasterChefV3⟩)),
+          'positions [NonfungiblePositionManager]' ⟨MasterChefV3→NonfungiblePositionManager⟩,
+          ∇_{updatePositionBoostMultiplier [FarmBoosterV3]} ⟨MasterChefV3→FarmBoosterV3⟩(
+            →(
+              'Request updatePositionBoostMultiplier [FarmBoosterV3]' ⟨MasterChefV3→FarmBoosterV3⟩,
+              'userPositionInfos [MasterChefV3]' ⟨FarmBoosterV3→MasterChefV3⟩,
+              'poolInfo [MasterChefV3]' ⟨FarmBoosterV3→MasterChefV3⟩,
+              'liquidity [PancakeV3Pool]' ⟨FarmBoosterV3→PancakeV3Pool⟩,
+              'totalSupply [VECakeProxy]' ⟨FarmBoosterV3→VECakeProxy⟩,
+              'balanceOf [VECakeProxy]' ⟨FarmBoosterV3→VECakeProxy⟩,
+              'Respond to updatePositionBoostMultiplier [FarmBoosterV3]' ⟨FarmBoosterV3→MasterChefV3⟩)))),
+      ∇_{updatePosition [PancakeV3LmPool]} ⟨MasterChefV3→PancakeV3LmPool⟩(
+        →(
+          'Request updatePosition [PancakeV3LmPool]' ⟨MasterChefV3→PancakeV3LmPool⟩,
+          ↻(
+            'slot0 [PancakeV3Pool]' ⟨PancakeV3LmPool→PancakeV3Pool⟩,
+            'maxLiquidityPerTick [PancakeV3Pool]' ⟨PancakeV3LmPool→PancakeV3Pool⟩),
+          'Respond to updatePosition [PancakeV3LmPool]' ⟨PancakeV3LmPool→MasterChefV3⟩)))),
+  ∇_{increaseLiquidity [MasterChefV3]} ⟨EOA→MasterChefV3⟩(
+    →(
+      'Request increaseLiquidity [MasterChefV3]' ⟨EOA→MasterChefV3⟩,
+      'transferFrom [CakeOFT]' ⟨MasterChefV3→CakeOFT⟩,
+      ∇_{undefined [FiatTokenProxy]} ⟨MasterChefV3→FiatTokenProxy⟩(
+        →(
+          'Request undefined [FiatTokenProxy]' ⟨MasterChefV3→FiatTokenProxy⟩,
+          'transferFrom [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+          'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→MasterChefV3⟩)),
+      ∇_{increaseLiquidity [NonfungiblePositionManager]} ⟨MasterChefV3→NonfungiblePositionManager⟩(
+        →(
+          'Request increaseLiquidity [NonfungiblePositionManager]' ⟨MasterChefV3→NonfungiblePositionManager⟩,
+          'slot0 [PancakeV3Pool]' ⟨NonfungiblePositionManager→PancakeV3Pool⟩,
+          ∇_{mint [PancakeV3Pool]} ⟨NonfungiblePositionManager→PancakeV3Pool⟩(
+            →(
+              'Request mint [PancakeV3Pool]' ⟨NonfungiblePositionManager→PancakeV3Pool⟩,
+              ↻(
+                →(
+                  'balanceOf [CakeOFT]' ⟨PancakeV3Pool→CakeOFT⟩,
+                  ∇_{undefined [FiatTokenProxy]} ⟨PancakeV3Pool→FiatTokenProxy⟩(
+                    →(
+                      'Request undefined [FiatTokenProxy]' ⟨PancakeV3Pool→FiatTokenProxy⟩,
+                      'balanceOf [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                      'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→PancakeV3Pool⟩))),
+                ∇_{pancakeV3MintCallback [NonfungiblePositionManager]} ⟨PancakeV3Pool→NonfungiblePositionManager⟩(
+                  →(
+                    'Request pancakeV3MintCallback [NonfungiblePositionManager]' ⟨PancakeV3Pool→NonfungiblePositionManager⟩,
+                    'transferFrom [CakeOFT]' ⟨NonfungiblePositionManager→CakeOFT⟩,
+                    ∇_{undefined [FiatTokenProxy]} ⟨NonfungiblePositionManager→FiatTokenProxy⟩(
+                      →(
+                        'Request undefined [FiatTokenProxy]' ⟨NonfungiblePositionManager→FiatTokenProxy⟩,
+                        'transferFrom [FiatTokenV2_1]' ⟨FiatTokenProxy→FiatTokenV2_1⟩,
+                        'Respond to undefined [FiatTokenProxy]' ⟨FiatTokenProxy→NonfungiblePositionManager⟩)),
+                    'Respond to pancakeV3MintCallback [NonfungiblePositionManager]' ⟨NonfungiblePositionManager→PancakeV3Pool⟩))),
+              'Respond to mint [PancakeV3Pool]' ⟨PancakeV3Pool→NonfungiblePositionManager⟩)),
+          'positions [PancakeV3Pool]' ⟨NonfungiblePositionManager→PancakeV3Pool⟩,
+          'Respond to increaseLiquidity [NonfungiblePositionManager]' ⟨NonfungiblePositionManager→MasterChefV3⟩)),
+      'transfer [CakeOFT]' ⟨MasterChefV3→CakeOFT⟩,
+      ↻(
+        →(
+          'lmPool [PancakeV3Pool]' ⟨MasterChefV3→PancakeV3Pool⟩,
+          ↻(
+            ∇_{undefined [0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14]} ⟨MasterChefV3→0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14⟩(
+              →(
+                'Request undefined [0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14]' ⟨MasterChefV3→0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14⟩,
+                ×(
+                  'getLatestPeriodInfo [MasterChefV3]' ⟨0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14→MasterChefV3⟩,
+                  →(
+                    'slot0 [PancakeV3Pool]' ⟨0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14→PancakeV3Pool⟩,
+                    ×(
+                      τ,
+                      'maxLiquidityPerTick [PancakeV3Pool]' ⟨0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14→PancakeV3Pool⟩))),
+                'Respond to undefined [0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14]' ⟨0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14→MasterChefV3⟩)),
+            τ)),
+        'positions [NonfungiblePositionManager]' ⟨MasterChefV3→NonfungiblePositionManager⟩))),
+  ∇_{decreaseLiquidity [MasterChefV3]} ⟨EOA→MasterChefV3⟩(
+    →(
+      'Request decreaseLiquidity [MasterChefV3]' ⟨EOA→MasterChefV3⟩,
+      ∇_{decreaseLiquidity [NonfungiblePositionManager]} ⟨MasterChefV3→NonfungiblePositionManager⟩(
+        →(
+          'Request decreaseLiquidity [NonfungiblePositionManager]' ⟨MasterChefV3→NonfungiblePositionManager⟩,
+          'burn [PancakeV3Pool]' ⟨NonfungiblePositionManager→PancakeV3Pool⟩,
+          'positions [PancakeV3Pool]' ⟨NonfungiblePositionManager→PancakeV3Pool⟩,
+          'Respond to decreaseLiquidity [NonfungiblePositionManager]' ⟨NonfungiblePositionManager→MasterChefV3⟩)),
+      ↻(
+        'lmPool [PancakeV3Pool]' ⟨MasterChefV3→PancakeV3Pool⟩,
+        →(
+          ∇_{accumulateReward [PancakeV3LmPool]} ⟨MasterChefV3→PancakeV3LmPool⟩(
+            →(
+              'Request accumulateReward [PancakeV3LmPool]' ⟨MasterChefV3→PancakeV3LmPool⟩,
+              'getLatestPeriodInfo [MasterChefV3]' ⟨PancakeV3LmPool→MasterChefV3⟩,
+              'Respond to accumulateReward [PancakeV3LmPool]' ⟨PancakeV3LmPool→MasterChefV3⟩)),
+          ∇_{getRewardGrowthInside [PancakeV3LmPool]} ⟨MasterChefV3→PancakeV3LmPool⟩(
+            →(
+              'Request getRewardGrowthInside [PancakeV3LmPool]' ⟨MasterChefV3→PancakeV3LmPool⟩,
+              'slot0 [PancakeV3Pool]' ⟨PancakeV3LmPool→PancakeV3Pool⟩,
+              'Respond to getRewardGrowthInside [PancakeV3LmPool]' ⟨PancakeV3LmPool→MasterChefV3⟩)),
+          'positions [NonfungiblePositionManager]' ⟨MasterChefV3→NonfungiblePositionManager⟩)),
+      ∇_{updatePosition [PancakeV3LmPool]} ⟨MasterChefV3→PancakeV3LmPool⟩(
+        →(
+          'Request updatePosition [PancakeV3LmPool]' ⟨MasterChefV3→PancakeV3LmPool⟩,
+          ↻(
+            'slot0 [PancakeV3Pool]' ⟨PancakeV3LmPool→PancakeV3Pool⟩,
+            'maxLiquidityPerTick [PancakeV3Pool]' ⟨PancakeV3LmPool→PancakeV3Pool⟩),
+          'Respond to updatePosition [PancakeV3LmPool]' ⟨PancakeV3LmPool→MasterChefV3⟩)))),
+  'transferOwnership [MasterChefV3]' ⟨EOA→MasterChefV3⟩,
+  'setLMPoolDeployer [MasterChefV3]' ⟨EOA→MasterChefV3⟩,
+  ∇_{set [MasterChefV3]} ⟨EOA→MasterChefV3⟩(
+    →(
+      'Request set [MasterChefV3]' ⟨EOA→MasterChefV3⟩,
+      ↻(
+        'lmPool [PancakeV3Pool]' ⟨MasterChefV3→PancakeV3Pool⟩,
+        ×(
+          'undefined [0x79291fff100db1b83f159a0c5795b4a6744c24c2]' ⟨MasterChefV3→0x79291fff100db1b83f159a0c5795b4a6744c24c2⟩,
+          ∇_{undefined [0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb]} ⟨MasterChefV3→0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb⟩(
+            →(
+              'Request undefined [0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb]' ⟨MasterChefV3→0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb⟩,
+              'getLatestPeriodInfo [MasterChefV3]' ⟨0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb→MasterChefV3⟩,
+              'Respond to undefined [0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb]' ⟨0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb→MasterChefV3⟩)),
+          ∇_{undefined [0x0bda23d287334d0646dd55263706e354f8ffc2ad]} ⟨MasterChefV3→0x0bda23d287334d0646dd55263706e354f8ffc2ad⟩(
+            →(
+              'Request undefined [0x0bda23d287334d0646dd55263706e354f8ffc2ad]' ⟨MasterChefV3→0x0bda23d287334d0646dd55263706e354f8ffc2ad⟩,
+              'getLatestPeriodInfo [MasterChefV3]' ⟨0x0bda23d287334d0646dd55263706e354f8ffc2ad→MasterChefV3⟩,
+              'Respond to undefined [0x0bda23d287334d0646dd55263706e354f8ffc2ad]' ⟨0x0bda23d287334d0646dd55263706e354f8ffc2ad→MasterChefV3⟩)),
+          ∇_{undefined [0x1237881515d48829283aee70d9d097ec9e696b93]} ⟨MasterChefV3→0x1237881515d48829283aee70d9d097ec9e696b93⟩(
+            →(
+              'Request undefined [0x1237881515d48829283aee70d9d097ec9e696b93]' ⟨MasterChefV3→0x1237881515d48829283aee70d9d097ec9e696b93⟩,
+              'getLatestPeriodInfo [MasterChefV3]' ⟨0x1237881515d48829283aee70d9d097ec9e696b93→MasterChefV3⟩,
+              'Respond to undefined [0x1237881515d48829283aee70d9d097ec9e696b93]' ⟨0x1237881515d48829283aee70d9d097ec9e696b93→MasterChefV3⟩)),
+          'undefined [0x6383313ac128fda7f63b26351e9dede9d9b2bcaf]' ⟨MasterChefV3→0x6383313ac128fda7f63b26351e9dede9d9b2bcaf⟩,
+          'undefined [0x69041a01be7147b80a712e2f3823749a3b54622f]' ⟨MasterChefV3→0x69041a01be7147b80a712e2f3823749a3b54622f⟩,
+          ∇_{undefined [0xc7497bcf94cd1b69d6cdac99da116af6859815c2]} ⟨MasterChefV3→0xc7497bcf94cd1b69d6cdac99da116af6859815c2⟩(
+            →(
+              'Request undefined [0xc7497bcf94cd1b69d6cdac99da116af6859815c2]' ⟨MasterChefV3→0xc7497bcf94cd1b69d6cdac99da116af6859815c2⟩,
+              'getLatestPeriodInfo [MasterChefV3]' ⟨0xc7497bcf94cd1b69d6cdac99da116af6859815c2→MasterChefV3⟩,
+              'Respond to undefined [0xc7497bcf94cd1b69d6cdac99da116af6859815c2]' ⟨0xc7497bcf94cd1b69d6cdac99da116af6859815c2→MasterChefV3⟩)),
+          'undefined [0xf367b9da6f193026fe41b740aa200594b8111667]' ⟨MasterChefV3→0xf367b9da6f193026fe41b740aa200594b8111667⟩,
+          ∇_{undefined [0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14]} ⟨MasterChefV3→0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14⟩(
+            →(
+              'Request undefined [0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14]' ⟨MasterChefV3→0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14⟩,
+              'getLatestPeriodInfo [MasterChefV3]' ⟨0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14→MasterChefV3⟩,
+              'Respond to undefined [0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14]' ⟨0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14→MasterChefV3⟩)),
+          'undefined [0xf0bed6f028433ae375946c5235eab50720024a11]' ⟨MasterChefV3→0xf0bed6f028433ae375946c5235eab50720024a11⟩,
+          ∇_{undefined [0xab59d6ce5dbae726f2333da3b87f67e76b17ed52]} ⟨MasterChefV3→0xab59d6ce5dbae726f2333da3b87f67e76b17ed52⟩(
+            →(
+              'Request undefined [0xab59d6ce5dbae726f2333da3b87f67e76b17ed52]' ⟨MasterChefV3→0xab59d6ce5dbae726f2333da3b87f67e76b17ed52⟩,
+              'getLatestPeriodInfo [MasterChefV3]' ⟨0xab59d6ce5dbae726f2333da3b87f67e76b17ed52→MasterChefV3⟩,
+              'Respond to undefined [0xab59d6ce5dbae726f2333da3b87f67e76b17ed52]' ⟨0xab59d6ce5dbae726f2333da3b87f67e76b17ed52→MasterChefV3⟩)))),
+      'undefined [0x9909105c513e07a16ff0cdd0a4e809e94a825dd5]' ⟨MasterChefV3→0x9909105c513e07a16ff0cdd0a4e809e94a825dd5⟩)))

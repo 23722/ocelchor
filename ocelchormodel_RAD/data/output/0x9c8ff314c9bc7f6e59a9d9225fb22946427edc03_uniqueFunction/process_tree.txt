@@ -1,0 +1,19 @@
+×(
+  'setApprovalForAll [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]' ⟨EOA→0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03⟩,
+  ∇_{safeTransferFrom [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]} ⟨EOA→0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03⟩(
+    →(
+      'Request safeTransferFrom [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]' ⟨EOA→0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03⟩,
+      ∇_{undefined [GnosisSafe]} ⟨0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03→GnosisSafe⟩(
+        →(
+          'Request undefined [GnosisSafe]' ⟨0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03→GnosisSafe⟩,
+          ∇_{undefined [GnosisSafe]} ⟨GnosisSafe→GnosisSafe⟩(
+            →(
+              'Request undefined [GnosisSafe]' ⟨GnosisSafe→GnosisSafe⟩,
+              'onERC721Received [DefaultCallbackHandler]' ⟨GnosisSafe→DefaultCallbackHandler⟩,
+              'Respond to undefined [GnosisSafe]' ⟨GnosisSafe→GnosisSafe⟩)),
+          'Respond to undefined [GnosisSafe]' ⟨GnosisSafe→0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03⟩)))),
+  'mint [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]' ⟨EOA→0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03⟩,
+  'delegate [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]' ⟨EOA→0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03⟩,
+  'transferOwnership [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]' ⟨EOA→0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03⟩,
+  'transferFrom [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]' ⟨EOA→0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03⟩,
+  'approve [0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03]' ⟨EOA→0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03⟩)

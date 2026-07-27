@@ -1,0 +1,579 @@
+{
+  "log": "0x556b9306565093c855aea9ae92a594704c2cd59e_uniqueFunction",
+  "generated_by": "ocelchormodel-rad 0.1.0",
+  "hard_gates": {
+    "passed": true
+  },
+  "constraints": {
+    "C0": {
+      "checked": 241,
+      "violations": 0
+    },
+    "C1": {
+      "checked": 361,
+      "violations": 0
+    },
+    "C10": {
+      "checked": 130,
+      "violations": 0
+    },
+    "C11": {
+      "checked": 241,
+      "violations": 0
+    },
+    "C12": {
+      "checked": 64,
+      "violations": 0
+    },
+    "C13": {
+      "checked": 64,
+      "violations": 0
+    },
+    "C14": {
+      "checked": 64,
+      "violations": 0
+    },
+    "C15": {
+      "checked": 228,
+      "violations": 0
+    },
+    "C16": {
+      "checked": 64,
+      "violations": 0
+    },
+    "C2": {
+      "checked": 241,
+      "violations": 0
+    },
+    "C3": {
+      "checked": 241,
+      "violations": 0
+    },
+    "C4": {
+      "checked": 241,
+      "violations": 10
+    },
+    "C5": {
+      "checked": 361,
+      "violations": 0
+    },
+    "C6": {
+      "checked": 361,
+      "violations": 0
+    },
+    "C7": {
+      "checked": 241,
+      "violations": 0
+    },
+    "C8": {
+      "checked": 241,
+      "violations": 0
+    },
+    "C9": {
+      "checked": 241,
+      "violations": 0
+    }
+  },
+  "d01_ordering_determinism": {
+    "residual_ties": 0,
+    "examples": [],
+    "passed": true
+  },
+  "d02_scope_openers": {
+    "non_request_openers": 0,
+    "examples": []
+  },
+  "d03_bracket_completeness": {
+    "expected_missing_response": 10,
+    "unexpected_missing_response": 0,
+    "unexpected_examples": []
+  },
+  "d04_identity_labels": {
+    "exec_types": 20,
+    "occurrences": 48,
+    "examples": [
+      "Request undefined [0x0bda23d287334d0646dd55263706e354f8ffc2ad]",
+      "Request undefined [0x1237881515d48829283aee70d9d097ec9e696b93]",
+      "Request undefined [0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14]",
+      "Request undefined [0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb]",
+      "Request undefined [0xab59d6ce5dbae726f2333da3b87f67e76b17ed52]"
+    ]
+  },
+  "d05_event_type_fanout": [
+    {
+      "name": "allowance",
+      "exec_types": 3,
+      "examples": [
+        "allowance [CakeOFT]",
+        "allowance [FiatTokenV2_1]",
+        "allowance [WETH9]"
+      ]
+    },
+    {
+      "name": "approve",
+      "exec_types": 2,
+      "examples": [
+        "approve [FiatTokenV2_1]",
+        "approve [WETH9]"
+      ]
+    },
+    {
+      "name": "balanceOf",
+      "exec_types": 4,
+      "examples": [
+        "balanceOf [CakeOFT]",
+        "balanceOf [FiatTokenV2_1]",
+        "balanceOf [VECakeProxy]",
+        "balanceOf [WETH9]"
+      ]
+    },
+    {
+      "name": "collect",
+      "exec_types": 3,
+      "examples": [
+        "collect [MasterChefV3]",
+        "collect [NonfungiblePositionManager]",
+        "collect [PancakeV3Pool]"
+      ]
+    },
+    {
+      "name": "decreaseLiquidity",
+      "exec_types": 2,
+      "examples": [
+        "decreaseLiquidity [MasterChefV3]",
+        "decreaseLiquidity [NonfungiblePositionManager]"
+      ]
+    },
+    {
+      "name": "increaseLiquidity",
+      "exec_types": 2,
+      "examples": [
+        "increaseLiquidity [MasterChefV3]",
+        "increaseLiquidity [NonfungiblePositionManager]"
+      ]
+    },
+    {
+      "name": "positions",
+      "exec_types": 2,
+      "examples": [
+        "positions [NonfungiblePositionManager]",
+        "positions [PancakeV3Pool]"
+      ]
+    },
+    {
+      "name": "setLmPool",
+      "exec_types": 2,
+      "examples": [
+        "setLmPool [PancakeV3Factory]",
+        "setLmPool [PancakeV3Pool]"
+      ]
+    },
+    {
+      "name": "transfer",
+      "exec_types": 6,
+      "examples": [
+        "transfer [0xa13bb13609c3b9aabb8a4d5b4e9ecbaf502ca56e]",
+        "transfer [CakeOFT]",
+        "transfer [FiatTokenV2_1]",
+        "transfer [MasterChefV3]",
+        "transfer [TetherToken]"
+      ]
+    },
+    {
+      "name": "transferFrom",
+      "exec_types": 2,
+      "examples": [
+        "transferFrom [CakeOFT]",
+        "transferFrom [FiatTokenV2_1]"
+      ]
+    },
+    {
+      "name": "undefined",
+      "exec_types": 15,
+      "examples": [
+        "undefined [0x0bda23d287334d0646dd55263706e354f8ffc2ad]",
+        "undefined [0x1237881515d48829283aee70d9d097ec9e696b93]",
+        "undefined [0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14]",
+        "undefined [0x6383313ac128fda7f63b26351e9dede9d9b2bcaf]",
+        "undefined [0x69041a01be7147b80a712e2f3823749a3b54622f]"
+      ]
+    },
+    {
+      "name": "withdraw",
+      "exec_types": 2,
+      "examples": [
+        "withdraw [MasterChefV3]",
+        "withdraw [WETH9]"
+      ]
+    }
+  ],
+  "d06_task_type_fanout": [
+    {
+      "exec_type": "Request collect [MasterChefV3]",
+      "role_pairs": [
+        [
+          "EOA",
+          "MasterChefV3"
+        ],
+        [
+          "MasterChefV3",
+          "MasterChefV3"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Request decreaseLiquidity [MasterChefV3]",
+      "role_pairs": [
+        [
+          "EOA",
+          "MasterChefV3"
+        ],
+        [
+          "MasterChefV3",
+          "MasterChefV3"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Request undefined [FiatTokenProxy]",
+      "role_pairs": [
+        [
+          "MasterChefV3",
+          "FiatTokenProxy"
+        ],
+        [
+          "NonfungiblePositionManager",
+          "FiatTokenProxy"
+        ],
+        [
+          "PancakeV3Pool",
+          "FiatTokenProxy"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Request withdraw [MasterChefV3]",
+      "role_pairs": [
+        [
+          "EOA",
+          "MasterChefV3"
+        ],
+        [
+          "MasterChefV3",
+          "MasterChefV3"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Respond to undefined [FiatTokenProxy]",
+      "role_pairs": [
+        [
+          "FiatTokenProxy",
+          "MasterChefV3"
+        ],
+        [
+          "FiatTokenProxy",
+          "NonfungiblePositionManager"
+        ],
+        [
+          "FiatTokenProxy",
+          "PancakeV3Pool"
+        ]
+      ]
+    },
+    {
+      "exec_type": "balanceOf [CakeOFT]",
+      "role_pairs": [
+        [
+          "MasterChefV3",
+          "CakeOFT"
+        ],
+        [
+          "PancakeV3Pool",
+          "CakeOFT"
+        ]
+      ]
+    },
+    {
+      "exec_type": "getLatestPeriodInfo [MasterChefV3]",
+      "role_pairs": [
+        [
+          "0x0bda23d287334d0646dd55263706e354f8ffc2ad",
+          "MasterChefV3"
+        ],
+        [
+          "0x1237881515d48829283aee70d9d097ec9e696b93",
+          "MasterChefV3"
+        ],
+        [
+          "0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14",
+          "MasterChefV3"
+        ],
+        [
+          "0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb",
+          "MasterChefV3"
+        ],
+        [
+          "0xab59d6ce5dbae726f2333da3b87f67e76b17ed52",
+          "MasterChefV3"
+        ],
+        [
+          "0xc7497bcf94cd1b69d6cdac99da116af6859815c2",
+          "MasterChefV3"
+        ],
+        [
+          "PancakeV3LmPool",
+          "MasterChefV3"
+        ]
+      ]
+    },
+    {
+      "exec_type": "maxLiquidityPerTick [PancakeV3Pool]",
+      "role_pairs": [
+        [
+          "0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14",
+          "PancakeV3Pool"
+        ],
+        [
+          "0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb",
+          "PancakeV3Pool"
+        ],
+        [
+          "0xc7497bcf94cd1b69d6cdac99da116af6859815c2",
+          "PancakeV3Pool"
+        ],
+        [
+          "PancakeV3LmPool",
+          "PancakeV3Pool"
+        ]
+      ]
+    },
+    {
+      "exec_type": "slot0 [PancakeV3Pool]",
+      "role_pairs": [
+        [
+          "0x331eb8c73dd6b34b4b5880718b4885ae12f8cb14",
+          "PancakeV3Pool"
+        ],
+        [
+          "0xa6b546ce888889c7a24b57bf31244a50c9aa9ccb",
+          "PancakeV3Pool"
+        ],
+        [
+          "0xc7497bcf94cd1b69d6cdac99da116af6859815c2",
+          "PancakeV3Pool"
+        ],
+        [
+          "NonfungiblePositionManager",
+          "PancakeV3Pool"
+        ],
+        [
+          "PancakeV3LmPool",
+          "PancakeV3Pool"
+        ]
+      ]
+    },
+    {
+      "exec_type": "transferFrom [CakeOFT]",
+      "role_pairs": [
+        [
+          "MasterChefV3",
+          "CakeOFT"
+        ],
+        [
+          "NonfungiblePositionManager",
+          "CakeOFT"
+        ]
+      ]
+    },
+    {
+      "exec_type": "undefined [0xc7497bcf94cd1b69d6cdac99da116af6859815c2]",
+      "role_pairs": [
+        [
+          "MasterChefV3",
+          "0xc7497bcf94cd1b69d6cdac99da116af6859815c2"
+        ],
+        [
+          "PancakeV3LmPoolDeployer",
+          "0xc7497bcf94cd1b69d6cdac99da116af6859815c2"
+        ]
+      ]
+    }
+  ],
+  "d07_scope_pooling": {
+    "buckets": 52,
+    "total_scope_occurrences": 64,
+    "buckets_with_pooling": 2,
+    "top": [
+      {
+        "context": [
+          "increaseLiquidity [MasterChefV3]",
+          "increaseLiquidity [NonfungiblePositionManager]",
+          "mint [PancakeV3Pool]",
+          "undefined [FiatTokenProxy]"
+        ],
+        "occurrences": 2,
+        "variants": 1,
+        "pooling_ratio": 2.0
+      },
+      {
+        "context": [
+          "add [MasterChefV3]",
+          "undefined [FiatTokenProxy]"
+        ],
+        "occurrences": 3,
+        "variants": 2,
+        "pooling_ratio": 1.5
+      },
+      {
+        "context": [
+          "add [MasterChefV3]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "add [MasterChefV3]",
+          "deploy [PancakeV3LmPoolDeployer]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      },
+      {
+        "context": [
+          "add [MasterChefV3]",
+          "deploy [PancakeV3LmPoolDeployer]",
+          "setLmPool [PancakeV3Factory]"
+        ],
+        "occurrences": 1,
+        "variants": 1,
+        "pooling_ratio": 1.0
+      }
+    ]
+  },
+  "d08_message_merging": [],
+  "d09_parallelism_witnesses": [
+    {
+      "context": [
+        "multicall [MasterChefV3]",
+        "withdraw [MasterChefV3]"
+      ],
+      "branches": 2,
+      "subtraces": 1,
+      "verdict": "witnessed",
+      "flagged_pairs": 0,
+      "pairs": [
+        {
+          "a": [
+            "undefined [0xc7497bcf94cd1b69d6cdac99da116af6859815c2]"
+          ],
+          "b": [
+            "lmPool [PancakeV3Pool]",
+            "undefined [0xc7497bcf94cd1b69d6cdac99da116af6859815c2]"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 1,
+          "flagged": false
+        }
+      ]
+    }
+  ],
+  "d10_unrestricted_repetition": [],
+  "d11_choice_realizability": [],
+  "d12_recursion": {
+    "findings": [],
+    "direct": 0,
+    "indirect": 0,
+    "max_depth_delta": 0
+  },
+  "d13_cross_depth_participants": {
+    "pairs": 109,
+    "examples": [
+      {
+        "object": "0x556b9306565093c855aea9ae92a594704c2cd59e",
+        "ancestor_scope": "subchoreographyInstance:1aa4f1a397ee4485bcfa0925230687acc3f7bcb6214715151b938568c3c18500:root",
+        "descendant_scope": "subchoreographyInstance:1aa4f1a397ee4485bcfa0925230687acc3f7bcb6214715151b938568c3c18500:0_1",
+        "ancestor_task_types": [
+          "Request add [MasterChefV3]",
+          "allowance [WETH9]",
+          "approve [WETH9]",
+          "fee [PancakeV3Pool]",
+          "token0 [PancakeV3Pool]",
+          "token1 [PancakeV3Pool]"
+        ],
+        "descendant_task_types": [
+          "Request deploy [PancakeV3LmPoolDeployer]",
+          "Respond to deploy [PancakeV3LmPoolDeployer]",
+          "undefined [MasterChefV3]"
+        ]
+      },
+      {
+        "object": "0x1ac1a8feaaea1900c4166deeed0c11cc10669d36",
+        "ancestor_scope": "subchoreographyInstance:1aa4f1a397ee4485bcfa0925230687acc3f7bcb6214715151b938568c3c18500:root",
+        "descendant_scope": "subchoreographyInstance:1aa4f1a397ee4485bcfa0925230687acc3f7bcb6214715151b938568c3c18500:0_1_4",
+        "ancestor_task_types": [
+          "fee [PancakeV3Pool]",
+          "token0 [PancakeV3Pool]",
+          "token1 [PancakeV3Pool]"
+        ],
+        "descendant_task_types": [
+          "setLmPool [PancakeV3Pool]"
+        ]
+      },
+      {
+        "object": "0x556b9306565093c855aea9ae92a594704c2cd59e",
+        "ancestor_scope": "subchoreographyInstance:1aa4f1a397ee4485bcfa0925230687acc3f7bcb6214715151b938568c3c18500:root",
+        "descendant_scope": "subchoreographyInstance:1aa4f1a397ee4485bcfa0925230687acc3f7bcb6214715151b938568c3c18500:0_5",
+        "ancestor_task_types": [
+          "Request add [MasterChefV3]",
+          "allowance [WETH9]",
+          "approve [WETH9]",
+          "fee [PancakeV3Pool]",
+          "token0 [PancakeV3Pool]",
+          "token1 [PancakeV3Pool]"
+        ],
+        "descendant_task_types": [
+          "Request undefined [FiatTokenProxy]",
+          "Respond to undefined [FiatTokenProxy]"
+        ]
+      },
+      {
+        "object": "0x556b9306565093c855aea9ae92a594704c2cd59e",
+        "ancestor_scope": "subchoreographyInstance:1aa4f1a397ee4485bcfa0925230687acc3f7bcb6214715151b938568c3c18500:root",
+        "descendant_scope": "subchoreographyInstance:1aa4f1a397ee4485bcfa0925230687acc3f7bcb6214715151b938568c3c18500:0_6",
+        "ancestor_task_types": [
+          "Request add [MasterChefV3]",
+          "allowance [WETH9]",
+          "approve [WETH9]",
+          "fee [PancakeV3Pool]",
+          "token0 [PancakeV3Pool]",
+          "token1 [PancakeV3Pool]"
+        ],
+        "descendant_task_types": [
+          "Request undefined [FiatTokenProxy]",
+          "Respond to undefined [FiatTokenProxy]"
+        ]
+      },
+      {
+        "object": "0x556b9306565093c855aea9ae92a594704c2cd59e",
+        "ancestor_scope": "subchoreographyInstance:1aa4f1a397ee4485bcfa0925230687acc3f7bcb6214715151b938568c3c18500:root",
+        "descendant_scope": "subchoreographyInstance:1aa4f1a397ee4485bcfa0925230687acc3f7bcb6214715151b938568c3c18500:0_7",
+        "ancestor_task_types": [
+          "Request add [MasterChefV3]",
+          "allowance [WETH9]",
+          "approve [WETH9]",
+          "fee [PancakeV3Pool]",
+          "token0 [PancakeV3Pool]",
+          "token1 [PancakeV3Pool]"
+        ],
+        "descendant_task_types": [
+          "Request undefined [FiatTokenProxy]",
+          "Respond to undefined [FiatTokenProxy]"
+        ]
+      }
+    ]
+  }
+}

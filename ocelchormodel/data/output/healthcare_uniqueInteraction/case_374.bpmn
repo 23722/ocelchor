@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" targetNamespace="http://bpmn.io/schema/bpmn2" id="Definitions_case_374">
+  <bpmn2:message id="Msg_message_case_374_disease_410" name="disease" />
+  <bpmn2:message id="Msg_message_case_374_blood_sample_411" name="blood sample" />
+  <bpmn2:message id="Msg_message_case_374_results_412" name="results" />
+  <bpmn2:message id="Msg_message_case_374_hospitalisation_413" name="hospitalisation" />
+  <bpmn2:message id="Msg_message_case_374_admission_request_414" name="admission request" />
+  <bpmn2:message id="Msg_message_case_374_patient_analysis_415" name="patient analysis" />
+  <bpmn2:message id="Msg_message_case_374_admission_416" name="admission" />
+  <bpmn2:choreography id="Choreography_case_374" name="case_374">
+    <bpmn2:participant id="P_Patient" name="Patient" />
+    <bpmn2:participant id="P_Gynecologist" name="Gynecologist" />
+    <bpmn2:participant id="P_Laboratory" name="Laboratory" />
+    <bpmn2:participant id="P_Hospital" name="Hospital" />
+    <bpmn2:messageFlow id="MF_Task_e_case_374_0_init" sourceRef="P_Patient" targetRef="P_Gynecologist" messageRef="Msg_message_case_374_disease_410" />
+    <bpmn2:messageFlow id="MF_Task_e_case_374_4_init" sourceRef="P_Gynecologist" targetRef="P_Laboratory" messageRef="Msg_message_case_374_blood_sample_411" />
+    <bpmn2:messageFlow id="MF_Task_e_case_374_7_init" sourceRef="P_Laboratory" targetRef="P_Gynecologist" messageRef="Msg_message_case_374_results_412" />
+    <bpmn2:messageFlow id="MF_Task_e_case_374_9_init" sourceRef="P_Gynecologist" targetRef="P_Patient" messageRef="Msg_message_case_374_hospitalisation_413" />
+    <bpmn2:messageFlow id="MF_Task_e_case_374_10_init" sourceRef="P_Gynecologist" targetRef="P_Hospital" messageRef="Msg_message_case_374_admission_request_414" />
+    <bpmn2:messageFlow id="MF_Task_e_case_374_12_init" sourceRef="P_Gynecologist" targetRef="P_Gynecologist" messageRef="Msg_message_case_374_patient_analysis_415" />
+    <bpmn2:messageFlow id="MF_Task_e_case_374_16_init" sourceRef="P_Hospital" targetRef="P_Patient" messageRef="Msg_message_case_374_admission_416" />
+    <bpmn2:startEvent id="Start_case_374">
+      <bpmn2:outgoing>SF_1</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:choreographyTask id="Task_e_case_374_0" name="Communicate disease" initiatingParticipantRef="P_Patient">
+      <bpmn2:incoming>SF_1</bpmn2:incoming>
+      <bpmn2:outgoing>SF_2</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Patient</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Gynecologist</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_374_0_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_374_4" name="Send blood sample" initiatingParticipantRef="P_Gynecologist">
+      <bpmn2:incoming>SF_2</bpmn2:incoming>
+      <bpmn2:outgoing>SF_3</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Gynecologist</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Laboratory</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_374_4_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_374_7" name="Send results" initiatingParticipantRef="P_Laboratory">
+      <bpmn2:incoming>SF_3</bpmn2:incoming>
+      <bpmn2:outgoing>SF_4</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Laboratory</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Gynecologist</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_374_7_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_374_9" name="Communicate the need to hospitalise" initiatingParticipantRef="P_Gynecologist">
+      <bpmn2:incoming>SF_4</bpmn2:incoming>
+      <bpmn2:outgoing>SF_5</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Gynecologist</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Patient</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_374_9_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_374_10" name="Require patient admission" initiatingParticipantRef="P_Gynecologist">
+      <bpmn2:incoming>SF_5</bpmn2:incoming>
+      <bpmn2:outgoing>SF_6</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Gynecologist</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Hospital</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_374_10_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_374_12" name="Forward patient analysis results" initiatingParticipantRef="P_Gynecologist">
+      <bpmn2:incoming>SF_6</bpmn2:incoming>
+      <bpmn2:outgoing>SF_7</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Gynecologist</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Gynecologist</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_374_12_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_case_374_16" name="Send admission info" initiatingParticipantRef="P_Hospital">
+      <bpmn2:incoming>SF_7</bpmn2:incoming>
+      <bpmn2:outgoing>SF_8</bpmn2:outgoing>
+      <bpmn2:participantRef>P_Hospital</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Patient</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_case_374_16_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:endEvent id="End_case_374">
+      <bpmn2:incoming>SF_8</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SF_1" sourceRef="Start_case_374" targetRef="Task_e_case_374_0" />
+    <bpmn2:sequenceFlow id="SF_2" sourceRef="Task_e_case_374_0" targetRef="Task_e_case_374_4" />
+    <bpmn2:sequenceFlow id="SF_3" sourceRef="Task_e_case_374_4" targetRef="Task_e_case_374_7" />
+    <bpmn2:sequenceFlow id="SF_4" sourceRef="Task_e_case_374_7" targetRef="Task_e_case_374_9" />
+    <bpmn2:sequenceFlow id="SF_5" sourceRef="Task_e_case_374_9" targetRef="Task_e_case_374_10" />
+    <bpmn2:sequenceFlow id="SF_6" sourceRef="Task_e_case_374_10" targetRef="Task_e_case_374_12" />
+    <bpmn2:sequenceFlow id="SF_7" sourceRef="Task_e_case_374_12" targetRef="Task_e_case_374_16" />
+    <bpmn2:sequenceFlow id="SF_8" sourceRef="Task_e_case_374_16" targetRef="End_case_374" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_case_374">
+    <bpmndi:BPMNPlane id="BPMNPlane_case_374" bpmnElement="Choreography_case_374">
+      <bpmndi:BPMNShape id="Start_case_374_di" bpmnElement="Start_case_374">
+        <dc:Bounds x="100" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_0_di" bpmnElement="Task_e_case_374_0">
+        <dc:Bounds x="186" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_0_di_top" bpmnElement="P_Patient" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_374_0_di">
+        <dc:Bounds x="186" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_0_di_bot" bpmnElement="P_Gynecologist" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_374_0_di">
+        <dc:Bounds x="186" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_4_di" bpmnElement="Task_e_case_374_4">
+        <dc:Bounds x="336" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_4_di_top" bpmnElement="P_Gynecologist" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_374_4_di">
+        <dc:Bounds x="336" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_4_di_bot" bpmnElement="P_Laboratory" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_374_4_di">
+        <dc:Bounds x="336" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_7_di" bpmnElement="Task_e_case_374_7">
+        <dc:Bounds x="486" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_7_di_top" bpmnElement="P_Laboratory" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_374_7_di">
+        <dc:Bounds x="486" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_7_di_bot" bpmnElement="P_Gynecologist" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_374_7_di">
+        <dc:Bounds x="486" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_9_di" bpmnElement="Task_e_case_374_9">
+        <dc:Bounds x="636" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_9_di_top" bpmnElement="P_Gynecologist" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_374_9_di">
+        <dc:Bounds x="636" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_9_di_bot" bpmnElement="P_Patient" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_374_9_di">
+        <dc:Bounds x="636" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_10_di" bpmnElement="Task_e_case_374_10">
+        <dc:Bounds x="786" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_10_di_top" bpmnElement="P_Gynecologist" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_374_10_di">
+        <dc:Bounds x="786" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_10_di_bot" bpmnElement="P_Hospital" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_374_10_di">
+        <dc:Bounds x="786" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_12_di" bpmnElement="Task_e_case_374_12">
+        <dc:Bounds x="936" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_12_di_top" bpmnElement="P_Gynecologist" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_374_12_di">
+        <dc:Bounds x="936" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_12_di_bot" bpmnElement="P_Gynecologist" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_374_12_di">
+        <dc:Bounds x="936" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_16_di" bpmnElement="Task_e_case_374_16">
+        <dc:Bounds x="1086" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_16_di_top" bpmnElement="P_Hospital" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_case_374_16_di">
+        <dc:Bounds x="1086" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_case_374_16_di_bot" bpmnElement="P_Patient" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_case_374_16_di">
+        <dc:Bounds x="1086" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_case_374_di" bpmnElement="End_case_374">
+        <dc:Bounds x="1236" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SF_1_di" bpmnElement="SF_1">
+        <di:waypoint x="136" y="250" />
+        <di:waypoint x="186" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_2_di" bpmnElement="SF_2">
+        <di:waypoint x="286" y="250" />
+        <di:waypoint x="336" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_3_di" bpmnElement="SF_3">
+        <di:waypoint x="436" y="250" />
+        <di:waypoint x="486" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_4_di" bpmnElement="SF_4">
+        <di:waypoint x="586" y="250" />
+        <di:waypoint x="636" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_5_di" bpmnElement="SF_5">
+        <di:waypoint x="736" y="250" />
+        <di:waypoint x="786" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_6_di" bpmnElement="SF_6">
+        <di:waypoint x="886" y="250" />
+        <di:waypoint x="936" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_7_di" bpmnElement="SF_7">
+        <di:waypoint x="1036" y="250" />
+        <di:waypoint x="1086" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_8_di" bpmnElement="SF_8">
+        <di:waypoint x="1186" y="250" />
+        <di:waypoint x="1236" y="250" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

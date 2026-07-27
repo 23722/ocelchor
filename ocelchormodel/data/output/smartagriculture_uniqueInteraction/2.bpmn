@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" targetNamespace="http://bpmn.io/schema/bpmn2" id="Definitions_2">
+  <bpmn2:message id="Msg_message_2_weed_position_26" name="weed_position" />
+  <bpmn2:message id="Msg_message_2_tractor_position_27" name="tractor_position" />
+  <bpmn2:message id="Msg_message_2_tractor_position_28" name="tractor_position" />
+  <bpmn2:message id="Msg_message_2_closest_tractor_29" name="closest_tractor" />
+  <bpmn2:message id="Msg_message_2_weed_position_30" name="weed_position" />
+  <bpmn2:message id="Msg_message_2_tractor_position_31" name="tractor_position" />
+  <bpmn2:message id="Msg_message_2_closest_tractor_32" name="closest_tractor" />
+  <bpmn2:message id="Msg_message_2_weed_position_39" name="weed_position" />
+  <bpmn2:message id="Msg_message_2_tractor_position_40" name="tractor_position" />
+  <bpmn2:message id="Msg_message_2_closest_tractor_41" name="closest_tractor" />
+  <bpmn2:message id="Msg_message_2_weed_position_48" name="weed_position" />
+  <bpmn2:message id="Msg_message_2_tractor_position_49" name="tractor_position" />
+  <bpmn2:message id="Msg_message_2_tractor_position_50" name="tractor_position" />
+  <bpmn2:message id="Msg_message_2_closest_tractor_51" name="closest_tractor" />
+  <bpmn2:choreography id="Choreography_2" name="2">
+    <bpmn2:participant id="P_drone" name="drone" />
+    <bpmn2:participant id="P_tractor_1" name="tractor_1" />
+    <bpmn2:participant id="P_tractor_2" name="tractor_2" />
+    <bpmn2:messageFlow id="MF_Task_e_2_3_init" sourceRef="P_drone" targetRef="P_tractor_1" messageRef="Msg_message_2_weed_position_26" />
+    <bpmn2:messageFlow id="MF_Task_e_2_5_init" sourceRef="P_tractor_1" targetRef="P_drone" messageRef="Msg_message_2_tractor_position_27" />
+    <bpmn2:messageFlow id="MF_Task_e_2_8_init" sourceRef="P_tractor_2" targetRef="P_drone" messageRef="Msg_message_2_tractor_position_28" />
+    <bpmn2:messageFlow id="MF_Task_e_2_10_init" sourceRef="P_drone" targetRef="P_tractor_2" messageRef="Msg_message_2_closest_tractor_29" />
+    <bpmn2:messageFlow id="MF_Task_e_2_14_init" sourceRef="P_drone" targetRef="P_tractor_1" messageRef="Msg_message_2_weed_position_30" />
+    <bpmn2:messageFlow id="MF_Task_e_2_16_init" sourceRef="P_tractor_1" targetRef="P_drone" messageRef="Msg_message_2_tractor_position_31" />
+    <bpmn2:messageFlow id="MF_Task_e_2_18_init" sourceRef="P_drone" targetRef="P_tractor_1" messageRef="Msg_message_2_closest_tractor_32" />
+    <bpmn2:messageFlow id="MF_Task_e_2_26_init" sourceRef="P_drone" targetRef="P_tractor_2" messageRef="Msg_message_2_weed_position_39" />
+    <bpmn2:messageFlow id="MF_Task_e_2_28_init" sourceRef="P_tractor_2" targetRef="P_drone" messageRef="Msg_message_2_tractor_position_40" />
+    <bpmn2:messageFlow id="MF_Task_e_2_30_init" sourceRef="P_drone" targetRef="P_tractor_2" messageRef="Msg_message_2_closest_tractor_41" />
+    <bpmn2:messageFlow id="MF_Task_e_2_36_init" sourceRef="P_drone" targetRef="P_tractor_2" messageRef="Msg_message_2_weed_position_48" />
+    <bpmn2:messageFlow id="MF_Task_e_2_38_init" sourceRef="P_tractor_2" targetRef="P_drone" messageRef="Msg_message_2_tractor_position_49" />
+    <bpmn2:messageFlow id="MF_Task_e_2_41_init" sourceRef="P_tractor_1" targetRef="P_drone" messageRef="Msg_message_2_tractor_position_50" />
+    <bpmn2:messageFlow id="MF_Task_e_2_43_init" sourceRef="P_drone" targetRef="P_tractor_1" messageRef="Msg_message_2_closest_tractor_51" />
+    <bpmn2:startEvent id="Start_2">
+      <bpmn2:outgoing>SF_1</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:choreographyTask id="Task_e_2_3" name="drone_WEED_POSITION" initiatingParticipantRef="P_drone">
+      <bpmn2:incoming>SF_1</bpmn2:incoming>
+      <bpmn2:outgoing>SF_2</bpmn2:outgoing>
+      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:participantRef>P_tractor_1</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_2_3_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_2_5" name="t1_TRACTOR_POSITION" initiatingParticipantRef="P_tractor_1">
+      <bpmn2:incoming>SF_2</bpmn2:incoming>
+      <bpmn2:outgoing>SF_3</bpmn2:outgoing>
+      <bpmn2:participantRef>P_tractor_1</bpmn2:participantRef>
+      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_2_5_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_2_8" name="t2_TRACTOR_POSITION" initiatingParticipantRef="P_tractor_2">
+      <bpmn2:incoming>SF_3</bpmn2:incoming>
+      <bpmn2:outgoing>SF_4</bpmn2:outgoing>
+      <bpmn2:participantRef>P_tractor_2</bpmn2:participantRef>
+      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_2_8_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_2_10" name="drone_CLOSEST_TRACTOR" initiatingParticipantRef="P_drone">
+      <bpmn2:incoming>SF_4</bpmn2:incoming>
+      <bpmn2:outgoing>SF_5</bpmn2:outgoing>
+      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:participantRef>P_tractor_2</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_2_10_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_2_14" name="drone_WEED_POSITION" initiatingParticipantRef="P_drone">
+      <bpmn2:incoming>SF_5</bpmn2:incoming>
+      <bpmn2:outgoing>SF_6</bpmn2:outgoing>
+      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:participantRef>P_tractor_1</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_2_14_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_2_16" name="t1_TRACTOR_POSITION" initiatingParticipantRef="P_tractor_1">
+      <bpmn2:incoming>SF_6</bpmn2:incoming>
+      <bpmn2:outgoing>SF_7</bpmn2:outgoing>
+      <bpmn2:participantRef>P_tractor_1</bpmn2:participantRef>
+      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_2_16_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_2_18" name="drone_CLOSEST_TRACTOR" initiatingParticipantRef="P_drone">
+      <bpmn2:incoming>SF_7</bpmn2:incoming>
+      <bpmn2:outgoing>SF_8</bpmn2:outgoing>
+      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:participantRef>P_tractor_1</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_2_18_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_2_26" name="drone_WEED_POSITION" initiatingParticipantRef="P_drone">
+      <bpmn2:incoming>SF_8</bpmn2:incoming>
+      <bpmn2:outgoing>SF_9</bpmn2:outgoing>
+      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:participantRef>P_tractor_2</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_2_26_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_2_28" name="t2_TRACTOR_POSITION" initiatingParticipantRef="P_tractor_2">
+      <bpmn2:incoming>SF_9</bpmn2:incoming>
+      <bpmn2:outgoing>SF_10</bpmn2:outgoing>
+      <bpmn2:participantRef>P_tractor_2</bpmn2:participantRef>
+      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_2_28_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_2_30" name="drone_CLOSEST_TRACTOR" initiatingParticipantRef="P_drone">
+      <bpmn2:incoming>SF_10</bpmn2:incoming>
+      <bpmn2:outgoing>SF_11</bpmn2:outgoing>
+      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:participantRef>P_tractor_2</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_2_30_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_2_36" name="drone_WEED_POSITION" initiatingParticipantRef="P_drone">
+      <bpmn2:incoming>SF_11</bpmn2:incoming>
+      <bpmn2:outgoing>SF_12</bpmn2:outgoing>
+      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:participantRef>P_tractor_2</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_2_36_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_2_38" name="t2_TRACTOR_POSITION" initiatingParticipantRef="P_tractor_2">
+      <bpmn2:incoming>SF_12</bpmn2:incoming>
+      <bpmn2:outgoing>SF_13</bpmn2:outgoing>
+      <bpmn2:participantRef>P_tractor_2</bpmn2:participantRef>
+      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_2_38_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_2_41" name="t1_TRACTOR_POSITION" initiatingParticipantRef="P_tractor_1">
+      <bpmn2:incoming>SF_13</bpmn2:incoming>
+      <bpmn2:outgoing>SF_14</bpmn2:outgoing>
+      <bpmn2:participantRef>P_tractor_1</bpmn2:participantRef>
+      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_2_41_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="Task_e_2_43" name="drone_CLOSEST_TRACTOR" initiatingParticipantRef="P_drone">
+      <bpmn2:incoming>SF_14</bpmn2:incoming>
+      <bpmn2:outgoing>SF_15</bpmn2:outgoing>
+      <bpmn2:participantRef>P_drone</bpmn2:participantRef>
+      <bpmn2:participantRef>P_tractor_1</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_Task_e_2_43_init</bpmn2:messageFlowRef>
+    </bpmn2:choreographyTask>
+    <bpmn2:endEvent id="End_2">
+      <bpmn2:incoming>SF_15</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SF_1" sourceRef="Start_2" targetRef="Task_e_2_3" />
+    <bpmn2:sequenceFlow id="SF_2" sourceRef="Task_e_2_3" targetRef="Task_e_2_5" />
+    <bpmn2:sequenceFlow id="SF_3" sourceRef="Task_e_2_5" targetRef="Task_e_2_8" />
+    <bpmn2:sequenceFlow id="SF_4" sourceRef="Task_e_2_8" targetRef="Task_e_2_10" />
+    <bpmn2:sequenceFlow id="SF_5" sourceRef="Task_e_2_10" targetRef="Task_e_2_14" />
+    <bpmn2:sequenceFlow id="SF_6" sourceRef="Task_e_2_14" targetRef="Task_e_2_16" />
+    <bpmn2:sequenceFlow id="SF_7" sourceRef="Task_e_2_16" targetRef="Task_e_2_18" />
+    <bpmn2:sequenceFlow id="SF_8" sourceRef="Task_e_2_18" targetRef="Task_e_2_26" />
+    <bpmn2:sequenceFlow id="SF_9" sourceRef="Task_e_2_26" targetRef="Task_e_2_28" />
+    <bpmn2:sequenceFlow id="SF_10" sourceRef="Task_e_2_28" targetRef="Task_e_2_30" />
+    <bpmn2:sequenceFlow id="SF_11" sourceRef="Task_e_2_30" targetRef="Task_e_2_36" />
+    <bpmn2:sequenceFlow id="SF_12" sourceRef="Task_e_2_36" targetRef="Task_e_2_38" />
+    <bpmn2:sequenceFlow id="SF_13" sourceRef="Task_e_2_38" targetRef="Task_e_2_41" />
+    <bpmn2:sequenceFlow id="SF_14" sourceRef="Task_e_2_41" targetRef="Task_e_2_43" />
+    <bpmn2:sequenceFlow id="SF_15" sourceRef="Task_e_2_43" targetRef="End_2" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_2">
+    <bpmndi:BPMNPlane id="BPMNPlane_2" bpmnElement="Choreography_2">
+      <bpmndi:BPMNShape id="Start_2_di" bpmnElement="Start_2">
+        <dc:Bounds x="100" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_3_di" bpmnElement="Task_e_2_3">
+        <dc:Bounds x="186" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_3_di_top" bpmnElement="P_drone" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_2_3_di">
+        <dc:Bounds x="186" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_3_di_bot" bpmnElement="P_tractor_1" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_2_3_di">
+        <dc:Bounds x="186" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_5_di" bpmnElement="Task_e_2_5">
+        <dc:Bounds x="336" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_5_di_top" bpmnElement="P_tractor_1" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_2_5_di">
+        <dc:Bounds x="336" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_5_di_bot" bpmnElement="P_drone" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_2_5_di">
+        <dc:Bounds x="336" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_8_di" bpmnElement="Task_e_2_8">
+        <dc:Bounds x="486" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_8_di_top" bpmnElement="P_tractor_2" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_2_8_di">
+        <dc:Bounds x="486" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_8_di_bot" bpmnElement="P_drone" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_2_8_di">
+        <dc:Bounds x="486" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_10_di" bpmnElement="Task_e_2_10">
+        <dc:Bounds x="636" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_10_di_top" bpmnElement="P_drone" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_2_10_di">
+        <dc:Bounds x="636" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_10_di_bot" bpmnElement="P_tractor_2" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_2_10_di">
+        <dc:Bounds x="636" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_14_di" bpmnElement="Task_e_2_14">
+        <dc:Bounds x="786" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_14_di_top" bpmnElement="P_drone" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_2_14_di">
+        <dc:Bounds x="786" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_14_di_bot" bpmnElement="P_tractor_1" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_2_14_di">
+        <dc:Bounds x="786" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_16_di" bpmnElement="Task_e_2_16">
+        <dc:Bounds x="936" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_16_di_top" bpmnElement="P_tractor_1" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_2_16_di">
+        <dc:Bounds x="936" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_16_di_bot" bpmnElement="P_drone" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_2_16_di">
+        <dc:Bounds x="936" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_18_di" bpmnElement="Task_e_2_18">
+        <dc:Bounds x="1086" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_18_di_top" bpmnElement="P_drone" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_2_18_di">
+        <dc:Bounds x="1086" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_18_di_bot" bpmnElement="P_tractor_1" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_2_18_di">
+        <dc:Bounds x="1086" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_26_di" bpmnElement="Task_e_2_26">
+        <dc:Bounds x="1236" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_26_di_top" bpmnElement="P_drone" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_2_26_di">
+        <dc:Bounds x="1236" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_26_di_bot" bpmnElement="P_tractor_2" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_2_26_di">
+        <dc:Bounds x="1236" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_28_di" bpmnElement="Task_e_2_28">
+        <dc:Bounds x="1386" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_28_di_top" bpmnElement="P_tractor_2" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_2_28_di">
+        <dc:Bounds x="1386" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_28_di_bot" bpmnElement="P_drone" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_2_28_di">
+        <dc:Bounds x="1386" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_30_di" bpmnElement="Task_e_2_30">
+        <dc:Bounds x="1536" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_30_di_top" bpmnElement="P_drone" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_2_30_di">
+        <dc:Bounds x="1536" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_30_di_bot" bpmnElement="P_tractor_2" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_2_30_di">
+        <dc:Bounds x="1536" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_36_di" bpmnElement="Task_e_2_36">
+        <dc:Bounds x="1686" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_36_di_top" bpmnElement="P_drone" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_2_36_di">
+        <dc:Bounds x="1686" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_36_di_bot" bpmnElement="P_tractor_2" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_2_36_di">
+        <dc:Bounds x="1686" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_38_di" bpmnElement="Task_e_2_38">
+        <dc:Bounds x="1836" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_38_di_top" bpmnElement="P_tractor_2" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_2_38_di">
+        <dc:Bounds x="1836" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_38_di_bot" bpmnElement="P_drone" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_2_38_di">
+        <dc:Bounds x="1836" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_41_di" bpmnElement="Task_e_2_41">
+        <dc:Bounds x="1986" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_41_di_top" bpmnElement="P_tractor_1" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_2_41_di">
+        <dc:Bounds x="1986" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_41_di_bot" bpmnElement="P_drone" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_2_41_di">
+        <dc:Bounds x="1986" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_43_di" bpmnElement="Task_e_2_43">
+        <dc:Bounds x="2136" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_43_di_top" bpmnElement="P_drone" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="Task_e_2_43_di">
+        <dc:Bounds x="2136" y="210" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_e_2_43_di_bot" bpmnElement="P_tractor_1" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="Task_e_2_43_di">
+        <dc:Bounds x="2136" y="270" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_2_di" bpmnElement="End_2">
+        <dc:Bounds x="2286" y="232" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SF_1_di" bpmnElement="SF_1">
+        <di:waypoint x="136" y="250" />
+        <di:waypoint x="186" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_2_di" bpmnElement="SF_2">
+        <di:waypoint x="286" y="250" />
+        <di:waypoint x="336" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_3_di" bpmnElement="SF_3">
+        <di:waypoint x="436" y="250" />
+        <di:waypoint x="486" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_4_di" bpmnElement="SF_4">
+        <di:waypoint x="586" y="250" />
+        <di:waypoint x="636" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_5_di" bpmnElement="SF_5">
+        <di:waypoint x="736" y="250" />
+        <di:waypoint x="786" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_6_di" bpmnElement="SF_6">
+        <di:waypoint x="886" y="250" />
+        <di:waypoint x="936" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_7_di" bpmnElement="SF_7">
+        <di:waypoint x="1036" y="250" />
+        <di:waypoint x="1086" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_8_di" bpmnElement="SF_8">
+        <di:waypoint x="1186" y="250" />
+        <di:waypoint x="1236" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_9_di" bpmnElement="SF_9">
+        <di:waypoint x="1336" y="250" />
+        <di:waypoint x="1386" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_10_di" bpmnElement="SF_10">
+        <di:waypoint x="1486" y="250" />
+        <di:waypoint x="1536" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_11_di" bpmnElement="SF_11">
+        <di:waypoint x="1636" y="250" />
+        <di:waypoint x="1686" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_12_di" bpmnElement="SF_12">
+        <di:waypoint x="1786" y="250" />
+        <di:waypoint x="1836" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_13_di" bpmnElement="SF_13">
+        <di:waypoint x="1936" y="250" />
+        <di:waypoint x="1986" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_14_di" bpmnElement="SF_14">
+        <di:waypoint x="2086" y="250" />
+        <di:waypoint x="2136" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SF_15_di" bpmnElement="SF_15">
+        <di:waypoint x="2236" y="250" />
+        <di:waypoint x="2286" y="250" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

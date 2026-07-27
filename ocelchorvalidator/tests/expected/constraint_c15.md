@@ -66,4 +66,5 @@ e_1 is in a scope, e_2 is top-level. e_2's initiator is not in the involved set 
 
 - **Empty log**: `elements_checked == 0`, passes
 - **Single event**: `elements_checked == 0`, passes
-- **Events without initiator**: Skipped (handled by C2)
+- **Events without initiator**: evaluated, pass vacuously (`init(e2) = ∅ ⊆` any involved set, set semantics); the missing initiator itself is C2's finding
+- **Empty involved set**: a scope tree whose events carry no role edges licenses no next initiator — a non-empty `init(e2)` violates (previously an `if involved` guard rendered this vacuously-false case as silently fine)

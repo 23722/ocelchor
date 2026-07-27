@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from ocelchorvalidator.constraints import (
+    check_c2,
     check_c5,
     check_c6,
     check_c7,
@@ -198,6 +199,30 @@ class TestC7:
         assert not r.passed
         assert r.violations[0].event_id == "e1"
 
+    def test_missing_initiator_fires_c2_and_c7(self) -> None:
+        """An event with no initiator edge violates C2 AND C7 (coupled
+        violations, like a missing receiver firing C3 and C6): an empty
+        initiator set means zero initiating messages, not an exempt event."""
+        ocel = _minimal_ocel(
+            events=[_event("e1", [
+                _rel("o_p", "choreo:participant"),
+                _rel("msg1", "choreo:message"),
+                _rel("inst1", "choreo:instance"),
+            ])],
+            objects=[_obj("msg1", "call", [
+                _rel("o_p", "choreo:source"),
+                _rel("o_p", "choreo:target"),
+            ])],
+        )
+        idx = build_index(ocel)
+        r7 = check_c7(idx)
+        assert not r7.passed
+        assert r7.violations[0].event_id == "e1"
+        assert "0 initiating messages" in r7.violations[0].message
+        assert r7.elements_checked == 1  # evaluated, not skipped
+        r2 = check_c2(idx)
+        assert not r2.passed
+
     def test_two_initiating_messages(self) -> None:
         ocel = _minimal_ocel(
             events=[_event("e1", [
@@ -287,7 +312,9 @@ class TestC9:
     def test_positive_swap1(self, swap1_ocel: dict) -> None:
         r = check_c9(build_index(swap1_ocel))
         assert r.passed
-        assert r.elements_checked == 2  # 2 events, each with 1 initiating message
+        # denominator = all event–message pairs (same population as C5/C6);
+        # non-initiating messages pass vacuously
+        assert r.elements_checked == 3
 
     def test_wrong_target(self) -> None:
         ocel = _minimal_ocel(
@@ -322,8 +349,9 @@ class TestC10:
     def test_positive_swap1(self, swap1_ocel: dict) -> None:
         r = check_c10(build_index(swap1_ocel))
         assert r.passed
-        # swap_1: only swap event has a return message → 1 checked
-        assert r.elements_checked == 1
+        # denominator = all event–message pairs (same population as C5/C6);
+        # non-return messages pass vacuously
+        assert r.elements_checked == 3
 
     def test_wrong_target(self) -> None:
         ocel = _minimal_ocel(
@@ -350,7 +378,9 @@ class TestC10:
         assert r.violations[0].object_id == "msg_ret"
 
     def test_no_return_message_passes(self) -> None:
-        """Event with only an initiating message → C10 passes (nothing to check)."""
+        """Event with only an initiating message → C10 passes vacuously
+        (the pair is evaluated and counted, the implication antecedent is
+        false)."""
         ocel = _minimal_ocel(
             events=[_event("e1", [
                 _rel("o_i", "choreo:initiator"),
@@ -365,7 +395,7 @@ class TestC10:
         )
         r = check_c10(build_index(ocel))
         assert r.passed
-        assert r.elements_checked == 0
+        assert r.elements_checked == 1
 
     def test_empty_log(self) -> None:
         r = check_c10(build_index(_minimal_ocel([])))

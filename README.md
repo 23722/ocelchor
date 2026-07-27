@@ -198,25 +198,25 @@ Column names follow the paper's notation.
 
 | Dataset |   C0 |   C1 |   C2 |   C3 |     C4 |   C5 |   C6 |   C7 |   C8 |   C9 |  C10 |  C11 |  C12 |  C13 |  C14 |    C15 |   C16 |
 |---------|-----:|-----:|-----:|-----:|-------:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-------:|------:|
-| **Consensus Layer: DepositContract**<br>`0x00000000219ab540356cbb839cbe05303d7705fa` | 0/9  | 0/17 | 0/9  | 0/9  |   0/9  | 0/17 | 0/17 | 0/9  | 0/9  | 0/9  | 0/8  | 0/9  | 0/1  | 0/1  | 0/1  |   0/8  |  0/1  |
-| **ENS: ENSGovernor**<br>`0x323a76393544d5ecca80cd6ef2a560c6a395b7e3` | 0/21 | 0/31 | 0/21 | 0/21 |   0/21 | 0/31 | 0/31 | 0/21 | 0/21 | 0/21 | 0/10 | 0/21 | 0/6  | 0/6  | 0/6  |  0/12  |  0/6  |
-| **Tornado.Cash: GovernanceProposalStateUpgrade**<br>`0x5efda50f22d34f262c29268506c5fa42cb56a1ce` | 0/35 | 0/47 | 0/35 | 0/35 |   0/35 | 0/47 | 0/47 | 0/35 | 0/35 | 0/35 | 0/12 | 0/35 | 0/17 | 0/17 | 0/17 |  0/24  | 0/17  |
-| **Tornado.Cash: TornadoRouter**<br>`0xd90e2f925da726b50c4ed8d0fb90ad053324f31b` | 0/85 | 0/146| 0/85 | 0/85 |   0/85 | 0/146| 0/146| 0/85 | 0/85 | 0/85 | 0/61 | 0/85 | 0/13 | 0/13 | 0/13 |  0/83  | 0/13  |
-| **PancakeSwap: MasterChefV3**<br>`0x556b9306565093c855aea9ae92a594704c2cd59e` | 0/241| 0/361| 0/241| 0/241| 10/241 | 0/361| 0/361| 0/241| 0/241| 0/241| 0/130| 0/241| 0/64 | 0/64 | 0/64 |  0/228 | 0/64  |
-| **Uniswap: UniswapV2Pair (USDC-WETH)**<br>`0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc` | 0/61 | 0/88 | 0/61 | 0/61 |   0/61 | 0/88 | 0/88 | 0/61 | 0/61 | 0/61 | 0/27 | 0/61 | 0/17 | 0/17 | 0/17 |  0/55  | 0/17  |
-| **SushiSwap: Router**<br>`0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f` | 0/267| 0/415| 0/267| 0/267|  0/267 | 0/415| 0/415| 0/267| 0/267| 0/267| 0/148| 0/267| 0/67 | 0/67 | 0/67 |  0/248 | 0/67  |
-| **CryptoKitties: Core (KittyCore)**<br>`0x06012c8cf97bead5deae237070f9587f8e7a266d` | 0/204| 0/302| 0/204| 0/204|  2/204 | 0/302| 0/302| 0/204| 0/204| 0/204| 0/100| 0/204| 0/59 | 0/59 | 0/59 |  0/182 | 0/59  |
-| **CryptoKitties: SaleClockAuction**<br>`0xb1690c08e213a35ed9bab7b318de14420fb57d8c` | 0/6  | 0/10 | 0/6  | 0/6  |   0/6  | 0/10 | 0/10 | 0/6  | 0/6  | 0/6  | 0/4  | 0/6  | 0/2  | 0/2  | 0/2  |  0/4   |  0/2  |
-| **Yuga Labs: BoredApeYachtClub**<br>`0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d` | 0/18 | 0/21 | 0/18 | 0/18 |   0/18 | 0/21 | 0/21 | 0/18 | 0/18 | 0/18 | 0/3  | 0/18 | 0/5  | 0/5  | 0/5  |  0/9   |  0/5  |
-| **Nouns DAO: NounsToken**<br>`0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03` | 0/12 | 0/13 | 0/12 | 0/12 |   0/12 | 0/13 | 0/13 | 0/12 | 0/12 | 0/12 | 0/1  | 0/12 | 0/3  | 0/3  | 0/3  |  0/5   |  0/3  |
-| **Beanstalk Farms: Attack data**<br>`beanstalk_attack_ocel.json` | 0/489| 0/703| 0/489| 0/489|  0/489 | 0/703| 0/703| 0/489| 0/489| 0/489| 0/214| 0/489| 0/139| 0/139| 0/139|  1/486 | 0/139 |
-| **Real1: Two-robot search**<br>`collectivelog_real1_uniqueInteraction.xes` |  0/2  |  0/2  |  0/2  |   0/2  |   0/2  |  0/2  |   0/2  |  0/2  |  0/2  |  0/2  | 0/0 |  0/2  | 0/0 | 0/0 | 0/0 |  0/1   | 0/0 |
-| **Real2: Travel booking**<br>`collectivelog_real2_uniqueInteraction.xes` | 0/842 | 0/842 | 0/842 |  0/842 |  0/842 | 0/842 |  0/842 | 0/842 | 0/842 | 0/842 | 0/0 | 0/842 | 0/0 | 0/0 | 0/0 |  0/746 | 0/0 |
-| **Real3: Smart thermostat**<br>`collectivelog_real3_uniqueInteraction.xes` | 0/472 | 0/472 | 0/472 |  **8**/472 |  0/472 | 0/472 |  **8**/472 | 0/472 | 0/472 | 0/464 | 0/0 | 0/472 | 0/0 | 0/0 | 0/0 | **99**/413 | 0/0 |
-| **Real4: ZooClub registration**<br>`collectivelog_real4_uniqueInteraction.xes` |  0/4  |  0/4  |  0/4  |   0/4  |   0/4  |  0/4  |   0/4  |  0/4  |  0/4  |  0/4  | 0/0 |  0/4  | 0/0 | 0/0 | 0/0 |  0/3   | 0/0 |
-| **Real5: Academic paper review**<br>`collectivelog_real5_uniqueInteraction.xes` |  0/15 |  0/15 |  0/15 |   0/15 |   0/15 |  0/15 |   0/15 |  0/15 |  0/15 |  0/15 | 0/0 |  0/15 | 0/0 | 0/0 | 0/0 |  0/12  | 0/0 |
-| **Healthcare: Hospitalization**<br>`collectivelog_healthcare_uniqueInteraction.xes` | 0/116 | 0/116 | 0/116 |  **9**/116 |  0/116 | 0/116 |  **9**/116 | 0/116 | 0/116 | 0/107 | 0/0 | 0/116 | 0/0 | 0/0 | 0/0 |  **9**/99 | 0/0 |
-| **Smart agriculture: Tractor coordination**<br>`collectivelog_smartagriculture_uniqueInteraction.xes` | 0/114 | 0/114 | 0/114 | **28**/114 |  0/114 | 0/114 | **28**/114 | 0/114 | 0/114 | 0/98  | 0/0 | 0/114 | 0/0 | 0/0 | 0/0 |  **9**/104 | 0/0 |
+| **Consensus Layer: DepositContract**<br>`0x00000000219ab540356cbb839cbe05303d7705fa` | 0/9  | 0/17 | 0/9  | 0/9  |   0/9  | 0/17 | 0/17 | 0/9  | 0/9  | 0/17 | 0/17 | 0/9  | 0/1  | 0/1  | 0/1  |   0/8  |  0/1  |
+| **ENS: ENSGovernor**<br>`0x323a76393544d5ecca80cd6ef2a560c6a395b7e3` | 0/21 | 0/31 | 0/21 | 0/21 |   0/21 | 0/31 | 0/31 | 0/21 | 0/21 | 0/31 | 0/31 | 0/21 | 0/6  | 0/6  | 0/6  |  0/12  |  0/6  |
+| **Tornado.Cash: GovernanceProposalStateUpgrade**<br>`0x5efda50f22d34f262c29268506c5fa42cb56a1ce` | 0/35 | 0/47 | 0/35 | 0/35 |   0/35 | 0/47 | 0/47 | 0/35 | 0/35 | 0/47 | 0/47 | 0/35 | 0/17 | 0/17 | 0/17 |  0/24  | 0/17  |
+| **Tornado.Cash: TornadoRouter**<br>`0xd90e2f925da726b50c4ed8d0fb90ad053324f31b` | 0/85 | 0/146| 0/85 | 0/85 |   0/85 | 0/146| 0/146| 0/85 | 0/85 | 0/146 | 0/146 | 0/85 | 0/13 | 0/13 | 0/13 |  0/83  | 0/13  |
+| **PancakeSwap: MasterChefV3**<br>`0x556b9306565093c855aea9ae92a594704c2cd59e` | 0/241| 0/361| 0/241| 0/241| 10/241 | 0/361| 0/361| 0/241| 0/241| 0/361 | 0/361 | 0/241| 0/64 | 0/64 | 0/64 |  0/228 | 0/64  |
+| **Uniswap: UniswapV2Pair (USDC-WETH)**<br>`0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc` | 0/61 | 0/88 | 0/61 | 0/61 |   0/61 | 0/88 | 0/88 | 0/61 | 0/61 | 0/88 | 0/88 | 0/61 | 0/17 | 0/17 | 0/17 |  0/55  | 0/17  |
+| **SushiSwap: Router**<br>`0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f` | 0/267| 0/415| 0/267| 0/267|  0/267 | 0/415| 0/415| 0/267| 0/267| 0/415 | 0/415 | 0/267| 0/67 | 0/67 | 0/67 |  0/248 | 0/67  |
+| **CryptoKitties: Core (KittyCore)**<br>`0x06012c8cf97bead5deae237070f9587f8e7a266d` | 0/204| 0/302| 0/204| 0/204|  2/204 | 0/302| 0/302| 0/204| 0/204| 0/302 | 0/302 | 0/204| 0/59 | 0/59 | 0/59 |  0/182 | 0/59  |
+| **CryptoKitties: SaleClockAuction**<br>`0xb1690c08e213a35ed9bab7b318de14420fb57d8c` | 0/6  | 0/10 | 0/6  | 0/6  |   0/6  | 0/10 | 0/10 | 0/6  | 0/6  | 0/10 | 0/10 | 0/6  | 0/2  | 0/2  | 0/2  |  0/4   |  0/2  |
+| **Yuga Labs: BoredApeYachtClub**<br>`0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d` | 0/18 | 0/21 | 0/18 | 0/18 |   0/18 | 0/21 | 0/21 | 0/18 | 0/18 | 0/21 | 0/21 | 0/18 | 0/5  | 0/5  | 0/5  |  0/9   |  0/5  |
+| **Nouns DAO: NounsToken**<br>`0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03` | 0/12 | 0/13 | 0/12 | 0/12 |   0/12 | 0/13 | 0/13 | 0/12 | 0/12 | 0/13 | 0/13 | 0/12 | 0/3  | 0/3  | 0/3  |  0/5   |  0/3  |
+| **Beanstalk Farms: Attack data**<br>`beanstalk_attack_ocel.json` | 0/489| 0/703| 0/489| 0/489|  0/489 | 0/703| 0/703| 0/489| 0/489| 0/703 | 0/703 | 0/489| 0/139| 0/139| 0/139|  1/486 | 0/139 |
+| **Real1: Two-robot search**<br>`collectivelog_real1_uniqueInteraction.xes` |  0/2  |  0/2  |  0/2  |   0/2  |   0/2  |  0/2  |   0/2  |  0/2  |  0/2  | 0/2 | 0/2 |  0/2  | 0/0 | 0/0 | 0/0 |  0/1   | 0/0 |
+| **Real2: Travel booking**<br>`collectivelog_real2_uniqueInteraction.xes` | 0/842 | 0/842 | 0/842 |  0/842 |  0/842 | 0/842 |  0/842 | 0/842 | 0/842 | 0/842 | 0/842 | 0/842 | 0/0 | 0/0 | 0/0 |  0/746 | 0/0 |
+| **Real3: Smart thermostat**<br>`collectivelog_real3_uniqueInteraction.xes` | 0/472 | 0/472 | 0/472 |  **8**/472 |  0/472 | 0/472 |  **8**/472 | 0/472 | 0/472 | 0/472 | 0/472 | 0/472 | 0/0 | 0/0 | 0/0 | **99**/413 | 0/0 |
+| **Real4: ZooClub registration**<br>`collectivelog_real4_uniqueInteraction.xes` |  0/4  |  0/4  |  0/4  |   0/4  |   0/4  |  0/4  |   0/4  |  0/4  |  0/4  | 0/4 | 0/4 |  0/4  | 0/0 | 0/0 | 0/0 |  0/3   | 0/0 |
+| **Real5: Academic paper review**<br>`collectivelog_real5_uniqueInteraction.xes` |  0/15 |  0/15 |  0/15 |   0/15 |   0/15 |  0/15 |   0/15 |  0/15 |  0/15 | 0/15 | 0/15 |  0/15 | 0/0 | 0/0 | 0/0 |  0/12  | 0/0 |
+| **Healthcare: Hospitalization**<br>`collectivelog_healthcare_uniqueInteraction.xes` | 0/116 | 0/116 | 0/116 |  **9**/116 |  0/116 | 0/116 |  **9**/116 | 0/116 | 0/116 | 0/116 | 0/116 | 0/116 | 0/0 | 0/0 | 0/0 |  **9**/99 | 0/0 |
+| **Smart agriculture: Tractor coordination**<br>`collectivelog_smartagriculture_uniqueInteraction.xes` | 0/114 | 0/114 | 0/114 | **28**/114 |  0/114 | 0/114 | **28**/114 | 0/114 | 0/114 | 0/114 | 0/114 | 0/114 | 0/0 | 0/0 | 0/0 |  **9**/104 | 0/0 |
 
 The violations have two distinct sources: blockchain implementation
 particularities (for `trace2ocelchor`) and source-data fidelity choices in

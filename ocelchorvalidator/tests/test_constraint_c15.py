@@ -294,6 +294,50 @@ class TestC15EdgeCases:
         assert r.passed
         assert r.elements_checked == 0
 
+    def test_empty_involved_set_violates(self) -> None:
+        """A non-empty initiator set is never ⊆ an empty involved set: a
+        scope tree whose events carry no role edges cannot license any next
+        initiator. Previously an `if involved` guard rendered this
+        vacuously-false case as silently fine."""
+        ocel = _minimal_ocel(
+            events=[
+                _event("e1", "2024-01-01T00:00:00.000Z", [
+                    _rel("sub1", "choreo:contained-by"),
+                    _rel("inst1", "choreo:instance"),
+                ]),  # no initiator/participant edges → involved(sub1) = ∅
+                _event("e2", "2024-01-01T00:00:00.001Z", [
+                    _rel("X", "choreo:initiator"),
+                    _rel("Y", "choreo:participant"),
+                    _rel("inst1", "choreo:instance"),
+                ]),
+            ],
+            objects=[_obj("sub1", "subchoreographyInstance")],
+        )
+        r = check_c15(build_index(ocel))
+        assert not r.passed
+        assert r.violations[0].event_id == "e2"
+
+    def test_empty_initiator_set_passes_vacuously(self) -> None:
+        """init(e2) = ∅ is a subset of any involved set — the pair is
+        evaluated and passes; the missing initiator itself is C2's finding,
+        not C15's."""
+        ocel = _minimal_ocel(
+            events=[
+                _event("e1", "2024-01-01T00:00:00.000Z", [
+                    _rel("A", "choreo:initiator"),
+                    _rel("B", "choreo:participant"),
+                    _rel("inst1", "choreo:instance"),
+                ]),
+                _event("e2", "2024-01-01T00:00:00.001Z", [
+                    _rel("Y", "choreo:participant"),
+                    _rel("inst1", "choreo:instance"),
+                ]),
+            ],
+        )
+        r = check_c15(build_index(ocel))
+        assert r.passed
+        assert r.elements_checked == 1
+
     def test_different_instances_checked_separately(self) -> None:
         """Events in different instances are not checked against each other."""
         ocel = _minimal_ocel(

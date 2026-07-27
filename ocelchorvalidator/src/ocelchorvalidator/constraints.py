@@ -217,18 +217,21 @@ def check_c6(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c7(idx: OcelIndex) -> ConstraintResult:
-    """Each E_T event has exactly one message whose source is the initiator."""
+    """Each E_T event has exactly one message whose source set intersects
+    the event's initiator set (src(om) ∩ init(e) ≠ ∅).
+
+    Every E_T event is evaluated. An event with an empty initiator set has
+    zero initiating messages and violates C7 alongside C2 — coupled
+    violations are reported by both constraints, like a missing receiver
+    firing C3 and C6."""
     violations: list[Violation] = []
     for e in idx.e_t_events:
         eid = e["id"]
-        initiators = _e2o_by_qualifier(idx, eid, "choreo:initiator")
-        if not initiators:
-            continue  # C2 handles missing initiator
-        initiator = initiators[0]
+        initiators = set(_e2o_by_qualifier(idx, eid, "choreo:initiator"))
         messages = _e2o_by_qualifier(idx, eid, "choreo:message")
         init_msgs = [
             mid for mid in messages
-            if initiator in _o2o_by_qualifier(idx, mid, "choreo:source")
+            if initiators & set(_o2o_by_qualifier(idx, mid, "choreo:source"))
         ]
         if len(init_msgs) != 1:
             violations.append(Violation(
@@ -244,18 +247,19 @@ def check_c7(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c8(idx: OcelIndex) -> ConstraintResult:
-    """Each E_T event has at most one message whose source is the participant."""
+    """Each E_T event has at most one message whose source set intersects
+    the event's non-initiator set (src(om) ∩ noninit(e) ≠ ∅).
+
+    Every E_T event is evaluated. An event with an empty participant set
+    has zero return messages and passes vacuously (≤ 1 holds)."""
     violations: list[Violation] = []
     for e in idx.e_t_events:
         eid = e["id"]
-        participants = _e2o_by_qualifier(idx, eid, "choreo:participant")
-        if not participants:
-            continue  # C3 handles missing participant
-        participant = participants[0]
+        participants = set(_e2o_by_qualifier(idx, eid, "choreo:participant"))
         messages = _e2o_by_qualifier(idx, eid, "choreo:message")
         return_msgs = [
             mid for mid in messages
-            if participant in _o2o_by_qualifier(idx, mid, "choreo:source")
+            if participants & set(_o2o_by_qualifier(idx, mid, "choreo:source"))
         ]
         if len(return_msgs) > 1:
             violations.append(Violation(
@@ -271,24 +275,25 @@ def check_c8(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c9(idx: OcelIndex) -> ConstraintResult:
-    """The initiating message (source=initiator) must target the participant."""
+    """Initiating messages must target the participants:
+    src(om) ∩ init(e) ≠ ∅  →  noninit(e) ⊆ tgt(om).
+
+    Every event–message pair is evaluated (the same population as C5/C6);
+    pairs whose message is not initiating pass vacuously, as does an empty
+    participant set (∅ ⊆ tgt(om))."""
     violations: list[Violation] = []
     checked = 0
     for e in idx.e_t_events:
         eid = e["id"]
-        initiators = _e2o_by_qualifier(idx, eid, "choreo:initiator")
-        participants = _e2o_by_qualifier(idx, eid, "choreo:participant")
-        if not initiators or not participants:
-            continue
-        initiator = initiators[0]
-        participant = participants[0]
+        initiators = set(_e2o_by_qualifier(idx, eid, "choreo:initiator"))
+        participants = set(_e2o_by_qualifier(idx, eid, "choreo:participant"))
         messages = _e2o_by_qualifier(idx, eid, "choreo:message")
         for mid in messages:
-            sources = _o2o_by_qualifier(idx, mid, "choreo:source")
-            if initiator in sources:
-                checked += 1
-                targets = _o2o_by_qualifier(idx, mid, "choreo:target")
-                if participant not in targets:
+            checked += 1
+            sources = set(_o2o_by_qualifier(idx, mid, "choreo:source"))
+            if initiators & sources:
+                targets = set(_o2o_by_qualifier(idx, mid, "choreo:target"))
+                if not participants <= targets:
                     violations.append(Violation(
                         constraint="C9",
                         message="Initiating message does not target the participant",
@@ -303,24 +308,25 @@ def check_c9(idx: OcelIndex) -> ConstraintResult:
 # ---------------------------------------------------------------------------
 
 def check_c10(idx: OcelIndex) -> ConstraintResult:
-    """The return message (source=participant) must target the initiator."""
+    """Return messages must target the initiators:
+    src(om) ∩ noninit(e) ≠ ∅  →  init(e) ⊆ tgt(om).
+
+    Every event–message pair is evaluated (the same population as C5/C6);
+    pairs whose message is not a return pass vacuously, as does an empty
+    initiator set (∅ ⊆ tgt(om))."""
     violations: list[Violation] = []
     checked = 0
     for e in idx.e_t_events:
         eid = e["id"]
-        initiators = _e2o_by_qualifier(idx, eid, "choreo:initiator")
-        participants = _e2o_by_qualifier(idx, eid, "choreo:participant")
-        if not initiators or not participants:
-            continue
-        initiator = initiators[0]
-        participant = participants[0]
+        initiators = set(_e2o_by_qualifier(idx, eid, "choreo:initiator"))
+        participants = set(_e2o_by_qualifier(idx, eid, "choreo:participant"))
         messages = _e2o_by_qualifier(idx, eid, "choreo:message")
         for mid in messages:
-            sources = _o2o_by_qualifier(idx, mid, "choreo:source")
-            if participant in sources:
-                checked += 1
-                targets = _o2o_by_qualifier(idx, mid, "choreo:target")
-                if initiator not in targets:
+            checked += 1
+            sources = set(_o2o_by_qualifier(idx, mid, "choreo:source"))
+            if participants & sources:
+                targets = set(_o2o_by_qualifier(idx, mid, "choreo:target"))
+                if not initiators <= targets:
                     violations.append(Violation(
                         constraint="C10",
                         message="Return message does not target the initiator",
@@ -540,10 +546,10 @@ def check_c15(idx: OcelIndex) -> ConstraintResult:
             e2 = events[i + 1]
             checked += 1
 
-            initiators_e2 = _e2o_by_qualifier(idx, e2["id"], "choreo:initiator")
-            if not initiators_e2:
-                continue  # C2 handles missing initiator
-            o_i = initiators_e2[0]
+            # init(e2) ⊆ involved(...) with set semantics: an empty
+            # initiator set passes vacuously (∅ ⊆ involved); an empty
+            # involved set with a non-empty initiator set violates.
+            init_e2 = set(_e2o_by_qualifier(idx, e2["id"], "choreo:initiator"))
 
             scope_e1 = _get_scope(idx, e1["id"])
             scope_e2 = _get_scope(idx, e2["id"])
@@ -558,7 +564,7 @@ def check_c15(idx: OcelIndex) -> ConstraintResult:
                     idx_in_path = path.index(scope_e2)
                     child_scope = path[idx_in_path - 1]  # one level below scope_e2
                     involved = _involved_in_scope_tree(child_scope, idx)
-                    if involved and o_i not in involved:
+                    for o_i in sorted(init_e2 - involved):
                         violations.append(Violation(
                             constraint="C15",
                             message=f"Initiator {o_i} not involved in child scope {child_scope}",
@@ -570,7 +576,7 @@ def check_c15(idx: OcelIndex) -> ConstraintResult:
                 # Case 2: exiting to top level
                 root = _root_ancestor(scope_e1, parent_map)
                 involved = _involved_in_scope_tree(root, idx)
-                if involved and o_i not in involved:
+                for o_i in sorted(init_e2 - involved):
                     violations.append(Violation(
                         constraint="C15",
                         message=f"Initiator {o_i} not involved in root scope {root}",
@@ -581,7 +587,7 @@ def check_c15(idx: OcelIndex) -> ConstraintResult:
             # Case 3: same scope, descending, or both top-level
             roles_e1 = set(_e2o_by_qualifier(idx, e1["id"], "choreo:initiator"))
             roles_e1.update(_e2o_by_qualifier(idx, e1["id"], "choreo:participant"))
-            if o_i not in roles_e1:
+            for o_i in sorted(init_e2 - roles_e1):
                 violations.append(Violation(
                     constraint="C15",
                     message=f"Initiator {o_i} not initiator or participant of previous event",

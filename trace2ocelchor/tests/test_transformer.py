@@ -955,3 +955,44 @@ class TestDelegatecallIntegration:
         transfer_events = [e for e in self.events if e.type.startswith("transfer [")]
         initiator = _e2o_target(transfer_events[0], CHOREO_INITIATOR)
         assert initiator != self.PROXY
+
+
+# ---------------------------------------------------------------------------
+# TestUnrecordedEndpoint — empty contract address (e.g. a contract-creation
+# record). Policy: emit the event; omit the edge whose endpoint is
+# unrecorded; never materialise an empty-identifier object. The validator
+# flags the gap (C3 on the event, C6 on the message).
+# ---------------------------------------------------------------------------
+
+class TestUnrecordedEndpoint:
+
+    TX = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca"
+
+    @pytest.fixture(autouse=True)
+    def _transform(self, swap_1_trace):
+        swap_1_trace.contract_address = ""
+        self.events, self.objects = transform_traces([swap_1_trace])
+
+    def test_no_empty_identifier_object(self):
+        assert _obj_by_id(self.objects, "") is None
+
+    def test_root_request_emitted_without_participant_edge(self):
+        req = [e for e in self.events if e.id == f"e:{self.TX}:root:request"]
+        assert len(req) == 1, "the event itself is never dropped"
+        assert _e2o_target(req[0], CHOREO_INITIATOR) is not None
+        assert _e2o_targets(req[0], CHOREO_PARTICIPANT) == []
+
+    def test_request_message_has_no_target_relation(self):
+        msg = _obj_by_id(self.objects, f"call:req:{self.TX}:root")
+        assert msg is not None
+        assert len(_o2o_targets(msg, CHOREO_SOURCE)) == 1
+        assert _o2o_targets(msg, CHOREO_TARGET) == []
+
+    def test_empty_discriminator_kept_in_type_and_scope_name(self):
+        # The placeholder for the unrecorded address is the empty string:
+        # it can only arise from this case (a real contract always has a
+        # nonempty address), so the naming channels stay unchanged.
+        req = [e for e in self.events if e.id == f"e:{self.TX}:root:request"][0]
+        assert req.type.endswith(" []")
+        scope = _obj_by_id(self.objects, f"subchoreographyInstance:{self.TX}:root")
+        assert scope.attributes["name"].endswith(" []")

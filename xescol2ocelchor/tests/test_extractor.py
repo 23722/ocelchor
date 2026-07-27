@@ -251,3 +251,35 @@ class TestKeepInternalEvents:
         events, _, _ = result
         internal = next(e for e in events if e.id == "e:case_1:0")
         assert not any(q.startswith("choreo:") for _, q in _qualifiers(internal.e2o))
+
+
+class TestMissingSender:
+    """A send without org:group is emitted WITHOUT initiator/source edges,
+    not skipped — the extraction-side twin of the missing-receiver strategy
+    (event stays, gap visible, validator flags C2/C5/C7)."""
+
+    @pytest.fixture
+    def result(self):
+        send = _ev("X", "", 1, 0, msg_type="send", msg_instance_id="m1")
+        rcv = _ev("X", "Bob", 2, 1, msg_type="receive", msg_instance_id="m1")
+        trace = XesTrace(concept_name="t", events=[send, rcv])
+        return extract([trace])
+
+    def test_event_emitted(self, result):
+        events, _, stats = result
+        assert stats.task_events == 1
+        assert len(events) == 1
+
+    def test_no_initiator_edge_and_no_empty_object(self, result):
+        events, objects, _ = result
+        quals = {q for _, q in _qualifiers(events[0].e2o)}
+        assert CHOREO_INITIATOR not in quals
+        assert CHOREO_PARTICIPANT in quals  # receiver edge intact
+        assert all(o.id != "" for o in objects)
+
+    def test_message_has_no_source_relation(self, result):
+        _, objects, _ = result
+        msg = next(o for o in objects if o.id == "message:t:m1")
+        quals = {q for _, q in _qualifiers(msg.o2o)}
+        assert CHOREO_SOURCE not in quals
+        assert CHOREO_TARGET in quals

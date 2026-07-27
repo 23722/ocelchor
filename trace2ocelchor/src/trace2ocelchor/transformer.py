@@ -142,12 +142,24 @@ def _response_message_type(activity: str) -> str:
 
 
 def _make_participant(address: str, obj_type: str, seen: dict) -> OcelObject | None:
-    """Create a participant object if not already seen. Returns None if duplicate."""
-    if address in seen:
+    """Create a participant object if not already seen. Returns None if duplicate.
+
+    An empty address is an unrecorded endpoint (e.g. a contract-creation
+    record without a contract address): no object is materialised and the
+    corresponding role/message edges are omitted (`_role_edge`,
+    `_make_message`), so the validator flags the gap (C3/C6) instead of a
+    degenerate ``''`` object silently satisfying the constraints."""
+    if not address or address in seen:
         return None
     obj = OcelObject(id=address, type=obj_type)
     seen[address] = obj
     return obj
+
+
+def _role_edge(event_id: str, address: str, qualifier: str) -> list[E2O]:
+    """Initiator/participant edge, omitted when the endpoint is unrecorded
+    (empty address). The event itself is always emitted."""
+    return [E2O(event_id, address, qualifier)] if address else []
 
 
 def _make_message(
@@ -157,15 +169,20 @@ def _make_message(
     target: str,
     attributes: dict | None = None,
 ) -> OcelObject:
-    """Create a message object with source/target O2O relations and optional attributes."""
+    """Create a message object with source/target O2O relations and optional
+    attributes. A relation whose endpoint is unrecorded (empty address) is
+    omitted — the validator flags it (C5/C6) rather than the message linking
+    a degenerate object."""
+    o2o = []
+    if source:
+        o2o.append(O2O(source_id=msg_id, target_id=source, qualifier=CHOREO_SOURCE))
+    if target:
+        o2o.append(O2O(source_id=msg_id, target_id=target, qualifier=CHOREO_TARGET))
     return OcelObject(
         id=msg_id,
         type=msg_type,
         attributes=attributes or {},
-        o2o=[
-            O2O(source_id=msg_id, target_id=source, qualifier=CHOREO_SOURCE),
-            O2O(source_id=msg_id, target_id=target, qualifier=CHOREO_TARGET),
-        ],
+        o2o=o2o,
     )
 
 
@@ -290,8 +307,8 @@ def _create_root_task_simple(
         time=_make_time(trace, 0),
         attributes={"trace_order": 0},
         e2o=[
-            E2O(event_id, trace.sender, CHOREO_INITIATOR),
-            E2O(event_id, trace.contract_address, CHOREO_PARTICIPANT),
+            *_role_edge(event_id, trace.sender, CHOREO_INITIATOR),
+            *_role_edge(event_id, trace.contract_address, CHOREO_PARTICIPANT),
             E2O(event_id, req_msg_id, CHOREO_MESSAGE),
             E2O(event_id, choreo_inst_id, CHOREO_INSTANCE),
         ],
@@ -358,8 +375,8 @@ def _create_root_split(
         time=_make_time(trace, trace_order),
         attributes={"trace_order": trace_order},
         e2o=[
-            E2O(req_event_id, trace.sender, CHOREO_INITIATOR),
-            E2O(req_event_id, trace.contract_address, CHOREO_PARTICIPANT),
+            *_role_edge(req_event_id, trace.sender, CHOREO_INITIATOR),
+            *_role_edge(req_event_id, trace.contract_address, CHOREO_PARTICIPANT),
             E2O(req_event_id, req_msg_id, CHOREO_MESSAGE),
             E2O(req_event_id, sub_obj_id, CHOREO_CONTAINED_BY),
             E2O(req_event_id, choreo_inst_id, CHOREO_INSTANCE),
@@ -449,8 +466,8 @@ def _create_leaf_task(
         time=_make_time(trace, trace_order),
         attributes={"trace_order": trace_order},
         e2o=[
-            E2O(event_id, frame.from_addr, CHOREO_INITIATOR),
-            E2O(event_id, frame.to_addr, CHOREO_PARTICIPANT),
+            *_role_edge(event_id, frame.from_addr, CHOREO_INITIATOR),
+            *_role_edge(event_id, frame.to_addr, CHOREO_PARTICIPANT),
             E2O(event_id, req_msg_id, CHOREO_MESSAGE),
             E2O(event_id, res_msg_id, CHOREO_MESSAGE),
             E2O(event_id, parent_sub_id, CHOREO_CONTAINED_BY),
@@ -526,8 +543,8 @@ def _create_subchoreography(
         time=_make_time(trace, trace_order),
         attributes={"trace_order": trace_order},
         e2o=[
-            E2O(req_event_id, frame.from_addr, CHOREO_INITIATOR),
-            E2O(req_event_id, frame.to_addr, CHOREO_PARTICIPANT),
+            *_role_edge(req_event_id, frame.from_addr, CHOREO_INITIATOR),
+            *_role_edge(req_event_id, frame.to_addr, CHOREO_PARTICIPANT),
             E2O(req_event_id, req_msg_id, CHOREO_MESSAGE),
             E2O(req_event_id, sub_obj_id, CHOREO_CONTAINED_BY),
             E2O(req_event_id, choreo_inst_id, CHOREO_INSTANCE),
@@ -550,8 +567,8 @@ def _create_subchoreography(
         time=_make_time(trace, trace_order),
         attributes={"trace_order": trace_order},
         e2o=[
-            E2O(res_event_id, frame.to_addr, CHOREO_INITIATOR),
-            E2O(res_event_id, frame.from_addr, CHOREO_PARTICIPANT),
+            *_role_edge(res_event_id, frame.to_addr, CHOREO_INITIATOR),
+            *_role_edge(res_event_id, frame.from_addr, CHOREO_PARTICIPANT),
             E2O(res_event_id, res_msg_id, CHOREO_MESSAGE),
             E2O(res_event_id, sub_obj_id, CHOREO_CONTAINED_BY),
             E2O(res_event_id, choreo_inst_id, CHOREO_INSTANCE),

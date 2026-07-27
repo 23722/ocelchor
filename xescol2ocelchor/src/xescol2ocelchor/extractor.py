@@ -169,14 +169,20 @@ def _emit_task(
     objects_out: list[OcelObject],
     stats: ExtractionStats,
 ) -> None:
-    """Emit one choreography task event from a single send event."""
+    """Emit one choreography task event from a single send event.
+
+    A send without an ``org:group`` is emitted WITHOUT its
+    ``choreo:initiator`` / ``choreo:source`` edges rather than skipped —
+    the same strategy as missing receivers (whose participant / target
+    edges are filtered): the event stays, the recording gap is visible,
+    and the validator flags it (C2, C5, C7)."""
     sender = send.org_group
     if not sender:
         logger.warning(
-            "Send event %r in trace %r has no org:group; skipping",
+            "Send event %r in trace %r has no org:group; emitting without"
+            " initiator (validator flags C2/C5/C7)",
             send.concept_name, trace.concept_name,
         )
-        return
 
     if not receivers:
         stats.unmatched_send_events += 1
@@ -184,7 +190,10 @@ def _emit_task(
         stats.broadcast_send_events += 1
 
     # Participant objects (global dedup).
-    initiator_obj = _ensure_participant(sender, seen_participants, objects_out)
+    initiator_obj = (
+        _ensure_participant(sender, seen_participants, objects_out)
+        if sender else None
+    )
     receiver_objs = [
         _ensure_participant(r, seen_participants, objects_out) for r in receivers
     ]
@@ -197,7 +206,7 @@ def _emit_task(
     if msg_obj is None:
         msg_obj = OcelObject(
             id=msg_id, type=_message_type(send),
-            o2o=[O2O(msg_id, initiator_obj.id, CHOREO_SOURCE)] + [
+            o2o=([O2O(msg_id, initiator_obj.id, CHOREO_SOURCE)] if initiator_obj else []) + [
                 O2O(msg_id, r.id, CHOREO_TARGET) for r in receiver_objs
             ],
         )
@@ -210,7 +219,7 @@ def _emit_task(
     event_attrs = _event_attributes(send)
     e2o = [
         E2O(event_id, inst_id, CHOREO_INSTANCE),
-        E2O(event_id, initiator_obj.id, CHOREO_INITIATOR),
+        *([E2O(event_id, initiator_obj.id, CHOREO_INITIATOR)] if initiator_obj else []),
         E2O(event_id, msg_id, CHOREO_MESSAGE),
     ] + [E2O(event_id, r.id, CHOREO_PARTICIPANT) for r in receiver_objs]
     if collab_inst_id is not None:

@@ -1,0 +1,8 @@
+{
+  "name": "chorjs-render",
+  "private": true,
+  "description": "Headless chor-js render harness for discovered choreography models",
+  "dependencies": {
+    "puppeteer-core": "^23.0.0"
+  }
+}

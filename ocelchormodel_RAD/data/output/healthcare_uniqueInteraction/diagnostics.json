@@ -1,25 +1,35 @@
 {
-  "log": "real5_uniqueInteraction",
+  "log": "healthcare_uniqueInteraction",
   "generated_by": "ocelchormodel-rad 0.1.0",
   "hard_gates": {
     "passed": true,
-    "tolerated_missing_receiver_events": []
+    "tolerated_missing_receiver_events": [
+      "e:case_114:12",
+      "e:case_254:14",
+      "e:case_314:12",
+      "e:case_354:13",
+      "e:case_374:12",
+      "e:case_409:17",
+      "e:case_474:11",
+      "e:case_74:11",
+      "e:case_99:11"
+    ]
   },
   "constraints": {
     "C0": {
-      "checked": 15,
+      "checked": 116,
       "violations": 0
     },
     "C1": {
-      "checked": 15,
+      "checked": 116,
       "violations": 0
     },
     "C10": {
-      "checked": 15,
+      "checked": 116,
       "violations": 0
     },
     "C11": {
-      "checked": 15,
+      "checked": 116,
       "violations": 0
     },
     "C12": {
@@ -35,43 +45,43 @@
       "violations": 0
     },
     "C15": {
-      "checked": 12,
-      "violations": 0
+      "checked": 99,
+      "violations": 9
     },
     "C16": {
       "checked": 0,
       "violations": 0
     },
     "C2": {
-      "checked": 15,
+      "checked": 116,
       "violations": 0
     },
     "C3": {
-      "checked": 15,
-      "violations": 0
+      "checked": 116,
+      "violations": 9
     },
     "C4": {
-      "checked": 15,
+      "checked": 116,
       "violations": 0
     },
     "C5": {
-      "checked": 15,
+      "checked": 116,
       "violations": 0
     },
     "C6": {
-      "checked": 15,
-      "violations": 0
+      "checked": 116,
+      "violations": 9
     },
     "C7": {
-      "checked": 15,
+      "checked": 116,
       "violations": 0
     },
     "C8": {
-      "checked": 15,
+      "checked": 116,
       "violations": 0
     },
     "C9": {
-      "checked": 15,
+      "checked": 116,
       "violations": 0
     }
   },
@@ -95,7 +105,21 @@
     "examples": []
   },
   "d05_event_type_fanout": [],
-  "d06_task_type_fanout": [],
+  "d06_task_type_fanout": [
+    {
+      "exec_type": "Forward patient analysis results",
+      "role_pairs": [
+        [
+          "Gynecologist",
+          ""
+        ],
+        [
+          "Gynecologist",
+          "Hospital"
+        ]
+      ]
+    }
+  ],
   "d07_scope_pooling": {
     "buckets": 0,
     "total_scope_occurrences": 0,
@@ -103,7 +127,28 @@
     "top": []
   },
   "d08_message_merging": [],
-  "d09_parallelism_witnesses": [],
+  "d09_parallelism_witnesses": [
+    {
+      "context": [],
+      "branches": 2,
+      "subtraces": 17,
+      "verdict": "witnessed",
+      "flagged_pairs": 0,
+      "pairs": [
+        {
+          "a": [
+            "Forward patient analysis results"
+          ],
+          "b": [
+            "Send admission info"
+          ],
+          "a_before_b": 8,
+          "b_before_a": 1,
+          "flagged": false
+        }
+      ]
+    }
+  ],
   "d10_unrestricted_repetition": [],
   "d11_choice_realizability": [],
   "d12_recursion": {

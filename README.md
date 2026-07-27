@@ -185,7 +185,7 @@ Column names follow the paper's notation.
 | **CryptoKitties: SaleClockAuction**<br>`0xb1690c08e213a35ed9bab7b318de14420fb57d8c` |  2 |   6 |  10 |  4 |   2 |    32 |    20 |  10 |   4 |   0 |
 | **Yuga Labs: BoredApeYachtClub**<br>`0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d` |  9 |  18 |  21 | 13 |   5 |    84 |    45 |  21 |   9 |   3 |
 | **Nouns DAO: NounsToken**<br>`0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03` |  7 |  12 |  13 | 11 |   3 |    54 |    28 |  13 |   5 |   2 |
-| **Beanstalk Farms: Attack data**<br>`beanstalk_attack_ocel.json` |  3 | 489 | 703 | 59 | 139 |  2656 |  1542 | 703 | 486 | 136 |
+| **Beanstalk Farms: Attack data**<br>`beanstalk_attack_ocel.json` |  3 | 489 | 703 | 58 | 139 |  2655 |  1541 | 703 | 486 | 136 |
 | **Real1: Two-robot search**<br>`collectivelog_real1_uniqueInteraction.xes` |  1 |   2 |   2 |  2 |   0 |     8 |     4 |   2 |   0 |   0 |
 | **Real2: Travel booking**<br>`collectivelog_real2_uniqueInteraction.xes` | 96 | 842 | 480 |  2 |   0 |  3368 |   960 | 842 |   0 |   0 |
 | **Real3: Smart thermostat**<br>`collectivelog_real3_uniqueInteraction.xes` | 59 | 472 | 321 |  3 |   0 |  1880 |   634 | 472 |   0 |   0 |
@@ -209,7 +209,7 @@ Column names follow the paper's notation.
 | **CryptoKitties: SaleClockAuction**<br>`0xb1690c08e213a35ed9bab7b318de14420fb57d8c` | 0/6  | 0/10 | 0/6  | 0/6  |   0/6  | 0/10 | 0/10 | 0/6  | 0/6  | 0/10 | 0/10 | 0/6  | 0/2  | 0/2  | 0/2  |  0/4   |  0/2  |
 | **Yuga Labs: BoredApeYachtClub**<br>`0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d` | 0/18 | 0/21 | 0/18 | 0/18 |   0/18 | 0/21 | 0/21 | 0/18 | 0/18 | 0/21 | 0/21 | 0/18 | 0/5  | 0/5  | 0/5  |  0/9   |  0/5  |
 | **Nouns DAO: NounsToken**<br>`0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03` | 0/12 | 0/13 | 0/12 | 0/12 |   0/12 | 0/13 | 0/13 | 0/12 | 0/12 | 0/13 | 0/13 | 0/12 | 0/3  | 0/3  | 0/3  |  0/5   |  0/3  |
-| **Beanstalk Farms: Attack data**<br>`beanstalk_attack_ocel.json` | 0/489| 0/703| 0/489| 0/489|  0/489 | 0/703| 0/703| 0/489| 0/489| 0/703 | 0/703 | 0/489| 0/139| 0/139| 0/139|  1/486 | 0/139 |
+| **Beanstalk Farms: Attack data**<br>`beanstalk_attack_ocel.json` | 0/489| 0/703| 0/489| **1**/489|  0/489 | 0/703| **1**/703| 0/489| 0/489| 0/703 | 0/703 | 0/489| 0/139| 0/139| 0/139|  1/486 | 0/139 |
 | **Real1: Two-robot search**<br>`collectivelog_real1_uniqueInteraction.xes` |  0/2  |  0/2  |  0/2  |   0/2  |   0/2  |  0/2  |   0/2  |  0/2  |  0/2  | 0/2 | 0/2 |  0/2  | 0/0 | 0/0 | 0/0 |  0/1   | 0/0 |
 | **Real2: Travel booking**<br>`collectivelog_real2_uniqueInteraction.xes` | 0/842 | 0/842 | 0/842 |  0/842 |  0/842 | 0/842 |  0/842 | 0/842 | 0/842 | 0/842 | 0/842 | 0/842 | 0/0 | 0/0 | 0/0 |  0/746 | 0/0 |
 | **Real3: Smart thermostat**<br>`collectivelog_real3_uniqueInteraction.xes` | 0/472 | 0/472 | 0/472 |  **8**/472 |  0/472 | 0/472 |  **8**/472 | 0/472 | 0/472 | 0/472 | 0/472 | 0/472 | 0/0 | 0/0 | 0/0 | **99**/413 | 0/0 |
@@ -233,10 +233,19 @@ the XES corpus (for `xescol2ocelchor`).
 - **C4 has 10 violations in PancakeSwap: MasterChefV3.** Same root cause as
   above — multicall-style self-execution where a contract dispatches calls
   to itself.
+- **C3 / C6 have 1 violation each in Beanstalk Farms: Attack data.** The
+  creation transaction's source record carries an empty contract address
+  (the created contract's address is not known before its creation), so the
+  root request's receiver is unrecorded. The extractor emits the event
+  without `choreo:participant` / `choreo:target` — the same
+  missing-receiver strategy as on the XES side — which is what C3 / C6
+  flag.
 - **C15 has 1 violation in Beanstalk Farms: Attack data.** The violation of
   C15 occurred when a contract was created and immediately after started to
-  issue calls on its part. Since the address of the created contract was not
-  known before its creation, it did not appear in the data.
+  issue calls on its part: one event later, the created contract acts under
+  its real address, which was never involved before. The same anonymous
+  receiver behind the C3 / C6 finding above thus also surfaces
+  *behaviorally*, as broken initiator continuity.
 
 **XES side.**
 

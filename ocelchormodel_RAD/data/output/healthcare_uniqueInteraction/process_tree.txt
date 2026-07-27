@@ -1,0 +1,17 @@
+→(
+  'Communicate disease' ⟨Patient→Gynecologist⟩,
+  'Send blood sample' ⟨Gynecologist→Laboratory⟩,
+  'Send results' ⟨Laboratory→Gynecologist⟩,
+  ×(
+    'Send prescription' ⟨Gynecologist→Patient⟩,
+    →(
+      'Communicate the need to hospitalise' ⟨Gynecologist→Patient⟩,
+      'Require patient admission' ⟨Gynecologist→Hospital⟩,
+      ×(
+        τ,
+        'Forward patient analysis results' ⟨Gynecologist→Hospital⟩),
+      ∧(
+        ×(
+          τ,
+          'Forward patient analysis results' ⟨Gynecologist→⟩),
+        'Send admission info' ⟨Hospital→Patient⟩))))

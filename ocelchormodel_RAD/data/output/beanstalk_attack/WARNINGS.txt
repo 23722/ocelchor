@@ -1,0 +1,6 @@
+beanstalk_attack: model discovered despite C3 violations.
+
+1 event(s) have no recorded receiver (choreo:participant edge missing). Each is typed with the reserved empty participant role and appears as an empty band in the model — reported, not repaired; see the constraints section of diagnostics.json.
+
+Events:
+  e:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:root:request

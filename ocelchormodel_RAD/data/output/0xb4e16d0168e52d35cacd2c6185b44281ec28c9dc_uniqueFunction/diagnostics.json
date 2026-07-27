@@ -2,7 +2,8 @@
   "log": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc_uniqueFunction",
   "generated_by": "ocelchormodel-rad 0.1.0",
   "hard_gates": {
-    "passed": true
+    "passed": true,
+    "tolerated_missing_receiver_events": []
   },
   "constraints": {
     "C0": {
@@ -14,7 +15,7 @@
       "violations": 0
     },
     "C10": {
-      "checked": 27,
+      "checked": 88,
       "violations": 0
     },
     "C11": {
@@ -70,7 +71,7 @@
       "violations": 0
     },
     "C9": {
-      "checked": 61,
+      "checked": 88,
       "violations": 0
     }
   },

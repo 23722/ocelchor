@@ -1,10 +1,6 @@
 {
   "objectTypes": [
     {
-      "name": "",
-      "attributes": []
-    },
-    {
       "name": "0x0000000000000000000000000000000000000004",
       "attributes": []
     },
@@ -2671,20 +2667,12 @@
       "type": "EOA"
     },
     {
-      "id": "",
-      "type": ""
-    },
-    {
       "id": "call:req:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:root",
       "type": "0x60806040 call",
       "relationships": [
         {
           "objectId": "0x1c5dcdd006ea78a7e4783f9e6021c32935a10fb4",
           "qualifier": "choreo:source"
-        },
-        {
-          "objectId": "",
-          "qualifier": "choreo:target"
         }
       ]
     },
@@ -20503,10 +20491,6 @@
         {
           "objectId": "0x1c5dcdd006ea78a7e4783f9e6021c32935a10fb4",
           "qualifier": "choreo:initiator"
-        },
-        {
-          "objectId": "",
-          "qualifier": "choreo:participant"
         },
         {
           "objectId": "call:req:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:root",

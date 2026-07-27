@@ -2,7 +2,10 @@
   "log": "beanstalk_attack",
   "generated_by": "ocelchormodel-rad 0.1.0",
   "hard_gates": {
-    "passed": true
+    "passed": true,
+    "tolerated_missing_receiver_events": [
+      "e:cd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7:root:request"
+    ]
   },
   "constraints": {
     "C0": {
@@ -14,7 +17,7 @@
       "violations": 0
     },
     "C10": {
-      "checked": 214,
+      "checked": 703,
       "violations": 0
     },
     "C11": {
@@ -47,7 +50,7 @@
     },
     "C3": {
       "checked": 489,
-      "violations": 0
+      "violations": 1
     },
     "C4": {
       "checked": 489,
@@ -59,7 +62,7 @@
     },
     "C6": {
       "checked": 703,
-      "violations": 0
+      "violations": 1
     },
     "C7": {
       "checked": 489,
@@ -70,7 +73,7 @@
       "violations": 0
     },
     "C9": {
-      "checked": 489,
+      "checked": 703,
       "violations": 0
     }
   },
@@ -89,14 +92,14 @@
     "unexpected_examples": []
   },
   "d04_identity_labels": {
-    "exec_types": 19,
-    "occurrences": 54,
+    "exec_types": 18,
+    "occurrences": 53,
     "examples": [
-      "Request 0x60806040 []",
       "Request executeOperation [0x79224bc0bf70ec34f0ef56ed8251619499a59def]",
       "Request init [0xe5ecf73603d98a0128f05ed30506ac7a663dbb69]",
       "Request swap [0x5777d92f208679db4b9778590fa3cab3ac9e2168]",
-      "Request swap [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640]"
+      "Request swap [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640]",
+      "Request undefined [0x79224bc0bf70ec34f0ef56ed8251619499a59def]"
     ]
   },
   "d05_event_type_fanout": [

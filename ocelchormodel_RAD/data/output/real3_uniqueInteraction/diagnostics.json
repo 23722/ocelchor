@@ -1,0 +1,245 @@
+{
+  "log": "real3_uniqueInteraction",
+  "generated_by": "ocelchormodel-rad 0.1.0",
+  "hard_gates": {
+    "passed": true,
+    "tolerated_missing_receiver_events": [
+      "e:case_123:11",
+      "e:case_139:4",
+      "e:case_203:4",
+      "e:case_231:10",
+      "e:case_279:11",
+      "e:case_347:11",
+      "e:case_355:11",
+      "e:case_35:11"
+    ]
+  },
+  "constraints": {
+    "C0": {
+      "checked": 472,
+      "violations": 0
+    },
+    "C1": {
+      "checked": 472,
+      "violations": 0
+    },
+    "C10": {
+      "checked": 472,
+      "violations": 0
+    },
+    "C11": {
+      "checked": 472,
+      "violations": 0
+    },
+    "C12": {
+      "checked": 0,
+      "violations": 0
+    },
+    "C13": {
+      "checked": 0,
+      "violations": 0
+    },
+    "C14": {
+      "checked": 0,
+      "violations": 0
+    },
+    "C15": {
+      "checked": 413,
+      "violations": 99
+    },
+    "C16": {
+      "checked": 0,
+      "violations": 0
+    },
+    "C2": {
+      "checked": 472,
+      "violations": 0
+    },
+    "C3": {
+      "checked": 472,
+      "violations": 8
+    },
+    "C4": {
+      "checked": 472,
+      "violations": 0
+    },
+    "C5": {
+      "checked": 472,
+      "violations": 0
+    },
+    "C6": {
+      "checked": 472,
+      "violations": 8
+    },
+    "C7": {
+      "checked": 472,
+      "violations": 0
+    },
+    "C8": {
+      "checked": 472,
+      "violations": 0
+    },
+    "C9": {
+      "checked": 472,
+      "violations": 0
+    }
+  },
+  "d01_ordering_determinism": {
+    "residual_ties": 0,
+    "examples": [],
+    "passed": true
+  },
+  "d02_scope_openers": {
+    "non_request_openers": 0,
+    "examples": []
+  },
+  "d03_bracket_completeness": {
+    "expected_missing_response": 0,
+    "unexpected_missing_response": 0,
+    "unexpected_examples": []
+  },
+  "d04_identity_labels": {
+    "exec_types": 0,
+    "occurrences": 0,
+    "examples": []
+  },
+  "d05_event_type_fanout": [],
+  "d06_task_type_fanout": [
+    {
+      "exec_type": "Send Env Info",
+      "role_pairs": [
+        [
+          "Controller",
+          ""
+        ],
+        [
+          "Controller",
+          "Thermostat"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Send Temperature",
+      "role_pairs": [
+        [
+          "Thermostat",
+          ""
+        ],
+        [
+          "Thermostat",
+          "User"
+        ]
+      ]
+    },
+    {
+      "exec_type": "Turn Off",
+      "role_pairs": [
+        [
+          "Thermostat",
+          ""
+        ],
+        [
+          "Thermostat",
+          "Controller"
+        ]
+      ]
+    }
+  ],
+  "d07_scope_pooling": {
+    "buckets": 0,
+    "total_scope_occurrences": 0,
+    "buckets_with_pooling": 0,
+    "top": []
+  },
+  "d08_message_merging": [],
+  "d09_parallelism_witnesses": [
+    {
+      "context": [],
+      "branches": 2,
+      "subtraces": 59,
+      "verdict": "witnessed",
+      "flagged_pairs": 0,
+      "pairs": [
+        {
+          "a": [
+            "Switch Off Thermostat"
+          ],
+          "b": [
+            "Send Env Info",
+            "Send Temperature",
+            "Send Temperature"
+          ],
+          "a_before_b": 57,
+          "b_before_a": 47,
+          "flagged": false
+        }
+      ]
+    },
+    {
+      "context": [],
+      "branches": 3,
+      "subtraces": 59,
+      "verdict": "partially_witnessed",
+      "flagged_pairs": 1,
+      "pairs": [
+        {
+          "a": [
+            "Turn Off"
+          ],
+          "b": [
+            "Turn On Controller"
+          ],
+          "a_before_b": 1,
+          "b_before_a": 56,
+          "flagged": false
+        },
+        {
+          "a": [
+            "Turn Off"
+          ],
+          "b": [
+            "Send Env Info",
+            "Send Temperature",
+            "Send Temperature"
+          ],
+          "a_before_b": 16,
+          "b_before_a": 41,
+          "flagged": false
+        },
+        {
+          "a": [
+            "Turn On Controller"
+          ],
+          "b": [
+            "Send Env Info",
+            "Send Temperature",
+            "Send Temperature"
+          ],
+          "a_before_b": 41,
+          "b_before_a": 0,
+          "flagged": true
+        }
+      ]
+    }
+  ],
+  "d10_unrestricted_repetition": [],
+  "d11_choice_realizability": [
+    {
+      "context": [],
+      "branch_initiating_roles": [
+        "Controller",
+        "Thermostat"
+      ]
+    }
+  ],
+  "d12_recursion": {
+    "findings": [],
+    "direct": 0,
+    "indirect": 0,
+    "max_depth_delta": 0
+  },
+  "d13_cross_depth_participants": {
+    "pairs": 0,
+    "examples": []
+  }
+}

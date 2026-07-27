@@ -1,0 +1,13 @@
+real3_uniqueInteraction: model discovered despite C3 violations.
+
+8 event(s) have no recorded receiver (choreo:participant edge missing). Each is typed with the reserved empty participant role and appears as an empty band in the model — reported, not repaired; see the constraints section of diagnostics.json.
+
+Events:
+  e:case_123:11
+  e:case_139:4
+  e:case_203:4
+  e:case_231:10
+  e:case_279:11
+  e:case_347:11
+  e:case_355:11
+  e:case_35:11

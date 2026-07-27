@@ -1,0 +1,435 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_discovered" targetNamespace="http://ocelchor/discovered">
+  <bpmn2:message id="Msg_1" name="termostat_on" />
+  <bpmn2:message id="Msg_2" name="termostat_off" />
+  <bpmn2:message id="Msg_3" name="controller_off" />
+  <bpmn2:message id="Msg_4" name="controller_on" />
+  <bpmn2:message id="Msg_5" name="env_info" />
+  <bpmn2:message id="Msg_6" name="temperature" />
+  <bpmn2:choreography id="Choreography_discovered">
+    <bpmn2:participant id="P_User" name="User" />
+    <bpmn2:participant id="P_Thermostat" name="Thermostat" />
+    <bpmn2:participant id="P_Controller" name="Controller" />
+    <bpmn2:participant id="P_" name="" />
+    <bpmn2:messageFlow id="MF_task_2_init" sourceRef="P_User" targetRef="P_Thermostat" messageRef="Msg_1" />
+    <bpmn2:messageFlow id="MF_task_5_init" sourceRef="P_User" targetRef="P_Thermostat" messageRef="Msg_2" />
+    <bpmn2:messageFlow id="MF_task_10_init" sourceRef="P_Thermostat" targetRef="P_Controller" messageRef="Msg_3" />
+    <bpmn2:messageFlow id="MF_task_11_init" sourceRef="P_Thermostat" targetRef="P_Controller" messageRef="Msg_4" />
+    <bpmn2:messageFlow id="MF_task_16_init" sourceRef="P_Controller" targetRef="P_Thermostat" messageRef="Msg_5" />
+    <bpmn2:messageFlow id="MF_task_19_init" sourceRef="P_Thermostat" targetRef="P_User" messageRef="Msg_6" />
+    <bpmn2:messageFlow id="MF_task_29_init" sourceRef="P_Thermostat" targetRef="P_" messageRef="Msg_6" />
+    <bpmn2:messageFlow id="MF_task_52_init" sourceRef="P_Thermostat" targetRef="P_" messageRef="Msg_3" />
+    <bpmn2:messageFlow id="MF_task_53_init" sourceRef="P_Controller" targetRef="P_" messageRef="Msg_5" />
+    <bpmn2:startEvent id="Start_1" />
+    <bpmn2:choreographyTask id="task_2" name="Set Up Thermostat" initiatingParticipantRef="P_User">
+      <bpmn2:participantRef>P_User</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_2_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Set Up Thermostat</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:parallelGateway id="pgw_3" />
+    <bpmn2:choreographyTask id="task_5" name="Switch Off Thermostat" initiatingParticipantRef="P_User">
+      <bpmn2:participantRef>P_User</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_5_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Switch Off Thermostat</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:exclusiveGateway id="xgw_6" />
+    <bpmn2:parallelGateway id="pgw_8" />
+    <bpmn2:choreographyTask id="task_10" name="Turn Off" initiatingParticipantRef="P_Thermostat">
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Controller</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_10_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Turn Off</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="task_11" name="Turn On Controller" initiatingParticipantRef="P_Thermostat">
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Controller</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_11_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Turn On Controller</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:exclusiveGateway id="xgw_12" />
+    <bpmn2:exclusiveGateway id="xgw_14" />
+    <bpmn2:choreographyTask id="task_16" name="Send Env Info" initiatingParticipantRef="P_Controller">
+      <bpmn2:participantRef>P_Controller</bpmn2:participantRef>
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_16_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Send Env Info</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:exclusiveGateway id="xgw_17" />
+    <bpmn2:choreographyTask id="task_19" name="Send Temperature" initiatingParticipantRef="P_Thermostat" loopType="Standard">
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:participantRef>P_User</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_19_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Send Temperature</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:exclusiveGateway id="xgw_18" />
+    <bpmn2:exclusiveGateway id="xgw_15" />
+    <bpmn2:exclusiveGateway id="xgw_27" />
+    <bpmn2:choreographyTask id="task_29" name="Send Temperature" initiatingParticipantRef="P_Thermostat">
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:participantRef>P_</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_29_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Send Temperature</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:exclusiveGateway id="xgw_28" />
+    <bpmn2:exclusiveGateway id="xgw_13" />
+    <bpmn2:parallelGateway id="pgw_9" />
+    <bpmn2:exclusiveGateway id="xgw_7" />
+    <bpmn2:parallelGateway id="pgw_4" />
+    <bpmn2:exclusiveGateway id="xgw_50" />
+    <bpmn2:choreographyTask id="task_52" name="Turn Off" initiatingParticipantRef="P_Thermostat">
+      <bpmn2:participantRef>P_Thermostat</bpmn2:participantRef>
+      <bpmn2:participantRef>P_</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_52_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Turn Off</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:choreographyTask id="task_53" name="Send Env Info" initiatingParticipantRef="P_Controller">
+      <bpmn2:participantRef>P_Controller</bpmn2:participantRef>
+      <bpmn2:participantRef>P_</bpmn2:participantRef>
+      <bpmn2:messageFlowRef>MF_task_53_init</bpmn2:messageFlowRef>
+      <bpmn2:documentation>Send Env Info</bpmn2:documentation>
+    </bpmn2:choreographyTask>
+    <bpmn2:exclusiveGateway id="xgw_51" />
+    <bpmn2:endEvent id="End_61" />
+    <bpmn2:sequenceFlow id="Flow_46" sourceRef="pgw_3" targetRef="task_5" />
+    <bpmn2:sequenceFlow id="Flow_47" sourceRef="task_5" targetRef="pgw_4" />
+    <bpmn2:sequenceFlow id="Flow_43" sourceRef="xgw_6" targetRef="xgw_7" />
+    <bpmn2:sequenceFlow id="Flow_37" sourceRef="pgw_8" targetRef="task_10" />
+    <bpmn2:sequenceFlow id="Flow_38" sourceRef="task_10" targetRef="pgw_9" />
+    <bpmn2:sequenceFlow id="Flow_39" sourceRef="pgw_8" targetRef="task_11" />
+    <bpmn2:sequenceFlow id="Flow_40" sourceRef="task_11" targetRef="pgw_9" />
+    <bpmn2:sequenceFlow id="Flow_34" sourceRef="xgw_12" targetRef="xgw_13" />
+    <bpmn2:sequenceFlow id="Flow_20" sourceRef="xgw_17" targetRef="xgw_18" />
+    <bpmn2:sequenceFlow id="Flow_21" sourceRef="xgw_17" targetRef="task_19" />
+    <bpmn2:sequenceFlow id="Flow_22" sourceRef="task_19" targetRef="xgw_18" />
+    <bpmn2:sequenceFlow id="Flow_23" sourceRef="task_16" targetRef="xgw_17" />
+    <bpmn2:sequenceFlow id="Flow_24" sourceRef="xgw_14" targetRef="task_16" />
+    <bpmn2:sequenceFlow id="Flow_25" sourceRef="xgw_18" targetRef="xgw_15" />
+    <bpmn2:sequenceFlow id="Flow_26" sourceRef="xgw_15" targetRef="xgw_14" />
+    <bpmn2:sequenceFlow id="Flow_30" sourceRef="xgw_27" targetRef="xgw_28" />
+    <bpmn2:sequenceFlow id="Flow_31" sourceRef="xgw_27" targetRef="task_29" />
+    <bpmn2:sequenceFlow id="Flow_32" sourceRef="task_29" targetRef="xgw_28" />
+    <bpmn2:sequenceFlow id="Flow_33" sourceRef="xgw_15" targetRef="xgw_27" />
+    <bpmn2:sequenceFlow id="Flow_35" sourceRef="xgw_12" targetRef="xgw_14" />
+    <bpmn2:sequenceFlow id="Flow_36" sourceRef="xgw_28" targetRef="xgw_13" />
+    <bpmn2:sequenceFlow id="Flow_41" sourceRef="pgw_8" targetRef="xgw_12" />
+    <bpmn2:sequenceFlow id="Flow_42" sourceRef="xgw_13" targetRef="pgw_9" />
+    <bpmn2:sequenceFlow id="Flow_44" sourceRef="xgw_6" targetRef="pgw_8" />
+    <bpmn2:sequenceFlow id="Flow_45" sourceRef="pgw_9" targetRef="xgw_7" />
+    <bpmn2:sequenceFlow id="Flow_48" sourceRef="pgw_3" targetRef="xgw_6" />
+    <bpmn2:sequenceFlow id="Flow_49" sourceRef="xgw_7" targetRef="pgw_4" />
+    <bpmn2:sequenceFlow id="Flow_59" sourceRef="task_2" targetRef="pgw_3" />
+    <bpmn2:sequenceFlow id="Flow_54" sourceRef="xgw_50" targetRef="xgw_51" />
+    <bpmn2:sequenceFlow id="Flow_55" sourceRef="xgw_50" targetRef="task_52" />
+    <bpmn2:sequenceFlow id="Flow_56" sourceRef="task_52" targetRef="xgw_51" />
+    <bpmn2:sequenceFlow id="Flow_57" sourceRef="xgw_50" targetRef="task_53" />
+    <bpmn2:sequenceFlow id="Flow_58" sourceRef="task_53" targetRef="xgw_51" />
+    <bpmn2:sequenceFlow id="Flow_60" sourceRef="pgw_4" targetRef="xgw_50" />
+    <bpmn2:sequenceFlow id="Flow_62" sourceRef="Start_1" targetRef="task_2" />
+    <bpmn2:sequenceFlow id="Flow_63" sourceRef="xgw_51" targetRef="End_61" />
+  </bpmn2:choreography>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Choreography_discovered">
+      <bpmndi:BPMNShape id="Start_1_di" bpmnElement="Start_1">
+        <dc:Bounds x="100" y="177" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_2_di" bpmnElement="task_2">
+        <dc:Bounds x="196" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_2_top" bpmnElement="P_User" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_2_di">
+        <dc:Bounds x="196" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_2_bot" bpmnElement="P_Thermostat" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_2_di">
+        <dc:Bounds x="196" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="pgw_3_di" bpmnElement="pgw_3">
+        <dc:Bounds x="356" y="170" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_5_di" bpmnElement="task_5">
+        <dc:Bounds x="466" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_5_top" bpmnElement="P_User" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_5_di">
+        <dc:Bounds x="466" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_5_bot" bpmnElement="P_Thermostat" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_5_di">
+        <dc:Bounds x="466" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="xgw_6_di" bpmnElement="xgw_6" isMarkerVisible="true">
+        <dc:Bounds x="466" y="365" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="pgw_8_di" bpmnElement="pgw_8">
+        <dc:Bounds x="576" y="365" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_10_di" bpmnElement="task_10">
+        <dc:Bounds x="686" y="350" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_10_top" bpmnElement="P_Thermostat" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_10_di">
+        <dc:Bounds x="686" y="350" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_10_bot" bpmnElement="P_Controller" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_10_di">
+        <dc:Bounds x="686" y="410" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_11_di" bpmnElement="task_11">
+        <dc:Bounds x="686" y="545" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_11_top" bpmnElement="P_Thermostat" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_11_di">
+        <dc:Bounds x="686" y="545" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_11_bot" bpmnElement="P_Controller" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_11_di">
+        <dc:Bounds x="686" y="605" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="xgw_12_di" bpmnElement="xgw_12" isMarkerVisible="true">
+        <dc:Bounds x="686" y="755" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="xgw_14_di" bpmnElement="xgw_14" isMarkerVisible="true">
+        <dc:Bounds x="796" y="755" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_16_di" bpmnElement="task_16">
+        <dc:Bounds x="906" y="740" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_16_top" bpmnElement="P_Controller" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_16_di">
+        <dc:Bounds x="906" y="740" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_16_bot" bpmnElement="P_Thermostat" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_16_di">
+        <dc:Bounds x="906" y="800" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="xgw_17_di" bpmnElement="xgw_17" isMarkerVisible="true">
+        <dc:Bounds x="1066" y="755" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_19_di" bpmnElement="task_19">
+        <dc:Bounds x="1176" y="740" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_19_top" bpmnElement="P_Thermostat" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_19_di">
+        <dc:Bounds x="1176" y="740" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_19_bot" bpmnElement="P_User" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_19_di">
+        <dc:Bounds x="1176" y="800" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="xgw_18_di" bpmnElement="xgw_18" isMarkerVisible="true">
+        <dc:Bounds x="1336" y="755" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="xgw_15_di" bpmnElement="xgw_15" isMarkerVisible="true">
+        <dc:Bounds x="1446" y="755" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="xgw_27_di" bpmnElement="xgw_27" isMarkerVisible="true">
+        <dc:Bounds x="1556" y="755" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_29_di" bpmnElement="task_29">
+        <dc:Bounds x="1666" y="740" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_29_top" bpmnElement="P_Thermostat" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_29_di">
+        <dc:Bounds x="1666" y="740" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_29_bot" bpmnElement="P_" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_29_di">
+        <dc:Bounds x="1666" y="800" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="xgw_28_di" bpmnElement="xgw_28" isMarkerVisible="true">
+        <dc:Bounds x="1826" y="755" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="xgw_13_di" bpmnElement="xgw_13" isMarkerVisible="true">
+        <dc:Bounds x="1936" y="755" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="pgw_9_di" bpmnElement="pgw_9">
+        <dc:Bounds x="2046" y="365" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="xgw_7_di" bpmnElement="xgw_7" isMarkerVisible="true">
+        <dc:Bounds x="2156" y="365" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="pgw_4_di" bpmnElement="pgw_4">
+        <dc:Bounds x="2266" y="170" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="xgw_50_di" bpmnElement="xgw_50" isMarkerVisible="true">
+        <dc:Bounds x="2376" y="170" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_52_di" bpmnElement="task_52">
+        <dc:Bounds x="2486" y="155" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_52_top" bpmnElement="P_Thermostat" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_52_di">
+        <dc:Bounds x="2486" y="155" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_52_bot" bpmnElement="P_" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_52_di">
+        <dc:Bounds x="2486" y="215" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_53_di" bpmnElement="task_53">
+        <dc:Bounds x="2486" y="350" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_53_top" bpmnElement="P_Controller" participantBandKind="top_initiating" isMessageVisible="true" choreographyActivityShape="task_53_di">
+        <dc:Bounds x="2486" y="350" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="task_53_bot" bpmnElement="P_" participantBandKind="bottom_non_initiating" isMessageVisible="false" choreographyActivityShape="task_53_di">
+        <dc:Bounds x="2486" y="410" width="100" height="20" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="xgw_51_di" bpmnElement="xgw_51" isMarkerVisible="true">
+        <dc:Bounds x="2646" y="170" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_61_di" bpmnElement="End_61">
+        <dc:Bounds x="2756" y="177" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_46_di" bpmnElement="Flow_46">
+        <di:waypoint x="406" y="195" />
+        <di:waypoint x="466" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_47_di" bpmnElement="Flow_47">
+        <di:waypoint x="566" y="195" />
+        <di:waypoint x="2266" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_43_di" bpmnElement="Flow_43">
+        <di:waypoint x="491" y="415" />
+        <di:waypoint x="491" y="850" />
+        <di:waypoint x="2181" y="850" />
+        <di:waypoint x="2181" y="415" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_37_di" bpmnElement="Flow_37">
+        <di:waypoint x="626" y="390" />
+        <di:waypoint x="686" y="390" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_38_di" bpmnElement="Flow_38">
+        <di:waypoint x="786" y="390" />
+        <di:waypoint x="2046" y="390" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_39_di" bpmnElement="Flow_39">
+        <di:waypoint x="601" y="415" />
+        <di:waypoint x="601" y="585" />
+        <di:waypoint x="686" y="585" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_40_di" bpmnElement="Flow_40">
+        <di:waypoint x="786" y="585" />
+        <di:waypoint x="2071" y="585" />
+        <di:waypoint x="2071" y="415" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_34_di" bpmnElement="Flow_34">
+        <di:waypoint x="711" y="805" />
+        <di:waypoint x="711" y="870" />
+        <di:waypoint x="1961" y="870" />
+        <di:waypoint x="1961" y="805" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_20_di" bpmnElement="Flow_20">
+        <di:waypoint x="1091" y="805" />
+        <di:waypoint x="1091" y="890" />
+        <di:waypoint x="1361" y="890" />
+        <di:waypoint x="1361" y="805" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_21_di" bpmnElement="Flow_21">
+        <di:waypoint x="1116" y="780" />
+        <di:waypoint x="1176" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_22_di" bpmnElement="Flow_22">
+        <di:waypoint x="1276" y="780" />
+        <di:waypoint x="1336" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_23_di" bpmnElement="Flow_23">
+        <di:waypoint x="1006" y="780" />
+        <di:waypoint x="1066" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_24_di" bpmnElement="Flow_24">
+        <di:waypoint x="846" y="780" />
+        <di:waypoint x="906" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_25_di" bpmnElement="Flow_25">
+        <di:waypoint x="1386" y="780" />
+        <di:waypoint x="1446" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_26_di" bpmnElement="Flow_26">
+        <di:waypoint x="1471" y="805" />
+        <di:waypoint x="1471" y="910" />
+        <di:waypoint x="821" y="910" />
+        <di:waypoint x="821" y="805" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_30_di" bpmnElement="Flow_30">
+        <di:waypoint x="1581" y="805" />
+        <di:waypoint x="1581" y="930" />
+        <di:waypoint x="1851" y="930" />
+        <di:waypoint x="1851" y="805" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_31_di" bpmnElement="Flow_31">
+        <di:waypoint x="1606" y="780" />
+        <di:waypoint x="1666" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_32_di" bpmnElement="Flow_32">
+        <di:waypoint x="1766" y="780" />
+        <di:waypoint x="1826" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_33_di" bpmnElement="Flow_33">
+        <di:waypoint x="1496" y="780" />
+        <di:waypoint x="1556" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_35_di" bpmnElement="Flow_35">
+        <di:waypoint x="736" y="780" />
+        <di:waypoint x="796" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_36_di" bpmnElement="Flow_36">
+        <di:waypoint x="1876" y="780" />
+        <di:waypoint x="1936" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_41_di" bpmnElement="Flow_41">
+        <di:waypoint x="601" y="415" />
+        <di:waypoint x="601" y="780" />
+        <di:waypoint x="686" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_42_di" bpmnElement="Flow_42">
+        <di:waypoint x="1986" y="780" />
+        <di:waypoint x="2071" y="780" />
+        <di:waypoint x="2071" y="415" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_44_di" bpmnElement="Flow_44">
+        <di:waypoint x="516" y="390" />
+        <di:waypoint x="576" y="390" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_45_di" bpmnElement="Flow_45">
+        <di:waypoint x="2096" y="390" />
+        <di:waypoint x="2156" y="390" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_48_di" bpmnElement="Flow_48">
+        <di:waypoint x="381" y="220" />
+        <di:waypoint x="381" y="390" />
+        <di:waypoint x="466" y="390" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_49_di" bpmnElement="Flow_49">
+        <di:waypoint x="2206" y="390" />
+        <di:waypoint x="2291" y="390" />
+        <di:waypoint x="2291" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_59_di" bpmnElement="Flow_59">
+        <di:waypoint x="296" y="195" />
+        <di:waypoint x="356" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_54_di" bpmnElement="Flow_54">
+        <di:waypoint x="2401" y="220" />
+        <di:waypoint x="2401" y="560" />
+        <di:waypoint x="2671" y="560" />
+        <di:waypoint x="2671" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_55_di" bpmnElement="Flow_55">
+        <di:waypoint x="2426" y="195" />
+        <di:waypoint x="2486" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_56_di" bpmnElement="Flow_56">
+        <di:waypoint x="2586" y="195" />
+        <di:waypoint x="2646" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_57_di" bpmnElement="Flow_57">
+        <di:waypoint x="2401" y="220" />
+        <di:waypoint x="2401" y="390" />
+        <di:waypoint x="2486" y="390" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_58_di" bpmnElement="Flow_58">
+        <di:waypoint x="2586" y="390" />
+        <di:waypoint x="2671" y="390" />
+        <di:waypoint x="2671" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_60_di" bpmnElement="Flow_60">
+        <di:waypoint x="2316" y="195" />
+        <di:waypoint x="2376" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_62_di" bpmnElement="Flow_62">
+        <di:waypoint x="136" y="195" />
+        <di:waypoint x="196" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_63_di" bpmnElement="Flow_63">
+        <di:waypoint x="2696" y="195" />
+        <di:waypoint x="2756" y="195" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

@@ -1,0 +1,14 @@
+healthcare_uniqueInteraction: model discovered despite C3 violations.
+
+9 event(s) have no recorded receiver (choreo:participant edge missing). Each is typed with the reserved empty participant role and appears as an empty band in the model — reported, not repaired; see the constraints section of diagnostics.json.
+
+Events:
+  e:case_114:12
+  e:case_254:14
+  e:case_314:12
+  e:case_354:13
+  e:case_374:12
+  e:case_409:17
+  e:case_474:11
+  e:case_74:11
+  e:case_99:11

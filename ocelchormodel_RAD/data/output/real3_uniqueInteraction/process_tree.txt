@@ -1,0 +1,28 @@
+→(
+  'Set Up Thermostat' ⟨User→Thermostat⟩,
+  ∧(
+    'Switch Off Thermostat' ⟨User→Thermostat⟩,
+    ×(
+      τ,
+      ∧(
+        'Turn Off' ⟨Thermostat→Controller⟩,
+        'Turn On Controller' ⟨Thermostat→Controller⟩,
+        ×(
+          τ,
+          →(
+            ↻(
+              →(
+                'Send Env Info' ⟨Controller→Thermostat⟩,
+                ×(
+                  τ,
+                  ↻(
+                    'Send Temperature' ⟨Thermostat→User⟩,
+                    τ))),
+              τ),
+            ×(
+              τ,
+              'Send Temperature' ⟨Thermostat→⟩)))))),
+  ×(
+    τ,
+    'Turn Off' ⟨Thermostat→⟩,
+    'Send Env Info' ⟨Controller→⟩))

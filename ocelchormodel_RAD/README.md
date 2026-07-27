@@ -21,7 +21,9 @@ blockchain extractor types participants and events, see the
 
 ```
 OCEL 2.0 choreography log
-  → reader      (constraint validation; hard gates C0, C2, C3, C11, C12, C14)
+  → reader      (constraint validation; hard gates C0, C2, C3, C11, C12, C14 —
+                 C3 by shape: multicast aborts, an unrecorded receiver is
+                 tolerated with the reserved empty role and a warning)
   → typing      (taskType = ⟨event type, initiator role, receiver role⟩;
                  scopeType = ⟨label, initiator role, receiver role⟩ — label
                  from the scoping object's name attribute, else derived from
@@ -45,7 +47,15 @@ uv run ocelchormodel-rad <ocel.json> [<ocel.json> ...] [-o OUT_DIR]
 
 One subfolder per input log is written under `OUT_DIR` (default `output`).
 A log that violates a hard-gate constraint is reported on stderr and
-skipped; the remaining inputs still run, and the exit code is nonzero.
+skipped; its subfolder holds only a `REFUSED.txt` naming the violated
+gate, the remaining inputs still run, and the exit code is nonzero.
+C3 is gated by *shape*: an event with **more than one receiver**
+(multicast) aborts the log — which role enters the task type is genuinely
+undefined, and any choice would silently drop a receiver — while an event
+with **no recorded receiver** is tolerated: it is typed with the reserved
+empty participant role (rendered as an empty band), the C3 violation stays
+visible in the `constraints` section of `diagnostics.json`, and a
+`WARNINGS.txt` names the affected events. Reported, never repaired.
 There are **no tuning flags by design** — discovery is deterministic and
 diagnostics never change the model.
 
@@ -56,6 +66,9 @@ diagnostics never change the model.
 | `discovered_model.bpmn` | The generalised choreography model (semantics + layout) |
 | `process_tree.txt` | The discovered process tree as an indented s-expression: operators `→ × ↻ ∧`, `τ` for silent steps, `∇_{scope} ⟨initiator→receiver⟩` for named subtrees; leaves show `'event type' ⟨initiator→receiver⟩`. Every symbol prints its full type — the ∇ pair is the role pair of the scope's first task event, so scopes with the same label but different openers (an outer call vs. a re-entrant self-call) stay distinguishable on the ∇ line |
 | `diagnostics.json` | Diagnostics D1–D13 (below) plus the non-blocking validator constraint summary |
+| `WARNINGS.txt` | Only when C3 missing-receiver events were tolerated: names the events typed with the reserved empty role |
+
+(A refused log's subfolder holds only `REFUSED.txt` with the violated gate.)
 
 ## Message labels
 

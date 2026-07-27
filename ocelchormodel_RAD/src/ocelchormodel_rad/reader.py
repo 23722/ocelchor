@@ -3,6 +3,15 @@
 Spec §B8/§B9/§B10. The miner never repairs contract violations: the hard gates
 (C0, C2, C3, C11, C12, C14) abort on violation; every other constraint result is
 kept for diagnostics but is non-blocking.
+
+C3 is gated by shape: |noninit(e)| > 1 (multicast) aborts — which role enters
+the taskType tuple is genuinely undefined, and any choice would silently drop
+a receiver. |noninit(e)| = 0 is an *unrecorded* receiver (an incompleteness of
+the record, not a positive assertion): the event is typed with the reserved
+empty participant role "", the C3 violation stays visible in the constraints
+summary, and the CLI writes a warnings note. The event is routed INTO typing,
+never dropped into the non-task count — filtering it would silently shift the
+enclosing scope's ``first_task_in`` and corrupt the scope's type.
 """
 
 from __future__ import annotations
@@ -61,7 +70,9 @@ class Event:
     time: str
     trace_order: int
     initiator: str | None  # object id via choreo:initiator
-    participant: str | None  # object id via choreo:participant (noninit)
+    participant: str | None  # object id via choreo:participant (noninit);
+    # "" = reserved empty role: the receiver is unrecorded (C3 reported, not
+    # repaired) — compares equal to the ""-normalized message endpoints
     message_ids: list[str]
     scope_id: str | None  # choreo:contained-by (≤1, C11)
     instance_id: str | None  # choreo:instance (exactly one, C0)
@@ -79,7 +90,10 @@ class Model:
     instances: list[str]  # choreographyInstance object ids
     scopes: list[str]  # subchoreographyInstance object ids
     scope_names: dict[str, str] = field(default_factory=dict)  # scope id → name attr
-    non_task_events: int = 0  # events excluded from E_T (no initiator/participant)
+    non_task_events: int = 0  # events excluded from E_T (no initiator edge)
+    # Task events typed with the reserved empty participant role because their
+    # receiver is unrecorded (C3 missing-receiver shape, reported not repaired).
+    missing_receiver_events: list[str] = field(default_factory=list)
     constraints: dict[str, ConstraintResult] = field(default_factory=dict)
 
     # -- accessors (spec §B2) ------------------------------------------------
@@ -158,17 +172,31 @@ def build_model(ocel: dict, *, run_validator: bool = True) -> Model:
     objtype = {o["id"]: o.get("type", "") for o in ocel["objects"]}
 
     # E_T filter: the miner's alphabet is choreography task events — events
-    # carrying both role edges (the same universe C2/C3 constrain). Internal
-    # non-choreography events supply no roles and are excluded up front,
-    # counted for diagnostics (never silently: the count is reported).
+    # carrying an initiator edge. Internal non-choreography events supply no
+    # roles and are excluded up front, counted for diagnostics (never
+    # silently: the count is reported). A task event whose *participant* edge
+    # is missing is NOT filtered: its receiver is unrecorded (C3 shape
+    # |noninit| = 0) and it is typed with the reserved empty role "" —
+    # dropping it would silently shift the enclosing scope's first_task_in.
+    # A multicast event (|noninit| > 1) aborts here: which role enters the
+    # taskType tuple is undefined, and any choice silently drops a receiver.
     events: dict[str, Event] = {}
     non_task = 0
+    missing_receiver: list[str] = []
     for e in ocel["events"]:
         initiator = _rel(e, Q_INITIATOR)
-        participant = _rel(e, Q_PARTICIPANT)
-        if initiator is None or participant is None:
+        participants = _rels(e, Q_PARTICIPANT)
+        if initiator is None:
             non_task += 1
             continue
+        if len(participants) > 1:
+            raise ContractViolation(
+                f"C3 multicast shape: event {e['id']!r} has "
+                f"{len(participants)} receivers — the taskType tuple is "
+                "undefined; the miner aborts (spec §B8)"
+            )
+        if not participants:
+            missing_receiver.append(e["id"])
         to = _attr(e, "trace_order", 0)
         events[e["id"]] = Event(
             id=e["id"],
@@ -176,7 +204,7 @@ def build_model(ocel: dict, *, run_validator: bool = True) -> Model:
             time=e.get("time", ""),
             trace_order=int(to) if to is not None else 0,
             initiator=initiator,
-            participant=participant,
+            participant=participants[0] if participants else "",
             message_ids=_rels(e, Q_MESSAGE),
             scope_id=_rel(e, Q_CONTAINED_BY),
             instance_id=_rel(e, Q_INSTANCE),
@@ -203,8 +231,21 @@ def build_model(ocel: dict, *, run_validator: bool = True) -> Model:
         constraints = validate_all(build_index(ocel))
         failed = [
             cid for cid in HARD_GATES
-            if cid in constraints and not constraints[cid].passed
+            if cid != "C3" and cid in constraints and not constraints[cid].passed
         ]
+        # C3 shape split: multicast events already aborted above, so any C3
+        # violation left is the missing-receiver shape — tolerated (typed
+        # with the reserved empty role), reported in the constraints summary.
+        # Verify that expectation instead of assuming it.
+        if "C3" in constraints and not constraints["C3"].passed:
+            raw = {e["id"]: e for e in ocel["events"]}
+            unexplained = [
+                v.event_id for v in constraints["C3"].violations
+                if v.event_id not in missing_receiver
+                and len(_rels(raw.get(v.event_id, {}), Q_PARTICIPANT)) != 0
+            ]
+            if unexplained:
+                failed.append("C3")
         if failed:
             detail = "; ".join(
                 f"{cid}: {constraints[cid].num_violations} violation(s)" for cid in failed
@@ -223,6 +264,7 @@ def build_model(ocel: dict, *, run_validator: bool = True) -> Model:
         scopes=scopes,
         scope_names=scope_names,
         non_task_events=non_task,
+        missing_receiver_events=missing_receiver,
         constraints=constraints,
     )
 

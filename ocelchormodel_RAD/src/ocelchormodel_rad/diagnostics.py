@@ -401,7 +401,13 @@ def compute_diagnostics(model: Model, discovery: Discovery,
     return {
         "log": log_name,
         "generated_by": f"ocelchormodel-rad {__version__}",
-        "hard_gates": {"passed": True},  # reaching here implies the gates held
+        # Reaching here implies the gates held. C3 is gated by shape: events
+        # with an *unrecorded* receiver (|noninit| = 0) are tolerated — typed
+        # with the reserved empty role, reported here, never repaired.
+        "hard_gates": {
+            "passed": True,
+            "tolerated_missing_receiver_events": model.missing_receiver_events,
+        },
         "constraints": {
             cid: {"checked": r.elements_checked, "violations": r.num_violations}
             for cid, r in sorted(model.constraints.items())

@@ -86,6 +86,10 @@ class RecursionFinding:
 # ---------------------------------------------------------------------------
 
 def _message_lookup(model: Model) -> dict[str, dict]:
+    """Message objects by id. Missing endpoints are normalized to "" so the
+    direction comparison below stays aligned with the reader's reserved
+    empty participant role (an unrecorded receiver): "" == "" classifies the
+    message as forward, exactly as a recorded endpoint pair would."""
     out: dict[str, dict] = {}
     for o in model.ocel["objects"]:
         src = tgt = None
@@ -96,8 +100,8 @@ def _message_lookup(model: Model) -> dict[str, dict]:
                 tgt = r["objectId"]
         if src is not None or tgt is not None:
             attrs = {a["name"]: a["value"] for a in o.get("attributes", [])}
-            out[o["id"]] = {"source": src, "target": tgt, "attributes": attrs,
-                            "type": o.get("type", "")}
+            out[o["id"]] = {"source": src or "", "target": tgt or "",
+                            "attributes": attrs, "type": o.get("type", "")}
     return out
 
 

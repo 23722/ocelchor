@@ -57,8 +57,9 @@ def test_d1_ordering_passes(worked_example):
                          ids=lambda p: p.name[:24])
 def test_d2_zero_everywhere(path):
     """Every scope's ≻-first event is its request bracket, on all input logs
-    that pass the hard gates (C3-violating XES logs never reach diagnostics —
-    they are the CLI failure-path material). Load-only — D2 needs no discovery."""
+    that pass the hard gates (only the multicast C3 shape still aborts;
+    missing-receiver logs are tolerated and included here). Load-only — D2
+    needs no discovery."""
     try:
         m = reader.load(path)
     except reader.ContractViolation as exc:
@@ -270,6 +271,25 @@ def test_d13_cross_depth_0x5e():
     assert ex["object"] == "0x5efda50f22d34f262c29268506c5fa42cb56a1ce"
     assert ex["ancestor_task_types"] == [
         "Request unlock [0x5efda50f22d34f262c29268506c5fa42cb56a1ce]"]
+
+
+# --- tolerated missing receivers (C3 shape split) ----------------------------
+
+@pytest.mark.parametrize("name,tolerated", [
+    ("healthcare_uniqueInteraction", 9),
+    ("real3_uniqueInteraction", 8),
+])
+def test_missing_receiver_logs_discoverable(name, tolerated):
+    """Logs whose only hard-gate violations are unrecorded receivers are
+    discoverable under the shape-split C3 policy: the tolerated events are
+    listed in hard_gates, C3 stays visible in the constraints summary, and
+    the flat XES models have no scopes to certify."""
+    d = _diag(name)
+    assert d["hard_gates"]["passed"] is True
+    assert len(d["hard_gates"]["tolerated_missing_receiver_events"]) == tolerated
+    assert d["constraints"]["C3"]["violations"] == tolerated
+    assert d["d01_ordering_determinism"]["passed"] is True
+    assert d["d02_scope_openers"] == {"non_request_openers": 0, "examples": []}
 
 
 # --- schema ------------------------------------------------------------------

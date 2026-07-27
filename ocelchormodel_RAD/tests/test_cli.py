@@ -31,9 +31,9 @@ def test_cli_fixture_three_files(worked_example_path, tmp_path, capsys):
 
 
 def test_cli_hard_gate_skip_continues(worked_example_path, tmp_path, capsys):
-    """A C3-violating log is reported and skipped with nonzero exit; the
-    remaining inputs are still processed."""
-    bad = DATA / "healthcare_uniqueInteraction_ocel.json"
+    """A multicast log (C3 shape |noninit| > 1) is refused with nonzero exit
+    and leaves only a refusal note; the remaining inputs still run."""
+    bad = DATA / "smartagriculture_uniqueInteraction_ocel.json"
     if not bad.exists():
         pytest.skip(f"{bad} not present")
     with pytest.raises(SystemExit) as exc:
@@ -41,8 +41,37 @@ def test_cli_hard_gate_skip_continues(worked_example_path, tmp_path, capsys):
     assert exc.value.code == 1
 
     captured = capsys.readouterr()
-    assert "SKIP healthcare_uniqueInteraction_ocel.json" in captured.err
-    assert "C3" in captured.err
-    assert not (tmp_path / "healthcare_uniqueInteraction").exists()
+    assert "SKIP smartagriculture_uniqueInteraction_ocel.json" in captured.err
+    assert "multicast" in captured.err
+    refused_dir = tmp_path / "smartagriculture_uniqueInteraction"
+    assert [p.name for p in refused_dir.iterdir()] == ["REFUSED.txt"]
+    note = (refused_dir / "REFUSED.txt").read_text()
+    assert "no model discovered" in note and "multicast" in note
     # the good input still produced its triple
     assert (tmp_path / "worked_example" / "diagnostics.json").exists()
+    assert not (tmp_path / "worked_example" / "WARNINGS.txt").exists()
+
+
+def test_cli_missing_receiver_warned_not_refused(tmp_path, capsys):
+    """A missing-receiver log (C3 shape |noninit| = 0) is discovered with a
+    warnings note naming the tolerated events; exit stays zero."""
+    warned = DATA / "healthcare_uniqueInteraction_ocel.json"
+    if not warned.exists():
+        pytest.skip(f"{warned} not present")
+    with pytest.raises(SystemExit) as exc:
+        main([str(warned), "-o", str(tmp_path)])
+    assert exc.value.code == 0
+
+    captured = capsys.readouterr()
+    assert "OK healthcare_uniqueInteraction_ocel.json" in captured.out
+    assert "WARN healthcare_uniqueInteraction_ocel.json" in captured.err
+
+    out = tmp_path / "healthcare_uniqueInteraction"
+    assert (out / "discovered_model.bpmn").exists()
+    note = (out / "WARNINGS.txt").read_text()
+    assert "despite C3 violations" in note
+    assert note.count("e:case_") == 9  # the nine tolerated events, by id
+
+    diag = json.loads((out / "diagnostics.json").read_text())
+    assert len(diag["hard_gates"]["tolerated_missing_receiver_events"]) == 9
+    assert diag["constraints"]["C3"]["violations"] == 9

@@ -86,3 +86,85 @@ def test_task_and_scope_types_are_hashable(worked_example):
     # Two distinct scope types (unlock, transfer); several task types.
     assert len(s) == 2
     assert TaskType("hook [Vault]", "TORN", "Vault") in t
+
+
+def test_missing_receiver_routed_into_typing_with_reserved_empty_role():
+    """C3 shape |noninit| = 0: the event is typed with the reserved empty
+    participant role — NOT filtered into the non-task count. Filtering it
+    would silently shift the enclosing scope's first_task_in onto the next
+    event (here the nested call's bracket) and corrupt the scope's roles."""
+    ocel = {
+        "objectTypes": [], "eventTypes": [],
+        "objects": [
+            {"id": "i", "type": "choreographyInstance", "relationships": []},
+            {"id": "eoa", "type": "EOA", "relationships": []},
+            {"id": "0xfeed", "type": "Vault", "relationships": []},
+            {"id": "s", "type": "subchoreographyInstance",
+             "attributes": [{"name": "name", "value": "0x60806040 []"}],
+             "relationships": []},
+        ],
+        "events": [
+            {
+                # scope opener: receiver unrecorded (no participant edge)
+                "id": "e:root:req", "type": "Request 0x60806040 []",
+                "time": "2020-01-01T00:00:00.000Z", "attributes": [],
+                "relationships": [
+                    {"objectId": "eoa", "qualifier": "choreo:initiator"},
+                    {"objectId": "s", "qualifier": "choreo:contained-by"},
+                    {"objectId": "i", "qualifier": "choreo:instance"},
+                ],
+            },
+            {
+                # nested call with full role edges, one tick later
+                "id": "e:0_1", "type": "init [Vault]",
+                "time": "2020-01-01T00:00:00.001Z", "attributes": [],
+                "relationships": [
+                    {"objectId": "0xfeed", "qualifier": "choreo:initiator"},
+                    {"objectId": "eoa", "qualifier": "choreo:participant"},
+                    {"objectId": "s", "qualifier": "choreo:contained-by"},
+                    {"objectId": "i", "qualifier": "choreo:instance"},
+                ],
+            },
+        ],
+    }
+    from ocelchormodel_rad import reader
+    m = reader.build_model(ocel, run_validator=False)
+    assert m.non_task_events == 0
+    assert m.missing_receiver_events == ["e:root:req"]
+    assert m.events["e:root:req"].participant == ""
+
+    tt = task_type(m, m.events["e:root:req"])
+    assert tt == TaskType("Request 0x60806040 []", "EOA", "")
+
+    # The scope is typed by its true opener: ⟨EOA, ""⟩ — not by the nested
+    # call's ⟨Vault, EOA⟩, and the opener still certifies (D2).
+    st = scope_type(m, "s")
+    assert st == ScopeType("0x60806040 []", "EOA", "")
+    assert scope_certified(m, "s") is True
+
+
+def test_multicast_receiver_aborts():
+    """C3 shape |noninit| > 1: the taskType tuple is undefined — the miner
+    aborts rather than silently dropping a receiver."""
+    from ocelchormodel_rad import reader
+    ocel = {
+        "objectTypes": [], "eventTypes": [],
+        "objects": [
+            {"id": "i", "type": "choreographyInstance", "relationships": []},
+            {"id": "a", "type": "drone", "relationships": []},
+            {"id": "b", "type": "tractor_1", "relationships": []},
+            {"id": "c", "type": "tractor_2", "relationships": []},
+        ],
+        "events": [{
+            "id": "e1", "type": "broadcast",
+            "time": "2020-01-01T00:00:00.000Z", "attributes": [],
+            "relationships": [
+                {"objectId": "a", "qualifier": "choreo:initiator"},
+                {"objectId": "b", "qualifier": "choreo:participant"},
+                {"objectId": "c", "qualifier": "choreo:participant"},
+                {"objectId": "i", "qualifier": "choreo:instance"},
+            ],
+        }],
+    }
+    with pytest.raises(reader.ContractViolation, match="multicast"):
+        reader.build_model(ocel, run_validator=False)

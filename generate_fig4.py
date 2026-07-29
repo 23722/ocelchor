@@ -5,22 +5,33 @@ Fig. 4 generation for:
 
 Discovers an Object-Centric Directly-Follows Graph (OC-DFG) from the
 Tornado.Cash governance OCEL 2.0 log and saves publication-ready figures.
+All events of the choreography instance are included (incl. the root-level
+"Request unlock [Proxy]").
 
-Filtering: the root-level "Request unlock" (EOA → Proxy, trace_order=0) is
-excluded so the scope matches Fig. 3b (internal subchoreography calls only).
+pm4py's color assignment is hash-order-dependent; SEED pins it so the script
+reproduces the chosen figure deterministically.
 """
 
 import os
+import random
+import sys
+
+# ─── Color seed ───────────────────────────────────────────────────────────────
+# PYTHONHASHSEED only takes effect at interpreter start, so re-exec once.
+SEED = 5
+if os.environ.get('PYTHONHASHSEED') != str(SEED):
+    os.execvpe(sys.executable, [sys.executable] + sys.argv,
+               {**os.environ, 'PYTHONHASHSEED': str(SEED)})
+random.seed(SEED)
+
 import pm4py
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-LOG_PATH   = os.path.join(SCRIPT_DIR, 'data', '0x5e_0xcd4_ocel.json')
-OUT_DIR    = os.path.join(SCRIPT_DIR, 'output')
-OUT_PDF    = os.path.join(OUT_DIR, 'fig4_ocdfg.pdf')
-OUT_SVG    = os.path.join(OUT_DIR, 'fig4_ocdfg.svg')
-
-os.makedirs(OUT_DIR, exist_ok=True)
+LOG_PATH   = os.path.join(SCRIPT_DIR, 'trace2ocelchor', 'data', 'output',
+                          '0x5e_cd49912_ocel.json')
+OUT_PDF    = os.path.join(SCRIPT_DIR, 'fig4_ocdfg.pdf')
+OUT_SVG    = os.path.join(SCRIPT_DIR, 'fig4_ocdfg.svg')
 
 # ─── 1. Load OCEL 2.0 log ─────────────────────────────────────────────────────
 ocel = pm4py.read_ocel2_json(LOG_PATH)
@@ -31,35 +42,29 @@ print(f"  Objects  : {len(ocel.objects)}")
 print(f"  Relations: {len(ocel.relations)}")
 print()
 
-# ─── 2. Filter: remove root-level EOA-initiated event ─────────────────────────
-# Event e:...:root:request is the outermost EOA→Proxy call.  It lies outside
-# the subchoreography scope and is not shown in Fig. 3b.
-EID_COL = 'ocel:eid'
-OID_COL = 'ocel:oid'
+# ─── 2. Filter: drop the root scope object ────────────────────────────────────
+# Under request/response-inside-scope bracketing the root request event is
+# contained in the root scope it opens.  The running-example figures omit that
+# root scoping object; only the inner sub-choreography scope is shown.
+OID_COL, OID2_COL, TYPE_COL = 'ocel:oid', 'ocel:oid_2', 'ocel:type'
 
-ROOT_EID = (
-    'e:cd49912d9a4783abc4aa1ca545091dccb4aa4899d191ed62a1fd610b89af1af9'
-    ':root:request'
-)
+root_scopes = set(ocel.objects[
+    (ocel.objects[TYPE_COL] == 'subchoreographyInstance')
+    & (ocel.objects[OID_COL].str.endswith(':root'))
+][OID_COL])
 
-ocel.events    = (ocel.events   [ocel.events   [EID_COL] != ROOT_EID]
+ocel.objects   = (ocel.objects  [~ocel.objects  [OID_COL].isin(root_scopes)]
                   .reset_index(drop=True))
-ocel.relations = (ocel.relations[ocel.relations[EID_COL] != ROOT_EID]
+ocel.relations = (ocel.relations[~ocel.relations[OID_COL].isin(root_scopes)]
                   .reset_index(drop=True))
-
-active_oids = set(ocel.relations[OID_COL])
-ocel.objects = (ocel.objects[ocel.objects[OID_COL].isin(active_oids)]
-                .reset_index(drop=True))
-
-print("=== After filtering ===")
-print(f"  Events   : {len(ocel.events)}")
-print(f"  Objects  : {len(ocel.objects)}")
-print()
+ocel.o2o       = (ocel.o2o[~(ocel.o2o[OID_COL].isin(root_scopes)
+                             | ocel.o2o[OID2_COL].isin(root_scopes))]
+                  .reset_index(drop=True))
 
 # ─── 3. Discover OC-DFG ───────────────────────────────────────────────────────
 ocdfg = pm4py.discover_ocdfg(ocel)
 
-# ─── 4. Save ──────────────────────────────────────────────────────────────────
+# ─── 3. Save ──────────────────────────────────────────────────────────────────
 pm4py.save_vis_ocdfg(ocdfg, OUT_PDF)
 print(f"Saved: {OUT_PDF}")
 

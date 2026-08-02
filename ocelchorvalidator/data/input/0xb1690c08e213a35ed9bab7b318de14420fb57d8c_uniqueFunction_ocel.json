@@ -1,7 +1,7 @@
 {
   "objectTypes": [
     {
-      "name": "CA",
+      "name": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
       "attributes": []
     },
     {
@@ -86,7 +86,7 @@
   ],
   "eventTypes": [
     {
-      "name": "Request bid",
+      "name": "Request bid [0xb1690c08e213a35ed9bab7b318de14420fb57d8c]",
       "attributes": [
         {
           "name": "trace_order",
@@ -95,7 +95,7 @@
       ]
     },
     {
-      "name": "Request cancelAuction",
+      "name": "Request cancelAuction [0xb1690c08e213a35ed9bab7b318de14420fb57d8c]",
       "attributes": [
         {
           "name": "trace_order",
@@ -104,7 +104,7 @@
       ]
     },
     {
-      "name": "deposit",
+      "name": "deposit [0x672ec49f7f7eac25c3a2e651f67f579bb5da8936]",
       "attributes": [
         {
           "name": "trace_order",
@@ -113,7 +113,16 @@
       ]
     },
     {
-      "name": "transfer",
+      "name": "deposit [0xba52c75764d6f594735dc735be7f1830cdf58ddf]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [KittyCore]",
       "attributes": [
         {
           "name": "trace_order",
@@ -129,7 +138,7 @@
     },
     {
       "id": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
-      "type": "CA"
+      "type": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c"
     },
     {
       "id": "call:req:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
@@ -158,14 +167,14 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography bid",
+          "value": "bid [0xb1690c08e213a35ed9bab7b318de14420fb57d8c]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
     },
     {
       "id": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
-      "type": "CA"
+      "type": "EOA"
     },
     {
       "id": "call:req:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_1",
@@ -333,7 +342,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography cancelAuction",
+          "value": "cancelAuction [0xb1690c08e213a35ed9bab7b318de14420fb57d8c]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -393,7 +402,7 @@
   "events": [
     {
       "id": "e:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root:request",
-      "type": "Request bid",
+      "type": "Request bid [0xb1690c08e213a35ed9bab7b318de14420fb57d8c]",
       "time": "2017-11-23T18:46:13.000Z",
       "attributes": [
         {
@@ -415,6 +424,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f",
           "qualifier": "choreo:instance"
         }
@@ -422,7 +435,7 @@
     },
     {
       "id": "e:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_1",
-      "type": "deposit",
+      "type": "deposit [0xba52c75764d6f594735dc735be7f1830cdf58ddf]",
       "time": "2017-11-23T18:46:13.001Z",
       "attributes": [
         {
@@ -459,7 +472,7 @@
     },
     {
       "id": "e:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_2",
-      "type": "deposit",
+      "type": "deposit [0x672ec49f7f7eac25c3a2e651f67f579bb5da8936]",
       "time": "2017-11-23T18:46:13.002Z",
       "attributes": [
         {
@@ -496,7 +509,7 @@
     },
     {
       "id": "e:5c8a04e3174fed51f8cbe8f8ec77b6d5714343c3ebc6225840c5f69f0b23555f:0_3",
-      "type": "transfer",
+      "type": "transfer [KittyCore]",
       "time": "2017-11-23T18:46:13.003Z",
       "attributes": [
         {
@@ -533,7 +546,7 @@
     },
     {
       "id": "e:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:root:request",
-      "type": "Request cancelAuction",
+      "type": "Request cancelAuction [0xb1690c08e213a35ed9bab7b318de14420fb57d8c]",
       "time": "2017-11-23T20:28:58.000Z",
       "attributes": [
         {
@@ -555,6 +568,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2",
           "qualifier": "choreo:instance"
         }
@@ -562,7 +579,7 @@
     },
     {
       "id": "e:03c2d6249416e041947ed896b63cd556b4a66391fb1114c2fb9123f4910066d2:0_1",
-      "type": "transfer",
+      "type": "transfer [KittyCore]",
       "time": "2017-11-23T20:28:58.001Z",
       "attributes": [
         {

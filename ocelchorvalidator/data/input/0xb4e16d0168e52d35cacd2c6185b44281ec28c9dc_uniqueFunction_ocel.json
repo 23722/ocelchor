@@ -5,10 +5,6 @@
       "attributes": []
     },
     {
-      "name": "CA",
-      "attributes": []
-    },
-    {
       "name": "ChainlinkETHPriceOracleProxy",
       "attributes": []
     },
@@ -38,6 +34,10 @@
     },
     {
       "name": "UniswapV2Factory",
+      "attributes": []
+    },
+    {
+      "name": "UniswapV2Pair",
       "attributes": []
     },
     {
@@ -366,7 +366,7 @@
   ],
   "eventTypes": [
     {
-      "name": "Request burn",
+      "name": "Request burn [UniswapV2Pair]",
       "attributes": [
         {
           "name": "trace_order",
@@ -375,7 +375,7 @@
       ]
     },
     {
-      "name": "Request buyBaseToken",
+      "name": "Request buyBaseToken [DODO]",
       "attributes": [
         {
           "name": "trace_order",
@@ -384,7 +384,7 @@
       ]
     },
     {
-      "name": "Request getPrice",
+      "name": "Request getPrice [ChainlinkETHPriceOracleProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -393,7 +393,7 @@
       ]
     },
     {
-      "name": "Request skim",
+      "name": "Request skim [UniswapV2Pair]",
       "attributes": [
         {
           "name": "trace_order",
@@ -402,7 +402,7 @@
       ]
     },
     {
-      "name": "Request swap",
+      "name": "Request swap [UniswapV2Pair]",
       "attributes": [
         {
           "name": "trace_order",
@@ -411,7 +411,7 @@
       ]
     },
     {
-      "name": "Request undefined",
+      "name": "Request undefined [SignatureChecker]",
       "attributes": [
         {
           "name": "trace_order",
@@ -420,7 +420,7 @@
       ]
     },
     {
-      "name": "Request uniswapV2Call",
+      "name": "Request uniswapV2Call [UniswapArbitrageur]",
       "attributes": [
         {
           "name": "trace_order",
@@ -429,7 +429,7 @@
       ]
     },
     {
-      "name": "Respond to buyBaseToken",
+      "name": "Respond to buyBaseToken [DODO]",
       "attributes": [
         {
           "name": "trace_order",
@@ -438,7 +438,7 @@
       ]
     },
     {
-      "name": "Respond to getPrice",
+      "name": "Respond to getPrice [ChainlinkETHPriceOracleProxy]",
       "attributes": [
         {
           "name": "trace_order",
@@ -447,7 +447,7 @@
       ]
     },
     {
-      "name": "Respond to undefined",
+      "name": "Respond to undefined [SignatureChecker]",
       "attributes": [
         {
           "name": "trace_order",
@@ -456,7 +456,7 @@
       ]
     },
     {
-      "name": "Respond to uniswapV2Call",
+      "name": "Respond to uniswapV2Call [UniswapArbitrageur]",
       "attributes": [
         {
           "name": "trace_order",
@@ -465,7 +465,7 @@
       ]
     },
     {
-      "name": "approve",
+      "name": "approve [UniswapV2Pair]",
       "attributes": [
         {
           "name": "trace_order",
@@ -474,7 +474,7 @@
       ]
     },
     {
-      "name": "balanceOf",
+      "name": "balanceOf [FiatTokenV1]",
       "attributes": [
         {
           "name": "trace_order",
@@ -483,7 +483,7 @@
       ]
     },
     {
-      "name": "feeTo",
+      "name": "balanceOf [FiatTokenV2]",
       "attributes": [
         {
           "name": "trace_order",
@@ -492,7 +492,7 @@
       ]
     },
     {
-      "name": "latestAnswer",
+      "name": "balanceOf [WETH9]",
       "attributes": [
         {
           "name": "trace_order",
@@ -501,7 +501,7 @@
       ]
     },
     {
-      "name": "token0",
+      "name": "feeTo [UniswapV2Factory]",
       "attributes": [
         {
           "name": "trace_order",
@@ -510,7 +510,7 @@
       ]
     },
     {
-      "name": "token1",
+      "name": "latestAnswer [Aggregator]",
       "attributes": [
         {
           "name": "trace_order",
@@ -519,7 +519,7 @@
       ]
     },
     {
-      "name": "transfer",
+      "name": "token0 [UniswapV2Pair]",
       "attributes": [
         {
           "name": "trace_order",
@@ -528,7 +528,52 @@
       ]
     },
     {
-      "name": "transferFrom",
+      "name": "token1 [UniswapV2Pair]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [FiatTokenV1]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [UniswapV2Pair]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transfer [WETH9]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transferFrom [FiatTokenV1]",
+      "attributes": [
+        {
+          "name": "trace_order",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "transferFrom [UniswapV2Pair]",
       "attributes": [
         {
           "name": "trace_order",
@@ -544,7 +589,7 @@
     },
     {
       "id": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
-      "type": "CA"
+      "type": "UniswapV2Pair"
     },
     {
       "id": "call:req:71d6574a2d743cafc42e12bd1996f18c28d6231e7bfc8268b8133f71eb82d2a4:root",
@@ -656,7 +701,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography swap",
+          "value": "swap [UniswapV2Pair]",
           "time": "1970-01-01T00:00:00Z"
         }
       ],
@@ -727,7 +772,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography undefined",
+          "value": "undefined [SignatureChecker]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -845,7 +890,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography uniswapV2Call",
+          "value": "uniswapV2Call [UniswapArbitrageur]",
           "time": "1970-01-01T00:00:00Z"
         }
       ],
@@ -1005,7 +1050,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography buyBaseToken",
+          "value": "buyBaseToken [DODO]",
           "time": "1970-01-01T00:00:00Z"
         }
       ],
@@ -1084,7 +1129,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography getPrice",
+          "value": "getPrice [ChainlinkETHPriceOracleProxy]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -1183,7 +1228,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography getPrice",
+          "value": "getPrice [ChainlinkETHPriceOracleProxy]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -1278,7 +1323,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography undefined",
+          "value": "undefined [SignatureChecker]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -1373,7 +1418,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography undefined",
+          "value": "undefined [SignatureChecker]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -1478,7 +1523,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography undefined",
+          "value": "undefined [SignatureChecker]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -1928,7 +1973,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography undefined",
+          "value": "undefined [SignatureChecker]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -2023,7 +2068,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography undefined",
+          "value": "undefined [SignatureChecker]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -2123,7 +2168,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography undefined",
+          "value": "undefined [SignatureChecker]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -2247,7 +2292,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography skim",
+          "value": "skim [UniswapV2Pair]",
           "time": "1970-01-01T00:00:00Z"
         }
       ],
@@ -2310,7 +2355,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography undefined",
+          "value": "undefined [SignatureChecker]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -2405,7 +2450,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography undefined",
+          "value": "undefined [SignatureChecker]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -2620,7 +2665,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography burn",
+          "value": "burn [UniswapV2Pair]",
           "time": "1970-01-01T00:00:00Z"
         }
       ],
@@ -2679,7 +2724,7 @@
       "attributes": [
         {
           "name": "name",
-          "value": "subchoreography undefined",
+          "value": "undefined [SignatureChecker]",
           "time": "1970-01-01T00:00:00Z"
         }
       ]
@@ -2826,7 +2871,7 @@
   "events": [
     {
       "id": "e:71d6574a2d743cafc42e12bd1996f18c28d6231e7bfc8268b8133f71eb82d2a4:root",
-      "type": "approve",
+      "type": "approve [UniswapV2Pair]",
       "time": "2020-05-07T15:46:30.000Z",
       "attributes": [
         {
@@ -2855,7 +2900,7 @@
     },
     {
       "id": "e:1ded088e1d822e39e875de455f7c15a685c83cddb0f8d64fa14de4af5a77eb3f:root",
-      "type": "transfer",
+      "type": "transfer [UniswapV2Pair]",
       "time": "2020-05-18T19:06:24.000Z",
       "attributes": [
         {
@@ -2884,7 +2929,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root:request",
-      "type": "Request swap",
+      "type": "Request swap [UniswapV2Pair]",
       "time": "2020-07-22T16:09:00.000Z",
       "attributes": [
         {
@@ -2906,6 +2951,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7",
           "qualifier": "choreo:instance"
         }
@@ -2913,7 +2962,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1:request",
-      "type": "Request undefined",
+      "type": "Request undefined [SignatureChecker]",
       "time": "2020-07-22T16:09:00.001Z",
       "attributes": [
         {
@@ -2935,7 +2984,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -2946,7 +2995,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1_1",
-      "type": "transfer",
+      "type": "transfer [FiatTokenV1]",
       "time": "2020-07-22T16:09:00.002Z",
       "attributes": [
         {
@@ -2983,7 +3032,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [SignatureChecker]",
       "time": "2020-07-22T16:09:00.003Z",
       "attributes": [
         {
@@ -3005,7 +3054,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3016,7 +3065,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2:request",
-      "type": "Request uniswapV2Call",
+      "type": "Request uniswapV2Call [UniswapArbitrageur]",
       "time": "2020-07-22T16:09:00.004Z",
       "attributes": [
         {
@@ -3038,7 +3087,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3049,7 +3098,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_1",
-      "type": "token0",
+      "type": "token0 [UniswapV2Pair]",
       "time": "2020-07-22T16:09:00.005Z",
       "attributes": [
         {
@@ -3086,7 +3135,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_2",
-      "type": "token1",
+      "type": "token1 [UniswapV2Pair]",
       "time": "2020-07-22T16:09:00.006Z",
       "attributes": [
         {
@@ -3123,7 +3172,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3:request",
-      "type": "Request buyBaseToken",
+      "type": "Request buyBaseToken [DODO]",
       "time": "2020-07-22T16:09:00.007Z",
       "attributes": [
         {
@@ -3145,7 +3194,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3156,7 +3205,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1:request",
-      "type": "Request getPrice",
+      "type": "Request getPrice [ChainlinkETHPriceOracleProxy]",
       "time": "2020-07-22T16:09:00.008Z",
       "attributes": [
         {
@@ -3178,7 +3227,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3189,7 +3238,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1_1",
-      "type": "latestAnswer",
+      "type": "latestAnswer [Aggregator]",
       "time": "2020-07-22T16:09:00.009Z",
       "attributes": [
         {
@@ -3226,7 +3275,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1:response",
-      "type": "Respond to getPrice",
+      "type": "Respond to getPrice [ChainlinkETHPriceOracleProxy]",
       "time": "2020-07-22T16:09:00.010Z",
       "attributes": [
         {
@@ -3248,7 +3297,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3259,7 +3308,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2:request",
-      "type": "Request getPrice",
+      "type": "Request getPrice [ChainlinkETHPriceOracleProxy]",
       "time": "2020-07-22T16:09:00.011Z",
       "attributes": [
         {
@@ -3281,7 +3330,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3292,7 +3341,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2_1",
-      "type": "latestAnswer",
+      "type": "latestAnswer [Aggregator]",
       "time": "2020-07-22T16:09:00.012Z",
       "attributes": [
         {
@@ -3329,7 +3378,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2:response",
-      "type": "Respond to getPrice",
+      "type": "Respond to getPrice [ChainlinkETHPriceOracleProxy]",
       "time": "2020-07-22T16:09:00.013Z",
       "attributes": [
         {
@@ -3351,7 +3400,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3362,7 +3411,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3:request",
-      "type": "Request undefined",
+      "type": "Request undefined [SignatureChecker]",
       "time": "2020-07-22T16:09:00.014Z",
       "attributes": [
         {
@@ -3384,7 +3433,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3395,7 +3444,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3_1",
-      "type": "balanceOf",
+      "type": "balanceOf [FiatTokenV1]",
       "time": "2020-07-22T16:09:00.015Z",
       "attributes": [
         {
@@ -3432,7 +3481,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [SignatureChecker]",
       "time": "2020-07-22T16:09:00.016Z",
       "attributes": [
         {
@@ -3454,7 +3503,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3465,7 +3514,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4:request",
-      "type": "Request undefined",
+      "type": "Request undefined [SignatureChecker]",
       "time": "2020-07-22T16:09:00.017Z",
       "attributes": [
         {
@@ -3487,7 +3536,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3498,7 +3547,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4_1",
-      "type": "transferFrom",
+      "type": "transferFrom [FiatTokenV1]",
       "time": "2020-07-22T16:09:00.018Z",
       "attributes": [
         {
@@ -3535,7 +3584,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [SignatureChecker]",
       "time": "2020-07-22T16:09:00.019Z",
       "attributes": [
         {
@@ -3557,7 +3606,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_4",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3568,7 +3617,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5:request",
-      "type": "Request undefined",
+      "type": "Request undefined [SignatureChecker]",
       "time": "2020-07-22T16:09:00.020Z",
       "attributes": [
         {
@@ -3590,7 +3639,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3601,7 +3650,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5_1",
-      "type": "balanceOf",
+      "type": "balanceOf [FiatTokenV1]",
       "time": "2020-07-22T16:09:00.021Z",
       "attributes": [
         {
@@ -3638,7 +3687,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [SignatureChecker]",
       "time": "2020-07-22T16:09:00.022Z",
       "attributes": [
         {
@@ -3660,7 +3709,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_5",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3671,7 +3720,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_6",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2020-07-22T16:09:00.023Z",
       "attributes": [
         {
@@ -3708,7 +3757,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_7",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2020-07-22T16:09:00.024Z",
       "attributes": [
         {
@@ -3745,7 +3794,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_8",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2020-07-22T16:09:00.025Z",
       "attributes": [
         {
@@ -3782,7 +3831,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_9",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2020-07-22T16:09:00.026Z",
       "attributes": [
         {
@@ -3819,7 +3868,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_10",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2020-07-22T16:09:00.027Z",
       "attributes": [
         {
@@ -3856,7 +3905,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3_11",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2020-07-22T16:09:00.028Z",
       "attributes": [
         {
@@ -3893,7 +3942,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3:response",
-      "type": "Respond to buyBaseToken",
+      "type": "Respond to buyBaseToken [DODO]",
       "time": "2020-07-22T16:09:00.029Z",
       "attributes": [
         {
@@ -3915,7 +3964,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -3926,7 +3975,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_4",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2020-07-22T16:09:00.030Z",
       "attributes": [
         {
@@ -3963,7 +4012,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_5",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2020-07-22T16:09:00.031Z",
       "attributes": [
         {
@@ -4000,7 +4049,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6:request",
-      "type": "Request undefined",
+      "type": "Request undefined [SignatureChecker]",
       "time": "2020-07-22T16:09:00.032Z",
       "attributes": [
         {
@@ -4022,7 +4071,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4033,7 +4082,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6_1",
-      "type": "balanceOf",
+      "type": "balanceOf [FiatTokenV1]",
       "time": "2020-07-22T16:09:00.033Z",
       "attributes": [
         {
@@ -4070,7 +4119,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [SignatureChecker]",
       "time": "2020-07-22T16:09:00.034Z",
       "attributes": [
         {
@@ -4092,7 +4141,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_6",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4103,7 +4152,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7:request",
-      "type": "Request undefined",
+      "type": "Request undefined [SignatureChecker]",
       "time": "2020-07-22T16:09:00.035Z",
       "attributes": [
         {
@@ -4125,7 +4174,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4136,7 +4185,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7_1",
-      "type": "transfer",
+      "type": "transfer [FiatTokenV1]",
       "time": "2020-07-22T16:09:00.036Z",
       "attributes": [
         {
@@ -4173,7 +4222,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [SignatureChecker]",
       "time": "2020-07-22T16:09:00.037Z",
       "attributes": [
         {
@@ -4195,7 +4244,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2_7",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4206,7 +4255,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2:response",
-      "type": "Respond to uniswapV2Call",
+      "type": "Respond to uniswapV2Call [UniswapArbitrageur]",
       "time": "2020-07-22T16:09:00.038Z",
       "attributes": [
         {
@@ -4228,7 +4277,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4239,7 +4288,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3:request",
-      "type": "Request undefined",
+      "type": "Request undefined [SignatureChecker]",
       "time": "2020-07-22T16:09:00.039Z",
       "attributes": [
         {
@@ -4261,7 +4310,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4272,7 +4321,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3_1",
-      "type": "balanceOf",
+      "type": "balanceOf [FiatTokenV1]",
       "time": "2020-07-22T16:09:00.040Z",
       "attributes": [
         {
@@ -4309,7 +4358,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [SignatureChecker]",
       "time": "2020-07-22T16:09:00.041Z",
       "attributes": [
         {
@@ -4331,7 +4380,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:root",
+          "objectId": "subchoreographyInstance:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_3",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4342,7 +4391,7 @@
     },
     {
       "id": "e:37dd5242257e2128b982a4bc520e01bf83c77f4282b9dc91b7ec1fc33f740bb7:0_4",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2020-07-22T16:09:00.042Z",
       "attributes": [
         {
@@ -4379,7 +4428,7 @@
     },
     {
       "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root:request",
-      "type": "Request skim",
+      "type": "Request skim [UniswapV2Pair]",
       "time": "2020-07-27T20:07:27.000Z",
       "attributes": [
         {
@@ -4401,6 +4450,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e",
           "qualifier": "choreo:instance"
         }
@@ -4408,7 +4461,7 @@
     },
     {
       "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1:request",
-      "type": "Request undefined",
+      "type": "Request undefined [SignatureChecker]",
       "time": "2020-07-27T20:07:27.001Z",
       "attributes": [
         {
@@ -4430,7 +4483,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root",
+          "objectId": "subchoreographyInstance:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4441,7 +4494,7 @@
     },
     {
       "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1_1",
-      "type": "balanceOf",
+      "type": "balanceOf [FiatTokenV1]",
       "time": "2020-07-27T20:07:27.002Z",
       "attributes": [
         {
@@ -4478,7 +4531,7 @@
     },
     {
       "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [SignatureChecker]",
       "time": "2020-07-27T20:07:27.003Z",
       "attributes": [
         {
@@ -4500,7 +4553,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root",
+          "objectId": "subchoreographyInstance:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4511,7 +4564,7 @@
     },
     {
       "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2:request",
-      "type": "Request undefined",
+      "type": "Request undefined [SignatureChecker]",
       "time": "2020-07-27T20:07:27.004Z",
       "attributes": [
         {
@@ -4533,7 +4586,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root",
+          "objectId": "subchoreographyInstance:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4544,7 +4597,7 @@
     },
     {
       "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2_1",
-      "type": "transfer",
+      "type": "transfer [FiatTokenV1]",
       "time": "2020-07-27T20:07:27.005Z",
       "attributes": [
         {
@@ -4581,7 +4634,7 @@
     },
     {
       "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [SignatureChecker]",
       "time": "2020-07-27T20:07:27.006Z",
       "attributes": [
         {
@@ -4603,7 +4656,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:root",
+          "objectId": "subchoreographyInstance:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_2",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4614,7 +4667,7 @@
     },
     {
       "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_3",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2020-07-27T20:07:27.007Z",
       "attributes": [
         {
@@ -4651,7 +4704,7 @@
     },
     {
       "id": "e:26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e:0_4",
-      "type": "transfer",
+      "type": "transfer [WETH9]",
       "time": "2020-07-27T20:07:27.008Z",
       "attributes": [
         {
@@ -4688,7 +4741,7 @@
     },
     {
       "id": "e:a2d9d65c4417304176c6e2fad50d2b3da1a16a3c1dd907487df5e1a57637c969:root",
-      "type": "transferFrom",
+      "type": "transferFrom [UniswapV2Pair]",
       "time": "2020-08-17T19:24:57.000Z",
       "attributes": [
         {
@@ -4717,7 +4770,7 @@
     },
     {
       "id": "e:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:root:request",
-      "type": "Request burn",
+      "type": "Request burn [UniswapV2Pair]",
       "time": "2020-09-03T01:43:28.000Z",
       "attributes": [
         {
@@ -4739,6 +4792,10 @@
           "qualifier": "choreo:message"
         },
         {
+          "objectId": "subchoreographyInstance:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:root",
+          "qualifier": "choreo:contained-by"
+        },
+        {
           "objectId": "choreographyInstance:0xd9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1",
           "qualifier": "choreo:instance"
         }
@@ -4746,7 +4803,7 @@
     },
     {
       "id": "e:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1:request",
-      "type": "Request undefined",
+      "type": "Request undefined [SignatureChecker]",
       "time": "2020-09-03T01:43:28.001Z",
       "attributes": [
         {
@@ -4768,7 +4825,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:root",
+          "objectId": "subchoreographyInstance:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4779,7 +4836,7 @@
     },
     {
       "id": "e:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1_1",
-      "type": "balanceOf",
+      "type": "balanceOf [FiatTokenV2]",
       "time": "2020-09-03T01:43:28.002Z",
       "attributes": [
         {
@@ -4816,7 +4873,7 @@
     },
     {
       "id": "e:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1:response",
-      "type": "Respond to undefined",
+      "type": "Respond to undefined [SignatureChecker]",
       "time": "2020-09-03T01:43:28.003Z",
       "attributes": [
         {
@@ -4838,7 +4895,7 @@
           "qualifier": "choreo:message"
         },
         {
-          "objectId": "subchoreographyInstance:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:root",
+          "objectId": "subchoreographyInstance:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_1",
           "qualifier": "choreo:contained-by"
         },
         {
@@ -4849,7 +4906,7 @@
     },
     {
       "id": "e:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_2",
-      "type": "balanceOf",
+      "type": "balanceOf [WETH9]",
       "time": "2020-09-03T01:43:28.004Z",
       "attributes": [
         {
@@ -4886,7 +4943,7 @@
     },
     {
       "id": "e:d9957afc3fa7a187cd0925a6dcd9c832d938f33c8ff5094e3839ed75549fd0a1:0_3",
-      "type": "feeTo",
+      "type": "feeTo [UniswapV2Factory]",
       "time": "2020-09-03T01:43:28.005Z",
       "attributes": [
         {

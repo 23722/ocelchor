@@ -174,18 +174,18 @@ Column names follow the paper's notation.
 
 | Dataset | #vars | #e | #m | #parts | #scoping | #E2O | #O2O | #E2O[m] | #E2O[cb] | #O2O[c] |
 |---------|------:|---:|---:|-------:|---------:|-----:|-----:|--------:|---------:|--------:|
-| **Consensus Layer: DepositContract**<br>`0x00000000219ab540356cbb839cbe05303d7705fa` |  1 |   9 |  17 |  3 |   1 |    52 |    34 |  17 |   8 |   0 |
-| **ENS: ENSGovernor**<br>`0x323a76393544d5ecca80cd6ef2a560c6a395b7e3` |  9 |  21 |  31 |  8 |   6 |   106 |    63 |  31 |  12 |   1 |
-| **Tornado.Cash: GovernanceProposalStateUpgrade**<br>`0x5efda50f22d34f262c29268506c5fa42cb56a1ce` | 11 |  35 |  47 | 16 |  17 |   176 |   100 |  47 |  24 |   6 |
-| **Tornado.Cash: TornadoRouter**<br>`0xd90e2f925da726b50c4ed8d0fb90ad053324f31b` |  2 |  85 | 146 | 22 |  13 |   484 |   303 | 146 |  83 |  11 |
-| **PancakeSwap: MasterChefV3**<br>`0x556b9306565093c855aea9ae92a594704c2cd59e` | 13 | 241 | 361 | 45 |  64 |  1312 |   776 | 361 | 228 |  54 |
-| **Uniswap: UniswapV2Pair (USDC-WETH)**<br>`0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc` |  6 |  61 |  88 | 16 |  17 |   326 |   190 |  88 |  55 |  14 |
-| **SushiSwap: Router**<br>`0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f` | 19 | 267 | 415 | 55 |  67 |  1464 |   880 | 415 | 248 |  50 |
-| **CryptoKitties: Core (KittyCore)**<br>`0x06012c8cf97bead5deae237070f9587f8e7a266d` | 22 | 204 | 302 | 78 |  59 |  1096 |   646 | 302 | 182 |  42 |
-| **CryptoKitties: SaleClockAuction**<br>`0xb1690c08e213a35ed9bab7b318de14420fb57d8c` |  2 |   6 |  10 |  4 |   2 |    32 |    20 |  10 |   4 |   0 |
-| **Yuga Labs: BoredApeYachtClub**<br>`0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d` |  9 |  18 |  21 | 13 |   5 |    84 |    45 |  21 |   9 |   3 |
-| **Nouns DAO: NounsToken**<br>`0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03` |  7 |  12 |  13 | 11 |   3 |    54 |    28 |  13 |   5 |   2 |
-| **Beanstalk Farms: Attack data**<br>`beanstalk_attack_ocel.json` |  3 | 489 | 703 | 58 | 139 |  2655 |  1541 | 703 | 486 | 136 |
+| **Consensus Layer: DepositContract**<br>`0x00000000219ab540356cbb839cbe05303d7705fa` | 1 | 9 | 17 | 3 | 1 | 53 | 34 | 17 | 9 | 0 |
+| **ENS: ENSGovernor**<br>`0x323a76393544d5ecca80cd6ef2a560c6a395b7e3` | 9 | 21 | 31 | 8 | 6 | 111 | 63 | 31 | 17 | 1 |
+| **Tornado.Cash: GovernanceProposalStateUpgrade**<br>`0x5efda50f22d34f262c29268506c5fa42cb56a1ce` | 11 | 35 | 47 | 16 | 17 | 187 | 100 | 47 | 35 | 6 |
+| **Tornado.Cash: TornadoRouter**<br>`0xd90e2f925da726b50c4ed8d0fb90ad053324f31b` | 2 | 85 | 146 | 22 | 13 | 486 | 303 | 146 | 85 | 11 |
+| **PancakeSwap: MasterChefV3**<br>`0x556b9306565093c855aea9ae92a594704c2cd59e` | 13 | 241 | 361 | 45 | 64 | 1322 | 776 | 361 | 238 | 54 |
+| **Uniswap: UniswapV2Pair (USDC-WETH)**<br>`0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc` | 6 | 61 | 88 | 16 | 17 | 329 | 190 | 88 | 58 | 14 |
+| **SushiSwap: Router**<br>`0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f` | 19 | 267 | 415 | 55 | 67 | 1481 | 880 | 415 | 265 | 50 |
+| **CryptoKitties: Core (KittyCore)**<br>`0x06012c8cf97bead5deae237070f9587f8e7a266d` | 22 | 204 | 302 | 78 | 59 | 1113 | 646 | 302 | 199 | 42 |
+| **CryptoKitties: SaleClockAuction**<br>`0xb1690c08e213a35ed9bab7b318de14420fb57d8c` | 2 | 6 | 10 | 4 | 2 | 34 | 20 | 10 | 6 | 0 |
+| **Yuga Labs: BoredApeYachtClub**<br>`0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d` | 9 | 18 | 21 | 13 | 5 | 86 | 45 | 21 | 11 | 3 |
+| **Nouns DAO: NounsToken**<br>`0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03` | 7 | 12 | 13 | 11 | 3 | 55 | 28 | 13 | 6 | 2 |
+| **Beanstalk Farms: Attack data**<br>`beanstalk_attack_ocel.json` | 3 | 489 | 703 | 58 | 139 | 2658 | 1541 | 703 | 489 | 136 |
 | **Real1: Two-robot search**<br>`collectivelog_real1_uniqueInteraction.xes` |  1 |   2 |   2 |  2 |   0 |     8 |     4 |   2 |   0 |   0 |
 | **Real2: Travel booking**<br>`collectivelog_real2_uniqueInteraction.xes` | 96 | 842 | 480 |  2 |   0 |  3368 |   960 | 842 |   0 |   0 |
 | **Real3: Smart thermostat**<br>`collectivelog_real3_uniqueInteraction.xes` | 59 | 472 | 321 |  3 |   0 |  1880 |   634 | 472 |   0 |   0 |

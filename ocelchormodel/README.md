@@ -27,7 +27,7 @@ visible, and refuses what bilateral choreography tasks cannot express.**
   OCEL file — the log keeps recording nothing, the validator keeps
   flagging it. The instance converts, a `<instance>.warnings.txt` names
   the affected events, and the CLI warns on stderr.
-- **Multicast** (an event with more than one receiver) and **participant
+- **Multi-cast** (an event with more than one receiver) and **participant
   self-identity** (initiator = receiver, the validator's C4): *positive
   assertions* the bilateral choreography-task construct cannot express —
   rendering them would require inventing or dropping information. The
@@ -91,14 +91,23 @@ uv run ocelchormodel traces.ocel.json -o output/
 ```
 data/output/
   0x556b9306..._uniqueFunction/
-    0xabc123...def456.bpmn
-    0x789abc...123456.bpmn
+    0xabc123...def456.bpmn                 the converted model
+    0xabc123...def456.chorjs.report.json   chor-js render evidence
+    0x789abc...123456.refused.txt          instance refused (see policy above)
+    0x456def...789abc.warnings.txt         converted with phantom bands
   beanstalk_attack/
     0x68cdec0a...4fa54c6f.bpmn
+    ...
 ```
 
 One subdirectory per input file (input filename with `_ocel.json` stripped);
-one BPMN file per choreography instance (named by the instance id).
+one BPMN file per converted choreography instance (named by the instance
+id), each with its chor-js render report (produced by the headless harness
+in `../ocelchormodel_RAD/tools/chorjs-render/`; see its README).
+Refused instances leave a
+`.refused.txt` note instead of a model; instances converted with phantom
+bands additionally leave a `.warnings.txt` note (degenerate-data policy
+above).
 
 ---
 
@@ -173,8 +182,11 @@ inner elements at any nesting depth.
 ```
 src/ocelchormodel/      reader, model (dataclasses), extractor, layout, bpmn writer, validator, cli
 tests/                  unit + integration tests against OCEL fixtures
-data/input/             mirror of upstream OCEL outputs (12 blockchain + 7 XES; tracked)
-data/output/            generated BPMN files (gitignored)
+data/input/             mirror of upstream OCEL outputs (12 blockchain
+                        + 1 running example + 7 XES; tracked)
+data/output/            converted models — tracked regression baseline
+                        (BPMN, chor-js render reports, refusal/warning
+                        notes; only rendered SVGs are gitignored)
 ```
 
 ---

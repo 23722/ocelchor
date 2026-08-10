@@ -130,6 +130,14 @@ construction.
 - **Metadata.** Gas usage, value transferred, call id, depth, and block
   number are stored as event attributes only when `--include-metadata` is
   set; the default output keeps the OCEL minimal.
+- **Unrecorded endpoints.** An event whose endpoint address is missing from
+  the source record (e.g. the empty `contractAddress` of a contract-creation
+  transaction) is emitted **without** the corresponding
+  `choreo:participant` / `choreo:target` (or, symmetrically,
+  `choreo:initiator` / `choreo:source`) relationships; no empty-identifier
+  participant object is materialised. The recording gap thus stays visible
+  to the downstream validator rather than being masked by a degenerate
+  object that formally satisfies the constraints.
 
 ---
 
@@ -157,7 +165,8 @@ Cite the source when reusing the datasets.
 ```
 src/trace2ocelchor/     parser, transformer, ocel serialisation, models, cli, stats
 tests/                  unit + integration tests (incl. schema validation)
-data/input/             real-world transaction trace files (tracked)
+data/input_unique/      deduplicated real-world transaction traces (tracked)
+data/input_full/        full trace family (≈3 GB; not committed — see Data attribution)
 data/output/            generated OCEL files (gitignored)
 ```
 

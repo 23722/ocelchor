@@ -1,4 +1,4 @@
-# chor-js render harness — setup
+# chor-js render harness
 
 Headless renderer that opens each discovered/converted BPMN choreography
 model in the real, unmodified [chor-js](https://github.com/bptlab/chor-js)

@@ -22,7 +22,7 @@ blockchain extractor types participants and events, see the
 ```
 OCEL 2.0 choreography log
   → reader      (constraint validation; hard gates C0, C2, C3, C11, C12, C14 —
-                 C3 by shape: multicast aborts, an unrecorded receiver is
+                 C3 by shape: multi-cast aborts, an unrecorded receiver is
                  tolerated with the reserved empty role and a warning)
   → typing      (taskType = ⟨event type, initiator role, receiver role⟩;
                  scopeType = ⟨label, initiator role, receiver role⟩ — label
@@ -50,7 +50,7 @@ A log that violates a hard-gate constraint is reported on stderr and
 skipped; its subfolder holds only a `REFUSED.txt` naming the violated
 gate, the remaining inputs still run, and the exit code is nonzero.
 C3 is gated by *shape*: an event with **more than one receiver**
-(multicast) aborts the log — which role enters the task type is genuinely
+(multi-cast) aborts the log — which role enters the task type is genuinely
 undefined, and any choice would silently drop a receiver — while an event
 with **no recorded receiver** is tolerated: it is typed with the reserved
 empty participant role (rendered as an empty band), the C3 violation stays
@@ -66,6 +66,7 @@ diagnostics never change the model.
 | `discovered_model.bpmn` | The generalised choreography model (semantics + layout) |
 | `process_tree.txt` | The discovered process tree as an indented s-expression: operators `→ × ↻ ∧`, `τ` for silent steps, `∇_{scope} ⟨initiator→receiver⟩` for named subtrees; leaves show `'event type' ⟨initiator→receiver⟩`. Every symbol prints its full type — the ∇ pair is the role pair of the scope's first task event, so scopes with the same label but different openers (an outer call vs. a re-entrant self-call) stay distinguishable on the ∇ line |
 | `diagnostics.json` | Diagnostics D1–D13 (below) plus the non-blocking validator constraint summary |
+| `discovered_model.chorjs.report.json` | Render-verification report from the headless chor-js harness in `tools/chorjs-render/` (see its README) |
 | `WARNINGS.txt` | Only when C3 missing-receiver events were tolerated: names the events typed with the reserved empty role |
 
 (A refused log's subfolder holds only `REFUSED.txt` with the violated gate.)
@@ -198,4 +199,4 @@ separation, recursion detection against the audited baseline), export
 (per-instance structural round-trip against the `ocelchormodel` reference
 models, message labels, process-tree snapshot), layout invariants,
 diagnostics (pinned acceptance values on the real logs plus synthetic
-cases), and the CLI (output triple, hard-gate failure path).
+cases), and the CLI (output files, refusal and warning paths).

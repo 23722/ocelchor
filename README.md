@@ -12,6 +12,8 @@ This repository provides a pipeline for:
 - Checking well-formedness of the representations based on 17 constraints (C0–C16).
 - Converting the event log representation of individual choreographies
   encoded in OCEL 2.0 as BPMN files.
+- Discovering one generalised BPMN 2.0 choreography model per OCEL 2.0
+  event log, pooling all instances of the log.
 
 ---
 
@@ -23,6 +25,9 @@ ocelchor/
 ├── xescol2ocelchor/       Convert XES collaborative event logs → OCEL 2.0
 ├── ocelchorvalidator/     Validate OCEL 2.0 logs against constraints C0–C16
 ├── ocelchormodel/         Create BPMN choreography models from OCEL 2.0 logs
+│                          (one model per choreography instance)
+├── ocelchormodel_RAD/     Discover generalised BPMN choreography models from
+│                          OCEL 2.0 logs (one model per event log)
 ├── generate_unique_xes.py Standalone script: deduplicate XES traces by
 │                          choreography variant (requires pm4py)
 ├── generate_fig4.py       Standalone script for reproducing Figure 4
@@ -53,24 +58,27 @@ cd ocelchor
 uv sync
 ```
 
-This installs the `ocelchor` unified CLI as well as the four individual tool CLIs.
+This installs the `ocelchor` unified CLI as well as the five individual tool CLIs.
 
 ---
 
 ## Pipeline
 
 The tools form a pipeline with two source-domain entry points sharing the
-downstream validator and converter:
+domain-independent validator, per-instance converter, and per-log discovery:
 
-![Tool chain: from interaction data via domain-specific extractors and OCEL 2.0 log to BPMN choreography model, with the domain-independent validator on the side](tool_chain_github_cropped.png)
+![Tool chain: from interaction data via domain-specific extractors to an OCEL 2.0 event log with choreography, validated domain-independently, then converted to one BPMN choreography model per instance or discovered as one generalised BPMN choreography model per event log](tool_chain_github.png)
 
 ### Step 1 — Convert source data to OCEL 2.0
 
-**Blockchain side.** Input traces are in `trace2ocelchor/data/input/`;
-pre-computed OCEL 2.0 logs are in `trace2ocelchor/data/output/`.
+**Blockchain side.** Input traces are in `trace2ocelchor/data/input_unique/`
+(the deduplicated evaluation family; the full ≈3 GB trace family is not
+committed — see the [trace2ocelchor README](trace2ocelchor/README.md)).
+Pre-computed OCEL 2.0 logs are mirrored in the downstream tools'
+`data/input/` directories (e.g. `ocelchorvalidator/data/input/`).
 
 ```bash
-uv run ocelchor convert trace2ocelchor/data/input/ -o log.ocel.json
+uv run ocelchor convert trace2ocelchor/data/input_unique/ -o log.ocel.json
 ```
 
 **XES side.** Original Corradini et al. logs are in
@@ -120,6 +128,21 @@ rendered:
 
 ![Example choreography model produced by ocelchormodel from a Uniswap V2 transaction trace](0x26234c96164c54b64dd49886400ce1de8f199ff21c06620ef51acb18b380398e.png)
 
+### Step 4 — Discover a generalised choreography model (one per event log)
+
+Where Step 3 renders each observed instance, `ocelchormodel_RAD` pools all
+instances of a log into a single generalised model with roles as
+participant bands. Pre-computed discovered models are in
+`ocelchormodel_RAD/data/output/` (per log: BPMN model, process tree,
+diagnostics D1–D13).
+
+```bash
+uv run ocelchormodel-rad ocelchormodel_RAD/data/input/*.json -o output/
+```
+
+See the [ocelchormodel_RAD README](ocelchormodel_RAD/README.md) for the
+discovery approach, typing rules, and diagnostics.
+
 ---
 
 ## Individual CLIs
@@ -132,6 +155,7 @@ Each tool is also available as a standalone command:
 | `uv run xescol2ocelchor`   | xescol2ocelchor   |
 | `uv run ocelchorvalidator` | ocelchorvalidator |
 | `uv run ocelchormodel`     | ocelchormodel     |
+| `uv run ocelchormodel-rad` | ocelchormodel_RAD |
 
 Run any command with `--help` for the full list of options. The unified
 `ocelchor` dispatcher currently routes `convert` to `trace2ocelchor`; for
@@ -148,6 +172,7 @@ cd trace2ocelchor    && uv run pytest && cd ..
 cd xescol2ocelchor   && uv run pytest && cd ..
 cd ocelchorvalidator && uv run pytest && cd ..
 cd ocelchormodel     && uv run pytest && cd ..
+uv run --project ocelchormodel_RAD python -m pytest ocelchormodel_RAD/tests
 ```
 
 ---
@@ -218,74 +243,19 @@ Column names follow the paper's notation.
 | **Healthcare: Hospitalization**<br>`collectivelog_healthcare_uniqueInteraction.xes` | 0/116 | 0/116 | 0/116 |  **9**/116 |  0/116 | 0/116 |  **9**/116 | 0/116 | 0/116 | 0/116 | 0/116 | 0/116 | 0/0 | 0/0 | 0/0 |  **9**/99 | 0/0 |
 | **Smart agriculture: Tractor coordination**<br>`collectivelog_smartagriculture_uniqueInteraction.xes` | 0/114 | 0/114 | 0/114 | **28**/114 |  0/114 | 0/114 | **28**/114 | 0/114 | 0/114 | 0/114 | 0/114 | 0/114 | 0/0 | 0/0 | 0/0 |  **9**/104 | 0/0 |
 
-The violations have two distinct sources: blockchain implementation
-particularities (for `trace2ocelchor`) and source-data fidelity choices in
-the XES corpus (for `xescol2ocelchor`).
-
-**Blockchain side.**
-
-- **C4 has 2 violations in CryptoKitties: Core.** The violations of C4
-  occurred due to the respective calls using a *multicall* pattern, which
-  self-executes functions through explicit CALLs and DELEGATECALLs. Thus the
-  self-execute functions were treated as internal transactions. This results
-  in the caller being equal to the callee. This pattern is typically used to
-  optimize execution costs and enable modular execution.
-- **C4 has 10 violations in PancakeSwap: MasterChefV3.** Same root cause as
-  above — multicall-style self-execution where a contract dispatches calls
-  to itself.
-- **C3 / C6 have 1 violation each in Beanstalk Farms: Attack data.** The
-  creation transaction's source record carries an empty contract address
-  (the created contract's address is not known before its creation), so the
-  root request's receiver is unrecorded. The extractor emits the event
-  without `choreo:participant` / `choreo:target` — the same
-  missing-receiver strategy as on the XES side — which is what C3 / C6
-  flag.
-- **C15 has 1 violation in Beanstalk Farms: Attack data.** The violation of
-  C15 occurred when a contract was created and immediately after started to
-  issue calls on its part: one event later, the created contract acts under
-  its real address, which was never involved before. The same anonymous
-  receiver behind the C3 / C6 finding above thus also surfaces
-  *behaviorally*, as broken initiator continuity.
-
-**XES side.**
-
-- **C3 / C6 have 45 violations each across three datasets.** These mark
-  events whose receiver(s) cannot be uniquely recovered from the XES
-  collaboration log, in two flavours:
-  - *Unmatched sends* — a `send` event whose `msgInstanceId` has no matching
-    `receive` in the same trace; 8 in Real3, 9 in Healthcare, 16 in Smart
-    agriculture. The extractor keeps the event with initiator and message
-    but emits it without `choreo:participant` / `choreo:target`, which is
-    what C3 / C6 flag.
-  - *Broadcast over-connection* — a `send` whose `msgInstanceId` is
-    received by multiple participants; 12 occurrences in Smart agriculture
-    (drone broadcasting `weed_position` to both tractors). The extractor
-    attributes every send to the full broadcast group (the source data
-    carries no marker pairing a specific send with a specific receiver),
-    which the validator flags as 2 participants / 2 targets. This is the
-    BPMN multi-instance participant pattern surfaced as a constraint
-    violation (see paper §X.Y).
-- **C15 has 117 violations across three datasets.** These mark
-  initiator-discontinuity in multi-party processes — the initiator of an
-  event was neither initiator nor participant of the immediately preceding
-  event in the same instance. 99 in Real3 (Controller / User re-entering
-  after Thermostat-mediated exchanges), 9 in Healthcare (Hospital
-  re-entering after Patient / Laboratory exchanges), 9 in Smart agriculture
-  (a tractor re-entering after exchanges that did not involve it).
-  Identical figures appear in the Peña et al. (2024) [^2] reference
-  choreography logs (`_chor.xes`), confirming the structural origin of
-  these discontinuities in the source data rather than in our conversion.
-
-[^2]: Peña, L., Andrade, D., Delgado, A., Calegari, D.
-  *Inter-organizational collaborative BPMN 2.0 business process discovery.*
-  J. Intelligent Information Systems (2024).
+The violations and their causes are discussed in the paper's evaluation
+section.
 
 ### Trace-variant agreement against Peña's `_chor.xes`
 
 The script `evaluate_conformance.py` at the repository root quantifies how
 much of the choreography behaviour our OCEL representation preserves by
-comparing trace-variant sets against Peña et al.'s independently created
-`_chor.xes` choreography logs. It produces the paper claim:
+comparing trace-variant sets against Peña et al.'s [^2] independently
+created `_chor.xes` choreography logs. It produces the paper claim:
+
+[^2]: Peña, L., Andrade, D., Delgado, A., Calegari, D.
+  *Inter-organizational collaborative BPMN 2.0 business process discovery.*
+  J. Intelligent Information Systems (2024).
 
 > *For the Corradini et al. data, our extracted choreography control-flows
 > show the same trace variants as Peña et al.'s independently created XES

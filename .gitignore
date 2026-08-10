@@ -33,9 +33,10 @@ htmlcov/
 .vscode/
 *.swp
 
-# xescol2ocelchor
+# xescol2ocelchor — internal specs/plans ignored, README is part of the artefact
 xescol2ocelchor/*.pdf
 xescol2ocelchor/*.md
+!xescol2ocelchor/README.md
 
 # ocelchormodel_RAD — reference material & specs (docs, not the code artefact)
 ocelchormodel_RAD/*.pdf
@@ -51,6 +52,11 @@ ocelchormodel_RAD/archive/
 
 # trace2ocelchor — working outline, not part of the published artefact
 trace2ocelchor/participant_aware_event_typing_outline.md
+
+# Co-author name re-attribution, full traces — not final (see review), too
+# large for plain git (4 files > GitHub's 100 MB limit); decide LFS vs.
+# external once corrected. Never pipeline input.
+trace2ocelchor/data/json-aggiornati/
 
 # Ad-hoc analysis scripts / outputs, not part of the published artefact
 /analyze_recursion.py

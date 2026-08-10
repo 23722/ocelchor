@@ -81,6 +81,13 @@ Per-dataset characterisation columns:
 | `#O2O[c]` | O2O relations with qualifier `choreo:contains` (nesting) |
 | `C0`–`C16` | Per-constraint result: `violations / checked` |
 
+`checked` is the population the constraint quantifies over: events for the
+per-event constraints (C0, C2–C4, C7, C8, C11), event–message pairs for the
+message constraints (C1, C5, C6, C9, C10), consecutive event pairs for C15,
+and scoping objects for C12–C14, C16. Vacuously satisfied cases count as
+checked, and an event violating several constraints is reported by each of
+them.
+
 ---
 
 ## Constraints

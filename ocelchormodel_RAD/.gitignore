@@ -19,10 +19,10 @@ data/output/**
 tools/instrument_fallthroughs.py
 
 # chor-js render harness: the thin driver scripts (render.js, entry.js,
-# render.html, package manifests, SETUP.md) are tracked so the render
+# render.html, package manifests, README.md) are tracked so the render
 # reports in data/output are reproducible from a fresh clone. The
 # third-party chor-js bundles and node_modules stay ignored — they are
-# downloaded/built locally per tools/chorjs-render/SETUP.md.
+# downloaded/built locally per tools/chorjs-render/README.md.
 tools/chorjs-render/node_modules/
 tools/chorjs-render/chorjs-bundle.js
 tools/chorjs-render/chorjs-app.js

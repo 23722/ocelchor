@@ -4,7 +4,8 @@ Subcommands
 -----------
   convert   Convert Ethereum transaction traces to OCEL 2.0 (trace2ocelchor)
   validate  Validate an OCEL 2.0 log against constraints C0-C16 (ocelchorvalidator)
-  mine      Mine BPMN choreography models from an OCEL 2.0 log (ocelchormodel)
+  model     Create per-instance BPMN choreography models from an OCEL 2.0 log
+            (ocelchormodel); 'mine' is kept as a deprecated alias
 """
 
 from __future__ import annotations
@@ -18,12 +19,12 @@ usage: ocelchor <command> [options]
 Commands:
   convert   Convert Ethereum transaction traces to OCEL 2.0
   validate  Validate an OCEL 2.0 log against constraints C0-C16
-  mine      Mine BPMN choreography models from an OCEL 2.0 log
+  model     Create per-instance BPMN choreography models from an OCEL 2.0 log
 
 Run 'ocelchor <command> --help' for command-specific options.
 """
 
-COMMANDS = ("convert", "validate", "mine")
+COMMANDS = ("convert", "validate", "model")
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -43,7 +44,7 @@ def main(argv: list[str] | None = None) -> None:
         from ocelchorvalidator.cli import main as _main
         _main(rest)
 
-    elif command == "mine":
+    elif command in ("model", "mine"):  # 'mine' = deprecated alias
         from ocelchormodel.cli import main as _main
         _main(rest)
 

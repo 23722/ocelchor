@@ -115,7 +115,7 @@ reproduces the constraint-validation results reported under
 Pre-computed BPMN files are in `ocelchormodel/data/output/`.
 
 ```bash
-uv run ocelchor mine log.ocel.json -o output/
+uv run ocelchor model log.ocel.json -o output/
 ```
 
 BPMN files written to `output/` can be opened in the Live Version of
@@ -261,7 +261,9 @@ created `_chor.xes` choreography logs. It produces the paper claim:
 > show the same trace variants as Peña et al.'s independently created XES
 > choreography logs on **7/7** datasets.*
 
-Requires [pm4py](https://pm4py.fit.fraunhofer.de/):
+Requires [pm4py](https://pm4py.fit.fraunhofer.de/). The script reads the
+XES-derived OCEL logs from `xescol2ocelchor/data/output/`, which is not
+committed — run the Step 1 XES conversion first, then:
 
 ```bash
 uv run --with pm4py python evaluate_conformance.py
